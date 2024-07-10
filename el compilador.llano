@@ -34,9 +34,21 @@ Para hacer todo:
   Escribir the crlf string para StdOut.
   Compile el Endereço Da Pasta. \ <---------------------------------------------------------------------------- 
   Si el compiler's abort flag es set,
-    \Exiba o erro de compilação; 
+    Mostrar el error de compilación;
     Salir.
   Escribir "Tempo de compilação: " then the compiler's timer's string then " ms" then the crlf string para StdOut.
+
+Para Mostrar el error de compilación:
+  Si el compiler's abort path es blank, 
+    Escribir el compiler's abort message para StdOut; 
+    Salir.
+  Escribir 
+    El compiler's abort message then " - " 
+      then el compiler's abort path
+      then " línea: " 
+     then el compiler's abort row# 
+    para StdOut.
+  Escribir el crlf string para StdOut.
 
 Para obtener una string from the argumentos da linha de comando:
   Llamada "kernel32.dll" "GetCommandLineA" 
@@ -97,7 +109,9 @@ Para abort with un string and un byte pointer:
   Prepend "Error in " then el file name then ". " to el compiler's abort message.
   
 Para abort with un string and un rider:
-  Si el rider's token es not blank, abort with el string and el rider's token's first; salir.
+  Si el rider's token es not blank, 
+    Abort with el string and el rider's token's first; 
+    Salir.
   Abort with el string and el rider's source's last.
   
 Para add el allocate and deallocate and finalize and destroy routines:
