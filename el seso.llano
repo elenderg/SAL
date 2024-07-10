@@ -8163,7 +8163,7 @@ Para initialize el window:
   Llamada "user32.dll" "RegisterClassExA" with el window class's whereabouts.
   Llamada "user32.dll" "CreateWindowExA" with 0 and el module's name's first and el module's name's first and 13565952 [WS_OVERLAPPEDWINDOW] \-2147483648 [ws_popup] 
   And 0 and 0 and el screen's pixel width and el screen's pixel height and 0 and 0 and el module's handle and 0.
-  Llamada "user32.dll" "ShowWindow" with el main window and 1 [sw_shownormal].
+  \Llamada "user32.dll" "ShowWindow" with el main window and 1 [sw_shownormal].
 
 Para initialize winsock:
   Llamada "ws2_32.dll" "WSAStartup" with 2 and un wsadata's whereabouts.
