@@ -10,20 +10,25 @@
 
 Para escribir un byte para StdOut:
   Llamada "kernel32.dll" "WriteFile" with
-    El stdout handle [hFile]
+    El StdOut handle [hFile]
     and el byte's whereabouts [lpBuffer]
     and 1 [nNumberOfBytesToWrite]
     and un number's whereabouts [lpNumberOfBytesWritten]
     and nil. [lpOverlapped]
 
-Para escribir para StdOut una string;
-Para escribir una string para StdOut:
+Para escribir para StdOut un string:
+  Escribir el string para StdOut.
+  Escribir el crlf string para Stdout.
+
+Para escribir un string para StdOut:
   Llamada "kernel32.dll" "GetStdHandle" with
   -11 [nStdHandle = STD_OUTPUT_HANDLE]
-  returning the stdout handle.
-  Si el stdout handle es -1, Cluck; Salir.
+  returning el StdOut handle.
+  Si el StdOut handle es -1, \ INVALID HANDLE
+    Cluck; 
+    Salir.
   Llamada "kernel32.dll" "WriteFile" with
-    el stdout handle [hFile] and
+    el StdOut handle [hFile] and
     el string's first byte pointer [lpBuffer]
     and the string's length [nNumberOfBytesToWrite]
     and a number's whereabouts [lpNumberOfBytesWritten]
@@ -31,11 +36,8 @@ Para escribir una string para StdOut:
   returning a new number.
   Si el new number no es 0,
     Put "Erro. Não foi possível escrever em STDOUT" into el error de e/s;
-    \Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Cluck;
     Salir.
-
-
 
 The on flag es un flag equal to 1.
 
@@ -7672,8 +7674,8 @@ Para initialize el canvases:
 
 Para initialize el cgi:
   Llamada "kernel32.dll" "AllocConsole".
-  Llamada "kernel32.dll" "GetStdHandle" with -10 [std_input_handle] returning el stdin handle.
-  Llamada "kernel32.dll" "GetStdHandle" with -11 [std_output_handle] returning el stdout handle.
+  Llamada "kernel32.dll" "GetStdHandle" with -10 [std_input_handle] returning el StdIn handle.
+  Llamada "kernel32.dll" "GetStdHandle" with -11 [std_output_handle] returning el StdOut handle.
 
 Para initialize el colors:
   Put 1 into el pen size.
@@ -8161,7 +8163,7 @@ Para initialize el window:
   Llamada "user32.dll" "RegisterClassExA" with el window class's whereabouts.
   Llamada "user32.dll" "CreateWindowExA" with 0 and el module's name's first and el module's name's first and 13565952 [WS_OVERLAPPEDWINDOW] \-2147483648 [ws_popup] 
   And 0 and 0 and el screen's pixel width and el screen's pixel height and 0 and 0 and el module's handle and 0.
-  \Llamada "user32.dll" "ShowWindow" with el main window and 1 [sw_shownormal].
+  Llamada "user32.dll" "ShowWindow" with el main window and 1 [sw_shownormal].
 
 Para initialize winsock:
   Llamada "ws2_32.dll" "WSAStartup" with 2 and un wsadata's whereabouts.
@@ -11832,6 +11834,7 @@ Para leer una ruta en un búfer;
 Para read un path into un buffer:
   Clear el error de e/s.
   Privatizar el path.
+  Remove any trailing backslash from the path.
   Null terminate el path.
   Si el path es not in el file system, put "Archivo '" then el path then "' no existe." into el error de e/s; salir.
 \  set el path to read-write mode.
@@ -11895,7 +11898,7 @@ Para read un response string from un winhttp request:
   Si el count es 0, interrumpir.
   Repetir.
 
-Para read stdin into un buffer:
+Para read StdIn into un buffer:
   Clear el error de e/s.
   Clear el buffer.
   Find un string given el environment variables and "CONTENT_LENGTH".
@@ -11903,8 +11906,8 @@ Para read stdin into un buffer:
   Convert el string into un length.
   Si el length es 0, salir.
   Reassign el buffer's first given el length.
-  Llamada "kernel32.dll" "ReadFile" with el stdin handle and el buffer's first and el length and un number's whereabouts and nil.
-  Si el number es not el length, put "Error leyendo datos 'stdin'." into el error de e/s; clear el buffer; salir.
+  Llamada "kernel32.dll" "ReadFile" with el StdIn handle and el buffer's first and el length and un number's whereabouts and nil.
+  Si el number es not el length, put "Error leyendo datos 'StdIn'." into el error de e/s; clear el buffer; salir.
   Put el buffer's first plus el length minus 1 into el buffer's last.
 
 Para leer una cadena de una consola;
@@ -13921,9 +13924,9 @@ A handle called hstdinput,
 A handle called hstdoutput,
 A handle called hstderror.
 
-The stdin handle es un handle.
+The StdIn handle es un handle.
 
-The stdout handle es un handle.
+The StdOut handle es un handle.
 
 Para stop un process:
   Si el process es 0, salir.
@@ -16190,7 +16193,7 @@ Para write un byte:
   Write el string.
 
 Para write un byte to stdout:
-  Llamada "kernel32.dll" "WriteFile" with el stdout handle and el byte's whereabouts and 1 and un number's whereabouts and nil.
+  Llamada "kernel32.dll" "WriteFile" with el StdOut handle and el byte's whereabouts and 1 and un number's whereabouts and nil.
 
 Para escribir un byte sin avanzar;
 Para write un byte without advancing:
@@ -16366,7 +16369,7 @@ Para stroke un string un radius from el middle of un box:
   Stroke el string given el box's center and el radius.
 
 Para write un string to stdout:
-  Llamada "kernel32.dll" "WriteFile" with el stdout handle and el string's first and el string's length and un number's whereabouts and nil.
+  Llamada "kernel32.dll" "WriteFile" with el StdOut handle and el string's first and el string's length and un number's whereabouts and nil.
 
 Para write un string while turning un fraction of el way;
 Para write un string while turning un fraction of el way around;
