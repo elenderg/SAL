@@ -35,7 +35,7 @@ Para escribir un string para StdOut:
     and nil [lpOverlapped]
   returning a new number.
   Si el new number no es 0,
-    Put "Erro. Não foi possível escrever em STDOUT" into el error de e/s;
+    Put "Error. No se puede escribir en STDOUT" into el error de e/s;
     Cluck;
     Salir.
 

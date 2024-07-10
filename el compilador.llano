@@ -9,34 +9,34 @@ Para Ejecutar:
   \Handle events.
   Finalize el compiler.
   Escribir el crlf string para StdOut.
-  Escribir "Operação finalizada." then el crlf string para StdOut.
+  Escribir "Operación completada." then el crlf string para StdOut.
   Shut down.
 
 Para hacer todo:
   Put 1252 into a number called codepage. \ 
   Llamada "kernel32.dll" "SetConsoleOutputCP" with the codepage returning a number called status de erro.
   Si el status de erro es 0 [NULL],
-    Escribir "Error ao definir o CodePage do Console para STDOUT."  then the crlf string para STDOUT.
+    Escribir "Error al configurar Console CodePage en STDOUT."  then the crlf string para STDOUT.
   Obtener una string called Endereço Da Pasta from the argumentos da linha de comando.
   \ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   Si el Endereço Da Pasta está blank, 
     Escribir "--------------------------------------------------------------------------------------------------------------- " then the crlf string para StdOut;
-    Escribir "Aviso. Para utilizar este compilador utilize a seguinte sintaxe:" then the crlf string para StdOut;
+    Escribir "Aviso. Para utilizar este compilador utilice la siguiente sintaxis:" then the crlf string para StdOut;
     Escribir " " then the crlf string para Stdout;
     Escribir "c:\el compilador.exe " then " c:\pasta_do_projeto_atual\ " then the crlf string para StdOut;
   Salir.
   Si the Endereço Da Pasta's last byte pointer's target no es el backslash byte, 
     Append the backslash byte to the Endereço Da Pasta.
   Si el Endereço Da Pasta no está in el file system, 
-    Escribir "Error. O diretório '" then el Endereço Da Pasta then "' não foi encontrado." then the crlf string para StdOut;
+    Escribir "Error. El directorio '" then el Endereço Da Pasta then "' no fue encontrado." then the crlf string para StdOut;
     Salir.
-  Escribir "Compilando o diretório '" then el Endereço Da Pasta then "' ..." then the crlf string para StdOut. \ #0
+  Escribir "Compilando el directorio '" then el Endereço Da Pasta then "' ..." then the crlf string para StdOut. \ #0
   Escribir the crlf string para StdOut.
   Compile el Endereço Da Pasta. \ <---------------------------------------------------------------------------- 
   Si el compiler's abort flag es set,
     Mostrar el error de compilación;
     Salir.
-  Escribir "Tempo de compilação: " then the compiler's timer's string then " ms" then the crlf string para StdOut.
+  Escribir "Tiempo de compilación: " then the compiler's timer's string then " ms" then the crlf string para StdOut.
 
 Para Mostrar el error de compilación:
   Si el compiler's abort path es blank, 
@@ -45,7 +45,7 @@ Para Mostrar el error de compilación:
   Escribir 
     El compiler's abort message then " - " 
       then el compiler's abort path
-      then " línea: " 
+      then ". Línea: " 
      then el compiler's abort row# 
     para StdOut.
   Escribir el crlf string para StdOut.
