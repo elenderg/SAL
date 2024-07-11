@@ -15,7 +15,7 @@ Para ejecutar:
 
 Para hacer todo:
   Put 1252 into a number called codepage. \ 
-  Llamada "kernel32.dll" "SetConsoleOutputCP" with the codepage returning a number called status de erro.
+  Llamada "kernel32.dll" "SetConsoleOutputCP" with the codepage retornando a number called status de erro.
   Si el status de erro es 0 [NULL],
     Escribir "Error al configurar Console CodePage en STDOUT."  then the crlf string para STDOUT.
   Obtener una string called Endereço Da Pasta desde the argumentos da linha de comando.
@@ -54,7 +54,7 @@ Para Mostrar el error de compilación:
 
 Para obtener una string desde the argumentos da linha de comando:
   Llamada "kernel32.dll" "GetCommandLineA" 
-    returning un pchar. [pchar]
+    retornando un pchar. [pchar]
   Convert el pchar to una string called argumentos.
   Slap un substring on las argumentos.
   Lazo.
@@ -1598,9 +1598,9 @@ Para compile el next statement usando un rider (call - external):
   Move el rider (compiler rules).
   Add un entry to el imports usando el string y el other string.
   Si el rider's token es any with, compile el next statement usando el rider (call - with clause).
-  Si el rider's token es "returning", compile el next statement usando el rider returning un term (call - returning part).
-  Si el rider's token es "retornando", compile el next statement usando el rider returning el term (call - returning part).
-  Si el rider's token es "devolviendo", compile el next statement usando el rider returning el term (call - returning part).
+  Si el rider's token es "returning", compile el next statement usando el rider retornando un term (call - retornando part).
+  Si el rider's token es "retornando", compile el next statement usando el rider retornando el term (call - retornando part).
+  Si el rider's token es "devolviendo", compile el next statement usando el rider retornando el term (call - retornando part).
   Add un fragment usando el call external tag y el entry.
   Si el term es empty, salir.
   Si el term's variable es nil, abort with "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
@@ -1612,9 +1612,9 @@ Para compile el next statement usando un rider (call - indirect):
   Si el expression's variable es nil, abort with "No entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
   Si el expression's type cannot be reduced to "pointer", abort with "Yo necesito un tipo puntero en esta LLAMADA." y el rider; salir.
   Si el rider's token es any with, compile el next statement usando el rider (call - with clause).
-  Si el rider's token es "returning", compile el next statement usando el rider returning un term (call - returning part).
-  Si el rider's token es "retornando", compile el next statement usando el rider returning el term (call - returning part).
-  Si el rider's token es "devolviendo", compile el next statement usando el rider returning el term (call - returning part).
+  Si el rider's token es "returning", compile el next statement usando el rider retornando un term (call - retornando part).
+  Si el rider's token es "retornando", compile el next statement usando el rider retornando el term (call - retornando part).
+  Si el rider's token es "devolviendo", compile el next statement usando el rider retornando el term (call - retornando part).
   Add un fragment usando el call indirect tag y el expression's variable.
   Si el term es empty, salir.
   Si el term's variable es nil, abort with "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
@@ -1654,7 +1654,7 @@ Para compile el next statement usando un rider (if):
   Si el compiler's abort flag es set, salir.
   Move el rider (compiler rules).
   Compile some monikettes usando el rider.
-  Remove any negatives desde el monikettes returning un flag.
+  Remove any negatives desde el monikettes retornando un flag.
   Find un routine usando el monikettes.
   Si el routine es not nil, add push fragments usando el monikettes.
   Si el routine es nil, convert el monikettes to un moniker.
@@ -1777,7 +1777,7 @@ Para compile el next statement usando un rider (say):
   Add un fragment usando el load eax tag y el flag.
   Add another fragment usando el exit tag.
   
-Para compile el next statement usando un rider returning un term (call - returning part):
+Para compile el next statement usando un rider retornando un term (call - retornando part):
   Move el rider (compiler rules).
   Compile el term usando el rider.
   Si el compiler's abort flag es set, salir.
@@ -4004,7 +4004,7 @@ Para move un rider (code rules):
   
 Para move un rider (compiler rules):
   Si el compiler's abort flag es set, clear el rider's token; salir.
-  Move el rider returning un error string (code rules).
+  Move el rider retornando un error string (code rules).
   Si el error string es not blank, abort with el error string y el rider's token's first; salir.
   Si el rider's token es "del", unbump el rider; salir. \ Spanish contraction "del"; fudged to "de l", short for "de el"
   Si el rider's token es "al", unbump el rider; salir. \ Spanish contraction "al"; fudged to "a l", short for "a el"
@@ -4013,25 +4013,25 @@ Para move un rider (compiler rules):
   Si el rider's token's first's target es el backslash byte, repetir.
   Si el rider's token's first's target es el left-bracket byte, repetir.
   
-Para move un rider returning un error string (code rules - validate qualifier):
+Para move un rider retornando un error string (code rules - validate qualifier):
   Si el rider's token's length es less than 2, put "Qualifiers need to end with ')'." into el error string; salir.
   Si el rider's token's last's target es not el right-paren byte, put "Qualifiers need to end with ')'." into el error string; salir.
   
-Para move un rider returning un error string (code rules - validate remark):
+Para move un rider retornando un error string (code rules - validate remark):
   Si el rider's token's length es less than 2, put "Remarks need to end with ']'." into el error string; salir.
   Si el rider's token's last's target es not el right-bracket byte, put "Remarks need to end with ']'." into el error string; salir.
   
-Para move un rider returning un error string (code rules - validate string):
+Para move un rider retornando un error string (code rules - validate string):
   Si el rider's token's length es less than 2, put "Strings need to end with '""'." into el error string; salir.
   Si el rider's token's last's target es not el double-quote byte, put "Strings need to end with '""'." into el error string; salir.
   
-Para move un rider returning un error string (code rules):
+Para move un rider retornando un error string (code rules):
   Clear el error string.
   Move el rider (code rules).
   Si el rider's token es blank, salir.
-  Si el rider's token's first's target es el left-bracket byte, move el rider returning el error string (code rules - validate remark); salir.
-  Si el rider's token's first's target es el double-quote byte, move el rider returning el error string (code rules - validate string); salir.
-  Si el rider's token's first's target es el left-paren byte, move el rider returning el error string (code rules - validate qualifier); salir.
+  Si el rider's token's first's target es el left-bracket byte, move el rider retornando el error string (code rules - validate remark); salir.
+  Si el rider's token's first's target es el double-quote byte, move el rider retornando el error string (code rules - validate string); salir.
+  Si el rider's token's first's target es el left-paren byte, move el rider retornando el error string (code rules - validate qualifier); salir.
   
 A nibble substring es un substring.
   
@@ -4320,7 +4320,7 @@ Para reindex el utility index usando some refers:
     Destroy el monikettes.
   Repetir.
   
-Para remove any negatives desde some monikettes returning un flag:
+Para remove any negatives desde some monikettes retornando un flag:
   Clear el flag.
   Swap el monikettes with some other monikettes.
   Lazo.
