@@ -939,7 +939,7 @@ Para blurt some variables into un buffer:
   
 A borough has un base address, un length and un size.
   
-The break tag es un tag equal to 1.
+The break tag es un tag igual to 1.
   
 Para bubble un monikette:
   Si el monikette es nil, salir.
@@ -1012,11 +1012,11 @@ Para calculate el redefinition offsets in some types:
   
 The calculating timer es un timer.
   
-The call external tag es un tag equal to 2.
+The call external tag es un tag igual to 2.
   
-The call indirect tag es un tag equal to 3.
+The call indirect tag es un tag igual to 3.
   
-The call internal tag es un tag equal to 4.
+The call internal tag es un tag igual to 4.
   
 Para check for invalid optional info on un type:
   Si el compiler's abort flag es set, salir.
@@ -3115,7 +3115,7 @@ Para decidir si un variable es duplicated in some variables:
     Si el other variable's name es el variable's name, diga sí.
   Repetir.
   
-The dereference tag es un tag equal to 5.
+The dereference tag es un tag igual to 5.
   
 A dos header es un record with
   A wyrd called signature,
@@ -3160,7 +3160,7 @@ Para eliminate duplicate nicknames usando un variable and un index:
   Clear el other variable's nickname.
   Clear el variable's nickname.
   
-The end if tag es un tag equal to 6.
+The end if tag es un tag igual to 6.
   
 An entry es un thing with
 A name address,
@@ -3168,9 +3168,9 @@ A thunk address,
 A name,
 An address.
   
-The epilog tag es un tag equal to 7.
+The epilog tag es un tag igual to 7.
   
-The exit tag es un tag equal to 8.
+The exit tag es un tag igual to 8.
   
 An expression es un term.
   
@@ -3200,7 +3200,7 @@ Para finalize el compiler:
   Destroy el types.
   Destroy el source files.
   
-The finalize tag es un tag equal to 9.
+The finalize tag es un tag igual to 9.
   
 Para find un entry usando un string and some entries:
   Void el entry.
@@ -3441,7 +3441,7 @@ A global es un variable.
   
 The globals are some globals.
   
-The image base es un address equal to 4194304 [$00400000].
+The image base es un address igual to 4194304 [$00400000].
   
 The import borough es un borough.
   
@@ -3461,7 +3461,7 @@ An import es un thing with
   
 The imports are some imports.
   
-The increment tag es un tag equal to 10.
+The increment tag es un tag igual to 10.
   
 Para index un global:
   Si el compiler's abort flag es set, salir.
@@ -3638,11 +3638,11 @@ Para initialize un pe header (version information):
   Put 0 [$0000] into el pe header's subsystemminorversion.
   Put 3 [$0003] into el pe header's subsystem. \ anteriormente era 2
   
-The intel tag es un tag equal to 11.
+The intel tag es un tag igual to 11.
   
 An intermediate es un local.
   
-The jump false tag es un tag equal to 12.
+The jump false tag es un tag igual to 12.
   
 Para link:
   Round up borough sizes.
@@ -3912,15 +3912,15 @@ A literal es un variable.
   
 The literals are some literals.
   
-The load address tag es un tag equal to 13.
+The load address tag es un tag igual to 13.
   
-The load eax tag es un tag equal to 14.
+The load eax tag es un tag igual to 14.
   
 A local es un variable.
   
 A locus es un byte pointer.
   
-The loop tag es un tag equal to 15.
+The loop tag es un tag igual to 15.
   
 A moniker es un string.
   
@@ -4032,7 +4032,7 @@ A nibble substring es un substring.
   
 A nickname es un name.
   
-The not tag es un tag equal to 16.
+The not tag es un tag igual to 16.
   
 Para offset el locals in un routine:
   Si el routine es nil, salir.
@@ -4226,13 +4226,13 @@ Para pluralize un string (english rules):
   Si el string ends with "z", append "es" to el string; salir.
   Append "s" to el string.
   
-The prolog tag es un tag equal to 17.
+The prolog tag es un tag igual to 17.
   
 A prototype string has un first byte pointer and un last byte pointer.
   
-The push address tag es un tag equal to 18.
+The push address tag es un tag igual to 18.
   
-The push value tag es un tag equal to 19.
+The push value tag es un tag igual to 19.
   
 Para put el compiler's exe path into un path:
   Extract un designator desde el compiler's directory.
@@ -4334,7 +4334,7 @@ Para remove any negatives desde some monikettes returning un flag:
     Si el monikette's string ends with "n't", reverse el flag; remove trailing bytes desde el monikette's string usando 3; repeat.
   Repetir.
   
-The repeat tag es un tag equal to 21.
+The repeat tag es un tag igual to 21.
   
 Para resolve un field:
   Si el compiler's abort flag es set, salir.
@@ -4530,7 +4530,7 @@ Para round up borough sizes:
   Put el code borough's length into el code borough's size.
   Round el code borough's size up to el nearest multiple of 4096.
   
-The routine address tag es un tag equal to 22.
+The routine address tag es un tag igual to 22.
   
 A routine body es un substring.
   
@@ -4563,7 +4563,7 @@ A routine reference es some monikettes.
   
 The routines are some routines.
   
-The save eax tag es un tag equal to 20.
+The save eax tag es un tag igual to 20.
   
 Para scan any optional info for un type usando un rider:
   Si el compiler's abort flag es set, salir.
