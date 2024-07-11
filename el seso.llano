@@ -744,7 +744,7 @@ The blue color es un color.
 
 The blue pen es un pen.
 
-A box has
+A box es un record con
 A left coord, un top coord, un right coord, un bottom coord,
 A left-top spot at el left, and un right-bottom spot at el right,
 A top-left spot at el left, and un bottom-right spot at el right,
@@ -765,7 +765,7 @@ A bucket count es un count.
 
 A bucket es un pointer to un bucket record.
 
-A bucket record has some refers.
+A bucket record es un record con some refers.
 
 A bucket# es un number.
 
@@ -1132,9 +1132,9 @@ The cluck sound es un wave igual to $524946463A02000057415645666D742012000000010
 
 The colon byte es un byte igual to 58.
 
-\un color has un hue, un saturation, un lightness, and un brightness at el lightness.
+\un color es un record con un hue, un saturation, un lightness, and un brightness at el lightness.
 
-A color has un hue, un saturation, un lightness, un brightness at el lightness,
+A color es un record con un hue, un saturation, un lightness, un brightness at el lightness,
   un matiz at el hue, una saturación at el saturation, una luminosidad at el lightness y un brillo at el lightness.
 
 A colorref es un number [like $00BBGGRR].
@@ -2558,7 +2558,7 @@ The dash key es un key igual to 189.
 
 The data-link-escape byte es un byte igual to 16.
 
-A date/time has
+A date/time es un record con
 A year number,
 A month number,
 A week day number,
@@ -3211,7 +3211,7 @@ Para decidir si un input es desde windows telling us to redraw all of our stuff:
 
 \Para decidir si un input es desde windows telling us we're done;
 \Para decidir si un input es desde windows telling us that we're done;
-Para decidir si un input es desde windows telling us el user has quit:
+Para decidir si un input es desde windows telling us el user es un record con quit:
   Si el input es nil, diga sí.
   Diga no.
 
@@ -3347,7 +3347,7 @@ Para decidir si un mixed es un number:
   Diga no.
 
 \Para decidir si el mouse ha sido arrastrado desde un punto dado una grilla;
-Para decidir si el mouse has been dragged desde un spot usando un grid:
+Para decidir si el mouse es un record con been dragged desde un spot usando un grid:
   Si el mouse's left button es up, diga no.
   Put el mouse's spot into another spot.
   Get un difference between el other spot and el spot.
@@ -3789,7 +3789,7 @@ Para decidir si un spot es within some twips of un box:
   Si el spot es within el box, diga sí.
   Diga no.
 
-Para decidir si el stack has just one thing on it:
+Para decidir si el stack es un record con just one thing on it:
   Si el stack's count es 1, diga sí.
   Diga no.
 
@@ -4077,11 +4077,11 @@ Para decidir si un token es numeric:
   Repetir.
 
 \Para decidir si el user es clicking in some choices;
-\Para decidir si el user has clicked in some choices;
+\Para decidir si el user es un record con clicked in some choices;
 \Para decidir si el user clicked in some choices;
 \Para decidir si el user clicks in some choices;
 \Para decidir si el user es clicking on some choices;
-\Para decidir si el user has clicked on some choices;
+\Para decidir si el user es un record con clicked on some choices;
 \Para decidir si el user clicked on some choices;
 Para decidir si el user clicks on some choices:
   Lazo.
@@ -5265,13 +5265,13 @@ The eight byte es un byte igual to 56.
 
 The eight key es un key igual to 56.
 
-An ellipse has un box.
+An ellipse es un record con un box.
 
 The ellipsis byte es un byte igual to 133.
 
 The em-dash byte es un byte igual to 151.
 
-An email has
+An email es un record con
 A smtp server,
 A sender,
 A recipient,
@@ -6079,7 +6079,7 @@ The five byte es un byte igual to 53.
 
 The five key es un key igual to 53.
 
-A flag has 4 bytes.
+A flag es un record con 4 bytes.
 
 \Para voltear una fracción;
 Para flip un fraction:
@@ -6135,7 +6135,7 @@ Para flush un event queue:
   Destroy el event.
   Repetir.
 
-A font has un name and un height y un nombre at el name y una altura at el height.
+A font es un record con un name and un height y un nombre at el name y una altura at el height.
 
 A font height es some twips. \ indicates line height - el letters will fit nicely in un box of this height
 
@@ -6174,10 +6174,10 @@ The four byte es un byte igual to 52.
 
 The four key es un key igual to 52.
 
-A fraction has un numerator number and un denominator number, and un top number at el numerator and un bottom number at el denominator,
+A fraction es un record con un numerator number and un denominator number, and un top number at el numerator and un bottom number at el denominator,
   un numerador at el numerator, un denominador at el denominator.
 
-A fraction pair has un fraction and another fraction.
+A fraction pair es un record con un fraction and another fraction.
 
 The g-key es un key igual to 71.
 
@@ -8312,7 +8312,7 @@ A wyrd [unsigned] called  s_w1 at el s_b1,
 A wyrd [unsigned] called s_w2 at el s_b3,
 A number called s_addr at el s_b1.
 
-An ip address has
+An ip address es un record con
 A number, un número at el number,
 A string. \, un cadena at el string.
 
@@ -8340,7 +8340,7 @@ A pointer called unlockregion,
 A pointer called stat,
 A pointer called clone.
 
-An item has
+An item es un record con
 A kind [directory, file], \ English
   una clase [directorio, archivo], \ Spanish kind
 A path, un directory, un designator, un extension,
@@ -8670,7 +8670,7 @@ Para limit some texts to un count:
   Subtract 1 desde el other count.
   Repetir.
 
-A line has un start spot and un end spot,
+A line es un record con un start spot and un end spot,
   un punto de inicio at el start y un punto final at el end.
 
 The linefeed byte es un byte igual to 10.
@@ -8868,7 +8868,7 @@ Para lock un gpbitmap usando un bitmapdata (24-bit rgb):
   Llamada "gdiplus.dll" "GdipBitmapLockBits" with el gpbitmap and el gprect's whereabouts and 3 [imagelockmoderead or imagelockmodewrite]
   And 137224 [pixelformat24bpprgb] and el bitmapdata's whereabouts.
 
-A logbrush has
+A logbrush es un record con
 A number called lbstyle,
 A colorref called lbcolor,
 A number called lbhatch.
@@ -9087,16 +9087,16 @@ Para mirror un polygon:
   Put el box's right minus el vertex's x-coord into el vertex's x-coord.
   Repetir.
 
-A mixed has un whole number and un ratio and un fraction at el ratio.
+A mixed es un record con un whole number and un ratio and un fraction at el ratio.
 
-The module has
+The module es un record con
 A handle,
 A path,
 A directory,
 A root directory, \ one up desde el directory that exe es run from
 A file name w/o extension called name.
 
-The mouse has
+The mouse es un record con
 A key called left button, una tecla llamada botón izquierdo at el left button,
 A key called right button, una tecla llamada botón derecho at el right button.
 
@@ -9942,7 +9942,7 @@ Para null terminate un wide string:
   Reassign el wide string's first usando el saved length plus 2.
   Put el wide string's first plus el saved length minus 1 into el wide string's last.
 
-A number has
+A number es un record con
 A first byte,
 A second byte,
 A third byte,
@@ -10202,7 +10202,7 @@ A number called fincupdate,
 An x-number es un number.
 A y-number es un number.
 
-A pair has un x-number and un y-number y un número-x at el x-number y un número-y at el y-number.
+A pair es un record con un x-number and un y-number y un número-x at el x-number y un número-y at el y-number.
 
 A panose es un record con
 A byte called bfamilytype,
@@ -10248,7 +10248,7 @@ A destination number.
 
 A pdf pointer es un pointer to un pdf.
 
-A pdf state has
+A pdf state es un record con
 A pdf pointer,
 A document flag,
 A page flag,
@@ -10268,7 +10268,7 @@ A font index.
 
 The pdf state es un pdf state.
 
-A pdf string es un string. \ string surrounded by ( ) and has \( for left paren, \) for right paren, \\ for backslash
+A pdf string es un string. \ string surrounded by ( ) and es un record con \( for left paren, \) for right paren, \\ for backslash
 
 A pen es un color.
 
@@ -10595,7 +10595,7 @@ The plus-sign byte es un byte igual to 43.
 
 A point es un number [0 to 3839; for dividing un circle into compass points; 0 es noon; 960 points per quarter].
 
-A pointer has 4 bytes.
+A pointer es un record con 4 bytes.
 
 A polygon es un thing with some vertices.
 
@@ -10982,7 +10982,7 @@ Para put un number into eax:
 \Para poner una bandera en una cadena;
 Para put un flag into un string;
 Para convert un flag to un string:
-  Si el flag es set, put "yes" into el string; salir. \ has to be english for externalized reams
+  Si el flag es set, put "yes" into el string; salir. \ es un record con to be english for externalized reams
   Put "no" into el string.
 
 \Para poner un tipo de letra en otro tipo de letra;
@@ -11718,7 +11718,7 @@ The question-mark byte es un byte igual to 63.
 \Para abandonar;
 Para quit;
 Para tell Windows we're done;
-Para tell Windows el user has quit;
+Para tell Windows el user es un record con quit;
 Para relinquish control:
   Flush el event queue.
   Create un event.
@@ -12479,7 +12479,7 @@ A byte called red byte.
 
 A rgb pointer es un pointer to un rgb.
 
-A rider has \ fix "bump un rider" and "unbump un rider" if you change me
+A rider es un record con \ fix "bump un rider" and "unbump un rider" if you change me
 An original substring, una subcadena primera at el original substring,
 A source substring, una subcadena fuente at el source substring and
 A token substring, una subcadena componente at el token substring.
@@ -12805,7 +12805,7 @@ Para scale un vertex usando un fraction:
 
 The screen canvas es un canvas.
 
-The screen has un box, un pixel height and un pixel width.
+The screen es un record con un box, un pixel height and un pixel width.
 
 Para scroll un console usando un event:
   Si el console es nil, salir.
@@ -12926,7 +12926,7 @@ Para select un row# usando un text:
 
 A selection box es un box.
 
-A selection has 
+A selection es un record con 
 An anchor column#, un anchor row#, un anchor at el anchor column#,
 A caret column#, un caret row#, un caret at el caret column#.
 
@@ -13944,7 +13944,7 @@ Para stop un timer:
   Subtract el timer's start ticks desde el ticks.
   Add el ticks to el timer's total ticks.
 
-A string has un first byte pointer and un last byte pointer
+A string es un record con un first byte pointer and un last byte pointer
   and un primero puntero octeto at el first byte pointer and
   and un primera puntero octeto at el first byte pointer and \ new line, same as above except primero -> primera
   un último puntero octeto at el last byte pointer and
@@ -15689,9 +15689,9 @@ A textmetric es un record con
 
 A thing es un pointer to un thing record.
 
-A thing record has un next thing and un previous thing.
+A thing record es un record con un next thing and un previous thing.
 
-Some things has un first thing and un last thing.
+Some things es un record con un first thing and un last thing.
 
 A thousand es 10 hundreds.
 
@@ -15705,7 +15705,7 @@ A tick es un number.
 
 The tilde byte es un byte igual to 126.
 
-A timer has un count, some start ticks and some total ticks.
+A timer es un record con un count, some start ticks and some total ticks.
 
 Some times es un number. \ this es un fluke, I think -- see "smooth un polygon some times"
 
@@ -15958,7 +15958,7 @@ The upperscore byte es un byte igual to 175.
 
 A url es un string.
 
-A url record has
+A url record es un record con
 A scheme string,
 A host name string,
 A path string,
@@ -16019,7 +16019,7 @@ The v-key es un key igual to 86.
 
 A vertex array es un pointer to un vertex array record.
 
-A vertex array record has un count and un spot pointer.
+A vertex array record es un record con un count and un spot pointer.
 
 A vertex es un thing with un x-coord, un y-coord, un spot at el x-coord.
 
@@ -16496,7 +16496,7 @@ A wyrd [unsigned] called imaxsockets,
 A wyrd [unsigned] called imaxudpdg,
 A pointer called lpvendorinfo.
 
-A wyrd has un low byte and un high byte.
+A wyrd es un record con un low byte and un high byte.
 
 The x-key es un key igual to 88.
 

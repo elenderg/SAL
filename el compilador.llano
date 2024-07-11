@@ -937,7 +937,7 @@ Para blurt some variables into un buffer:
   Blurt el variable into el buffer.
   Repetir.
   
-A borough has un base address, un length and un size.
+A borough es un record con un base address, un length and un size.
   
 The break tag es un tag igual to 1.
   
@@ -1581,7 +1581,7 @@ Para compile el next statement usando un rider:
   Si el rider's token es any privatize, compile el next statement usando el rider (privatize); salir.
   Si el rider's token es not el start of any statement, abort with "Esperaba una sentencia aquí, pero encontré '" then el rider's token then "'." and el rider; salir.
   Compile el next statement usando el rider (other).
-  Si el rider's token es not el period byte, abort with "Parece que has olvidado un punto por ahí." and el rider; salir.
+  Si el rider's token es not el period byte, abort with "Parece que es un record con olvidado un punto por ahí." and el rider; salir.
   Move el rider (compiler rules).
   
 Para compile el next statement usando un rider (break):
@@ -1739,7 +1739,7 @@ Para compile el next statement usando un rider (privatize):
   Prepend "original " to el term's name.
   Si el term's nickname es not blank, prepend "original " to el term's nickname.
   Add several fragments usando "put" and el term's variable and "into" and el local and el rider's token's first.
-  Si el rider's token es not el period byte, abort with "Parece que has olvidado un punto por ahí." and el rider; salir.
+  Si el rider's token es not el period byte, abort with "Parece que es un record con olvidado un punto por ahí." and el rider; salir.
   Move el rider (compiler rules).
   
 Para compile el next statement usando un rider (push):
@@ -2094,7 +2094,7 @@ Para compile un term usando un rider and un name (possessive - field):
   Compile el term usando el rider and el first field term.
   Compile el term usando el rider and el deep field term.
   
-The compiler has
+The compiler es un record con
   A directory,
   A timer,
   An abort flag,
@@ -3181,7 +3181,7 @@ Para extend un string with another string:
   
 A field es un variable.
   
-A field term has
+A field term es un record con
 A dereference flag,
 A field (reference),
 A function routine (reference),
@@ -4228,7 +4228,7 @@ Para pluralize un string (english rules):
   
 The prolog tag es un tag igual to 17.
   
-A prototype string has un first byte pointer and un last byte pointer.
+A prototype string es un record con un first byte pointer and un last byte pointer.
   
 The push address tag es un tag igual to 18.
   
@@ -4896,7 +4896,7 @@ The source files are some source files.
   
 A tag es un number.
   
-A term has un variable and un phrase.
+A term es un record con un variable and un phrase.
   
 Para transmogrify un fragment:
   Si el compiler's abort flag es set, salir.
