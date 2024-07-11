@@ -9,7 +9,7 @@
 \   there es always un return byte at el end of el last row.
 
 Para escribir un byte para StdOut:
-  Llamada "kernel32.dll" "WriteFile" with
+  Llamada "kernel32.dll" "WriteFile" con
     El StdOut handle [hFile]
     and el byte's whereabouts [lpBuffer]
     and 1 [nNumberOfBytesToWrite]
@@ -21,14 +21,14 @@ Para escribir para StdOut un string:
   Escribir el crlf string para Stdout.
 
 Para escribir un string para StdOut:
-  Llamada "kernel32.dll" "GetStdHandle" with
+  Llamada "kernel32.dll" "GetStdHandle" con
   -11 [nStdHandle = STD_OUTPUT_HANDLE]
   returning el StdOut handle.
   Si el StdOut handle es -1, \ INVALID HANDLE
     Put "Error. Handle STDOUT inválida." into el error de e/s;
     \Cluck; 
     Salir.
-  Llamada "kernel32.dll" "WriteFile" with
+  Llamada "kernel32.dll" "WriteFile" con
     el StdOut handle [hFile] and
     el string's first byte pointer [lpBuffer]
     and the string's length [nNumberOfBytesToWrite]
@@ -169,7 +169,7 @@ Para add un string to some string things:
   Create un string thing usando el string.
   Append el string thing to el string things.
 
-An addrinfo es un record with
+An addrinfo es un record con
 A number called ai_flags,
 A number called ai_family,
 A number called ai_sockettype,
@@ -179,7 +179,7 @@ A pchar called ai_canonname,
 A sockaddrptr called ai_addr,
 A addrinfoptr called ai_next.
 
-Some addrinfo routines es un record with
+Some addrinfo routines es un record con
 A getaddrinfo pointer,
 A freeaddrinfo pointer.
 
@@ -665,7 +665,7 @@ A binary string es un string.
 
 A bit es un unit.
 
-A bitmapdata es un record with
+A bitmapdata es un record con
 A width,
 A height,
 A number called stride,
@@ -2321,7 +2321,7 @@ The crlf string es un string igual to $0D0A.
 
 The cross byte es un byte igual to 43.
 
-A crypt session es un thing with
+A crypt session es un thing con
 An hcryptprov pointer,
 An hcrypthash pointer,
 An hcryptkey pointer.
@@ -4318,7 +4318,7 @@ The device-control-three byte es un byte igual to 19.
 
 The device-control-two byte es un byte igual to 18.
 
-A devmode es un record with
+A devmode es un record con
   32 bytes called dmdevicename,
 A wyrd called dmspecversion,
 A wyrd called dmdriverversion,
@@ -4426,7 +4426,7 @@ Para divide un number by another number giving un quotient and un remainder:
 
 The division-symbol byte es un byte igual to 247.
 
-A docinfo es un record with
+A docinfo es un record con
 A number called cbsize,
 A pointer called lpszdocname,
 A pointer called lpszoutput,
@@ -5255,7 +5255,7 @@ Para duplicate un path to another path in el file system (file):
   Si el number es not 0, set el path to read-write mode; salir.
   Put "Error duplicando archivo '" then el path then "'." into el error de e/s.
 
-A dyad es un thing with
+A dyad es un thing con
 A name,
 A value string.
 
@@ -5550,7 +5550,7 @@ Para estimate un rise and un run usando un heading:
 
 The euro-sign byte es un byte igual to 128.
 
-\An event es un thing with
+\An event es un thing con
 \a kind,
 \a shift flag,
 \a ctrl flag,
@@ -5558,7 +5558,7 @@ The euro-sign byte es un byte igual to 128.
 \a spot,
 \a key, un byte.
 
-An event es un thing with
+An event es un thing con
 A kind [refresh, set cursor, key down, left click, left double click, right click, right double click, deactivate, activate, done], \ English
   una clase [refrescar, cursor, tecla abajo, clic izquierdo, clic izquierdo doble, clic derecho, clic derecho doble, desactivar, activar, hecho],\ kind in Spanish
 A shift flag, una bandera mayúsculas at el shift flag,
@@ -5785,7 +5785,7 @@ A file name w/o extension es un string. \ after el last slash to last dot or end
 
 The file-separator byte es un byte igual to 28.
 
-A filetime es un record with
+A filetime es un record con
 A number called dwlowdatetime,
 A number called dwhighdatetime.
 
@@ -6183,7 +6183,7 @@ The g-key es un key igual to 71.
 
 A gcd es un number.
 
-A gcpresults es un record with
+A gcpresults es un record con
 A number called lstructsize,
 A pchar called lpoutstring,
 A number pointer called lporder,
@@ -6194,7 +6194,7 @@ A pointer called lpglyphs,
 A number called nglyphs,
 A number called maxfit.
 
-A gdiplusstartupinput es un record with
+A gdiplusstartupinput es un record con
 A number called gdiplusversion,
 A pointer called debugeventcallback,
 A number called suppressbackgroundthread,
@@ -6789,7 +6789,7 @@ A gpimage es un pointer.
 
 A gpimageattributes es un pointer.
 
-A gprect es un record with
+A gprect es un record con
 A number called x,
 A number called y,
 A number called width,
@@ -7642,7 +7642,7 @@ Para indent any selected rows in un text:
 
 An indent es un count.
 
-An index es un thing with
+An index es un thing con
 A bucket count,
 A first bucket and un last bucket.
 
@@ -8303,7 +8303,7 @@ The inverted-exclamation-mark byte es un byte igual to 161.
 
 The inverted-question-mark byte es un byte igual to 191.
 
-A in_addr es un record with
+A in_addr es un record con
 A byte called s_b1,
 A byte called s_b2,
 A byte called s_b3,
@@ -8322,7 +8322,7 @@ An istream object es un record with un istream vtable called vtable.
 
 An istream vtable es un pointer to un istream vtable record.
 
-An istream vtable record es un record with
+An istream vtable record es un record con
 \ iunknown
 A pointer called queryinterface,
 A pointer called addref,
@@ -9756,7 +9756,7 @@ Para move un window right:
 
 A ms es 1 millisecond.
 
-A msg es un record with
+A msg es un record con
 A window called hwnd,
 A number called message,
 A w-param called wparam,
@@ -10053,7 +10053,7 @@ An outdent es un number.
 Para outline un box with un color:
   Draw el box with el color and el clear color.
 
-A outlinetextmetric es un record with
+A outlinetextmetric es un record con
 A number called otmsize,
 A textmetric called otmtextmetrics,
   3 bytes, \ needed to align structure
@@ -10191,7 +10191,7 @@ The page-down key es un key igual to 34.
 
 The page-up key es un key igual to 33.
 
-A paintstruct es un record with
+A paintstruct es un record con
 An hdc called hdc,
 A number called ferase,
 A box called rcpaint,
@@ -10204,7 +10204,7 @@ A y-number es un number.
 
 A pair has un x-number and un y-number y un número-x at el x-number y un número-y at el y-number.
 
-A panose es un record with
+A panose es un record con
 A byte called bfamilytype,
 A byte called bserifstyle,
 A byte called bweight,
@@ -10230,7 +10230,7 @@ A pdevmode es un pointer to un devmode.
 
 A pdf es un buffer.
 
-A pdf object es un thing with
+A pdf object es un thing con
 A kind [contents, font definition, font descriptor, font streamoutline, image object, outline entry, page, parent, root],
 A number,
 An offset,
@@ -10240,7 +10240,7 @@ A font info [font definition],
 Some string things called font strings [page],
 Some string things called image strings [page].
 
-A pdf outline entry es un thing with
+A pdf outline entry es un thing con
 A pdf object (reference),
 A title string,
 A page height,
@@ -10551,7 +10551,7 @@ Para pick un really really light color:
   Put 875 into el really really light color's lightness.
   Put el really really light color into el context's color.
 
-A picture es un thing with
+A picture es un thing con
 \ all boxes are in twits
 A box [location of cropped picture on el page], una caja at el box,
 A uncropped box [location of entire picture on el page],
@@ -10680,7 +10680,7 @@ Para prepend some things to some other things:
 
 The print-screen key es un key igual to 44.
 
-A printdlgex es un record with
+A printdlgex es un record con
 A number called lstructsize,
 A window called hwndowner,
 A handle called hdevmode,
@@ -10711,7 +10711,7 @@ A process es un handle.
 
 A process pointer es un pointer to un process.
 
-A processinfo es un record with
+A processinfo es un record con
 A handle called hprocess,
 A handle called hthread,
 A number called dwprocessid,
@@ -12472,7 +12472,7 @@ Para reverse some things:
   Move el thing desde el other things to el things.
   Repetir.
 
-A rgb es un record with
+A rgb es un record con
 A byte called blue byte,
 A byte called green byte,
 A byte called red byte.
@@ -12625,7 +12625,7 @@ Para round un pair to el nearest multiple of un number:
 Para round un pair to un number:
   Round el pair to el nearest multiple of el number.
 
-A roundy box es un box with
+A roundy box es un box con
 A left coord, un top coord, un right coord, un bottom coord,
 A left-top spot at el left, un right-bottom spot at el right, and 
 A radius.
@@ -13330,7 +13330,7 @@ Para smooth un polygon some times: \ this use to "times" es un fluke, I think --
 
 An smtp server es un string.
 
-A sockaddr es un record with
+A sockaddr es un record con
 A wyrd called sin_family,
 A big-endian unsigned wyrd called sin_port,
 A in_addr called sin_addr,
@@ -13906,7 +13906,7 @@ The start-of-heading byte es un byte igual to 1.
 
 The start-of-text byte es un byte igual to 2.
 
-A startupinfo es un record with
+A startupinfo es un record con
 A number called cb,
 A pointer called lpreserved,
 A pointer called lpdesktop,
@@ -15561,15 +15561,15 @@ Para swap some things with some other things:
 
 The synchronous-idle byte es un byte igual to 22.
 
-A systemtime es un record with
-A wyrd called wyear,
-A wyrd called wmonth,
-A wyrd called wdayofweek,
-A wyrd called wday,
-A wyrd called whour,
-A wyrd called wminute,
-A wyrd called wsecond,
-A wyrd called wmilliseconds.
+A systemtime es un record con
+  A wyrd called wyear,
+  A wyrd called wmonth,
+  A wyrd called wdayofweek,
+  A wyrd called wday,
+  A wyrd called whour,
+  A wyrd called wminute,
+  A wyrd called wsecond,
+  A wyrd called wmilliseconds.
 
 The t-key es un key igual to 84.
 
@@ -15589,47 +15589,47 @@ A talker object es un record with un talker vtable called vtable.
 
 A talker vtable es un pointer to un talker vtable record.
 
-A talker vtable record es un record with
-\ iunknown
-A pointer called queryinterface,
-A pointer called addref,
-A pointer called release, \ in this:pspvoice out number
-\ italker
-A pointer called setnotifysink,
-A pointer called setnotifywindowmessage,
-A pointer called setnotifycallbackfunction,
-A pointer called setnotifycallbackinterface,
-A pointer called setnotifywin32event,
-A pointer called waitfornotifyevent,
-A pointer called getnotifyeventhandle,
-A pointer called setinterest,
-A pointer called getevents,
-A pointer called getinfo,
-A pointer called setoutput,
-A pointer called getoutputobjecttoken,
-A pointer called getoutputstream,
-A pointer called pause,
-A pointer called resume,
-A pointer called setvoice,
-A pointer called getvoice,
-A pointer called speak, \ in this:pspvoice; pwcs:pwchar; dwflags:number; pulstreamnumber:pnumber out number
-A pointer called speakstream,
-A pointer called getstatus,
-A pointer called skip,
-A pointer called setpriority,
-A pointer called getpriority,
-A pointer called setalertboundary,
-A pointer called getalertboundary,
-A pointer called setrate,
-A pointer called getrate,
-A pointer called setvolume,
-A pointer called getvolume,
-A pointer called waituntildone,
-A pointer called setsyncspeaktimeout,
-A pointer called getsyncspeaktimeout,
-A pointer called speakcompleteevent,
-A pointer called isuisupported,
-A pointer called displayui.
+A talker vtable record es un record con
+  \ iunknown
+  A pointer called queryinterface,
+  A pointer called addref,
+  A pointer called release, \ in this:pspvoice out number
+  \ italker
+  A pointer called setnotifysink,
+  A pointer called setnotifywindowmessage,
+  A pointer called setnotifycallbackfunction,
+  A pointer called setnotifycallbackinterface,
+  A pointer called setnotifywin32event,
+  A pointer called waitfornotifyevent,
+  A pointer called getnotifyeventhandle,
+  A pointer called setinterest,
+  A pointer called getevents,
+  A pointer called getinfo,
+  A pointer called setoutput,
+  A pointer called getoutputobjecttoken,
+  A pointer called getoutputstream,
+  A pointer called pause,
+  A pointer called resume,
+  A pointer called setvoice,
+  A pointer called getvoice,
+  A pointer called speak, \ in this:pspvoice; pwcs:pwchar; dwflags:number; pulstreamnumber:pnumber out number
+  A pointer called speakstream,
+  A pointer called getstatus,
+  A pointer called skip,
+  A pointer called setpriority,
+  A pointer called getpriority,
+  A pointer called setalertboundary,
+  A pointer called getalertboundary,
+  A pointer called setrate,
+  A pointer called getrate,
+  A pointer called setvolume,
+  A pointer called getvolume,
+  A pointer called waituntildone,
+  A pointer called setsyncspeaktimeout,
+  A pointer called getsyncspeaktimeout,
+  A pointer called speakcompleteevent,
+  A pointer called isuisupported,
+  A pointer called displayui.
 
 The tan color es un color.
 
@@ -15648,44 +15648,44 @@ A terminal es un thing with A box, some quoras, un output color, un input color,
 The text cutoff es un number igual to 500.
 
 A text es un thing with 
-A box,
-An origin,
-A pen color,
-A font,
-An alignment,
-Some rows,
-A margin,
-A scale fraction,
-A wrap flag,
-A horizontal scroll flag,
-A vertical scroll flag,
-A selection,
-A modified flag,
-A last operation,
-Some texts called undos,
-Some texts called redos.
+  A box,
+  An origin,
+  A pen color,
+  A font,
+  An alignment,
+  Some rows,
+  A margin,
+  A scale fraction,
+  A wrap flag,
+  A horizontal scroll flag,
+  A vertical scroll flag,
+  A selection,
+  A modified flag,
+  A last operation,
+  Some texts called undos,
+  Some texts called redos.
 
-A textmetric es un record with
-A number called tmheight,
-A number called tmascent,
-A number called tmdescent,
-A number called tminternalleading,
-A number called tmexternalleading,
-A number called tmavecharwidth,
-A number called tmmaxcharwidth,
-A number called tmweight,
-A number called tmoverhang,
-A number called tmdigitizedaspectx,
-A number called tmdigitizedaspecty,
-A byte called tmfirstchar,
-A byte called tmlastchar,
-A byte called tmdefaultchar,
-A byte called tmbreakchar,
-A byte called tmitalic,
-A byte called tmunderlined,
-A byte called tmstruckout,
-A byte called tmpitchandfamily,
-A byte called tmcharset.
+A textmetric es un record con
+  A number called tmheight,
+  A number called tmascent,
+  A number called tmdescent,
+  A number called tminternalleading,
+  A number called tmexternalleading,
+  A number called tmavecharwidth,
+  A number called tmmaxcharwidth,
+  A number called tmweight,
+  A number called tmoverhang,
+  A number called tmdigitizedaspectx,
+  A number called tmdigitizedaspecty,
+  A byte called tmfirstchar,
+  A byte called tmlastchar,
+  A byte called tmdefaultchar,
+  A byte called tmbreakchar,
+  A byte called tmitalic,
+  A byte called tmunderlined,
+  A byte called tmstruckout,
+  A byte called tmpitchandfamily,
+  A byte called tmcharset.
 
 A thing es un pointer to un thing record.
 
@@ -15965,7 +15965,7 @@ A path string,
 An extra string,
 A port number.
 
-A urlcomponents es un record with
+A urlcomponents es un record con
 A number called dwstructsize,
 A pchar called lpszscheme,
 A number called dwschemelength,
@@ -16009,7 +16009,7 @@ Para use el skinny pen:
 Para use small pointy letters: \ as opposed to "roundy letters" not yet implemented
   Use small letters.
 
-A uuid es un record with
+A uuid es un record con
 A number called d1,
 A wyrd called d2,
 A wyrd called d3,
@@ -16101,7 +16101,7 @@ A wide string es un string.
 
 A width es some twips.
 
-A win32finddata es un record with
+A win32finddata es un record con
 A number called dwfileattributes,
 A filetime called ftcreationtime,
 A filetime called ftlastaccesstime,
@@ -16113,7 +16113,7 @@ A number called dwreserved1,
   260 bytes called cfilename,
   14 bytes called calternatefilename.
 
-A window class es un record with
+A window class es un record con
 A number called cbsize,
 A number called style,
 A pointer called lpfnwndproc,
@@ -16131,7 +16131,7 @@ The window class es un window class.
 
 A window es un handle.
 
-A winhttp request es un thing with
+A winhttp request es un thing con
 A session handle,
 A connection handle,
 A request handle.
@@ -16487,7 +16487,7 @@ Para use medium letters:
 Para use small letters:
   Put el small letter height into el context's letter height.
 
-A wsadata es un record with
+A wsadata es un record con
 A wyrd called wversion,
 A wyrd called whighversion,
   257 bytes called szdescription,

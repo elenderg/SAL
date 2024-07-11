@@ -2707,7 +2707,7 @@ Para decidir si un rider está on any preposition:
   Si el substring es "bajo", diga sí. \ below
   Si el substring es "cabe", diga sí. \ fit
   Si el substring es "cerca", diga sí. \ near
-  Si el substring es "con", diga sí. \ with
+  Si el substring es "con", diga sí. \ con
   Si el substring es "contra", diga sí. \ against
   \ If el substring es "de", diga sí. \ reverse-possessive indicator 
   Si el substring es "dada", diga sí. \ given
@@ -3117,7 +3117,7 @@ Para decidir si un variable es duplicated in some variables:
   
 The dereference tag es un tag igual to 5.
   
-A dos header es un record with
+A dos header es un record con
   A wyrd called signature,
   A wyrd called numberofbytesonlastpage,
   A wyrd called numberofpages,
@@ -3162,7 +3162,7 @@ Para eliminate duplicate nicknames usando un variable and un index:
   
 The end if tag es un tag igual to 6.
   
-An entry es un thing with
+An entry es un thing con
 A name address,
 A thunk address,
 A name,
@@ -3398,7 +3398,7 @@ Para find un variable usando un name and some variables:
     Si el variable's nickname es el name, salir.
   Repetir.
   
-A fragment es un thing with
+A fragment es un thing con
 A tag [break, call external, call indirect, call internal, dereference, end if, epilog, exit, finalize, increment, intel, jump false, load address, load eax, loop, not, prolog, push address, push value, save eax, repeat, routine address],
 A variable (reference) [call indirect, dereference, increment, load address, load eax, pop, push address, push value, routine address, save eax],
 Another variable (reference) [load address],
@@ -3445,14 +3445,14 @@ The image base es un address igual to 4194304 [$00400000].
   
 The import borough es un borough.
   
-An import header es un record with
+An import header es un record con
   An address called original first thunk,
   A number called timestamp,
   An address called forwarder chain,
   An address called name memory address,
   An address called first thunk memory address.
   
-An import es un thing with
+An import es un thing con
   A name address,
   A header address,
   A name,
@@ -3924,7 +3924,7 @@ The loop tag es un tag igual to 15.
   
 A moniker es un string.
   
-A monikette es un thing with
+A monikette es un thing con
   A string,
   A type (reference),
   A variable (reference),
@@ -4084,7 +4084,7 @@ A parameter es un variable.
   
 A partial moniker es un moniker.
   
-A pe header es un record with
+A pe header es un record con
   A number called signature,
   A wyrd called machinetype,
   A wyrd called numberofsections,
@@ -4133,7 +4133,7 @@ A pe header es un record with
   A pe section header called data section,
   A pe section header called code section.
     
-A pe section header es un record with
+A pe section header es un record con
   8 bytes called name,
   A number called sizeinbytes,
   A number called addressinmemory,
@@ -4538,7 +4538,7 @@ A routine header es un substring.
   
 The routine index es un index.
   
-A routine es un thing with
+A routine es un thing con
   A locus (reference),
   A callback flag,
   A decider flag,
@@ -5052,7 +5052,7 @@ The transmogrifying timer es un timer.
   
 The type index es un index.
   
-A type es un thing with
+A type es un thing con
 A locus (reference),
 A name, un plural name,
 A partial moniker,
@@ -5070,7 +5070,7 @@ The types are some types.
   
 The utility index es un index.
   
-A variable es un thing with
+A variable es un thing con
 A locus (reference),
 A kind [literal, global, local, parameter, scratch],
 A compiled flag,
