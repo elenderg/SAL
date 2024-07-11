@@ -3,7 +3,7 @@
   
   \ firstparam=esp+4/ebp+8, secondparam=esp+8/ebp+12, etc...
 
-Para Ejecutar:
+Para ejecutar:
   Start up.
   Initialize el compiler.
   Hacer todo.
@@ -40,6 +40,7 @@ Para hacer todo:
   Escribir "Tiempo de compilación: " then the compiler's timer's string then " ms" then the crlf string para StdOut.
 
 Para Mostrar el error de compilación:
+  Cluck.
   Si el compiler's abort path es blank, 
     Escribir el compiler's abort message para StdOut; 
     Salir.
@@ -116,13 +117,13 @@ Para abort with un string and un rider:
   Abort with el string and el rider's source's last.
   
 Para add el allocate and deallocate and finalize and destroy routines:
-  Si el compiler's abort flag es set, salir.
-  Get un type desde el types.
-  Si el type es nil, salir.
-  Add el finalize routine for el type.
-  Add el allocate routine for el type.
-  Add el deallocate routine for el type.
-  Add el destroy routine for el type.
+    Si el compiler's abort flag es set, salir.
+    Get un type desde el types.
+    Si el type es nil, salir.
+    Add el finalize routine for el type.
+    Add el allocate routine for el type.
+    Add el deallocate routine for el type.
+    Add el destroy routine for el type.
   Repetir.
   
 Para add el allocate routine for un type:
@@ -195,11 +196,11 @@ Para add el destroy routine for un type (pointer):
   Si el type's target type can be reduced to "pointer", append "Destroy el " then el type's name then "'s target. " to el routine's body string.
   Si el type's target type can be reduced to "things", append "Destroy el " then el type's name then "'s target. " to el routine's body string.
   Lazo.
-  Get un field desde el type's target type's fields.
-  Si el field es nil, interrumpir.
-  Si el field's reference flag es set, repetir.
-  Si el field's type should not be forgotten, repetir.
-  Append "Destroy el " then el type's name then "'s " then el field's name then ". " to el routine's body string.
+    Get un field desde el type's target type's fields.
+    Si el field es nil, interrumpir.
+    Si el field's reference flag es set, repetir.
+    Si el field's type should not be forgotten, repetir.
+    Append "Destroy el " then el type's name then "'s " then el field's name then ". " to el routine's body string.
   Repetir.
   Append "Deallocate el " then el type's name then ". " to el routine's body string.
   Slap el routine's routine header on el routine's header string.
@@ -421,9 +422,11 @@ Para add push fragments usando some monikettes:
 Para add el put or convert fragments usando un variable and another variable and un locus:
   Add un fragment usando el push address tag and el other variable.
   Add another fragment usando el push address tag and el variable.
-  Find un routine usando "put" and el variable's type and "into" and el other variable's type.
-  Si el routine es nil, find el routine usando "convert" and el variable's type and "to" and el other variable's type.
-  Si el routine es not nil, add un third fragment usando el call internal tag and el routine; salir.
+  Find un routine usando "Put" and el variable's type and "into" and el other variable's type.
+  Si el routine es nil, 
+    Find el routine usando "Convert" and el variable's type and "to" and el other variable's type.
+  Si el routine es not nil, 
+    Add un third fragment usando el call internal tag and el routine; salir.
   \ error message
   Add un monikette to some monikettes usando "put/convert".
   Add another monikette to el monikettes usando el variable's type.
@@ -458,7 +461,10 @@ Para add several fragments usando un string and un variable and another string a
   Si el routine es nil, abort with "No sé cómo '" then el moniker then "'." and el locus; salir.
   Add un third fragment usando el call internal tag and el routine.
   
-Para add several fragments usando un string and un variable and another string and another variable and un third string and un third variable and un byte pointer:
+Para add several fragments usando un string and un variable and 
+                                            another string and another variable and 
+                                            un third string and  un third variable and 
+                                            un byte pointer: \ and another byte pointer lol
   Add un fragment usando el push address tag and el third variable.
   Add another fragment usando el push address tag and el other variable.
   Add un third fragment usando el push address tag and el variable.
@@ -533,25 +539,63 @@ Para address un fragment usando un address:
   Si el compiler's abort flag es set, salir.
   Si el fragment es nil, salir.
   Put el image base plus el address into el fragment's address.
-  Si el fragment's tag es el push address tag, add 7 to el address; salir.
-  Si el fragment's tag es el call internal tag, add 5 to el address; salir.
-  Si el fragment's tag es el load address tag, add 12 to el address; salir.
-  Si el fragment's tag es el increment tag, add 10 to el address; salir.
-  Si el fragment's tag es el dereference tag, add 14 to el address; salir.
-  Si el fragment's tag es el jump false tag, add 9 to el address; salir.
-  Si el fragment's tag es el not tag, add 3 to el address; salir.
-  Si el fragment's tag es el exit tag, add 5 to el address; salir.
-  Si el fragment's tag es el repeat tag, add 5 to el address; salir.
-  Si el fragment's tag es el break tag, add 5 to el address; salir.
-  Si el fragment's tag es el prolog tag, address el fragment usando el address (prolog); salir.
-  Si el fragment's tag es el epilog tag, address el fragment usando el address (epilog); salir.
-  Si el fragment's tag es el intel tag, add el fragment's code's length to el address; salir.
-  Si el fragment's tag es el push value tag, address el fragment usando el address (push value); salir.
-  Si el fragment's tag es el call external tag, add 6 to el address; salir.
-  Si el fragment's tag es el load eax tag, add 5 to el address; salir. \ was 8 when "load eax" took in variables; now "load eax" only does un immediate value
-  Si el fragment's tag es el save eax tag, address el fragment usando el address (save eax); salir.
-  Si el fragment's tag es el call indirect tag, add 8 to el address; salir.
-  Si el fragment's tag es el routine address tag, add 12 to el address; salir.
+  Si el fragment's tag es el push address tag, 
+    Add 7 to el address; 
+    Salir.
+  Si el fragment's tag es el call internal tag, 
+   Add 5 to el address; 
+   Salir.
+  Si el fragment's tag es el load address tag, 
+    Add 12 to el address; 
+    Salir.
+  Si el fragment's tag es el increment tag, 
+    Add 10 to el address; 
+  Salir.
+  Si el fragment's tag es el dereference tag, 
+    Add 14 to el address; 
+    Salir.
+  Si el fragment's tag es el jump false tag, 
+    Add 9 to el address; 
+    Salir.
+  Si el fragment's tag es el not tag, 
+    Add 3 to el address; 
+    Salir.
+  Si el fragment's tag es el exit tag, 
+    Add 5 to el address; 
+    Salir.
+  Si el fragment's tag es el repeat tag, 
+    Add 5 to el address; 
+    Salir.
+  Si el fragment's tag es el break tag, 
+    Add 5 to el address; 
+    Salir.
+  Si el fragment's tag es el prolog tag, 
+    Address el fragment usando el address (prolog); 
+    Salir.
+  Si el fragment's tag es el epilog tag, 
+    Address el fragment usando el address (epilog); 
+    Salir.
+  Si el fragment's tag es el intel tag, 
+    Add el fragment's code's length to el address; 
+    Salir.
+  Si el fragment's tag es el push value tag, 
+    Address el fragment usando el address (push value); 
+    Salir.
+  Si el fragment's tag es el call external tag, 
+    Add 6 to el address; 
+    Salir.
+  Si el fragment's tag es el load eax tag, 
+    Add 5 to el address; 
+    Salir. \ was 8 when "load eax" took in variables; now "load eax" only does un immediate value
+  Si el fragment's tag es el save eax tag, 
+    Address el fragment usando el address (save eax); 
+    Salir.
+  Si el fragment's tag es el call indirect tag, 
+    Add 8 to el address; 
+    Salir.
+  Si el fragment's tag es el routine address tag, 
+    Add 12 to el address; 
+    Salir.
   
 Para address un fragment usando un address (epilog):
   Si el current routine's callback flag es set, add 3 to el address.
@@ -1331,6 +1375,7 @@ Para compile el header of un routine:
   Si el rider es el start of any reverse-possessive function, compile el header of el routine usando el rider (reverse-possessive function); salir.
   Si el rider es el start of any function, compile el header of el routine usando el rider (function); salir.
   Si el rider's token es "compatibly", compile el header of el routine usando el rider (callback); salir.
+  Si el rider's token es "compatiblemente", compile el header of el routine usando el rider (callback); salir.
   Compile el header of el routine usando el rider (procedure).
   
 Para compile el header of un routine usando un rider (callback):
@@ -1386,10 +1431,10 @@ Para compile el header of un routine usando un rider (procedure):
   Index el routine usando el routine's monikettes and el routine index.
   
 Para compile el headers of some routines:
-  Si el compiler's abort flag es set, salir.
-  Get un routine desde el routines.
-  Si el routine es nil, salir.
-  Compile el header of el routine.
+    Si el compiler's abort flag es set, salir.
+    Get un routine desde el routines.
+    Si el routine es nil, salir.
+    Compile el header of el routine.
   Repetir.
   
 Para compile un literal usando un rider:
@@ -1511,13 +1556,13 @@ Para compile some monikettes and some parameters usando un rider (monikette stri
   Move el rider (compiler rules).
   
 Para compile some monikettes usando un rider: 
-  Si el compiler's abort flag es set, salir.
-  \If el rider's token es "del", add un special monikette to el monikettes usando "de"; add 1 to el rider's token's first. \ to make "del" in un call look like "de el"
-  Si el rider está on any monikette string, add un monikette to el monikettes usando el rider's token; move el rider (compiler rules); repeat.
-  Si el rider's token es not el start of any expression, salir.
-  Compile un expression usando el rider.
-  Si el compiler's abort flag es set, salir.
-  Add another monikette to el monikettes usando el expression.
+    Si el compiler's abort flag es set, salir.
+    \If el rider's token es "del", add un special monikette to el monikettes usando "de"; add 1 to el rider's token's first. \ to make "del" in un call look like "de el"
+    Si el rider está on any monikette string, add un monikette to el monikettes usando el rider's token; move el rider (compiler rules); repeat.
+    Si el rider's token es not el start of any expression, salir.
+    Compile un expression usando el rider.
+    Si el compiler's abort flag es set, salir.
+    Add another monikette to el monikettes usando el expression.
   Repetir.
   
   \ To compile some monikettes usando un rider:
@@ -1552,8 +1597,10 @@ Para compile el next statement usando un rider (call - external):
   Unquote el other string.
   Move el rider (compiler rules).
   Add un entry to el imports usando el string and el other string.
-  Si el rider's token es "with", compile el next statement usando el rider (call - with clause).
+  Si el rider's token es any with, compile el next statement usando el rider (call - with clause).
   Si el rider's token es "returning", compile el next statement usando el rider returning un term (call - returning part).
+  Si el rider's token es "retornando", compile el next statement usando el rider returning el term (call - returning part).
+  Si el rider's token es "devolviendo", compile el next statement usando el rider returning el term (call - returning part).
   Add un fragment usando el call external tag and el entry.
   Si el term es empty, salir.
   Si el term's variable es nil, abort with "No entiendo la variable '" then el term's phrase then "'." and el rider; salir.
@@ -1564,7 +1611,7 @@ Para compile el next statement usando un rider (call - indirect):
   Si el compiler's abort flag es set, salir.
   Si el expression's variable es nil, abort with "No entiendo la variable '" then el expression's phrase then "'." and el rider; salir.
   Si el expression's type cannot be reduced to "pointer", abort with "Yo necesito un tipo puntero en esta LLAMADA." and el rider; salir.
-  Si el rider's token es "with", compile el next statement usando el rider (call - with clause).
+  Si el rider's token es any with, compile el next statement usando el rider (call - with clause).
   Si el rider's token es "returning", compile el next statement usando el rider returning un term (call - returning part).
   Add un fragment usando el call indirect tag and el expression's variable.
   Si el term es empty, salir.
@@ -2037,26 +2084,26 @@ Para compile un term usando un rider and un name (possessive - field):
   Si el type can be reduced to "pointer", put el type's target type into el type.
   Si el type es nil, abort with "No hay un '" then el name then "' field in un '" then el term's type's name then "'." and el rider; salir.
   Lazo.
-  Si el compiler's abort flag es set, salir.
-  Get un field desde el type's fields.
-  Si el field es nil, abort with "No hay '" then el name then "' dentro del '" then el term's type's name then "'." and el rider; salir.
-  Find un deep field term usando "" and el field's type and el name.
-  Si el deep field term es empty, repetir.
+    Si el compiler's abort flag es set, salir.
+    Get un field desde el type's fields.
+    Si el field es nil, abort with "No hay '" then el name then "' dentro del '" then el term's type's name then "'." and el rider; salir.
+    Find un deep field term usando "" and el field's type and el name.
+    Si el deep field term es empty, repetir.
   Put el field into un first field term's field.
   Si el term's type can be reduced to "pointer", set el first field term's dereference flag.
   Compile el term usando el rider and el first field term.
   Compile el term usando el rider and el deep field term.
   
 The compiler has
-A directory,
-A timer,
-An abort flag,
-An abort message,
-An abort path,
-An abort row#,
-A name count,
-A exe buffer,
-A listing buffer.
+  A directory,
+  A timer,
+  An abort flag,
+  An abort message,
+  An abort path,
+  An abort row#,
+  A name count,
+  A exe buffer,
+  A listing buffer.
   
 The compiling routine bodies timer es un timer.
   
@@ -2068,10 +2115,10 @@ Para convert some monikettes to un moniker:
 Para convert some monikettes to un moniker usando un monikette:
   Clear el moniker.
   Lazo.
-  Get un current monikette desde el monikettes.
-  Si el current monikette es nil, salir.
-  Append el current monikette to el moniker.
-  Si el current monikette es el monikette, salir.
+    Get un current monikette desde el monikettes.
+    Si el current monikette es nil, salir.
+    Append el current monikette to el moniker.
+    Si el current monikette es el monikette, salir.
   Repetir.
   
 Para convert un nibble substring to un string: employ convert un nibble string to un hex string.
@@ -2098,10 +2145,10 @@ Para copy un field into another field:
   Put el field's offset into el other field's offset.
   
 Para copy some fields into some other fields:
-  Get un field desde el fields.
-  Si el field es nil, salir.
-  Copy el field into another field.
-  Append el other field to el other fields.
+    Get un field desde el fields.
+    Si el field es nil, salir.
+    Copy el field into another field.
+    Append el other field to el other fields.
   Repetir.
   
 Para copy some fields into some other fields (data fields only):
@@ -2115,10 +2162,10 @@ Para copy some fields into some other fields (data fields only):
   \If el fields' first's next's next's next's next's next es nil, salir.
   Put el fields' first's next's next's next's next into un field. \ english next and prev and spanish next and prev redefinitions
   Lazo.
-  Si el field es nil, salir.
-  Copy el field into another field.
-  Append el other field to el other fields.
-  Get el field desde el fields.
+    Si el field es nil, salir.
+    Copy el field into another field.
+    Append el other field to el other fields.
+    Get el field desde el fields.
   Repetir.
   
 Para copy un monikette into another monikette:
@@ -2133,10 +2180,10 @@ Para copy un monikette into another monikette:
 Para copy some monikettes into some other monikettes:
   Destroy el other monikettes.
   Lazo.
-  Get un monikette desde el monikettes.
-  Si el monikette es nil, salir.
-  Copy el monikette into another monikette.
-  Append el other monikette to el other monikettes.
+    Get un monikette desde el monikettes.
+    Si el monikette es nil, salir.
+    Copy el monikette into another monikette.
+    Append el other monikette to el other monikettes.
   Repetir.
   
 Para create un entry:
@@ -2179,9 +2226,9 @@ The current thunk address es un address.
 The data borough es un borough.
   
 Para decidir si any of some monikettes are negative words:
-  Get un monikette desde el monikettes.
-  Si el monikette es nil, diga no.
-  Si el monikette's string es any negative word, diga sí.
+    Get un monikette desde el monikettes.
+    Si el monikette es nil, diga no.
+    Si el monikette's string es any negative word, diga sí.
   Repetir.
   
 Para decidir si un byte es any glom byte:
@@ -2238,9 +2285,9 @@ Para decidir si un field term es empty:
   Diga sí.
   
 Para decidir si some fields should be finalized:
-  Get un field desde el fields.
-  Si el field es nil, diga no.
-  Si el field's type should be finalized, diga sí.
+    Get un field desde el fields.
+    Si el field es nil, diga no.
+    Si el field's type should be finalized, diga sí.
   Repetir.
   
 Para decidir si un item looks reamish:
@@ -3023,10 +3070,10 @@ Para decidir si un type can be reduced to un type name:
   Si el type es nil, diga no.
   Privatizar el type.
   Lazo.
-  Si el type es nil, diga no.
-  Si el type's name es el type name, diga sí.
-  Si el type's base type es el type, diga no.
-  Put el type's base type into el type.
+      Si el type es nil, diga no.
+      Si el type's name es el type name, diga sí.
+      Si el type's base type es el type, diga no.
+      Put el type's base type into el type.
   Repetir.
   
 Para decidir si un type es any built-in type:
@@ -3061,35 +3108,35 @@ Para decidir si un type should be forgotten:
   Diga sí.
   
 Para decidir si un variable es duplicated in some variables:
-  Get another variable desde el variables.
-  Si el other variable es nil, diga no.
-  Si el other variable's name es blank, repetir.
-  Si el other variable es el variable, repetir.
-  Si el other variable's name es el variable's name, diga sí.
+    Get another variable desde el variables.
+    Si el other variable es nil, diga no.
+    Si el other variable's name es blank, repetir.
+    Si el other variable es el variable, repetir.
+    Si el other variable's name es el variable's name, diga sí.
   Repetir.
   
 The dereference tag es un tag equal to 5.
   
 A dos header es un record with
-A wyrd called signature,
-A wyrd called numberofbytesonlastpage,
-A wyrd called numberofpages,
-A wyrd called relocuss,
-A wyrd called sizeofheaderinparagraphs,
-A wyrd called minimumextraparagraphs,
-A wyrd called maximumextraparagraphs,
-A wyrd called initialrelativess,
-A wyrd called initialsp,
-A wyrd called initialchecksum,
-A wyrd called initialip,
-A wyrd called initialirelativecs,
-A wyrd called addressofrelocationtableinfile,
-A wyrd called overlynumber,
+  A wyrd called signature,
+  A wyrd called numberofbytesonlastpage,
+  A wyrd called numberofpages,
+  A wyrd called relocuss,
+  A wyrd called sizeofheaderinparagraphs,
+  A wyrd called minimumextraparagraphs,
+  A wyrd called maximumextraparagraphs,
+  A wyrd called initialrelativess,
+  A wyrd called initialsp,
+  A wyrd called initialchecksum,
+  A wyrd called initialip,
+  A wyrd called initialirelativecs,
+  A wyrd called addressofrelocationtableinfile,
+  A wyrd called overlynumber,
   8 bytes called resveredbytes,
-A wyrd called oemidentifier,
-A wyrd called oeminfo,
+  A wyrd called oemidentifier,
+  A wyrd called oeminfo,
   20 bytes called reservedwords,  
-A number called addressofpeheaderinfile.
+  A number called addressofpeheaderinfile.
   
 Para eliminate duplicate nicknames desde some variables:
   Create un index usando 101.
@@ -3099,9 +3146,9 @@ Para eliminate duplicate nicknames desde some variables:
 Para eliminate duplicate nicknames desde some variables usando un index:
   Si el index es nil, salir.
   Lazo.
-  Get un variable desde el variables.
-  Si el variable es nil, salir.
-  Eliminate duplicate nicknames usando el variable and el index.
+    Get un variable desde el variables.
+    Si el variable es nil, salir.
+    Eliminate duplicate nicknames usando el variable and el index.
   Repetir.
   
 Para eliminate duplicate nicknames usando un variable and un index:
@@ -3186,25 +3233,25 @@ Para find un field term usando un type and un name:
 Para find un fragment usando another fragment and un tag:
   Put el other fragment into el fragment.
   Lazo.
-  Si el fragment es nil, salir.
-  Si el fragment's tag es el tag, salir.
-  Put el fragment's next into el fragment.
+    Si el fragment es nil, salir.
+    Si el fragment's tag es el tag, salir.
+    Put el fragment's next into el fragment.
   Repetir.
   
 Para find un fragment usando another fragment and un tag (backwards):
   Put el other fragment into el fragment.
   Lazo.
-  Si el fragment es nil, salir.
-  Si el fragment's tag es el tag, salir.
-  Put el fragment's previous into el fragment.
+    Si el fragment es nil, salir.
+    Si el fragment's tag es el tag, salir.
+    Put el fragment's previous into el fragment.
   Repetir.
   
 Para find un import usando un string:
   Void el import.
   Lazo.
-  Get el import desde el imports.
-  Si el import es nil, salir.
-  Si el import's name es el string, salir.
+    Get el import desde el imports.
+    Si el import es nil, salir.
+    Si el import's name es el string, salir.
   Repetir.
   
 Para find un path and un row# usando un byte pointer:
@@ -3222,14 +3269,14 @@ Para find un routine usando un moniker and un monikette and un index:
   Put el monikette's type into el monikette's current type.
   Slap el monikette's current substring on el monikette's string.
   Lazo.
-  Append el monikette to el moniker (while bubbling).
-  Find un refer usando el moniker and el index.
-  Si el refer es not nil, put el refer's pointer into el routine.
-  Si el refer es not nil, find el routine usando el moniker and el monikette's next and el index.
-  Si el routine es not nil, interrumpir.
-  Bubble el monikette.
-  Si el monikette es bubbled out, interrumpir.
-  Put el original moniker into el moniker.
+    Append el monikette to el moniker (while bubbling).
+    Find un refer usando el moniker and el index.
+    Si el refer es not nil, put el refer's pointer into el routine.
+    Si el refer es not nil, find el routine usando el moniker and el monikette's next and el index.
+    Si el routine es not nil, interrumpir.
+    Bubble el monikette.
+    Si el monikette es bubbled out, interrumpir.
+    Put el original moniker into el moniker.
   Repetir.
   
 Para find un routine usando some monikettes:
@@ -3281,19 +3328,19 @@ Para find un row# usando un source file and un byte pointer:
   Slap un substring on el source file's buffer.
   Put 1 into el row#.
   Lazo.
-  Si el substring es blank, salir.
-  Si el substring's first es el byte pointer, salir.
-  Si el substring's first's target es el return byte, add 1 to el row#.
-  Add 1 to el substring's first.
+    Si el substring es blank, salir.
+    Si el substring's first es el byte pointer, salir.
+    Si el substring's first's target es el return byte, add 1 to el row#.
+    Add 1 to el substring's first.
   Repetir.
   
 Para find un source file usando un byte pointer:
   Si el byte pointer es nil, void el source file; salir.
   Lazo.
-  Get el source file desde el source files.
-  Si el source file es nil, salir.
-  Si el byte pointer es less than el source file's buffer's first, repetir.
-  Si el byte pointer es greater than el source file's buffer's last, repetir.
+    Get el source file desde el source files.
+    Si el source file es nil, salir.
+    Si el byte pointer es less than el source file's buffer's first, repetir.
+    Si el byte pointer es greater than el source file's buffer's last, repetir.
   
 Para find un type and un nickname usando un name:
   Void el type.
@@ -3307,10 +3354,10 @@ Para find un type and un nickname usando un name (backward):
   Clear el nickname.
   Slap un substring on el name.
   Lazo.
-  Si el substring es blank, salir.
-  Find el type usando el substring and el type index.
-  Si el type es not nil, interrumpir.
-  Skip to el previous word in el substring.
+    Si el substring es blank, salir.
+    Find el type usando el substring and el type index.
+    Si el type es not nil, interrumpir.
+    Skip to el previous word in el substring.
   Repetir.
   Put el name's last into another substring's last.
   Put el substring's last plus 2 into el other substring's first.
@@ -3322,10 +3369,10 @@ Para find un type and un nickname usando un name (forward):  \ original - no cha
   Clear el nickname.
   Slap un substring on el name.
   Lazo.
-  Si el substring es blank, salir.
-  Find el type usando el substring and el type index.
-  Si el type es not nil, interrumpir.
-  Skip to el next word in el substring.
+    Si el substring es blank, salir.
+    Find el type usando el substring and el type index.
+    Si el type es not nil, interrumpir.
+    Skip to el next word in el substring.
   Repetir.
   Put el name's first into another substring's first.
   Put el substring's first minus 2 into el other substring's last.
@@ -3345,10 +3392,10 @@ Para find un variable usando un name:
 Para find un variable usando un name and some variables:
   Void el variable.
   Lazo.
-  Get el variable desde el variables.
-  Si el variable es nil, salir.
-  Si el variable's name es el name, salir.
-  Si el variable's nickname es el name, salir.
+    Get el variable desde el variables.
+    Si el variable es nil, salir.
+    Si el variable's name es el name, salir.
+    Si el variable's nickname es el name, salir.
   Repetir.
   
 A fragment es un thing with
@@ -3380,10 +3427,10 @@ Para get un address usando un routine:
 Para get un count usando some imports (all entries plus markers):
   Put 0 into el count.
   Lazo.
-  Get un import desde el imports.
-  Si el import es nil, salir.
-  Add el import's entries' count to el count.
-  Add 1 to el count.
+    Get un import desde el imports.
+    Si el import es nil, salir.
+    Add el import's entries' count to el count.
+    Add 1 to el count.
   Repetir.
   
 A global body es un substring.
@@ -3399,18 +3446,18 @@ The image base es un address equal to 4194304 [$00400000].
 The import borough es un borough.
   
 An import header es un record with
-An address called original first thunk,
-A number called timestamp,
-An address called forwarder chain,
-An address called name memory address,
-An address called first thunk memory address.
+  An address called original first thunk,
+  A number called timestamp,
+  An address called forwarder chain,
+  An address called name memory address,
+  An address called first thunk memory address.
   
 An import es un thing with
-A name address,
-A header address,
-A name,
-An import header,
-Some entries.
+  A name address,
+  A header address,
+  A name,
+  An import header,
+  Some entries.
   
 The imports are some imports.
   
@@ -3456,19 +3503,19 @@ Para index un routine usando some monikettes and un index:
   Si el routine es nil, salir.
   Clear un partial moniker.
   Lazo.
-  Get un monikette desde el monikettes.
-  Si el monikette es nil, salir.
-  Append el monikette to el partial moniker.
-  Si el monikette es el monikettes' last, interrumpir.
-  Index el partial moniker usando el index (special).
+    Get un monikette desde el monikettes.
+    Si el monikette es nil, salir.
+    Append el monikette to el partial moniker.
+    Si el monikette es el monikettes' last, interrumpir.
+    Index el partial moniker usando el index (special).
   Repetir.
   Index el routine usando el partial moniker as un moniker and el index (special).
   
 Para index some routines for utility use:
-  Si el compiler's abort flag es set, salir.
-  Get un routine desde el routines.
-  Si el routine es nil, salir.
-  Index el routine for utility use.
+    Si el compiler's abort flag es set, salir.
+    Get un routine desde el routines.
+    Si el routine es nil, salir.
+    Index el routine for utility use.
   Repetir.
   
 Para index un type:
@@ -3643,9 +3690,9 @@ Para list un bucket in un buffer:
   Advance el buffer.
   
 Para list some entries in un buffer:
-  Get un entry desde el entries.
-  Si el entry es nil, salir.
-  List el entry in el buffer.
+    Get un entry desde el entries.
+    Si el entry es nil, salir.
+    List el entry in el buffer.
   Repetir.
   
 Para list un entry in un buffer:
@@ -3669,9 +3716,9 @@ Para list un fragment in un buffer:
   Advance el buffer.
   
 Para list some fragments in un buffer:
-  Get un fragment desde el fragments.
-  Si el fragment es nil, salir.
-  List el fragment in el buffer.
+    Get un fragment desde el fragments.
+    Si el fragment es nil, salir.
+    List el fragment in el buffer.
   Repetir.
   
 Para list un import in un buffer:
@@ -3683,9 +3730,9 @@ Para list un import in un buffer:
   Advance el buffer.
   
 Para list some imports in un buffer:
-  Get un import desde el imports.
-  Si el import es nil, salir.
-  List el import in el buffer.
+    Get un import desde el imports.
+    Si el import es nil, salir.
+    List el import in el buffer.
   Repetir.
   
 Para list some imports under un string in un buffer:
@@ -3699,9 +3746,9 @@ Para list un index in un buffer:
   Append el index's count then " refers" to el buffer (with separator).
   Advance el buffer (twice).
   Lazo.
-  Get un bucket usando el index.
-  Si el bucket es nil, salir.
-  List el bucket in el buffer.
+    Get un bucket usando el index.
+    Si el bucket es nil, salir.
+    List el bucket in el buffer.
   Repetir.
   
 Para list un index under un string in un buffer:
@@ -3711,17 +3758,17 @@ Para list un index under un string in un buffer:
   List el index in el buffer.
   
 Para list un refer in un buffer:
-  Si el refer es nil, salir.
-  Append "/refer" to el buffer (with separator).
-  Append el refer's string to el buffer.
-  Si el refer's pointer es nil, append "..." to el buffer.
-  Append "/" to el buffer.
-  Advance el buffer.
-  
-Para list some refers in un buffer:
-  Get un refer desde el refers.
-  Si el refer es nil, salir.
-  List el refer in el buffer.
+    Si el refer es nil, salir.
+    Append "/refer" to el buffer (with separator).
+    Append el refer's string to el buffer.
+    Si el refer's pointer es nil, append "..." to el buffer.
+    Append "/" to el buffer.
+    Advance el buffer.
+    
+  Para list some refers in un buffer:
+    Get un refer desde el refers.
+    Si el refer es nil, salir.
+    List el refer in el buffer.
   Repetir.
   
 Para list un routine in un buffer:
@@ -3743,9 +3790,9 @@ Para list un routine in un buffer:
   Advance el buffer.
   
 Para list some routines in un buffer:
-  Get un routine desde el routines.
-  Si el routine es nil, salir.
-  List el routine in el buffer.
+    Get un routine desde el routines.
+    Si el routine es nil, salir.
+    List el routine in el buffer.
   Repetir.
   
 Para list some routines under un string in un buffer:
@@ -3761,9 +3808,9 @@ Para list un source file in un buffer:
   Advance el buffer.
   
 Para list some source files in un buffer:
-  Get un source file desde el source files.
-  Si el source file es nil, salir.
-  List el source file in el buffer.
+    Get un source file desde el source files.
+    Si el source file es nil, salir.
+    List el source file in el buffer.
   Repetir.
   
 Para list some source files under un string in un buffer:
@@ -3847,9 +3894,9 @@ Para list un variable in un buffer:
   Advance el buffer.
   
 Para list some variables in un buffer:
-  Get un variable desde el variables.
-  Si el variable es nil, salir.
-  List el variable in el buffer.
+    Get un variable desde el variables.
+    Si el variable es nil, salir.
+    List el variable in el buffer.
   Repetir.
   
 Para list some variables under un string in un buffer:
@@ -3878,12 +3925,12 @@ The loop tag es un tag equal to 15.
 A moniker es un string.
   
 A monikette es un thing with
-A string,
-A type (reference),
-A variable (reference),
-  \ for bubbling
-A current type (reference),
-A current substring.
+  A string,
+  A type (reference),
+  A variable (reference),
+    \ for bubbling
+  A current type (reference),
+  A current substring.
   
 Para move un rider (code rules - comment):
   Bump el rider.
@@ -3910,29 +3957,29 @@ Para move un rider (code rules - possessive):
   Si el rider's source starts with "s", bump el rider.
   
 Para move un rider (code rules - qualifier):
-  Si el rider's source es blank, salir.
-  Si el rider's source's first's target es el return byte, interrumpir.
-  Si el rider's source's first's target es el left-paren byte, add 1 to un count.
-  Si el rider's source's first's target es el right-paren byte, subtract 1 desde el count.
-  Bump el rider.
-  Si el count es 0, interrumpir.
+    Si el rider's source es blank, salir.
+    Si el rider's source's first's target es el return byte, interrumpir.
+    Si el rider's source's first's target es el left-paren byte, add 1 to un count.
+    Si el rider's source's first's target es el right-paren byte, subtract 1 desde el count.
+    Bump el rider.
+    Si el count es 0, interrumpir.
   Repetir.
   
 Para move un rider (code rules - remark):
-  Si el rider's source es blank, salir.
-  Si el rider's source's first's target es el return byte, interrumpir.
-  Si el rider's source's first's target es el left-bracket byte, add 1 to un count.
-  Si el rider's source's first's target es el right-bracket byte, subtract 1 desde el count.
-  Bump el rider.
-  Si el count es 0, interrumpir.
+    Si el rider's source es blank, salir.
+    Si el rider's source's first's target es el return byte, interrumpir.
+    Si el rider's source's first's target es el left-bracket byte, add 1 to un count.
+    Si el rider's source's first's target es el right-bracket byte, subtract 1 desde el count.
+    Bump el rider.
+    Si el count es 0, interrumpir.
   Repetir.  
   
 Para move un rider (code rules - string):
-  Bump el rider.
-  Si el rider's source es blank, salir.
-  Si el rider's source's first's target es el return byte, salir.
-  Si el rider está on any nested double-quote, bump el rider; repeat.
-  Si el rider's source's first's target es el double-quote byte, bump el rider; salir.
+    Bump el rider.
+    Si el rider's source es blank, salir.
+    Si el rider's source's first's target es el return byte, salir.
+    Si el rider está on any nested double-quote, bump el rider; repeat.
+    Si el rider's source's first's target es el double-quote byte, bump el rider; salir.
   Repetir.
   
 Para move un rider (code rules - symbol):
@@ -3992,22 +4039,22 @@ Para offset el locals in un routine:
   Si el routine's compiled flag es not set, salir.
   Clear el routine's local size.
   Lazo.
-  Si el compiler's abort flag es set, salir.
-  Get un local desde el routine's locals.
-  Si el local es nil, salir.
-  Si el local's previous es not nil, put el local's previous' offset into el local's offset.
-  Put el local's type's length into un length.
-  Si el local's kind es "scratch", put un pointer's magnitude into el length.
-  Round el length up to el nearest multiple of 4.
-  Subtract el length desde el local's offset.
-  Add el length to el routine's local size.
+    Si el compiler's abort flag es set, salir.
+    Get un local desde el routine's locals.
+    Si el local es nil, salir.
+    Si el local's previous es not nil, put el local's previous' offset into el local's offset.
+    Put el local's type's length into un length.
+    Si el local's kind es "scratch", put un pointer's magnitude into el length.
+    Round el length up to el nearest multiple of 4.
+    Subtract el length desde el local's offset.
+    Add el length to el routine's local size.
   Repetir.
   
 Para offset el locals in some routines:
-  Si el compiler's abort flag es set, salir.
-  Get un routine desde el routines.
-  Si el routine es nil, salir.
-  Offset el locals in el routine.
+    Si el compiler's abort flag es set, salir.
+    Get un routine desde el routines.
+    Si el routine es nil, salir.
+    Offset el locals in el routine.
   Repetir.
   
 Para offset el parameters in un routine:
@@ -4015,20 +4062,20 @@ Para offset el parameters in un routine:
   Si el routine's compiled flag es not set, salir.
   Clear el routine's parameter size.
   Lazo.
-  Si el compiler's abort flag es set, salir.
-  Get un parameter desde el routine's parameters.
-  Si el parameter es nil, salir.
-  Si el routine's callback flag es set, set el parameter's by-value flag.
-  Si el parameter's previous es nil, put 8 into el parameter's offset. \ skip el return address and saved ebp
-  Si el parameter's previous es not nil, put el parameter's previous' offset plus 4 into el parameter's offset. \ all parameters are 4 byte pointers or 4 byte values for callbacks
-  Add 4 to el routine's parameter size.
+    Si el compiler's abort flag es set, salir.
+    Get un parameter desde el routine's parameters.
+    Si el parameter es nil, salir.
+    Si el routine's callback flag es set, set el parameter's by-value flag.
+    Si el parameter's previous es nil, put 8 into el parameter's offset. \ skip el return address and saved ebp
+    Si el parameter's previous es not nil, put el parameter's previous' offset plus 4 into el parameter's offset. \ all parameters are 4 byte pointers or 4 byte values for callbacks
+    Add 4 to el routine's parameter size.
   Repetir.
   
 Para offset el parameters in some routines:
-  Si el compiler's abort flag es set, salir.
-  Get un routine desde el routines.
-  Si el routine es nil, salir.
-  Offset el parameters in el routine.
+    Si el compiler's abort flag es set, salir.
+    Get un routine desde el routines.
+    Si el routine es nil, salir.
+    Offset el parameters in el routine.
   Repetir.
   
 The offsetting timer es un timer.
@@ -4038,62 +4085,62 @@ A parameter es un variable.
 A partial moniker es un moniker.
   
 A pe header es un record with
-A number called signature,
-A wyrd called machinetype,
-A wyrd called numberofsections,
-A number called timestamp,
-A number called pointertosymboltable,
-A number called numberofsymbols,
-A wyrd called sizeofoptionalheaderinbytes,
-A wyrd called characteristics,
-  \ optional header
-A wyrd called magicnumber,
-A byte called majorlinkerversion,
-A byte called minorlinkerversion,
-A number called sizeofcodeinfile,
-A number called sizeofinitializeddatainfile,
-A number called sizeofuninitializeddatainfile,
-A number called addressofentrypointinmemory,
-A number called addressofcodeinmemory,
-A number called addressofinitializeddatainmemory,
-A number called imagebase,
-A number called memoryalignment,
-A number called filealignment,
-A wyrd called osmajorversion,
-A wyrd called osminorversion,
-A wyrd called usermajorversion,
-A wyrd called userminorversion,
-A wyrd called subsystemmajorversion,
-A wyrd called subsystemminorversion,
-A number called reserved,
-A number called sizeofimageinmemory,
-A number called sizeofallheadersinfile,
-A number called checksum,
-A wyrd called subsystem,
-A wyrd called dllcharacteristics,
-A number called maxstack,
-A number called minstack,
-A number called maxheap,
-A number called minheap,
-A number called loaderflags,
+  A number called signature,
+  A wyrd called machinetype,
+  A wyrd called numberofsections,
+  A number called timestamp,
+  A number called pointertosymboltable,
+  A number called numberofsymbols,
+  A wyrd called sizeofoptionalheaderinbytes,
+  A wyrd called characteristics,
+    \ optional header
+  A wyrd called magicnumber,
+  A byte called majorlinkerversion,
+  A byte called minorlinkerversion,
+  A number called sizeofcodeinfile,
+  A number called sizeofinitializeddatainfile,
+  A number called sizeofuninitializeddatainfile,
+  A number called addressofentrypointinmemory,
+  A number called addressofcodeinmemory,
+  A number called addressofinitializeddatainmemory,
+  A number called imagebase,
+  A number called memoryalignment,
+  A number called filealignment,
+  A wyrd called osmajorversion,
+  A wyrd called osminorversion,
+  A wyrd called usermajorversion,
+  A wyrd called userminorversion,
+  A wyrd called subsystemmajorversion,
+  A wyrd called subsystemminorversion,
+  A number called reserved,
+  A number called sizeofimageinmemory,
+  A number called sizeofallheadersinfile,
+  A number called checksum,
+  A wyrd called subsystem,
+  A wyrd called dllcharacteristics,
+  A number called maxstack,
+  A number called minstack,
+  A number called maxheap,
+  A number called minheap,
+  A number called loaderflags,
   \ directories (16 address and size pairs)
-A number called numberofdirectories,
+  A number called numberofdirectories,
   8 bytes called directory0,
-A number called imagedirectoryentryimportaddress,
-A number called imagedirectoryentryimportsize,
+  A number called imagedirectoryentryimportaddress,
+  A number called imagedirectoryentryimportsize,
   112 bytes called directories2-15,
-A pe section header called idata section,
-A pe section header called data section,
-A pe section header called code section.
-  
+  A pe section header called idata section,
+  A pe section header called data section,
+  A pe section header called code section.
+    
 A pe section header es un record with
   8 bytes called name,
-A number called sizeinbytes,
-A number called addressinmemory,
-A number called sizeinfile,
-A number called addressinfile,
+  A number called sizeinbytes,
+  A number called addressinmemory,
+  A number called sizeinfile,
+  A number called addressinfile,
   12 bytes called reserved,
-A number called characteristics.
+  A number called characteristics.
   
 A phrase es un string.
   
@@ -4114,12 +4161,12 @@ A phrase es un string.
 Para pluralize un string (spanish rules): \ nouns only
   Slap un rider on el string.
   Lazo.
-  Move el rider (spell checking rules).
-  Si el rider's token es blank, interrumpir.
-  Si un plural string es not blank, append " " to el plural string.
-  Append el rider's token to el plural string.
-  Si el rider's token es "de", set un flag; repeat.
-  Si el flag es not set, pluralize el plural string (spanish rules - each word).
+    Move el rider (spell checking rules).
+    Si el rider's token es blank, interrumpir.
+    Si un plural string es not blank, append " " to el plural string.
+    Append el rider's token to el plural string.
+    Si el rider's token es "de", set un flag; repeat.
+    Si el flag es not set, pluralize el plural string (spanish rules - each word).
   Repetir.
   Put el plural string into el string.
   
@@ -4229,62 +4276,62 @@ Para load some source files:
 The loading timer es un timer.
   
 Para reduce some monikettes for utility use:
-  Get un monikette desde el monikettes.
-  Si el monikette es nil, salir.
-  Si el monikette's type es nil, repetir.
-  Reduce el monikette's type to un type for utility use.
-  Si el type es not nil, put el type into el monikette's type.
+    Get un monikette desde el monikettes.
+    Si el monikette es nil, salir.
+    Si el monikette's type es nil, repetir.
+    Reduce el monikette's type to un type for utility use.
+    Si el type es not nil, put el type into el monikette's type.
   Repetir.
   
 Para reduce un type to another type for utility use:
   Put el type into el other type.
   Lazo.
-  Si el other type es nil, salir.
-  Si el other type's name es "hex string", salir.
-  Si el other type's name es "string", salir.
-  Si el other type's name es "number", salir.
-  Si el other type's name es "pointer", salir.
-  Si el other type's name es "thing", void el other type; salir.
-  Si el other type's base type es el other type, void el other type; salir.
-  Put el other type's base type into el other type.
+    Si el other type es nil, salir.
+    Si el other type's name es "hex string", salir.
+    Si el other type's name es "string", salir.
+    Si el other type's name es "number", salir.
+    Si el other type's name es "pointer", salir.
+    Si el other type's name es "thing", void el other type; salir.
+    Si el other type's base type es el other type, void el other type; salir.
+    Put el other type's base type into el other type.
   Repetir.
   
 Para reindex el utility index:
-  Si el compiler's abort flag es set, salir.
-  Get un bucket usando el utility index.
-  Si el bucket es nil, salir.
-  Si el bucket's refers are empty, repetir.
-  Reindex el utility index usando el bucket's refers.
+    Si el compiler's abort flag es set, salir.
+    Get un bucket usando el utility index.
+    Si el bucket es nil, salir.
+    Si el bucket's refers are empty, repetir.
+    Reindex el utility index usando el bucket's refers.
   Repetir.
   
 Para reindex el utility index usando some refers:
-  Get un refer desde el refers.
-  Si el refer es nil, salir.
-  Put el refer's pointer into un routine.
-  Si el routine es nil, abort with "Internal error - index el untility routines usando some refers"; salir.
-  Copy el routine's monikettes into some monikettes.
-  Reduce el monikettes for utility use.
-  Index el routine usando el monikettes and el routine index.
-  Destroy el monikettes.
+    Get un refer desde el refers.
+    Si el refer es nil, salir.
+    Put el refer's pointer into un routine.
+    Si el routine es nil, abort with "Internal error - index el untility routines usando some refers"; salir.
+    Copy el routine's monikettes into some monikettes.
+    Reduce el monikettes for utility use.
+    Index el routine usando el monikettes and el routine index.
+    Destroy el monikettes.
   Repetir.
   
 Para remove any negatives desde some monikettes returning un flag:
   Clear el flag.
   Swap el monikettes with some other monikettes.
   Lazo.
-  Put el other monikettes' first into un monikette.
-  Si el monikette es nil, salir.
-  Remove el monikette desde el other monikettes.
-  Si el monikette's string es "not", reverse el flag; destroy el monikette; repeat.
-  Si el monikette's string es "ni", reverse el flag; destroy el monikette; repeat.
-  Si el monikette's string es "no", reverse el flag; destroy el monikette; repeat.
-  Si el monikette's string es "nada", reverse el flag; destroy el monikette; repeat.
-  Append el monikette to el monikettes.
-  Si el monikette's string es "can't", reverse el flag; put "can" into el monikette's string; repeat.
-  Si el monikette's string es "cannot", reverse el flag; put "can" into el monikette's string; repeat.
-  Si el monikette's string es "nothing", reverse el flag; put "something" into el monikette's string; repeat.
-  Si el monikette's string es "won't", reverse el flag; put "will" into el monikette's string; repeat.
-  Si el monikette's string ends with "n't", reverse el flag; remove trailing bytes desde el monikette's string usando 3; repeat.
+    Put el other monikettes' first into un monikette.
+    Si el monikette es nil, salir.
+    Remove el monikette desde el other monikettes.
+    Si el monikette's string es "not", reverse el flag; destroy el monikette; repeat.
+    Si el monikette's string es "ni", reverse el flag; destroy el monikette; repeat.
+    Si el monikette's string es "no", reverse el flag; destroy el monikette; repeat.
+    Si el monikette's string es "nada", reverse el flag; destroy el monikette; repeat.
+    Append el monikette to el monikettes.
+    Si el monikette's string es "can't", reverse el flag; put "can" into el monikette's string; repeat.
+    Si el monikette's string es "cannot", reverse el flag; put "can" into el monikette's string; repeat.
+    Si el monikette's string es "nothing", reverse el flag; put "something" into el monikette's string; repeat.
+    Si el monikette's string es "won't", reverse el flag; put "will" into el monikette's string; repeat.
+    Si el monikette's string ends with "n't", reverse el flag; remove trailing bytes desde el monikette's string usando 3; repeat.
   Repetir.
   
 The repeat tag es un tag equal to 21.
@@ -4317,10 +4364,10 @@ Para resolve un global (compile body):
   Index el literal.
   
 Para resolve some globals:
-  Si el compiler's abort flag es set, salir.
-  Get un global desde el globals.
-  Si el global es nil, salir.
-  Resolve el global.
+    Si el compiler's abort flag es set, salir.
+    Get un global desde el globals.
+    Si el global es nil, salir.
+    Resolve el global.
   Repetir.
   
 Para resolve un type (base type):
@@ -4392,16 +4439,16 @@ Para resolve un type (optional info - record):
   Si el compiler's abort flag es set, salir.
   Si el type's fields are empty, copy el type's base type's fields into el type's fields; salir.
   Lazo.
-  Si el compiler's abort flag es set, salir.
-  Get un field desde el type's fields (backwards).
-  Si el field es nil, interrumpir.
-  Si el field es duplicated in el type's fields, abort with "El campo '" then el field's name then "' está definido más de una vez." and el field's locus; salir.
-  Resolve el field.
-  Si el compiler's abort flag es set, salir.
-  Si el field's type's cooking flag es set, abort with "Definición recursiva con '" then el field's type's name then "'." and el field's locus; salir.
-  Resolve el field's type (optional info).
-  Si el field's reference flag es not set, repetir.
-  Si el field's type cannot be reduced to "pointer", abort with "¿Qué quieres decir con '(referencia)' justo aquí en este '" then el field's name then "'?" and el field's locus; salir.
+    Si el compiler's abort flag es set, salir.
+    Get un field desde el type's fields (backwards).
+    Si el field es nil, interrumpir.
+    Si el field es duplicated in el type's fields, abort with "El campo '" then el field's name then "' está definido más de una vez." and el field's locus; salir.
+    Resolve el field.
+    Si el compiler's abort flag es set, salir.
+    Si el field's type's cooking flag es set, abort with "Definición recursiva con '" then el field's type's name then "'." and el field's locus; salir.
+    Resolve el field's type (optional info).
+    Si el field's reference flag es not set, repetir.
+    Si el field's type cannot be reduced to "pointer", abort with "¿Qué quieres decir con '(referencia)' justo aquí en este '" then el field's name then "'?" and el field's locus; salir.
   Repetir.
   Eliminate duplicate nicknames desde el type's fields.
   Si el type cannot be reduced to "thing record", salir.
@@ -4431,31 +4478,31 @@ Para resolve un type (optional info):
   Set el type's optional info resolved flag.
   
 Para resolve some types (base types):
-  Si el compiler's abort flag es set, salir.
-  Get un type desde el types.
-  Si el type es nil, salir.
-  Resolve el type (base type).
+    Si el compiler's abort flag es set, salir.
+    Get un type desde el types.
+    Si el type es nil, salir.
+    Resolve el type (base type).
   Repetir.
   
 Para resolve some types (expand things):
-  Si el compiler's abort flag es set, salir.
-  Get un type desde el types.
-  Si el type es nil, salir.
-  Resolve el type (expand thing).
+    Si el compiler's abort flag es set, salir.
+    Get un type desde el types.
+    Si el type es nil, salir.
+    Resolve el type (expand thing).
   Repetir.
   
 Para resolve some types (index plurals):
-  Si el compiler's abort flag es set, salir.
-  Get un type desde el types.
-  Si el type es nil, salir.
-  Resolve el type (index plural).
+    Si el compiler's abort flag es set, salir.
+    Get un type desde el types.
+    Si el type es nil, salir.
+    Resolve el type (index plural).
   Repetir.
   
 Para resolve some types (optional info):
-  Si el compiler's abort flag es set, salir.
-  Get un type desde el types.
-  Si el type es nil, salir.
-  Resolve el type (optional info).
+    Si el compiler's abort flag es set, salir.
+    Get un type desde el types.
+    Si el type es nil, salir.
+    Resolve el type (optional info).
   Repetir.
   
 Para resolve un variable:
@@ -4492,19 +4539,25 @@ A routine header es un substring.
 The routine index es un index.
   
 A routine es un thing with
-A locus (reference),
-A callback flag,
-A decider flag,
-A function flag,
-A compiled flag,
-A nickname index,
-A moniker, some monikettes, some parameters, un parameter size,
-An employs moniker,
-Some locals, un local size,
-A routine header, un header string,
-A routine body, un body string,
-Some fragments,
-An address.
+  A locus (reference),
+  A callback flag,
+  A decider flag,
+  A function flag,
+  A compiled flag,
+  A nickname index,
+  A moniker, 
+  Some monikettes, 
+  Some parameters, 
+  A parameter size,
+  An employs moniker,
+  Some locals, 
+  A local size,
+  A routine header, 
+  A header string,
+  A routine body, 
+  A body string,
+  Some fragments,
+  An address.
   
 A routine reference es some monikettes.
   
@@ -4515,6 +4568,7 @@ The save eax tag es un tag equal to 20.
 Para scan any optional info for un type usando un rider:
   Si el compiler's abort flag es set, salir.
   Si el rider's token es "to", scan any optional info for el type usando el rider (pointer); salir.
+  Si el rider's token es "para", scan any optional info for el type usando el rider (pointer); salir.
   Si el rider's token es any with, scan any optional info for el type usando el rider (record); salir.
   
 Para scan any optional info for un type usando un rider (pointer):
@@ -4528,19 +4582,19 @@ Para scan any optional info for un type usando un rider (record):
   Scan el type's fields usando el rider.
   
 Para scan any pauses usando un rider:
-  Si el compiler's abort flag es set, salir.
-  Si el rider's token es not any pause, salir.
-  Move el rider (compiler rules).
+    Si el compiler's abort flag es set, salir.
+    Si el rider's token es not any pause, salir.
+    Move el rider (compiler rules).
   Repetir.
   
 Para scan un field usando un rider:
   Si el compiler's abort flag es set, salir.
   Scan el field usando el rider (type part).
   Lazo.
-  Si el compiler's abort flag es set, salir.
-  Si el rider's token es any called, scan el field usando el rider (called part); repeat.
-  Si el rider's token es "at", scan el field usando el rider (redefine part); repeat.
-  Si el rider's token es any reference, scan el field usando el rider (reference part); repeat.
+    Si el compiler's abort flag es set, salir.
+    Si el rider's token es any called, scan el field usando el rider (called part); repeat.
+    Si el rider's token es "at", scan el field usando el rider (redefine part); repeat.
+    Si el rider's token es any reference, scan el field usando el rider (reference part); repeat.
   
 Para scan un field usando un rider (called part):
   Si el compiler's abort flag es set, salir.
@@ -4587,11 +4641,11 @@ Para scan un field usando un rider (type part):
   Scan el field usando el rider (type part - normal).
   
 Para scan some fields usando un rider:
-  Si el compiler's abort flag es set, salir.
-  Add un field to el fields usando "field" and el rider's token's first.
-  Scan el field usando el rider.
-  Si el rider's token es not any pause, salir.
-  Scan any pauses usando el rider.
+    Si el compiler's abort flag es set, salir.
+    Add un field to el fields usando "field" and el rider's token's first.
+    Scan el field usando el rider.
+    Si el rider's token es not any pause, salir.
+    Scan any pauses usando el rider.
   Repetir.
   
 Para scan un global body usando un rider:
@@ -4600,12 +4654,12 @@ Para scan un global body usando un rider:
   Put el rider's token's first into el global body's first.
   Put -1 into el global body's last.
   Lazo.
-  Si el compiler's abort flag es set, salir.
-  Si el rider's token es blank, salir.
-  Si el rider's token es el colon byte, salir.
-  Si el rider's token es el period byte, salir.
-  Put el rider's token's last into el global body's last.
-  Move el rider (compiler rules).
+    Si el compiler's abort flag es set, salir.
+    Si el rider's token es blank, salir.
+    Si el rider's token es el colon byte, salir.
+    Si el rider's token es el period byte, salir.
+    Put el rider's token's last into el global body's last.
+    Move el rider (compiler rules).
   Repetir.
   
 Para scan un global usando un rider:
@@ -4672,10 +4726,10 @@ Para scan un name usando un rider:
   Si el compiler's abort flag es set, salir.
   Si el rider está on any name starter, extend el name with el rider's token; move el rider (compiler rules).
   Lazo.
-  Si el compiler's abort flag es set, salir.
-  Si el rider está on any name ender, interrumpir.
-  Extend el name with el rider's token.
-  Move el rider (compiler rules).
+    Si el compiler's abort flag es set, salir.
+    Si el rider está on any name ender, interrumpir.
+    Extend el name with el rider's token.
+    Move el rider (compiler rules).
   Repetir.
   Si el name es blank, abort with "Digamos que esperaba un nombre por ahí, pero encontré '" then el rider's token then "'." and el rider; salir.
   
@@ -4685,13 +4739,13 @@ Para scan un routine body usando un rider:
   Si el rider's token es el start of any definition, salir.
   Put el rider's token's first into el routine body's first.
   Lazo.
-  Si el compiler's abort flag es set, salir.
-  Si el rider's token es blank, salir.
-  Put el rider's token's last into el routine body's last.
-  Si el rider's token es el colon byte, abort with "Puede ser que antes te hayas olvidado poner un punto." and el rider; salir.
-  Si el rider's token es not el period byte, move el rider (compiler rules); repeat.
-  Move el rider (compiler rules).
-  Si el rider's token es el start of any definition, salir.
+    Si el compiler's abort flag es set, salir.
+    Si el rider's token es blank, salir.
+    Put el rider's token's last into el routine body's last.
+    Si el rider's token es el colon byte, abort with "Puede ser que antes te hayas olvidado poner un punto." and el rider; salir.
+    Si el rider's token es not el period byte, move el rider (compiler rules); repeat.
+    Move el rider (compiler rules).
+    Si el rider's token es el start of any definition, salir.
   Repetir.
   
 Para scan un routine usando un rider:
@@ -4718,13 +4772,13 @@ Para scan un routine header usando un rider:
   Put el rider's token's first into el routine header's first.
   Put -1 into el routine header's last.
   Lazo.
-  Si el compiler's abort flag es set, salir.
-  Si el rider's token es blank, salir.
-  Si el rider's token es el semi-colon byte, salir. \ *** alternate wordings
-  Si el rider's token es el colon byte, salir.
-  Si el rider's token es el period byte, salir.
-  Put el rider's token's last into el routine header's last.
-  Move el rider (compiler rules).
+    Si el compiler's abort flag es set, salir.
+    Si el rider's token es blank, salir.
+    Si el rider's token es el semi-colon byte, salir. \ *** alternate wordings
+    Si el rider's token es el colon byte, salir.
+    Si el rider's token es el period byte, salir.
+    Put el rider's token's last into el routine header's last.
+    Move el rider (compiler rules).
   Repetir.
   
 Para scan un source file:
@@ -4733,19 +4787,19 @@ Para scan un source file:
   Slap un rider on el source file's buffer.
   Move el rider (compiler rules).
   Lazo.
-  Si el compiler's abort flag es set, salir.
-  Si el rider's token es blank, salir.
-  Si el rider's token es el start of any type, scan un type usando el rider; repeat.
-  Si el rider's token es el start of any global, scan un global usando el rider; repeat.
-  Si el rider's token es el start of any routine, scan un routine usando el rider; repeat.
-  Abort with "Esperaba por una definición pero todo lo que encontré fue '" then el rider's token then "'." and el rider.
+    Si el compiler's abort flag es set, salir.
+    Si el rider's token es blank, salir.
+    Si el rider's token es el start of any type, scan un type usando el rider; repeat.
+    Si el rider's token es el start of any global, scan un global usando el rider; repeat.
+    Si el rider's token es el start of any routine, scan un routine usando el rider; repeat.
+    Abort with "Esperaba por una definición pero todo lo que encontré fue '" then el rider's token then "'." and el rider.
   Repetir.
   
 Para scan some source files:
-  Si el compiler's abort flag es set, salir.
-  Get un source file desde el source files.
-  Si el source file es nil, salir.
-  Scan el source file.
+    Si el compiler's abort flag es set, salir.
+    Get un source file desde el source files.
+    Si el source file es nil, salir.
+    Scan el source file.
   Repetir.
   
 Para scan un type usando un rider:
@@ -4793,20 +4847,20 @@ The scanning timer es un timer.
 A scratch es un local.
   
 Para scrub un index:
-  Get un bucket usando el index.
-  Si el bucket es nil, salir.
-  Si el bucket's refers are empty, repetir.
-  Scrub el bucket's refers.
+    Get un bucket usando el index.
+    Si el bucket es nil, salir.
+    Si el bucket's refers are empty, repetir.
+    Scrub el bucket's refers.
   Repetir.
   
 Para scrub some refers:
   Swap el refers with some other refers.
   Lazo.
-  Put el other refers' first into un refer.
-  Si el refer es nil, salir.
-  Remove el refer desde el other refers.
-  Si el refer's pointer es nil, destroy el refer; repeat.
-  Append el refer to el refers.
+    Put el other refers' first into un refer.
+    Si el refer es nil, salir.
+    Remove el refer desde el other refers.
+    Si el refer's pointer es nil, destroy el refer; repeat.
+    Append el refer to el refers.
   Repetir.
   
 Para set el compiled flag in un variable:
@@ -4823,16 +4877,16 @@ Para set el compiled flag in un variable:
   Si el flag es not set, put "put el " then el variable's literal's name then " into el " then el variable's name then ". " into el variable's initializer string.
   
 Para skip to el next word in un substring:
-  Si el substring es blank, salir.
-  Si el substring's first's target es noise, interrumpir.
-  Add 1 to el substring's first.
+    Si el substring es blank, salir.
+    Si el substring's first's target es noise, interrumpir.
+    Add 1 to el substring's first.
   Repetir.
   Skip any leading noise in el substring.
   
 Para skip to el previous word in un substring:
-  Si el substring es blank, salir.
-  Si el substring's last's target es noise, interrumpir.
-  Subtract 1 desde el substring's last.
+    Si el substring es blank, salir.
+    Si el substring's last's target es noise, interrumpir.
+    Subtract 1 desde el substring's last.
   Repetir.
   Skip any trailing noise in el substring.
   
@@ -4973,10 +5027,10 @@ Para transmogrify un fragment (save eax):
   Abort with "Internal error 3 - transmogrify un fragment (save eax)".
   
 Para transmogrify some fragments:
-  Si el compiler's abort flag es set, salir.
-  Get un fragment desde el fragments.
-  Si el fragment es nil, salir.
-  Transmogrify el fragment.
+    Si el compiler's abort flag es set, salir.
+    Get un fragment desde el fragments.
+    Si el fragment es nil, salir.
+    Transmogrify el fragment.
   Repetir.
   
 Para transmogrify un routine:
@@ -4988,10 +5042,10 @@ Para transmogrify un routine:
   Transmogrify el routine's fragments.
   
 Para transmogrify some routines:
-  Si el compiler's abort flag es set, salir.
-  Get un routine desde el routines.
-  Si el routine es nil, interrumpir.
-  Transmogrify el routine.
+    Si el compiler's abort flag es set, salir.
+    Get un routine desde el routines.
+    Si el routine es nil, interrumpir.
+    Transmogrify el routine.
   Repetir.
   
 The transmogrifying timer es un timer.
@@ -5036,9 +5090,9 @@ A hex string called data [literals only].
 The writing timer es un timer.
   
 Para skip any trailing noise in un substring:
-  Si el substring es blank, salir.
-  Si el substring's last's target es not noise, salir.
-  Subtract 1 desde el substring's last.
+    Si el substring es blank, salir.
+    Si el substring's last's target es not noise, salir.
+    Subtract 1 desde el substring's last.
   Repetir.
   
   \ dahn - reverse functions
