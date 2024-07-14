@@ -370,7 +370,7 @@ Para adjuntar zeros to un string until its length es un number:
 
 The arrow cursor es un cursor.
 
-\Para asignar un puntero dado un conteo de bytes;
+Para asignar un puntero dado un conteo de bytes;
 Para assign un pointer usando un byte count:
   Si el byte count es 0, void el pointer; salir.
   Privatizar el byte count.
@@ -409,55 +409,54 @@ The bar byte es un byte igual to 124.
 
 A baseline es un number.
 
-\Para pitar;
-Para beep: 
+Para pitar: 
   Llamada "user32.dll" "MessageBeep" with 0.
 
 \Para comenzar una hoja de paisaje;
 \Para comenzar una hoja apaisada;
-Para begin un landscape sheet:
+Para comenzar un landscape sheet:
   Make el landscape sheet 11 inches by 8-1/2 inches.
-  Begin un sheet with el landscape sheet.
+  Comenzar un sheet with el landscape sheet.
 
 \Para comenzar una hoja de paisaje dada una cadena de título;
-Para begin un landscape sheet usando un title string:
+Para comenzar un landscape sheet usando un title string:
   Si el pdf document flag es not set, clear el landscape sheet; salir.
   Make el landscape sheet 11 inches by 8-1/2 inches.
-  Begin el sheet usando el box y el title (pdf style).
+  Comenzar el sheet usando el box y el title (pdf style).
 
 \Para comenzar una hoja de retrato;
-Para begin un portrait sheet:
+Para comenzar un portrait sheet:
   Make el portrait sheet 8-1/2 inches by 11 inches.
-  Begin un sheet with el portrait sheet.
+  Comenzar un sheet with el portrait sheet.
 
 \Para comenzar una hoja de retrato dada una cadena de título;
-Para begin un portrait sheet usando un title string:
+Para comenzar un portrait sheet usando un title string:
   Si el pdf document flag es not set, clear el portrait sheet; salir.
   Make el portrait sheet 8-1/2 inches by 11 inches.
-  Begin el sheet usando el box y el title (pdf style).
+  Comenzar el sheet usando el box y el title (pdf style).
 
 \Para comenzar impresión;
-Para begin printing:
+Para comenzar printing:
   Initialize el printer canvas.
   Poner un docinfo's magnitude into el docinfo's cbsize.
   Poner el module's name's first into el docinfo's lpszdocname.
   Llamada "gdi32.dll" "StartDocA" with el printer canvas y el docinfo's whereabouts.
 
-Para begin printing un pdf:
+Para comenzar printing un pdf:
   Set el pdf state's document flag.
   Poner 0 into el pdf state's object number.
   Create el pdf state's font index usando 113.
-  Begin printing el pdf (start el root).
-  Begin printing el pdf (start el parent).
+  Comenzar printing el pdf (start el root).
+  Comenzar printing el pdf (start el parent).
 
-Para begin printing un pdf (start el parent):
+Para comenzar printing un pdf (start el parent):
   Agregar un parent pdf object usando "parent".
   Poner el parent into el pdf state's parent.
   Adjuntar el parent's number then " 0 obj" to el parent.
   Adjuntar "<<" to el parent.
   Adjuntar "/Type /Pages" to el parent.
 
-Para begin printing un pdf (start el root):
+Para comenzar printing un pdf (start el root):
   Agregar un root pdf object usando "root".
   Poner el root into el pdf state's root.
   Adjuntar el root's number then " 0 obj" to el root.
@@ -465,12 +464,12 @@ Para begin printing un pdf (start el root):
   Adjuntar "/Type /Catalog" to el root.
 
 \Para comenzar una hoja;
-Para begin un sheet:
-  Begin el sheet as un portrait sheet.
+Para comenzar un sheet:
+  Comenzar el sheet as un portrait sheet.
 
 \Para comenzar una hoja dada una caja;
-Para begin un sheet usando un box:
-  Si el pdf state's document flag es set, begin el sheet usando el box (pdf style); salir.
+Para comenzar un sheet usando un box:
+  Si el pdf state's document flag es set, comenzar el sheet usando el box (pdf style); salir.
   Llamada "kernel32.dll" "GlobalLock" with el printer device mode handle retornando un pdevmode.
   Si el pdevmode es nil, salir.
   Bitwise or el pdevmode's dmfields with 1 [dm_orientation].
@@ -496,14 +495,14 @@ Para begin un sheet usando un box:
   Poner el tpp into el saved tpp.
   Poner el tpi divided by el number into el tpp.
 
-Para begin un sheet usando un box (pdf style):
-  Begin el sheet usando el box and "" (pdf style).
+Para comenzar un sheet usando un box (pdf style):
+  Comenzar el sheet usando el box and "" (pdf style).
 
 \Para comenzar una hoja con una caja y una cadena de título;
-Para begin un sheet usando un box y un  title string:
-  Begin el sheet usando el box y el title (pdf style).
+Para comenzar un sheet usando un box y un  title string:
+  Comenzar el sheet usando el box y el title (pdf style).
 
-Para begin un sheet usando un box y un  title string (pdf style - start el current page):
+Para comenzar un sheet usando un box y un  title string (pdf style - start el current page):
   Agregar el pdf state's current page usando "page".
   Adjuntar el pdf state's current page's number then " 0 obj" to el pdf state's current page.
   Adjuntar "<<" to el pdf state's current page.
@@ -518,18 +517,18 @@ Para begin un sheet usando un box y un  title string (pdf style - start el curre
   Adjuntar "0.05 0 0 0.05 1 1 cm" to el pdf state's current contents. \ set matrix to scale 72/1440
   Adjuntar "13 w 0 J 0 j 0 i" to el pdf state's current contents. \ penwidth, linecap, linejoin, flatness \ 15 w on penwidth comes out to wide
 
-Para begin un sheet usando un box y un  title string (pdf style):
+Para comenzar un sheet usando un box y un  title string (pdf style):
   Set el pdf state's page flag.
   Poner el clear color into el pdf state's current border.
   Poner el clear color into el pdf state's current fill.
-  Begin el sheet usando el box y el title (pdf style - start el current page).
+  Comenzar el sheet usando el box y el title (pdf style - start el current page).
   Si el title es blank, salir.
   Create un pdf outline entry usando el title y el pdf state's current height y el pdf state's current page's number.
   Adjuntar el pdf outline entry to el pdf state's outline entries.
 
 \Para comenzar una hoja con una cadena de título;
-Para begin un sheet usando un title string:
-  Begin un portrait sheet usando el title.
+Para comenzar un sheet usando un title string:
+  Comenzar un portrait sheet usando el title.
 
 The bell byte es un byte igual to 7.
 
