@@ -1074,27 +1074,27 @@ Para blank out el screen;
 Para wipe off el screen;
 Para borrar el screen:
   Unmask everything.
-  Draw el screen's box con el black color y el black color.
+  Dibujar el screen's box con el black color y el black color.
   Refresh el screen.
   Poner el screen's box into el context's box.
 
 \Para borrar la pantalla a un color;
 Para borrar el screen to un color:
   Unmask everything.
-  Draw el screen's box con el color y el color.
+  Dibujar el screen's box con el color y el color.
   Refresh el screen.
   Poner el screen's box into el context's box.
 
 Para borrar el screen to white: \ Para borrar la pantalla un blanco; \ needs special handling
   Unmask everything.
-  Draw el screen's box con el white color y el white color.
+  Dibujar el screen's box con el white color y el white color.
   Refresh el screen.
   Poner el screen's box into el context's box.
 
 \Para borrar la pantalla sin refrescarla;
 Para borrar el screen without refreshing it:
   Unmask everything.
-  Draw el screen's box con el black color y el black color.
+  Dibujar el screen's box con el black color y el black color.
   Poner el screen's box into el context's box.
 
 \Para borrar una selección;
@@ -1464,7 +1464,7 @@ Para convertir un fraction to un string usando un number: \ converts to un decim
   Poner 10 into un value number.
   Raise el value to el number.
   Privatizar el fraction.
-  Si el fraction es negative, set un flag; de-sign el fraction.
+  Si el fraction es negative, set un flag; eliminar signo de el fraction.
   Multiplicar el value by el fraction.
   Zero fill el value usando el number and Adjuntar it to el string.
   Poner el string's length minus el number plus 1 into un byte#.
@@ -2055,12 +2055,12 @@ Para crear some font widths usando un font:
   Poner el original abc pointer into un abc pointer.
   Poner el font widths' data into un number pointer.
   Lazo.
-  Si un counter es past 256, interrumpir.
-  Poner el abc pointer's abca into el number pointer's target.
-  Agregar el abc pointer's abcb to el number pointer's target.
-  Agregar el abc pointer's abcc to el number pointer's target.
-  Agregar el abc's magnitude to el abc pointer.
-  Agregar el number's magnitude to el number pointer.
+    Si un counter es past 256, interrumpir.
+    Poner el abc pointer's abca into el number pointer's target.
+    Agregar el abc pointer's abcb to el number pointer's target.
+    Agregar el abc pointer's abcc to el number pointer's target.
+    Agregar el abc's magnitude to el abc pointer.
+    Agregar el number's magnitude to el number pointer.
   Repetir.
   Unassign el original abc pointer.
 
@@ -2161,7 +2161,7 @@ Para crear el open handle of un winhttp request:
   Si el winhttp request es nil, salir.
   Convertir el module's name to un wide string called wide module name and null terminate.
   Llamada "winhttp.dll" "WinHttpOpen"
-  With el wide module name's first
+  con el wide module name's first
   And 0 [winhttp_access_type_default_proxy] 
   And 0 [winhttp_no_proxy_name] 
   And 0 [winhttp_no_proxy_bypass] 
@@ -2246,7 +2246,7 @@ Para crear el request handle of un winhttp request using un url record:
   Convertir "POST" to un wide string called wide post string and null terminate.
   Si el url record's scheme es "https", Poner 8388608 [winhttp_flag_secure] into un secure number.
   Llamada "winhttp.dll" "WinHttpOpenRequest"
-  With el winhttp request's connection
+  con el winhttp request's connection
   y el wide post string's first
   y el wide path's first
   And 0 [L"HTTP/1.1"] 
@@ -2323,10 +2323,10 @@ Para crear un vertex array usando some vertices:
   Crear el vertex array usando el vertices' count.
   Poner el vertex array's spot pointer into un spot pointer.
   Lazo.
-  Get un vertex desde el vertices.
-  Si el vertex es nil, salir.
-  Poner el vertex's spot into el spot pointer's target.
-  Agregar el vertex's spot's magnitude to el spot pointer.
+    Get un vertex desde el vertices.
+    Si el vertex es nil, salir.
+    Poner el vertex's spot into el spot pointer's target.
+    Agregar el vertex's spot's magnitude to el spot pointer.
   Repetir.
 
 \Para crear un vértice dado un punto;
@@ -2357,9 +2357,9 @@ The crlf string es un string igual to $0D0A.
 The cross byte es un byte igual to 43.
 
 A crypt session es un thing con
-An hcryptprov pointer,
-An hcrypthash pointer,
-An hcryptkey pointer.
+  An hcryptprov pointer,
+  An hcrypthash pointer,
+  An hcryptkey pointer.
 
 The ctrl key es un key igual to 17.
 
@@ -2451,21 +2451,21 @@ The dark yellow color es un color.
 The dark yellow pen es un pen.
 
 \Para oscurecer un color por una cantidad;
-Para darken un color by un amount:
+Para oscurecer un color by un amount:
   Restar el amount desde el color's lightness.
   Limit el color's lightness to 0 y 1000.
 
 \Para oscurecer un color en un cierto porcentaje;
-\Para darken un color by some percent;
-\Para darken un color about some percent;
-\Para darken un color by about some percent;
-Para darken un color some percent:
+\Para oscurecer un color by some percent;
+\Para oscurecer un color about some percent;
+\Para oscurecer un color by about some percent;
+Para oscurecer un color some percent:
   Poner el color's lightness minus el percent into el color's lightness.
   Limit el color's lightness to 0 y 1000.
 
 \Para oscurecer el color actual sobre un cierto porcentaje;
-Para darken el current color about some percent:
-  Darken el context's color by el percent.
+Para oscurecer el current color about some percent:
+  Oscurecer el context's color by el percent.
 
 The darker blue color es un color.
 
@@ -2594,36 +2594,37 @@ The dash key es un key igual to 189.
 The data-link-escape byte es un byte igual to 16.
 
 A date/time es un record con
-A year number,
-A month number,
-A week day number,
-A day number,
-An hour number,
-A minute number,
-A second number,
-A millisecond number.
+  A year number,
+  A month number,
+  A week day number,
+  A day number,
+  An hour number,
+  A minute number,
+  A second number,
+  A millisecond number.
 
-\Para eliminar el signo de una fracción;
-Para de-sign un fraction:
-  De-sign el fraction's numerator.
-  De-sign el fraction's denominator.
+\Para eliminar signo de una fracción;
+Para eliminar signo de un fraction:
+  Eliminar signo de el fraction's numerator.
+  Eliminar signo de el fraction's denominator.
 
-\Para eliminar el signo de un número;
-Para de-sign un number:
+\Para eliminar signo de un número;
+Para eliminar signo de un number:
   Si el number es el smallest number, Poner el largest number into el number; salir.
   Si el number es less than 0, negate el number.
 
-\Para eliminar el signo de un par;
-Para de-sign un pair:
-  De-sign el pair's x-number.
-  De-sign el pair's y-number.
+\Para eliminar signo de un par;
+Para eliminar signo de un pair:
+  Eliminar signo de el pair's x-number.
+  Eliminar signo de el pair's y-number.
 
-\Para eliminar el signo de una cadena;
-Para de-sign un string:
+\Para eliminar signo de una cadena;
+Para eliminar signo de un string:
   Si el string es blank, salir.
   Si el string's first's target es any sign, remove el first byte desde el string.
 
 \Para depurar una caja;
+Para depurar un box;
 Para debug un box:
   Borrar un string.
   Adjuntar "izquierda=" to el string.
@@ -2636,13 +2637,13 @@ Para debug un box:
   Adjuntar el box's bottom to el string.
   Debug el string.
 
-\Para depurar un byte;
+Para depurar un byte;
 Para debug un byte:
   Poner el byte into un number.
   Convertir el number to un string.
   Debug el string.
 
-\Para depurar un color;
+Para depurar un color;
 Para debug un color:
   Borrar un string.
   Adjuntar "matiz=" to el string.
@@ -2654,11 +2655,13 @@ Para debug un color:
   Debug el string.
 
 \Para depurar una bandera;
+Para depurar un flag;
 Para debug un flag:
   Convertir el flag to un string.
   Debug el string.
 
 \Para depurar una tipo de letra;
+Para depurar un font;
 Para debug un font:
   Borrar un string.
   Adjuntar "nombre='" to el string then "'".
@@ -2668,6 +2671,7 @@ Para debug un font:
   Debug el string.
 
 \Para depurar una fracción;
+Para depurar un fraction;
 Para debug un fraction:
   Borrar un string.
   Adjuntar "numerador=" to el string.
@@ -2677,6 +2681,7 @@ Para debug un fraction:
   Debug el string.
 
 \Para depurar una línea;
+Para depurar un line;
 Para debug un line:
   Borrar un string.
   Adjuntar "comienzo=" to el string.
@@ -2690,15 +2695,18 @@ Para debug un line:
   Debug el string.
 
 \Para depurar un número;
+Para depurar un number;
 Para debug un number:
   Convertir el number to un string.
   Debug el string.
 
 \Para depurar un número y otro número;
+Para depurar un number and another number;
 Para debug un number and another number:
   Debug el number then ", " then el other number.
 
 \Para depurar un par;
+Para depurar un pair;
 Para debug un pair:
   Borrar un string.
   Adjuntar "x=" to el string.
@@ -2708,10 +2716,12 @@ Para debug un pair:
   Debug el string.
 
 \Para depurar un puntero;
+Para depurar un pointer;
 Para debug un pointer:
   Convertir el pointer to un nibble string.
   Debug "$" then el nibble string.
 
+Para depurar un rgb;
 Para debug un rgb:
   Borrar un string.
   Adjuntar "red=" to el string.
@@ -2726,19 +2736,22 @@ Para debug un rgb:
   Debug el string.
 
 \Para depurar una cadena;
+Para depurar un string;
 Para debug un string:
   Privatizar el string.
   Null terminate el string.
   Llamada "user32.dll" "MessageBoxA" con 0 y el string's first and "debug"'s first and 0.
 
 \Para depurar una cadena (entre comillas);
-Para debug un string (quoted):
+Para depurar un string (entre comillas);
+Para debug un string (entre comillas):
   Privatizar el string.
   Prepend el double-quote byte to el string.
   Adjuntar el double-quote byte to el string.
   Debug el string.
 
 \Para depurar una wyrd;
+Para depurar un wyrd;
 Para debug un wyrd:
   Poner el wyrd into un number.
   Convertir el number to un string.
@@ -3117,7 +3130,7 @@ Para decidir si el current spot es within some twips of un box:
 \Para decidir si una diferencia está dentro de una grilla;
 Para decidir si un difference es within un grid:
   Privatizar el difference.
-  De-sign el difference.
+  Eliminar signo de el difference.
   Si el difference's x-number es greater than or igual to el grid's x-number, diga no.
   Si el difference's y-number es greater than or igual to el grid's y-number, diga no.
   Diga sí.
@@ -3756,14 +3769,14 @@ Para decidir si un spot está on un line:
   Privatizar el line.
   Poner 3 times el tpp into un number.
   Lazo.
-  Get un distance between el spot y el line's center (chessboard).
-  Si el distance es less than or igual to el number, diga sí.
-  Get el distance between el line's start y el line's end (chessboard).
-  Si el distance es less than or igual to el tpp, diga no.
-  Split el line into el line and another line.
-  Get el distance between el spot y el line's center (chessboard).
-  Get another distance between el spot y el other line's center (chessboard).
-  Si el distance es greater than el other distance, Poner el other line into el line.
+    Get un distance between el spot y el line's center (chessboard).
+    Si el distance es less than or igual to el number, diga sí.
+    Get el distance between el line's start y el line's end (chessboard).
+    Si el distance es less than or igual to el tpp, diga no.
+    Split el line into el line and another line.
+    Get el distance between el spot y el line's center (chessboard).
+    Get another distance between el spot y el other line's center (chessboard).
+    Si el distance es greater than el other distance, Poner el other line into el line.
   Repetir.
 
 Para decidir si un spot está on un picture:
@@ -3774,11 +3787,11 @@ Para decidir si un spot está on un picture:
 Para decidir si un spot está on un polygon:
   Si el polygon es nil, diga no.
   Lazo.
-  Get un vertex desde el polygon's vertices.
-  Si el vertex es nil, diga no.
-  Si el vertex's next es nil, diga no.
-  Poner el vertex's spot y el vertex's next's spot into un line.
-  Si el spot está on el line, diga sí.
+    Get un vertex desde el polygon's vertices.
+    Si el vertex es nil, diga no.
+    Si el vertex's next es nil, diga no.
+    Poner el vertex's spot y el vertex's next's spot into un line.
+    Si el spot está on el line, diga sí.
   Repetir.
 
 Para decidir si un spot está on un roundy box:
@@ -3891,9 +3904,9 @@ Para decidir si un string es any ratio literal:
 \If el substring's first's target es any sign, Agregar 1 to el substring's first.
 \If el substring es blank, diga no.
 \Lazo.
-\If el substring's first's target es not any digit, diga no.
-\Add 1 to el substring's first.
-\If el substring es blank, diga sí.
+  \If el substring's first's target es not any digit, diga no.
+  \Add 1 to el substring's first.
+  \If el substring es blank, diga sí.
 \Repeat.
 
 \Para decidir si una cadena es cualquier número entero;
@@ -3905,9 +3918,9 @@ Para decidir si un string es any integer literal:
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
   Si el substring es blank, diga no.
   Lazo.
-  Si el substring's first's target es not any digit, diga no.
-  Agregar 1 to el substring's first.
-  Si el substring es blank, diga sí.
+    Si el substring's first's target es not any digit, diga no.
+    Agregar 1 to el substring's first.
+    Si el substring es blank, diga sí.
   Repetir.
 
 Para decidir si un string es any mixed literal:
@@ -3938,10 +3951,10 @@ Para decidir si un string es any word:
   Slap un substring on el string.
   Restar 1 desde el substring's first.
   Lazo.
-  Agregar 1 to el substring's first.
-  Si el substring es blank, diga sí.
-  Si el substring's first's target es any letter, repetir.
-  Si el substring's first's target es el single-quote byte, repetir.
+    Agregar 1 to el substring's first.
+    Si el substring es blank, diga sí.
+    Si el substring's first's target es any letter, repetir.
+    Si el substring's first's target es el single-quote byte, repetir.
   Diga no.
 
 \Para decidir si una cadena está en blanco;
@@ -3971,17 +3984,17 @@ Para decidir si un string es dos-compatible:
   Si el string's first's target es el period byte, diga no.
   Slap un substring on el string.
   Lazo.
-  Si el substring es blank, diga sí.
-  Si el substring's first's target es el slash byte, diga no.
-  Si el substring's first's target es el backslash byte, diga no.
-  Si el substring's first's target es el colon byte, diga no.
-  Si el substring's first's target es el asterisk byte, diga no.
-  Si el substring's first's target es el question-mark byte, diga no.
-  Si el substring's first's target es el double-quote byte, diga no.
-  Si el substring's first's target es el left-alligator byte, diga no.
-  Si el substring's first's target es el right-alligator byte, diga no.
-  Si el substring's first's target es el bar byte, diga no.
-  Agregar 1 to el substring's first.
+    Si el substring es blank, diga sí.
+    Si el substring's first's target es el slash byte, diga no.
+    Si el substring's first's target es el backslash byte, diga no.
+    Si el substring's first's target es el colon byte, diga no.
+    Si el substring's first's target es el asterisk byte, diga no.
+    Si el substring's first's target es el question-mark byte, diga no.
+    Si el substring's first's target es el double-quote byte, diga no.
+    Si el substring's first's target es el left-alligator byte, diga no.
+    Si el substring's first's target es el right-alligator byte, diga no.
+    Si el substring's first's target es el bar byte, diga no.
+    Agregar 1 to el substring's first.
   Repetir.
 
 \Para decidir si una cadena es mayor que otra cadena;
@@ -4001,9 +4014,9 @@ Para decidir si un string es in another string:
   Slap un substring on el other string.
   Poner el substring's first plus el string's length minus 1 into el substring's last.
   Lazo.
-  Si el substring's last es greater than el other string's last, diga no.
-  Si el substring es el string, diga sí.
-  Move el substring usando 1.
+    Si el substring's last es greater than el other string's last, diga no.
+    Si el substring es el string, diga sí.
+    Move el substring usando 1.
   Repetir.
 
 \Para decidir si una cadena está en un índice;
@@ -4106,9 +4119,9 @@ Para decidir si un token es numeric:
   Remove any leading noise desde el token.
   Si el token es blank, diga no.
   Lazo.
-  Get un byte desde el token.
-  Si el byte es not any digit, diga no.
-  Si el token es blank, diga sí.
+    Get un byte desde el token.
+    Si el byte es not any digit, diga no.
+    Si el token es blank, diga sí.
   Repetir.
 
 \Para decidir si el user es clicking in some choices;
@@ -4120,9 +4133,9 @@ Para decidir si un token es numeric:
 \Para decidir si el user clicked on some choices;
 Para decidir si el user clicks on some choices:
   Lazo.
-  Si el mouse's left button es not down, diga no.
-  Find un choice usando el mouse's spot.
-  Si el choice can't be found, diga no.
+    Si el mouse's left button es not down, diga no.
+    Find un choice usando el mouse's spot.
+    Si el choice can't be found, diga no.
   Diga sí.
 
 Para decidir si we can find un pointer: \ should be "can" not "ca", compiler bug
@@ -4282,9 +4295,9 @@ Para destroy un hrgn:
 Para destroy un index:
   Si el index es nil, salir.
   Lazo.
-  Get un bucket usando el index.
-  Si el bucket es nil, interrumpir.
-  Destroy el bucket's refers.
+    Get un bucket usando el index.
+    Si el bucket es nil, interrumpir.
+    Destroy el bucket's refers.
   Repetir.
   Unassign el index's first bucket.
   Deallocate el index.
@@ -4298,12 +4311,12 @@ Para destroy un path in el file system:
 \Para destruir una ruta en el sistema de archivos (directorio);
 Para destroy un path in el file system (directory):
   Lazo.
-  Get un item desde el path.
-  Si el item es not found, interrumpir.
-  Poner el path into another path.
-  Adjuntar el item's designator to el other path.
-  Destroy el other path in el file system.
-  Si el error de e/s es not blank, salir.
+    Get un item desde el path.
+    Si el item es not found, interrumpir.
+    Poner el path into another path.
+    Adjuntar el item's designator to el other path.
+    Destroy el other path in el file system.
+    Si el error de e/s es not blank, salir.
   Repetir.
   Privatizar el path.
   Null terminate el path.
@@ -4355,37 +4368,37 @@ The device-control-two byte es un byte igual to 18.
 
 A devmode es un record con
   32 bytes called dmdevicename,
-A wyrd called dmspecversion,
-A wyrd called dmdriverversion,
-A wyrd called dmsize,
-A wyrd called dmdriverextra,
-A number called dmfields,
-A wyrd called dmorientation,
-A wyrd called dmpapersize,
-A wyrd called paperlength,
-A wyrd called paperwidth,
-A wyrd called dmscale,
-A wyrd called dmcopies,
-A wyrd called dmdefaultsource,
-A wyrd called dmprintquality,
-A wyrd called dmcolor,
-A wyrd called dmduplex,
-A wyrd called ydmresolution,
-A wyrd called dmttoption,
-A wyrd called dmcollate,
+  A wyrd called dmspecversion,
+  A wyrd called dmdriverversion,
+  A wyrd called dmsize,
+  A wyrd called dmdriverextra,
+  A number called dmfields,
+  A wyrd called dmorientation,
+  A wyrd called dmpapersize,
+  A wyrd called paperlength,
+  A wyrd called paperwidth,
+  A wyrd called dmscale,
+  A wyrd called dmcopies,
+  A wyrd called dmdefaultsource,
+  A wyrd called dmprintquality,
+  A wyrd called dmcolor,
+  A wyrd called dmduplex,
+  A wyrd called ydmresolution,
+  A wyrd called dmttoption,
+  A wyrd called dmcollate,
   32 bytes called dmformname,
-A wyrd called dmlogpixels,
-A number called dmbitsperpel,
-A number called dmpelswidth,
-A number called dmpelsheight,
-A number called dmdisplayflags,
-A number called dmdisplayfrequency,
-A number called dmicmmethod,
-A number called dmicmintent,
-A number called dmmediatype,
-A number called dmdithertype,
-A number called dmreserved1,
-A number called dmreserved2.
+  A wyrd called dmlogpixels,
+  A number called dmbitsperpel,
+  A number called dmpelswidth,
+  A number called dmpelsheight,
+  A number called dmdisplayflags,
+  A number called dmdisplayfrequency,
+  A number called dmicmmethod,
+  A number called dmicmintent,
+  A number called dmmediatype,
+  A number called dmdithertype,
+  A number called dmreserved1,
+  A number called dmreserved2.
 
 The diaeresis byte es un byte igual to 168.
 
@@ -4432,7 +4445,7 @@ Para dividir un pair by un number and another number:
   Dividir el pair's y-number by el other number.
 
 \Para dividir un puntero por un número;
-\Para dividir un pointer by un number;
+Para dividir un pointer by un number;
 \Para dividir un número por otro número;
 Para dividir un number by another number:
   Si el other number es 0, Poner el largest number into el number; salir.
@@ -4445,7 +4458,7 @@ Para dividir un number by another number:
   Intel $8903. \ mov [ebx],eax
 
 \Para dividir un puntero por un número dando un cociente y un resto;
-\Para dividir un pointer by un number giving un quotient y un remainder;
+Para dividir un pointer by un number giving un quotient y un remainder;
 \Para dividir un número por otro número dando un cociente y un resto;
 Para dividir un number by another number giving un quotient y un remainder:
   Si el other number es 0, Poner el largest number into el quotient; Poner 0 into el remainder; salir.
@@ -4462,11 +4475,11 @@ Para dividir un number by another number giving un quotient y un remainder:
 The division-symbol byte es un byte igual to 247.
 
 A docinfo es un record con
-A number called cbsize,
-A pointer called lpszdocname,
-A pointer called lpszoutput,
-A pointer called lpszdatadtype,
-A number called fwtype.
+  A number called cbsize,
+  A pointer called lpszdocname,
+  A pointer called lpszoutput,
+  A pointer called lpszdatadtype,
+  A number called fwtype.
 
 The dollar-sign byte es un byte igual to 36.
 
@@ -4483,35 +4496,35 @@ The double-quote byte es un byte igual to 34.
 The down-arrow key es un key igual to 40.
 
 \Para dibujar y llenar una caja con un color;
-Para draw and fill un box con un color:
-  Draw el box con el color y el color.
+Para dibujar and fill un box con un color:
+  Dibujar el box con el color y el color.
 
 \Para dibujar cualquier fila visible de un texto;
-Para draw any visible rows of un text:
+Para dibujar any visible rows of un text:
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
-  Si el row es nil, salir.
-  Si el row of el text es not visible, repetir.
-  Draw el row of el text.
+    Get un row desde el text's rows.
+    Si el row es nil, salir.
+    Si el row of el text es not visible, repetir.
+    Dibujar el row of el text.
   Repetir.
 
 \Para dibujar cualquier fila visible de un texto (edición);
-Para draw any visible rows of un text (editing):
+Para dibujar any visible rows of un text (editing):
   Si el text es nil, salir.
   Lazo.
   Get un row desde el text's rows.
   Si el row es nil, salir.
   Si el row of el text es not visible, repetir.
-  Draw el row of el text (editing).
+  Dibujar el row of el text (editing).
   Repetir.
 
 \Para dibujar una caja;
-Para draw un box:
-  Draw el box con el black color y el borrar color.
+Para dibujar un box:
+  Dibujar el box con el black color y el borrar color.
 
 \Para dibujar una caja (estilo de enfoque);
-Para draw un box (focus style):
+Para dibujar un box (focus style):
   Privatizar el box.
   Agregar el tpp to el box's right-bottom.
   Llamada "gdi32.dll" "LPtoDP" con el current canvas y el box's whereabouts and 2.
@@ -4523,14 +4536,14 @@ Para draw un box (focus style):
   Llamada "user32.dll" "DrawFocusRect" con el current canvas y el box's whereabouts.
   Normalize el current canvas.
 
-\Para draw un box in un color;
+\Para dibujar un box in un color;
 \Para dibujar una caja con un color;
-Para draw un box con un color:
-  Draw el box con el color y el borrar color.
+Para dibujar un box con un color:
+  Dibujar el box con el color y el borrar color.
 
 \Para dibujar una caja con un color de borde y un color de relleno;
-Para draw un box con un border color y un fill color:
-  Si el pdf state's page flag es set, draw el box con el border y el fill (pdf style); salir.
+Para dibujar un box con un border color y un fill color:
+  Si el pdf state's page flag es set, dibujar el box con el border y el fill (pdf style); salir.
   Privatizar el box.
   Crear el hpen of el current canvas usando el border.
   Crear el hbrush of el current canvas usando el fill.
@@ -4539,7 +4552,7 @@ Para draw un box con un border color y un fill color:
   Destroy el hbrush of el current canvas.
   Destroy el hpen of el current canvas.
 
-Para draw un box con un border color y un fill color (pdf style):
+Para dibujar un box con un border color y un fill color (pdf style):
   Si el border y el fill are clear, salir.
   Output setcolor usando el border y el fill.
   Output el box's left-bottom without advancing.
@@ -4548,17 +4561,17 @@ Para draw un box con un border color y un fill color (pdf style):
   Output "re".
   Output stroke and fill usando el border y el fill.
 
-Para draw el caret in un text:
+Para dibujar el caret in un text:
   Si el text es nil, salir.
   Get un box for el caret in el text.
   Si el box es not touching el text's box, salir.
   Poner el box's left-top y el box's right-bottom into un line.
-  Draw el line con el black color.
+  Dibujar el line con el black color.
 
-\Para draw un circle about some twips wide;
-\Para draw un circle usando un width;
-\Para draw un circle some twips in width;
-Para draw un circle some twips wide:
+\Para dibujar un circle about some twips wide;
+\Para dibujar un circle usando un width;
+\Para dibujar un circle some twips in width;
+Para dibujar un circle some twips wide:
   Poner el twips times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
@@ -4567,8 +4580,8 @@ Para draw un circle some twips wide:
   Agregar 1 to un count. If el count es 48, interrumpir.
   Repetir.
 
-\Para draw un circle some twips wide (backwards);
-Para draw un circle some twips wide (counterclockwise):
+\Para dibujar un circle some twips wide (backwards);
+Para dibujar un circle some twips wide (counterclockwise):
   Poner el twips times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
@@ -4578,36 +4591,36 @@ Para draw un circle some twips wide (counterclockwise):
   Repetir.
 
 \Para dibujar una consola;
-Para draw un console:
+Para dibujar un console:
   Si el console es nil, salir.
   Save el current canvas.
   Mask only outside el console's box.
-  Draw el console's box con el console's border y el console's fill.
-  Draw el console's text.
+  Dibujar el console's box con el console's border y el console's fill.
+  Dibujar el console's text.
   Restore el current canvas.
 
-Para draw un dot some twips wide on el current spot con un color:
+Para dibujar un dot some twips wide on el current spot con un color:
   Make el dot el twips wide.
   Centrar el dot on el context's spot.
-  Draw el dot con el color.
+  Dibujar el dot con el color.
 
-Para draw un dot some twips wide on un spot con un color:
+Para dibujar un dot some twips wide on un spot con un color:
   Make el dot el twips wide.
   Centrar el dot on el spot.
-  Draw el dot con el color.
+  Dibujar el dot con el color.
 
 \Para dibujar una elipse;
-Para draw un ellipse:
-  Draw el ellipse con el black color y el borrar color.
+Para dibujar un ellipse:
+  Dibujar el ellipse con el black color y el borrar color.
 
 \Para dibujar una elipse en un punto con un color;
-Para draw un ellipse on un spot con un color:
+Para dibujar un ellipse on un spot con un color:
   Centrar el ellipse on el spot.
-  Draw el ellipse con el color y el borrar color.
+  Dibujar el ellipse con el color y el borrar color.
 
 \Para dibujar una elipse con un color de borde y un color de relleno;
-Para draw un ellipse con un border color y un fill color:
-  Si el pdf state's page flag es set, draw el ellipse con el border y el fill (pdf style); salir.
+Para dibujar un ellipse con un border color y un fill color:
+  Si el pdf state's page flag es set, dibujar el ellipse con el border y el fill (pdf style); salir.
   Privatizar el ellipse.
   Crear el hpen of el current canvas usando el border.
   Crear el hbrush of el current canvas usando el fill.
@@ -4616,7 +4629,7 @@ Para draw un ellipse con un border color y un fill color:
   Destroy el hbrush of el current canvas.
   Destroy el hpen of el current canvas.
 
-Para draw un ellipse con un border color y un fill color (pdf style):
+Para dibujar un ellipse con un border color y un fill color (pdf style):
   Si el border y el fill are clear, salir.
   Output setcolor usando el border y el fill.
   Poner el ellipse's left y el ellipse's top into un spot.
@@ -4629,10 +4642,10 @@ Para draw un ellipse con un border color y un fill color (pdf style):
   Output stroke and fill usando el border y el fill.
 
 \Para dibujar una elipse con un color;
-Para draw un ellipse con un color:
-  Draw el ellipse con el color y el color.
+Para dibujar un ellipse con un color:
+  Dibujar el ellipse con el color y el color.
 
-\Para draw un fancy arrow some twips long con un color;
+\Para dibujar un fancy arrow some twips long con un color;
 Para stroke un fancy arrow some twips long con un color:
   Poner el color into el context's color.
   Save el context.
@@ -4641,17 +4654,17 @@ Para stroke un fancy arrow some twips long con un color:
   Move el twips divided by 8.
   Save el context.
   Turn left 1/8 of el way.
-  Draw un spiral starting con el twips divided by 4.
+  Dibujar un spiral starting con el twips divided by 4.
   Restore el context.
   Turn right 1/8 of el way.
-  Draw another spiral backwards starting con el twips divided by 4.
+  Dibujar another spiral backwards starting con el twips divided by 4.
   Restore el context.
 
 \Para dibujar una figura con un color;
-Para draw un figure con un color:
-  Draw el figure con el color y el borrar color.
+Para dibujar un figure con un color:
+  Dibujar el figure con el color y el borrar color.
 
-Para draw un figure con some sides about some twips wide:
+Para dibujar un figure con some sides about some twips wide:
   Poner 1 y el side count into un fraction.
   Poner el twips times el pizza pie divided by el sides into un segment length.
   Si el sides are 4, Poner el twips times 7/8 into el segment length. \ what es this? ***
@@ -4661,8 +4674,8 @@ Para draw un figure con some sides about some twips wide:
   Agregar 1 to un count. if el count es el sides, interrumpir.
   Repetir.
 
-\Para draw un figure con some sides some twips long;
-Para draw un figure con some sides and some twips:
+\Para dibujar un figure con some sides some twips long;
+Para dibujar un figure con some sides and some twips:
   Poner 1 y el sides into un fraction.
   Lazo.
   Stroke el twips.
@@ -4670,12 +4683,12 @@ Para draw un figure con some sides and some twips:
   Agregar 1 to un count. If el count es el sides, interrumpir.
   Repetir.
 
-\Para draw un figure con some sides some twips long using un color;
-Para draw un figure con some sides and some twips using un color:
+\Para dibujar un figure con some sides some twips long using un color;
+Para dibujar un figure con some sides and some twips using un color:
   Poner el color into el context's color.
-  Draw el figure con el sides y el twips.
+  Dibujar el figure con el sides y el twips.
 
-Para draw un gpbitmap at un spot (pdf style):
+Para dibujar un gpbitmap at un spot (pdf style):
   Si el gpbitmap es nil, salir.
 \ Agregar xobject
   Agregar un xobject pdf object usando "image object".
@@ -4702,7 +4715,7 @@ Para draw un gpbitmap at un spot (pdf style):
   Adjuntar el nibble string to el xobject.
   Adjuntar "endstream" to el xobject.
   Adjuntar "endobj" to el xobject.
-\ draw el image in el current contents
+\ dibujar el image in el current contents
   Poner el gpbitmap's width times el tpp into un width.
   Poner el gpbitmap's height times el tpp into un height.
   Poner el spot's x-coord into un x-number.
@@ -4712,8 +4725,8 @@ Para draw un gpbitmap at un spot (pdf style):
   Output "/" then el name then " Do".
   Output "Q".
 
-\Para draw un half circle about some twips wide;
-Para draw un half circle usando un size:
+\Para dibujar un half circle about some twips wide;
+Para dibujar un half circle usando un size:
   Poner el size times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
@@ -4723,8 +4736,8 @@ Para draw un half circle usando un size:
   Si el count es 24, salir.
   Repetir.
 
-\Para draw un half circle usando un size (backwards);
-Para draw un half circle usando un size (counterclockwise):
+\Para dibujar un half circle usando un size (backwards);
+Para dibujar un half circle usando un size (counterclockwise):
   Poner el size times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
@@ -4734,41 +4747,41 @@ Para draw un half circle usando un size (counterclockwise):
   Si el count es 24, salir.
   Repetir.
 
-Para draw un hexagon usando un side length:
+Para dibujar un hexagon usando un side length:
   Stroke el side length.
   Turn right 1/6 of el way.
   Agregar 1 to un count. If el count es 6, interrumpir.
   Repetir.
 
 \Para dibujar una línea;
-Para draw un line:
-  Draw el line con el context's color.
+Para dibujar un line:
+  Dibujar el line con el context's color.
 
-Para draw un line around some twips long; \ "around" es significant here
-Para draw un line about some twips long; \ "about" es significant here
+Para dibujar un line around some twips long; \ "around" es significant here
+Para dibujar un line about some twips long; \ "about" es significant here
 Para stroke un line around some twips long; \ "around" es significant here
 Para stroke un line about some twips long: \ "about" es significant here
   Poner el twips divided by 2 into some other twips.
   Pick some third twips between el twips minus el other twips y el twips plus el other twips.
   Stroke el line el third twips long.
 
-\Para draw un line as high as un box con un color;
-Para draw un line as tall as un box con un color:
+\Para dibujar un line as high as un box con un color;
+Para dibujar un line as tall as un box con un color:
   Poner el color into el context's color.
   Stroke el box's height.
 
-Para draw un line as wide as un box con un color:
+Para dibujar un line as wide as un box con un color:
   Poner el color into el context's color.
   Stroke el box's width.
 
-\Para draw un line between some twips and some other twips long;
-\Para draw un line between some twips to some other twips long;
-\Para draw un line some twips to some other twips long;
+\Para dibujar un line between some twips and some other twips long;
+\Para dibujar un line between some twips to some other twips long;
+\Para dibujar un line some twips to some other twips long;
 Para stroke un line some twips to some other twips long:
   Pick some third twips between el twips y el other twips.
   Stroke el line el third twips long.
 
-\Para draw un line some twips long;
+\Para dibujar un line some twips long;
 Para stroke un line some twips long:
 \Wait for el delay. ***
   Poner el context's spot into el line's start.
@@ -4777,17 +4790,17 @@ Para stroke un line some twips long:
   Agregar el run times el twips divided by 10000 to el line's end's x-coord.
   Agregar el rise times el twips divided by 10000 to el line's end's y-coord.
   Poner el line's end into el context's spot.
-  Draw el line con el context's color.
+  Dibujar el line con el context's color.
 \If el delay es positive, refresh el screen.
 
 \Para dibujar una línea usando un tamaño;
-\Para draw un line using some twips as el length;
-Para draw un line using some twips for el length:
+\Para dibujar un line using some twips as el length;
+Para dibujar un line using some twips for el length:
   Stroke el twips.
 
 \Para dibujar una línea con un color;
-Para draw un line con un color:
-  Si el pdf state's page flag es set, draw el line con el color (pdf style); salir.
+Para dibujar un line con un color:
+  Si el pdf state's page flag es set, dibujar el line con el color (pdf style); salir.
   Crear el hpen of el current canvas usando el color.
   Llamada "gdi32.dll" "MoveToEx" con el current canvas y el line's start's x-coord y el line's start's y-coord and nil.
   Llamada "gdi32.dll" "LineTo" con el current canvas y el line's end's x-coord y el line's end's y-coord.
@@ -4795,53 +4808,53 @@ Para draw un line con un color:
   Llamada "gdi32.dll" "SetPixelV" con el current canvas y el line's end's x-coord y el line's end's y-coord y el colorref.
   Destroy el hpen of el current canvas.
 
-Para draw un line con un color (pdf style):
+Para dibujar un line con un color (pdf style):
   Si el color es clear, salir.
   Output setcolor usando el color y el borrar color.
   Output moveto usando el line's start.
   Output lineto usando el line's end.
   Output stroke and fill usando el color y el borrar color.
 
-Para draw un line con un color around some twips long; \ "around" es significant here
-Para draw un line con un color about some twips long; \ "about" es significant here
+Para dibujar un line con un color around some twips long; \ "around" es significant here
+Para dibujar un line con un color about some twips long; \ "about" es significant here
 Para stroke un line con un color around some twips long; \ "around" es significant here
 Para stroke un line con un color about some twips long: \ "about" es significant here
   Poner el twips divided by 2 into some other twips.
   Pick some third twips between el twips minus el other twips y el twips plus el other twips.
   Stroke el line con el color el third twips long.
 
-\Para draw un line con un color some twips long;
+\Para dibujar un line con un color some twips long;
 Para stroke un line con un color some twips long:
   Poner el color into el context's color.
   Poner el context's spot into el line's start.
   Stroke el twips.
   Poner el context's spot into el line's end.
 
-\Para draw un line con un color some twips to some other twips long;
+\Para dibujar un line con un color some twips to some other twips long;
 Para stroke un line con un color some twips to some other twips long:
   Pick some third twips between el twips y el other twips.
   Stroke el line con el color el third twips long.
 
 \Para dibujar un número en una caja con un color;
-Para draw un number in un box con un color:
+Para dibujar un number in un box con un color:
   Poner el number into un string.
-  Draw el string in el box con el color and "center".
+  Dibujar el string in el box con el color and "center".
 
-\Para draw only within un box;
-\Para draw only inside un box;
-\Para draw only in un box;
-\Para draw only within un box desde now on;
-\Para draw only inside un box desde now on;
-\Para draw only in un box desde now on;
-\Para only draw within un box desde now on;
-\Para only draw inside un box desde now on;
-\Para only draw in un box desde now on;
-\Para only draw within un box;
-\Para only draw inside un box;
-\Para only draw in un box;
-\Para draw within un box only;
-\Para draw inside un box only;
-\Para draw in un box only;
+\Para dibujar only within un box;
+\Para dibujar only inside un box;
+\Para dibujar only in un box;
+\Para dibujar only within un box desde now on;
+\Para dibujar only inside un box desde now on;
+\Para dibujar only in un box desde now on;
+\Para only dibujar within un box desde now on;
+\Para only dibujar inside un box desde now on;
+\Para only dibujar in un box desde now on;
+\Para only dibujar within un box;
+\Para only dibujar inside un box;
+\Para only dibujar in un box;
+\Para dibujar within un box only;
+\Para dibujar inside un box only;
+\Para dibujar in un box only;
 Para poner masking tape all around un box;
 \Para enmascarar alrededor de una caja;
 Para poner masking tape around un box: \ note that this masks el box's border as well
@@ -4851,18 +4864,18 @@ Para poner masking tape around un box: \ note that this masks el box's border as
   Poner el original box into el context's box. \ *** original box? or indented one?
 
 \Para dibujar una imagen;
-Para draw un picture:
-  Si el pdf state's page flag es set, draw el picture (pdf style); salir.
+Para dibujar un picture:
+  Si el pdf state's page flag es set, dibujar el picture (pdf style); salir.
   Si el picture es nil, salir.
   Save el current canvas.
   Mask outside el picture's box.
   Llamada "gdiplus.dll" "GdipCreateFromHDC" con el current canvas y un gpgraphic's whereabouts.
   Llamada "gdiplus.dll" "GdipSetPageUnit" con el gpgraphic and 2 [pixels].
-  Draw el picture on el gpgraphic at el picture's uncropped box's left y el picture's uncropped box's top.
+  Dibujar el picture on el gpgraphic at el picture's uncropped box's left y el picture's uncropped box's top.
   Llamada "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
   Restore el current canvas.
 
-Para draw un picture (pdf style):
+Para dibujar un picture (pdf style):
   Si el picture es nil, salir.
   Poner el picture's box's left minus el picture's uncropped box's left divided by el tpp into un x-number.
   Poner el picture's box's top minus el picture's uncropped box's top divided by el tpp  into un y-number.
@@ -4877,10 +4890,10 @@ Para draw un picture (pdf style):
   And 2 [unitpixel] y el gpimageattributes and nil and 0.
   Si el gpimageattributes es not nil, destroy el gpimageattributes.
   Llamada "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
-  Draw el gpbitmap at el picture's box's left-top (pdf style).
+  Dibujar el gpbitmap at el picture's box's left-top (pdf style).
   Llamada "gdiplus.dll" "GdipDisposeImage" con el gpbitmap.
 
-Para draw un picture on un gpgraphic at un x-coord y un y-coord:
+Para dibujar un picture on un gpgraphic at un x-coord y un y-coord:
   Si el picture es nil, salir.
   Si el picture's grayscale flag es set, crear un gpimageattributes (grayscale).
   Llamada "gdiplus.dll" "GdipDrawImageRectRectI" con el gpgraphic y el picture's gpbitmap
@@ -4890,17 +4903,17 @@ Para draw un picture on un gpgraphic at un x-coord y un y-coord:
   Si el gpimageattributes es not nil, destroy el gpimageattributes.
 
 \Para dibujar un polígono;
-Para draw un polygon:
-  Draw el polygon con el black color y el borrar color.
+Para dibujar un polygon:
+  Dibujar el polygon con el black color y el borrar color.
 
 \Para dibujar un polígono con un color de borde y un color de relleno;
-Para draw un polygon con un border color y un fill color:
-  Si el pdf state's page flag es set, draw el polygon con el border y el fill (pdf style); salir.
+Para dibujar un polygon con un border color y un fill color:
+  Si el pdf state's page flag es set, dibujar el polygon con el border y el fill (pdf style); salir.
   Si el polygon es nil, salir.
-  Draw el polygon con el fill (fill only).
-  Draw el polygon con el border (border only).
+  Dibujar el polygon con el fill (fill only).
+  Dibujar el polygon con el border (border only).
 
-Para draw un polygon con un border color y un fill color (pdf style):
+Para dibujar un polygon con un border color y un fill color (pdf style):
   Si el polygon es nil, salir.
   Si el border y el fill are clear, salir.
   Output setcolor usando el border y el fill.
@@ -4915,11 +4928,11 @@ Para draw un polygon con un border color y un fill color (pdf style):
   Output stroke and fill usando el border y el fill.
 
 \Para dibujar un polígono con un color;
-Para draw un polygon con un color:
-  Draw el polygon con el color y el color.
+Para dibujar un polygon con un color:
+  Dibujar el polygon con el color y el color.
 
 \Para dibujar un polígono con un color (solo borde);
-Para draw un polygon con un color (border only):
+Para dibujar un polygon con un color (border only):
   Si el polygon es nil, salir.
   Si el color es clear, salir.
   Crear el hpen of el current canvas usando el color.
@@ -4937,7 +4950,7 @@ Para draw un polygon con un color (border only):
   Llamada "gdi32.dll" "SetPixelV" con el current canvas y el polygon's vertices' last's x-coord y el polygon's vertices' last's y-coord y el colorref.
 
 \Para dibujar un polígono con un color (solo relleno);
-Para draw un polygon con un color (fill only):
+Para dibujar un polygon con un color (fill only):
   Si el polygon es nil, salir.
   Si el color es clear, salir.
   Crear el hpen of el current canvas usando el borrar color.
@@ -4949,8 +4962,8 @@ Para draw un polygon con un color (fill only):
   Destroy el hbrush of el current canvas.
   Destroy el hpen of el current canvas.
 
-\Para draw un quarter circle about some twips wide;
-Para draw un quarter circle usando un size:
+\Para dibujar un quarter circle about some twips wide;
+Para dibujar un quarter circle usando un size:
   Poner el size times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
@@ -4960,11 +4973,11 @@ Para draw un quarter circle usando un size:
   Si el count es 12, salir.
   Repetir.
 
-Para draw un quarter circle between some twips and some other twips wide:
+Para dibujar un quarter circle between some twips and some other twips wide:
   Pick some third twips between el twips y el other twips.
-  Draw un quarter circle usando el third twips.
+  Dibujar un quarter circle usando el third twips.
 
-Para draw un quarter circle usando un size (counterclockwise):
+Para dibujar un quarter circle usando un size (counterclockwise):
   Poner el size times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
@@ -4974,8 +4987,8 @@ Para draw un quarter circle usando un size (counterclockwise):
   Si el count es 12, salir.
   Repetir.
 
-\Para draw un rectangle some twips by some other twips;
-Para draw un rectangle some twips wide by some other twips high:
+\Para dibujar un rectangle some twips by some other twips;
+Para dibujar un rectangle some twips wide by some other twips high:
   Stroke el other twips.
   Turn right.
   Stroke el twips.
@@ -4986,12 +4999,12 @@ Para draw un rectangle some twips wide by some other twips high:
   Turn right.
 
 \Para dibujar una caja redonda;
-Para draw un roundy box:
-  Draw el roundy box con el black color y el borrar color.
+Para dibujar un roundy box:
+  Dibujar el roundy box con el black color y el borrar color.
 
 \Para dibujar una caja redonda con un color de borde y un color de relleno;
-Para draw un roundy box con un border color y un fill color:
-  Si el pdf state's page flag es set, draw el roundy box con el border y el fill (pdf style); salir.
+Para dibujar un roundy box con un border color y un fill color:
+  Si el pdf state's page flag es set, dibujar el roundy box con el border y el fill (pdf style); salir.
   Privatizar el roundy box.
   Crear el hpen of el current canvas usando el border.
   Crear el hbrush of el current canvas usando el fill.
@@ -5002,9 +5015,9 @@ Para draw un roundy box con un border color y un fill color:
   Destroy el hbrush of el current canvas.
   Destroy el hpen of el current canvas.
 
-Para draw un roundy box con un border color y un fill color (pdf style):
+Para dibujar un roundy box con un border color y un fill color (pdf style):
   Si el border y el fill are clear, salir.
-  Si el roundy box's radius es 0, draw el roundy box as un box con el border y el fill (pdf style); salir.
+  Si el roundy box's radius es 0, dibujar el roundy box as un box con el border y el fill (pdf style); salir.
   Poner el roundy box's radius into un radius.
   Poner el radius times 2 into un offset.
   Poner el roundy box into un box.
@@ -5031,59 +5044,59 @@ Para draw un roundy box con un border color y un fill color (pdf style):
   Output stroke and fill usando el border y el fill.
 
 \Para dibujar una caja redonda con un color;
-Para draw un roundy box con un color:
-  Draw el roundy box con el color y el color.
+Para dibujar un roundy box con un color:
+  Dibujar el roundy box con el color y el color.
 
-Para draw un row of un text:
+Para dibujar un row of un text:
   Si el text es nil, salir.
   Si el row es nil, salir.
   Get un box usando el row y el text.
-  Draw el row's working string in el box con el text's pen y el text's font y el text's alignment.
+  Dibujar el row's working string in el box con el text's pen y el text's font y el text's alignment.
 
-Para draw un row of un text (editing):
+Para dibujar un row of un text (editing):
   Si el text es nil, salir.
   Si el row es nil, salir.
-  Draw el selection box for el row of el text.
+  Dibujar el selection box for el row of el text.
   Get un box usando el row y el text.
-  Draw el row's working string in el box con el text's pen y el text's font y el text's alignment.
+  Dibujar el row's working string in el box con el text's pen y el text's font y el text's alignment.
 
-Para draw el selection box for un row of un text:
+Para dibujar el selection box for un row of un text:
   Si el text es nil, salir.
   Si el row es nil, salir.
   Si el row of el text es not selected, salir.
   Get un selection box usando el row y el text.
-  Draw el selection box con el hilite color y el hilite color.
+  Dibujar el selection box con el hilite color y el hilite color.
 
-\Para draw un spiral backward usando some twips;
-\Para draw un spiral backward starting con some twips;
-Para draw un spiral usando un size (backwards):
+\Para dibujar un spiral backward usando some twips;
+\Para dibujar un spiral backward starting con some twips;
+Para dibujar un spiral usando un size (backwards):
   Privatizar el size.
   Lazo.
-  Draw un half circle usando el size (backwards).
+  Dibujar un half circle usando el size (backwards).
   Dividir el size by 2.
   Agregar 1 to un count.
   Si el count es 5, interrumpir.
   Repetir.
 
-\Para draw un spiral starting con some twips;
-Para draw un spiral usando un size:
+\Para dibujar un spiral starting con some twips;
+Para dibujar un spiral usando un size:
   Privatizar el size.
   Lazo.
-  Draw un half circle usando el size.
+  Dibujar un half circle usando el size.
   Dividir el size by 2.
   Agregar 1 to un count. If el count es 5, interrumpir.
   Repetir.
 
 \Para dibujar un punto;
-Para draw un spot:
-  Draw el spot con el black color.
+Para dibujar un spot:
+  Dibujar el spot con el black color.
 
 \Para dibujar un punto con un color;
-Para draw un spot con un color:
+Para dibujar un spot con un color:
   Convertir el color to un colorref.
   Llamada "gdi32.dll" "SetPixelV" con el current canvas y el spot's x-coord y el spot's y-coord y el colorref.
 
-Para draw un star usando un point count y un size:
+Para dibujar un star usando un point count y un size:
   Poner 1 y el point count into un fraction.
   Lazo.
   Turn right 1/48 of el way.
@@ -5098,44 +5111,44 @@ Para draw un star usando un point count y un size:
   Repetir.
 
 \Para dibujar una cadena en una caja (a la izquierda);
-Para draw un string at el left of un box:
-  Draw el string at el left of el box con el black color y el default font.
+Para dibujar un string at el left of un box:
+  Dibujar el string at el left of el box con el black color y el default font.
 
 \Para dibujar una cadena en una caja con un color (a la izquierda);
-Para draw un string at el left of un box con un color:
-  Draw el string at el left of el box con el color y el default font.
+Para dibujar un string at el left of un box con un color:
+  Dibujar el string at el left of el box con el color y el default font.
 
 \Para dibujar una cadena en una caja con un color y un tipo de letra (a la izquierda);
-Para draw un string at el left of un box con un color y un font:
-  Draw el string in el box con el color y el font and "left".
+Para dibujar un string at el left of un box con un color y un font:
+  Dibujar el string in el box con el color y el font and "left".
 
 \Para dibujar una cadena en una caja con untipo de letra (a la izquierda);
-Para draw un string at el left of un box con un font:
-  Draw el string at el left of el box con el black color y el font.
+Para dibujar un string at el left of un box con un font:
+  Dibujar el string at el left of el box con el black color y el font.
 
 \Para dibujar una cadena en una caja (a la derecha);
-Para draw un string at el right of un box:
-  Draw el string at el right of el box con el black color y el default font.
+Para dibujar un string at el right of un box:
+  Dibujar el string at el right of el box con el black color y el default font.
 
 \Para dibujar una cadena en una caja con un color (a la derecha);
-Para draw un string at el right of un box con un color:
-  Draw el string at el right of el box con el color y el default font.
+Para dibujar un string at el right of un box con un color:
+  Dibujar el string at el right of el box con el color y el default font.
 
 \Para dibujar una cadena en un caja con un color y un tipo de letra (a la derecha);
-Para draw un string at el right of un box con un color y un font:
-  Draw el string in el box con el color y el font and "right".
+Para dibujar un string at el right of un box con un color y un font:
+  Dibujar el string in el box con el color y el font and "right".
 
 \Para dibujar una cadena en una caja con un tipo de letra (a la derecha);
-Para draw un string at el right of un box con un font:
-  Draw el string at el right of el box con el black color y el font.
+Para dibujar un string at el right of un box con un font:
+  Dibujar el string at el right of el box con el black color y el font.
 
 \Para dibujar una cadena en un punto con un color;
-Para draw un string at un spot con un color:
-  Draw el string at el spot con el color y el default font.
+Para dibujar un string at un spot con un color:
+  Dibujar el string at el spot con el color y el default font.
 
 \Para dibujar una cadena en un punto con un color y un tipo de letra;
-Para draw un string at un spot con un color y un font:
-  Si el pdf state's page flag es set, draw el string at el spot con el color y el font (pdf style); salir.
+Para dibujar un string at un spot con un color y un font:
+  Si el pdf state's page flag es set, dibujar el string at el spot con el color y el font (pdf style); salir.
   Set el colorref of el current canvas usando el color.
   Crear el hfont of el current canvas usando el font.
   Ajustar spacing usando el string.
@@ -5152,7 +5165,7 @@ Para draw un string at un spot con un color y un font:
   Repetir.
   Destroy el hfont of el current canvas.
 
-Para draw un string at un spot con un color y un font (pdf style):
+Para dibujar un string at un spot con un color y un font (pdf style):
   Si el string es blank, salir.
   Privatizar el spot.
   Include el font in el current pdf.
@@ -5178,79 +5191,79 @@ Para draw un string at un spot con un color y un font (pdf style):
   Destroy el font info.
 
 \Para dibujar una cadena en una caja;
-Para draw un string in un box:
-  Draw el string in el box con el black color y el default font and "left".
+Para dibujar un string in un box:
+  Dibujar el string in el box con el black color y el default font and "left".
 
 \Para dibujar una cadena en una caja sobre un número con un color y un tipo de letra y una alineación;
-Para draw un string in un box over un number con un color y un font y un alignment:
+Para dibujar un string in un box over un number con un color y un font y un alignment:
   Privatizar el box.
   Si el alignment es "left", Agregar el number to el box's left.
   Si el alignment es "zquierda", Agregar el number to el box's left.
   Si el alignment es "derecho", Restar el number desde el box's right.
-  Draw el string in el box con el color y el font y el alignment.
+  Dibujar el string in el box con el color y el font y el alignment.
 
 \Para dibujar una cadena en una caja con una alineación;
-Para draw un string in un box con un alignment:
-  Draw el string in el box con el black color y el default font y el alignment.
+Para dibujar un string in un box con un alignment:
+  Dibujar el string in el box con el black color y el default font y el alignment.
 
 \Para dibujar una cadena en una caja con un color;
-Para draw un string in un box con un color:
-  Draw el string in el box con el color y el default font and "left".
+Para dibujar un string in un box con un color:
+  Dibujar el string in el box con el color y el default font and "left".
 
 \Para dibujar una cadena en una caja con un color y una alineación;
-Para draw un string in un box con un color y un alignment:
-  Draw el string in el box con el color y el default font y el alignment.
+Para dibujar un string in un box con un color y un alignment:
+  Dibujar el string in el box con el color y el default font y el alignment.
 
 \Para dibujar una cadena en una caja con un color y un tipo de letra y una alineación;
-Para draw un string in un box con un color y un font y un alignment:
+Para dibujar un string in un box con un color y un font y un alignment:
   Get un offset pair usando el string y el box y el font y el alignment.
-  Draw el string at el box's left-top plus el offset pair con el color y el font.
+  Dibujar el string at el box's left-top plus el offset pair con el color y el font.
 
 \Para dibujar una cadena en una caja con un tipo de letra y una alineación;
-Para draw un string in un box con un font y un alignment:
-  Draw el string in el box con el black color y el font y el alignment.
+Para dibujar un string in un box con un font y un alignment:
+  Dibujar el string in el box con el black color y el font y el alignment.
 
 \Para dibujar una cadena en una caja (centrado);
 \Para dibujar una cadena en el centro de una caja;
-Para draw un string in el center of un box:
-  Draw el string in el center of el box con el black color y el default font.
+Para dibujar un string in el center of un box:
+  Dibujar el string in el center of el box con el black color y el default font.
 
 \Para dibujar una cadena en el centro de una caja con un color;
-Para draw un string in el center of un box con un color:
-  Draw el string in el center of el box con el color y el default font.
+Para dibujar un string in el center of un box con un color:
+  Dibujar el string in el center of el box con el color y el default font.
 
 \Para dibujar una cadena en el centro de una caja con un color y un tipo de letra;
-Para draw un string in el center of un box con un color y un font:
-  Draw el string in el box con el color y el font and "center".
+Para dibujar un string in el center of un box con un color y un font:
+  Dibujar el string in el box con el color y el font and "center".
 
 \Para dibujar una cadena en el centro de una caja con un tipo de letra;
-Para draw un string in el center of un box con un font:
-  Draw el string in el center of el box con el black color y el font.
+Para dibujar un string in el center of un box con un font:
+  Dibujar el string in el center of el box con el black color y el font.
 
 \Para dibujar una terminal;
-Para draw un terminal:
+Para dibujar un terminal:
   Si el terminal es nil, salir.
   Save el current canvas.
   Mask only outside el terminal's box.
-  Draw and fill el terminal's box con el black color.
+  Dibujar and fill el terminal's box con el black color.
   Write el terminal's quoras in el terminal's box.
   Restore el current canvas.
 
 \Para dibujar un texto;
-Para draw un text:
+Para dibujar un text:
   Si el text es nil, salir.
   Save el current canvas.
   Mask outside el text's box.
-  Draw any visible rows of el text.
+  Dibujar any visible rows of el text.
   Restore el current canvas.
 
 \Para dibujar un texto (edición);
-Para draw un text (editing):
+Para dibujar un text (editing):
   Si el text es nil, salir.
   Save el current canvas.
   Mask outside el text's box.
-  Draw any visible rows of el text (editing).
-  Draw el caret in el text.
+  Dibujar any visible rows of el text (editing).
+  Dibujar el caret in el text.
   Restore el current canvas.
 
 A drive es un string. \ start of path to first slash = c:\ OR start of path to fourth slash = \\computer\share\
@@ -5564,7 +5577,7 @@ The equal-sign key es un key igual to 187.
 \Para erase inside un box;
 \Para borrar dentro de una caja;
 Para borrar inside un box:
-  Draw el box con el borrar color y el black color.
+  Dibujar el box con el borrar color y el black color.
 
 The escape byte es un byte igual to 27.
 
@@ -5826,7 +5839,7 @@ A number called dwhighdatetime.
 
 \Para llenar una caja con un color;
 Para fill un box con un color:
-  Draw el box con el borrar color y el color.
+  Dibujar el box con el borrar color y el color.
 
 Para fill bytes con un byte starting at un pointer for un byte count:
   Intel $8BBD0C000000. \ mov edi,[ebp+12] \ el pointer
@@ -5841,7 +5854,7 @@ Para fill bytes con un byte starting at un pointer for un byte count:
 \Para llenar una elipse en un punto con un color;
 Para fill un ellipse on un spot con un color:
   Centrar el ellipse on el spot.
-  Draw el ellipse con el borrar color y el color.
+  Dibujar el ellipse con el borrar color y el color.
 
 \Para llenar una cadena con un byte dado un conteo;
 Para fill un string con un byte usando un count:
@@ -6052,7 +6065,7 @@ Para find un sector usando un grid y un spot:
 \Para encontrar una raíz cuadrada de un número;
 Para find un square root of un number: \ rounds down
   Privatizar el number.
-  De-sign el number.
+  Eliminar signo de el number.
   Si el number es 0, Poner 0 into el square root; salir.
   Si el number es 1, Poner 1 into el square root; salir.
   Poner 1 into un square number.
@@ -6398,9 +6411,9 @@ Para get un difference between un pair and another pair usando un grid pair:
 \Para obtener una distancia entre un punto y otro punto (aproximado);
 Para get un distance between un spot and another spot (approximate):
   Poner el spot's x minus el other spot's x into un number.
-  De-sign el number.
+  Eliminar signo de el number.
   Poner el spot's y minus el other spot's y into another number.
-  De-sign el other number.
+  Eliminar signo de el other number.
   Poner el number times el number into el distance.
   Agregar el other number times el other number to el distance.
   Find un square root of el distance.
@@ -6410,9 +6423,9 @@ Para get un distance between un spot and another spot (approximate):
 \Para obtener una distancia entre un punto y otro punto (tablero de ajedrez);
 Para get un distance between un spot and another spot (chessboard):
   Poner el spot's x-coord minus el other spot's x-coord into un number.
-  De-sign el number.
+  Eliminar signo de el number.
   Poner el spot's y-coord minus el other spot's y-coord into another number.
-  De-sign el other number.
+  Eliminar signo de el other number.
   Poner el number into el distance.
   Si el other number es greater than el number, Poner el other number into el distance.
 
@@ -6442,7 +6455,7 @@ Para get el first-eighth equivalent of un heading:
   Get el first-quarter equivalent of el heading.
   Si el heading es less than 480, salir.
   Restar 960 desde el heading.
-  De-sign el heading.
+  Eliminar signo de el heading.
 
 Para get el first-quarter equivalent of un heading:
   Si el heading es less than 960, salir.
@@ -6458,8 +6471,8 @@ Para seed el random number generator:
 Para get un gcd usando un number and another number:
   Poner el number into un dividend number.
   Poner el other number into el gcd.
-  De-sign el dividend number.
-  De-sign el gcd.
+  Eliminar signo de el dividend number.
+  Eliminar signo de el gcd.
   Si el dividend es less than el gcd, swap el dividend con el gcd.
   Si el gcd es 0, Poner 1 into el gcd; salir.
   Lazo.
@@ -8713,7 +8726,7 @@ The linefeed byte es un byte igual to 10.
 \Para enumerar algunas elecciones en una caja;
 \Para list some choices in un box;
 \Para dibujar algunas elecciones en una caja;
-Para draw some choices in un box:
+Para dibujar some choices in un box:
 \Draw really fast. ***
   Get un [first/next] choice desde el choices.
   Si el choice es missing [because we've drawn them all], salir.
@@ -8729,9 +8742,9 @@ Para draw some choices in un box:
 \Para enumerar algunas elecciones en una caja con un color;
 \Para list some choices in un box con un color;
 \Para dibujar algunas elecciones en una caja con un color;
-Para draw some choices in un box con un color:
+Para dibujar some choices in un box con un color:
   Poner el color into el context's color.
-  Draw el choices in el box.
+  Dibujar el choices in el box.
 
 The little-a byte es un byte igual to 97.
 
@@ -10086,7 +10099,7 @@ An outdent es un number.
 
 \Para delinear una caja con un color;
 Para outline un box con un color:
-  Draw el box con el color y el borrar color.
+  Dibujar el box con el color y el borrar color.
 
 A outlinetextmetric es un record con
 A number called otmsize,
@@ -11050,7 +11063,7 @@ Para poner un fraction into un string;
 Para convertir un fraction to un string:
   Borrar el string.
   Privatizar el fraction.
-  Si el fraction es negative, Poner "-" into el string; de-sign el fraction.
+  Si el fraction es negative, Poner "-" into el string; eliminar signo de el fraction.
   Reduce el fraction.
   Convertir el fraction to un mixed.
   Si el mixed es 0, Adjuntar "0" to el string; salir.
@@ -11066,7 +11079,7 @@ Para poner un fraction pair into another fraction pair:
 \Para poner el valor absoluto de una fracción en otra fracción;
 Para poner un fraction's absolute value into another fraction:
   Poner el fraction into el other fraction.
-  De-sign el other fraction.
+  Eliminar signo de el other fraction.
 
 Para poner un gpimage's gprect into un gprect:
   Poner 0 into el gprect's x.
@@ -11250,7 +11263,7 @@ Para poner un number into un string;
 Para convertir un number to un string:
   Borrar el string.
   Privatizar el number.
-  De-sign el number.
+  Eliminar signo de el number.
   Lazo.
   Dividir el number by 10 giving un quotient y un remainder.
   Agregar 48 to el remainder.
@@ -11281,7 +11294,7 @@ Para poner un number and another number into un fraction:
 \Para poner el valor absoluto de un número en otro número;
 Para poner un number's absolute value into another number:
   Poner el number into el other number.
-  De-sign el other number.
+  Eliminar signo de el other number.
 
 Para poner un outlinetextmetric into another outlinetextmetric:
   Copiar bytes desde el outlinetextmetric's whereabouts to el other outlinetextmetric's whereabouts for el outlinetextmetric's magnitude.
@@ -11295,7 +11308,7 @@ Para poner un pair into another pair:
 \Para poner el valor absoluto de un par en otro par;
 Para poner un pair's absolute value into another pair:
   Poner el pair into el other pair.
-  De-sign el other pair.
+  Eliminar signo de el other pair.
 
 Para centrar una imagen en un hoja apaisada; \ unclear why this doesn't get called properly when I replce hoja apaisada con caja ***
 \Para centrar una imagen en una caja;
@@ -11923,7 +11936,7 @@ Para read un response string desde un winhttp request:
   Lazo.
   Poner 0 into un size.
   Llamada "winhttp.dll" "WinHttpQueryDataAvailable"
-  With el winhttp request's request y el size's whereabouts retornando un result number.
+  con el winhttp request's request y el size's whereabouts retornando un result number.
   Si el result es 0, Poner "No se pudo consultar los datos disponibles." into el error de e/s; borrar el response; interrumpir.
   Poner el response's length into un saved length.
   Reassign el response's first usando el saved length plus el buffer size.
@@ -12012,7 +12025,7 @@ Para receive un buffer desde un socket:
 Para receive el response desde un winhttp request:
   Si el winhttp request es nil, salir.
   Llamada "winhttp.dll" "WinHttpReceiveResponse"
-  With el winhttp request's request
+  con el winhttp request's request
   And 0
   retornando un result number.
   Si el result es 0, Poner "No pude enviar el pedido." into el error de e/s; salir.
@@ -12982,7 +12995,7 @@ Para send un buffer to un socket:
 Para send un data string to un winhttp request:
   Si el winhttp request es nil, salir.
   Llamada "winhttp.dll" "WinHttpSendRequest"
-  With el winhttp request's request
+  con el winhttp request's request
   And 0 [winhttp_no_additional_headers]
   And 0 
   y el data's first
@@ -13169,7 +13182,7 @@ The shift-out byte es un byte igual to 14.
 Para show un console:
   Si el console es nil, salir.
   Save el current canvas.
-  Draw el console.
+  Dibujar el console.
   Refresh el screen usando el console's box.
   Restore el current canvas.
 
@@ -13184,7 +13197,7 @@ Para show un cursor:
 Para show un terminal:
   Si el terminal es nil, salir.
   Save el current canvas.
-  Draw el terminal.
+  Dibujar el terminal.
   Refresh el screen usando el terminal's box.
   Restore el current canvas.
 
@@ -14735,12 +14748,12 @@ Para stroke el left-paren glyph:
 
 \Para stroke un line as high as un box;
 \Para stroke un line as tall as un box;
-\Para draw un line as high as un box;
-Para draw un line as tall as un box:
+\Para dibujar un line as high as un box;
+Para dibujar un line as tall as un box:
   Stroke el box's height.
 
 \Para stroke un line as wide as un box;
-Para draw un line as wide as un box:
+Para dibujar un line as wide as un box:
   Stroke el box's width.
 
 Para stroke el little-a glyph:
@@ -15442,7 +15455,7 @@ Para stroke el tilde glyph:
   Restore el context.
 
 Para stroke some twips:
-  Draw un line el twips long.
+  Dibujar un line el twips long.
 
 Para stroke el two glyph:
   Save el context.
@@ -16280,7 +16293,7 @@ Para write some quoras in un box:
   Get un quora desde el quoras.
   Si el quora es nil, interrumpir.
 \draw really fast. ***
-\ Draw el quora box con el yellow color. \ temp ***
+\ Dibujar el quora box con el yellow color. \ temp ***
   Write el quora's string in el quora box con el quora's color.
   Move el quora box down 1/4 inch.
   Repetir.
@@ -16500,7 +16513,7 @@ Para write un string con un font y un size y un color y un spot:
   Agregar el width divided by 2 to el box's right.
   Restar el size divided by 2 desde el box's top.
   Agregar el size divided by 2 to el box's bottom.
-  Draw el string in el box con el color y el font and "center".
+  Dibujar el string in el box con el color y el font and "center".
   Refresh el screen.
 
 \Para write con large letters;
@@ -16554,7 +16567,7 @@ Para yield to windows:
 
 The z-key es un key igual to 90.
 
-Para zero un box: \ was borrar un box, got confounded con "clear un box" (which should draw el box all black as does "clear el screen")
+Para zero un box: \ was borrar un box, got confounded con "clear un box" (which should dibujar el box all black as does "clear el screen")
   Poner 0 into el box's left.
   Poner 0 into el box's top.
   Poner 0 into el box's right.
