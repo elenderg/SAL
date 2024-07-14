@@ -107,7 +107,7 @@ Para abort con un string y un  byte pointer:
   Poner el string into el compiler's abort message.
   Find el compiler's abort path y el compiler's abort row# usando el byte pointer.
   Si el compiler's abort path es blank, salir.
-  Extract un file name desde el compiler's abort path.
+  Extraer un file name desde el compiler's abort path.
   Prepend "Error en " then el file name then ". " to el compiler's abort message.
   
 Para abort con un string y un  rider:
@@ -4240,7 +4240,7 @@ The push address tag es un tag igual to 18.
 The push value tag es un tag igual to 19.
   
 Para poner el compiler's exe path into un path:
-  Extract un designator desde el compiler's directory.
+  Extraer un designator desde el compiler's directory.
   Remove any trailing backslash desde el designator.
   Poner el compiler's directory then el designator then ".exe" into el path.
   
@@ -4251,7 +4251,7 @@ Para poner el compiler's exe size into un size:
   Agregar el code borough's size to el size.
   
 Para poner el compiler's listing path into un path:
-  Extract un designator desde el compiler's directory.
+  Extraer un designator desde el compiler's directory.
   Remove any trailing backslash desde el designator.
   Poner el compiler's directory then el designator then ".lst" into el path.
   

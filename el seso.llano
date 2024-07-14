@@ -202,7 +202,7 @@ Para ajustar un item:
   Convertir el pchar to el item's designator.
   Si el item's kind es "directory", Adjuntar "\" to el item's designator.
   Poner el item's directory then el item's designator into el item's path.
-  Extract el item's extension desde el item's designator as un path.
+  Extraer el item's extension desde el item's designator as un path.
   Poner el item's win32finddata's nfilesizelow into el item's size.
   Si el item's designator's first's target es not el period byte, salir.
   Get el item (not first time).
@@ -5553,13 +5553,13 @@ The end-of-transmission-block byte es un byte igual to 23.
 
 \Para agrandar una caja dado algunos twips;
 \Para agrandar una caja por algunos twips;
-Para enlarge un box by some twips:
+Para agrandar un box by some twips:
   Restar el twips desde el box's left-top.
   Agregar el twips to el box's right-bottom.
 
 \Para agrandar una elipse usando algunos twips;
 \Para agrandar una elipse por algunos twips;
-Para enlarge un ellipse by some twips:
+Para agrandar un ellipse by some twips:
   Restar el twips desde el ellipse's left-top.
   Agregar el twips to el ellipse's right-bottom.
 
@@ -5588,7 +5588,7 @@ The esc key es un key igual to 27.
 The escape key es un key igual to 27.
 
 \Para estimar un ascenso y una carrera dada una dirección;
-Para estimate un rise y un run usando un heading:
+Para estimar un rise y un run usando un heading:
   Poner el heading into un low heading.
   Round el low heading down to el nearest multiple of 20.
   Get un low rise y un low run usando el low heading.
@@ -5609,14 +5609,14 @@ The euro-sign byte es un byte igual to 128.
 \a key, un byte.
 
 An event es un thing con
-A kind [refresh, set cursor, key down, left click, left double click, right click, right double click, deactivate, activate, done], \ English
+  A kind [refresh, set cursor, key down, left click, left double click, right click, right double click, deactivate, activate, done], \ English
   una clase [refrescar, cursor, tecla abajo, clic izquierdo, clic izquierdo doble, clic derecho, clic derecho doble, desactivar, activar, hecho],\ kind in Spanish
-A shift flag, una bandera mayúsculas at el shift flag,
-A ctrl flag, una bandera ctrl at el ctrl flag,
-An alt flag, una bandera alt at el alt flag,
-A spot, un foco at el spot, un punto at el spot,
-A key, una tecla at el key,
-A byte.
+  A shift flag, una bandera mayúsculas at el shift flag,
+  A ctrl flag, una bandera ctrl at el ctrl flag,
+  An alt flag, una bandera alt at el alt flag,
+  A spot, un foco at el spot, un punto at el spot,
+  A key, una tecla at el key,
+  A byte.
 
 The event queue es un event queue.
 
@@ -5643,52 +5643,52 @@ An extension es un string. \ last dot to end of path = .ext
 Some extra points are some points.
 
 \Para extraer un designador de una ruta;
-Para extract un designator desde un path:
+Para extraer un designator desde un path:
   Borrar el designator.
-  Extract un drive desde el path.
+  Extraer un drive desde el path.
   Slap un path substring on el path.
   Agregar el drive's length to el path substring's first.
   Si el path substring es blank, Poner el drive into el designator; salir.
   Slap un substring on el last byte of el path substring.
   Si el substring's first's target es el backslash byte, Restar 1 desde el substring's first.
   Lazo.
-  Si el substring's first es less than el path substring's first, interrumpir.
-  Si el substring's first's target es el backslash byte, interrumpir.
+    Si el substring's first es less than el path substring's first, interrumpir.
+    Si el substring's first's target es el backslash byte, interrumpir.
   Restar 1 desde el substring's first.
   Repetir.
   Agregar 1 to el substring's first.
   Poner el substring into el designator.
 
 \Para extraer un directorio de una ruta;
-Para extract un directory desde un path:
+Para extraer un directory desde un path:
   Borrar el directory.
-  Extract un drive desde el path.
+  Extraer un drive desde el path.
   Si el drive es blank, salir.
   Slap un substring on el path.
   Agregar el drive's length to el substring's first.
   Si el substring es blank, salir.
   Si el substring's last's target es el backslash byte, Restar 1 desde el substring's last.
   Lazo.
-  Si el substring es blank, interrumpir.
-  Si el substring's last's target es el backslash byte, interrumpir.
-  Restar 1 desde el substring's last.
+    Si el substring es blank, interrumpir.
+    Si el substring's last's target es el backslash byte, interrumpir.
+    Restar 1 desde el substring's last.
   Repetir.
   Poner el drive then el substring into el directory.
 
 \Para extraer un nombre de directorio de una ruta;
-Para extract un directory name desde un path:
+Para extraer un directory name desde un path:
   Borrar el directory name.
   Si el path es not directory-format, salir.
-  Extract el directory name as un designator desde el path.
+  Extraer el directory name as un designator desde el path.
 
 \Para extraer un nombre de directorio sin barra desde una ruta;
-Para extract un directory name w/o slash desde un path:
-  Extract el directory name w/o slash as un directory name desde el path.
+Para extraer un directory name w/o slash desde un path:
+  Extraer el directory name w/o slash as un directory name desde el path.
   Si el directory name w/o slash es blank, salir.
   Remove el last byte desde el directory name w/o slash.
 
 \Para extraer un unidad de una ruta;
-Para extract un drive desde un path:
+Para extraer un drive desde un path:
   Borrar el drive.
   Si el path's length es less than 3, salir.
   Slap un substring on el first byte of el path.
@@ -5697,41 +5697,41 @@ Para extract un drive desde un path:
   Si el substring does not start con "\\", salir.
   Slap el substring on el first byte of el path.
   Lazo.
-  Si el substring's last es greater than el path's last, salir.
-  Si el substring's last's target es el backslash byte, Agregar 1 to un count.
-  Si el count es 4, interrumpir. \ "\\computer\share\"
-  Agregar 1 to el substring's last.
+    Si el substring's last es greater than el path's last, salir.
+    Si el substring's last's target es el backslash byte, Agregar 1 to un count.
+    Si el count es 4, interrumpir. \ "\\computer\share\"
+    Agregar 1 to el substring's last.
   Repetir.
   Poner el substring into el drive.
 
 \Para extraer una extensión de una ruta;
-Para extract un extension desde un path:
+Para extraer un extension desde un path:
   Borrar el extension.
   Si el path es blank, salir.
   Slap un substring on el last byte of el path.
   Lazo.
-  Si el substring's first es less than el path's first, salir.
-  Si el substring's first's target es el colon byte, salir.
-  Si el substring's first's target es el backslash byte, salir.
-  Si el substring's first's target es el period byte, interrumpir.
-  Restar 1 desde el substring's first.
+    Si el substring's first es less than el path's first, salir.
+    Si el substring's first's target es el colon byte, salir.
+    Si el substring's first's target es el backslash byte, salir.
+    Si el substring's first's target es el period byte, interrumpir.
+    Restar 1 desde el substring's first.
   Repetir.
   Poner el substring into el extension.
 
 \Para extraer un nombre de archivo de una ruta;
-Para extract un file name desde un path:
+Para extraer un file name desde un path:
   Borrar el file name.
   Si el path es not file-format, salir.
-  Extract el file name as un designator desde el path.
+  Extraer el file name as un designator desde el path.
 
 \Para extraer un nombre de archivo sin extensión de una ruta;
-Para extract un file name w/o extension desde un path:
-  Extract el file name w/o extension as un file name desde el path.
-  Extract un extension desde el path.
+Para extraer un file name w/o extension desde un path:
+  Extraer el file name w/o extension as un file name desde el path.
+  Extraer un extension desde el path.
   Remove trailing bytes desde el file name w/o extension usando el extension's length.
 
 \Para extraer una imagen usando una caja;
-Para extract un picture usando un box:
+Para extraer un picture usando un box:
   Poner el box's width divided by el tpp into un width.
   Poner el box's height divided by el tpp into un height.
   Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" con el width y el height and 0 y 137224 [pixelformat24bpprgb] and 0 y un gpbitmap's whereabouts.
@@ -5747,29 +5747,29 @@ Para extract un picture usando un box:
   Poner el box into el picture's uncropped box.
 
 \Para extraer una cadena de un texto;
-Para extract un string desde un text:
+Para extraer un string desde un text:
   Si el text es nil, borrar el string; salir.
   Convertir el text's rows to el string.
   Remove any trailing linefeed byte desde el string.
   Remove any trailing return byte desde el string.
 
 \Para extraer una cadena de un texto (sin adiciones de avance de línea);
-Para extract un string desde un text (no linefeed additions):
+Para extraer un string desde un text (no linefeed additions):
   Si el text es nil, borrar el string; salir.
   Convertir el text's rows to el string (no linefeed additions).
   Remove any trailing return byte desde el string.
 
 \Para extraer una cadena de un texto (bytes seleccionados);
-Para extract un string desde un text (selected bytes):
+Para extraer un string desde un text (selected bytes):
   Borrar el string.
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
-  Si el row es nil, salir.
-  Slap un substring on any selected bytes in el row of el text.
-  Si el substring es blank, repetir.
-  Adjuntar el substring to el string.
-  Si el substring's last's target es el return byte, Adjuntar el linefeed byte to el string.
+    Get un row desde el text's rows.
+    Si el row es nil, salir.
+    Slap un substring on any selected bytes in el row of el text.
+    Si el substring es blank, repetir.
+    Adjuntar el substring to el string.
+    Si el substring's last's target es el return byte, Adjuntar el linefeed byte to el string.
   Repetir.
 
 The f-key es un key igual to 70.
@@ -5799,7 +5799,7 @@ The f8-key es un key igual to 119.
 The f9-key es un key igual to 120.
 
 \Para mirar hacia cualquier dirección;
-\Para face any way you want;
+Para face any way you want;
 Para face any which way:
   Pick un heading.
 
@@ -5924,10 +5924,10 @@ Para finalize un talker:
 Para finalize el window:
   Llamada "user32.dll" "DestroyWindow" con el main window.
   Lazo.
-  Llamada "user32.dll" "GetMessageA" con un msg's whereabouts and 0 and 0 and 0 retornando un number.
-  Si el number es less than 1, interrumpir.
-  Llamada "user32.dll" "TranslateMessage" con el msg's whereabouts.
-  Llamada "user32.dll" "DispatchMessageA" con el msg's whereabouts.
+    Llamada "user32.dll" "GetMessageA" con un msg's whereabouts and 0 and 0 and 0 retornando un number.
+    Si el number es less than 1, interrumpir.
+    Llamada "user32.dll" "TranslateMessage" con el msg's whereabouts.
+    Llamada "user32.dll" "DispatchMessageA" con el msg's whereabouts.
   Repetir.
   Flush el event queue.
   Destroy el current event.
@@ -5941,17 +5941,17 @@ The find anchor es un anchor.
 Para find un choice usando un spot:
   Start con nothing in el choice.
   Lazo.
-  Get el [first/next] choice desde el choices.
-  Si el choice es missing, salir.
-  Si el spot es in el choice's box, interrumpir.
+    Get el [first/next] choice desde el choices.
+    Si el choice es missing, salir.
+    Si el spot es in el choice's box, interrumpir.
   Repetir.
 
 Para find un dyad usando some dyads y un name:
   Void el dyad.
   Lazo.
-  Get el dyad desde el dyads.
-  Si el dyad es nil, salir.
-  Si el dyad's name es el name, salir.
+    Get el dyad desde el dyads.
+    Si el dyad es nil, salir.
+    Si el dyad's name es el name, salir.
   Repetir.
 
 Para find next usando un row y un text y un flag:
@@ -5962,9 +5962,9 @@ Para find next usando un row y un text y un flag:
   Poner el substring's first plus el find string's length minus 1 into el substring's last.
   Si el row's row# es el find anchor's row#, move el substring usando el find anchor's column# minus 1.
   Lazo.
-  Si el substring's last es greater than or igual to el row's string's last, salir.
-  Si el substring es el find string (accent-free compare), interrumpir. \ for spanish incremental find
-  Move el substring usando 1.
+    Si el substring's last es greater than or igual to el row's string's last, salir.
+    Si el substring es el find string (accent-free compare), interrumpir. \ for spanish incremental find
+    Move el substring usando 1.
   Repetir.
   Set el flag.
   Poner el substring's first minus el row's string's first plus 1 into el text's anchor column#.
@@ -5978,24 +5978,24 @@ Para find next usando un text y un flag:
   Si el text es nil, salir.
   Si el find string's length es 0, salir.
   Lazo.
-  Get un row desde el text's rows.
-  Si el row es nil, salir.
-  Si el row's row# es less than el find anchor's row#, repetir.
-  Find next usando el row y el text y el flag.
-  Si el flag es set, salir.
+    Get un row desde el text's rows.
+    Si el row es nil, salir.
+    Si el row's row# es less than el find anchor's row#, repetir.
+    Find next usando el row y el text y el flag.
+    Si el flag es set, salir.
   Repetir.
 
 Para find next usando un text y un flag (wrapped text):
   Borrar el flag.
   Si el text es nil, salir.
   Convertir el find anchor to un absolute position called offset usando el text.
-  Extract un string desde el text (no linefeed additions).
+  Extraer un string desde el text (no linefeed additions).
   Poner el string's first plus el offset minus 1 into un substring's first.
   Poner el substring's first plus el find string's length minus 1 into el substring's last.
   Lazo.
-  Si el substring's last es greater than el string's last, salir.
-  Si el substring es el find string (accent-free compare), interrumpir. \ for spanish incremental find
-  Move el substring usando 1.
+    Si el substring's last es greater than el string's last, salir.
+    Si el substring es el find string (accent-free compare), interrumpir. \ for spanish incremental find
+    Move el substring usando 1.
   Repetir.
   Set el flag.
   Poner el substring's first minus el string's first plus 1 into un anchor absolute position.
@@ -6011,9 +6011,9 @@ Para find el next misspelling usando un row y un text y un flag:
   Si el row's row# es el find anchor's row#, Agregar el find anchor's column# minus 1 to el rider's source's first.
   Si el rider's source's first es not el row's string's first, skip word characters in el rider's source.
   Lazo.
-  Move el rider (spell checking rules).
-  Si el rider's token es blank, salir.
-  Si el rider's token es not misspelled, repetir.
+    Move el rider (spell checking rules).
+    Si el rider's token es blank, salir.
+    Si el rider's token es not misspelled, repetir.
   Set el flag.
   Poner el rider's token's first minus el row's string's first plus 1 into el text's anchor column#.
   Poner el row's row# into el text's anchor row#.
@@ -6572,7 +6572,7 @@ Para get un rise y un run usando un heading: \ see Madhava's Numbers
   Privatizar el heading.
   Normalize el heading.
   Normalize el original heading.
-  Si el heading es not evenly divisible by 20, estimate el rise y el run usando el heading; salir.
+  Si el heading es not evenly divisible by 20, estimar el rise y el run usando el heading; salir.
 \ special cases
   Si el heading es 0, Poner -10000 in el rise; Poner -0 in el run; salir. \ 0 degrees
   Si el heading es 960, Poner 10000 in el run; Poner -0 in el rise; salir. \ 90 degrees
@@ -7007,7 +7007,7 @@ Para handle capitalizar usando un text:
 Para handle copiar usando un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
-  Extract un string desde el text (selected bytes).
+  Extraer un string desde el text (selected bytes).
   Poner el string on el windows clipboard.
 
 \Para manejar cortar dado un texto;
@@ -7015,7 +7015,7 @@ Para handle cut usando un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
   Remember el text.
-  Extract un string desde el text (selected bytes).
+  Extraer un string desde el text (selected bytes).
   Poner el string on el windows clipboard.
   Remove any selected bytes in el text.
   Wrap el text.
@@ -8159,11 +8159,11 @@ Para initialize el module:
   Lowercase el module's path.
   Null terminate el module's path.
 \ module's other path pieces
-  Extract el module's name desde el module's path.
+  Extraer el module's name desde el module's path.
   Null terminate el module's name.
-  Extract el module's directory desde el module's path.
+  Extraer el module's directory desde el module's path.
   Null terminate el module's directory.
-  Extract el module's root directory desde el module's directory.
+  Extraer el module's root directory desde el module's directory.
   Null terminate el module's root directory.
 
 Para initialize el mouse:
@@ -8875,12 +8875,12 @@ The little-z-caron byte es un byte igual to 158.
 \Para cargar el léxico;
 Para load el lexicon:
   Si el lexicon es not nil, salir.
-  Extract un directory desde el module's path.
+  Extraer un directory desde el module's path.
   Lazo.
   Si el directory es blank, salir.
   Poner el directory then "lexicon\" into un path.
   Si el path es in el file system, load el lexicon usando el path; salir.
-  Extract el directory desde el directory.
+  Extraer el directory desde el directory.
   Repetir.
 
 \Para cargar el léxico dado un búfer;
@@ -10051,7 +10051,7 @@ The one-quarter byte es un byte igual to 188.
 \Para abrir un archivo dado una ruta;
 Para open un file usando un path:
   Borrar el error de e/s.
-  Extract un directory desde el path.
+  Extraer un directory desde el path.
   Si el directory es not in el file system, Poner "Directory '" then el directory then "' doesn't exist." into el error de e/s; salir.
   Set el path to read-write mode.
   Privatizar el path.
@@ -11818,12 +11818,12 @@ A ratio pair es un fraction pair.
 
 Para read el bible:
   Si el bible es not nil, salir.
-  Extract un directory desde el module's path.
+  Extraer un directory desde el module's path.
   Lazo.
   Si el directory es blank, salir.
   Poner el directory then "bible.txt" into un path.
   Si el path es in el file system, read el bible usando el path; salir.
-  Extract el directory desde el directory.
+  Extraer el directory desde el directory.
   Repetir.
 
 \Para leer la Biblia dada una ruta;
@@ -13860,7 +13860,7 @@ Para start un process usando un path: \ must be called con un global variable
   Borrar el error de e/s.
   Si el process es not 0, Poner "Lo lamento, pero el proceso ya se está ejecutando." into el error de e/s; salir.
   Poner un startupinfo's magnitude into el startupinfo's cb.
-  Extract un directory desde el path. null terminate el directory.
+  Extraer un directory desde el path. null terminate el directory.
   Privatizar el path. null terminate el path.
   Llamada "kernel32.dll" "CreateProcessA" con el path's first and 0 and 0 and 0 and 0 and 67108904 [create_default_error_mode + normal_priority_class + detached_process] and 0 
   y el directory's first y el startupinfo's whereabouts y un processinfo's whereabouts retornando un number.
@@ -16195,7 +16195,7 @@ Para wrap un text:
   Convertir el text's caret to another absolute position usando el text.
   Poner el text's scale into un fraction.
   Scale el text to 1/1.
-  Extract un string desde el text.
+  Extraer un string desde el text.
   Adjuntar el return byte to el string.
   Destroy el text's rows.
   Slap un rider on el string.
@@ -16226,7 +16226,7 @@ Para write un buffer to un file:
 \Para escribir un búfer en una ruta;
 Para write un buffer to un path:
   Borrar el error de e/s.
-  Extract un directory desde el path.
+  Extraer un directory desde el path.
   Si el directory es not in el file system, Poner "Directorio '" then el directory then "' no existe." into el error de e/s; salir.
   Set el path to read-write mode.
   Privatizar el path.
