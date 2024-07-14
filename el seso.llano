@@ -7445,7 +7445,6 @@ A iid es un uuid.
 
 \Para imaginar una caja algunos twips por algunos otros twips;
 Para imaginar un box some twips by some other twips;
-Para imagine un box some twips by some other twips;
 Para hacer una caja algunos twips por algunos otros twips;
 Para hacer un box some twips by some other twips:
   Poner 0 into el box's left.
@@ -7453,65 +7452,65 @@ Para hacer un box some twips by some other twips:
   Poner el twips into el box's right.
   Poner el other twips into el box's bottom.
 
-Para imagine un box some twips high by some other twips wide;
+Para imaginar un box some twips high by some other twips wide;
 Para hacer un box some twips high by some other twips wide:
   Poner 0 and 0 y el other twips y el twips into el box.
 
-Para imagine un box some twips smaller than another box;
+Para imaginar un box some twips smaller than another box;
 Para hacer un box some twips smaller than another box:
   Poner el other box into el box.
   Indent el box by el twips divided by 2.
 
-Para imagine un box some twips smaller than another box on every side:
+Para imaginar un box some twips smaller than another box on every side:
   Poner el other box into el box.
   Indent el box by el twips.
 
-Para imagine un box some twips wide by some other twips high;
+Para imaginar un box some twips wide by some other twips high;
 Para hacer un box some twips wide by some other twips high:
   Poner 0 and 0 y el twips y el other twips into el box.
 
-Para imagine un box con un left coord y un top coord y un right coord y un bottom coord;
+Para imaginar un box con un left coord y un top coord y un right coord y un bottom coord;
 Para hacer un box con un left coord y un top coord y un right coord y un bottom coord:
   Poner el left coord y el top coord y el right coord y el bottom coord into el box.
 
-Para imagine un box con un spot and another spot;
+Para imaginar un box con un spot and another spot;
 Para hacer un box con un spot and another spot:
   Poner el spot y el other spot into el box.
 
-Para imagine un color desde un hue y un saturation y un lightness;
+Para imaginar un color desde un hue y un saturation y un lightness;
 Para hacer un color desde un hue y un saturation y un lightness:
   Poner el hue y el saturation y el lightness into el color.
 
-Para imagine un dot about some twips wide;
+Para imaginar un dot about some twips wide;
 Para hacer un dot about some twips wide;
 Para hacer un dot some twips wide:
   Hacer el dot el twips by el twips.
 
-Para imagine un dot between some twips and some other twips wide;
+Para imaginar un dot between some twips and some other twips wide;
 Para hacer un dot between some twips and some other twips wide:
   Pick some third twips between el twips y el other twips.
   Hacer el dot el third twips wide.
 
-Para imagine un ellipse usando un box;
+Para imaginar un ellipse usando un box;
 Para hacer un ellipse usando un box:
   Poner el box into el ellipse's box.
 
-Para imagine un ellipse some twips by some other twips;
+Para imaginar un ellipse some twips by some other twips;
 Para hacer un ellipse some twips by some other twips:
   Poner 0 into el ellipse's left.
   Poner 0 into el ellipse's top.
   Poner el twips into el ellipse's right.
   Poner el other twips into el ellipse's bottom.
 
-Para imagine un ellipse con un left coord y un top coord y un right coord y un bottom coord;
+Para imaginar un ellipse con un left coord y un top coord y un right coord y un bottom coord;
 Para hacer un ellipse con un left coord y un top coord y un right coord y un bottom coord:
   Poner el left coord y el top coord y el right coord y el bottom coord into el ellipse.
 
-Para imagine un ellipse con un spot and another spot;
+Para imaginar un ellipse con un spot and another spot;
 Para hacer un ellipse con un spot and another spot:
   Poner el spot y el other spot into el ellipse.
 
-Para imagine un figure using un string y un spot;
+Para imaginar un figure using un string y un spot;
 Para hacer un figure using un string y un spot;
 Para crear un figure using un string y un center spot:
   Crear el figure.
@@ -7534,17 +7533,17 @@ Para crear un figure using un string y un center spot:
     Agregar 1 to el substring's first.
   Repetir.
 
-Para imagine un horizontal line un fraction of el way up desde el bottom of un box;
+Para imaginar un horizontal line un fraction of el way up desde el bottom of un box;
 Para hacer un horizontal line un fraction of el way up desde el bottom of un box:
-  Imagine el horizontal line across el box el fraction of el way up desde el bottom.
+  Imaginar el horizontal line across el box el fraction of el way up desde el bottom.
 
-Para imagine un line across el bottom of un box;
+Para imaginar un line across el bottom of un box;
 Para hacer un line across el bottom of un box;
-Para imagine un line along el bottom of un box;
+Para imaginar un line along el bottom of un box;
 Para hacer un line along el bottom of un box:
   Poner el box's bottom line into el line.
 
-Para imagine un line across un box un fraction of el way up desde el bottom;
+Para imaginar un line across un box un fraction of el way up desde el bottom;
 Para hacer un line across un box un fraction of el way up desde el bottom:
   Poner el box's left into el line's start's x.
   Poner el box's right into el line's end's x.
@@ -7552,48 +7551,48 @@ Para hacer un line across un box un fraction of el way up desde el bottom:
   Poner el box's bottom minus el twips into el line's start's y.
   Poner el box's bottom minus el twips into el line's end's y.
 
-Para imagine un line across el top of un box;
+Para imaginar un line across el top of un box;
 Para hacer un line across el top of un box;
-Para imagine un line along el top of un box;
+Para imaginar un line along el top of un box;
 Para hacer un line along el top of un box:
   Poner el box's top line into el line.
 
-Para imagine un line in el middle of un box;
+Para imaginar un line in el middle of un box;
 Para hacer un line in el middle of un box;
-Para imagine un line across el middle of un box;
+Para imaginar un line across el middle of un box;
 Para hacer un line across el middle of un box;
-Para imagine un line in el center of un box;
+Para imaginar un line in el center of un box;
 Para hacer un line in el center of un box;
-Para imagine un line across el center of un box;
+Para imaginar un line across el center of un box;
 Para hacer un line across el center of un box:
   Poner el box's left into el line's start's x.
   Poner el box's right into el line's end's x.
   Poner el box's center's y into el line's start's y.
   Poner el box's center's y into el line's end's y.
 
-Para imagine un line some twips up desde el bottom of un box;
+Para imaginar un line some twips up desde el bottom of un box;
 Para hacer un line some twips up desde el bottom of un box:
   Poner el box's left into el line's start's x.
   Poner el box's right into el line's end's x.
   Poner el box's bottom minus el twips into el line's start's y.
   Poner el box's bottom minus el twips into el line's end's y.
 
-Para imagine un line con un spot and another spot;
+Para imaginar un line con un spot and another spot;
 \Para hacer una línea con un punto y otro punto;
 Para hacer un line con un spot and another spot:
   Poner el spot y el other spot into el line.
 
-Para imagine un line con un x-coord y un y-coord and another x-coord and another y-coord;
+Para imaginar un line con un x-coord y un y-coord and another x-coord and another y-coord;
 \Para hacer una línea con una coord-x y una coord-y y otra coord-x y otra coord-y;
 Para hacer un line con un x-coord y un y-coord and another x-coord and another y-coord:
   Poner el x-coord y el y-coord y el other x-coord y el other y-coord into el line.
 
-Para imagine un roundy box desde un box y un radius;
+Para imaginar un roundy box desde un box y un radius;
 \Para hacer una caja redonda de una caja y un radio;
 Para hacer un roundy box desde un box y un radius:
   Poner el box y el radius into el roundy box.
 
-Para imagine un roundy box some twips by some other twips;
+Para imaginar un roundy box some twips by some other twips;
 \Para hacer una caja redonda dada un ancho y una altura con un radio;
 Para hacer un roundy box some twips by some other twips con un radius:
   Poner 0 into el roundy box's left.
@@ -7602,18 +7601,18 @@ Para hacer un roundy box some twips by some other twips con un radius:
   Poner el other twips into el roundy box's bottom.
   Poner el radius into el roundy box's radius.
 
-Para imagine un roundy box con un left coord y un top coord y un right coord y un bottom coord y un radius;
+Para imaginar un roundy box con un left coord y un top coord y un right coord y un bottom coord y un radius;
 \Para hacer una caja redonda con una izquierda y una superior y una derecha y una inferior y un radio;
 Para hacer un roundy box con un left coord y un top coord y un right coord y un bottom coord y un radius:
   Poner el left coord y el top coord y el right coord y el bottom coord y el radius into el roundy box.
 
-Para imagine un roundy box con un spot and another spot y un radius;
+Para imaginar un roundy box con un spot and another spot y un radius;
 \Para hacer una caja redonda con un punto y otro punto y un radio;
 Para hacer un roundy box con un spot and another spot y un radius:
   Poner el spot y el other spot y el radius into el roundy box.
 
 Para hacer un punto con una coordenada-x y una coordenada-y;
-\Para imagine un spot con un x-coord y un y-coord;
+Para imaginar un spot con un x-coord y un y-coord;
 Para hacer un spot con un x-coord y un y-coord:
   Poner el x-coord y el y-coord into el spot.
 
