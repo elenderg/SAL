@@ -872,19 +872,19 @@ The cent-sign byte es un byte igual to 162.
 
 \Para centrar una caja en la parte inferior de otra caja;
 Para centrar un box at el bottom of another box:
-  Centrar el box in el other box (horizontally).
+  Centrar el box in el other box (horizontalmente).
   Poner el box's height into un height.
   Poner el other box's bottom into el box's bottom.
   Poner el box's bottom minus el height into el box's top.
 
 \Para centrar una caja en otra caja (horizontalmente);
-Para centrar un box in another box (horizontally):
+Para centrar un box in another box (horizontalmente):
   Poner el other box's center's x minus el box's center's x into un number.
   Round el number to el nearest multiple of el tpp.
   Move el box usando el number and 0.
 
 \Para centrar una caja en otra caja (verticalmente);
-Para centrar un box in another box (vertically):
+Para centrar un box in another box (verticalmente):
   Poner el other box's center's y-coord minus el box's center's y-coord into un number.
   Round el number to el nearest multiple of el tpp.
   Move el box usando 0 y el number.
@@ -893,99 +893,99 @@ Para centrar un dot on el current spot: \ need Spanish word for "dot"
   Centrar el dot on el context's spot.
 
 \Para centrar una elipse en una caja (horizontalmente);
-Para centrar un ellipse in un box (horizontally):
-  Centrar el ellipse's box in el box (horizontally).
+Para centrar un ellipse in un box (horizontalmente):
+  Centrar el ellipse's box in el box (horizontalmente).
 
 \Para centrar una elipse en una caja (verticalmente);
-Para centrar un ellipse in un box (vertically):
-  Centrar el ellipse's box in el box (vertically).
+Para centrar un ellipse in un box (verticalmente):
+  Centrar el ellipse's box in el box (verticalmente).
 
 \Para centrar una línea en una caja (horizontalmente);
-Para centrar un line in un box (horizontally):
+Para centrar un line in un box (horizontalmente):
   Poner el box's center's x minus el line's center's x into un number.
   Round el number to el nearest multiple of el tpp.
   Move el line usando el number and 0.
 
 \Para centrar una línea en una caja (verticalmente);
-Para centrar un line in un box (vertically):
+Para centrar un line in un box (verticalmente):
   Poner el box's center's y minus el line's center's y into un number.
   Round el number to el nearest multiple of el tpp.
   Move el line usando 0 y el number.
 
 \Para centrar una imagen en una caja (horizontalmente);
-Para centrar un picture in un box (horizontally):
+Para centrar un picture in un box (horizontalmente):
   Si el picture es nil, salir.
   Poner el box's center's x-coord minus el picture's box's center's x-coord into un number.
   Round el number to el nearest multiple of el tpp.
   Move el picture usando el number and 0.
 
 \Para centrar una imagen en una caja (verticalmente);
-Para centrar un picture in un box (vertically):
+Para centrar un picture in un box (verticalmente):
   Si el picture es nil, salir.
   Poner el box's center's y-coord minus el picture's box's center's y-coord into un number.
   Round el number to el nearest multiple of el tpp.
   Move el picture usando 0 y el number.
 
 \Para centrar un polígono en una caja (horizontalmente);
-Para centrar un polygon in un box (horizontally):
+Para centrar un polygon in un box (horizontalmente):
   Si el polygon es nil, salir.
   Poner el box's center's x minus el polygon's box's center's x into un number.
   Round el number to el nearest multiple of el tpp.
   Move el polygon usando el number and 0.
 
 \Para centrar un polígono en una caja (verticalmente);
-Para centrar un polygon in un box (vertically):
+Para centrar un polygon in un box (verticalmente):
   Si el polygon es nil, salir.
   Poner el box's center's y minus el polygon's box's center's y into un number.
   Round el number to el nearest multiple of el tpp.
   Move el polygon usando 0 y el number.
 
 \Para centrar un punto en una caja (horizontalmente);
-Para centrar un spot in un box (horizontally):
+Para centrar un spot in un box (horizontalmente):
   Poner el box's center's x minus el spot's x into un number.
   Round el number to el nearest multiple of el tpp.
   Move el spot usando el number and 0.
 
 \Para centrar un punto en una caja (verticalmente);
-Para centrar un spot in un box (vertically):
+Para centrar un spot in un box (verticalmente):
   Poner el box's center's y minus el spot's y into un number.
   Round el number to el nearest multiple of el tpp.
   Move el spot usando 0 y el number.
 
 \Para centrar un texto en una caja (horizontalmente);
-Para centrar un text in un box (horizontally):
+Para centrar un text in un box (horizontalmente):
   Si el text es nil, salir.
   Poner el box's center's x minus el text's box's center's x into un number.
   Round el number to el nearest multiple of el tpp.
   Move el text usando el number and 0.
 
 \Para centrar un texto en una caja (verticalmente);
-Para centrar un text in un box (vertically):
+Para centrar un text in un box (verticalmente):
   Si el text es nil, salir.
   Poner el box's center's y minus el text's box's center's y into un number.
   Round el number to el nearest multiple of el tpp.
   Move el text usando 0 y el number.
 
 \Para cambiar el matiz actual en algunos pasos;
-Para change el current hue by some points:
-  Change el context's hue by el points.
+Para cambiar el current hue by some points:
+  Cambiar el context's hue by el points.
 
 \Para cambiar un matiz por algunos pasos;
-Para change un hue by some points:
+Para cambiar un hue by some points:
   Agregar el points to el hue.
 
 \Para cambiar una caja redonda dado un radio;
-Para change un roundy box usando un radius:
+Para cambiar un roundy box usando un radius:
   Poner el radius into el roundy box's radius.
 
 \Para cambiar un texto dado una caja;
-Para change un text usando un box:
+Para cambiar un text usando un box:
   Si el text es nil, salir.
   Poner el box into el text's box.
   Wrap el text.
 
 \Para cambiar un texto dado una altura de tipo de letra;
-Para change un text usando un font height:
+Para cambiar un text usando un font height:
   Si el text es nil, salir.
   Restar el text's margin desde el text's x-coord.
   Poner el text's origin divided by el text's grid into un pair.
@@ -997,7 +997,7 @@ Para change un text usando un font height:
   Wrap el text.
 
 \Para cambiar un texto dado un nombre de tipo de letra;
-Para change un text usando un font name:
+Para cambiar un text usando un font name:
   Si el text es nil, salir.
   Poner el font name into el text's font's name.
   Wrap el text.
@@ -1959,7 +1959,7 @@ Para create un console:
   Restar el default font's height desde el box's bottom.
   Poner el box's height divided by el default font's height times el default font's height into un height.
   Poner el box's top plus el height into el box's bottom.
-  Centrar el box in el screen's box (vertically).
+  Centrar el box in el screen's box (verticalmente).
   Poner el box's top into el box's left.
   Restar el box's top desde el box's right.
   Create el console's text.
@@ -7227,20 +7227,20 @@ Para handle events usando un terminal:
 Para handle font height usando un text y un box y un font height:
   Si el text es nil, salir.
   Remember el text with "font height".
-  Change el text usando el box.
-  Change el text usando el font height.
+  Cambiar el text usando el box.
+  Cambiar el text usando el font height.
 
 \Para manejar la altura de tipo de letra dado un texto y una altura de tipo de letra;
 Para handle font height usando un text y un font height:
   Si el text es nil, salir.
   Remember el text with "font height".
-  Change el text usando el font height.
+  Cambiar el text usando el font height.
 
 \Para manejar el nombre de tipo de letra dado un texto y un nombre de tipo de letra;
 Para handle font name usando un text y un font name:
   Si el text es nil, salir.
   Remember el text with "font name".
-  Change el text usando el font name.
+  Cambiar el text usando el font name.
 
 \Para manejar más sangría dado un texto;
 Para handle indent usando un text:
@@ -10759,8 +10759,8 @@ Para poner un box y un radius into un roundy box:
 
 Para poner un box in el center of another box;
 Para centrar un box in another box:
-  Centrar el box in el other box (horizontally).
-  Centrar el box in el other box (vertically).
+  Centrar el box in el other box (horizontalmente).
+  Centrar el box in el other box (verticalmente).
 
 Para poner un box in el center of el screen;
 Para centrar un box on el screen:
@@ -10954,8 +10954,8 @@ Para poner eax into un wyrd:
 Para poner un ellipse in el middle of un box;
 \Para centrar una elipse en una caja;
 Para centrar un ellipse in un box:
-  Centrar el ellipse in el box (horizontally).
-  Centrar el ellipse in el box (vertically).
+  Centrar el ellipse in el box (horizontalmente).
+  Centrar el ellipse in el box (verticalmente).
 
 \Para poner una elipse en otra elipse;
 Para poner un ellipse into another ellipse:
@@ -11124,8 +11124,8 @@ Para poner el left side of un box into un vertical line:
 
 Para poner un line in el middle of un box;
 Para centrar un line in un box:
-  Centrar el line in el box (horizontally).
-  Centrar el line in el box (vertically).
+  Centrar el line in el box (horizontalmente).
+  Centrar el line in el box (verticalmente).
 
 Para poner un line into another line:
   Poner el line's start into el other line's start.
@@ -11277,8 +11277,8 @@ Para centrar una imagen en un hoja apaisada; \ unclear why this doesn't get call
 Para poner un picture in el middle of un box;
 Para centrar un picture in un box:
   Si el picture es nil, salir.
-  Centrar el picture in el box (horizontally).
-  Centrar el picture in el box (vertically).
+  Centrar el picture in el box (horizontalmente).
+  Centrar el picture in el box (verticalmente).
 
 Para poner un picture on un spot;
 \Para centrar una imagen en un punto;
@@ -11292,8 +11292,8 @@ Para poner un polygon in el middle of un box;
 \Para centrar un polígono en una caja;
 Para centrar un polygon in un box:
   Si el polygon es nil, salir.
-  Centrar el polygon in el box (horizontally).
-  Centrar el polygon in el box (vertically).
+  Centrar el polygon in el box (horizontalmente).
+  Centrar el polygon in el box (verticalmente).
 
 Para poner un polygon in el middle of el screen;
 \Para centrar un polígono en la pantalla;
@@ -11432,8 +11432,8 @@ Para poner un spot and another spot into un line:
 Para poner un spot in el middle of un box;
 \Para centrar un punto en una caja;
 Para centrar un spot in un box:
-  Centrar el spot in el box (horizontally).
-  Centrar el spot in el box (vertically).
+  Centrar el spot in el box (horizontalmente).
+  Centrar el spot in el box (verticalmente).
 
 \Para poner una cadena en otra cadena;
 Para poner un string into another string:
@@ -11534,8 +11534,8 @@ Para poner un text in el middle of un box;
 \Para centrar un texto en una caja;
 Para centrar un text in un box:
   Si el text es nil, salir.
-  Centrar el text in el box (horizontally).
-  Centrar el text in el box (vertically).
+  Centrar el text in el box (horizontalmente).
+  Centrar el text in el box (verticalmente).
 
 Para poner un text on un spot;
 \Para centrar un texto en un punto;
@@ -12489,7 +12489,7 @@ A byte called red byte.
 
 A rgb pointer es un pointer to un rgb.
 
-A rider es un record con \ fix "bump un rider" and "unbump un rider" if you change me
+A rider es un record con \ fix "bump un rider" and "unbump un rider" if you cambiar me
 An original substring, una subcadena primera at el original substring,
 A source substring, una subcadena fuente at el source substring and
 A token substring, una subcadena componente at el token substring.
@@ -17118,7 +17118,7 @@ El byte tres-cuartos es un byte igual a 190. \ three-quarter
 El byte subrayado es un byte igual a 95. \ underscore
 El byte macrón es un byte igual a 175. \ upperscore
 
-\No change for these
+\No cambiar for these
 
 El byte copyright es un byte igual a 169.
 El byte micro es un byte igual a 181.
