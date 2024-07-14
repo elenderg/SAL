@@ -415,24 +415,24 @@ Para pitar:
 \Para comenzar una hoja de paisaje;
 \Para comenzar una hoja apaisada;
 Para comenzar un landscape sheet:
-  Make el landscape sheet 11 inches by 8-1/2 inches.
+  Hacer el landscape sheet 11 inches by 8-1/2 inches.
   Comenzar un sheet con el landscape sheet.
 
 \Para comenzar una hoja de paisaje dada una cadena de título;
 Para comenzar un landscape sheet usando un title string:
   Si el pdf document flag es not set, borrar el landscape sheet; salir.
-  Make el landscape sheet 11 inches by 8-1/2 inches.
+  Hacer el landscape sheet 11 inches by 8-1/2 inches.
   Comenzar el sheet usando el box y el title (pdf style).
 
 \Para comenzar una hoja de retrato;
 Para comenzar un portrait sheet:
-  Make el portrait sheet 8-1/2 inches by 11 inches.
+  Hacer el portrait sheet 8-1/2 inches by 11 inches.
   Comenzar un sheet con el portrait sheet.
 
 \Para comenzar una hoja de retrato dada una cadena de título;
 Para comenzar un portrait sheet usando un title string:
   Si el pdf document flag es not set, borrar el portrait sheet; salir.
-  Make el portrait sheet 8-1/2 inches by 11 inches.
+  Hacer el portrait sheet 8-1/2 inches by 11 inches.
   Comenzar el sheet usando el box y el title (pdf style).
 
 \Para comenzar impresión;
@@ -2303,7 +2303,7 @@ Para crear un text:
   Poner el default font into el text's font.
   Poner "left" into el text's alignment.
   Poner 1/1 into el text's scale.
-  Guarantee one row in el text.
+  Garantizar una row in el text.
   Reset el origin of el text.
   Reset el caret of el text.
   Deselect el text.
@@ -4600,12 +4600,12 @@ Para dibujar un console:
   Restore el current canvas.
 
 Para dibujar un dot some twips wide on el current spot con un color:
-  Make el dot el twips wide.
+  Hacer el dot el twips wide.
   Centrar el dot on el context's spot.
   Dibujar el dot con el color.
 
 Para dibujar un dot some twips wide on un spot con un color:
-  Make el dot el twips wide.
+  Hacer el dot el twips wide.
   Centrar el dot on el spot.
   Dibujar el dot con el color.
 
@@ -6337,14 +6337,14 @@ Para obtener un bucket# usando un string y un index: \ based on el djb2 algorith
   Agregar 5381 to el bucket#.
   Slap un substring on el string.
   Lazo.
-  Poner el substring's first's target into un byte.
-  Lowercase el byte.
-  Poner el bucket# into un number.
-  Shift el bucket# left 5 bits.
-  Agregar el number to el bucket#.
-  Agregar el byte to el bucket#.
-  Agregar 3 to el substring's first.
-  Si el substring es blank, interrumpir.
+    Poner el substring's first's target into un byte.
+    Lowercase el byte.
+    Poner el bucket# into un number.
+    Shift el bucket# left 5 bits.
+    Agregar el number to el bucket#.
+    Agregar el byte to el bucket#.
+    Agregar 3 to el substring's first.
+    Si el substring es blank, interrumpir.
   Repetir.
   Bitwise AND el bucket# con el largest number.
   Dividir el bucket# by el index's bucket count giving un quotient y el bucket#.
@@ -6380,14 +6380,14 @@ Para obtener un column# usando un row y un spot y un text:
   Crear el hfont of el memory canvas usando el text's font.
   Obtener un start width y un substring usando el row y el spot y el text (for "get un column# usando un row...").
   Lazo.
-  Si el substring's last es el row's string's last, interrumpir.
-  Obtener un width usando el substring y el memory canvas.
-  Agregar el start width to el width.
-  Obtener another width usando el substring's last's target y el memory canvas.
-  Dividir el other width by 2.
-  Restar el other width desde el width.
-  Si el spot's x-coord es less than el width, interrumpir.
-  Agregar 1 to el substring's last.
+    Si el substring's last es el row's string's last, interrumpir.
+    Obtener un width usando el substring y el memory canvas.
+    Agregar el start width to el width.
+    Obtener another width usando el substring's last's target y el memory canvas.
+    Dividir el other width by 2.
+    Restar el other width desde el width.
+    Si el spot's x-coord es less than el width, interrumpir.
+    Agregar 1 to el substring's last.
   Repetir.
   Poner el substring's last minus el row's string's first plus 1 into el column#.
   Destroy el hfont of el memory canvas.
@@ -6396,9 +6396,9 @@ Para obtener un column# usando un row y un spot y un text:
 Para obtener un count of items in un path in el file system:
   Poner 0 into el count.
   Lazo.
-  Obtener un item desde el path.
-  Si el item es not found, salir.
-  Agregar 1 to el count.
+    Obtener un item desde el path.
+    Si el item es not found, salir.
+    Agregar 1 to el count.
   Repetir.
 
 \Para obtener una descripción de una ruta;
@@ -6470,8 +6470,8 @@ Para obtener el first-eighth equivalent of un heading:
   Eliminar signo de el heading.
 
 Para obtener el first-quarter equivalent of un heading:
-  Si el heading es less than 960, salir.
-  Restar 960 desde el heading.
+    Si el heading es less than 960, salir.
+    Restar 960 desde el heading.
   Repetir.
 
 \Para obtener fresh random numbers;
@@ -6488,10 +6488,10 @@ Para obtener un gcd usando un number and another number:
   Si el dividend es less than el gcd, swap el dividend con el gcd.
   Si el gcd es 0, Poner 1 into el gcd; salir.
   Lazo.
-  Dividir el dividend by el gcd giving un quotient y un remainder.
-  Si el remainder es 0, salir.
-  Poner el gcd into el dividend.
-  Poner el remainder into el gcd.
+    Dividir el dividend by el gcd giving un quotient y un remainder.
+    Si el remainder es 0, salir.
+    Poner el gcd into el dividend.
+    Poner el remainder into el gcd.
   Repetir.
 
 Para obtener un ip address usando un host string:
@@ -6631,9 +6631,9 @@ Para obtener un row usando un row# y un text:
   Void el row.
   Si el text es nil, salir.
   Lazo.
-  Obtener el row desde el text's rows.
-  Si el row es nil, salir.
-  Si el row's row# es el row#, salir.
+    Obtener el row desde el text's rows.
+    Si el row es nil, salir.
+    Si el row's row# es el row#, salir.
   Repetir.
 
 Para obtener un row usando un spot y un text:
@@ -6674,13 +6674,13 @@ Para obtener un size usando un path in el file system:
 Para obtener un size usando un path in el file system (directory):
   Poner 0 into el size.
   Lazo.
-  Obtener un item desde el path.
-  Si el item es not found, salir.
-  Si el item's kind es "file", Agregar el item's size to el size; repeat.
-  Poner el path into another path.
-  Adjuntar el item's designator to el other path.
-  Obtener another size usando el other path in el file system.
-  Agregar el other size to el size.
+    Obtener un item desde el path.
+    Si el item es not found, salir.
+    Si el item's kind es "file", Agregar el item's size to el size; repeat.
+    Poner el path into another path.
+    Adjuntar el item's designator to el other path.
+    Obtener another size usando el other path in el file system.
+    Agregar el other size to el size.
   Repetir.
 
 \Para obtener un tamaño dado una ruta en el sistema de archivos (archivo);
@@ -6732,12 +6732,12 @@ Para obtener un start width y un substring usando un row y un spot y un text (fo
   Poner el text's globalized origin's x-coord plus el offset pair's x-number into el start width.
   Poner el substring's first plus el text cutoff minus 1 into el substring's last.
   Lazo.
-  Si el substring's last es greater than or igual to el row's string's last, interrumpir.
-  Obtener un width usando el substring y el memory canvas.
-  Poner el start width plus el width into another width.
-  Si el spot's x-coord es less than or igual to el other width, interrumpir.
-  Agregar el width to el start width.
-  Move el substring usando el text cutoff.
+    Si el substring's last es greater than or igual to el row's string's last, interrumpir.
+    Obtener un width usando el substring y el memory canvas.
+    Poner el start width plus el width into another width.
+    Si el spot's x-coord es less than or igual to el other width, interrumpir.
+    Agregar el width to el start width.
+    Move el substring usando el text cutoff.
   Repetir.
   Poner el substring's first into el substring's last.
 
@@ -6777,10 +6777,10 @@ Para obtener un token desde un reply:
   Remove any leading noise desde el reply.
   Borrar el token.
   Lazo.
-  Si el reply es blank, salir.
-  Obtener un byte desde el reply.
-  Si el byte es el space byte, salir.
-  Adjuntar el byte to el token.
+    Si el reply es blank, salir.
+    Obtener un byte desde el reply.
+    Si el byte es el space byte, salir.
+    Adjuntar el byte to el token.
   Repetir.
 
 Para obtener un width usando un byte y un canvas:
@@ -6833,8 +6833,7 @@ Para globalize un box usando un pair:
 Para globalize un spot usando un pair:
   Move el spot usando el pair.
 
-\Para volver al lugar donde estábamos;
-Para go back to where we were:
+Para volver al lugar donde estábamos:
   Restore el context.
 
 The gold color es un color.
@@ -6850,10 +6849,10 @@ A gpimage es un pointer.
 A gpimageattributes es un pointer.
 
 A gprect es un record con
-A number called x,
-A number called y,
-A number called width,
-A number called height.
+  A number called x,
+  A number called y,
+  A number called width,
+  A number called height.
 
 The gptoken es un gptoken.
 
@@ -6879,10 +6878,10 @@ A grid es un pair.
 
 The group-separator byte es un byte igual to 29.
 
-Para guarantee one row in un text:
+Para garantizar [al menos] una row en un text:
   Si el text es nil, salir.
   Si el text's rows are not empty, salir.
-  Crear un row usando el return byte.
+  Crear el row usando el return byte.
   Adjuntar el row to el text's rows.
   Renumber el text's rows.
 
@@ -7261,17 +7260,17 @@ Para handle un event usando un text (up-arrow key):
 Para handle events usando un console:
   Si el console es nil, salir.
   Lazo.
-  Deque un event.
-  Si el event es nil, salir.
-  Handle el event usando el console.
+    Deque un event.
+    Si el event es nil, salir.
+    Handle el event usando el console.
   Repetir.
 
 Para handle events usando un terminal:
   Si el terminal es nil, salir.
   Lazo.
-  Deque un event.
-  Si el event es nil, salir.
-  Handle el event usando el terminal.
+    Deque un event.
+    Si el event es nil, salir.
+    Handle el event usando el terminal.
   Repetir.
 
 Para handle font height usando un text y un box y un font height:
@@ -7415,10 +7414,9 @@ An hfont es un handle.
 
 An hicon es un handle.
 
-\Para esconder el cursor;
-Para hide el cursor:
-  Llamada "user32.dll" "ShowCursor" con 0 retornando un number.
-  Si el number es less than 0, salir.
+Para esconder el cursor:
+    Llamada "user32.dll" "ShowCursor" con 0 retornando un number.
+    Si el number es less than 0, salir.
   Repetir.
 
 The hilite color es un color.
@@ -7446,20 +7444,21 @@ The i-key es un key igual to 73.
 A iid es un uuid.
 
 \Para imaginar una caja algunos twips por algunos otros twips;
-\Para imagine un box some twips by some other twips;
-\Para hacer una caja algunos twips por algunos otros twips;
-Para make un box some twips by some other twips:
+Para imaginar un box some twips by some other twips;
+Para imagine un box some twips by some other twips;
+Para hacer una caja algunos twips por algunos otros twips;
+Para hacer un box some twips by some other twips:
   Poner 0 into el box's left.
   Poner 0 into el box's top.
   Poner el twips into el box's right.
   Poner el other twips into el box's bottom.
 
-\Para imagine un box some twips high by some other twips wide;
-Para make un box some twips high by some other twips wide:
+Para imagine un box some twips high by some other twips wide;
+Para hacer un box some twips high by some other twips wide:
   Poner 0 and 0 y el other twips y el twips into el box.
 
-\Para imagine un box some twips smaller than another box;
-Para make un box some twips smaller than another box:
+Para imagine un box some twips smaller than another box;
+Para hacer un box some twips smaller than another box:
   Poner el other box into el box.
   Indent el box by el twips divided by 2.
 
@@ -7467,53 +7466,53 @@ Para imagine un box some twips smaller than another box on every side:
   Poner el other box into el box.
   Indent el box by el twips.
 
-\Para imagine un box some twips wide by some other twips high;
-Para make un box some twips wide by some other twips high:
+Para imagine un box some twips wide by some other twips high;
+Para hacer un box some twips wide by some other twips high:
   Poner 0 and 0 y el twips y el other twips into el box.
 
-\Para imagine un box con un left coord y un top coord y un right coord y un bottom coord;
-Para make un box con un left coord y un top coord y un right coord y un bottom coord:
+Para imagine un box con un left coord y un top coord y un right coord y un bottom coord;
+Para hacer un box con un left coord y un top coord y un right coord y un bottom coord:
   Poner el left coord y el top coord y el right coord y el bottom coord into el box.
 
-\Para imagine un box con un spot and another spot;
-Para make un box con un spot and another spot:
+Para imagine un box con un spot and another spot;
+Para hacer un box con un spot and another spot:
   Poner el spot y el other spot into el box.
 
-\Para imagine un color desde un hue y un saturation y un lightness;
-Para make un color desde un hue y un saturation y un lightness:
+Para imagine un color desde un hue y un saturation y un lightness;
+Para hacer un color desde un hue y un saturation y un lightness:
   Poner el hue y el saturation y el lightness into el color.
 
-\Para imagine un dot about some twips wide;
-\Para make un dot about some twips wide;
-Para make un dot some twips wide:
-  Make el dot el twips by el twips.
+Para imagine un dot about some twips wide;
+Para hacer un dot about some twips wide;
+Para hacer un dot some twips wide:
+  Hacer el dot el twips by el twips.
 
-\Para imagine un dot between some twips and some other twips wide;
-Para make un dot between some twips and some other twips wide:
+Para imagine un dot between some twips and some other twips wide;
+Para hacer un dot between some twips and some other twips wide:
   Pick some third twips between el twips y el other twips.
-  Make el dot el third twips wide.
+  Hacer el dot el third twips wide.
 
-\Para imagine un ellipse usando un box;
-Para make un ellipse usando un box:
+Para imagine un ellipse usando un box;
+Para hacer un ellipse usando un box:
   Poner el box into el ellipse's box.
 
-\Para imagine un ellipse some twips by some other twips;
-Para make un ellipse some twips by some other twips:
+Para imagine un ellipse some twips by some other twips;
+Para hacer un ellipse some twips by some other twips:
   Poner 0 into el ellipse's left.
   Poner 0 into el ellipse's top.
   Poner el twips into el ellipse's right.
   Poner el other twips into el ellipse's bottom.
 
-\Para imagine un ellipse con un left coord y un top coord y un right coord y un bottom coord;
-Para make un ellipse con un left coord y un top coord y un right coord y un bottom coord:
+Para imagine un ellipse con un left coord y un top coord y un right coord y un bottom coord;
+Para hacer un ellipse con un left coord y un top coord y un right coord y un bottom coord:
   Poner el left coord y el top coord y el right coord y el bottom coord into el ellipse.
 
-\Para imagine un ellipse con un spot and another spot;
-Para make un ellipse con un spot and another spot:
+Para imagine un ellipse con un spot and another spot;
+Para hacer un ellipse con un spot and another spot:
   Poner el spot y el other spot into el ellipse.
 
-\Para imagine un figure using un string y un spot;
-\Para make un figure using un string y un spot;
+Para imagine un figure using un string y un spot;
+Para hacer un figure using un string y un spot;
 Para crear un figure using un string y un center spot:
   Crear el figure.
   Adjuntar el figure to el figures.
@@ -7521,101 +7520,101 @@ Para crear un figure using un string y un center spot:
   Lowercase el string.
   Slap un substring on el string.
   Lazo.
-  Skip any leading noise in el substring.
-  Si el substring's length es less than 2, salir.
-  Poner el substring's first's target into un byte.
-  Poner el byte minus el little-a byte into un spot's y.
-  Agregar 1 to el substring's first.
-  Poner el substring's first's target into el byte.
-  Poner el byte minus el little-a byte into el spot's x.
-  Multiplicar el spot by 1/4 inch.
-  Agregar el center spot's x minus 3-1/8 inches plus 1 pixel to el spot's x.
-  Agregar el center spot's y minus 3-1/8 inches plus 1 pixel to el spot's y.
-  Adjuntar el spot to el figure.
-  Agregar 1 to el substring's first.
+    Skip any leading noise in el substring.
+    Si el substring's length es less than 2, salir.
+    Poner el substring's first's target into un byte.
+    Poner el byte minus el little-a byte into un spot's y.
+    Agregar 1 to el substring's first.
+    Poner el substring's first's target into el byte.
+    Poner el byte minus el little-a byte into el spot's x.
+    Multiplicar el spot by 1/4 inch.
+    Agregar el center spot's x minus 3-1/8 inches plus 1 pixel to el spot's x.
+    Agregar el center spot's y minus 3-1/8 inches plus 1 pixel to el spot's y.
+    Adjuntar el spot to el figure.
+    Agregar 1 to el substring's first.
   Repetir.
 
-\Para imagine un horizontal line un fraction of el way up desde el bottom of un box;
-Para make un horizontal line un fraction of el way up desde el bottom of un box:
+Para imagine un horizontal line un fraction of el way up desde el bottom of un box;
+Para hacer un horizontal line un fraction of el way up desde el bottom of un box:
   Imagine el horizontal line across el box el fraction of el way up desde el bottom.
 
-\Para imagine un line across el bottom of un box;
-\Para make un line across el bottom of un box;
-\Para imagine un line along el bottom of un box;
-Para make un line along el bottom of un box:
+Para imagine un line across el bottom of un box;
+Para hacer un line across el bottom of un box;
+Para imagine un line along el bottom of un box;
+Para hacer un line along el bottom of un box:
   Poner el box's bottom line into el line.
 
-\Para imagine un line across un box un fraction of el way up desde el bottom;
-Para make un line across un box un fraction of el way up desde el bottom:
+Para imagine un line across un box un fraction of el way up desde el bottom;
+Para hacer un line across un box un fraction of el way up desde el bottom:
   Poner el box's left into el line's start's x.
   Poner el box's right into el line's end's x.
   Poner el box's bottom times el fraction into some twips.
   Poner el box's bottom minus el twips into el line's start's y.
   Poner el box's bottom minus el twips into el line's end's y.
 
-\Para imagine un line across el top of un box;
-\Para make un line across el top of un box;
-\Para imagine un line along el top of un box;
-Para make un line along el top of un box:
+Para imagine un line across el top of un box;
+Para hacer un line across el top of un box;
+Para imagine un line along el top of un box;
+Para hacer un line along el top of un box:
   Poner el box's top line into el line.
 
-\Para imagine un line in el middle of un box;
-\Para make un line in el middle of un box;
-\Para imagine un line across el middle of un box;
-\Para make un line across el middle of un box;
-\Para imagine un line in el center of un box;
-\Para make un line in el center of un box;
-\Para imagine un line across el center of un box;
-Para make un line across el center of un box:
+Para imagine un line in el middle of un box;
+Para hacer un line in el middle of un box;
+Para imagine un line across el middle of un box;
+Para hacer un line across el middle of un box;
+Para imagine un line in el center of un box;
+Para hacer un line in el center of un box;
+Para imagine un line across el center of un box;
+Para hacer un line across el center of un box:
   Poner el box's left into el line's start's x.
   Poner el box's right into el line's end's x.
   Poner el box's center's y into el line's start's y.
   Poner el box's center's y into el line's end's y.
 
-\Para imagine un line some twips up desde el bottom of un box;
-Para make un line some twips up desde el bottom of un box:
+Para imagine un line some twips up desde el bottom of un box;
+Para hacer un line some twips up desde el bottom of un box:
   Poner el box's left into el line's start's x.
   Poner el box's right into el line's end's x.
   Poner el box's bottom minus el twips into el line's start's y.
   Poner el box's bottom minus el twips into el line's end's y.
 
-\Para imagine un line con un spot and another spot;
+Para imagine un line con un spot and another spot;
 \Para hacer una línea con un punto y otro punto;
-Para make un line con un spot and another spot:
+Para hacer un line con un spot and another spot:
   Poner el spot y el other spot into el line.
 
-\Para imagine un line con un x-coord y un y-coord and another x-coord and another y-coord;
+Para imagine un line con un x-coord y un y-coord and another x-coord and another y-coord;
 \Para hacer una línea con una coord-x y una coord-y y otra coord-x y otra coord-y;
-Para make un line con un x-coord y un y-coord and another x-coord and another y-coord:
+Para hacer un line con un x-coord y un y-coord and another x-coord and another y-coord:
   Poner el x-coord y el y-coord y el other x-coord y el other y-coord into el line.
 
-\Para imagine un roundy box desde un box y un radius;
+Para imagine un roundy box desde un box y un radius;
 \Para hacer una caja redonda de una caja y un radio;
-Para make un roundy box desde un box y un radius:
+Para hacer un roundy box desde un box y un radius:
   Poner el box y el radius into el roundy box.
 
-\Para imagine un roundy box some twips by some other twips;
+Para imagine un roundy box some twips by some other twips;
 \Para hacer una caja redonda dada un ancho y una altura con un radio;
-Para make un roundy box some twips by some other twips con un radius:
+Para hacer un roundy box some twips by some other twips con un radius:
   Poner 0 into el roundy box's left.
   Poner 0 into el roundy box's top.
   Poner el twips into el roundy box's right.
   Poner el other twips into el roundy box's bottom.
   Poner el radius into el roundy box's radius.
 
-\Para imagine un roundy box con un left coord y un top coord y un right coord y un bottom coord y un radius;
+Para imagine un roundy box con un left coord y un top coord y un right coord y un bottom coord y un radius;
 \Para hacer una caja redonda con una izquierda y una superior y una derecha y una inferior y un radio;
-Para make un roundy box con un left coord y un top coord y un right coord y un bottom coord y un radius:
+Para hacer un roundy box con un left coord y un top coord y un right coord y un bottom coord y un radius:
   Poner el left coord y el top coord y el right coord y el bottom coord y el radius into el roundy box.
 
-\Para imagine un roundy box con un spot and another spot y un radius;
+Para imagine un roundy box con un spot and another spot y un radius;
 \Para hacer una caja redonda con un punto y otro punto y un radio;
-Para make un roundy box con un spot and another spot y un radius:
+Para hacer un roundy box con un spot and another spot y un radius:
   Poner el spot y el other spot y el radius into el roundy box.
 
-\Para hacer un punto con una coordenada-x y una coordenada-y;
+Para hacer un punto con una coordenada-x y una coordenada-y;
 \Para imagine un spot con un x-coord y un y-coord;
-Para make un spot con un x-coord y un y-coord:
+Para hacer un spot con un x-coord y un y-coord:
   Poner el x-coord y el y-coord into el spot.
 
 An inch es 1440 twips.
@@ -8091,7 +8090,7 @@ Para initialize el cursors:
   Poner el arrow cursor into el cursor flecha.
   Poner el hand cursor into el cursor mano.
   Poner el i-beam cursor into el cursor rayo-i.
-  Hide el cursor.
+  Esconder el cursor.
 
 Para initialize el cursors (arrow cursor):
   Adjuntar $00000000000000004000000060000000 to un xor-mask.
@@ -8984,12 +8983,12 @@ The magenta pen es un pen.
 The main window es un window.
 
 \Para hacer una fracción con un número y otro número;
-Para make un fraction con un number and another number:
+Para hacer un fraction con un number and another number:
   Poner el number into el fraction's numerator.
   Poner el other number into el fraction's denominator.
 
-\Para make un ratio pair usando un box and another box;
-Para make un fraction pair usando un box and another box:
+\Para hacer un ratio pair usando un box and another box;
+Para hacer un fraction pair usando un box and another box:
   Poner el box's x-extent into el fraction pair's fraction's numerator.
   Poner el other box's x-extent into el fraction pair's fraction's denominator.
   Poner el box's y-extent into el fraction pair's other fraction's numerator.
@@ -9911,7 +9910,7 @@ Para non-destructively resize un picture usando un twip pair:
   Si el picture es nil, salir.
   Poner el picture's box into un box.
   Resize el box usando el twip pair.
-  Make un fraction pair usando el box y el picture's box.
+  Hacer un fraction pair usando el box y el picture's box.
   Non-destructively resize el picture usando el fraction pair.
 
 \Para normalizar un ángulo;
@@ -10798,7 +10797,7 @@ Para poner el bottom side of un box into un horizontal line:
   Poner el box's right-bottom into el horizontal line's end.
 
 Para poner el bottom of un box into un line:
-  Make el line con el box's left-bottom y el box's right-bottom.
+  Hacer el line con el box's left-bottom y el box's right-bottom.
 
 Para poner un box y un radius into un roundy box:
   Poner el box's left into el roundy box's left.
@@ -10833,7 +10832,7 @@ Para centrar un box on un spot:
 Para poner un box some twips by some other twips in el center of another box;
 \Para centrar una caja algunos twips por otros twips en otra caja;
 Para centrar un box some twips by some other twips in another box:
-  Make el box el twips by el other twips.
+  Hacer el box el twips by el other twips.
   Centrar el box in el other box.
 
 Para poner un box's bottom line into un horizontal line: \ and "vertical" for left and right
@@ -11723,7 +11722,7 @@ Para poner el top side of un box into un horizontal line:
   Poner el box's right-top into el horizontal line's end.
 
 Para poner el top of un box into un line:
-  Make el line con el box's left-top y el box's right-top.
+  Hacer el line con el box's left-top y el box's right-top.
 
 \Para poner una wyrd en otra wyrd;
 Para poner un wyrd into another wyrd:
@@ -12413,7 +12412,7 @@ Para resize un line usando un twip pair:
   Poner el line's box into un box.
   Poner el box into another box.
   Resize el other box usando el twip pair.
-  Make un fraction pair usando el other box y el box.
+  Hacer un fraction pair usando el other box y el box.
   Resize el line usando el fraction pair.
 
 \Para redimensionar una imagen usando un ancho y una altura;
@@ -12450,7 +12449,7 @@ Para resize un polygon usando un twip pair:
   Poner el polygon's box into un box.
   Poner el box into another box.
   Resize el other box usando el twip pair.
-  Make un fraction pair usando el other box y el box.
+  Hacer un fraction pair usando el other box y el box.
   Resize el polygon usando el fraction pair.
 
 \Para resize un text usando un ratio pair;
