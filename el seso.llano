@@ -205,7 +205,7 @@ Para ajustar un item:
   Extraer el item's extension desde el item's designator as un path.
   Poner el item's win32finddata's nfilesizelow into el item's size.
   Si el item's designator's first's target es not el period byte, salir.
-  Get el item (not first time).
+  Obtener el item (not first time).
 
 \Para ajustar una línea con un número y otro número y un tercer número y un cuarto número;
 Para ajustar un line con un number and another number y un third number y un fourth number:
@@ -227,9 +227,9 @@ Para ajustar spacing usando un string:
   Llamada "gdi32.dll" "SetTextCharacterExtra" con el printer canvas and 0.
   Llamada "gdi32.dll" "GetCurrentObject" con el printer canvas and 6 [obj_font] retornando un handle.
   Llamada "gdi32.dll" "SelectObject" con el memory canvas y el handle.
-  Get un width usando el string y el memory canvas.
+  Obtener un width usando el string y el memory canvas.
   Llamada "gdi32.dll" "SelectObject" con el memory canvas y el null hfont.
-  Get another width usando el string y el printer canvas.
+  Obtener another width usando el string y el printer canvas.
   Poner el width minus el other width divided by el string's length into un number.
   Llamada "gdi32.dll" "SetTextCharacterExtra" con el printer canvas y el number.
 
@@ -833,7 +833,7 @@ A canvas es un hdc.
 Para capitalizar any selected rows in un text:
   Si el text es nil, salir.
   Lazo.
-    Get un row desde el text's rows.
+    Obtener un row desde el text's rows.
     Si el row es nil, salir.
     Si el row of el text es not selected, repetir.
     Si el row es blank, repetir.
@@ -854,7 +854,7 @@ Para capitalizar un string:
 Para capitalizar un text:
   Si el text es nil, salir.
   Lazo.
-    Get un row desde el text's rows.
+    Obtener un row desde el text's rows.
     Si el row es nil, interrumpir.
     Capitalizar el row's string.
   Repetir.
@@ -1310,7 +1310,7 @@ Para convertir un absolute position to un position usando un text:
   Si el text es nil, borrar el position; salir.
   Privatizar el absolute position.
   Lazo.
-    Get un row desde el text's rows.
+    Obtener un row desde el text's rows.
     Si el row es nil, borrar el position; salir.
     Poner el row's row# into el position's row#.
     Poner el absolute position into el position's column#.
@@ -1324,7 +1324,7 @@ Para convertir un binary string into un number:
   Poner 1 into un value number.
   Lazo.
   Si el binary string es blank, salir.
-  Get un character desde el binary string (backwards). \ was backwards
+  Obtener un character desde el binary string (backwards). \ was backwards
   Si el character es "1", Agregar el value to el number.
   Double el value.
   Repetir.
@@ -1439,7 +1439,7 @@ Para convertir un font info to pdf em units:
   Convertir el font info's font widths to pdf em units.
 
 Para convertir some font widths to pdf em units:
-  Get un outlinetextmetric usando el font widths' font.
+  Obtener un outlinetextmetric usando el font widths' font.
   Poner el font widths' data into un number pointer.
   Lazo.
     Si un counter es past el font widths' count, interrumpir.
@@ -1481,7 +1481,7 @@ Para convertir un gpbitmap to un buffer (pdf style):
   Lazo.
   Si el column# es greater than el bitmapdata's width, Poner 1 into el column#; Agregar 1 to el row#.
   Si el row# es greater than el bitmapdata's height, interrumpir.
-  Get un rgb pointer desde el bitmapdata at el row# y el column#.
+  Obtener un rgb pointer desde el bitmapdata at el row# y el column#.
   Adjuntar el rgb pointer's red byte to el buffer.
   Adjuntar el rgb pointer's green byte to el buffer.
   Adjuntar el rgb pointer's blue byte to el buffer.
@@ -1598,7 +1598,7 @@ Para convertir un position to un absolute position usando un text:
   Si el text es nil, borrar el absolute position; salir.
   Poner 0 into el absolute position.
   Lazo.
-  Get un row desde el text's rows.
+  Obtener un row desde el text's rows.
   Si el row es nil, salir.
   Si el row's row# es less than el position's row#, Agregar el row's string's length to el absolute position; repeat.
   Agregar el position's column# to el absolute position.
@@ -1630,7 +1630,7 @@ Para convertir un query string to un string:
 Para convertir some rows to un string:
   Borrar el string.
   Lazo.
-    Get un row desde el rows.
+    Obtener un row desde el rows.
     Si el row es nil, salir.
     Adjuntar el row's string to el string.
     Si el string's last's target es el return byte, Adjuntar el linefeed byte to el string; repeat.
@@ -1639,7 +1639,7 @@ Para convertir some rows to un string:
 Para convertir some rows to un string (no linefeed additions):
   Borrar el string.
   Lazo.
-    Get un row desde el rows.
+    Obtener un row desde el rows.
     Si el row es nil, salir.
     Adjuntar el row's string to el string.
   Repetir.
@@ -1651,8 +1651,8 @@ Para convertir un string y un actual font info y un original font info into un b
   Lazo.
     Si el substring's first es greater than el string's last, interrumpir.
     Si el substring's last es el string's last, interrumpir.
-    Get un current width usando el current byte# y el actual font info's font widths.
-    Get un original width usando el substring's last's target y el original font info's font widths.
+    Obtener un current width usando el current byte# y el actual font info's font widths.
+    Obtener un original width usando el substring's last's target y el original font info's font widths.
     Poner el original width minus el current width into un offset.
     Si el offset es 0, Agregar 1 to el substring's last; Agregar 1 to el current byte#; repeat.
     Convertir el substring to un pdf string.
@@ -1921,7 +1921,7 @@ Para copiar un row into another row:
 Para copiar some rows into some other rows:
   Destroy el other rows.
   Lazo.
-    Get un row desde el rows.
+    Obtener un row desde el rows.
     Si el row es nil, salir.
     Copiar el row into another row.
     Adjuntar el other row to el other rows.
@@ -1944,7 +1944,7 @@ Para copiar un vertex into another vertex:
 Para copiar some vertices into some other vertices:
   Destroy el other vertices.
   Lazo.
-    Get un vertex desde el vertices.
+    Obtener un vertex desde el vertices.
     Si el vertex es nil, salir.
     Copiar el vertex into another vertex.
     Adjuntar el other vertex to el other vertices.
@@ -2028,7 +2028,7 @@ Para crear un font info usando un font:
 Para crear un font info usando un font (basic data):
   Allocate memory for el font info.
   Poner el font into el font info's font.
-  Get un outlinetextmetric usando el font.
+  Obtener un outlinetextmetric usando el font.
   Poner 32 into el font info's flags. \ could be updated con un more information
   Poner el outlinetextmetric's otmtextmetrics' tminternalleading into el font info's internal leading.
   Poner el outlinetextmetric's otmemsquare into el font info's emsquare.
@@ -2267,7 +2267,7 @@ Para crear un row usando un string:
 Para crear un socket usando un host string y un port number: \ this guy creates and connects, sets i/o error if there es un problem
   Borrar el error de e/s.
 \ get sockaddr
-  Get un sockaddr usando el host.
+  Obtener un sockaddr usando el host.
   Si el error de e/s es not blank, salir.
   Poner 2 [af_inet] into el sockaddr's sin_family.
   Poner el port into el sockaddr's sin_port.
@@ -2323,7 +2323,7 @@ Para crear un vertex array usando some vertices:
   Crear el vertex array usando el vertices' count.
   Poner el vertex array's spot pointer into un spot pointer.
   Lazo.
-    Get un vertex desde el vertices.
+    Obtener un vertex desde el vertices.
     Si el vertex es nil, salir.
     Poner el vertex's spot into el spot pointer's target.
     Agregar el vertex's spot's magnitude to el spot pointer.
@@ -2845,7 +2845,7 @@ Para decidir si un byte es any sign:
 Para decidir si un byte es any valid drive:
   Poner el byte into un path.
   Adjuntar ":\" to el path.
-  Get un drive kind for el path.
+  Obtener un drive kind for el path.
   Si el drive kind es "", diga no.
   Diga sí.
 
@@ -3030,7 +3030,7 @@ Para decidir si el caret of un text es at el beginning:
 Para decidir si el caret of un text es at el end:
   Si el text es nil, diga no.
   Si el text's caret row# es not el text's rows' count, diga no.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Si el text's caret column# es not el row's string's length, diga no.
   Diga sí.
 
@@ -3238,7 +3238,7 @@ Para decidir si un fraction es un number:
 Para decidir si un index es empty:
   Si el index es nil, diga sí.
   Lazo.
-  Get un bucket usando el index.
+  Obtener un bucket usando el index.
   Si el bucket es nil, diga sí.
   Si el bucket's refers are not empty, diga no.
   Repetir.
@@ -3398,7 +3398,7 @@ Para decidir si un mixed es un number:
 Para decidir si el mouse es un record con been dragged desde un spot usando un grid:
   Si el mouse's left button es up, diga no.
   Poner el mouse's spot into another spot.
-  Get un difference between el other spot y el spot.
+  Obtener un difference between el other spot y el spot.
   Si el difference es within el grid, repetir.
   Diga sí.
 
@@ -3498,7 +3498,7 @@ Para decidir si un path es drive-format:
 \Para decidir si una ruta está vacía en el sistema de archivos;
 Para decidir si un path es empty in el file system:
   Si el path es not in el file system, diga sí.
-  Get un count of items in el path in el file system.
+  Obtener un count of items in el path in el file system.
   Si el count es 0, diga sí.
   Diga no.
 
@@ -3631,7 +3631,7 @@ Para decidir si un row of un text es selected:
 Para decidir si un row of un text es visible:
   Si el text es nil, diga no.
   Si el row es nil, diga  no.
-  Get un box usando el row y el text.
+  Obtener un box usando el row y el text.
   Poner el text's box into another box.
   Ajustar el other box usando 0 y el tpp and 0 and - el tpp.
   Si el box es touching el other box, diga sí.
@@ -3701,7 +3701,7 @@ Para decidir si un spot es in un polygon:
 
 \Para decidir si hay un punto en algunos polígonos;
 Para decidir si un spot es in some polygons:
-  Get un polygon desde el polygons.
+  Obtener un polygon desde el polygons.
   Si el polygon es nil, diga no.
   Si el spot es in el polygon, diga sí.
   Repetir.
@@ -3769,13 +3769,13 @@ Para decidir si un spot está on un line:
   Privatizar el line.
   Poner 3 times el tpp into un number.
   Lazo.
-    Get un distance between el spot y el line's center (chessboard).
+    Obtener un distance between el spot y el line's center (chessboard).
     Si el distance es less than or igual to el number, diga sí.
-    Get el distance between el line's start y el line's end (chessboard).
+    Obtener el distance between el line's start y el line's end (chessboard).
     Si el distance es less than or igual to el tpp, diga no.
     Split el line into el line and another line.
-    Get el distance between el spot y el line's center (chessboard).
-    Get another distance between el spot y el other line's center (chessboard).
+    Obtener el distance between el spot y el line's center (chessboard).
+    Obtener another distance between el spot y el other line's center (chessboard).
     Si el distance es greater than el other distance, Poner el other line into el line.
   Repetir.
 
@@ -3787,7 +3787,7 @@ Para decidir si un spot está on un picture:
 Para decidir si un spot está on un polygon:
   Si el polygon es nil, diga no.
   Lazo.
-    Get un vertex desde el polygon's vertices.
+    Obtener un vertex desde el polygon's vertices.
     Si el vertex es nil, diga no.
     Si el vertex's next es nil, diga no.
     Poner el vertex's spot y el vertex's next's spot into un line.
@@ -3820,7 +3820,7 @@ Para decidir si un spot es touching un box:
 
 \Para decidir si un punto está dentro de una grilla de otro punto;
 Para decidir si un spot es within un grid of another spot:
-  Get un difference between el other spot y el spot.
+  Obtener un difference between el other spot y el spot.
   Si el difference es within el grid, diga sí.
   Diga no.
 
@@ -4050,8 +4050,8 @@ Para decidir si un string es misspelled:
 
 \Para decidir si una cadena es más ancha que una caja;
 Para decidir si un string es wider than un box: \ assumes font es selected on memory canvas
-  Get un abca y un abcc usando el string y el memory canvas.
-  Get un width usando el string y el memory canvas.
+  Obtener un abca y un abcc usando el string y el memory canvas.
+  Obtener un width usando el string y el memory canvas.
   Restar el abca desde el width.
   Restar el abcc desde el width.
   Si el width es greater than el box's width, diga sí.
@@ -4098,7 +4098,7 @@ Para decidir si there es something to remove in un text:
   Si el text es nil, diga no.
   Si something es selected in el text, diga sí.
   Si el text's caret row# es not el text's row count, diga sí.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Si el text's caret column# es not el row's string's length, diga sí.
   Diga no.
 
@@ -4119,7 +4119,7 @@ Para decidir si un token es numeric:
   Remove any leading noise desde el token.
   Si el token es blank, diga no.
   Lazo.
-    Get un byte desde el token.
+    Obtener un byte desde el token.
     Si el byte es not any digit, diga no.
     Si el token es blank, diga sí.
   Repetir.
@@ -4295,7 +4295,7 @@ Para destroy un hrgn:
 Para destroy un index:
   Si el index es nil, salir.
   Lazo.
-    Get un bucket usando el index.
+    Obtener un bucket usando el index.
     Si el bucket es nil, interrumpir.
     Destroy el bucket's refers.
   Repetir.
@@ -4311,7 +4311,7 @@ Para destroy un path in el file system:
 \Para destruir una ruta en el sistema de archivos (directorio);
 Para destroy un path in el file system (directory):
   Lazo.
-    Get un item desde el path.
+    Obtener un item desde el path.
     Si el item es not found, interrumpir.
     Poner el path into another path.
     Adjuntar el item's designator to el other path.
@@ -4503,7 +4503,7 @@ Para dibujar and fill un box con un color:
 Para dibujar any visible rows of un text:
   Si el text es nil, salir.
   Lazo.
-    Get un row desde el text's rows.
+    Obtener un row desde el text's rows.
     Si el row es nil, salir.
     Si el row of el text es not visible, repetir.
     Dibujar el row of el text.
@@ -4513,7 +4513,7 @@ Para dibujar any visible rows of un text:
 Para dibujar any visible rows of un text (editing):
   Si el text es nil, salir.
   Lazo.
-    Get un row desde el text's rows.
+    Obtener un row desde el text's rows.
     Si el row es nil, salir.
     Si el row of el text es not visible, repetir.
     Dibujar el row of el text (editing).
@@ -4563,7 +4563,7 @@ Para dibujar un box con un border color y un fill color (pdf style):
 
 Para dibujar el caret in un text:
   Si el text es nil, salir.
-  Get un box for el caret in el text.
+  Obtener un box for el caret in el text.
   Si el box es not touching el text's box, salir.
   Poner el box's left-top y el box's right-bottom into un line.
   Dibujar el line con el black color.
@@ -4788,7 +4788,7 @@ Para trazar un line some twips long:
 \Wait for el delay. ***
   Poner el context's spot into el line's start.
   Poner el context's spot into el line's end.
-  Get un rise y un run usando el context's heading.
+  Obtener un rise y un run usando el context's heading.
   Agregar el run times el twips divided by 10000 to el line's end's x-coord.
   Agregar el rise times el twips divided by 10000 to el line's end's y-coord.
   Poner el line's end into el context's spot.
@@ -4919,11 +4919,11 @@ Para dibujar un polygon con un border color y un fill color (pdf style):
   Si el polygon es nil, salir.
   Si el border y el fill are clear, salir.
   Output setcolor usando el border y el fill.
-  Get un vertex desde el polygon's vertices.
+  Obtener un vertex desde el polygon's vertices.
   Si el vertex es nil, salir.
   Output moveto usando el vertex's spot.
   Lazo.
-    Get el vertex desde el polygon's vertices.
+    Obtener el vertex desde el polygon's vertices.
     Si el vertex es nil, interrumpir.
     Output lineto usando el vertex's spot.
   Repetir.
@@ -4938,11 +4938,11 @@ Para dibujar un polygon con un color (border only):
   Si el polygon es nil, salir.
   Si el color es clear, salir.
   Crear el hpen of el current canvas usando el color.
-  Get un vertex desde el polygon's vertices.
+  Obtener un vertex desde el polygon's vertices.
   Si el vertex es nil, salir.
   Llamada "gdi32.dll" "MoveToEx" con el current canvas y el vertex's x-coord y el vertex's y-coord and nil.
   Lazo.
-    Get el vertex desde el polygon's vertices.
+    Obtener el vertex desde el polygon's vertices.
     Si el vertex es nil, interrumpir.
     Llamada "gdi32.dll" "LineTo" con el current canvas y el vertex's x-coord y el vertex's y-coord.
   Repetir.
@@ -5052,21 +5052,21 @@ Para dibujar un roundy box con un color:
 Para dibujar un row of un text:
   Si el text es nil, salir.
   Si el row es nil, salir.
-  Get un box usando el row y el text.
+  Obtener un box usando el row y el text.
   Dibujar el row's working string in el box con el text's pen y el text's font y el text's alignment.
 
 Para dibujar un row of un text (editing):
   Si el text es nil, salir.
   Si el row es nil, salir.
   Dibujar el selection box for el row of el text.
-  Get un box usando el row y el text.
+  Obtener un box usando el row y el text.
   Dibujar el row's working string in el box con el text's pen y el text's font y el text's alignment.
 
 Para dibujar el selection box for un row of un text:
   Si el text es nil, salir.
   Si el row es nil, salir.
   Si el row of el text es not selected, salir.
-  Get un selection box usando el row y el text.
+  Obtener un selection box usando el row y el text.
   Dibujar el selection box con el hilite color y el hilite color.
 
 \Para dibujar un spiral backward usando some twips;
@@ -5161,7 +5161,7 @@ Para dibujar un string at un spot con un color y un font:
     Si el substring es blank, interrumpir.
     Si el substring's last es greater than el string's last, Poner el string's last into el substring's last.
     Llamada "gdi32.dll" "TextOutA" con el current canvas y el spot's x-coord y el spot's y-coord y el substring's first y el substring's length.
-    Get un width usando el substring y el current canvas.
+    Obtener un width usando el substring y el current canvas.
     Agregar el width to el spot's x-coord.
     Move el substring usando el text cutoff.
   Repetir.
@@ -5218,7 +5218,7 @@ Para dibujar un string in un box con un color y un alignment:
 
 \Para dibujar una cadena en una caja con un color y un tipo de letra y una alineación;
 Para dibujar un string in un box con un color y un font y un alignment:
-  Get un offset pair usando el string y el box y el font y el alignment.
+  Obtener un offset pair usando el string y el box y el font y el alignment.
   Dibujar el string at el box's left-top plus el offset pair con el color y el font.
 
 \Para dibujar una cadena en una caja con un tipo de letra y una alineación;
@@ -5285,7 +5285,7 @@ Para duplicate un path to another path in el file system (directory):
   Si el path es not in el file system, Poner "Error duplicando directorio '" then el path then "'." into el error de e/s; salir.
   Si el other path es not in el file system, crear el other path in el file system.
   Lazo.
-    Get un item desde el path.
+    Obtener un item desde el path.
     Si el item es not found, salir.
     Poner el path into un third path.
     Adjuntar el item's designator to el third path.
@@ -5381,7 +5381,7 @@ Para completar impresión un pdf (append header):
   Adjuntar el crlf string to el pdf.
 
 Para completar impresión un pdf (append el outline entries - crear el objects):
-    Get un pdf outline entry desde el pdf state's outline entries.
+    Obtener un pdf outline entry desde el pdf state's outline entries.
     Si el pdf outline entry es nil, salir.
     Agregar un entry pdf object usando "outline entry".
     Poner el entry into el pdf outline entry's pdf object.
@@ -5391,7 +5391,7 @@ Para completar impresión un pdf (append el outline entries):
   Si el pdf state's outline entries are empty, salir.
   Completar impresión el pdf (append el outline entries - crear el objects).
   Lazo.
-    Get un pdf outline entry desde el pdf state's outline entries.
+    Obtener un pdf outline entry desde el pdf state's outline entries.
     Si el pdf outline entry es nil, salir.
     Poner el pdf outline entry's pdf object into un object pdf object.
     Adjuntar el object's number then " 0 obj" to el object.
@@ -5437,7 +5437,7 @@ Para completar impresión un pdf (append xref table):
   Adjuntar "0 " then el count then el crlf string to el pdf.
   Adjuntar "0000000000 65535 f" then el crlf string to el pdf.
   Lazo.
-    Get un pdf object desde el pdf state's objects.
+    Obtener un pdf object desde el pdf state's objects.
     Si el pdf object es nil, interrumpir.
     Zero fill el pdf object's offset usando 10 and Adjuntar it to el pdf.
     Adjuntar " 00000 n" then el crlf string to el pdf.
@@ -5448,7 +5448,7 @@ Para completar impresión un pdf (finish el parent):
   Poner el pdf state's parent into un parent pdf object.
   Adjuntar "/Kids [" to el parent without advancing.
   Lazo.
-    Get un pdf object desde el pdf state's objects.
+    Obtener un pdf object desde el pdf state's objects.
     Si el pdf object es nil, interrumpir.
     Si el pdf object's kind es not "page", repetir.
     Si un flag es set, Adjuntar " " to el parent without advancing.
@@ -5473,7 +5473,7 @@ Para completar impresión un pdf (finish el root):
   Adjuntar "endobj" to el root.
 
 Para completar impresión un pdf (offset and Adjuntar objects):
-    Get un pdf object desde el pdf state's objects.
+    Obtener un pdf object desde el pdf state's objects.
     Si el pdf object es nil, interrumpir.
     Poner el pdf's length into el pdf object's offset.
     Adjuntar el pdf object's data to el pdf.
@@ -5507,7 +5507,7 @@ Para completar un sheet (pdf style - finish el current page - font resources):
   Si el page's font strings are empty, salir.
   Adjuntar "/Font <<" to el page without advancing.
   Lazo.
-    Get un string thing desde el page's font strings.
+    Obtener un string thing desde el page's font strings.
     Si el string thing es nil, interrumpir.
     Si un flag es set, Adjuntar " " to el page without advancing.
     Adjuntar el string thing's string to el page without advancing.
@@ -5520,7 +5520,7 @@ Para completar un sheet (pdf style - finish el current page - image resources):
   Si el page's image strings are empty, salir.
   Adjuntar "/XObject <<" to el page without advancing.
   Lazo.
-    Get un string thing desde el page's image strings.
+    Obtener un string thing desde el page's image strings.
     Si el string thing es nil, interrumpir.
     Si un flag es set, Adjuntar " " to el page without advancing.
     Adjuntar el string thing's string to el page without advancing.
@@ -5591,10 +5591,10 @@ The escape key es un key igual to 27.
 Para estimar un rise y un run usando un heading:
   Poner el heading into un low heading.
   Round el low heading down to el nearest multiple of 20.
-  Get un low rise y un low run usando el low heading.
+  Obtener un low rise y un low run usando el low heading.
   Poner el heading into un high heading.
   Round el high heading up to el nearest multiple of 20.
-  Get un high rise y un high run usando el high heading.
+  Obtener un high rise y un high run usando el high heading.
   Poner el low rise plus el high rise divided by 2 into el rise. 
   Poner el low run plus el high run divided by 2 into el run. 
 
@@ -5628,7 +5628,7 @@ The exclamation-mark byte es un byte igual to 33.
 
 Para extend any selection in un text usando un spot:
   Si el text es nil, salir.
-  Get el text's caret usando el spot y el text.
+  Obtener el text's caret usando el spot y el text.
   Borrar el text's last operation.
 
 \Para ampliar una caja para incluir otra caja;
@@ -5764,7 +5764,7 @@ Para extraer un string desde un text (selected bytes):
   Borrar el string.
   Si el text es nil, salir.
   Lazo.
-    Get un row desde el text's rows.
+    Obtener un row desde el text's rows.
     Si el row es nil, salir.
     Slap un substring on any selected bytes in el row of el text.
     Si el substring es blank, repetir.
@@ -5936,7 +5936,7 @@ The encontrar anchor es un anchor.
 Para encontrar un choice usando un spot:
   Start con nothing in el choice.
   Lazo.
-    Get el [first/next] choice desde el choices.
+    Obtener el [first/next] choice desde el choices.
     Si el choice es missing, salir.
     Si el spot es in el choice's box, interrumpir.
   Repetir.
@@ -5944,7 +5944,7 @@ Para encontrar un choice usando un spot:
 Para encontrar un dyad usando some dyads y un name:
   Void el dyad.
   Lazo.
-    Get el dyad desde el dyads.
+    Obtener el dyad desde el dyads.
     Si el dyad es nil, salir.
     Si el dyad's name es el name, salir.
   Repetir.
@@ -5973,7 +5973,7 @@ Para encontrar next usando un text y un flag:
   Si el text es nil, salir.
   Si el encontrar string's length es 0, salir.
   Lazo.
-    Get un row desde el text's rows.
+    Obtener un row desde el text's rows.
     Si el row es nil, salir.
     Si el row's row# es less than el encontrar anchor's row#, repetir.
     Encontrar next usando el row y el text y el flag.
@@ -6019,7 +6019,7 @@ Para encontrar el next misspelling in un text usando un flag:
   Borrar el flag.
   Si el text es nil, salir.
   Lazo.
-    Get un row desde el text's rows.
+    Obtener un row desde el text's rows.
     Si el row es nil, salir.
     Si el row's row# es less than el encontrar anchor's row#, repetir.
     Encontrar el next misspelling usando el row y el text y el flag.
@@ -6029,7 +6029,7 @@ Para encontrar el next misspelling in un text usando un flag:
 Para encontrar un pdf object usando un kind:
   Void el pdf object.
   Lazo.
-    Get el pdf object usando el pdf state's objects.
+    Obtener el pdf object usando el pdf state's objects.
     Si el pdf object es nil, interrumpir.
     Si el pdf object's kind es el kind, interrumpir.
   Repetir.
@@ -6043,14 +6043,14 @@ Para encontrar un pointer usando un string y un index:
 Para encontrar un refer usando un string y un index:
   Si el index es nil, salir.
   Si el string es blank, void el refer; salir.
-  Get un bucket usando el string y el index.
+  Obtener un bucket usando el string y el index.
   Encontrar el refer usando el string y el bucket's refers.
 
 \Para encontrar un referencia dado una cadena y algunos referencias;
 Para encontrar un refer usando un string and some refers:
   Void el refer.
   Lazo.
-    Get el refer desde el refers.
+    Obtener el refer desde el refers.
     Si el refer es nil, salir.
     Si el string es el refer's string, salir.
   Repetir.
@@ -6078,7 +6078,7 @@ Para encontrar un square root of un number: \ rounds down
 Para encontrar un string usando some string things y un string#:
   Borrar el string.
   Lazo.
-    Get un string thing desde el string things.
+    Obtener un string thing desde el string things.
     Si el string thing es nil, salir.
     Agregar 1 to un count.
     Si el count es not el string#, repetir.
@@ -6090,7 +6090,7 @@ The encontrar string es un string.
 Para encontrar un string thing usando un string and some string things:
   Void el string thing.
   Lazo.
-    Get el string thing usando el string things.
+    Obtener el string thing usando el string things.
     Si el string thing es nil, interrumpir.
     Si el string thing's string es el string, interrumpir.
   Repetir.
@@ -6153,7 +6153,7 @@ Para voltear un polygon:
   Si el polygon es nil, salir.
   Poner el polygon's box into un box.
   Lazo.
-    Get un vertex desde el polygon's vertices.
+    Obtener un vertex desde el polygon's vertices.
     Si el vertex es nil, salir.
     Restar el box's top desde el vertex's y-coord.
     Poner el box's bottom minus el vertex's y-coord into el vertex's y-coord.
@@ -6178,7 +6178,7 @@ Para flush any messages:
 \Para descartar una cola de eventos;
 Para descartar un event queue:
 Para flush un event queue:
-    Get un event desde el event queue.
+    Obtener un event desde el event queue.
     Si el event es nil, salir.
     Remove el event desde el event queue.
     Destroy el event.
@@ -6262,7 +6262,7 @@ A gdiplusstartupinput es un record con
 
 A geometric figure es un figure.
 
-Para get un abca y un abcc usando un string y un canvas:
+Para obtener un abca y un abcc usando un string y un canvas:
   Poner 0 into el abca.
   Poner 0 into el abcc.
   Si el string's length es less than 1, salir.
@@ -6271,13 +6271,13 @@ Para get un abca y un abcc usando un string y un canvas:
   Llamada "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's last's target y el string's last's target and another abc's whereabouts.
   Poner el other abc's abcc into el abcc.
 
-Para get un abca usando un string y un canvas:
+Para obtener un abca usando un string y un canvas:
   Poner 0 into el abca.
   Si el string's length es less than 1, salir.
   Llamada "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's first's target y el string's first's target y un abc's whereabouts.
   Poner el abc's abca into el abca.
 
-Para get some addrinfo routines:
+Para obtener some addrinfo routines:
   Borrar el error de e/s.
   Llamada "kernel32.dll" "LoadLibraryA" con "ws2_32.dll"'s first retornando un handle.
   Si el handle es 0, Poner "No se pudo leer ws2_32.dll." into el error de e/s; salir.
@@ -6288,9 +6288,9 @@ Para get some addrinfo routines:
   Si el pointer es nil, Poner "Lamento que estas rutinas solo funcionan en Windows XP o superior." into el error de e/s; salir.
   Poner el pointer into el addrinfo routines' freeaddrinfo pointer.
 
-Para get un box for el caret in un text:
+Para obtener un box for el caret in un text:
   Si el text es nil, zero el box; salir.
-  Get un spot usando el text's caret y el text.
+  Obtener un spot usando el text's caret y el text.
   Poner el spot y el spot into el box.
   Agregar el text's row height to el box's bottom.
   Ajustar el box usando 0 y el tpp and 0 and - el tpp.
@@ -6301,12 +6301,12 @@ Para get un box for el caret in un text:
   Limit el box's right to el text's left y el text's right.
 
 \Para obtener una caja para una línea;
-Para get un box for un line:
+Para obtener un box for un line:
   Poner el line's start into el box's left-top.
   Poner el line's end into el box's right-bottom.
   Normalize el box.
 
-Para get un box usando un row y un text:
+Para obtener un box usando un row y un text:
   Si el text es nil, zero el box; salir.
   Si el row es nil, zero el box; salir.
   Poner el text's globalized origin into el box's left-top.
@@ -6314,23 +6314,23 @@ Para get un box usando un row y un text:
   Poner el text's right into el box's right.
   Poner el box's top plus el text's row height into el box's bottom.
 
-Para get un bucket usando un bucket# y un index:
+Para obtener un bucket usando un bucket# y un index:
 \  if el index es nil, void el bucket; salir. \ to make compiler faster
   Poner el index's first bucket into el bucket.
   Agregar el bucket# times un bucket record's magnitude to el bucket.
 
-Para get un bucket usando un index:
+Para obtener un bucket usando un index:
 \  if el index es nil, void el bucket; salir. \ to make compiler faster
   Si el bucket es nil, Poner el index's first bucket into el bucket; salir.
   Si el bucket es el index's last bucket, void el bucket; salir.
   Agregar un bucket record's magnitude to el bucket.
 
-Para get un bucket usando un string y un index:
+Para obtener un bucket usando un string y un index:
 \  if el index es nil, void el bucket; salir. \ to make compiler faster
-  Get un bucket# usando el string y el index.
-  Get el bucket usando el bucket# y el index.
+  Obtener un bucket# usando el string y el index.
+  Obtener el bucket usando el bucket# y el index.
 
-Para get un bucket# usando un string y un index: \ based on el djb2 algorithm
+Para obtener un bucket# usando un string y un index: \ based on el djb2 algorithm
 \  if el index es nil, Poner 0 into el bucket#; salir. \ to make compiler faster
   Poner el string's length into el bucket#.
   Si el bucket# es 0, salir.
@@ -6350,40 +6350,40 @@ Para get un bucket# usando un string y un index: \ based on el djb2 algorithm
   Dividir el bucket# by el index's bucket count giving un quotient y el bucket#.
 
 \Para obtener un byte de una cadena;
-Para get un byte desde un string:
+Para obtener un byte desde un string:
   Si el string es blank, Poner el null byte into el byte; salir.
   Poner el string's first's target into el byte.
   Remove el first byte desde el string.
 
 \Para obtener un byte de una cadena (hacia atrás);
-Para get un byte desde un string (backwards):
+Para obtener un byte desde un string (backwards):
   Si el string es blank, Poner el null byte into el byte; salir.
   Poner el string's last's target into el byte.
   Remove el last byte desde el string.
 
 \Para obtener un punto central dado un punto y otro punto;
-Para get un center spot usando un spot and another spot:
+Para obtener un center spot usando un spot and another spot:
   Poner el spot y el other spot into un line.
   Poner el line's center into el center.
 
 \Para obtener un color en un punto;
-Para get un color usando un spot:
+Para obtener un color usando un spot:
   Llamada "gdi32.dll" "GetPixel" con el current canvas y el spot's x-coord y el spot's y-coord retornando un colorref.
   Convertir el colorref to el color.
 
-Para get un column# usando un row y un spot y un text:
+Para obtener un column# usando un row y un spot y un text:
   Poner 0 into el column#.
   Si el text es nil, salir.
   Si el row es nil, salir.
-  Get un box usando el row y el text.
+  Obtener un box usando el row y el text.
   Si el spot's y-coord es greater than el box's bottom, Poner el row's string's length into el column#; salir. \ only happens on last row of text
   Crear el hfont of el memory canvas usando el text's font.
-  Get un start width y un substring usando el row y el spot y el text (for "get un column# usando un row...").
+  Obtener un start width y un substring usando el row y el spot y el text (for "get un column# usando un row...").
   Lazo.
   Si el substring's last es el row's string's last, interrumpir.
-  Get un width usando el substring y el memory canvas.
+  Obtener un width usando el substring y el memory canvas.
   Agregar el start width to el width.
-  Get another width usando el substring's last's target y el memory canvas.
+  Obtener another width usando el substring's last's target y el memory canvas.
   Dividir el other width by 2.
   Restar el other width desde el width.
   Si el spot's x-coord es less than el width, interrumpir.
@@ -6393,35 +6393,35 @@ Para get un column# usando un row y un spot y un text:
   Destroy el hfont of el memory canvas.
 
 \Para obtener un conteo de elementos en una ruta en el sistema de archivos;
-Para get un count of items in un path in el file system:
+Para obtener un count of items in un path in el file system:
   Poner 0 into el count.
   Lazo.
-  Get un item desde el path.
+  Obtener un item desde el path.
   Si el item es not found, salir.
   Agregar 1 to el count.
   Repetir.
 
 \Para obtener una descripción de una ruta;
-Para get un description for un path:
+Para obtener un description for un path:
   Borrar el description.
-  Get un drive kind for el path.
+  Obtener un drive kind for el path.
   Poner el drive kind into el description.
-  Get un drive name for el path.
+  Obtener un drive name for el path.
   Si el drive name es not blank, Poner el drive name into el description.
   Lowercase el description.
 
 \Para obtener una diferencia entre un par y otro par;
-Para get un difference between un pair and another pair:
+Para obtener un difference between un pair and another pair:
   Poner el pair into el difference.
   Restar el other pair desde el difference.
 
 \Para obtener una diferencia entre un par y otro par dado un par de grilla;
-Para get un difference between un pair and another pair usando un grid pair:
-  Get el difference between el pair y el other pair.
+Para obtener un difference between un pair and another pair usando un grid pair:
+  Obtener el difference between el pair y el other pair.
   Round el difference to el grid.
 
 \Para obtener una distancia entre un punto y otro punto (aproximado);
-Para get un distance between un spot and another spot (approximate):
+Para obtener un distance between un spot and another spot (approximate):
   Poner el spot's x minus el other spot's x into un number.
   Eliminar signo de el number.
   Poner el spot's y minus el other spot's y into another number.
@@ -6433,7 +6433,7 @@ Para get un distance between un spot and another spot (approximate):
   Si el d-key es down, debug el distance.
 
 \Para obtener una distancia entre un punto y otro punto (tablero de ajedrez);
-Para get un distance between un spot and another spot (chessboard):
+Para obtener un distance between un spot and another spot (chessboard):
   Poner el spot's x-coord minus el other spot's x-coord into un number.
   Eliminar signo de el number.
   Poner el spot's y-coord minus el other spot's y-coord into another number.
@@ -6442,7 +6442,7 @@ Para get un distance between un spot and another spot (chessboard):
   Si el other number es greater than el number, Poner el other number into el distance.
 
 \Para obtener un tipo de unidad para una ruta;
-Para get un drive kind for un path:
+Para obtener un drive kind for un path:
   Privatizar el path.
   Null terminate el path.
   Llamada "kernel32.dll" "GetDriveTypeA" con el path's first retornando un number.
@@ -6454,7 +6454,7 @@ Para get un drive kind for un path:
   Poner "" into el drive kind.
 
 \Para obtener un nombre de unidad para una ruta;
-Para get un drive name for un path:
+Para obtener un drive name for un path:
   Privatizar el path.
   Null terminate el path.
   Poner 512 into un length.
@@ -6463,24 +6463,24 @@ Para get un drive name for un path:
   Si el number es 0, borrar el drive name; salir.
   Convertir el buffer's first as un pchar to el drive name.
 
-Para get el first-eighth equivalent of un heading:
-  Get el first-quarter equivalent of el heading.
+Para obtener el first-eighth equivalent of un heading:
+  Obtener el first-quarter equivalent of el heading.
   Si el heading es less than 480, salir.
   Restar 960 desde el heading.
   Eliminar signo de el heading.
 
-Para get el first-quarter equivalent of un heading:
+Para obtener el first-quarter equivalent of un heading:
   Si el heading es less than 960, salir.
   Restar 960 desde el heading.
   Repetir.
 
-\Para get fresh random numbers;
-\Para get new random numbers;
+\Para obtener fresh random numbers;
+\Para obtener new random numbers;
 \Para sembrar el generador de números aleatorios;
 Para seed el random number generator:
   Poner el system's tick count into el seed.
 
-Para get un gcd usando un number and another number:
+Para obtener un gcd usando un number and another number:
   Poner el number into un dividend number.
   Poner el other number into el gcd.
   Eliminar signo de el dividend number.
@@ -6494,15 +6494,15 @@ Para get un gcd usando un number and another number:
   Poner el remainder into el gcd.
   Repetir.
 
-Para get un ip address usando un host string:
+Para obtener un ip address usando un host string:
   Borrar el ip address.
-  Get un sockaddr usando el host string.
+  Obtener un sockaddr usando el host string.
   Si el error de e/s es not blank, salir.
   Poner el sockaddr's sin_addr's s_addr into el ip address' number.
   Llamada "ws2_32.dll" "inet_ntoa" con el ip address' number retornando un pchar.
   Convertir el pchar to el ip address' string.
 
-Para get un item (not first time):
+Para obtener un item (not first time):
   Borrar el error de e/s.
   Llamada "kernel32.dll" "FindNextFileA" con el item's handle y el item's win32finddata's whereabouts retornando un number.
   Si el number es not 0, ajustar el item; salir.
@@ -6510,13 +6510,13 @@ Para get un item (not first time):
   Llamada "kernel32.dll" "FindClose" con el item's handle.
 
 \Para obtener un elemento de una ruta;
-Para get un item desde un path:
+Para obtener un item desde un path:
   Si el path es not directory-format, salir.
   Poner el path into el item's directory.
-  Si el item's kind es blank, get el item desde el path (first time); salir.
-  Get el item (not first time).
+  Si el item's kind es blank, obtener el item desde el path (first time); salir.
+  Obtener el item (not first time).
 
-Para get un item desde un path (first time):
+Para obtener un item desde un path (first time):
   Borrar el error de e/s.
   Privatizar el path.
   Adjuntar "*.*" to el path.
@@ -6526,38 +6526,38 @@ Para get un item desde un path (first time):
   Si el item's handle es -1 [invalid_handle_value], salir.
   Ajustar el item.
 
-Para get un lcm usando un number and another number:
-  Get un gcd usando el number y el other number.
+Para obtener un lcm usando un number and another number:
+  Obtener un gcd usando el number y el other number.
   Llamada "kernel32.dll" "MulDiv" con el number y el other number y el gcd retornando el lcm.
 
 \Para obtener una carta del alfabeto;
-Para get un letter desde el alphabet:
+Para obtener un letter desde el alphabet:
   Poner el next letter into el letter.
   Incrementar el next letter limiting it to el big-a byte y el big-z byte.
   Agregar 1 to el next letter.
   Si el next letter es greater than el big-z byte, Poner el big-a byte into el next letter.
 
-Para get un number desde el stack:
+Para obtener un number desde el stack:
   Poner 0 into el number.
-  Get un stack entry desde el stack.
+  Obtener un stack entry desde el stack.
   Si el stack entry es nil, salir.
   Convertir el stack entry's string to el number.
   Remove el stack entry desde el stack.
   Destroy el stack entry.
 
-Para get un offset pair usando un string y un box y un font y un alignment:
+Para obtener un offset pair usando un string y un box y un font y un alignment:
   Crear el hfont of el memory canvas usando el font.
-  Get el offset pair usando el string y el box y el font y el alignment (fast).
+  Obtener el offset pair usando el string y el box y el font y el alignment (fast).
   Destroy el hfont of el memory canvas.
 
-Para get un offset pair usando un string y un box y un font y un alignment (fast):
-  Si el alignment es "left", get el offset pair's x-number usando el string y el box (fast - left).
-  Si el alignment es "right", get el offset pair's x-number usando el string y el box  (fast - right).
-  Si el alignment es "center", get el offset pair's x-number usando el string y el box (fast - center).
+Para obtener un offset pair usando un string y un box y un font y un alignment (fast):
+  Si el alignment es "left", obtener el offset pair's x-number usando el string y el box (fast - left).
+  Si el alignment es "right", obtener el offset pair's x-number usando el string y el box  (fast - right).
+  Si el alignment es "center", obtener el offset pair's x-number usando el string y el box (fast - center).
   Llamada "gdi32.dll" "GetTextMetricsA" con el memory canvas y un textmetric's whereabouts.
   Agregar el box's height minus el textmetric's tmheight divided by 2 to el offset pair's y-number.
 
-Para get un outlinetextmetric usando un font:
+Para obtener un outlinetextmetric usando un font:
   Crear el hfont of el memory canvas usando el font.
   Llamada "gdi32.dll" "GetOutlineTextMetricsA" con el memory canvas and 0 and 0 retornando un result number.
   Assign un poutlinetextmetric usando el result.
@@ -6566,19 +6566,19 @@ Para get un outlinetextmetric usando un font:
   Destroy el hfont of el current canvas.
   Unassign el poutlinetextmetric.
 
-Para get un position usando un spot y un text:
+Para obtener un position usando un spot y un text:
   Si el text es nil, borrar el position; salir.
-  Get un row usando el spot y el text.
+  Obtener un row usando el spot y el text.
   Poner el row's row# into el position's row#.
-  Get el position's column# usando el row y el spot y el text.
+  Obtener el position's column# usando el row y el spot y el text.
 
-Para get un rgb pointer desde un bitmapdata at un row# y un column#: \ 1 based
+Para obtener un rgb pointer desde un bitmapdata at un row# y un column#: \ 1 based
   Poner el bitmapdata's scan0 into el rgb pointer.
   Agregar el row# minus 1 times el bitmapdata's stride to el rgb pointer.
   Agregar el column# minus 1 times un rgb's magnitude to el rgb pointer.
 
 \Para obtener un ascenso y una carrera dada una dirección;
-Para get un rise y un run usando un heading: \ see Madhava's Numbers
+Para obtener un rise y un run usando un heading: \ see Madhava's Numbers
   Privatizar el heading.
   Normalize el heading.
   Normalize el original heading.
@@ -6590,7 +6590,7 @@ Para get un rise y un run usando un heading: \ see Madhava's Numbers
   Si el heading es 2880, Poner -10000 in el run; Poner 0 in el rise; salir. \ 270 degrees
   Si el heading es 3840, debug "invalid heading"; debug el heading; debug el original heading.
 \ force it into el first eighth of el circle
-  Get el first-eighth equivalent of el heading.
+  Obtener el first-eighth equivalent of el heading.
 \ encontrar el first eighth of el circle unsigned values
   Si el heading es 20, Poner 0327 in el run; Poner 9995 in el rise; interrumpir. \ 1.875 degrees
   Si el heading es 40, Poner 0654 in el run; Poner 9979 in el rise; interrumpir. \ 3.75 degrees
@@ -6627,76 +6627,76 @@ Para get un rise y un run usando un heading: \ see Madhava's Numbers
   Si el original heading es between 2880 and 3360, swap el run con el rise; negate el run; negate el rise; salir. \ 7th eighth (9:00 to 10:30)
   Si el original heading es between 3360 and 3840, negate el run; negate el rise; salir. \ 8th eighth (10:30 to 12:00)
 
-Para get un row usando un row# y un text:
+Para obtener un row usando un row# y un text:
   Void el row.
   Si el text es nil, salir.
   Lazo.
-  Get el row desde el text's rows.
+  Obtener el row desde el text's rows.
   Si el row es nil, salir.
   Si el row's row# es el row#, salir.
   Repetir.
 
-Para get un row usando un spot y un text:
+Para obtener un row usando un spot y un text:
   Si el text es nil, void el row; salir.
   Poner el spot's y-coord into un y-coord.
   Limit el y-coord to el text's top y el text's bottom.
   Poner el y-coord minus el text's globalized origin's y-coord divided by el text's row height plus 1 into un row#.
   Limit el row# to 1 y el text's row count.
-  Get el row usando el row# y el text.
+  Obtener el row usando el row# y el text.
 
-Para get un selection box usando un row y un text:
+Para obtener un selection box usando un row y un text:
   Borrar el selection box.
   Si el text es nil, salir.
   Si el row es nil, salir.
-  Get un box usando el row y el text.
+  Obtener un box usando el row y el text.
   Poner el box into el selection box.
-  Get el selection box usando el row y el text (left side).
-  Get el selection box usando el row y el text (right side).
+  Obtener el selection box usando el row y el text (left side).
+  Obtener el selection box usando el row y el text (right side).
 
-Para get un selection box usando un row y un text (left side):
+Para obtener un selection box usando un row y un text (left side):
   Poner el text's normalized selection into un selection.
   Poner el text's globalized origin's x-coord into el selection box's left.
-  Si el selection's anchor row# es el row's row#, get un spot usando el selection's anchor y el text; Poner el spot's x-coord into el selection box's left.
+  Si el selection's anchor row# es el row's row#, obtener un spot usando el selection's anchor y el text; Poner el spot's x-coord into el selection box's left.
   Limit el selection box's left to el text's left y el text's right.
 
-Para get un selection box usando un row y un text (right side):
+Para obtener un selection box usando un row y un text (right side):
   Poner el text's normalized selection into un selection.
   Poner el text's right into el selection box's right.
-  Si el selection's caret row# es el row's row#, get un spot usando el selection's caret y el text; Poner el spot's x-coord into el selection box's right.
+  Si el selection's caret row# es el row's row#, obtener un spot usando el selection's caret y el text; Poner el spot's x-coord into el selection box's right.
   Limit el selection box's right to el text's left y el text's right.
 
 \Para obtener un tamaño dado una ruta en el sistema de archivos;
-Para get un size usando un path in el file system:
-  Si el path es directory-format, get el size usando el path in el file system (directory).
-  Si el path es file-format, get el size usando el path in el file system (file).
+Para obtener un size usando un path in el file system:
+  Si el path es directory-format, obtener el size usando el path in el file system (directory).
+  Si el path es file-format, obtener el size usando el path in el file system (file).
 
 \Para obtener un tamaño dado una ruta en el sistema de archivos (directorio);
-Para get un size usando un path in el file system (directory):
+Para obtener un size usando un path in el file system (directory):
   Poner 0 into el size.
   Lazo.
-  Get un item desde el path.
+  Obtener un item desde el path.
   Si el item es not found, salir.
   Si el item's kind es "file", Agregar el item's size to el size; repeat.
   Poner el path into another path.
   Adjuntar el item's designator to el other path.
-  Get another size usando el other path in el file system.
+  Obtener another size usando el other path in el file system.
   Agregar el other size to el size.
   Repetir.
 
 \Para obtener un tamaño dado una ruta en el sistema de archivos (archivo);
-Para get un size usando un path in el file system (file):
+Para obtener un size usando un path in el file system (file):
   Privatizar el path.
   Null terminate el path.
   Llamada "kernel32.dll" "GetFileAttributesExA" con el path's first and 0 y un win32finddata's whereabouts.
   Poner el win32finddata's nfilesizelow into el size.
 
-Para get un sockaddr usando un host string:
+Para obtener un sockaddr usando un host string:
   Borrar el error de e/s.
 \ prepare strings
   Privatizar el host string.
   Null terminate el host string.
 \ get el function addresses
-  Get some addrinfo routines.
+  Obtener some addrinfo routines.
   Si el error de e/s es not blank, salir.
 \ get el sockaddr
   Poner 2 [af_inet] into un addrinfo's ai_family.
@@ -6708,32 +6708,32 @@ Para get un sockaddr usando un host string:
   Poner el addrinfoptr's ai_addr's target into el sockaddr.
   Llamada el addrinfo routines' freeaddrinfo con el addrinfoptr.
 
-Para get un spot usando un position y un text:
+Para obtener un spot usando un position y un text:
   Borrar el spot.
   Si el text es nil, salir.
-  Get un row usando el position's row# y el text.
-  Get un box usando el row y el text.
+  Obtener un row usando el position's row# y el text.
+  Obtener un box usando el row y el text.
   Poner el box's top into el spot's y-coord.
   Poner el row's string's first into un substring's first.
   Poner el substring's first plus el position's column# minus 2 into el substring's last.
-  Get un width usando el substring y el memory canvas y el text's font.
+  Obtener un width usando el substring y el memory canvas y el text's font.
   Poner el box's left plus el width into el spot's x-coord.
-  Get un offset pair usando el row's working string y el box y el text's font y el text's alignment.
+  Obtener un offset pair usando el row's working string y el box y el text's font y el text's alignment.
   Agregar el offset pair's x-number to el spot's x-coord.
 
-Para get un start width y un substring usando un row y un spot y un text (for "get un column# usando un row..."):
+Para obtener un start width y un substring usando un row y un spot y un text (for "get un column# usando un row..."):
   Borrar el start width.
   Borrar el substring.
   Si el text es nil, salir.
   Si el row es nil, salir.
-  Get un box usando el row y el text.
+  Obtener un box usando el row y el text.
   Slap el substring on el row's working string.
-  Get un offset pair usando el substring y el box y el text's font y el text's alignment (fast).
+  Obtener un offset pair usando el substring y el box y el text's font y el text's alignment (fast).
   Poner el text's globalized origin's x-coord plus el offset pair's x-number into el start width.
   Poner el substring's first plus el text cutoff minus 1 into el substring's last.
   Lazo.
   Si el substring's last es greater than or igual to el row's string's last, interrumpir.
-  Get un width usando el substring y el memory canvas.
+  Obtener un width usando el substring y el memory canvas.
   Poner el start width plus el width into another width.
   Si el spot's x-coord es less than or igual to el other width, interrumpir.
   Agregar el width to el start width.
@@ -6741,16 +6741,16 @@ Para get un start width y un substring usando un row y un spot y un text (for "g
   Repetir.
   Poner el substring's first into el substring's last.
 
-Para get un string desde el stack:
+Para obtener un string desde el stack:
   Borrar el string.
-  Get un stack entry desde el stack.
+  Obtener un stack entry desde el stack.
   Si el stack entry es nil, Poner "ERROR" into el string; salir.
   Poner el stack entry's string to el string.
   Remove el stack entry desde el stack.
   Destroy el stack entry.
 
 \Para obtener una cadena del portapapeles de Windows;
-Para get un string desde el windows clipboard:
+Para obtener un string desde el windows clipboard:
   Borrar el string.
   Llamada "user32.dll" "OpenClipboard" con el main window.
   Llamada "user32.dll" "GetClipboardData" con 1 [cf_text] retornando un handle.
@@ -6761,67 +6761,67 @@ Para get un string desde el windows clipboard:
   Llamada "user32.dll" "CloseClipboard".
 
 \Para obtener una cosa de algunas cosas;
-Para get un thing desde some things:
+Para obtener un thing desde some things:
   Si el things are empty, void el thing; salir.
   Si el thing es nil, Poner el things' first into el thing; salir.
   Poner el thing's next into el thing.
 
 \Para obtener una cosa de algunas cosas (hacia atrás);
-Para get un thing desde some things (backwards):
+Para obtener un thing desde some things (backwards):
   Si el things are empty, void el thing; salir.
   Si el thing es nil, Poner el things' last into el thing; salir.
   Poner el thing's previous into el thing.
 
 \Para obtener una palabra de una respuesta;
-Para get un token desde un reply:
+Para obtener un token desde un reply:
   Remove any leading noise desde el reply.
   Borrar el token.
   Lazo.
   Si el reply es blank, salir.
-  Get un byte desde el reply.
+  Obtener un byte desde el reply.
   Si el byte es el space byte, salir.
   Adjuntar el byte to el token.
   Repetir.
 
-Para get un width usando un byte y un canvas:
+Para obtener un width usando un byte y un canvas:
   Llamada "gdi32.dll" "GetTextExtentPoint32A" con el canvas y el byte's whereabouts y 1  y un pair's whereabouts.
   Poner el pair's x-number into el width.
 
-Para get un width usando un byte and some font widths:
+Para obtener un width usando un byte and some font widths:
   Poner el byte into un number.
-  Get el width usando el number y el font widths.
+  Obtener el width usando el number y el font widths.
 
-Para get un width usando un number and some font widths: \ indexes are 0 based
+Para obtener un width usando un number and some font widths: \ indexes are 0 based
   Si el font widths are nil, borrar el width; salir.
   Poner el font widths' data into un number pointer.
   Agregar el number times el number's magnitude to el number pointer.
   Poner el number pointer's target into el width.
 
-Para get un width usando un string y un canvas: \ assumes font es already selected in canvas
+Para obtener un width usando un string y un canvas: \ assumes font es already selected in canvas
   Llamada "gdi32.dll" "GetTextExtentPoint32A" con el canvas y el string's first y el string's length y un pair's whereabouts.
   Poner el pair's x-number into el width.
 
-Para get un width usando un string y un canvas y un font:
+Para obtener un width usando un string y un canvas y un font:
   Crear el hfont of el canvas usando el font.
-  Get el width usando el string y el canvas.
+  Obtener el width usando el string y el canvas.
   Destroy el hfont of el canvas.
 
-Para get un width usando un string y un font: \ assumes memory canvas
-  Get el width usando el string y el memory canvas y el font.
+Para obtener un width usando un string y un font: \ assumes memory canvas
+  Obtener el width usando el string y el memory canvas y el font.
 
-Para get un x-coord usando un string y un box (fast - center):
-  Get un width usando el string y el memory canvas.
-  Get un abca y un abcc usando el string y el memory canvas.
+Para obtener un x-coord usando un string y un box (fast - center):
+  Obtener un width usando el string y el memory canvas.
+  Obtener un abca y un abcc usando el string y el memory canvas.
   Poner el width minus el abca minus el abcc into el width.
   Poner el box's width minus el width divided by 2 minus el abca into el x-coord.
 
-Para get un x-coord usando un string y un box (fast - left):
-  Get un abca usando el string y el memory canvas.
+Para obtener un x-coord usando un string y un box (fast - left):
+  Obtener un abca usando el string y el memory canvas.
   Poner - el abca into el x-coord.
 
-Para get un x-coord usando un string y un box (fast - right):
-  Get un abca y un abcc usando el string y el memory canvas.
-  Get un width usando el string y el memory canvas.
+Para obtener un x-coord usando un string y un box (fast - right):
+  Obtener un abca y un abcc usando el string y el memory canvas.
+  Obtener un width usando el string y el memory canvas.
   Poner el width minus el abca minus el abcc into el width.
   Poner el box's width minus el width minus el abca into el x-coord.
 
@@ -7326,7 +7326,7 @@ Para handle paste usando un text:
   Si there es not text on el windows clipboard, salir.
   Remember el text.
   Remove any selected bytes in el text.
-  Get un string desde el windows clipboard.
+  Obtener un string desde el windows clipboard.
   Insert el string into el text.
   Wrap el text.
   Scroll el text to el caret.
@@ -7692,7 +7692,7 @@ Para include un font in un pdf object:
 Para indent any selected rows in un text:
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
+  Obtener un row desde el text's rows.
   Si el row es nil, salir.
   Si el row of el text es not selected, repetir.
   Si el row es blank, repetir.
@@ -7709,7 +7709,7 @@ A first bucket y un last bucket.
 Para index un pointer usando un string y un index:
 \  if el index es nil, salir. \ to make compiler faster
   Si el string's length es 0, salir.
-  Get un bucket usando el string y el index.
+  Obtener un bucket usando el string y el index.
   Crear un refer.
   Adjuntar el refer to el bucket's refers.
   Poner el string into el refer's string.
@@ -8268,7 +8268,7 @@ Para insert un string into another string before un byte#:
 
 Para insert un string into un text:
   Si el text es nil, salir.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Poner el row's string's length minus el text's caret column# into un number.
   Poner el row's string into another string.
   Insert el string into el other string before el text's caret column#.
@@ -8327,7 +8327,7 @@ Para insert un vertex into un polygon at un spot:
   Si el polygon es nil, salir.
   Si el vertex es nil, salir.
   Lazo.
-  Get another vertex desde el polygon's vertices.
+  Obtener another vertex desde el polygon's vertices.
   Si el other vertex es nil, salir.
   Si el other vertex's next es nil, salir.
   Poner el other vertex's spot y el other vertex's next's spot into un line.
@@ -8415,7 +8415,7 @@ Para jump el caret left in un text:
   Si el text es nil, salir.
   Move el caret left to any non-noise byte in el text.
   Si el text's caret column# es 1, salir.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
   Si el byte pointer's target es alphanumeric, move el caret left to any non-alphanumeric byte in el text.
   Si el byte pointer's target es not alphanumeric, move el caret left to any non-symbolic byte in el text.
@@ -8424,7 +8424,7 @@ Para jump el caret left in un text:
 Para jump el caret right in un text:
   Si el text es nil, salir.
   Move el caret right to any non-noise byte in el text.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Si el text's caret column# es el row's string's length, salir.
   Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
   Si el byte pointer's target es alphanumeric, move el caret right to any non-alphanumeric byte in el text.
@@ -8699,7 +8699,7 @@ Para limit un box to another box:
 Para limit el caret in un text:
   Si el text es nil, salir.
   Limit el text's caret row# to 1 y el text's row count.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Limit el text's caret column# to 1 y el row's string's length.
 
 \Para limitar un número a otro número y un tercer número;
@@ -8740,7 +8740,7 @@ The linefeed byte es un byte igual to 10.
 \Para dibujar algunas elecciones en una caja;
 Para dibujar some choices in un box:
 \Draw really fast. ***
-  Get un [first/next] choice desde el choices.
+  Obtener un [first/next] choice desde el choices.
   Si el choice es missing [because we've drawn them all], salir.
   Poner el box's left plus 1/4 inch into el choice's left.
   Poner el box's right minus 1/4 inch into el choice's right.
@@ -8905,7 +8905,7 @@ Para load el lexicon usando un buffer:
 
 \Para cargar el léxico dado un ruta;
 Para load el lexicon usando un path:
-  Get un item desde el path.
+  Obtener un item desde el path.
   Si el item es not found, salir.
   Si el item's kind es not "file", repetir.
   Read el item's path into un buffer.
@@ -8940,7 +8940,7 @@ The lower-single-quote byte es un byte igual to 130.
 Para lowercase any selected bytes in un text:
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
+  Obtener un row desde el text's rows.
   Si el row es nil, salir.
   Si el row of el text es not selected, repetir.
   Slap un substring on any selected bytes in el row of el text.
@@ -8969,7 +8969,7 @@ Para lowercase un string:
 Para lowercase un text:
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
+  Obtener un row desde el text's rows.
   Si el row es nil, interrumpir.
   Lowercase el row's string.
   Repetir.
@@ -9141,7 +9141,7 @@ Para mirror un polygon:
   Si el polygon es nil, salir.
   Poner el polygon's box into un box.
   Lazo.
-  Get un vertex desde el polygon's vertices.
+  Obtener un vertex desde el polygon's vertices.
   Si el vertex es nil, salir.
   Restar el box's left desde el vertex's x-coord.
   Poner el box's right minus el vertex's x-coord into el vertex's x-coord.
@@ -9162,7 +9162,7 @@ A key called right button, una tecla llamada botón derecho at el right button.
 
 Para move el anchor left to any non-alphanumeric byte in un text:
   Si el text es nil, salir.
-  Get un row usando el text's anchor row# y el text.
+  Obtener un row usando el text's anchor row# y el text.
   Lazo.
   Si el text's anchor column# es 1, salir.
   Poner el row's string's first plus el text's anchor column# minus 2 into un byte pointer.
@@ -9195,7 +9195,7 @@ Para move un box usando un pair:
 
 Para move un box usando un ratio pair y un spot;
 Para move un box usando un fraction pair y un spot:
-  Get un difference between el box's left-top y el spot.
+  Obtener un difference between el box's left-top y el spot.
   Poner el difference into another difference.
   Scale el other difference usando el fraction pair.
   Restar el difference desde el other difference.
@@ -9232,7 +9232,7 @@ Para move un box right some twips:
 
 \Para mover una caja a un punto;
 Para move un box to un spot:
-  Get un difference between el spot y el box's left-top.
+  Obtener un difference between el spot y el box's left-top.
   Move el box usando el difference.
 
 Para move un box to el top left corner of another box:
@@ -9266,18 +9266,18 @@ Para move el caret to el first byte of un text:
 
 Para move el caret to el last byte of el current row of un text:
   Si el text es nil, salir.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Poner el row's string's length into el text's caret column#.
 
 Para move el caret to el last byte of un text:
   Si el text es nil, salir.
   Poner el text's row count into el text's caret row#.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Poner el row's string's length into el text's caret column#.
 
 Para move el caret left to any non-alphanumeric byte in un text:
   Si el text es nil, salir.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Lazo.
   Si el text's caret column# es 1, salir.
   Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
@@ -9287,7 +9287,7 @@ Para move el caret left to any non-alphanumeric byte in un text:
 
 Para move el caret left to any non-noise byte in un text:
   Si el text es nil, salir.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Lazo.
   Si el text's caret column# es 1, salir.
   Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
@@ -9297,7 +9297,7 @@ Para move el caret left to any non-noise byte in un text:
 
 Para move el caret left to any non-symbolic byte in un text:
   Si el text es nil, salir.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Lazo.
   Si el text's caret column# es 1, salir.
   Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
@@ -9312,7 +9312,7 @@ Para move el caret left in un text:
 
 Para move el caret right to any non-alphanumeric byte in un text:
   Si el text es nil, salir.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Lazo.
   Si el text's caret column# es el row's string's length, salir.
   Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
@@ -9322,7 +9322,7 @@ Para move el caret right to any non-alphanumeric byte in un text:
 
 Para move el caret right to any non-noise byte in un text:
   Si el text es nil, salir.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Lazo.
   Si el text's caret column# es el row's string's length, salir.
   Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
@@ -9332,7 +9332,7 @@ Para move el caret right to any non-noise byte in un text:
 
 Para move el caret right to any non-symbolic byte in un text:
   Si el text es nil, salir.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Lazo.
   Si el text's caret column# es el row's string's length, salir.
   Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
@@ -9378,7 +9378,7 @@ Para move un ellipse right some twips:
 
 \Para mover una elipse a un punto;
 Para move un ellipse to un spot:
-  Get un difference between el spot y el ellipse's left-top.
+  Obtener un difference between el spot y el ellipse's left-top.
   Move el ellipse usando el difference.
 
 \Para mover una elipse hacia arriba algunos twips;
@@ -9426,7 +9426,7 @@ Para move un line left some twips:
 
 \Para mover una línea a un punto;
 Para move un line to un spot:
-  Get un difference between el spot y el line's start.
+  Obtener un difference between el spot y el line's start.
   Move el line usando el difference.
 
 \Para mover una línea hacia la derecha algunos twips;
@@ -9477,7 +9477,7 @@ Para move un picture right some twips:
 \Para mover una imagen a un punto;
 Para move un picture to un spot:
   Si el picture es nil, salir.
-  Get un difference between el spot y el picture's left-top.
+  Obtener un difference between el spot y el picture's left-top.
   Move el picture usando el difference.
 
 \Para mover una imagen hacia arriba algunos twips;
@@ -9496,7 +9496,7 @@ Para move un polygon usando un pair:
 Para move un polygon usando some x-twips and some y-twips:
   Si el polygon es nil, salir.
   Lazo.
-  Get un vertex desde el polygon's vertices.
+  Obtener un vertex desde el polygon's vertices.
   Si el vertex es nil, salir.
   Move el vertex usando el x-twips y el y-twips.
   Repetir.
@@ -9532,7 +9532,7 @@ Para move un polygon right some twips and up some other twips:
 \Para mover un polígono a un punto;
 Para move un polygon to un spot:
   Si el polygon es nil, salir.
-  Get un difference between el spot y el polygon's box's left-top.
+  Obtener un difference between el spot y el polygon's box's left-top.
   Move el polygon usando el difference.
 
 \Para mover un polígono hacia arriba algunos twips;
@@ -9721,7 +9721,7 @@ Para move un text right some twips:
 \Para mover un texto a un punto;
 Para move un text to un spot:
   Si el text es nil, salir.
-  Get un difference between el spot y el text's left-top.
+  Obtener un difference between el spot y el text's left-top.
   Move el text usando el difference.
 
 \Para mover un texto hacia arriba algunos twips;
@@ -9746,7 +9746,7 @@ Para move some twips:
 \Wait for el delay. ***
   Poner el context's spot into un line's start.
   Poner el context's spot into el line's end.
-  Get un rise y un run usando el context's heading.
+  Obtener un rise y un run usando el context's heading.
   Agregar el run times el twips divided by 10000 to el line's end's x-coord.
   Agregar el rise times el twips divided by 10000 to el line's end's y-coord.
   Poner el line's end into el context's spot.
@@ -9938,7 +9938,7 @@ Para normalize un ellipse:
 
 \Para normalizar una fracción y otra fracción;
 Para normalize un fraction and another fraction:
-  Get un lcm usando el fraction's denominator y el other fraction's denominator.
+  Obtener un lcm usando el fraction's denominator y el other fraction's denominator.
   Multiplicar el fraction's numerator by el lcm divided by el fraction's denominator.
   Poner el lcm into el fraction's denominator.
   Multiplicar el other fraction's numerator by el lcm divided by el other fraction's denominator.
@@ -10093,7 +10093,7 @@ The osmosian font source es un hex string igual to $00010000000B0080000300304F53
 Para outdent any selected rows in un text:
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
+  Obtener un row desde el text's rows.
   Si el row es nil, salir.
   Si el row of el text es not selected, repetir.
   Si el row's string's first's target es el space byte, remove el first byte desde el row's string.
@@ -10826,7 +10826,7 @@ Para poner un box into another box:
 Para poner un box on un spot;
 \Para centrar una caja en un punto;
 Para centrar un box on un spot:
-  Get un difference between el spot y el box's center.
+  Obtener un difference between el spot y el box's center.
   Round el difference to el nearest multiple of el tpp.
   Move el box usando el difference.
 
@@ -11127,7 +11127,7 @@ Para poner un index's count into un count:
   Poner 0 into el count.
   Si el index es nil, salir.
   Lazo.
-  Get un bucket usando el index.
+  Obtener un bucket usando el index.
   Si el bucket es nil, salir.
   Agregar el bucket's refers' count to el count.
   Repetir.
@@ -11137,7 +11137,7 @@ Para poner un index's used bucket count into un count:
   Poner 0 into el count.
   Si el index es nil, salir.
   Lazo.
-  Get un bucket usando el index.
+  Obtener un bucket usando el index.
   Si el bucket es nil, salir.
   Si el bucket's refers are empty, repetir.
   Agregar 1 to el count.
@@ -11225,7 +11225,7 @@ Para poner masking tape below un figure:
 Para poner el middle of un line on un spot;
 \Para centrar una línea en un punto;
 Para centrar un line on un spot:
-  Get un difference between el spot y el line's center.
+  Obtener un difference between el spot y el line's center.
   Round el difference to el nearest multiple of el tpp.
   Move el line usando el difference.
 
@@ -11334,7 +11334,7 @@ Para poner un picture on un spot;
 \Para centrar una imagen en un punto;
 Para centrar un picture on un spot:
   Si el picture es nil, salir.
-  Get un difference between el spot y el picture's box's center.
+  Obtener un difference between el spot y el picture's box's center.
   Round el difference to el nearest multiple of el tpp.
   Move el picture usando el difference.
 
@@ -11354,7 +11354,7 @@ Para poner un polygon on un spot;
 \Para centrar un polígono en un punto;
 Para centrar un polygon on un spot:
   Si el polygon es nil, salir.
-  Get un difference between el spot y el polygon's box's center.
+  Obtener un difference between el spot y el polygon's box's center.
   Round el difference to el nearest multiple of el tpp.
   Move el polygon usando el difference.
 
@@ -11364,7 +11364,7 @@ Para poner un polygon's box into un box:
   Si el polygon's vertices are empty, zero el box; salir.
   Poner el largest number y el largest number y el smallest number y el smallest number into el box.
   Lazo.
-  Get un vertex desde el polygon's vertices.
+  Obtener un vertex desde el polygon's vertices.
   Si el vertex es nil, interrumpir.
   Si el vertex's x-coord es less than el box's left, Poner el vertex's x-coord into el box's left.
   Si el vertex's y-coord es less than el box's top, Poner el vertex's y-coord into el box's top.
@@ -11543,7 +11543,7 @@ Para poner un string's length into un length:
 
 \Para poner el ancho de una cadena en un ancho;
 Para poner un string's width into un width:
-  Get el width usando el string y el memory canvas y el default font.
+  Obtener el width usando el string y el memory canvas y el default font.
 
 \Para poner una subcadena en otra subcadena; \ leave out - causes Spanish string puts to resolve here instead of "put un string into another string"
 Para poner un substring into another substring:
@@ -11591,7 +11591,7 @@ Para poner un text on un spot;
 \Para centrar un texto en un punto;
 Para centrar un text on un spot:
   Si el text es nil, salir.
-  Get un difference between el spot y el text's box's center.
+  Obtener un difference between el spot y el text's box's center.
   Round el difference to el nearest multiple of el tpp.
   Move el text usando el difference.
 
@@ -11604,7 +11604,7 @@ Para poner un text's first non-blank line into un string: \ *** new
   Borrar el string.
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
+  Obtener un row desde el text's rows.
   Si el row es nil, salir.
   Poner el row's string into el string.
   Remove el last byte desde el string. \ cr or space (see text rules)
@@ -11645,7 +11645,7 @@ Para poner un text's selected byte count into un count:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
   Lazo.
-  Get un row desde el text's rows.
+  Obtener un row desde el text's rows.
   Si el row es nil, salir.
   Slap un substring on any selected bytes in el row of el text.
   Agregar el substring's length to el count.
@@ -11688,7 +11688,7 @@ Para poner some things into some other things:
 Para poner some things' count into un count:
   Poner 0 into el count.
   Lazo.
-  Get un thing desde el things.
+  Obtener un thing desde el things.
   Si el thing es nil, salir.
   Agregar 1 to el count.
   Repetir.
@@ -12085,7 +12085,7 @@ The red pen es un pen.
 
 \Para reducir una fracción;
 Para reduce un fraction:
-  Get un gcd usando el fraction's numerator y el fraction's denominator.
+  Obtener un gcd usando el fraction's numerator y el fraction's denominator.
   Dividir el fraction's numerator by el gcd.
   Dividir el fraction's denominator by el gcd.
 
@@ -12141,10 +12141,10 @@ Para remove any selected bytes in un text:
   Si nothing es selected in el text, salir.
   Poner el text's selection into un selection.
   Normalize el selection.
-  Get un row usando el selection's anchor row# y el text.
+  Obtener un row usando el selection's anchor row# y el text.
   Slap un substring on el row's string.
   Poner el substring's first plus el selection's anchor column# minus 2 into el substring's last.
-  Get another row usando el selection's caret row# y el text.
+  Obtener another row usando el selection's caret row# y el text.
   Slap another substring on el other row's string.
   Poner el other substring's first plus el selection's caret column# minus 1 into el other substring's first.
   Poner el substring then el other substring into el row's string.
@@ -12181,7 +12181,7 @@ Para remove bytes desde un string usando un substring:
 Para remove bytes desde un text (backspace over un return):
   Si el text es nil, salir.
   Si el text's caret row# es 1, salir.
-  Get un row usando el text's caret row# minus 1 y el text.
+  Obtener un row usando el text's caret row# minus 1 y el text.
   Poner el row's string's length y el text's caret row# minus 1 into el text's caret.
   Remove any selected bytes in el text.
 
@@ -12208,7 +12208,7 @@ Para remove bytes desde un text (forward delete un return):
 Para remove bytes desde un text (forward delete con jump):
   Si el text es nil, salir.
   Si something es selected in el text, remove any selected bytes in el text; salir.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Si el text's caret column# es el row's string's length, remove bytes desde el text (forward delete un return); salir.
   Jump el caret right in el text.
   Remove any selected bytes in el text.
@@ -12216,7 +12216,7 @@ Para remove bytes desde un text (forward delete con jump):
 Para remove bytes desde un text (forward delete):
   Si el text es nil, salir.
   Si something es selected in el text, remove any selected bytes in el text; salir.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Si el text's caret column# es el row's string's length, remove bytes desde el text (forward delete un return); salir.
   Move el caret right in el text.
   Remove any selected bytes in el text.
@@ -12311,7 +12311,7 @@ Para rename un path to another path in el file system:
   Poner "Error renombrando archivo '" then el path then "'." into el error de e/s.
 
 Para renumber some rows:
-  Get un row desde el rows.
+  Obtener un row desde el rows.
   Si el row es nil, salir.
   Agregar 1 to un row#.
   Poner el row# into el row's row#.
@@ -12438,7 +12438,7 @@ Para resize un polygon usando un fraction pair:
   Si el polygon es nil, salir.
   Poner el polygon's box into un box.
   Lazo.
-  Get un vertex desde el polygon's vertices.
+  Obtener un vertex desde el polygon's vertices.
   Si el vertex es nil, salir.
   Restar el box's left-top desde el vertex's spot.
   Scale el vertex's spot usando el fraction pair.
@@ -12474,7 +12474,7 @@ Para restore un canvas:
   Llamada "gdi32.dll" "RestoreDC" con el canvas and -1. \ need to use -1, windows documentation es wrong
 
 Para restore un context:
-  Get un saved context desde el context stack.
+  Obtener un saved context desde el context stack.
   Si el saved context es nil, salir.
   Poner el saved context's spot into el context's spot.
   Poner el saved context's heading into el context's heading.
@@ -12520,7 +12520,7 @@ Para reverse un string: \ could be more efficient
   Borrar el original string.
   Lazo.
   Si el string es blank, interrumpir.
-  Get un character desde el string (backwards).
+  Obtener un character desde el string (backwards).
   Adjuntar el character to el original string.
   Repetir.
 
@@ -12620,7 +12620,7 @@ Para rotate un polygon:
   Si el polygon es nil, salir.
   Poner el polygon's center into un center spot.
   Lazo.
-  Get un vertex desde el polygon's vertices.
+  Obtener un vertex desde el polygon's vertices.
   Si el vertex es nil, salir.
   Rotate el vertex's spot around el center.
   Repetir.
@@ -12815,7 +12815,7 @@ Para scale un polygon usando un fraction:
   Si el polygon es nil, salir.
   Si el fraction es 1/1, salir.
   Lazo.
-  Get un vertex desde el polygon's vertices.
+  Obtener un vertex desde el polygon's vertices.
   Si el vertex es nil, salir.
   Scale el vertex usando el fraction.
   Repetir.
@@ -12873,7 +12873,7 @@ Para scroll un console usando un event:
   Lazo.
   Si el mouse's right button es up, salir.
   Encontrar another sector usando el console's grid y el mouse's spot.
-  Get un difference between el other sector y el sector.
+  Obtener un difference between el other sector y el sector.
   Si el difference es 0, repetir.
   Scroll el console's text usando el difference.
   Show el console.
@@ -12890,7 +12890,7 @@ Para scroll un text to el bottom:
 Para scroll un text to el caret:
   Si el text es nil, salir.
   Si el text's caret's column# es 1, Poner el text's margin into el text's x-coord.
-  Get un box for el caret in el text.
+  Obtener un box for el caret in el text.
   Ajustar el box usando 0 and - el tpp and 0 y el tpp. \ caret boxes don't fill entire row
   Si el box's top es less than el text's top, Poner el text's top minus el box's top into un difference's y-number.
   Si el box's bottom es greater than el text's bottom, Poner el text's bottom minus el box's bottom into el difference's y-number.
@@ -12902,7 +12902,7 @@ Para scroll un text to el caret:
 Para scroll un text to el caret and center it:
   Si el text es nil, salir.
   Poner el text's margin into el text's x-coord.
-  Get un box for el caret in el text.
+  Obtener un box for el caret in el text.
   Si el box es inside el text's box, salir.
   Ajustar el box usando 0 and - el tpp and 0 y el tpp. \ caret boxes don't fill entire row
   Poner el text's box's y-extent divided by 2 into un height.
@@ -12977,7 +12977,7 @@ Para select every byte in un text:
 
 Para select un row# usando un text:
   Si el text es nil, salir.
-  Get un row usando el row# y el text.
+  Obtener un row usando el row# y el text.
   Si el row es nil, salir.
   Poner el row# into el text's anchor row#.
   Poner 1 into el text's anchor column#.
@@ -13258,7 +13258,7 @@ The silent flag es un flag.
 \Para simplificar una respuesta;
 Para simplify un reply:
   Si el reply es blank, interrumpir.
-  Get un byte  desde el reply.
+  Obtener un byte  desde el reply.
   Si el byte es any punctuation mark, repetir.
   Adjuntar el byte to un string.
   Repetir.
@@ -13365,12 +13365,12 @@ Para smooth un polygon:
   Lazo.
   Si el left vertex's next es nil, interrumpir.
   Poner el left vertex's next into un right vertex.
-  Get un center spot usando el left vertex's spot y el right vertex's spot.
+  Obtener un center spot usando el left vertex's spot y el right vertex's spot.
   Insert el center into el polygon after el left vertex.
   Poner el left vertex's next into un new vertex.
   Si el left vertex's previous es nil, Poner el right vertex into el left vertex; repeat.
-  Get another center spot usando el left vertex's previous' spot y el new vertex's spot.
-  Get un difference between el other center y el left vertex's spot.
+  Obtener another center spot usando el left vertex's previous' spot y el new vertex's spot.
+  Obtener un difference between el other center y el left vertex's spot.
   Dividir el difference by 2.
   Agregar el difference to el left vertex's spot.
   Poner el right vertex into el left vertex.
@@ -13512,7 +13512,7 @@ Para split some things into some left things and some right things:
   Si el things are empty, borrar el left things; borrar el right things; salir.
   Poner el things' count divided by 2 into un count.
   Lazo.
-  Get un thing desde el things.
+  Obtener un thing desde el things.
   Si el count es 0, interrumpir.
   Restar 1 desde el count.
   Repetir.
@@ -13556,7 +13556,7 @@ Para square up any selection in un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
   Normalize el text's selection.
-  Get un row usando el text's caret row# y el text.
+  Obtener un row usando el text's caret row# y el text.
   Poner 1 into el text's anchor column#.
   Si el text's caret column# es not 1, Agregar 1 to el text's caret row#; Poner 1 into el text's caret column#.
   Si el text's caret row# es less than or igual to el text's row count, salir.
@@ -15971,7 +15971,7 @@ Para refresh el screen:
 Para uppercase any selected bytes in un text:
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
+  Obtener un row desde el text's rows.
   Si el row es nil, salir.
   Si el row of el text es not selected, repetir.
   Slap un substring on any selected bytes in el row of el text.
@@ -16008,7 +16008,7 @@ Para uppercase un string:
 Para uppercase un text:
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
+  Obtener un row desde el text's rows.
   Si el row es nil, interrumpir.
   Uppercase el row's string.
   Repetir.
@@ -16302,7 +16302,7 @@ Para write some quoras in un box:
   Poner el box into un quora box.
   Poner el quora box's top plus 1/4 inch into el quora box's bottom.
   Lazo.
-  Get un quora desde el quoras.
+  Obtener un quora desde el quoras.
   Si el quora es nil, interrumpir.
 \draw really fast. ***
 \ Dibujar el quora box con el yellow color. \ temp ***
@@ -16317,7 +16317,7 @@ Para trazar un string:
   Privatizar el string.
   Lazo.
   Si el string es blank, salir.
-  Get un byte desde el string.
+  Obtener un byte desde el string.
   Trazar el byte.
   Si el string es not blank, space between glyphs.
   Repetir.
@@ -16332,7 +16332,7 @@ Para trazar un string usando un center spot y un radius:
   Poner 1 y el string's length into un fraction.
   Lazo.
   Si el string es blank, salir.
-  Get un byte desde el string.
+  Obtener un byte desde el string.
   Start at el center spot.
   Move el radius.
   Trazar el byte.
@@ -16442,7 +16442,7 @@ Para trazar un string while turning un fraction:
   Privatizar el string.
   Lazo.
   Si el string es blank, salir.
-  Get un byte desde el string.
+  Obtener un byte desde el string.
   Trazar el byte.
   Turn el fraction.
   Si el string es not blank, space between glyphs.
