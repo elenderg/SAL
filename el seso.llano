@@ -26,7 +26,7 @@ Para escribir un string para StdOut:
   retornando el StdOut handle.
   Si el StdOut handle es -1, \ INVALID HANDLE
     Poner "Error. Handle STDOUT inválida." into el error de e/s;
-    \Cluck; 
+    \Cloquear; 
     Salir.
   Llamada "kernel32.dll" "WriteFile" con
     el StdOut handle [hFile] and
@@ -37,7 +37,7 @@ Para escribir un string para StdOut:
   retornando a new number.
   Si el new number no es 0,
     Poner "Error. No se puede escribir en STDOUT" into el error de e/s;
-    \Cluck;
+    \Cloquear;
     Salir.
 
 The on flag es un flag igual to 1.
@@ -1129,13 +1129,13 @@ Para borrar un wyrd:
   Poner 0 into el wyrd.
 
 \Para cerrar un archivo;
-Para close un file:
+Para cerrar un file:
   Llamada "kernel32.dll" "CloseHandle" with el file.
 
 A clsid es un uuid.
 
 \Para cloquear;
-Para cluck:
+Para cloquear:
   Play el cluck sound.
 
 The cluck sound es un wave igual to $524946463A02000057415645666D74201200000001000100401F0000401F000001000800000066616374040000000702000064617461070200007F7F807F7F807F7F808080807F807F7F80817F81817E7E827E7D847C79877D5F6D99B2A25D608269A5979869667F7D8D738C7D8C5E7E878F767A75868D84797278829A7D7E857A73929271657492907D7E7D787E8B887C758388827E817F7C7B89897C7A7E84838183827E7A8488877D7E8181808484817C7F84838181807E7F8283807E8081808182807F7F81818081807F7F8081818080807F7F808180807F80808080807F8080807F8080808080807F7F7F7F7F8080807F7F7F7C7B8182817C7B7D7E8082807D7D7C7F8281807F7C7D808082807E7E7E7D7E807D7B7C7B7D7D7B7A7979797875727269797A490F4571FFF4FF0C001297FBF492525BB0F5B26A001C69BEE5BA76476F9EBD953C3757BAC9BB705C7F9AA883645D7897AA9B806977959588696976999B83766F828C907F7375828E91877B757D868B837A757C858D8880787B8187847B7A7D8788807B79808486817D7C7F8384817D7C7F8484817B7B7D83847F7C7B7E8182827D7C7C8082817D7C7D7F81807F7D7D7F82817F7B7B7E8081807E7D7D7F80807E7D7D7E80807E7D7D7E7F807F7D7D7E7F807F7E7D7E7E80807F7E7D7E80807F7E7E7E7F7F7E7E7E7F7F7F7F7E7E7F7F807F7F7E7E7E7F8080807E7E7E80807F7E7E7F8081807F7F7E7F7F80807F7E7F8081807F7E7E7E80808080807F807F7F7F7F7F7F7F80808080807F7F7F808080807F80808180807F80808100.
@@ -1144,8 +1144,15 @@ The colon byte es un byte igual to 58.
 
 \un color es un record con un hue, un saturation, un lightness, y un brightness at el lightness.
 
-A color es un record con un hue, un saturation, un lightness, un brightness at el lightness,
-  un matiz at el hue, una saturación at el saturation, una luminosidad at el lightness y un brillo at el lightness.
+A color es un record con 
+  An hue, 
+  A saturation, 
+  A lightness, 
+  A brightness at el lightness,
+  Un matiz at el hue, 
+  Una saturación at el saturation, 
+  Una luminosidad at el lightness y 
+  Un brillo at el lightness.
 
 A colorref es un number [like $00BBGGRR].
 
@@ -1240,6 +1247,10 @@ Para compare un string to another string usando un length and another length y u
   Intel $8B9D1C000000. \ mov ebx,[ebp+28] \ el number
   Intel $8903. \ mov [ebx],eax
 
+\Sugestões: 
+\Para manejar de manera compatible cualquier mensaje usando una ventana y un número de mensaje y un w-param y un l-param
+\Para tratar de manera compatible cualquier mensaje usando una ventana y un número de mensaje y un w-param y un l-param
+\Para gestionar de forma compatible cualquier mensaje usando una ventana y un número de mensaje y un w-param y un l-param
 Para compatibly handle any message with un window un message number un w-param y un l-param:
   Si el message es 006, handle any wm-activate with el w-param; Poner 0 into eax; salir.
   Si el message es 258, handle any wm-char with el w-param y el l-param; Poner 0 into eax; salir.
@@ -1274,17 +1285,24 @@ Para compatibly wait for un process pointer:
 \a reply string.
 
 A console es un thing with 
-A box, una caja at el box,
-A border color, un color de borde at el border color,
-A fill color, un color de relleno at el fill color,
-A text, un texto at el text,
-A grid, una grilla at el grid,
-A reply string, una cadena de respuesta at el reply string.
+  A box, una caja at el box,
+  A border color, un color de borde at el border color,
+  A fill color, un color de relleno at el fill color,
+  A text, un texto at el text,
+  A grid, una grilla at el grid,
+  A reply string, una cadena de respuesta at el reply string.
 
 The context es un context.
 
-A context es un thing with un spot, un box, un heading, un letter height, un color, un number, \ pen width? ***
-  y un letter size at el letter height, y un pen at el color.
+A context es un thing with 
+  A spot, 
+  A box, 
+  A heading, 
+  A letter height, 
+  A color, 
+  A number, \ pen width? ***
+  y A letter size at el letter height, 
+  y un pen at el color.
 
 The context stack es some contexts.
 
@@ -1292,12 +1310,12 @@ Para convert un absolute position to un position usando un text:
   Si el text es nil, borrar el position; salir.
   Privatizar el absolute position.
   Lazo.
-  Get un row desde el text's rows.
-  Si el row es nil, borrar el position; salir.
-  Poner el row's row# into el position's row#.
-  Poner el absolute position into el position's column#.
-  Restar el row's string's length desde el absolute position.
-  Si el absolute position es less than 1, salir.
+    Get un row desde el text's rows.
+    Si el row es nil, borrar el position; salir.
+    Poner el row's row# into el position's row#.
+    Poner el absolute position into el position's column#.
+    Restar el row's string's length desde el absolute position.
+    Si el absolute position es less than 1, salir.
   Repetir.
 
 \Para convertir una cadena binaria en un número;

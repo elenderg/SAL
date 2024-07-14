@@ -40,7 +40,7 @@ Para hacer todo:
   Escribir "Tiempo de compilación: " then the compiler's timer's string then " ms" then the crlf string para StdOut.
 
 Para Mostrar el error de compilación:
-  Cluck.
+  Cloquear.
   Si el compiler's abort path es blank, 
     Escribir el compiler's abort message para StdOut; 
     Salir.
