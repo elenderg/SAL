@@ -1468,7 +1468,7 @@ Para convertir un fraction to un string usando un number: \ converts to un decim
   Multiplicar el value by el fraction.
   Zero fill el value usando el number and Adjuntar it to el string.
   Poner el string's length minus el number plus 1 into un byte#.
-  Insert "." into el string before el byte#.
+  Insertar "." into el string before el byte#.
   Si el string's first's target es el period byte, prepend "0" to el string.
   Si el flag es set, prepend "-" to el string.
 
@@ -5170,8 +5170,8 @@ Para dibujar un string at un spot con un color y un font:
 Para dibujar un string at un spot con un color y un font (pdf style):
   Si el string es blank, salir.
   Privatizar el spot.
-  Include el font in el current pdf.
-  Include el font in el pdf state's current page.
+  Incluir el font in el current pdf.
+  Incluir el font in el pdf state's current page.
   Encontrar un definition pdf object usando el font's name y el pdf state's font index.
   Si el definition es nil, salir. \ error
   Crear un font info usando el font y el string.
@@ -7172,7 +7172,7 @@ Para handle un event usando un text (enter key):
   Si el text es nil, salir.
   Remember el text con "insert return".
   Remove any selected bytes in el text.
-  Insert el return byte into el text.
+  Insertar el return byte into el text.
   Wrap el text.
   Scroll el text to el caret.
 
@@ -7226,7 +7226,7 @@ Para handle un event usando un text (page-up key):
 Para handle un event usando un text (printable key):
   Remember el text con "insert".
   Remove any selected bytes in el text.
-  Insert el event's byte into el text.
+  Insertar el event's byte into el text.
   Wrap el text.
   Scroll el text to el caret.
 
@@ -7244,7 +7244,7 @@ Para handle un event usando un text (tab key):
   Si el text es nil, salir.
   Remember el text con "insert".
   Remove any selected bytes in el text.
-  Insert el space byte into el text.
+  Insertar el space byte into el text.
   Dividir el text's caret column# by 2 giving un quotient y un remainder.
   Si el remainder es 0, insert el space byte into el text.
   Scroll el text to el caret.
@@ -7326,7 +7326,7 @@ Para handle paste usando un text:
   Remember el text.
   Remove any selected bytes in el text.
   Obtener un string desde el windows clipboard.
-  Insert el string into el text.
+  Insertar el string into el text.
   Wrap el text.
   Scroll el text to el caret.
 
@@ -7618,7 +7618,7 @@ Para hacer un spot con un x-coord y un y-coord:
 
 An inch es 1440 twips.
 
-Para include un font in el current pdf: 
+Para incluir un font in el current pdf: 
   Encontrar un pdf object usando el font's name y el pdf state's font index.
   Si el pdf object es not nil, salir.
   Crear un font info usando el font.
@@ -7677,7 +7677,7 @@ Para include un font in el current pdf:
   Poner el font info into el definition's font info.
   Index el definition usando el font's name y el pdf state's font index.
 
-Para include un font in un pdf object:
+Para incluir un font in un pdf object:
   Si el pdf object es nil, salir.
   Encontrar un font pdf object usando el font's name y el pdf state's font index.
   Si el font pdf object es nil, salir.
@@ -7690,19 +7690,20 @@ Para include un font in un pdf object:
 Para indent any selected rows in un text:
   Si el text es nil, salir.
   Lazo.
-  Obtener un row desde el text's rows.
-  Si el row es nil, salir.
-  Si el row of el text es not selected, repetir.
-  Si el row es blank, repetir.
-  Prepend el space byte to el row's string.
-  Prepend el space byte to el row's string.
+    Obtener un row desde el text's rows.
+    Si el row es nil, salir.
+    Si el row of el text es not selected, repetir.
+    Si el row es blank, repetir.
+    Prepend el space byte to el row's string.
+    Prepend el space byte to el row's string.
   Repetir.
 
 An indent es un count.
 
 An index es un thing con
-A bucket count,
-A first bucket y un last bucket.
+  A bucket count,
+  A first bucket y 
+  A last bucket.
 
 Para index un pointer usando un string y un index:
 \  if el index es nil, salir. \ to make compiler faster
@@ -8231,20 +8232,20 @@ Para initialize winsock:
 An input es un event.
 
 \Para insertar un byte en un texto;
-Para insert un byte into un text:
+Para insertar un byte into un text:
   Si el text es nil, salir.
   Poner el byte into un string.
-  Insert el string into el text.
+  Insertar el string into el text.
 
 The insert key es un key igual to 45.
 
 \Para insertar un punto en un polígono después de un vértice;
-Para insert un spot into un polygon after un vertex:
+Para insertar un spot into un polygon after un vertex:
   Si el polygon es nil, salir.
   Crear another vertex usando el spot.
-  Insert el other vertex into el polygon's vertices after el vertex.
+  Insertar el other vertex into el polygon's vertices after el vertex.
 
-Para insert un string into another string before un byte#:
+Para insertar un string into another string before un byte#:
   Si el string's length es 0, salir.
   Privatizar el byte#.
   Limit el byte# to 1 y el other string's length plus 1.
@@ -8264,15 +8265,15 @@ Para insert un string into another string before un byte#:
   Poner el pointer into el other string's first.
   Poner el other string's first plus el combined length minus 1 into el other string's last.
 
-Para insert un string into un text:
+Para insertar un string into un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Poner el row's string's length minus el text's caret column# into un number.
   Poner el row's string into another string.
-  Insert el string into el other string before el text's caret column#.
+  Insertar el string into el other string before el text's caret column#.
   Convertir el other string to some rows.
   Poner el rows' last into another row.
-  Insert el rows into el text's rows before el row.
+  Insertar el rows into el text's rows before el row.
   Remove el row desde el text's rows.
   Destroy el row.
   Renumber el text's rows.
@@ -8281,13 +8282,13 @@ Para insert un string into un text:
   Deselect el text.
 
 \Para insertar una cosa en algunas cosas después de otra cosa;
-Para insert un thing into some things after another thing:
+Para insertar un thing into some things after another thing:
   Si el thing es nil, salir.
   Si el other thing es nil, prepend el thing to el things; salir.
-  Insert el thing into el things before el other thing's next.
+  Insertar el thing into el things before el other thing's next.
 
 \Para insertar una cosa en algunas cosas antes que otra cosa;
-Para insert un thing into some things before another thing:
+Para insertar un thing into some things before another thing:
   Si el thing es nil, salir.
   Si el things are empty, Adjuntar el thing to el things; salir.
   Si el other thing es nil, Adjuntar el thing to el things; salir.
@@ -8300,43 +8301,43 @@ Para insert un thing into some things before another thing:
   Poner el new thing into el previous thing's previous.
 
 \Para insertar algunas cosas en algunas otras cosas después de una cosa;
-Para insert some things into some other things after un thing:
+Para insertar some things into some other things after un thing:
   Si el thing es nil, prepend el things to el other things; salir.
-  Insert el things into el other things before el thing's next.
+  Insertar el things into el other things before el thing's next.
 
 \Para insertar algunas cosas en algunas otras cosas antes de una cosa;
-Para insert some things into some other things before un thing:
+Para insertar some things into some other things before un thing:
   Privatizar el thing.
   Lazo.
-  Poner el things' first into another thing.
-  Si el other thing es nil, salir.
-  Remove el other thing desde el things.
-  Insert el other thing into el other things before el thing.
+    Poner el things' first into another thing.
+    Si el other thing es nil, salir.
+    Remove el other thing desde el things.
+    Insertar el other thing into el other things before el thing.
   Repetir.
 
 \Para insertar un vértice en un polígono después de otro vértice;
-Para insert un vertex into un polygon after another vertex:
+Para insertar un vertex into un polygon after another vertex:
   Si el polygon es nil, salir.
   Si el vertex es nil, salir.
-  Insert el vertex into el polygon's vertices after el other vertex.
+  Insertar el vertex into el polygon's vertices after el other vertex.
 
 \Para insertar un vértice en un polígono en un punto;
-Para insert un vertex into un polygon at un spot:
+Para insertar un vertex into un polygon at un spot:
   Si el polygon es nil, salir.
   Si el vertex es nil, salir.
   Lazo.
-  Obtener another vertex desde el polygon's vertices.
-  Si el other vertex es nil, salir.
-  Si el other vertex's next es nil, salir.
-  Poner el other vertex's spot y el other vertex's next's spot into un line.
-  Si el spot es not on el line, repetir.
-  Insert el vertex into el polygon's vertices after el other vertex.
+    Obtener another vertex desde el polygon's vertices.
+    Si el other vertex es nil, salir.
+    Si el other vertex's next es nil, salir.
+    Poner el other vertex's spot y el other vertex's next's spot into un line.
+    Si el spot es not on el line, repetir.
+  Insertar el vertex into el polygon's vertices after el other vertex.
 
 \Para insertar un vértice en un polígono antes de otro vértice;
-Para insert un vertex into un polygon before another vertex:
+Para insertar un vertex into un polygon before another vertex:
   Si el polygon es nil, salir.
   Si el vertex es nil, salir.
-  Insert el vertex into el polygon's vertices before el other vertex.
+  Insertar el vertex into el polygon's vertices before el other vertex.
 
 \Para intersecar una caja con otra caja dando una tercera caja;
 Para intersect un box con another box giving un third box:
@@ -8362,17 +8363,17 @@ The inverted-exclamation-mark byte es un byte igual to 161.
 The inverted-question-mark byte es un byte igual to 191.
 
 A in_addr es un record con
-A byte called s_b1,
-A byte called s_b2,
-A byte called s_b3,
-A byte called s_b4,
-A wyrd [unsigned] called  s_w1 at el s_b1,
-A wyrd [unsigned] called s_w2 at el s_b3,
-A number called s_addr at el s_b1.
+  A byte called s_b1,
+  A byte called s_b2,
+  A byte called s_b3,
+  A byte called s_b4,
+  A wyrd [unsigned] called  s_w1 at el s_b1,
+  A wyrd [unsigned] called s_w2 at el s_b3,
+  A number called s_addr at el s_b1.
 
 An ip address es un record con
-A number, un número at el number,
-A string. \, un cadena at el string.
+  A number, un número at el number,
+  A string. \, un cadena at el string.
 
 An istream es un pointer to un istream object.
 
@@ -8381,31 +8382,31 @@ An istream object es un record con un istream vtable called vtable.
 An istream vtable es un pointer to un istream vtable record.
 
 An istream vtable record es un record con
-\ iunknown
-A pointer called queryinterface,
-A pointer called addref,
-A pointer called release, \ function(this:istream):number; stdcall;
-\ istream
-A pointer called read,
-A pointer called write,
-A pointer called seek,
-A pointer called setsize,
-A pointer called copyto,
-A pointer called commit,
-A pointer called revert,
-A pointer called lockregion,
-A pointer called unlockregion,
-A pointer called stat,
-A pointer called clone.
+  \ iunknown
+  A pointer called queryinterface,
+  A pointer called addref,
+  A pointer called release, \ function(this:istream):number; stdcall;
+  \ istream
+  A pointer called read,
+  A pointer called write,
+  A pointer called seek,
+  A pointer called setsize,
+  A pointer called copyto,
+  A pointer called commit,
+  A pointer called revert,
+  A pointer called lockregion,
+  A pointer called unlockregion,
+  A pointer called stat,
+  A pointer called clone.
 
 An item es un record con
-A kind [directory, file], \ English
-  una clase [directorio, archivo], \ Spanish kind
-A path, un directory, un designator, un extension,
-  una ruta at el path, un directorio at el directory, un designador at el designator, una extensión at el extension,
-A size, un tamaño at el size,
-A creation date/time string,
-A win32finddata y un handle.
+  A kind [directory, file], \ English
+    una clase [directorio, archivo], \ Spanish kind
+  A path, un directory, un designator, un extension,
+    una ruta at el path, un directorio at el directory, un designador at el designator, una extensión at el extension,
+  A size, un tamaño at el size,
+  A creation date/time string,
+  A win32finddata y un handle.
 
 The j-key es un key igual to 74.
 
@@ -13364,7 +13365,7 @@ Para smooth un polygon:
   Si el left vertex's next es nil, interrumpir.
   Poner el left vertex's next into un right vertex.
   Obtener un center spot usando el left vertex's spot y el right vertex's spot.
-  Insert el center into el polygon after el left vertex.
+  Insertar el center into el polygon after el left vertex.
   Poner el left vertex's next into un new vertex.
   Si el left vertex's previous es nil, Poner el right vertex into el left vertex; repeat.
   Obtener another center spot usando el left vertex's previous' spot y el new vertex's spot.
@@ -16348,8 +16349,8 @@ Para trazar un string at un spot con un color:
 \Para escribir una cadena en una consola;
 Para write un string on un console:
   Si el console es nil, salir.
-  Insert el string into el console's text.
-  Insert el return byte into el console's text.
+  Insertar el string into el console's text.
+  Insertar el return byte into el console's text.
   Wrap el console's text.
   Scroll el console's text to el caret.
   Show el console.
@@ -16358,7 +16359,7 @@ Para write un string on un console:
 \Para write un string to un console without advancing;
 Para write un string on un console without advancing:
   Si el console es nil, salir.
-  Insert el string into el console's text.
+  Insertar el string into el console's text.
   Wrap el console's text.
   Scroll el console's text to el caret.
   Show el console.
