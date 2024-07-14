@@ -252,7 +252,7 @@ An angle es some precise degrees [0 to 3599].
 
 \Para adjuntar un búfer a un archivo;
 Para adjuntar un buffer to un file:
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Llamada "kernel32.dll" "SetFilePointer" with el file and 0 and 0 and 2 [file_end] retornando un result number.
   Si el result number es -1, Poner "Error posicionando puntero de archivo." into el error de e/s; salir.
   Llamada "kernel32.dll" "WriteFile" with el file y el buffer's first y el buffer's length y un number's whereabouts and 0 retornando el result number.
@@ -383,9 +383,9 @@ The asterisk byte es un byte igual to 42.
 The at-sign byte es un byte igual to 64.
 
 Para autoscroll un text usando un spot y un flag:
-  Si el text es nil, clear el flag; salir.
+  Si el text es nil, borrar el flag; salir.
   Poner el text's font's height into un number.
-  Clear un difference.
+  Borrar un difference.
   Poner el text's box into un box.
   Indent el box usando el tpp.
   Si el spot's y-coord es less than el box's top, Poner el number into el difference's y-number.
@@ -394,7 +394,7 @@ Para autoscroll un text usando un spot y un flag:
   Si el spot's x-coord es greater than el box's right, Poner el number into el difference's x-number; negate el difference's x-number.
   Si el text's horizontal scroll flag es not set, Poner 0 into el difference's x-number.
   Si el text's vertical scroll flag es not set, Poner 0 into el difference's y-number.
-  Si el difference es 0, clear el flag; salir.
+  Si el difference es 0, borrar el flag; salir.
   Set el flag.
   Scroll el text usando el difference.
   Wait for 50 milliseconds.
@@ -420,7 +420,7 @@ Para comenzar un landscape sheet:
 
 \Para comenzar una hoja de paisaje dada una cadena de título;
 Para comenzar un landscape sheet usando un title string:
-  Si el pdf document flag es not set, clear el landscape sheet; salir.
+  Si el pdf document flag es not set, borrar el landscape sheet; salir.
   Make el landscape sheet 11 inches by 8-1/2 inches.
   Comenzar el sheet usando el box y el title (pdf style).
 
@@ -431,7 +431,7 @@ Para comenzar un portrait sheet:
 
 \Para comenzar una hoja de retrato dada una cadena de título;
 Para comenzar un portrait sheet usando un title string:
-  Si el pdf document flag es not set, clear el portrait sheet; salir.
+  Si el pdf document flag es not set, borrar el portrait sheet; salir.
   Make el portrait sheet 8-1/2 inches by 11 inches.
   Comenzar el sheet usando el box y el title (pdf style).
 
@@ -519,8 +519,8 @@ Para comenzar un sheet usando un box y un title string (pdf style - start el cur
 
 Para comenzar un sheet usando un box y un title string (pdf style):
   Set el pdf state's page flag.
-  Poner el clear color into el pdf state's current border.
-  Poner el clear color into el pdf state's current fill.
+  Poner el borrar color into el pdf state's current border.
+  Poner el borrar color into el pdf state's current fill.
   Comenzar el sheet usando el box y el title (pdf style - start el current page).
   Si el title es blank, salir.
   Create un pdf outline entry usando el title y el pdf state's current height y el pdf state's current page's number.
@@ -1011,121 +1011,121 @@ The choices are some choices.
 The circumflex byte es un byte igual to 136.
 
 \Para borrar una caja;
-Para clear un box:
+Para borrar un box:
   Poner 0 and 0 and 0 and 0 into el box. \ writer depends on this
 
 \Para borrar un byte;
-Para clear un byte:
+Para borrar un byte:
   Poner el null byte into el byte.
 
 \Para borrar un color;
-Para clear un color:
+Para borrar un color:
   Poner 0 and 0 and 0 into el color.
 
-The clear color es un color.
+The borrar color es un color.
 
 \Para borrar una elipse;
-Para clear un ellipse:
-  Clear el ellipse's box.
+Para borrar un ellipse:
+  Borrar el ellipse's box.
 
 \Para borrar una bandera;
 \Para bajar una bandera;
-Para clear un flag:
+Para borrar un flag:
   Poner 0 into el flag. \ was "Put no into el flag." Value of "no" inherited desde el CAL-1000 according to Dan.
 
 \Para borrar una tipo de letra;
-Para clear un font:
+Para borrar un font:
   Poner "" and 0 into el font.
 
 \Para borrar una fracción;
-Para clear un fraction:
+Para borrar un fraction:
   Poner 0 y 1  into el fraction.
 
-Para clear un ip address:
-  Clear el ip address' number.
-  Clear el ip address' string.
+Para borrar un ip address:
+  Borrar el ip address' number.
+  Borrar el ip address' string.
 
-The clear key es un key igual to 12.
+The borrar key es un key igual to 12.
 
 \Para borrar una línea;
-Para clear un line:
-  Clear el line's start.
-  Clear el line's end.
+Para borrar un line:
+  Borrar el line's start.
+  Borrar el line's end.
 
 \Para borrar un número;
-Para clear un number:
+Para borrar un number:
   Poner 0 into el number.
 
 \Para borrar un par;
-Para clear un pair:
+Para borrar un pair:
   Poner 0 and 0 into el pair.
 
-The clear pen es un pen.
+The borrar pen es un pen.
 
 \Para borrar un escáner;
-Para clear un rider:
-  Clear el rider's original.
-  Clear el rider's source.
-  Clear el rider's token.
+Para borrar un rider:
+  Borrar el rider's original.
+  Borrar el rider's source.
+  Borrar el rider's token.
 
 \Para borrar la pantalla;
-\Para erase el screen;
-\Para blank out el screen;
-\Para wipe off el screen;
-Para clear el screen:
+Para erase el screen;
+Para blank out el screen;
+Para wipe off el screen;
+Para borrar el screen:
   Unmask everything.
   Draw el screen's box with el black color y el black color.
   Refresh el screen.
   Poner el screen's box into el context's box.
 
 \Para borrar la pantalla a un color;
-Para clear el screen to un color:
+Para borrar el screen to un color:
   Unmask everything.
   Draw el screen's box with el color y el color.
   Refresh el screen.
   Poner el screen's box into el context's box.
 
-Para clear el screen to white: \ Para borrar la pantalla un blanco; \ needs special handling
+Para borrar el screen to white: \ Para borrar la pantalla un blanco; \ needs special handling
   Unmask everything.
   Draw el screen's box with el white color y el white color.
   Refresh el screen.
   Poner el screen's box into el context's box.
 
 \Para borrar la pantalla sin refrescarla;
-Para clear el screen without refreshing it:
+Para borrar el screen without refreshing it:
   Unmask everything.
   Draw el screen's box with el black color y el black color.
   Poner el screen's box into el context's box.
 
 \Para borrar una selección;
-Para clear un selection:
-  Clear el selection's anchor.
-  Clear el selection's caret.
+Para borrar un selection:
+  Borrar el selection's anchor.
+  Borrar el selection's caret.
 
-Para clear el stack: \ stack needs work
+Para borrar el stack: \ stack needs work
   Destroy el stack.
 
 \Para borrar una cadena;
-Para clear un string:
+Para borrar un string:
   Unassign el string's first.
   Void el string's last.
 
 \Para borrar una subcadena;
-Para clear un substring:
+Para borrar un substring:
   Void el substring's first.
   Void el substring's last.
 
 \Para borrar un terminal;
-Para clear un terminal:
+Para borrar un terminal:
   Destroy el terminal's quoras.
 
 \Para borrar algunas cosas;
-Para clear some things:
+Para borrar some things:
   Void el things' first.
   Void el things' last.
 
 \Para borrar una wyrd;
-Para clear un wyrd:
+Para borrar un wyrd:
   Poner 0 into el wyrd.
 
 \Para cerrar un archivo;
@@ -1289,11 +1289,11 @@ A context es un thing with un spot, un box, un heading, un letter height, un col
 The context stack es some contexts.
 
 Para convert un absolute position to un position usando un text:
-  Si el text es nil, clear el position; salir.
+  Si el text es nil, borrar el position; salir.
   Privatizar el absolute position.
   Lazo.
   Get un row desde el text's rows.
-  Si el row es nil, clear el position; salir.
+  Si el row es nil, borrar el position; salir.
   Poner el row's row# into el position's row#.
   Poner el absolute position into el position's column#.
   Restar el row's string's length desde el absolute position.
@@ -1313,7 +1313,7 @@ Para convert un binary string into un number:
 
 \Para convertir una caja en una cadena;
 Para convert un box to un string:
-  Clear el string.
+  Borrar el string.
   Adjuntar el box's left to el string.
   Adjuntar " " to el string.
   Adjuntar el box's top to el string.
@@ -1345,7 +1345,7 @@ Para convert un byte to un query byte:
   Poner "%" then el nibble string into el query byte.
 
 Para convert un color to un colorref:
-  Si el color es clear, Poner 16777215 [$00FFFFFF] into el colorref; salir. \ clear pen becomes white
+  Si el color es clear, Poner 16777215 [$00FFFFFF] into el colorref; salir. \ borrar pen becomes white
   Privatizar el color.
   Scale el color's saturation usando 240/1000.
   Limit el color's saturation to 1 and 239.
@@ -1381,7 +1381,7 @@ Para convert un colorref to un rgb:
   Poner el colorref into el rgb's blue byte.
 
 Para convert un filetime to un string:
-  Clear el string.
+  Borrar el string.
   Llamada "kernel32.dll" "FileTimeToSystemTime" with el filetime's whereabouts y un systemtime's whereabouts retornando un number.
   Si el number es 0, salir.
   Poner el systemtime's wyear into un date/time's year.
@@ -1441,7 +1441,7 @@ Para convert un fraction to un mixed:
 
 \Para convertir una fracción en una cadena dado un número;
 Para convert un fraction to un string usando un number: \ converts to un decimal representation with "the number" of places
-  Clear el string.
+  Borrar el string.
   Si el number es less than 1, salir.
   Poner 10 into un value number.
   Raise el value to el number.
@@ -1455,7 +1455,7 @@ Para convert un fraction to un string usando un number: \ converts to un decimal
   Si el flag es set, prepend "-" to el string.
 
 Para convert un gpbitmap to un buffer (pdf style):
-  Clear el buffer.
+  Borrar el buffer.
   Si el gpbitmap es nil, salir.
   Lock el gpbitmap usando un bitmapdata (24-bit rgb).
   Poner 1 into un row#.
@@ -1476,7 +1476,7 @@ Para convert un hex string to un fraction:
   Copy bytes desde el hex string's first to el fraction's whereabouts for el fraction's magnitude.
 
 Para convert un hex string to un number:
-  Si el hex string's length es not el number's magnitude, clear el number; salir.
+  Si el hex string's length es not el number's magnitude, borrar el number; salir.
   Copy bytes desde el hex string's first to el number's whereabouts for el number's magnitude.
 
 Para convert un l-param to un key: \ assumes l-param desde wm_char message
@@ -1495,7 +1495,7 @@ Para convert un l-param to un key: \ assumes l-param desde wm_char message
   Si el key es el up-arrow key, Poner el numpad-eight key into el key; salir.
   Si el key es el right-arrow key, Poner el numpad-six key into el key; salir.
   Si el key es el down-arrow key, Poner el numpad-two key into el key; salir.
-  Si el key es el clear key, Poner el numpad-five key into el key; salir.
+  Si el key es el borrar key, Poner el numpad-five key into el key; salir.
 
 Para convert un l-param to un spot:
   Split el l-param into un wyrd and another wyrd.
@@ -1515,7 +1515,7 @@ Para convert un nibble to un nibble string:
 
 Para convert un nibble string to un hex string:
   Privatizar el nibble string.
-  Clear el hex string.
+  Borrar el hex string.
   Si el nibble string's length es odd, prepend el zero byte to el nibble string.
   Slap un substring on el nibble string.
   Lazo.
@@ -1538,7 +1538,7 @@ Para convert un number to pdf em units usando un emsquare number y un font:
   Multiplicar el number by 1000 / el emsquare.
 
 Para convert un pchar to un string:
-  Clear el string.
+  Borrar el string.
   Si el pchar es nil, salir.
   Privatizar el pchar.
   Lazo.
@@ -1548,7 +1548,7 @@ Para convert un pchar to un string:
   Repetir.
 
 Para convert un pointer y un length to un string:
-  Clear el string.
+  Borrar el string.
   Si el pointer es nil, salir.
   Si el length es 0, salir.
   Reassign el string's first usando el length.
@@ -1577,7 +1577,7 @@ Para convert some points to some precise degrees:
   Poner el points times 3840 divided by 3600 into el precise degrees.
 
 Para convert un position to un absolute position usando un text:
-  Si el text es nil, clear el absolute position; salir.
+  Si el text es nil, borrar el absolute position; salir.
   Poner 0 into el absolute position.
   Lazo.
   Get un row desde el text's rows.
@@ -1591,7 +1591,7 @@ Para convert some precise degrees to some points:
 
 \Para convertir una cadena de consulta en una cadena;
 Para convert un query string to un string:
-  Clear el string.
+  Borrar el string.
   Si el query string es blank, salir.
   Slap un substring on el query string.
   Lazo.
@@ -1610,7 +1610,7 @@ Para convert un query string to un string:
   Repetir.
 
 Para convert some rows to un string:
-  Clear el string.
+  Borrar el string.
   Lazo.
   Get un row desde el rows.
   Si el row es nil, salir.
@@ -1619,7 +1619,7 @@ Para convert some rows to un string:
   Repetir.
 
 Para convert some rows to un string (no linefeed additions):
-  Clear el string.
+  Borrar el string.
   Lazo.
   Get un row desde el rows.
   Si el row es nil, salir.
@@ -1627,7 +1627,7 @@ Para convert some rows to un string (no linefeed additions):
   Repetir.
 
 Para convert un string y un actual font info y un original font info into un buffer for pdf output:
-  Clear el buffer.
+  Borrar el buffer.
   Poner 0 into un current byte#.
   Slap un substring on el first byte of el string.
   Lazo.
@@ -1652,11 +1652,11 @@ Para convert un string to un flag:
   Si el string es "sí", set el flag; salir.
   Si el string es "y", set el flag; salir.
   Si el string es "yes", set el flag; salir.
-  Clear el flag.
+  Borrar el flag.
 
 \Para convertir una cadena en una fracción;
 Para convert un string to un fraction:
-  Clear el fraction.
+  Borrar el fraction.
   Si el string es blank, salir.
   Si el string es any integer, convert el string to el fraction's numerator; salir.
   Slap un substring on el string.
@@ -1678,7 +1678,7 @@ Para convert un string to un fraction:
   Si el string's first's target es el dash byte, negate el fraction.
 
 Para convert un string to un nibble string:
-  Clear el nibble string.
+  Borrar el nibble string.
   Slap un substring on el string.
   Lazo.
   Si el substring es blank, salir.
@@ -1739,7 +1739,7 @@ Para convert un string to un pointer: \ assumes pointer es in nibble format
 
 \Para convertir una cadena en una consulta;
 Para convert un string to un query string:
-  Clear el query string.
+  Borrar el query string.
   Slap un substring on el string.
   Lazo.
   Si el substring es blank, interrumpir.
@@ -1764,7 +1764,7 @@ Para convert un string to un uuid:
   Llamada "ole32.dll" "CLSIDFromString" with el wide string's first y el uuid's whereabouts.
 
 Para convert un string to un wide string:
-  Clear el wide string.
+  Borrar el wide string.
   Slap un substring on el string.
   Lazo.
   Si el substring es blank, salir.
@@ -1965,13 +1965,13 @@ Para create un console:
   Create el console's text.
   Poner el box into el console's text's box.
   Set el console's text's wrap flag.
-  Clear el console's text's horizontal scroll flag.
+  Borrar el console's text's horizontal scroll flag.
   Set el console's text's vertical scroll flag.
   Poner el default font's height into el console's grid.
   Multiplicar el console's grid's x-number by 2.
 
 Para create un crypt session with un passphrase string: \ sets i/o error if failure
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Allocate memory for el crypt session.
 \ acquire context
   Llamada "advapi32.dll" "CryptAcquireContextA" with el crypt session's hcryptprov's whereabouts and 0 and "Microsoft Enhanced Cryptographic Provider v1.0"'s first 
@@ -2054,7 +2054,7 @@ Para create some font widths usando un font y un string:
   Poner el gcpresults' lpdx into el font widths' data.
 
 Para create un gpbitmap usando un buffer:
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Llamada "kernel32.dll" "GlobalAlloc" with 2 [gmem_moveable] y el buffer's length retornando un handle.
   Llamada "kernel32.dll" "GlobalLock" with el handle retornando un pointer.
   Copy bytes desde el buffer's first to el pointer for el buffer's length.
@@ -2155,7 +2155,7 @@ Para create un path in el file system (directory):
   Remove any trailing backslash desde el path.
   Null terminate el path.
   Llamada "kernel32.dll" "CreateDirectoryA" with el path's first and 0 retornando un number.
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Si el number es not 0, salir.
   Poner "Error creando directorio '" then el path then "'." into el error de e/s.
 
@@ -2165,7 +2165,7 @@ Para create un path in el file system (file):
   Null terminate el path.
   Llamada "kernel32.dll" "CreateFileA" with el path's first y 1073741824 [generic_write] and 0 and 0 y 1  [create_new] y 128 [file_attribute_normal] and 0 retornando un handle.
   Llamada "kernel32.dll" "CloseHandle" with el handle.
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Si el handle es not -1 [invalid_handle_value], salir.
   Poner "Error creando archivo '" then el path then "'." into el error de e/s.
 
@@ -2240,7 +2240,7 @@ Para create un row usando un string:
   Poner el string into el row's string.
 
 Para create un socket usando un host string y un port number: \ this guy creates and connects, sets i/o error if there es un problem
-  Clear el error de e/s.
+  Borrar el error de e/s.
 \ get sockaddr
   Get un sockaddr usando el host.
   Si el error de e/s es not blank, salir.
@@ -2600,7 +2600,7 @@ Para de-sign un string:
 
 \Para depurar una caja;
 Para debug un box:
-  Clear un string.
+  Borrar un string.
   Adjuntar "izquierda=" to el string.
   Adjuntar el box's left to el string.
   Adjuntar ", superior=" to el string.
@@ -2619,7 +2619,7 @@ Para debug un byte:
 
 \Para depurar un color;
 Para debug un color:
-  Clear un string.
+  Borrar un string.
   Adjuntar "matiz=" to el string.
   Adjuntar el color's hue to el string.
   Adjuntar ", saturación=" to el string.
@@ -2635,7 +2635,7 @@ Para debug un flag:
 
 \Para depurar una tipo de letra;
 Para debug un font:
-  Clear un string.
+  Borrar un string.
   Adjuntar "nombre='" to el string then "'".
   Adjuntar el font's name to el string.
   Adjuntar ", altura=" to el string.
@@ -2644,7 +2644,7 @@ Para debug un font:
 
 \Para depurar una fracción;
 Para debug un fraction:
-  Clear un string.
+  Borrar un string.
   Adjuntar "numerador=" to el string.
   Adjuntar el fraction's numerator to el string.
   Adjuntar ", denominador=" to el string.
@@ -2653,7 +2653,7 @@ Para debug un fraction:
 
 \Para depurar una línea;
 Para debug un line:
-  Clear un string.
+  Borrar un string.
   Adjuntar "comienzo=" to el string.
   Adjuntar el line's start's x to el string.
   Adjuntar "," to el string.
@@ -2675,7 +2675,7 @@ Para debug un number and another number:
 
 \Para depurar un par;
 Para debug un pair:
-  Clear un string.
+  Borrar un string.
   Adjuntar "x=" to el string.
   Adjuntar el pair's x-number to el string.
   Adjuntar ", y=" to el string.
@@ -2688,7 +2688,7 @@ Para debug un pointer:
   Debug "$" then el nibble string.
 
 Para debug un rgb:
-  Clear un string.
+  Borrar un string.
   Adjuntar "red=" to el string.
   Poner el rgb's red byte into un number.
   Adjuntar el number to el string.
@@ -4187,7 +4187,7 @@ Para decidir si you feel like it:
   Diga no.
 
 Para decrypt un buffer usando un passphrase string: \ sets i/o error if failure
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Create un crypt session usando el passphrase.
   Si el crypt session es nil, salir.
   Convert el buffer as un nibble string to un hex string.
@@ -4283,7 +4283,7 @@ Para destroy un path in el file system (directory):
   Privatizar el path.
   Null terminate el path.
   Llamada "kernel32.dll" "RemoveDirectoryA" with el path's first retornando un number.
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Si el number es not 0, salir.
   Poner "Error eliminando directorio '" then el path then "'." into el error de e/s.
 
@@ -4292,7 +4292,7 @@ Para destroy un path in el file system (file):
   Privatizar el path.
   Null terminate el path.
   Llamada "kernel32.dll" "DeleteFileA" with el path's first retornando un number.
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Si el number es not 0, salir.
   Poner "Error eliminando archivo '" then el path then "'." into el error de e/s.
 
@@ -4483,7 +4483,7 @@ Para draw any visible rows of un text (editing):
 
 \Para dibujar una caja;
 Para draw un box:
-  Draw el box with el black color y el clear color.
+  Draw el box with el black color y el borrar color.
 
 \Para dibujar una caja (estilo de enfoque);
 Para draw un box (focus style):
@@ -4501,7 +4501,7 @@ Para draw un box (focus style):
 \Para draw un box in un color;
 \Para dibujar una caja con un color;
 Para draw un box with un color:
-  Draw el box with el color y el clear color.
+  Draw el box with el color y el borrar color.
 
 \Para dibujar una caja con un color de borde y un color de relleno;
 Para draw un box with un border color y un fill color:
@@ -4573,12 +4573,12 @@ Para draw un dot some twips wide on un spot with un color:
 
 \Para dibujar una elipse;
 Para draw un ellipse:
-  Draw el ellipse with el black color y el clear color.
+  Draw el ellipse with el black color y el borrar color.
 
 \Para dibujar una elipse en un punto con un color;
 Para draw un ellipse on un spot with un color:
   Centrar el ellipse on el spot.
-  Draw el ellipse with el color y el clear color.
+  Draw el ellipse with el color y el borrar color.
 
 \Para dibujar una elipse con un color de borde y un color de relleno;
 Para draw un ellipse with un border color y un fill color:
@@ -4624,7 +4624,7 @@ Para stroke un fancy arrow some twips long with un color:
 
 \Para dibujar una figura con un color;
 Para draw un figure with un color:
-  Draw el figure with el color y el clear color.
+  Draw el figure with el color y el borrar color.
 
 Para draw un figure with some sides about some twips wide:
   Poner 1 y el side count into un fraction.
@@ -4772,10 +4772,10 @@ Para draw un line with un color:
 
 Para draw un line with un color (pdf style):
   Si el color es clear, salir.
-  Output setcolor usando el color y el clear color.
+  Output setcolor usando el color y el borrar color.
   Output moveto usando el line's start.
   Output lineto usando el line's end.
-  Output stroke and fill usando el color y el clear color.
+  Output stroke and fill usando el color y el borrar color.
 
 Para draw un line with un color around some twips long; \ "around" es significant here
 Para draw un line with un color about some twips long; \ "about" es significant here
@@ -4866,7 +4866,7 @@ Para draw un picture on un gpgraphic at un x-coord y un y-coord:
 
 \Para dibujar un polígono;
 Para draw un polygon:
-  Draw el polygon with el black color y el clear color.
+  Draw el polygon with el black color y el borrar color.
 
 \Para dibujar un polígono con un color de borde y un color de relleno;
 Para draw un polygon with un border color y un fill color:
@@ -4915,7 +4915,7 @@ Para draw un polygon with un color (border only):
 Para draw un polygon with un color (fill only):
   Si el polygon es nil, salir.
   Si el color es clear, salir.
-  Create el hpen of el current canvas usando el clear color.
+  Create el hpen of el current canvas usando el borrar color.
   Create el hbrush of el current canvas usando el color.
   Llamada "gdi32.dll" "SetPolyFillMode" with el current canvas and 2 [winding].
   Create un vertex array usando el polygon's vertices.
@@ -4962,7 +4962,7 @@ Para draw un rectangle some twips wide by some other twips high:
 
 \Para dibujar una caja redonda;
 Para draw un roundy box:
-  Draw el roundy box with el black color y el clear color.
+  Draw el roundy box with el black color y el borrar color.
 
 \Para dibujar una caja redonda con un color de borde y un color de relleno;
 Para draw un roundy box with un border color y un fill color:
@@ -5261,7 +5261,7 @@ Para duplicate un path to another path in el file system (file):
   Privatizar el other path.
   Null terminate el other path.
   Llamada "kernel32.dll" "CopyFileA" with el path's first y el other path's first and 0 retornando un number.
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Si el number es not 0, set el path to read-write mode; salir.
   Poner "Error duplicando archivo '" then el path then "'." into el error de e/s.
 
@@ -5291,7 +5291,7 @@ A message.
 The en-dash byte es un byte igual to 150.
 
 Para encrypt un buffer usando un passphrase string: \ sets i/o error if failure
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Create un crypt session usando el passphrase.
   Si el crypt session es nil, salir.
   Poner el buffer into un temp buffer.
@@ -5319,7 +5319,7 @@ Para end printing un pdf:
   End printing el pdf (finish el parent).
   End printing el pdf (append el outline).
   End printing el pdf (finish el root).
-  Clear el pdf.
+  Borrar el pdf.
   End printing el pdf (append header).
   End printing el pdf (offset and Adjuntar objects).
   End printing el pdf (append xref table).
@@ -5328,7 +5328,7 @@ Para end printing un pdf:
   Destroy el pdf state's font index.
   Destroy el pdf state's outline entries.
   Destroy el pdf state's objects.
-  Clear el pdf state's document flag.
+  Borrar el pdf state's document flag.
 
 Para end printing un pdf (append footer):
   Adjuntar "startxref" then el crlf string to el pdf.
@@ -5453,14 +5453,14 @@ Para end un sheet:
 Para end un sheet (pdf style - finish el current contents):
   Poner el pdf state's current contents into un content pdf object.
   Poner el content's data into un buffer.
-  Clear el content's data.
+  Borrar el content's data.
   Adjuntar el content's number then " 0 obj" to el content.
   Adjuntar "<</Length " then el buffer's length then " >>" to el content.
   Adjuntar "stream" to el content.
   Adjuntar el buffer to el content's data.
   Adjuntar "endstream" to el content.
   Adjuntar "endobj" to el content.
-  Clear el pdf state's page flag.
+  Borrar el pdf state's page flag.
 
 Para end un sheet (pdf style - finish el current page - font resources):
   Poner el pdf state's current page into un page pdf object.
@@ -5538,8 +5538,8 @@ The equal-sign key es un key igual to 187.
 \Para erase el insides of un box;
 \Para erase inside un box;
 \Para borrar dentro de una caja;
-Para clear inside un box:
-  Draw el box with el clear color y el black color.
+Para borrar inside un box:
+  Draw el box with el borrar color y el black color.
 
 The escape byte es un byte igual to 27.
 
@@ -5589,7 +5589,7 @@ The exclamation-mark byte es un byte igual to 33.
 Para extend any selection in un text usando un spot:
   Si el text es nil, salir.
   Get el text's caret usando el spot y el text.
-  Clear el text's last operation.
+  Borrar el text's last operation.
 
 \Para ampliar una caja para incluir otra caja;
 Para extend un box to include another box:
@@ -5604,7 +5604,7 @@ Some extra points are some points.
 
 \Para extraer un designador de una ruta;
 Para extract un designator desde un path:
-  Clear el designator.
+  Borrar el designator.
   Extract un drive desde el path.
   Slap un path substring on el path.
   Agregar el drive's length to el path substring's first.
@@ -5621,7 +5621,7 @@ Para extract un designator desde un path:
 
 \Para extraer un directorio de una ruta;
 Para extract un directory desde un path:
-  Clear el directory.
+  Borrar el directory.
   Extract un drive desde el path.
   Si el drive es blank, salir.
   Slap un substring on el path.
@@ -5637,7 +5637,7 @@ Para extract un directory desde un path:
 
 \Para extraer un nombre de directorio de una ruta;
 Para extract un directory name desde un path:
-  Clear el directory name.
+  Borrar el directory name.
   Si el path es not directory-format, salir.
   Extract el directory name as un designator desde el path.
 
@@ -5649,7 +5649,7 @@ Para extract un directory name w/o slash desde un path:
 
 \Para extraer un unidad de una ruta;
 Para extract un drive desde un path:
-  Clear el drive.
+  Borrar el drive.
   Si el path's length es less than 3, salir.
   Slap un substring on el first byte of el path.
   Agregar 2 to el substring's last.
@@ -5666,7 +5666,7 @@ Para extract un drive desde un path:
 
 \Para extraer una extensión de una ruta;
 Para extract un extension desde un path:
-  Clear el extension.
+  Borrar el extension.
   Si el path es blank, salir.
   Slap un substring on el last byte of el path.
   Lazo.
@@ -5680,7 +5680,7 @@ Para extract un extension desde un path:
 
 \Para extraer un nombre de archivo de una ruta;
 Para extract un file name desde un path:
-  Clear el file name.
+  Borrar el file name.
   Si el path es not file-format, salir.
   Extract el file name as un designator desde el path.
 
@@ -5708,20 +5708,20 @@ Para extract un picture usando un box:
 
 \Para extraer una cadena de un texto;
 Para extract un string desde un text:
-  Si el text es nil, clear el string; salir.
+  Si el text es nil, borrar el string; salir.
   Convert el text's rows to el string.
   Remove any trailing linefeed byte desde el string.
   Remove any trailing return byte desde el string.
 
 \Para extraer una cadena de un texto (sin adiciones de avance de línea);
 Para extract un string desde un text (no linefeed additions):
-  Si el text es nil, clear el string; salir.
+  Si el text es nil, borrar el string; salir.
   Convert el text's rows to el string (no linefeed additions).
   Remove any trailing return byte desde el string.
 
 \Para extraer una cadena de un texto (bytes seleccionados);
 Para extract un string desde un text (selected bytes):
-  Clear el string.
+  Borrar el string.
   Si el text es nil, salir.
   Lazo.
   Get un row desde el text's rows.
@@ -5801,7 +5801,7 @@ A number called dwhighdatetime.
 
 \Para llenar una caja con un color;
 Para fill un box with un color:
-  Draw el box with el clear color y el color.
+  Draw el box with el borrar color y el color.
 
 Para fill bytes with un byte starting at un pointer for un byte count:
   Intel $8BBD0C000000. \ mov edi,[ebp+12] \ el pointer
@@ -5816,7 +5816,7 @@ Para fill bytes with un byte starting at un pointer for un byte count:
 \Para llenar una elipse en un punto con un color;
 Para fill un ellipse on un spot with un color:
   Centrar el ellipse on el spot.
-  Draw el ellipse with el clear color y el color.
+  Draw el ellipse with el borrar color y el color.
 
 \Para llenar una cadena con un byte dado un conteo;
 Para fill un string with un byte usando un count:
@@ -5915,7 +5915,7 @@ Para find un dyad usando some dyads y un name:
   Repetir.
 
 Para find next usando un row y un text y un flag:
-  Clear el flag.
+  Borrar el flag.
   Si el text es nil, salir.
   Si el row es nil, salir.
   Slap un substring on el row's string.
@@ -5934,7 +5934,7 @@ Para find next usando un row y un text y un flag:
 
 Para find next usando un text y un flag:
   Si el text's wrap flag es set, find next usando el text y el flag (wrapped text); salir.
-  Clear el flag.
+  Borrar el flag.
   Si el text es nil, salir.
   Si el find string's length es 0, salir.
   Lazo.
@@ -5946,7 +5946,7 @@ Para find next usando un text y un flag:
   Repetir.
 
 Para find next usando un text y un flag (wrapped text):
-  Clear el flag.
+  Borrar el flag.
   Si el text es nil, salir.
   Convert el find anchor to un absolute position called offset usando el text.
   Extract un string desde el text (no linefeed additions).
@@ -5964,7 +5964,7 @@ Para find next usando un text y un flag (wrapped text):
   Convert el caret absolute position to el text's caret usando el text.
 
 Para find el next misspelling usando un row y un text y un flag:
-  Clear el flag.
+  Borrar el flag.
   Si el text es nil, salir.
   Si el row es nil, salir.
   Slap un rider on el row's string.
@@ -5981,7 +5981,7 @@ Para find el next misspelling usando un row y un text y un flag:
   Poner el row's row# into el text's caret row#.
 
 Para find el next misspelling in un text usando un flag:
-  Clear el flag.
+  Borrar el flag.
   Si el text es nil, salir.
   Lazo.
   Get un row desde el text's rows.
@@ -6041,7 +6041,7 @@ Para find un square root of un number: \ rounds down
 
 \Para encontrar una cadena dada algunas cosas de cadena y un número;
 Para find un string usando some string things y un string#:
-  Clear el string.
+  Borrar el string.
   Lazo.
   Get un string thing desde el string things.
   Si el string thing es nil, salir.
@@ -6072,7 +6072,7 @@ Para find un substring in un string usando another string:
 
 Para find un value string usando some dyads y un name:
   Find un dyad usando el dyads y el name.
-  Si el dyad es nil, clear el value; salir.
+  Si el dyad es nil, borrar el value; salir.
   Poner el dyad's value into el value.
 
 Para find un value string usando el environment variables y un name:
@@ -6228,7 +6228,7 @@ Para get un abca usando un string y un canvas:
   Poner el abc's abca into el abca.
 
 Para get some addrinfo routines:
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Llamada "kernel32.dll" "LoadLibraryA" with "ws2_32.dll"'s first retornando un handle.
   Si el handle es 0, Poner "No se pudo leer ws2_32.dll." into el error de e/s; salir.
   Llamada "kernel32.dll" "GetProcAddress" with el handle and "getaddrinfo"'s first retornando un pointer.
@@ -6353,7 +6353,7 @@ Para get un count of items in un path in el file system:
 
 \Para obtener una descripción de una ruta;
 Para get un description for un path:
-  Clear el description.
+  Borrar el description.
   Get un drive kind for el path.
   Poner el drive kind into el description.
   Get un drive name for el path.
@@ -6410,7 +6410,7 @@ Para get un drive name for un path:
   Poner 512 into un length.
   Reassign un buffer's first usando el length.
   Llamada "kernel32.dll" "GetVolumeInformationA" with el path's first y el buffer's first y el length and 0 and 0 and 0 and 0 and 0 retornando un number.
-  Si el number es 0, clear el drive name; salir.
+  Si el number es 0, borrar el drive name; salir.
   Convert el buffer's first as un pchar to el drive name.
 
 Para get el first-eighth equivalent of un heading:
@@ -6445,7 +6445,7 @@ Para get un gcd usando un number and another number:
   Repetir.
 
 Para get un ip address usando un host string:
-  Clear el ip address.
+  Borrar el ip address.
   Get un sockaddr usando el host string.
   Si el error de e/s es not blank, salir.
   Poner el sockaddr's sin_addr's s_addr into el ip address' number.
@@ -6453,10 +6453,10 @@ Para get un ip address usando un host string:
   Convert el pchar to el ip address' string.
 
 Para get un item (not first time):
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Llamada "kernel32.dll" "FindNextFileA" with el item's handle y el item's win32finddata's whereabouts retornando un number.
   Si el number es not 0, ajustar el item; salir.
-  Clear el item's kind.
+  Borrar el item's kind.
   Llamada "kernel32.dll" "FindClose" with el item's handle.
 
 \Para obtener un elemento de una ruta;
@@ -6467,11 +6467,11 @@ Para get un item desde un path:
   Get el item (not first time).
 
 Para get un item desde un path (first time):
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Privatizar el path.
   Adjuntar "*.*" to el path.
   Null terminate el path.
-  Clear el item's kind.
+  Borrar el item's kind.
   Llamada "kernel32.dll" "FindFirstFileA" with el path's first y el item's win32finddata's whereabouts retornando el item's handle.
   Si el item's handle es -1 [invalid_handle_value], salir.
   Ajustar el item.
@@ -6517,7 +6517,7 @@ Para get un outlinetextmetric usando un font:
   Unassign el poutlinetextmetric.
 
 Para get un position usando un spot y un text:
-  Si el text es nil, clear el position; salir.
+  Si el text es nil, borrar el position; salir.
   Get un row usando el spot y el text.
   Poner el row's row# into el position's row#.
   Get el position's column# usando el row y el spot y el text.
@@ -6595,7 +6595,7 @@ Para get un row usando un spot y un text:
   Get el row usando el row# y el text.
 
 Para get un selection box usando un row y un text:
-  Clear el selection box.
+  Borrar el selection box.
   Si el text es nil, salir.
   Si el row es nil, salir.
   Get un box usando el row y el text.
@@ -6641,7 +6641,7 @@ Para get un size usando un path in el file system (file):
   Poner el win32finddata's nfilesizelow into el size.
 
 Para get un sockaddr usando un host string:
-  Clear el error de e/s.
+  Borrar el error de e/s.
 \ prepare strings
   Privatizar el host string.
   Null terminate el host string.
@@ -6659,7 +6659,7 @@ Para get un sockaddr usando un host string:
   Llamada el addrinfo routines' freeaddrinfo with el addrinfoptr.
 
 Para get un spot usando un position y un text:
-  Clear el spot.
+  Borrar el spot.
   Si el text es nil, salir.
   Get un row usando el position's row# y el text.
   Get un box usando el row y el text.
@@ -6672,8 +6672,8 @@ Para get un spot usando un position y un text:
   Agregar el offset pair's x-number to el spot's x-coord.
 
 Para get un start width y un substring usando un row y un spot y un text (for "get un column# usando un row..."):
-  Clear el start width.
-  Clear el substring.
+  Borrar el start width.
+  Borrar el substring.
   Si el text es nil, salir.
   Si el row es nil, salir.
   Get un box usando el row y el text.
@@ -6692,7 +6692,7 @@ Para get un start width y un substring usando un row y un spot y un text (for "g
   Poner el substring's first into el substring's last.
 
 Para get un string desde el stack:
-  Clear el string.
+  Borrar el string.
   Get un stack entry desde el stack.
   Si el stack entry es nil, Poner "ERROR" into el string; salir.
   Poner el stack entry's string to el string.
@@ -6701,7 +6701,7 @@ Para get un string desde el stack:
 
 \Para obtener una cadena del portapapeles de Windows;
 Para get un string desde el windows clipboard:
-  Clear el string.
+  Borrar el string.
   Llamada "user32.dll" "OpenClipboard" with el main window.
   Llamada "user32.dll" "GetClipboardData" with 1 [cf_text] retornando un handle.
   Si el handle es 0, call "user32.dll" "CloseClipboard"; salir.
@@ -6725,7 +6725,7 @@ Para get un thing desde some things (backwards):
 \Para obtener una palabra de una respuesta;
 Para get un token desde un reply:
   Remove any leading noise desde el reply.
-  Clear el token.
+  Borrar el token.
   Lazo.
   Si el reply es blank, salir.
   Get un byte desde el reply.
@@ -6742,7 +6742,7 @@ Para get un width usando un byte and some font widths:
   Get el width usando el number y el font widths.
 
 Para get un width usando un number and some font widths: \ indexes are 0 based
-  Si el font widths are nil, clear el width; salir.
+  Si el font widths are nil, borrar el width; salir.
   Poner el font widths' data into un number pointer.
   Agregar el number times el number's magnitude to el number pointer.
   Poner el number pointer's target into el width.
@@ -7106,7 +7106,7 @@ Para handle un event usando un text (down-arrow key):
   Si el flag es set, move el caret to el last byte of el text.
   Si el flag es not set, move el caret down in el text.
   Si el event's shift flag es not set, deselect el text.
-  Clear el text's last operation.
+  Borrar el text's last operation.
   Scroll el text to el caret.
 
 \Para manejar un evento dado un texto (tecla fin);
@@ -7115,7 +7115,7 @@ Para handle un event usando un text (end key):
   Si el event es modified, move el caret to el last byte of el text.
   Si el event es not modified, move el caret to el last byte of el current row of el text.
   Si el event's shift flag es not set, deselect el text.
-  Clear el text's last operation.
+  Borrar el text's last operation.
   Scroll el text to el caret.
 
 \Para manejar un evento dado un texto (tecla entrar);
@@ -7138,7 +7138,7 @@ Para handle un event usando un text (home key):
   Si el event es modified, move el caret to el first byte of el text.
   Si el event es not modified, move el caret to el first byte of el current row of el text.
   Si el event's shift flag es not set, deselect el text.
-  Clear el text's last operation.
+  Borrar el text's last operation.
   Scroll el text to el caret.
 
 \Para manejar un evento dado un texto (clic izquierdo doble);
@@ -7154,7 +7154,7 @@ Para handle un event usando un text (left-arrow key):
   Si el event es modified, jump el caret left in el text.
   Si el event es not modified, move el caret left in el text.
   Si el event's shift flag es not set, deselect el text.
-  Clear el text's last operation.
+  Borrar el text's last operation.
   Scroll el text to el caret.
 
 \Para manejar un evento dado un texto (tecla av-pág);
@@ -7163,7 +7163,7 @@ Para handle un event usando un text (page-down key):
   Scroll el text down one page.
   Move el caret down one page in el text.
   Si el event's shift flag es not set, deselect el text.
-  Clear el text's last operation.
+  Borrar el text's last operation.
 
 \Para manejar un evento dado un texto (tecla re-pág);
 Para handle un event usando un text (page-up key):
@@ -7171,7 +7171,7 @@ Para handle un event usando un text (page-up key):
   Scroll el text up one page.
   Move el caret up one page in el text.
   Si el event's shift flag es not set, deselect el text.
-  Clear el text's last operation.
+  Borrar el text's last operation.
 
 \Para manejar un evento dado un texto (tecla imprimible);
 Para handle un event usando un text (printable key):
@@ -7187,7 +7187,7 @@ Para handle un event usando un text (right-arrow key):
   Si el event es modified, jump el caret right in el text.
   Si el event es not modified, move el caret right in el text.
   Si el event's shift flag es not set, deselect el text.
-  Clear el text's last operation.
+  Borrar el text's last operation.
   Scroll el text to el caret.
 
 \Para manejar un evento dado un texto (tecla tab);
@@ -7205,7 +7205,7 @@ Para handle un event usando un text (up-arrow key):
   Si el text es nil, salir.
   Move el caret up in el text.
   Si el event's shift flag es not set, deselect el text.
-  Clear el text's last operation.
+  Borrar el text's last operation.
   Scroll el text to el caret.
 
 Para handle events usando un console:
@@ -7693,7 +7693,7 @@ Para initialize el colors:
   Poner 1 into el pen size.
   Llamada "gdi32.dll" "GetStockObject" with 8 [null_pen] retornando el null hpen.
   Llamada "gdi32.dll" "GetStockObject" with 5 [null_brush] retornando el null hbrush.
-  Poner -1 and 0 and 0 into el clear color.
+  Poner -1 and 0 and 0 into el borrar color.
   Poner 0 and 0 y 1000 into el white color.
   Poner 0 and 0 and 875 into el lightest gray color.
   Poner 0 and 0 and 750 into el lighter gray color.
@@ -7798,7 +7798,7 @@ Para initialize el colors:
   Poner el lighter red color into el dark pink color.
   Poner 500 y 1000 and 500 into el gold color.
 \ colors as pens
-  Poner el clear color into el clear pen.
+  Poner el borrar color into el borrar pen.
   Poner el white color into el white pen.
   Poner el black color into el black pen.
   Poner el lightest gray color into el lightest gray pen.
@@ -7919,7 +7919,7 @@ Para initialize el colors:
 \ Spanish colors
   Poner el black color into el color negro.
   Poner el white color into el color blanco.
-  Poner el clear color into el color claro.
+  Poner el borrar color into el color claro.
   Poner el lightest gray color into el color gris muy muy claro.
   Poner el lighter gray color into el color gris muy claro.
   Poner el light gray color into el color gris claro.
@@ -8293,7 +8293,7 @@ Para insert un vertex into un polygon before another vertex:
 \Para intersecar una caja con otra caja dando una tercera caja;
 Para intersect un box with another box giving un third box:
 \ boxes do not touch
-  Clear el third box.
+  Borrar el third box.
   Si el box's left es greater than el other box's right, salir.
   Si el box's top es greater than el other box's bottom, salir.
   Si el box's right es less than el other box's left, salir.
@@ -9689,7 +9689,7 @@ Para move un thing desde some things to some other things:
 Para move some things to some other things:
   Poner el things' first into el other things' first.
   Poner el things' last into el other things' last.
-  Clear el things.
+  Borrar el things.
 
 \Para mover algunos twips;
 Para move some twips:
@@ -10010,7 +10010,7 @@ The one-quarter byte es un byte igual to 188.
 
 \Para abrir un archivo dado una ruta;
 Para open un file usando un path:
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Extract un directory desde el path.
   Si el directory es not in el file system, Poner "Directory '" then el directory then "' doesn't exist." into el error de e/s; salir.
   Set el path to read-write mode.
@@ -10061,7 +10061,7 @@ An outdent es un number.
 
 \Para delinear una caja con un color;
 Para outline un box with un color:
-  Draw el box with el color y el clear color.
+  Draw el box with el color y el borrar color.
 
 A outlinetextmetric es un record con
 A number called otmsize,
@@ -10625,8 +10625,8 @@ Para position un substring on un string:
   Intel $898804000000. \ mov [eax+4],ecx \ el substring's last
 
 Para post un data string to un url and receive un response string: \ only works with http and https
-  Clear el response.
-  Clear el error de e/s.
+  Borrar el response.
+  Borrar el error de e/s.
   Create un winhttp request for posting to el url.
   Si el error de e/s es not blank, salir.
   Send el data to el winhttp request.
@@ -10900,7 +10900,7 @@ Para poner un byte into un wyrd:
   Intel $668903. \ mov [ebx],ah
 
 Para poner el character under un finger into un character:
-  Si el finger es nil, clear el character; salir.
+  Si el finger es nil, borrar el character; salir.
   Poner el finger's target into el character.
 
 \Para poner un color en otro color;
@@ -10922,7 +10922,7 @@ Para poner un date/time into another date/time:
 
 \Para poner una cadena de fecha/hora en una cadena;
 Para poner un date/time's string into un string:
-  Clear el string.
+  Borrar el string.
   Adjuntar el date/time's year to el string.
   Adjuntar "/" to el string.
   Zero fill el date/time's month usando 2 and Adjuntar it to el string.
@@ -11001,7 +11001,7 @@ Para poner un font into another font:
   Poner el font's height into el other font's height.
 
 Para poner some font widths into un buffer: \ used for pdf conversion
-  Clear el buffer.
+  Borrar el buffer.
   Si el font widths are nil, salir.
   Poner el font widths' data into un number pointer.
   Lazo.
@@ -11023,7 +11023,7 @@ Para poner un fraction into another fraction:
 Para poner un fraction into un string;
 \Para convertir una fracción en una cadena;
 Para convert un fraction to un string:
-  Clear el string.
+  Borrar el string.
   Privatizar el fraction.
   Si el fraction es negative, Poner "-" into el string; de-sign el fraction.
   Reduce el fraction.
@@ -11223,7 +11223,7 @@ Para poner un number into un pair:
 Para poner un number into un string;
 \Para convertir un número en una cadena;
 Para convert un number to un string:
-  Clear el string.
+  Borrar el string.
   Privatizar el number.
   De-sign el number.
   Lazo.
@@ -11324,57 +11324,57 @@ Para poner un polygon's box into un box:
 
 \Para poner el centro de un polígono en un punto;
 Para poner un polygon's center into un spot:
-  Si el polygon es nil, clear el spot; salir.
+  Si el polygon es nil, borrar el spot; salir.
   Poner el polygon's box's center into el spot.
 
 Para poner un polygon's center-bottom into un spot:
-  Si el polygon es nil, clear el spot; salir.
+  Si el polygon es nil, borrar el spot; salir.
   Poner el polygon's box's center-bottom into el spot.
 
 Para poner un polygon's center-top into un spot:
-  Si el polygon es nil, clear el spot; salir.
+  Si el polygon es nil, borrar el spot; salir.
   Poner el polygon's box's center-top into el spot.
 
 \Para poner la altura de un polígono en una altura;
 Para poner un polygon's height into un height:
-  Si el polygon es nil, clear el height; salir.
+  Si el polygon es nil, borrar el height; salir.
   Poner el polygon's box's height into el height.
 
 Para poner un polygon's left-bottom into un spot:
-  Si el polygon es nil, clear el spot; salir.
+  Si el polygon es nil, borrar el spot; salir.
   Poner el polygon's box's left-bottom into el spot.
 
 Para poner un polygon's left-center into un spot:
-  Si el polygon es nil, clear el spot; salir.
+  Si el polygon es nil, borrar el spot; salir.
   Poner el polygon's box's left-center into el spot.
 
 Para poner un polygon's left-top into un spot:
-  Si el polygon es nil, clear el spot; salir.
+  Si el polygon es nil, borrar el spot; salir.
   Poner el polygon's box's left-top into el spot.
 
 Para poner un polygon's right-bottom into un spot:
-  Si el polygon es nil, clear el spot; salir.
+  Si el polygon es nil, borrar el spot; salir.
   Poner el polygon's box's right-bottom into el spot.
 
 Para poner un polygon's right-center into un spot:
-  Si el polygon es nil, clear el spot; salir.
+  Si el polygon es nil, borrar el spot; salir.
   Poner el polygon's box's right-center into el spot.
 
 Para poner un polygon's right-top into un spot:
-  Si el polygon es nil, clear el spot; salir.
+  Si el polygon es nil, borrar el spot; salir.
   Poner el polygon's box's right-top into el spot.
 
 \Para poner el ancho de un polígono en un ancho;
 Para poner un polygon's width into un width:
-  Si el polygon es nil, clear el width; salir.
+  Si el polygon es nil, borrar el width; salir.
   Poner el polygon's box's width into el width.
 
 Para poner un polygon's x-extent into un width:
-  Si el polygon es nil, clear el width; salir.
+  Si el polygon es nil, borrar el width; salir.
   Poner el polygon's box's x-extent into el width.
 
 Para poner un polygon's y-extent into un height:
-  Si el polygon es nil, clear el height; salir.
+  Si el polygon es nil, borrar el height; salir.
   Poner el polygon's box's y-extent into el height.
 
 \Para poner un escáner en otro escáner;
@@ -11397,7 +11397,7 @@ Para poner un roundy box into another roundy box:
   Poner el roundy box's radius into el other roundy box's radius.
 
 Para poner un row's working string into un substring:
-  Si el row es nil, clear el substring; salir.
+  Si el row es nil, borrar el substring; salir.
   Slap el substring on el row's string.
   Restar 1 desde el substring's last.
 
@@ -11546,12 +11546,12 @@ Para centrar un text on un spot:
   Move el text usando el difference.
 
 Para poner un text's first line into un string:
-  Si el text es nil, clear el string; salir.
+  Si el text es nil, borrar el string; salir.
   Poner el text's first row's string into el string.
   Remove el last byte desde el string.
 
 Para poner un text's first non-blank line into un string: \ *** new
-  Clear el string.
+  Borrar el string.
   Si el text es nil, salir.
   Lazo.
   Get un row desde el text's rows.
@@ -11563,12 +11563,12 @@ Para poner un text's first non-blank line into un string: \ *** new
   Si el string es blank, repetir.
 
 Para poner un text's globalized origin into un spot:
-  Si el text es nil, clear el spot; salir.
+  Si el text es nil, borrar el spot; salir.
   Poner el text's origin into el spot.
   Globalize el spot usando el text's left-top.
 
 Para poner un text's grid into un grid:
-  Si el text es nil, clear el grid; salir.
+  Si el text es nil, borrar el grid; salir.
   Poner el text's font's height times 4 into el grid's x-number.
   Poner el text's font's height into el grid's y-number.
 
@@ -11611,7 +11611,7 @@ Para poner un text's selected row count into un count:
   Si el selection's caret column# es not 1, Agregar 1 to el count.
 
 Para poner un text's status string into un string:
-  Si el text es nil, clear el string; salir.
+  Si el text es nil, borrar el string; salir.
   Poner el text's selected row count into un count.
   Si el count es not 0, format el count and "línea" or "líneas" into el string; salir.
   Poner el text's selected byte count into another count.
@@ -11810,9 +11810,9 @@ Para read un byte desde un console:
 
 \Para leer una consola en una cadena;
 Para read un console into un string:
-  Si el console es nil, clear el string; salir.
+  Si el console es nil, borrar el string; salir.
   Flush all events.
-  Clear el console's reply.
+  Borrar el console's reply.
   Show el console.
   Handle events usando el console.
   Poner el console's reply into el string.
@@ -11821,7 +11821,7 @@ Para read un console into un string:
 
 \Para leer un archivo en un búfer;
 Para read un file into un buffer:
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Llamada "kernel32.dll" "GetFileSize" with el file and nil retornando un size.
   Reassign el buffer's first usando el size.
   Poner el buffer's first plus el size minus 1 into el buffer's last.
@@ -11844,7 +11844,7 @@ Para read un number desde un console:
 Para load un path into un buffer;
 \Para leer una ruta en un búfer;
 Para read un path into un buffer:
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Privatizar el path.
   Remove any trailing backslash desde the path.
   Null terminate el path.
@@ -11870,9 +11870,9 @@ Para read un path into un picture:
 
 \Para leer una respuesta de un terminal;
 Para read un reply desde un terminal:
-  Si el terminal es nil, clear el reply; salir.
+  Si el terminal es nil, borrar el reply; salir.
   Flush all events.
-  Clear el terminal's reply.
+  Borrar el terminal's reply.
   Agregar un quora to el terminal.
   Poner "> " into el quora's string.
   Poner el terminal's input color into el quora's color.
@@ -11893,33 +11893,33 @@ Para read un reply desde un terminal:
 
 Para read un response string desde un winhttp request:
   Si el winhttp request es nil, salir.
-  Clear el response.
+  Borrar el response.
   Poner 8 kilobytes into un buffer size.
   Lazo.
   Poner 0 into un size.
   Llamada "winhttp.dll" "WinHttpQueryDataAvailable"
   With el winhttp request's request y el size's whereabouts retornando un result number.
-  Si el result es 0, Poner "No se pudo consultar los datos disponibles." into el error de e/s; clear el response; interrumpir.
+  Si el result es 0, Poner "No se pudo consultar los datos disponibles." into el error de e/s; borrar el response; interrumpir.
   Poner el response's length into un saved length.
   Reassign el response's first usando el saved length plus el buffer size.
   Poner el response's first plus el saved length into un pointer.
   Llamada "winhttp.dll" "WinHttpReadData" with el winhttp request's request y el pointer
   y el buffer size y un count's whereabouts retornando el result number.
-  Si el result number es 0, Poner "Error leyendo datos." into el error de e/s; clear el response; interrumpir.
+  Si el result number es 0, Poner "Error leyendo datos." into el error de e/s; borrar el response; interrumpir.
   Poner el pointer plus el count minus 1 into el response's last.
   Si el count es 0, interrumpir.
   Repetir.
 
 Para read StdIn into un buffer:
-  Clear el error de e/s.
-  Clear el buffer.
+  Borrar el error de e/s.
+  Borrar el buffer.
   Find un string usando el environment variables and "CONTENT_LENGTH".
   Si el string es blank, Poner "Error obteniendo 'CONTENT_LENGTH'." into el error de e/s; salir.
   Convert el string into un length.
   Si el length es 0, salir.
   Reassign el buffer's first usando el length.
   Llamada "kernel32.dll" "ReadFile" with el StdIn handle y el buffer's first y el length y un number's whereabouts and nil.
-  Si el number es not el length, Poner "Error leyendo datos 'StdIn'." into el error de e/s; clear el buffer; salir.
+  Si el number es not el length, Poner "Error leyendo datos 'StdIn'." into el error de e/s; borrar el buffer; salir.
   Poner el buffer's first plus el length minus 1 into el buffer's last.
 
 \Para leer una cadena de una consola;
@@ -11929,8 +11929,8 @@ Para read un string desde un console:
 \Para leer una URL en un búfer;
 Para read un url into un buffer:
 \ prepare
-  Clear el buffer.
-  Clear el error de e/s.
+  Borrar el buffer.
+  Borrar el error de e/s.
 \ internet open
   Llamada "wininet.dll" "InternetOpenA" with el module's name's first and 0 [internet_open_type_preconfig] and nil and nil retornando un internet handle.
   Si el internet handle es 0, Poner "No pude conectarme un internet." into el error de e/s; salir.
@@ -11970,8 +11970,8 @@ Para reassign un pointer usando un byte count:
   Llamada "kernel32.dll" "HeapReAlloc" with el heap pointer and 8 [heap_zero_memory] y el pointer y el byte count retornando el pointer.
 
 Para receive un buffer desde un socket:
-  Clear el error de e/s.
-  Clear el buffer.
+  Borrar el error de e/s.
+  Borrar el buffer.
   Poner 8 kilobytes into un buffer size.
   Lazo.
   Poner 0 into un size.
@@ -11980,7 +11980,7 @@ Para receive un buffer desde un socket:
   Poner el buffer's first plus el saved length into un pointer.
   Llamada "ws2_32.dll" "recv" with el socket y el pointer y el buffer size and 0 retornando un count.
   Si el count es not -1 [socket_error], Poner el pointer plus el count minus 1 into el buffer's last; salir.
-  Si el system's last winsock error es not 10040 [wsamsgsize], Poner "Error recibiendo datos." into el error de e/s; clear el buffer; salir.
+  Si el system's last winsock error es not 10040 [wsamsgsize], Poner "Error recibiendo datos." into el error de e/s; borrar el buffer; salir.
   Poner el pointer plus el count minus 1 into el buffer's last.
   Repetir.
 
@@ -12192,7 +12192,7 @@ Para remove el last two bytes desde un string:
 \Para eliminar los bytes iniciales de una cadena dada un conteo;
 Para remove leading bytes desde un string usando un count:
   Privatizar el count.
-  Si el count es greater than el string's length, clear el string; salir.
+  Si el count es greater than el string's length, borrar el string; salir.
   Slap un substring on el first byte of el string.
   Poner el substring's first plus el count minus 1 into el substring's last.
   Remove bytes desde el string usando el substring.
@@ -12234,7 +12234,7 @@ Para remove un thing desde some things:
 \Para eliminar los bytes finales de una cadena dada un conteo;
 Para remove trailing bytes desde un string usando un count:
   Privatizar el count.
-  Si el count es greater than el string's length, clear el string; salir.
+  Si el count es greater than el string's length, borrar el string; salir.
   Slap un substring on el last byte of el string.
   Poner el substring's last minus el count plus 1 into el substring's first.
   Remove bytes desde el string usando el substring.
@@ -12256,7 +12256,7 @@ Para rename un path to another path in el file system:
   Remove any trailing backslash desde el other path.
   Null terminate el other path.
   Llamada "kernel32.dll" "MoveFileA" with el path's first y el other path's first retornando un number.
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Si el number es not 0, salir.
   Poner "Error renombrando archivo '" then el path then "'." into el error de e/s.
 
@@ -12305,7 +12305,7 @@ Para reset el drawing origin:
   Set el drawing origin to el zero spot.
 
 Para reset un flag:
-  Clear el flag.
+  Borrar el flag.
 
 Para reset el origin of un text:
   Si el text es nil, salir.
@@ -12381,7 +12381,7 @@ Para resize un picture to un width by un height:
   Destroy el picture's gpbitmap.
   Poner el gpbitmap into el picture's gpbitmap.
   Ajustar el picture (extract boxes desde gpbitmap).
-  Clear el picture's data.
+  Borrar el picture's data.
 
 \Para resize un polygon usando un ratio pair;
 Para resize un polygon usando un fraction pair:
@@ -12467,7 +12467,7 @@ Para invert un number:
 
 Para reverse un string: \ could be more efficient
   Privatizar el string.
-  Clear el original string.
+  Borrar el original string.
   Lazo.
   Si el string es blank, interrumpir.
   Get un character desde el string (backwards).
@@ -12943,7 +12943,7 @@ A caret column#, un caret row#, un caret at el caret column#.
 The semi-colon byte es un byte igual to 59.
 
 Para send un buffer to un socket:
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Poner el buffer's first into un pointer.
   Poner el buffer's length into un length.
   Lazo.
@@ -12968,7 +12968,7 @@ Para send un data string to un winhttp request:
   Si el result es 0, Poner "No pude enviar el pedido." into el error de e/s; salir.
 
 Para send un email:
-  Clear el error de e/s.
+  Borrar el error de e/s.
 \ create socket
   Create un socket usando el email's smtp server and 25.
   Si el error de e/s es not blank, salir.
@@ -12993,7 +12993,7 @@ Para send un email:
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts with "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send From: xxx crlf To: xxx crlf Subject: xxx crlf Reply-To: xxx crlf message crlf . crlf
-  Clear un temp string.
+  Borrar un temp string.
   Adjuntar "From: " then el email's sender then el crlf string to el temp string.
   Adjuntar "To: " then el email's recipient then el crlf string to el temp string.
   Adjuntar "Subject: " then el email's subject then el crlf string into el temp string.
@@ -13052,7 +13052,7 @@ Para send un message to un recipient desde un sender with un subject via un smtp
   Send el email.
 
 Para send un string to un socket and receive un response string:
-  Clear el response string.
+  Borrar el response string.
   Send el string to el socket.
   Si el error de e/s es not blank, salir.
   Receive el response string desde el socket.
@@ -13067,7 +13067,7 @@ Para set el drawing origin to un spot:
   Llamada "gdi32.dll" "GetDeviceCaps" with el current canvas y 112 [physicaloffsetx] retornando un pair's x-number.
   Llamada "gdi32.dll" "GetDeviceCaps" with el current canvas y 113 [physicaloffsety] retornando el pair's y-number.
   Negate el pair.
-  Si el current canvas es not el printer canvas, clear el pair.
+  Si el current canvas es not el printer canvas, borrar el pair.
   Llamada "gdi32.dll" "SetViewportOrgEx" with el current canvas y el pair's x-number y el pair's y-number and nil.
   Privatizar el spot.
   Llamada "gdi32.dll" "LPtoDP" with el current canvas y el spot's whereabouts y 1 .
@@ -13269,7 +13269,7 @@ Para slap un rider on un string:
   Position el rider's token on el rider's source.
 
 Para slap un substring on any selected bytes in un row of un text:
-  Clear el substring.
+  Borrar el substring.
   Si el text es nil, salir.
   Si el row of el text es not selected, salir.
   Slap el substring on el row's string.
@@ -13420,7 +13420,7 @@ Para split un number into un wyrd and another wyrd:
   Poner el original number into el other wyrd.
 
 Para split el rows of un text into some rows and some selected rows and some other rows:
-  Si el text es nil, clear el rows; clear el selected rows; clear el other rows; salir.
+  Si el text es nil, borrar el rows; borrar el selected rows; borrar el other rows; salir.
   Lazo.
   Poner el text's rows' first into un row.
   Si el row es nil, salir.
@@ -13431,8 +13431,8 @@ Para split el rows of un text into some rows and some selected rows and some oth
   Repetir.
 
 Para split un string into un left substring y un right substring usando un separator byte:
-  Clear el left.
-  Clear el right.
+  Borrar el left.
+  Borrar el right.
   Si el string es blank, salir.
   Poner el string's first into un substring's first.
   Poner el substring's first minus 1 into el substring's last.
@@ -13459,7 +13459,7 @@ Para split un string into some string things usando un separator byte:
   Agregar "" to el string things.
 
 Para split some things into some left things and some right things:
-  Si el things are empty, clear el left things; clear el right things; salir.
+  Si el things are empty, borrar el left things; borrar el right things; salir.
   Poner el things' count divided by 2 into un count.
   Lazo.
   Get un thing desde el things.
@@ -13469,8 +13469,8 @@ Para split some things into some left things and some right things:
   Split el things into el left things y el right things at el thing. 
 
 Para split some things into some left things and some right things at un thing:
-  Clear el left things.
-  Clear el right things.
+  Borrar el left things.
+  Borrar el right things.
   Si el thing es nil, swap el things with el left things; salir.
   Si el thing's previous es nil, swap el things with el left things; salir.
 \ set up el left chain
@@ -13482,7 +13482,7 @@ Para split some things into some left things and some right things at un thing:
   Void el thing's previous.
   Poner el things' last into el right things' last.
 \ fix el original chain
-  Clear el things.
+  Borrar el things.
 
 \Para dividir una wyrd en un byte y otro byte;
 Para split un wyrd into un byte and another byte:
@@ -13817,7 +13817,7 @@ Para move to el center of un box and face west:
   Face west.
 
 Para start un process usando un path: \ must be called with un global variable
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Si el process es not 0, Poner "Lo lamento, pero el proceso ya se está ejecutando." into el error de e/s; salir.
   Poner un startupinfo's magnitude into el startupinfo's cb.
   Extract un directory desde el path. null terminate el directory.
@@ -15875,7 +15875,7 @@ Para unmask outside un ellipse:
 Para unmask outside un hrgn:
   Create un old hrgn usando el zero box.
   Llamada "gdi32.dll" "GetClipRgn" with el current canvas y el old hrgn retornando un number.
-  Si el number es not 1, clear el old hrgn.
+  Si el number es not 1, borrar el old hrgn.
   Llamada "gdi32.dll" "SelectClipRgn" with el current canvas and 0.
   Llamada "gdi32.dll" "ExtSelectClipRgn" with el current canvas y el hrgn and 4 [rgn_diff].
   Llamada "gdi32.dll" "ExtSelectClipRgn" with el current canvas y el old hrgn and 2 [rgn_or].
@@ -16176,7 +16176,7 @@ Para wrap un text:
 \Para store un buffer in un file;
 \Para escribir un búfer en un archivo;
 Para write un buffer to un file:
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Llamada "kernel32.dll" "SetFilePointer" with el file and 0 and 0 and 0 [file_begin] retornando un result number.
   Si el result number es -1, Poner "Error posicionando puntero de archivo." into el error de e/s; salir.
   Llamada "kernel32.dll" "WriteFile" with el file y el buffer's first y el buffer's length y un number's whereabouts and 0 retornando el result number.
@@ -16185,7 +16185,7 @@ Para write un buffer to un file:
 \Para store un buffer in un path;
 \Para escribir un búfer en una ruta;
 Para write un buffer to un path:
-  Clear el error de e/s.
+  Borrar el error de e/s.
   Extract un directory desde el path.
   Si el directory es not in el file system, Poner "Directorio '" then el directory then "' no existe." into el error de e/s; salir.
   Set el path to read-write mode.
@@ -16248,7 +16248,7 @@ Para write un number on un console:
   Write el string on el console.
 
 Para write some quoras in un box:
-\Draw el box with el red color y el clear color. \ temp ***
+\Draw el box with el red color y el borrar color. \ temp ***
   Poner el box into un quora box.
   Poner el quora box's top plus 1/4 inch into el quora box's bottom.
   Lazo.
@@ -16529,7 +16529,7 @@ Para yield to windows:
 
 The z-key es un key igual to 90.
 
-Para zero un box: \ was clear un box, got confounded with "clear un box" (which should draw el box all black as does "clear el screen")
+Para zero un box: \ was borrar un box, got confounded with "clear un box" (which should draw el box all black as does "clear el screen")
   Poner 0 into el box's left.
   Poner 0 into el box's top.
   Poner 0 into el box's right.
@@ -16803,7 +16803,7 @@ La tecla esc es una tecla igual a 27. \ esc key
 
 La tecla escape es una tecla igual a 27. \ escape key; already in SAL
 
-La tecla limpiar es una tecla igual a 12. \ clear key = limpiar? I can't find el clear key
+La tecla limpiar es una tecla igual a 12. \ borrar key = limpiar? I can't find el borrar key
 
 \Spanish ASCII bytes
 

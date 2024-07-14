@@ -59,7 +59,7 @@ Para obtener una string desde the argumentos da linha de comando:
   Slap un substring on las argumentos.
   Lazo.
     Si el substring es blank, 
-      Clear el string; 
+      Borrar el string; 
       Salir. 
     Si el substring's first byte pointer's target is not the space byte, 
       Agregar 1 to the substring's first byte pointer; 
@@ -729,7 +729,7 @@ Para adjuntar el global initializers to un string:
     Si el global es nil, salir.
     Si el global's literal es nil, repetir.
     Si el global's compiled flag es not set, repetir.
-    Clear un flag.
+    Borrar un flag.
     Adjuntar el global's initializer string to el string.
   Repetir.
   
@@ -943,7 +943,7 @@ The break tag es un tag igual to 1.
   
 Para bubble un monikette:
   Si el monikette es nil, salir.
-  Si el monikette's current substring es not blank, clear el monikette's current substring; salir.
+  Si el monikette's current substring es not blank, borrar el monikette's current substring; salir.
   Si el monikette's current type es nil, salir.
   Si el monikette's current type es any built-in type, Poner nil into el monikette's current type; salir.
   Poner el monikette's current type's base type into el monikette's current type.
@@ -1037,12 +1037,12 @@ Para check for invalid optional info on un type (target):
   Si el compiler's abort flag es set, salir.
   Si el type cannot be reduced to "pointer", abort with "Optional 'a' info solo está permitido en tipos de punteros." y el type's locus; salir.
   
-Para clear un field term:
+Para borrar un field term:
   Fill bytes with el null byte starting at el field term's whereabouts for el field term's magnitude.
   
-Para clear un term:
+Para borrar un term:
   Void el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 The code borough es un borough.
   
@@ -1311,7 +1311,7 @@ Para compile un expression usando un rider (divided):
   Agregar several fragments usando "Poner" y el expression's variable and "into" y el intermediate y el rider's token's first.
   Agregar several fragments usando "Dividir" y el intermediate and "by" y el term's variable y el rider's token's first.
   Poner el intermediate into el expression's variable.
-  Clear el expression's phrase.
+  Borrar el expression's phrase.
   
 Para compile un expression usando un rider (minus):
   Si el compiler's abort flag es set, salir.
@@ -1324,7 +1324,7 @@ Para compile un expression usando un rider (minus):
   Agregar several fragments usando "Poner" y el expression's variable and "into" y el intermediate y el rider's token's first.
   Agregar several fragments usando "Restar" y el term's variable and "from" y el intermediate y el rider's token's first.
   Poner el intermediate into el expression's variable.
-  Clear el expression's phrase.
+  Borrar el expression's phrase.
   
 Para compile un expression usando un rider (plus):
   Si el compiler's abort flag es set, salir.
@@ -1337,7 +1337,7 @@ Para compile un expression usando un rider (plus):
   Agregar several fragments usando "Poner" y el expression's variable and "into" y el intermediate y el rider's token's first.
   Agregar several fragments usando "Agregar" y el term's variable and "to" y el intermediate y el rider's token's first.
   Poner el intermediate into el expression's variable.
-  Clear el expression's phrase.
+  Borrar el expression's phrase.
   
 Para compile un expression usando un rider (then):
   Si el compiler's abort flag es set, salir.
@@ -1351,7 +1351,7 @@ Para compile un expression usando un rider (then):
   Convert el term for concatenation usando el rider.
   Agregar several fragments usando "Adjuntar" y el term's variable and "to" y el intermediate y el rider's token's first.
   Poner el intermediate into el expression's variable.
-  Clear el expression's phrase.
+  Borrar el expression's phrase.
   
 Para compile un expression usando un rider (times):
   Si el compiler's abort flag es set, salir.
@@ -1364,7 +1364,7 @@ Para compile un expression usando un rider (times):
   Agregar several fragments usando "Poner" y el expression's variable and "into" y el intermediate y el rider's token's first.
   Agregar several fragments usando "Multiplicar" y el intermediate and "by" y el term's variable y el rider's token's first.
   Poner el intermediate into el expression's variable.
-  Clear el expression's phrase.
+  Borrar el expression's phrase.
   
 Para compile el header of un routine:
   Si el routine es nil, salir.
@@ -1771,7 +1771,7 @@ Para compile el next statement usando un rider (say):
   Si el current routine's decider flag es not set, compile el next statement usando el rider (call - internal); salir.
   Move el rider (compiler rules).
   Si el rider's token es not any decider literal, abort with "Necesito un rotundo 'si' o 'no' aquí." y el rider; salir.
-  Clear un flag. If el rider's token es any positive decider literal, set el flag.
+  Borrar un flag. If el rider's token es any positive decider literal, set el flag.
   Move el rider (compiler rules).
   Si el rider's token es not el period byte, abort with "Pensaba en un punto, pero pusiste '" then el rider's token then "'." y el rider; salir.
   Agregar un fragment usando el load eax tag y el flag.
@@ -1840,7 +1840,7 @@ Para compile un routine reference usando un rider (monikette string):
   Move el rider (compiler rules).
   
 Para compile un term usando un rider:
-  Clear el term.
+  Borrar el term.
   Si el compiler's abort flag es set, salir.
   Compile el term usando el rider (common part).
   Si el rider está on any simile, salir. \ added for invisible turtle project ***
@@ -1859,7 +1859,7 @@ Para compile un term usando un rider (as part):
   Agregar un scratch usando el type's name y el rider's token's first.
   Agregar un fragment usando el load address tag y el term's variable y el scratch.
   Poner el scratch into el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para compile un term usando un rider (common part):
   Si el compiler's abort flag es set, salir.
@@ -1875,7 +1875,7 @@ Para compile un term usando un rider (dereference - in place):
   Poner el term's type's target type's name into el term's type name.
   Poner el term's type's target type into el term's type.
   Agregar un fragment usando el dereference tag y el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para compile un term usando un rider (dereference):
   Si el compiler's abort flag es set, salir.
@@ -1886,13 +1886,13 @@ Para compile un term usando un rider (dereference):
   Agregar un fragment usando el load address tag y el term's variable y el scratch.
   Agregar another fragment usando el dereference tag y el scratch.
   Poner el scratch into el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para compile un term usando un rider (literal):
   Si el compiler's abort flag es set, salir.
   Compile un literal usando el rider.
   Poner el literal into el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   Compile el term usando el rider (possessives).
   
 Para compile un term usando un rider (negated term):
@@ -1905,7 +1905,7 @@ Para compile un term usando un rider (negated term):
   Agregar several fragments usando "Poner" y el other term's variable and "into" y el intermediate y el other term's locus.
   Agregar two fragments usando "Negar" y el intermediate y el rider's token's first.
   Poner el intermediate into el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para compile un term usando un rider (new local):
   Si el compiler's abort flag es set, salir.
@@ -1923,7 +1923,7 @@ Para compile un term usando un rider (new local):
   Si el local es duplicated in el current routine's locals, abort with "'" then el local's name then "' ya está en uso como variable local." y el local's locus; salir.
   Eliminate duplicate nicknames usando el local y el current routine's nickname index.
   Poner el local into el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   Compile el term usando el rider (possessives).
   
 Para compile un term usando un rider (posigated term):
@@ -1931,7 +1931,7 @@ Para compile un term usando un rider (posigated term):
   Move el rider (compiler rules).
   Compile el term usando el rider.
   Si el term's variable es nil, abort with "Prefijo de suma no válido. No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para compile un term usando un rider (possessive - magnitude):
   Si el compiler's abort flag es set, salir.
@@ -1941,7 +1941,7 @@ Para compile un term usando un rider (possessive - magnitude):
   Poner "number" into el literal's type name.
   Resolve el literal.
   Poner el literal into el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para compile un term usando un rider (possessive - target):
   Si el compiler's abort flag es set, salir.
@@ -1955,7 +1955,7 @@ Para compile un term usando un rider (possessive - whereabouts):
   Agregar un intermediate usando "pointer" y el rider's token's first. 
   Agregar un fragment usando el load address tag y el term's variable y el intermediate.
   Poner el intermediate into el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para compile un term usando un rider (possessive): \ similar to "compile un term usando un rider (reverse-possessive)
   Si el compiler's abort flag es set, salir.
@@ -1983,7 +1983,7 @@ Para compile un term usando un rider (runtime ratio):
   Agregar un intermediate usando "ratio" y el rider's token's first.
   Agregar several fragments usando "Poner" y el term's variable and "and" y el other term's variable and "into" y el intermediate y el rider's token's first.
   Poner el intermediate into el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para compile un term usando un rider (variable):
   Si el compiler's abort flag es set, salir.
@@ -2035,7 +2035,7 @@ Para compile un term usando un rider y un  variable name (reverse-possessive pre
   Si el local es duplicated in el current routine's locals,abort with "'" then el local's name then "' ya está en uso como una variable local." y el local's locus; salir.
   Eliminate duplicate nicknames usando el local y el current routine's nickname index.
   Poner el local into el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para compile un term usando un field name y un  rider (reverse-possessive):  \ similar to "compile un term usando un rider (possessive)" \ dahn
   Si el compiler's abort flag es set, salir.
@@ -2054,7 +2054,7 @@ Para compile un term usando un rider y un  field term:
   Agregar un fragment usando el load address tag y el term's variable y el scratch.
   Si el field's offset es not 0, Agregar un third fragment usando el increment tag y el scratch y el field's offset.
   Poner el scratch into el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para compile un term usando un rider y un  field term (function):
   Si el compiler's abort flag es set, salir.
@@ -2067,7 +2067,7 @@ Para compile un term usando un rider y un  field term (function):
   Si el field term's push flag es set, Agregar another fragment usando el push address tag y el term's variable.
   Agregar un third fragment usando el call internal tag y el routine.
   Poner el intermediate into el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para compile un term usando un rider y un  field term (in place):
   Si el compiler's abort flag es set, salir.
@@ -2075,7 +2075,7 @@ Para compile un term usando un rider y un  field term (in place):
   Poner el field's type's name into el term's type name.
   Poner el field's type into el term's type.
   Si el field's offset es not 0, Agregar un third fragment usando el increment tag y el term's variable y el field's offset.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para compile un term usando un rider y un  name (possessive - field):
   Si el compiler's abort flag es set, salir.
@@ -2115,7 +2115,7 @@ Para convert some monikettes to un moniker:
   Convert el monikettes to el moniker usando el monikettes' last.
   
 Para convert some monikettes to un moniker usando un monikette:
-  Clear el moniker.
+  Borrar el moniker.
   Lazo.
     Get un current monikette desde el monikettes.
     Si el current monikette es nil, salir.
@@ -2131,7 +2131,7 @@ Para convert un term for concatenation usando un rider: \ used for right-side TH
   Agregar un intermediate usando "string" y el rider's token's first.
   Agregar el Poner or convert fragments usando el term's variable y el intermediate y el rider's token's first.
   Poner el intermediate into el term's variable.
-  Clear el term's phrase.
+  Borrar el term's phrase.
   
 Para copy un field into another field:
   Si el field es nil, void el other field; salir.
@@ -3066,9 +3066,9 @@ Para decidir si un type can be reduced to un string using el base name:
   Si el type's cooking flag es set, diga no.
   Set el type's cooking flag.
   Find un base type usando el type's base name y el type index.
-  Si el base type es nil, clear el type's cooking flag; diga no.
-  Si el base type can be reduced to el string using el base name, clear el type's cooking flag; diga sí.
-  Clear el type's cooking flag.
+  Si el base type es nil, borrar el type's cooking flag; diga no.
+  Si el base type can be reduced to el string using el base name, borrar el type's cooking flag; diga sí.
+  Borrar el type's cooking flag.
   Diga no.
   
 Para decidir si un type can be reduced to un type name:
@@ -3162,8 +3162,8 @@ Para eliminate duplicate nicknames usando un variable y un  index:
   Find another variable usando el variable's nickname y el index.
   Si el other variable es nil, find el other variable usando el variable's name y el index.
   Si el other variable es nil, index el variable usando el variable's nickname y el index; salir.
-  Clear el other variable's nickname.
-  Clear el variable's nickname.
+  Borrar el other variable's nickname.
+  Borrar el variable's nickname.
   
 The end if tag es un tag igual to 6.
   
@@ -3216,7 +3216,7 @@ Para find un entry usando un string and some entries:
   Repetir.
   
 Para find un field term usando un phrase y un  type y un  name:
-  Clear el field term.
+  Borrar el field term.
   Find el field term usando el type y el name.
   Si el field term's field es not nil, salir.
   Si el phrase es not blank, find un routine usando "Poner" y el phrase and "'s " then el name and "into".
@@ -3260,7 +3260,7 @@ Para find un import usando un string:
   Repetir.
   
 Para find un path y un  row# usando un byte pointer:
-  Clear el path.
+  Borrar el path.
   Poner 0 into el row#.
   Find un source file usando el byte pointer.
   Si el source file es nil, salir.
@@ -3349,14 +3349,14 @@ Para find un source file usando un byte pointer:
   
 Para find un type y un  nickname usando un name:
   Void el type.
-  Clear el nickname.
+  Borrar el nickname.
   Find el type y el nickname usando el name (forward).
   Si el type es not nil, salir.
   Find el type y el nickname usando el name (backward).
   
 Para find un type y un  nickname usando un name (backward):
   Void el type.
-  Clear el nickname.
+  Borrar el nickname.
   Slap un substring on el name.
   Lazo.
     Si el substring es blank, salir.
@@ -3371,7 +3371,7 @@ Para find un type y un  nickname usando un name (backward):
   
 Para find un type y un  nickname usando un name (forward):  \ original - no change
   Void el type.
-  Clear el nickname.
+  Borrar el nickname.
   Slap un substring on el name.
   Lazo.
     Si el substring es blank, salir.
@@ -3506,7 +3506,7 @@ Para index un routine usando un moniker y un  index (special):
   
 Para index un routine usando some monikettes y un  index:
   Si el routine es nil, salir.
-  Clear un partial moniker.
+  Borrar un partial moniker.
   Lazo.
     Get un monikette desde el monikettes.
     Si el monikette es nil, salir.
@@ -3544,9 +3544,9 @@ Para initialize el compiler:
 Para initialize el compiler usando un directory:
   Poner el directory into el compiler's directory.
   Poner 0 into el compiler's name count.
-  Clear el compiler's abort flag.
-  Clear el compiler's abort message.
-  Clear el compiler's abort path.
+  Borrar el compiler's abort flag.
+  Borrar el compiler's abort message.
+  Borrar el compiler's abort path.
   Poner 0 into el compiler's abort row#.
   Void el current routine.
   Create el type index with 13001 [buckets]. \ was 4027
@@ -3664,7 +3664,7 @@ Para link:
 The linking timer es un timer.
   
 Para list:
-  Clear el compiler's listing.
+  Borrar el compiler's listing.
   List el compiler's abort message in el compiler's listing.
   List el types under "TYPES:" in el compiler's listing.
   List el globals under "GLOBALS:" in el compiler's listing.
@@ -4003,7 +4003,7 @@ Para move un rider (code rules):
   Move el rider (code rules - glom).
   
 Para move un rider (compiler rules):
-  Si el compiler's abort flag es set, clear el rider's token; salir.
+  Si el compiler's abort flag es set, borrar el rider's token; salir.
   Move el rider retornando un error string (code rules).
   Si el error string es not blank, abort with el error string y el rider's token's first; salir.
   Si el rider's token es "del", unbump el rider; salir. \ Spanish contraction "del"; fudged to "de l", short for "de el"
@@ -4026,7 +4026,7 @@ Para move un rider retornando un error string (code rules - validate string):
   Si el rider's token's last's target es not el double-quote byte, Poner "Strings need to end with '""'." into el error string; salir.
   
 Para move un rider retornando un error string (code rules):
-  Clear el error string.
+  Borrar el error string.
   Move el rider (code rules).
   Si el rider's token es blank, salir.
   Si el rider's token's first's target es el left-bracket byte, move el rider retornando el error string (code rules - validate remark); salir.
@@ -4042,7 +4042,7 @@ The not tag es un tag igual to 16.
 Para offset el locals in un routine:
   Si el routine es nil, salir.
   Si el routine's compiled flag es not set, salir.
-  Clear el routine's local size.
+  Borrar el routine's local size.
   Lazo.
     Si el compiler's abort flag es set, salir.
     Get un local desde el routine's locals.
@@ -4065,7 +4065,7 @@ Para offset el locals in some routines:
 Para offset el parameters in un routine:
   Si el routine es nil, salir.
   Si el routine's compiled flag es not set, salir.
-  Clear el routine's parameter size.
+  Borrar el routine's parameter size.
   Lazo.
     Si el compiler's abort flag es set, salir.
     Get un parameter desde el routine's parameters.
@@ -4321,7 +4321,7 @@ Para reindex el utility index usando some refers:
   Repetir.
   
 Para remove any negatives desde some monikettes retornando un flag:
-  Clear el flag.
+  Borrar el flag.
   Swap el monikettes with some other monikettes.
   Lazo.
     Poner el other monikettes' first into un monikette.
@@ -4345,7 +4345,7 @@ Para resolve un field:
   Si el compiler's abort flag es set, salir.
   Si el field es nil, salir.
   Resolve el field as un variable.
-  Si el field's nickname es not any valid field name, clear el field's nickname.
+  Si el field's nickname es not any valid field name, borrar el field's nickname.
   Si el field's name es not any valid field name, abort with "'" then el field's name then "' no es un nombre de campo válido." y el field's locus; salir.
   
 Para resolve un global:
@@ -4384,7 +4384,7 @@ Para resolve un type (base type):
   Set el type's cooking flag.
   Si el type's base type's cooking flag es set, abort with "Definición recursiva con '" then el type's base name then "'." y el type's locus; salir.
   Resolve el type's base type (base type).
-  Clear el type's cooking flag.
+  Borrar el type's cooking flag.
   
 Para resolve un type (expand thing): \ type's base type es not resolved yet
   Si el compiler's abort flag es set, salir.
@@ -4479,7 +4479,7 @@ Para resolve un type (optional info):
   Si el type can be reduced to "pointer", resolve el type (optional info - pointer).
   Si el type can be reduced to "record", resolve el type (optional info - record).
   Si el type can be reduced to "number", resolve el type (optional info - scale).
-  Clear el type's cooking flag.
+  Borrar el type's cooking flag.
   Set el type's optional info resolved flag.
   
 Para resolve some types (base types):
@@ -4727,7 +4727,7 @@ Para scan un global usando un rider (optional info):
   Index el global.
   
 Para scan un name usando un rider:
-  Clear el name.
+  Borrar el name.
   Si el compiler's abort flag es set, salir.
   Si el rider está on any name starter, extend el name with el rider's token; move el rider (compiler rules).
   Lazo.
