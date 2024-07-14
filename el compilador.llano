@@ -231,7 +231,7 @@ Para agregar un entry to some imports usando un import name y un  entry name:
   Si el import es nil, Agregar el import to el imports usando el import name.
   Find el entry usando el entry name y el import's entries.
   Si el entry es not nil, salir.
-  Create el entry.
+  Crear el entry.
   Adjuntar el entry to el import's entries.
   Poner el entry name into el entry's name.
   
@@ -281,38 +281,38 @@ Para agregar el finalize routine for un type (string):
   
 Para agregar un fragment usando un tag:
   Si el current routine es nil, void el fragment; salir.
-  Create el fragment usando el tag.
+  Crear el fragment usando el tag.
   Adjuntar el fragment to el current routine's fragments.
   
 Para agregar un fragment usando un tag y un  entry:
   Si el current routine es nil, void el fragment; salir.
-  Create el fragment usando el tag.
+  Crear el fragment usando el tag.
   Adjuntar el fragment to el current routine's fragments.
   Poner el entry into el fragment's entry.
   
 Para agregar un fragment usando un tag y un  flag:
   Si el current routine es nil, void el fragment; salir.
-  Create el fragment usando el tag.
+  Crear el fragment usando el tag.
   Adjuntar el fragment to el current routine's fragments.
   Poner el flag into el fragment's flag.
   
 Para agregar un fragment usando un tag y un  routine:
   Si el current routine es nil, void el fragment; salir.
-  Create el fragment usando el tag.
+  Crear el fragment usando el tag.
   Adjuntar el fragment to el current routine's fragments.
   Poner el routine into el fragment's routine.
   Compile el body of el routine.
   
 Para agregar un fragment usando un tag y un  variable:
   Si el current routine es nil, void el fragment; salir.
-  Create el fragment usando el tag.
+  Crear el fragment usando el tag.
   Adjuntar el fragment to el current routine's fragments.
   Poner el variable into el fragment's variable.
   Set el compiled flag in el variable.
   
 Para agregar un fragment usando un tag y un  variable and another variable:
   Si el current routine es nil, void el fragment; salir.
-  Create el fragment usando el tag.
+  Crear el fragment usando el tag.
   Adjuntar el fragment to el current routine's fragments.
   Poner el variable into el fragment's variable.
   Poner el other variable into el fragment's other variable.
@@ -321,14 +321,14 @@ Para agregar un fragment usando un tag y un  variable and another variable:
   
 Para agregar un fragment usando un tag y un  variable y un  number:
   Si el current routine es nil, void el fragment; salir.
-  Create el fragment usando el tag.
+  Crear el fragment usando el tag.
   Adjuntar el fragment to el current routine's fragments.
   Poner el variable into el fragment's variable.
   Poner el number into el fragment's number.
   Set el compiled flag in el variable.
   
 Para agregar un import to some imports usando un import name:
-  Create el import.
+  Crear el import.
   Adjuntar el import to el imports.
   Poner el import name into el import's name.
   
@@ -344,14 +344,14 @@ Para agregar un literal to some variables usando un locus:
   Generate el literal's name usando "~L".
   
 Para agregar un monikette to some monikettes usando un expression:
-  Create el monikette.
+  Crear el monikette.
   Adjuntar el monikette to el monikettes.
   Poner el expression's phrase into el monikette's string.
   Poner el expression's variable into el monikette's variable.
   Si el expression's variable es not nil, Poner el expression's type into el monikette's type.
   
 Para agregar un monikette to some monikettes usando un string:
-  Create el monikette.
+  Crear el monikette.
   Adjuntar el monikette to el monikettes.
   \ Spanish conjunctions, etc
   Si el string es "y", Poner "and" into el monikette's string; salir. \ and
@@ -404,7 +404,7 @@ Para agregar un monikette to some monikettes usando un string:
   Poner el string into el monikette's string.
   
 Para agregar un monikette to some monikettes usando un type:
-  Create el monikette.
+  Crear el monikette.
   Adjuntar el monikette to el monikettes. 
   Poner el type into el monikette's type.
   
@@ -437,7 +437,7 @@ Para agregar el poner or convertir fragments usando un variable and another vari
   Abort con "No sé cómo '" then el moniker then "'." y el locus.
   
 Para agregar un routine to some routines usando un locus:
-  Create el routine.
+  Crear el routine.
   Adjuntar el routine to el routines.
   Poner el locus into el routine's locus.
   
@@ -481,7 +481,7 @@ Para agregar several fragments usando un string y un  variable and
   Agregar un fourth fragment usando el call internal tag y el routine.
   
 Para agregar un source file to some source files usando un path:
-  Create el source file.
+  Crear el source file.
   Adjuntar el source file to el source files.
   Poner el path into el source file's path.
   
@@ -496,7 +496,7 @@ Para agregar two fragments usando un string y un  variable y un  locus:
   Agregar another fragment usando el call internal tag y el routine.
   
 Para agregar un type to some types usando un locus:
-  Create el type.
+  Crear el type.
   Adjuntar el type to el types.
   Poner el locus into el type's locus.
   
@@ -504,7 +504,7 @@ Para agregar un type to some types usando un name y un  plural name y un  base n
   Agregar el type to el types usando el name y el plural name y el base name and nil.
   
 Para agregar un type to some types usando un name y un  plural name y un  base name y un  locus:
-  Create el type.
+  Crear el type.
   Adjuntar el type to el types.
   Poner el locus into el type's locus.
   Poner el name into el type's name.
@@ -512,7 +512,7 @@ Para agregar un type to some types usando un name y un  plural name y un  base n
   Poner el base name into el type's base name.
   
 Para agregar un variable to some variables usando un kind y un  locus:
-  Create el variable usando el kind.
+  Crear el variable usando el kind.
   Adjuntar el variable to el variables.
   Poner el locus into el variable's locus.
   
@@ -1062,7 +1062,7 @@ Para compile el body of un routine:
   Si el rider's token es any employ, compile el body of el routine usando el rider (employ); salir.
   Poner el current routine into un saved routine.
   Poner el routine into el current routine.
-  Create el routine's nickname index usando 101.
+  Crear el routine's nickname index usando 101.
   Eliminate duplicate nicknames desde el routine's parameters usando el routine's nickname index.
   Compile el body of el routine (prolog).
   Lazo.
@@ -2188,31 +2188,31 @@ Para copiar some monikettes into some other monikettes:
     Adjuntar el other monikette to el other monikettes.
   Repetir.
   
-Para create un entry:
+Para crear un entry:
   Allocate memory for el entry.
   
-Para create un fragment usando un tag:
+Para crear un fragment usando un tag:
   Allocate memory for el fragment.
   Poner el tag into el fragment's tag.
   
-Para create un import:
+Para crear un import:
   Allocate memory for el import.
   
-Para create un monikette:
+Para crear un monikette:
   Allocate memory for el monikette.
   
-Para create un routine:
+Para crear un routine:
   Allocate memory for el routine.
   
-Para create un source file:
+Para crear un source file:
   Allocate memory for el source file.
   
-Para create un type:
+Para crear un type:
   Allocate memory for el type.
   Poner 0/1 into el type's scale.
   Poner -1 into el type's length.
   
-Para create un variable usando un kind:
+Para crear un variable usando un kind:
   Allocate memory for el variable.
   Poner el kind into el variable's kind.
   Poner 1 into el variable's count.
@@ -3144,7 +3144,7 @@ A dos header es un record con
   A number called addressofpeheaderinfile.
   
 Para eliminate duplicate nicknames desde some variables:
-  Create un index usando 101.
+  Crear un index usando 101.
   Eliminate duplicate nicknames desde el variables usando el index.
   Destroy el index.
   
@@ -3549,11 +3549,11 @@ Para initialize el compiler usando un directory:
   Borrar el compiler's abort path.
   Poner 0 into el compiler's abort row#.
   Void el current routine.
-  Create el type index con 13001 [buckets]. \ was 4027
-  Create el global index con 13001 [buckets]. \ was 4027
-  Create el literal index con 13001 [buckets]. \ was 4027
-  Create el routine index con 13001 [buckets]. \ was 7919
-  Create el utility index con 13001 [buckets]. \ was 4027
+  Crear el type index con 13001 [buckets]. \ was 4027
+  Crear el global index con 13001 [buckets]. \ was 4027
+  Crear el literal index con 13001 [buckets]. \ was 4027
+  Crear el routine index con 13001 [buckets]. \ was 7919
+  Crear el utility index con 13001 [buckets]. \ was 4027
   
 Para initialize un dos header:
   Poner 23117 [$5A4D] into el dos header's signature.

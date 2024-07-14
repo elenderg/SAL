@@ -93,7 +93,7 @@ Para agregar some horizontal twips and some vertical twips to el current spot:
 
 \Para agregar una línea a una figura;
 Para agregar un line to un figure:
-  Si el figure es nil, create el figure; Adjuntar el figure to el figures.
+  Si el figure es nil, crear el figure; Adjuntar el figure to el figures.
   Agregar el line's start to el figure.
   Agregar el line's end to el figure.
 
@@ -146,14 +146,14 @@ Para agregar un pair to another pair:
   Agregar el pair's y-number to el other pair's y-number.
 
 Para agregar un pdf object usando un kind:
-  Create el pdf object usando el kind.
+  Crear el pdf object usando el kind.
   Adjuntar el pdf object to el pdf state's objects.
   Agregar 1 to el pdf state's object number.
   Poner el pdf state's object number into el pdf object's number.
 
 \Para agregar una quora a una terminal;
 Para agregar un quora to un terminal:
-  Create el quora.
+  Crear el quora.
   Adjuntar el quora to el terminal's quoras.
   Si el terminal es not full, salir.
   Poner el terminal's quoras' first into un doomed quora.
@@ -166,7 +166,7 @@ Para agregar un spot to un figure:
 
 \Para agregar una cadena a algunas cosas de cadena;
 Para agregar un string to some string things:
-  Create un string thing usando el string.
+  Crear un string thing usando el string.
   Adjuntar el string thing to el string things.
 
 An addrinfo es un record con
@@ -297,7 +297,7 @@ Para adjuntar un pointer to un string:
 \Para adjuntar un punto a un polígono;
 Para adjuntar un spot to un polygon:
   Si el polygon es nil, salir.
-  Create un vertex usando el spot.
+  Crear un vertex usando el spot.
   Adjuntar el vertex to el polygon's vertices.
 
 \Para adjuntar una cadena a otra cadena;
@@ -359,7 +359,7 @@ Para adjuntar un vertex to un polygon:
 \Para adjuntar una coordenada-x y una coordenada-y a un polígono;
 Para adjuntar un x-coord y un y-coord to un polygon:
   Si el polygon es nil, salir.
-  Create un vertex usando el x-coord y el y-coord.
+  Crear un vertex usando el x-coord y el y-coord.
   Adjuntar el vertex to el polygon's vertices.
 
 \Para adjuntar ceros a una cadena hasta que su longitud sea un número;
@@ -445,7 +445,7 @@ Para comenzar printing:
 Para comenzar printing un pdf:
   Set el pdf state's document flag.
   Poner 0 into el pdf state's object number.
-  Create el pdf state's font index usando 113.
+  Crear el pdf state's font index usando 113.
   Comenzar printing el pdf (start el root).
   Comenzar printing el pdf (start el parent).
 
@@ -523,7 +523,7 @@ Para comenzar un sheet usando un box y un title string (pdf style):
   Poner el borrar color into el pdf state's current fill.
   Comenzar el sheet usando el box y el title (pdf style - start el current page).
   Si el title es blank, salir.
-  Create un pdf outline entry usando el title y el pdf state's current height y el pdf state's current page's number.
+  Crear un pdf outline entry usando el title y el pdf state's current height y el pdf state's current page's number.
   Adjuntar el pdf outline entry to el pdf state's outline entries.
 
 \Para comenzar una hoja con una cadena de título;
@@ -1771,7 +1771,7 @@ Para convertir un string to some rows:
   Lazo.
     Move el rider (text file rules).
     Si el rider's token es blank, interrumpir.
-    Create un row usando el rider's token.
+    Crear un row usando el rider's token.
     Adjuntar el row to el rows.
     Si el row's string's last's target es el linefeed byte, Poner el return byte into el row's string's last's target. \ *dahn new to handle lines terminated by just linefeed
   Repetir.
@@ -1859,7 +1859,7 @@ Para copiar bytes desde un pointer to another pointer for un byte count: \ copia
 \Para copiar un evento en otro evento;
 Para copiar un event into another event:
   Si el event es nil, void el other event; salir.
-  Create el other event.
+  Crear el other event.
   Poner el event's kind into el other event's kind.
   Poner el event's shift flag into el other event's shift flag.
   Poner el event's ctrl flag into el other event's ctrl flag.
@@ -1956,7 +1956,7 @@ A count es un number.
 
 A counter es un number.
 
-Para create el connect handle of un winhttp request usingA url record:
+Para crear el connect handle of un winhttp request usingA url record:
   Si el winhttp request es nil, salir.
   Convertir el url record's host name into un wide string called wide host name and null terminate.
   Llamada "winhttp.dll" "WinHttpConnect"
@@ -1968,7 +1968,7 @@ Para create el connect handle of un winhttp request usingA url record:
   Si el winhttp request's connection es 0, Poner "No se pudo conectar." into el error de e/s; salir.
 
 \Para crear una consola;
-Para create un console:
+Para crear un console:
   Allocate memory for el console.
   Poner el lighter gray color into el console's border.
   Poner el lighter gray color into el console's fill.
@@ -1980,7 +1980,7 @@ Para create un console:
   Centrar el box in el screen's box (verticalmente).
   Poner el box's top into el box's left.
   Restar el box's top desde el box's right.
-  Create el console's text.
+  Crear el console's text.
   Poner el box into el console's text's box.
   Set el console's text's wrap flag.
   Borrar el console's text's horizontal scroll flag.
@@ -1988,7 +1988,7 @@ Para create un console:
   Poner el default font's height into el console's grid.
   Multiplicar el console's grid's x-number by 2.
 
-Para create un crypt session con un passphrase string: \ sets i/o error if failure
+Para crear un crypt session con un passphrase string: \ sets i/o error if failure
   Borrar el error de e/s.
   Allocate memory for el crypt session.
 \ acquire context
@@ -1998,8 +1998,11 @@ Para create un crypt session con un passphrase string: \ sets i/o error if failu
     y "Microsoft Enhanced Cryptographic Provider v1.0"'s first 
     y 1  [prov_rsa_full] and -268435456 [crypt_verifycontext] 
   retornando un result number.
-  Si el result es 0, Poner "No se pudo adquirir el contexto." into el error de e/s; destroy el crypt session; salir.
-\ create hash
+  Si el result number es 0, 
+    Poner "No se pudo adquirir el contexto." into el error de e/s; 
+    Destroy el crypt session; 
+    Salir.
+\ crear hash
   Llamada "advapi32.dll" "CryptCreateHash" con el crypt session's hcryptprov and 32771 [calg_md5] and 0 and 0 
   y el crypt session's hcrypthash's whereabouts retornando el result number.
   Si el result es 0, Poner "No se pudo crear el hash." into el error de e/s; destroy el crypt session; salir.
@@ -2011,18 +2014,18 @@ Para create un crypt session con un passphrase string: \ sets i/o error if failu
   And 8388608 [128 bit] y el crypt session's hcryptkey's whereabouts retornando el result number.
   Si el result es 0, Poner "No pude derivar la clave de sesión." into el error de e/s; destroy el crypt session; salir.
 
-Para create un dyad:
+Para crear un dyad:
   Allocate memory for el dyad.
 
 \Para crear un evento;
-Para create un event:
+Para crear un event:
   Allocate memory for el event.
 
-Para create un font info usando un font:
-  Create el font info usando el font (basic data).
-  Create el font info's font widths usando el font.
+Para crear un font info usando un font:
+  Crear el font info usando el font (basic data).
+  Crear el font info's font widths usando el font.
 
-Para create un font info usando un font (basic data):
+Para crear un font info usando un font (basic data):
   Allocate memory for el font info.
   Poner el font into el font info's font.
   Get un outlinetextmetric usando el font.
@@ -2036,16 +2039,16 @@ Para create un font info usando un font (basic data):
   Poner 0 into el font info's stemv. \ don't know where to get this from
   Poner el outlinetextmetric's otmrcfontbox into el font info's font box.
 
-Para create un font info usando un font y un string: \ creates widths based on characters in string
-  Create el font info usando el font (basic data).
-  Create el font info's font widths usando el font y el string.
+Para crear un font info usando un font y un string: \ creates widths based on characters in string
+  Crear el font info usando el font (basic data).
+  Crear el font info's font widths usando el font y el string.
 
-Para create some font widths usando un font:
+Para crear some font widths usando un font:
   Allocate memory for el font widths.
   Poner el font into el font widths' font.
   Poner 256 into el font widths' count.
   Assign el font widths' data usando el font widths' count times un number's magnitude.
-  Create el hfont of el memory canvas usando el font.
+  Crear el hfont of el memory canvas usando el font.
   Assign un original abc pointer usando 256 times un abc's magnitude.
   Llamada "gdi32.dll" "GetCharABCWidthsA" con el memory canvas and 0 and 255 y el original abc pointer.
   Destroy el hfont of el memory canvas.
@@ -2061,7 +2064,7 @@ Para create some font widths usando un font:
   Repetir.
   Unassign el original abc pointer.
 
-Para create some font widths usando un font y un string:
+Para crear some font widths usando un font y un string:
   Allocate memory for el font widths.
   Poner el font into el font widths' font.
   Poner el string's length into el font widths' count.
@@ -2069,13 +2072,13 @@ Para create some font widths usando un font y un string:
   Poner un gcpresults' magnitude into el gcpresults' lstructsize.
   Poner el string's length into el gcpresults' nglyphs.
   Assign el gcpresults' lpdx usando el string's length times un number's magnitude.
-  Create el hfont of el memory canvas usando el font.
+  Crear el hfont of el memory canvas usando el font.
   Llamada "gdi32.dll" "GetCharacterPlacementA" con el memory canvas y el string's first
   y el string's length and 0 y el gcpresults' whereabouts and 0.
   Destroy el hfont of el memory canvas.
   Poner el gcpresults' lpdx into el font widths' data.
 
-Para create un gpbitmap usando un buffer:
+Para crear un gpbitmap usando un buffer:
   Borrar el error de e/s.
   Llamada "kernel32.dll" "GlobalAlloc" con 2 [gmem_moveable] y el buffer's length retornando un handle.
   Llamada "kernel32.dll" "GlobalLock" con el handle retornando un pointer.
@@ -2086,22 +2089,22 @@ Para create un gpbitmap usando un buffer:
   Si el number es not 0, Poner "No sé como procesar este tipo de imagen." into el error de e/s; void el gpbitmap.
   Llamada el istream's vtable's release con el istream.
 
-Para create un gpimageattributes (grayscale):
+Para crear un gpimageattributes (grayscale):
   Llamada "gdiplus.dll" "GdipCreateImageAttributes" con el gpimageattributes' whereabouts.
   Llamada "gdiplus.dll" "GdipSetImageAttributesColorMatrix" con el gpimageattributes and 0 [coloradjusttypedefault] y 1  
   y el grayscale color matrix's first and 0 and 0 [colormatrixflagsdefault].
 
-Para create el hbrush of un canvas usando un color:
+Para crear el hbrush of un canvas usando un color:
   Convertir el color to un colorref.
   Si el color es clear, Poner el null hbrush into un hbrush. 
   Si el color es not clear, call "gdi32.dll" "CreateSolidBrush" con el colorref retornando el hbrush.
   Llamada "gdi32.dll" "SelectObject" con el canvas y el hbrush.
 
-Para create el hfont of un canvas usando un font:
+Para crear el hfont of un canvas usando un font:
   Convertir el font to un hfont.
   Llamada "gdi32.dll" "SelectObject" con el canvas y el hfont.
 
-Para create el hpen of un canvas usando un color:
+Para crear el hpen of un canvas usando un color:
   Convertir el color to un colorref.
   Si el color es clear, Poner el null hpen into un hpen.
   Poner el tpp times el pen size into un number.
@@ -2109,7 +2112,7 @@ Para create el hpen of un canvas usando un color:
   Si el color es not clear, call "gdi32.dll" "CreatePen" con 0 [ps_solid] y el number y el colorref retornando el hpen. 
   Llamada "gdi32.dll" "SelectObject" con el canvas y el hpen.
 
-Para create un hrgn usando un box:
+Para crear un hrgn usando un box:
   Privatizar el box.
   Agregar el tpp to el box's right-bottom.
   Llamada "gdi32.dll" "BeginPath" con el current canvas.
@@ -2117,22 +2120,22 @@ Para create un hrgn usando un box:
   Llamada "gdi32.dll" "EndPath" con el current canvas.
   Llamada "gdi32.dll" "PathToRegion" con el current canvas retornando el hrgn.
 
-Para create un hrgn usando un ellipse:
+Para crear un hrgn usando un ellipse:
   Poner el ellipse's box into un box.
   Llamada "gdi32.dll" "BeginPath" con el current canvas.
   Llamada "gdi32.dll" "Ellipse" con el current canvas y el box's left y el box's top y el box's right y el box's bottom.
   Llamada "gdi32.dll" "EndPath" con el current canvas.
   Llamada "gdi32.dll" "PathToRegion" con el current canvas retornando el hrgn.
 
-Para create un hrgn usando un polygon:
+Para crear un hrgn usando un polygon:
   Si el polygon es nil, Poner 0 into el hrgn; salir.
-  Create un vertex array usando el polygon's vertices.
+  Crear un vertex array usando el polygon's vertices.
   Llamada "gdi32.dll" "LPtoDP" con el current canvas y el vertex array's spot pointer y el vertex array's count.
   Llamada "gdi32.dll" "CreatePolygonRgn" con el vertex array's spot pointer y el vertex array's count and 2 [winding] retornando el hrgn.
   Destroy el vertex array.
 
-Para create un hrgn usando un roundy box:
-  Si el roundy box's radius es 0, create el hrgn usando el roundy box as un box; salir.
+Para crear un hrgn usando un roundy box:
+  Si el roundy box's radius es 0, crear el hrgn usando el roundy box as un box; salir.
   Poner el roundy box into un box.
   Poner el roundy box's radius times 2 into un diameter number.
   Llamada "gdi32.dll" "BeginPath" con el current canvas.
@@ -2141,7 +2144,7 @@ Para create un hrgn usando un roundy box:
   Llamada "gdi32.dll" "PathToRegion" con el current canvas retornando el hrgn.
 
 \Para crear un índice dado un conteo de cubos;
-Para create un index usando un bucket count:
+Para crear un index usando un bucket count:
   Allocate memory for el index.
   Poner el bucket count into el index's bucket count.
   Poner un bucket record's magnitude into un width.
@@ -2150,11 +2153,11 @@ Para create un index usando un bucket count:
   Poner el index's first bucket plus el number minus el width into el index's last bucket.
 
 \Para crear el léxico;
-Para create el lexicon:
+Para crear el lexicon:
   Allocate memory for el lexicon.
-  Create el lexicon's index usando 4027.
+  Crear el lexicon's index usando 4027.
 
-Para create el open handle of un winhttp request:
+Para crear el open handle of un winhttp request:
   Si el winhttp request es nil, salir.
   Convertir el module's name to un wide string called wide module name and null terminate.
   Llamada "winhttp.dll" "WinHttpOpen"
@@ -2167,12 +2170,12 @@ Para create el open handle of un winhttp request:
   Si el winhttp request's session es 0, Poner "No pude abrir la conexión." into el error de e/s; salir.
 
 \Para crear una ruta en el sistema de archivos;
-Para create un path in el file system:
-  Si el path es directory-format, create el path in el file system (directory); salir.
-  Si el path es file-format, create el path in el file system (file); salir.
+Para crear un path in el file system:
+  Si el path es directory-format, crear el path in el file system (directory); salir.
+  Si el path es file-format, crear el path in el file system (file); salir.
 
 \Para crear una ruta en el sistema de archivos (directorio);
-Para create un path in el file system (directory):
+Para crear un path in el file system (directory):
   Privatizar el path.
   Remove any trailing backslash desde el path.
   Null terminate el path.
@@ -2182,7 +2185,7 @@ Para create un path in el file system (directory):
   Poner "Error creando directorio '" then el path then "'." into el error de e/s.
 
 \Para crear una ruta en el sistema de archivos (archivo);
-Para create un path in el file system (file):
+Para crear un path in el file system (file):
   Privatizar el path.
   Null terminate el path.
   Llamada "kernel32.dll" "CreateFileA" con el path's first y 1073741824 [generic_write] and 0 and 0 y 1  [create_new] y 128 [file_attribute_normal] and 0 retornando un handle.
@@ -2191,53 +2194,53 @@ Para create un path in el file system (file):
   Si el handle es not -1 [invalid_handle_value], salir.
   Poner "Error creando archivo '" then el path then "'." into el error de e/s.
 
-Para create un pdf object usando un kind:
+Para crear un pdf object usando un kind:
   Allocate memory for el pdf object.
   Poner el kind into el pdf object's kind.
 
-Para create un pdf outline entry usando un title string y un page height y un destination number:
+Para crear un pdf outline entry usando un title string y un page height y un destination number:
   Allocate memory for el pdf outline entry.
   Poner el title string into el pdf outline entry's title.
   Poner el page height into el pdf outline entry's page height.
   Poner el destination into el pdf outline entry's destination.
 
 \Para crear una imagen;
-Para create un picture:
+Para crear un picture:
   Allocate memory for el picture.
 
 \Para crear una imagen dada un búfer;
-Para create un picture usando un buffer:
-  Create un gpbitmap usando el buffer.
+Para crear un picture usando un buffer:
+  Crear un gpbitmap usando el buffer.
   Si el gpbitmap es nil, void el picture; salir.
   Allocate memory for el picture.
   Poner el buffer into el picture's data.
   Poner el gpbitmap into el picture's gpbitmap.
   Ajustar el picture (extract boxes desde gpbitmap).
 
-Para create un picture usando un gpbitmap:
+Para crear un picture usando un gpbitmap:
   Si el gpbitmap es nil, void el picture; salir.
   Allocate memory for el picture.
   Poner el gpbitmap into el picture's gpbitmap.
   Ajustar el picture (extract boxes desde gpbitmap).
 
 \Para crear una imagen dada una URL;
-Para create un picture usando un url:
+Para crear un picture usando un url:
   Read el url into un buffer.
-  Create el picture usando el buffer.
+  Crear el picture usando el buffer.
 
 \Para crear un polígono;
-Para create un polygon:
+Para crear un polygon:
   Allocate memory for el polygon.
 
 \Para crear una quora;
-Para create un quora:
+Para crear un quora:
   Allocate memory for el quora.
 
 \Para crear una referencia;
-Para create un refer:
+Para crear un refer:
   Allocate memory for el refer.
 
-Para create el request handle of un winhttp request using un url record:
+Para crear el request handle of un winhttp request using un url record:
   Si el winhttp request es nil, salir.
   Convertir el url record's path into un wide string called wide path and null terminate.
   Convertir "POST" to un wide string called wide post string and null terminate.
@@ -2253,22 +2256,22 @@ Para create el request handle of un winhttp request using un url record:
   retornando el winhttp request's request.
   Si el winhttp request's request es 0, Poner "No pude abrir el pedido." into el error de e/s; salir.
 
-Para create un row usando un byte:
+Para crear un row usando un byte:
   Allocate memory for el row.
   Poner el byte into el row's string.
 
-Para create un row usando un string:
+Para crear un row usando un string:
   Allocate memory for el row.
   Poner el string into el row's string.
 
-Para create un socket usando un host string y un port number: \ this guy creates and connects, sets i/o error if there es un problem
+Para crear un socket usando un host string y un port number: \ this guy creates and connects, sets i/o error if there es un problem
   Borrar el error de e/s.
 \ get sockaddr
   Get un sockaddr usando el host.
   Si el error de e/s es not blank, salir.
   Poner 2 [af_inet] into el sockaddr's sin_family.
   Poner el port into el sockaddr's sin_port.
-\ create socket
+\ crear socket
   Llamada "ws2_32.dll" "socket" con 2 [af_inet] y 1  [sock_stream] and 0 [ipproto_ip] retornando el socket.
   Si el socket es -1, Poner "No pude crear socket." into el error de e/s; salir.
 \ connect socket
@@ -2282,19 +2285,19 @@ Para create un socket usando un host string y un port number: \ this guy creates
   Si el result es not 0, Poner "No pudo configurar el tiempo de espera de recepción." into el error de e/s; salir.
 
 \Para crear una cosa de cadena dada una cadena;
-Para create un string thing usando un string:
+Para crear un string thing usando un string:
   Allocate memory for el string thing.
   Poner el string into el string thing's string.
 
 \Para crear una terminal en una caja;
-Para create un terminal in un box:
+Para crear un terminal in un box:
   Allocate memory for el terminal.
   Poner el box into el terminal's box.
   Poner el green color into el terminal's output color.
   Poner el lightest green color into el terminal's input color.
 
 \Para crear un texto;
-Para create un text:
+Para crear un text:
   Allocate memory for el text.
   Poner el black color into el text's pen.
   Poner el default font into el text's font.
@@ -2306,18 +2309,18 @@ Para create un text:
   Deselect el text.
 
 \Para crear un vértice;
-Para create un vertex:
+Para crear un vertex:
   Allocate memory for el vertex.
 
-Para create un vertex array usando un count:
+Para crear un vertex array usando un count:
   Privatizar el count.
   Allocate memory for el vertex array.
   Poner el count into el vertex array's count.
   Multiplicar el count by un spot's magnitude.
   Assign el vertex array's spot pointer usando el count.
 
-Para create un vertex array usando some vertices:
-  Create el vertex array usando el vertices' count.
+Para crear un vertex array usando some vertices:
+  Crear el vertex array usando el vertices' count.
   Poner el vertex array's spot pointer into un spot pointer.
   Lazo.
   Get un vertex desde el vertices.
@@ -2327,24 +2330,24 @@ Para create un vertex array usando some vertices:
   Repetir.
 
 \Para crear un vértice dado un punto;
-Para create un vertex usando un spot:
+Para crear un vertex usando un spot:
   Allocate memory for el vertex.
   Poner el spot into el vertex's spot.
 
 \Para crear un vértice dado una coordenada-x una coordenada-y;
-Para create un vertex usando un x-coord y un y-coord:
+Para crear un vertex usando un x-coord y un y-coord:
   Allocate memory for el vertex.
   Poner el x-coord into el vertex's x-coord.
   Poner el y-coord into el vertex's y-coord.
 
-Para create un winhttp request for posting to un url:
+Para crear un winhttp request for posting to un url:
   Allocate memory for el winhttp request.
   Convertir el url to un url record.
-  Create el open handle of el winhttp request.
+  Crear el open handle of el winhttp request.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
-  Create el connect handle of el winhttp request using el url record.
+  Crear el connect handle of el winhttp request using el url record.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
-  Create el request handle of el winhttp request using el url record.
+  Crear el request handle of el winhttp request using el url record.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
 
 The console es un console.
@@ -3658,7 +3661,7 @@ Para decidir si un spot es below un horizontal line:
 
 \Para decidir si un punto está en una elipse;
 Para decidir si un spot es in un ellipse:
-  Create un hrgn usando el ellipse.
+  Crear un hrgn usando el ellipse.
   Privatizar el spot.
   Dividir el spot by el tpp.
   Llamada "gdi32.dll" "PtInRegion" con el hrgn y el spot's x-coord y el spot's y-coord retornando un number.
@@ -3675,7 +3678,7 @@ Para decidir si un spot es in un picture:
 \Para decidir si un punto está en un polígono;
 Para decidir si un spot es in un polygon:
   Si el polygon es nil, diga no.
-  Create un vertex array usando el polygon's vertices.
+  Crear un vertex array usando el polygon's vertices.
   Llamada "gdi32.dll" "CreatePolygonRgn" con el vertex array's spot pointer y el vertex array's count and 2 [winding] retornando un hrgn.
   Llamada "gdi32.dll" "PtInRegion" con el hrgn y el spot's x-coord y el spot's y-coord retornando un number.
   Llamada "gdi32.dll" "DeleteObject" con el hrgn.
@@ -4210,7 +4213,7 @@ Para decidir si you feel like it:
 
 Para decrypt un buffer usando un passphrase string: \ sets i/o error if failure
   Borrar el error de e/s.
-  Create un crypt session usando el passphrase.
+  Crear un crypt session usando el passphrase.
   Si el crypt session es nil, salir.
   Convertir el buffer as un nibble string to un hex string.
   Poner el hex string's length into un length.
@@ -4529,8 +4532,8 @@ Para draw un box con un color:
 Para draw un box con un border color y un fill color:
   Si el pdf state's page flag es set, draw el box con el border y el fill (pdf style); salir.
   Privatizar el box.
-  Create el hpen of el current canvas usando el border.
-  Create el hbrush of el current canvas usando el fill.
+  Crear el hpen of el current canvas usando el border.
+  Crear el hbrush of el current canvas usando el fill.
   Si el border es clear, Agregar el tpp to el box's left-top.
   Llamada "gdi32.dll" "Rectangle" con el current canvas y el box's left y el box's top y el box's right y el box's bottom.
   Destroy el hbrush of el current canvas.
@@ -4606,8 +4609,8 @@ Para draw un ellipse on un spot con un color:
 Para draw un ellipse con un border color y un fill color:
   Si el pdf state's page flag es set, draw el ellipse con el border y el fill (pdf style); salir.
   Privatizar el ellipse.
-  Create el hpen of el current canvas usando el border.
-  Create el hbrush of el current canvas usando el fill.
+  Crear el hpen of el current canvas usando el border.
+  Crear el hbrush of el current canvas usando el fill.
   Si el border es clear, Agregar el tpp to el ellipse's left-top.
   Llamada "gdi32.dll" "Ellipse" con el current canvas y el ellipse's left y el ellipse's top y el ellipse's right y el ellipse's bottom.
   Destroy el hbrush of el current canvas.
@@ -4679,7 +4682,7 @@ Para draw un gpbitmap at un spot (pdf style):
   Poner "I" then el xobject's number into un name.
 \  Agregar to image resources in current page
   Poner "/" then el name then " " then el xobject's number then " 0 R" into un string.
-  Create un new string thing usando el string.
+  Crear un new string thing usando el string.
   Adjuntar el new string thing to el pdf state's current page's image strings.
 \ finish setting up xobject
   Adjuntar el xobject's number then " 0 obj" to el xobject.
@@ -4785,7 +4788,7 @@ Para draw un line using some twips for el length:
 \Para dibujar una línea con un color;
 Para draw un line con un color:
   Si el pdf state's page flag es set, draw el line con el color (pdf style); salir.
-  Create el hpen of el current canvas usando el color.
+  Crear el hpen of el current canvas usando el color.
   Llamada "gdi32.dll" "MoveToEx" con el current canvas y el line's start's x-coord y el line's start's y-coord and nil.
   Llamada "gdi32.dll" "LineTo" con el current canvas y el line's end's x-coord y el line's end's y-coord.
   Convertir el color to un colorref.
@@ -4867,7 +4870,7 @@ Para draw un picture (pdf style):
   Poner el picture's box's height divided by el tpp into un height.
   Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" con el width y el height and 0 y 137224 [pixelformat24bpprgb] and 0 y un gpbitmap's whereabouts.
   Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" con el gpbitmap y un gpgraphic's whereabouts.
-  Si el picture's grayscale flag es set, create un gpimageattributes (grayscale).
+  Si el picture's grayscale flag es set, crear un gpimageattributes (grayscale).
   Llamada "gdiplus.dll" "GdipDrawImageRectRectI" con el gpgraphic y el picture's gpbitmap
   And 0 and 0 y el width y el height
   y el x-number y el y-number y el width y el height
@@ -4879,7 +4882,7 @@ Para draw un picture (pdf style):
 
 Para draw un picture on un gpgraphic at un x-coord y un y-coord:
   Si el picture es nil, salir.
-  Si el picture's grayscale flag es set, create un gpimageattributes (grayscale).
+  Si el picture's grayscale flag es set, crear un gpimageattributes (grayscale).
   Llamada "gdiplus.dll" "GdipDrawImageRectRectI" con el gpgraphic y el picture's gpbitmap
   y el x-coord y el y-coord y el picture's uncropped box's width y el picture's uncropped box's height
   And 0 and 0 y el picture's gpbitmap's width y el picture's gpbitmap's height
@@ -4919,7 +4922,7 @@ Para draw un polygon con un color:
 Para draw un polygon con un color (border only):
   Si el polygon es nil, salir.
   Si el color es clear, salir.
-  Create el hpen of el current canvas usando el color.
+  Crear el hpen of el current canvas usando el color.
   Get un vertex desde el polygon's vertices.
   Si el vertex es nil, salir.
   Llamada "gdi32.dll" "MoveToEx" con el current canvas y el vertex's x-coord y el vertex's y-coord and nil.
@@ -4937,10 +4940,10 @@ Para draw un polygon con un color (border only):
 Para draw un polygon con un color (fill only):
   Si el polygon es nil, salir.
   Si el color es clear, salir.
-  Create el hpen of el current canvas usando el borrar color.
-  Create el hbrush of el current canvas usando el color.
+  Crear el hpen of el current canvas usando el borrar color.
+  Crear el hbrush of el current canvas usando el color.
   Llamada "gdi32.dll" "SetPolyFillMode" con el current canvas and 2 [winding].
-  Create un vertex array usando el polygon's vertices.
+  Crear un vertex array usando el polygon's vertices.
   Llamada "gdi32.dll" "Polygon" con el current canvas y el vertex array's spot pointer y el vertex array's count.
   Destroy el vertex array.
   Destroy el hbrush of el current canvas.
@@ -4990,8 +4993,8 @@ Para draw un roundy box:
 Para draw un roundy box con un border color y un fill color:
   Si el pdf state's page flag es set, draw el roundy box con el border y el fill (pdf style); salir.
   Privatizar el roundy box.
-  Create el hpen of el current canvas usando el border.
-  Create el hbrush of el current canvas usando el fill.
+  Crear el hpen of el current canvas usando el border.
+  Crear el hbrush of el current canvas usando el fill.
   Si el border es clear, Agregar el tpp to el roundy box's left-top.
   Poner el roundy box's radius times 2 into un diameter number.
   Llamada "gdi32.dll" "RoundRect" con el current canvas y el roundy box's left y el roundy box's top y el roundy box's right y el roundy box's bottom
@@ -5134,7 +5137,7 @@ Para draw un string at un spot con un color:
 Para draw un string at un spot con un color y un font:
   Si el pdf state's page flag es set, draw el string at el spot con el color y el font (pdf style); salir.
   Set el colorref of el current canvas usando el color.
-  Create el hfont of el current canvas usando el font.
+  Crear el hfont of el current canvas usando el font.
   Ajustar spacing usando el string.
   Poner el string's first into un substring's first.
   Poner el substring's first plus el text cutoff minus 1 into el substring's last.
@@ -5156,7 +5159,7 @@ Para draw un string at un spot con un color y un font (pdf style):
   Include el font in el pdf state's current page.
   Find un definition pdf object usando el font's name y el pdf state's font index.
   Si el definition es nil, salir. \ error
-  Create un font info usando el font y el string.
+  Crear un font info usando el font y el string.
   Output el pdf border usando el color.
   Output el pdf fill usando el color.
   Output "BT".
@@ -5265,7 +5268,7 @@ Para duplicate un path to another path in el file system:
 Para duplicate un path to another path in el file system (directory):
   Si el path es in el other path, Poner "Error duplicando directorio '" then el path then "' - invalid recursion." into el error de e/s; salir.
   Si el path es not in el file system, Poner "Error duplicando directorio '" then el path then "'." into el error de e/s; salir.
-  Si el other path es not in el file system, create el other path in el file system.
+  Si el other path es not in el file system, crear el other path in el file system.
   Lazo.
   Get un item desde el path.
   Si el item es not found, salir.
@@ -5314,7 +5317,7 @@ The en-dash byte es un byte igual to 150.
 
 Para encrypt un buffer usando un passphrase string: \ sets i/o error if failure
   Borrar el error de e/s.
-  Create un crypt session usando el passphrase.
+  Crear un crypt session usando el passphrase.
   Si el crypt session es nil, salir.
   Poner el buffer into un temp buffer.
   Poner el temp buffer's length into un length.
@@ -5362,7 +5365,7 @@ Para end printing un pdf (append header):
   Adjuntar "%âãÏÓ" then el crlf string to el pdf.
   Adjuntar el crlf string to el pdf.
 
-Para end printing un pdf (append el outline entries - create el objects):
+Para end printing un pdf (append el outline entries - crear el objects):
   Get un pdf outline entry desde el pdf state's outline entries.
   Si el pdf outline entry es nil, salir.
   Agregar un entry pdf object usando "outline entry".
@@ -5371,7 +5374,7 @@ Para end printing un pdf (append el outline entries - create el objects):
 
 Para end printing un pdf (append el outline entries):
   Si el pdf state's outline entries are empty, salir.
-  End printing el pdf (append el outline entries - create el objects).
+  End printing el pdf (append el outline entries - crear el objects).
   Lazo.
   Get un pdf outline entry desde el pdf state's outline entries.
   Si el pdf outline entry es nil, salir.
@@ -5724,7 +5727,7 @@ Para extract un picture usando un box:
   y el current canvas y el box's left y el box's top y 13369376 [srccopy].
   Llamada "gdiplus.dll" "GdipReleaseDC" con el gpgraphic y el bitmap canvas.
   Llamada "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
-  Create el picture usando el gpbitmap.
+  Crear el picture usando el gpbitmap.
   Poner el box into el picture's box.
   Poner el box into el picture's uncropped box.
 
@@ -6349,7 +6352,7 @@ Para get un column# usando un row y un spot y un text:
   Si el row es nil, salir.
   Get un box usando el row y el text.
   Si el spot's y-coord es greater than el box's bottom, Poner el row's string's length into el column#; salir. \ only happens on last row of text
-  Create el hfont of el memory canvas usando el text's font.
+  Crear el hfont of el memory canvas usando el text's font.
   Get un start width y un substring usando el row y el spot y el text (for "get un column# usando un row...").
   Lazo.
   Si el substring's last es el row's string's last, interrumpir.
@@ -6518,7 +6521,7 @@ Para get un number desde el stack:
   Destroy el stack entry.
 
 Para get un offset pair usando un string y un box y un font y un alignment:
-  Create el hfont of el memory canvas usando el font.
+  Crear el hfont of el memory canvas usando el font.
   Get el offset pair usando el string y el box y el font y el alignment (fast).
   Destroy el hfont of el memory canvas.
 
@@ -6530,7 +6533,7 @@ Para get un offset pair usando un string y un box y un font y un alignment (fast
   Agregar el box's height minus el textmetric's tmheight divided by 2 to el offset pair's y-number.
 
 Para get un outlinetextmetric usando un font:
-  Create el hfont of el memory canvas usando el font.
+  Crear el hfont of el memory canvas usando el font.
   Llamada "gdi32.dll" "GetOutlineTextMetricsA" con el memory canvas and 0 and 0 retornando un result number.
   Assign un poutlinetextmetric usando el result.
   Llamada "gdi32.dll" "GetOutlineTextMetricsA" con el memory canvas y el result y el poutlinetextmetric.
@@ -6774,7 +6777,7 @@ Para get un width usando un string y un canvas: \ assumes font es already select
   Poner el pair's x-number into el width.
 
 Para get un width usando un string y un canvas y un font:
-  Create el hfont of el canvas usando el font.
+  Crear el hfont of el canvas usando el font.
   Get el width usando el string y el canvas.
   Destroy el hfont of el canvas.
 
@@ -6854,7 +6857,7 @@ The group-separator byte es un byte igual to 29.
 Para guarantee one row in un text:
   Si el text es nil, salir.
   Si el text's rows are not empty, salir.
-  Create un row usando el return byte.
+  Crear un row usando el return byte.
   Adjuntar el row to el text's rows.
   Renumber el text's rows.
 
@@ -6879,14 +6882,14 @@ Para handle any wm-activate con un w-param (activate):
   Llamada "user32.dll" "SetFocus" con el main window.
   Llamada "user32.dll" "ClipCursor" con 0.
 \  seterrormode(sem_failcriticalerrors) \ keeps certain disk errors desde appearing
-  Create un event.
+  Crear un event.
   Poner "activate" into el event's kind.
   Poner "activar" into el event's clase.
   Enque el event.
   Llamada "user32.dll" "PostMessageA" con el main window and 0 [wm_null] and 0 and 0.
 
 Para handle any wm-activate con un w-param (deactivate):
-  Create un event.
+  Crear un event.
   Poner "deactivate" into el event's kind.
   Poner "desactivar" into el event's clase.
   Enque el event.
@@ -6897,7 +6900,7 @@ Para handle any wm-char con un w-param y un l-param:
 \If el ctrl key was down, salir.\ removed for Spanish keyboard AltGr and ctrl+alt characters
   Poner el w-param into un byte.
   Si el byte es not printable, salir.
-  Create un event.
+  Crear un event.
   Poner "key down" into el event's kind.
   Poner "tecla abajo" into el event's clase.
   Si el shift key was down, set el event's shift flag.
@@ -6912,7 +6915,7 @@ Para handle any wm-destroy:
   Llamada "user32.dll" "PostQuitMessage" con 0.
 
 Para handle any wm-lbuttondblclk con un l-param:
-  Create un event.
+  Crear un event.
   Poner "left double click" into el event's kind.
   Poner "clic izquierdo doble" into el event's clase.
   Si el alt key was down, set el event's alt flag.
@@ -6922,7 +6925,7 @@ Para handle any wm-lbuttondblclk con un l-param:
   Enque el event.
 
 Para handle any wm-lbuttondown con un l-param:
-  Create un event.
+  Crear un event.
   Poner "left click" into el event's kind.
   Poner "clic izquierdo" into el event's clase.
   Si el alt key was down, set el event's alt flag.
@@ -6934,13 +6937,13 @@ Para handle any wm-lbuttondown con un l-param:
 Para handle any wm-paint con un window:
   Llamada "user32.dll" "BeginPaint" con el window y un paintstruct's whereabouts.
   Llamada "user32.dll" "EndPaint" con el window y el paintstruct's whereabouts.
-  Create un event.
+  Crear un event.
   Poner "refresh" into el event's kind.
   Poner "refrescar" into el event's clase.
   Enque el event.
 
 Para handle any wm-rbuttondblclk con un l-param:
-  Create un event.
+  Crear un event.
   Poner "right double click" into el event's kind.
   Poner "clic derecho doble" into el event's clase.
   Si el alt key was down, set el event's alt flag.
@@ -6950,7 +6953,7 @@ Para handle any wm-rbuttondblclk con un l-param:
   Enque el event.
 
 Para handle any wm-rbuttondown con un l-param:
-  Create un event.
+  Crear un event.
   Poner "right click" into el event's kind.
   Poner "clic derecho" into el event's clase.
   Si el alt key was down, set el event's alt flag.
@@ -6967,7 +6970,7 @@ Para handle any wm-keydown con un w-param y un l-param:
   Poner el w-param into un key.
   Si el key con el l-param es any repeated escape or modifier key, salir.
   Si el key es any wm-char key, salir.
-  Create un event.
+  Crear un event.
   Poner "key down" into el event's kind.
   Poner "tecla abajo" into el event's clase.
   Si el alt key was down, set el event's alt flag.
@@ -7486,8 +7489,8 @@ Para make un ellipse con un spot and another spot:
 
 \Para imagine un figure using un string y un spot;
 \Para make un figure using un string y un spot;
-Para create un figure using un string y un center spot:
-  Create el figure.
+Para crear un figure using un string y un center spot:
+  Crear el figure.
   Adjuntar el figure to el figures.
   Privatizar el string.
   Lowercase el string.
@@ -7595,7 +7598,7 @@ An inch es 1440 twips.
 Para include un font in el current pdf: 
   Find un pdf object usando el font's name y el pdf state's font index.
   Si el pdf object es not nil, salir.
-  Create un font info usando el font.
+  Crear un font info usando el font.
   Convertir el font info to pdf em units.
 \ stream
   Poner el actual data of el font into un buffer.
@@ -7658,7 +7661,7 @@ Para include un font in un pdf object:
   Poner "/" then el font pdf object's font name then " " then el font pdf object's number then " 0 R" into un string.
   Find un string thing usando el string y el pdf object's font strings.
   Si el string thing es not nil, salir.
-  Create un new string thing usando el string.
+  Crear un new string thing usando el string.
   Adjuntar el new string thing to el pdf object's font strings.
 
 Para indent any selected rows in un text:
@@ -7682,7 +7685,7 @@ Para index un pointer usando un string y un index:
 \  if el index es nil, salir. \ to make compiler faster
   Si el string's length es 0, salir.
   Get un bucket usando el string y el index.
-  Create un refer.
+  Crear un refer.
   Adjuntar el refer to el bucket's refers.
   Poner el string into el refer's string.
   Poner el pointer into el refer's pointer.
@@ -7692,7 +7695,7 @@ Para index un string in un index:
   Index nil usando el string y el index.
 
 Para initalize el terminal:
-  Create el terminal in el screen's box.
+  Crear el terminal in el screen's box.
 
 Para initialize before run:
   Llamada "user32.dll" "DisableProcessWindowsGhosting".
@@ -8215,7 +8218,7 @@ The insert key es un key igual to 45.
 \Para insertar un punto en un polígono después de un vértice;
 Para insert un spot into un polygon after un vertex:
   Si el polygon es nil, salir.
-  Create another vertex usando el spot.
+  Crear another vertex usando el spot.
   Insert el other vertex into el polygon's vertices after el vertex.
 
 Para insert un string into another string before un byte#:
@@ -8867,7 +8870,7 @@ Para load el lexicon:
 
 \Para cargar el léxico dado un búfer;
 Para load el lexicon usando un buffer:
-  Si el lexicon es nil, create el lexicon.
+  Si el lexicon es nil, crear el lexicon.
   Slap un rider on el buffer.
   Lazo.
   Move el rider (index lexicon rules).
@@ -8973,13 +8976,13 @@ The masculine byte es un byte igual to 186.
 
 \Para enmascarar dentro de una caja;
 Para mask inside un box:
-  Create un hrgn usando el box.
+  Crear un hrgn usando el box.
   Mask inside el hrgn.
   Destroy el hrgn.
 
 \Para enmascarar dentro de una elipse;
 Para mask inside un ellipse:
-  Create un hrgn usando el ellipse.
+  Crear un hrgn usando el ellipse.
   Mask inside el hrgn.
   Destroy el hrgn.
 
@@ -8988,13 +8991,13 @@ Para mask inside un hrgn:
 
 \Para enmascarar dentro de un polígono;
 Para mask inside un polygon:
-  Create un hrgn usando el polygon.
+  Crear un hrgn usando el polygon.
   Mask inside el hrgn.
   Destroy el hrgn.
 
 \Para enmascarar dentro de una caja redonda;
 Para mask inside un roundy box:
-  Create un hrgn usando el roundy box.
+  Crear un hrgn usando el roundy box.
   Mask inside el hrgn.
   Destroy el hrgn.
 
@@ -9042,13 +9045,13 @@ Para mask only outside un roundy box:
 
 \Para enmascarar fuera de una caja;
 Para mask outside un box:
-  Create un hrgn usando el box.
+  Crear un hrgn usando el box.
   Mask outside el hrgn.
   Destroy el hrgn.
 
 \Para enmascarar fuera de una elipse;
 Para mask outside un ellipse:
-  Create un hrgn usando el ellipse.
+  Crear un hrgn usando el ellipse.
   Mask outside el hrgn.
   Destroy el hrgn.
 
@@ -9057,13 +9060,13 @@ Para mask outside un hrgn:
 
 \Para enmascarar fuera de un polígono;
 Para mask outside un polygon:
-  Create un hrgn usando el polygon.
+  Crear un hrgn usando el polygon.
   Mask outside el hrgn.
   Destroy el hrgn.
 
 \Para enmascarar fuera de una caja redonda;
 Para mask outside un roundy box:
-  Create un hrgn usando el roundy box.
+  Crear un hrgn usando el roundy box.
   Mask outside el hrgn.
   Destroy el hrgn.
 
@@ -10649,7 +10652,7 @@ Para position un substring on un string:
 Para post un data string to un url and receive un response string: \ only works con http and https
   Borrar el response.
   Borrar el error de e/s.
-  Create un winhttp request for posting to el url.
+  Crear un winhttp request for posting to el url.
   Si el error de e/s es not blank, salir.
   Send el data to el winhttp request.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
@@ -10756,7 +10759,7 @@ The purple color es un color.
 The purple pen es un pen.
 
 Para poner el actual data of un font into un buffer: \ only works con true/open type fonts
-  Create el hfont of el memory canvas usando el font.
+  Crear el hfont of el memory canvas usando el font.
   Llamada "gdi32.dll" "GetFontData" con el memory canvas and 0 and 0 and nil and 0 retornando un count.
   Reassign el buffer's first usando el count.
   Llamada "gdi32.dll" "GetFontData" con el memory canvas and 0 and 0 y el buffer's first y el count.
@@ -11753,7 +11756,7 @@ Para tell Windows we're done;
 Para tell Windows el user es un record con quit;
 Para relinquish control:
   Flush el event queue.
-  Create un event.
+  Crear un event.
   Poner "done" into el event's kind.
   Poner "hecho" into el event's clase.
   Enque el event.
@@ -11888,7 +11891,7 @@ Para load un path into un picture:
 Para read un path into un picture:
   Read el path into un buffer.
   Si el error de e/s es not blank, void el picture; salir.
-  Create el picture usando el buffer.
+  Crear el picture usando el buffer.
 
 \Para leer una respuesta de un terminal;
 Para read un reply desde un terminal:
@@ -11906,7 +11909,7 @@ Para read un reply desde un terminal:
   Remove any trailing noise desde el reply.
   Flush all events.
 \ questionable below
-  Create un event.
+  Crear un event.
   Poner "left click" into el event's kind.
   Poner "clic izquierdo" into el event's clase.
   Poner el mouse's spot into el event's spot.
@@ -12065,7 +12068,7 @@ A refer es un thing con un string y un pointer (reference), una cadena at el str
 
 \Para actualizar el cursor;
 Para refresh el cursor:
-  Create un event.
+  Crear un event.
   Poner "set cursor" into el event's kind.
   Poner "cursor" into el event's clase.
   Si el alt key es down, set el event's alt flag.
@@ -12991,8 +12994,8 @@ Para send un data string to un winhttp request:
 
 Para send un email:
   Borrar el error de e/s.
-\ create socket
-  Create un socket usando el email's smtp server and 25.
+\ crear socket
+  Crear un socket usando el email's smtp server and 25.
   Si el error de e/s es not blank, salir.
 \ initial receive here for date/time stuff desde server
   Receive un response string desde el socket.
@@ -13415,7 +13418,7 @@ Para split un buffer into some dyads:
   Lazo.
   Move el rider usando el ampersand byte.
   Si el rider's token es blank, salir.
-  Create un dyad. 
+  Crear un dyad. 
   Adjuntar el dyad to el dyads.
   Split el rider's token into un name substring y un query substring usando el equal-sign byte.
   Poner el name substring into el dyad's name.
@@ -13919,7 +13922,7 @@ Para start up:
   Initialize el canvases.
   Initialize el context.
   Initalize el terminal.
-  Create el console.
+  Crear el console.
   \Crear la consola.
 
 Para start up el cgi:
@@ -15857,13 +15860,13 @@ Para unmask everything:
 
 \Para desenmascarar dentro de una caja;
 Para unmask inside un box:
-  Create un hrgn usando el box.
+  Crear un hrgn usando el box.
   Unmask inside el hrgn.
   Destroy el hrgn.
 
 \Para desenmascarar dentro de una elipse;
 Para unmask inside un ellipse:
-  Create un hrgn usando el ellipse.
+  Crear un hrgn usando el ellipse.
   Unmask inside el hrgn.
   Destroy el hrgn.
 
@@ -15872,30 +15875,30 @@ Para unmask inside un hrgn:
 
 \Para desenmascarar dentro de un polígono;
 Para unmask inside un polygon:
-  Create un hrgn usando el polygon.
+  Crear un hrgn usando el polygon.
   Unmask inside el hrgn.
   Destroy el hrgn.
 
 \Para desenmascarar dentro de una caja redonda;
 Para unmask inside un roundy box:
-  Create un hrgn usando el roundy box.
+  Crear un hrgn usando el roundy box.
   Unmask inside el hrgn.
   Destroy el hrgn.
 
 \Para desenmascarar fuera de una caja;
 Para unmask outside un box:
-  Create un hrgn usando el box.
+  Crear un hrgn usando el box.
   Unmask outside el hrgn.
   Destroy el hrgn.
 
 \Para desenmascarar fuera de una elipse;
 Para unmask outside un ellipse:
-  Create un hrgn usando el ellipse.
+  Crear un hrgn usando el ellipse.
   Unmask outside el hrgn.
   Destroy el hrgn.
 
 Para unmask outside un hrgn:
-  Create un old hrgn usando el zero box.
+  Crear un old hrgn usando el zero box.
   Llamada "gdi32.dll" "GetClipRgn" con el current canvas y el old hrgn retornando un number.
   Si el number es not 1, borrar el old hrgn.
   Llamada "gdi32.dll" "SelectClipRgn" con el current canvas and 0.
@@ -15905,13 +15908,13 @@ Para unmask outside un hrgn:
 
 \Para desenmascarar fuera de un polígono;
 Para unmask outside un polygon:
-  Create un hrgn usando el polygon.
+  Crear un hrgn usando el polygon.
   Unmask outside el hrgn.
   Destroy el hrgn.
 
 \Para desenmascarar fuera de una caja redonda;
 Para unmask outside un roundy box:
-  Create un hrgn usando el roundy box.
+  Crear un hrgn usando el roundy box.
   Unmask outside el hrgn.
   Destroy el hrgn.
 
@@ -16181,11 +16184,11 @@ Para wrap un text:
   Adjuntar el return byte to el string.
   Destroy el text's rows.
   Slap un rider on el string.
-  Create el hfont of el memory canvas usando el text's font.
+  Crear el hfont of el memory canvas usando el text's font.
   Lazo.
   Move el rider usando el text's box (word wrapping rules).
   Si el rider's token es blank, interrumpir.
-  Create un row usando el rider's token.
+  Crear un row usando el rider's token.
   Adjuntar el row to el text's rows.
   Repetir.
   Destroy el hfont of el memory canvas.
