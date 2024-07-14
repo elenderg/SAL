@@ -197,9 +197,9 @@ Para ajustar un item:
   Bitwise AND el number with 16 [file_attribute_directory].
   Si el number es 0, Poner "file" into el item's kind; Poner "archivo" into el item's clase.
   Si el number es not 0, Poner "directory" into el item's kind; Poner "directorio" into el item's clase.
-  Convert el item's win32finddata's ftcreationtime to el item's creation date/time string. \ added for email sorting
+  Convertir el item's win32finddata's ftcreationtime to el item's creation date/time string. \ added for email sorting
   Poner el item's win32finddata's cfilename's whereabouts into un pchar.
-  Convert el pchar to el item's designator.
+  Convertir el pchar to el item's designator.
   Si el item's kind es "directory", Adjuntar "\" to el item's designator.
   Poner el item's directory then el item's designator into el item's path.
   Extract el item's extension desde el item's designator as un path.
@@ -276,22 +276,22 @@ Para adjuntar un byte to un string usando un count:
 
 \Para adjuntar una bandera a una cadena;
 Para adjuntar un flag to un string:
-  Convert el flag to another string.
+  Convertir el flag to another string.
   Adjuntar el other string to el string.
 
 \Para adjuntar una fracción a una cadena;
 Para adjuntar un fraction to un string:
-  Convert el fraction to another string.
+  Convertir el fraction to another string.
   Adjuntar el other string to el string.
 
 \Para adjuntar un número a una cadena;
 Para adjuntar un number to un string:
-  Convert el number to another string.
+  Convertir el number to another string.
   Adjuntar el other string to el string.
 
 \Para adjuntar un puntero a una cadena;
 Para adjuntar un pointer to un string:
-  Convert el pointer to another string.
+  Convertir el pointer to another string.
   Adjuntar el other string to el string.
 
 \Para adjuntar un punto a un polígono;
@@ -347,7 +347,7 @@ Para adjuntar some things to some other things:
 
 \Para adjuntar un temporizador a una cadena;
 Para adjuntar un timer to un string:
-  Convert el timer to another string.
+  Convertir el timer to another string.
   Adjuntar el other string to el string.
 
 \Para adjuntar un vértice a un polígono;
@@ -1306,7 +1306,7 @@ A context es un thing with
 
 The context stack es some contexts.
 
-Para convert un absolute position to un position usando un text:
+Para convertir un absolute position to un position usando un text:
   Si el text es nil, borrar el position; salir.
   Privatizar el absolute position.
   Lazo.
@@ -1319,7 +1319,7 @@ Para convert un absolute position to un position usando un text:
   Repetir.
 
 \Para convertir una cadena binaria en un número;
-Para convert un binary string into un number:
+Para convertir un binary string into un number:
   Poner 0 into el number.
   Poner 1 into un value number.
   Lazo.
@@ -1330,7 +1330,7 @@ Para convert un binary string into un number:
   Repetir.
 
 \Para convertir una caja en una cadena;
-Para convert un box to un string:
+Para convertir un box to un string:
   Borrar el string.
   Adjuntar el box's left to el string.
   Adjuntar " " to el string.
@@ -1341,28 +1341,28 @@ Para convert un box to un string:
   Adjuntar el box's bottom to el string.
 
 \Para convertir un byte a un nibble;
-Para convert un byte to un nibble:
+Para convertir un byte to un nibble:
   Poner el byte into el nibble as un byte.
   Uppercase el nibble.
   Si el nibble es greater than el nine byte, Restar 7 desde el nibble.
   Restar 48 desde el nibble.
 
-Para convert un byte to un nibble string:
+Para convertir un byte to un nibble string:
   Split el byte into un nibble and another nibble.
-  Convert el nibble to el nibble string.
-  Convert el other nibble to another nibble string.
+  Convertir el nibble to el nibble string.
+  Convertir el other nibble to another nibble string.
   Adjuntar el other nibble string to el nibble string.
 
 \Para convertir un byte a un byte de consulta;
-Para convert un byte to un query byte:
+Para convertir un byte to un query byte:
   Si el byte es between 48 and 57, Poner el byte into el query byte; salir. \ 0-9
   Si el byte es between 65 and 90, Poner el byte into el query byte; salir. \ A-Z
   Si el byte es between 97 y 122, Poner el byte into el query byte; salir. \ a-z
   Si el byte es 32, Poner "+" into el query byte; salir. \ space
-  Convert el byte to un nibble string.
+  Convertir el byte to un nibble string.
   Poner "%" then el nibble string into el query byte.
 
-Para convert un color to un colorref:
+Para convertir un color to un colorref:
   Si el color es clear, Poner 16777215 [$00FFFFFF] into el colorref; salir. \ borrar pen becomes white
   Privatizar el color.
   Scale el color's saturation usando 240/1000.
@@ -1373,11 +1373,11 @@ Para convert un color to un colorref:
   Limit el color's hue to 1 and 239.
   Llamada "shlwapi.dll" "ColorHLSToRGB" with el color's hue y el color's lightness y el color's saturation retornando el colorref.
 
-Para convert un color to un rgb:
-  Convert el color to un colorref.
-  Convert el colorref to el rgb. 
+Para convertir un color to un rgb:
+  Convertir el color to un colorref.
+  Convertir el colorref to el rgb. 
 
-Para convert un colorref to un color:
+Para convertir un colorref to un color:
   Llamada "shlwapi.dll" "ColorRGBToHLS" with el colorref y un wyrd's whereabouts and another wyrd's whereabouts y un third wyrd's whereabouts.
   Poner el wyrd into el color's hue.
   Poner el other wyrd into el color's  lightness.
@@ -1389,7 +1389,7 @@ Para convert un colorref to un color:
   Scale el color's lightness usando 1000/240.
   Limit el color's lightness to 0 y 1000.
 
-Para convert un colorref to un rgb:
+Para convertir un colorref to un rgb:
   Privatizar el colorref.
   Shift el colorref right 0 bits.
   Poner el colorref into el rgb's red byte.
@@ -1398,7 +1398,7 @@ Para convert un colorref to un rgb:
   Shift el colorref right 8 bits.
   Poner el colorref into el rgb's blue byte.
 
-Para convert un filetime to un string:
+Para convertir un filetime to un string:
   Borrar el string.
   Llamada "kernel32.dll" "FileTimeToSystemTime" with el filetime's whereabouts y un systemtime's whereabouts retornando un number.
   Si el number es 0, salir.
@@ -1412,53 +1412,53 @@ Para convert un filetime to un string:
   Poner el systemtime's wmilliseconds into el date/time's millisecond.
   Poner el date/time's string into el string.
 
-Para convert un flag to un hex string:
+Para convertir un flag to un hex string:
   Reassign el hex string's first usando el flag's magnitude.
   Copy bytes desde el flag's whereabouts to el hex string's first for el flag's magnitude.
   Poner el hex string's first plus el flag's magnitude minus 1 into el hex string's last.
 
-Para convert un font to un hfont:
+Para convertir un font to un hfont:
   Privatizar el font.
   Null terminate el font's name.
   Llamada "gdi32.dll" "CreateFontA" with - el font's height times 3 divided by 4 and 0 and 0 and 0 and 0 and 0 and 0 and 0 
   y 1  [default_charset] and 0 and 0 and 5 [cleartype_quality] and 4 [truetype_fonttype] y el font's name's first retornando el hfont.
 
-Para convert un font info to pdf em units:
+Para convertir un font info to pdf em units:
   Si el font info es nil, salir.
-  Convert el font info's internal leading to pdf em units usando el font info's emsquare y el font info's font.
-  Convert el font info's ascent to pdf em units usando el font info's emsquare y el font info's font.
-  Convert el font info's descent to pdf em units usando el font info's emsquare y el font info's font.
-  Convert el font info's capheight to pdf em units usando el font info's emsquare y el font info's font.
-\  convert el font info's italicangle to pdf em units usando el font info's emsquare y el font info's font.
-  Convert el font info's stemv to pdf em units usando el font info's emsquare y el font info's font.
-  Convert el font info's font box's left to pdf em units usando el font info's emsquare y el font info's font.
-  Convert el font info's font box's top to pdf em units usando el font info's emsquare y el font info's font.
-  Convert el font info's font box's right to pdf em units usando el font info's emsquare y el font info's font.
-  Convert el font info's font box's bottom to pdf em units usando el font info's emsquare y el font info's font.
+  Convertir el font info's internal leading to pdf em units usando el font info's emsquare y el font info's font.
+  Convertir el font info's ascent to pdf em units usando el font info's emsquare y el font info's font.
+  Convertir el font info's descent to pdf em units usando el font info's emsquare y el font info's font.
+  Convertir el font info's capheight to pdf em units usando el font info's emsquare y el font info's font.
+\  Convertir el font info's italicangle to pdf em units usando el font info's emsquare y el font info's font.
+  Convertir el font info's stemv to pdf em units usando el font info's emsquare y el font info's font.
+  Convertir el font info's font box's left to pdf em units usando el font info's emsquare y el font info's font.
+  Convertir el font info's font box's top to pdf em units usando el font info's emsquare y el font info's font.
+  Convertir el font info's font box's right to pdf em units usando el font info's emsquare y el font info's font.
+  Convertir el font info's font box's bottom to pdf em units usando el font info's emsquare y el font info's font.
   Swap el font info's font box's top with el font info's font box's bottom.
-  Convert el font info's font widths to pdf em units.
+  Convertir el font info's font widths to pdf em units.
 
-Para convert some font widths to pdf em units:
+Para convertir some font widths to pdf em units:
   Get un outlinetextmetric usando el font widths' font.
   Poner el font widths' data into un number pointer.
   Lazo.
-  Si un counter es past el font widths' count, interrumpir.
-  Convert el number pointer's target to pdf em units usando el outlinetextmetric's otmemsquare y el font widths' font.
-  Agregar un number's magnitude to el number pointer.
+    Si un counter es past el font widths' count, interrumpir.
+    Convertir el number pointer's target to pdf em units usando el outlinetextmetric's otmemsquare y el font widths' font.
+    Agregar un number's magnitude to el number pointer.
   Repetir.
 
-Para convert un fraction to un hex string:
+Para convertir un fraction to un hex string:
   Reassign el hex string's first usando el fraction's magnitude.
   Copy bytes desde el fraction's whereabouts to el hex string's first for el fraction's magnitude.
   Poner el hex string's first plus el fraction's magnitude minus 1 into el hex string's last.
 
-Para convert un fraction to un mixed:
+Para convertir un fraction to un mixed:
   Si el fraction's denominator es 0, Poner 0 into el mixed's whole number; Poner 0 into el mixed's ratio; salir.
   Dividir el fraction's numerator by el fraction's denominator giving el mixed's whole number y un remainder.
   Poner el remainder y el fraction's denominator into el mixed's fraction.
 
 \Para convertir una fracción en una cadena dado un número;
-Para convert un fraction to un string usando un number: \ converts to un decimal representation with "the number" of places
+Para convertir un fraction to un string usando un number: \ converts to un decimal representation with "the number" of places
   Borrar el string.
   Si el number es less than 1, salir.
   Poner 10 into un value number.
@@ -1472,7 +1472,7 @@ Para convert un fraction to un string usando un number: \ converts to un decimal
   Si el string's first's target es el period byte, prepend "0" to el string.
   Si el flag es set, prepend "-" to el string.
 
-Para convert un gpbitmap to un buffer (pdf style):
+Para convertir un gpbitmap to un buffer (pdf style):
   Borrar el buffer.
   Si el gpbitmap es nil, salir.
   Lock el gpbitmap usando un bitmapdata (24-bit rgb).
@@ -1489,15 +1489,15 @@ Para convert un gpbitmap to un buffer (pdf style):
   Repetir.
   Unlock el gpbitmap usando el bitmapdata.
 
-Para convert un hex string to un fraction:
+Para convertir un hex string to un fraction:
   Si el hex string's length es not el fraction's magnitude, Poner 0 y 1  into el ratio; salir.
   Copy bytes desde el hex string's first to el fraction's whereabouts for el fraction's magnitude.
 
-Para convert un hex string to un number:
+Para convertir un hex string to un number:
   Si el hex string's length es not el number's magnitude, borrar el number; salir.
   Copy bytes desde el hex string's first to el number's whereabouts for el number's magnitude.
 
-Para convert un l-param to un key: \ assumes l-param desde wm_char message
+Para convertir un l-param to un key: \ assumes l-param desde wm_char message
   Poner el l-param into el key.
   Shift el key right 16 bits.
   Bitwise AND el key with 255.
@@ -1515,47 +1515,47 @@ Para convert un l-param to un key: \ assumes l-param desde wm_char message
   Si el key es el down-arrow key, Poner el numpad-two key into el key; salir.
   Si el key es el borrar key, Poner el numpad-five key into el key; salir.
 
-Para convert un l-param to un spot:
+Para convertir un l-param to un spot:
   Split el l-param into un wyrd and another wyrd.
   Poner el wyrd into el spot's y-coord.
   Poner el other wyrd into el spot's x-coord.
   Multiplicar el spot by el tpp.
 
-Para convert un mixed to un fraction:
+Para convertir un mixed to un fraction:
   Poner el mixed's fraction into el fraction.
   Agregar el mixed's whole number times el fraction's denominator to el fraction's numerator.
 
-Para convert un nibble to un nibble string:
+Para convertir un nibble to un nibble string:
   Privatizar el nibble.
   Si el nibble es greater than 9, Agregar 7 to el nibble.
   Agregar 48 to el nibble.
   Poner el nibble into el nibble string.
 
-Para convert un nibble string to un hex string:
+Para convertir un nibble string to un hex string:
   Privatizar el nibble string.
   Borrar el hex string.
   Si el nibble string's length es odd, prepend el zero byte to el nibble string.
   Slap un substring on el nibble string.
   Lazo.
   Si el substring es blank, salir.
-  Convert el substring's first's target to un nibble.
+  Convertir el substring's first's target to un nibble.
   Shift el nibble left 4 bits.
   Agregar 1 to el substring's first.
-  Convert el substring's first's target to another nibble.
+  Convertir el substring's first's target to another nibble.
   Bitwise OR el nibble with el other nibble.
   Adjuntar el nibble to el hex string.
   Agregar 1 to el substring's first.
   Repetir.
 
 \Para convertir un número en un byte;
-Para convert un number to un byte:
+Para convertir un number to un byte:
   Poner el number into el byte.
 
-Para convert un number to pdf em units usando un emsquare number y un font:
+Para convertir un number to pdf em units usando un emsquare number y un font:
   Multiplicar el number by el emsquare / el font's adjusted height.
   Multiplicar el number by 1000 / el emsquare.
 
-Para convert un pchar to un string:
+Para convertir un pchar to un string:
   Borrar el string.
   Si el pchar es nil, salir.
   Privatizar el pchar.
@@ -1565,7 +1565,7 @@ Para convert un pchar to un string:
   Agregar 1 to el pchar.
   Repetir.
 
-Para convert un pointer y un length to un string:
+Para convertir un pointer y un length to un string:
   Borrar el string.
   Si el pointer es nil, salir.
   Si el length es 0, salir.
@@ -1573,28 +1573,28 @@ Para convert un pointer y un length to un string:
   Copy bytes desde el pointer to el string's first for el length.
   Poner el string's first plus el length minus 1 into el string's last.
 
-\Para convert un pointer to un hex string;
-Para convert un number to un hex string:
+\Para convertir un pointer to un hex string;
+Para convertir un number to un hex string:
   Reassign el hex string's first usando el number's magnitude.
   Copy bytes desde el number's whereabouts to el hex string's first for el number's magnitude.
   Poner el hex string's first plus el number's magnitude minus 1 into el hex string's last.
 
-\Para convert un pointer to un nibble string;
-Para convert un number to un nibble string:
+\Para convertir un pointer to un nibble string;
+Para convertir un number to un nibble string:
   Split el number into un wyrd and another wyrd.
-  Convert el wyrd to el nibble string.
-  Convert el other wyrd to another nibble string.
+  Convertir el wyrd to el nibble string.
+  Convertir el other wyrd to another nibble string.
   Adjuntar el other nibble string to el nibble string.
 
 \Para convertir un puntero a una cadena;
-Para convert un pointer to un string:
-  Convert el pointer to el string as un nibble string.
+Para convertir un pointer to un string:
+  Convertir el pointer to el string as un nibble string.
 
 \Para convertir algunos pasos en algunos grados precisos;
-Para convert some points to some precise degrees:
+Para convertir some points to some precise degrees:
   Poner el points times 3840 divided by 3600 into el precise degrees.
 
-Para convert un position to un absolute position usando un text:
+Para convertir un position to un absolute position usando un text:
   Si el text es nil, borrar el absolute position; salir.
   Poner 0 into el absolute position.
   Lazo.
@@ -1604,88 +1604,88 @@ Para convert un position to un absolute position usando un text:
   Agregar el position's column# to el absolute position.
 
 \Para convertir algunos grados precisos a algunos pasos;
-Para convert some precise degrees to some points:
+Para convertir some precise degrees to some points:
   Poner el precise degrees times 3600 divided by 3840 into el points.
 
 \Para convertir una cadena de consulta en una cadena;
-Para convert un query string to un string:
+Para convertir un query string to un string:
   Borrar el string.
   Si el query string es blank, salir.
   Slap un substring on el query string.
   Lazo.
-  Si el substring es blank, salir.
-  Si el substring's first's target es el cross byte, Adjuntar " " to el string; Agregar 1 to el substring's first; repeat.
-  Si el substring's first's target es not el percent-sign byte, Adjuntar el substring's first's target to el string; Agregar 1 to el substring's first; repeat.
-  Si el substring's length es less than 3, salir.
-  Agregar 1 to el substring's first.
-  Convert el substring's first's target to un nibble.
-  Shift el nibble left 4 bits.
-  Agregar 1 to el substring's first.
-  Convert el substring's first's target to another nibble.
-  Bitwise OR el nibble with el other nibble.
-  Agregar 1 to el substring's first.
-  Adjuntar el nibble to el string.
+    Si el substring es blank, salir.
+    Si el substring's first's target es el cross byte, Adjuntar " " to el string; Agregar 1 to el substring's first; repeat.
+    Si el substring's first's target es not el percent-sign byte, Adjuntar el substring's first's target to el string; Agregar 1 to el substring's first; repeat.
+    Si el substring's length es less than 3, salir.
+    Agregar 1 to el substring's first.
+    Convertir el substring's first's target to un nibble.
+    Shift el nibble left 4 bits.
+    Agregar 1 to el substring's first.
+    Convertir el substring's first's target to another nibble.
+    Bitwise OR el nibble with el other nibble.
+    Agregar 1 to el substring's first.
+    Adjuntar el nibble to el string.
   Repetir.
 
-Para convert some rows to un string:
+Para convertir some rows to un string:
   Borrar el string.
   Lazo.
-  Get un row desde el rows.
-  Si el row es nil, salir.
-  Adjuntar el row's string to el string.
-  Si el string's last's target es el return byte, Adjuntar el linefeed byte to el string; repeat.
+    Get un row desde el rows.
+    Si el row es nil, salir.
+    Adjuntar el row's string to el string.
+    Si el string's last's target es el return byte, Adjuntar el linefeed byte to el string; repeat.
   Repetir.
 
-Para convert some rows to un string (no linefeed additions):
+Para convertir some rows to un string (no linefeed additions):
   Borrar el string.
   Lazo.
-  Get un row desde el rows.
-  Si el row es nil, salir.
-  Adjuntar el row's string to el string.
+    Get un row desde el rows.
+    Si el row es nil, salir.
+    Adjuntar el row's string to el string.
   Repetir.
 
-Para convert un string y un actual font info y un original font info into un buffer for pdf output:
+Para convertir un string y un actual font info y un original font info into un buffer for pdf output:
   Borrar el buffer.
   Poner 0 into un current byte#.
   Slap un substring on el first byte of el string.
   Lazo.
-  Si el substring's first es greater than el string's last, interrumpir.
-  Si el substring's last es el string's last, interrumpir.
-  Get un current width usando el current byte# y el actual font info's font widths.
-  Get un original width usando el substring's last's target y el original font info's font widths.
-  Poner el original width minus el current width into un offset.
-  Si el offset es 0, Agregar 1 to el substring's last; Agregar 1 to el current byte#; repeat.
-  Convert el substring to un pdf string.
-  Adjuntar el pdf string then " " then el offset then " " to el buffer.
-  Poner el substring's last plus 1 into el substring's last.
-  Poner el substring's last into el substring's first.
-  Agregar 1 to el current byte#.
+    Si el substring's first es greater than el string's last, interrumpir.
+    Si el substring's last es el string's last, interrumpir.
+    Get un current width usando el current byte# y el actual font info's font widths.
+    Get un original width usando el substring's last's target y el original font info's font widths.
+    Poner el original width minus el current width into un offset.
+    Si el offset es 0, Agregar 1 to el substring's last; Agregar 1 to el current byte#; repeat.
+    Convertir el substring to un pdf string.
+    Adjuntar el pdf string then " " then el offset then " " to el buffer.
+    Poner el substring's last plus 1 into el substring's last.
+    Poner el substring's last into el substring's first.
+    Agregar 1 to el current byte#.
   Repetir.
   Si el substring's first es greater than el string's last, salir.
-  Convert el substring to another pdf string.
+  Convertir el substring to another pdf string.
   Adjuntar el other pdf string to el buffer.
 
 \Para convertir una cadena en una bandera;
-Para convert un string to un flag:
+Para convertir un string to un flag:
   Si el string es "sí", set el flag; salir.
   Si el string es "y", set el flag; salir.
   Si el string es "yes", set el flag; salir.
   Borrar el flag.
 
 \Para convertir una cadena en una fracción;
-Para convert un string to un fraction:
+Para convertir un string to un fraction:
   Borrar el fraction.
   Si el string es blank, salir.
-  Si el string es any integer, convert el string to el fraction's numerator; salir.
+  Si el string es any integer, convertir el string to el fraction's numerator; salir.
   Slap un substring on el string.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
   Si el substring es blank, salir.
   Split el substring into un integer substring y un fraction substring usando el dash byte.
   Si el integer substring es blank, Poner el substring into el fraction substring.
   Split el fraction substring into un numerator substring y un denominator substring usando el slash byte.
-  Convert el integer substring to un whole number.
-  Convert el numerator substring to un numerator number.
-  Convert el denominator substring to un denominator number.
+  Convertir el integer substring to un whole number.
+  Convertir el numerator substring to un numerator number.
+  Convertir el denominator substring to un denominator number.
   Si el whole number es negative, salir.
   Si el numerator number es negative, salir.
   Si el denominator number es negative, salir.
@@ -1695,107 +1695,107 @@ Para convert un string to un fraction:
   Poner el denominator number into el fraction's denominator.
   Si el string's first's target es el dash byte, negate el fraction.
 
-Para convert un string to un nibble string:
+Para convertir un string to un nibble string:
   Borrar el nibble string.
   Slap un substring on el string.
   Lazo.
-  Si el substring es blank, salir.
-  Convert el substring's first's target to another nibble string.
-  Adjuntar el other nibble string to el nibble string.
-  Agregar 1 to el substring's first.
+    Si el substring es blank, salir.
+    Convertir el substring's first's target to another nibble string.
+    Adjuntar el other nibble string to el nibble string.
+    Agregar 1 to el substring's first.
   Repetir.
 
 \Para convertir una cadena en un número;
-Para convert un string to un number:
+Para convertir un string to un number:
   Poner 0 into el number.
   Slap un substring on el string.
   Si el substring es blank, salir.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
   Lazo.
-  Si el substring es blank, interrumpir.
-  Multiplicar el number by 10.
-  Poner el substring's first's target into another number.
-  Restar 48 desde el other number.
-  Agregar el other number to el number.
-  Agregar 1 to el substring's first.
+    Si el substring es blank, interrumpir.
+    Multiplicar el number by 10.
+    Poner el substring's first's target into another number.
+    Restar 48 desde el other number.
+    Agregar el other number to el number.
+    Agregar 1 to el substring's first.
   Repetir.
   Si el string's first's target es el dash byte, negate el number.
 
 \Para convertir una cadena en un número entre otro número y un tercer número;
-Para convert un string to un number between another number y un third number:
-  Convert el string to el number.
+Para convertir un string to un number between another number y un third number:
+  Convertir el string to el number.
   Limit el number to el other number y el third number.
 
-Para convert un string to un pdf string:
+Para convertir un string to un pdf string:
   Poner "(" into el pdf string.
   Slap un substring on el string.
   Restar 1 desde el substring's first.
   Lazo.
-  Agregar 1 to el substring's first.
-  Si el substring es blank, interrumpir.
-  Si el substring's first's target es el left-paren byte, Adjuntar "\(" to el pdf string; repeat.
-  Si el substring's first's target es el right-paren byte, Adjuntar "\)" to el pdf string; repeat.
-  Si el substring's first's target es el backslash byte, Adjuntar "\\" to el pdf string; repeat.
-  Adjuntar el substring's first's target to el pdf string.
+    Agregar 1 to el substring's first.
+    Si el substring es blank, interrumpir.
+    Si el substring's first's target es el left-paren byte, Adjuntar "\(" to el pdf string; repeat.
+    Si el substring's first's target es el right-paren byte, Adjuntar "\)" to el pdf string; repeat.
+    Si el substring's first's target es el backslash byte, Adjuntar "\\" to el pdf string; repeat.
+    Adjuntar el substring's first's target to el pdf string.
   Repetir.
   Adjuntar ")" to el pdf string.
 
-Para convert un string to un pointer: \ assumes pointer es in nibble format
-  Convert el string as un nibble string to un hex string.
+Para convertir un string to un pointer: \ assumes pointer es in nibble format
+  Convertir el string as un nibble string to un hex string.
   Void el pointer.
   Slap un substring on el hex string.
   Poner 24 into un shift count.
   Lazo.
-  Si el substring es blank, salir.
-  Si el shift count es less than 0, salir.
-  Poner el substring's first's target into un number.
-  Shift el number left el shift count.
-  Bitwise OR el pointer as un number with el number.
-  Agregar 1 to el substring's first.
-  Restar 8 desde el shift count.
+    Si el substring es blank, salir.
+    Si el shift count es less than 0, salir.
+    Poner el substring's first's target into un number.
+    Shift el number left el shift count.
+    Bitwise OR el pointer as un number with el number.
+    Agregar 1 to el substring's first.
+    Restar 8 desde el shift count.
   Repetir.
 
 \Para convertir una cadena en una consulta;
-Para convert un string to un query string:
+Para convertir un string to un query string:
   Borrar el query string.
   Slap un substring on el string.
   Lazo.
-  Si el substring es blank, interrumpir.
-  Convert el substring's first's target to un query byte.
-  Adjuntar el query byte to el query string.
-  Agregar 1 to el substring's first.
+    Si el substring es blank, interrumpir.
+    Convertir el substring's first's target to un query byte.
+    Adjuntar el query byte to el query string.
+    Agregar 1 to el substring's first.
   Repetir.
 
-Para convert un string to some rows:
+Para convertir un string to some rows:
   Slap un rider on el string.
   Lazo.
-  Move el rider (text file rules).
-  Si el rider's token es blank, interrumpir.
-  Create un row usando el rider's token.
-  Adjuntar el row to el rows.
-  Si el row's string's last's target es el linefeed byte, Poner el return byte into el row's string's last's target. \ *dahn new to handle lines terminated by just linefeed
+    Move el rider (text file rules).
+    Si el rider's token es blank, interrumpir.
+    Create un row usando el rider's token.
+    Adjuntar el row to el rows.
+    Si el row's string's last's target es el linefeed byte, Poner el return byte into el row's string's last's target. \ *dahn new to handle lines terminated by just linefeed
   Repetir.
   Renumber el rows.
 
-Para convert un string to un uuid:
-  Convert el string to un wide string and null terminate.
+Para convertir un string to un uuid:
+  Convertir el string to un wide string and null terminate.
   Llamada "ole32.dll" "CLSIDFromString" with el wide string's first y el uuid's whereabouts.
 
-Para convert un string to un wide string:
+Para convertir un string to un wide string:
   Borrar el wide string.
   Slap un substring on el string.
   Lazo.
-  Si el substring es blank, salir.
-  Adjuntar el substring's first's target to el wide string.
-  Adjuntar el null byte to el wide string.
-  Agregar 1 to el substring's first.
+    Si el substring es blank, salir.
+    Adjuntar el substring's first's target to el wide string.
+    Adjuntar el null byte to el wide string.
+    Agregar 1 to el substring's first.
   Repetir.
 
-Para convert un string to un wide string and null terminate:
-  Convert el string to el wide string.
+Para convertir un string to un wide string and null terminate:
+  Convertir el string to el wide string.
   Null terminate el wide string.
 
-Para convert un url to un url record:
+Para convertir un url to un url record:
   Privatizar el url.
   Null terminate el url.
   Poner un urlcomponents' magnitude into el urlcomponents' dwstructsize.
@@ -1804,16 +1804,16 @@ Para convert un url to un url record:
   Poner 1 into el urlcomponents' dwurlpathlength.
   Poner 1 into el urlcomponents' dwextrainfolength.
   Llamada "wininet.dll" "InternetCrackUrlA" with el url's first and 0 and 0 y el urlcomponents' whereabouts retornando un number.
-  Convert el urlcomponents' lpszscheme y el urlcomponents' dwschemelength to el url record's scheme.
-  Convert el urlcomponents' lpszhostname y el urlcomponents' dwhostnamelength to el url record's host name.
-  Convert el urlcomponents' lpszurlpath y el urlcomponents' dwurlpathlength to el url record's path.
-  Convert el urlcomponents' lpszextrainfo y el urlcomponents' dwextrainfolength to el url record's extra.
+  Convertir el urlcomponents' lpszscheme y el urlcomponents' dwschemelength to el url record's scheme.
+  Convertir el urlcomponents' lpszhostname y el urlcomponents' dwhostnamelength to el url record's host name.
+  Convertir el urlcomponents' lpszurlpath y el urlcomponents' dwurlpathlength to el url record's path.
+  Convertir el urlcomponents' lpszextrainfo y el urlcomponents' dwextrainfolength to el url record's extra.
   Poner el urlcomponents' nport into el url record's port number.
 
-Para convert un wyrd to un nibble string:
+Para convertir un wyrd to un nibble string:
   Split el wyrd into un byte and another byte.
-  Convert el byte to el nibble string.
-  Convert el other byte to another nibble string.
+  Convertir el byte to el nibble string.
+  Convertir el other byte to another nibble string.
   Adjuntar el other nibble string to el nibble string.
 
 A coord es some twips.
@@ -1958,7 +1958,7 @@ A counter es un number.
 
 Para create el connect handle of un winhttp request usingA url record:
   Si el winhttp request es nil, salir.
-  Convert el url record's host name into un wide string called wide host name and null terminate.
+  Convertir el url record's host name into un wide string called wide host name and null terminate.
   Llamada "winhttp.dll" "WinHttpConnect"
   With el winhttp request's session
   y el wide host name's first
@@ -2088,17 +2088,17 @@ Para create un gpimageattributes (grayscale):
   y el grayscale color matrix's first and 0 and 0 [colormatrixflagsdefault].
 
 Para create el hbrush of un canvas usando un color:
-  Convert el color to un colorref.
+  Convertir el color to un colorref.
   Si el color es clear, Poner el null hbrush into un hbrush. 
   Si el color es not clear, call "gdi32.dll" "CreateSolidBrush" with el colorref retornando el hbrush.
   Llamada "gdi32.dll" "SelectObject" with el canvas y el hbrush.
 
 Para create el hfont of un canvas usando un font:
-  Convert el font to un hfont.
+  Convertir el font to un hfont.
   Llamada "gdi32.dll" "SelectObject" with el canvas y el hfont.
 
 Para create el hpen of un canvas usando un color:
-  Convert el color to un colorref.
+  Convertir el color to un colorref.
   Si el color es clear, Poner el null hpen into un hpen.
   Poner el tpp times el pen size into un number.
   Si el canvas es el printer canvas, Poner 1/96 inch times el pen size into el number.
@@ -2152,7 +2152,7 @@ Para create el lexicon:
 
 Para create el open handle of un winhttp request:
   Si el winhttp request es nil, salir.
-  Convert el module's name to un wide string called wide module name and null terminate.
+  Convertir el module's name to un wide string called wide module name and null terminate.
   Llamada "winhttp.dll" "WinHttpOpen"
   With el wide module name's first
   And 0 [winhttp_access_type_default_proxy] 
@@ -2235,8 +2235,8 @@ Para create un refer:
 
 Para create el request handle of un winhttp request using un url record:
   Si el winhttp request es nil, salir.
-  Convert el url record's path into un wide string called wide path and null terminate.
-  Convert "POST" to un wide string called wide post string and null terminate.
+  Convertir el url record's path into un wide string called wide path and null terminate.
+  Convertir "POST" to un wide string called wide post string and null terminate.
   Si el url record's scheme es "https", Poner 8388608 [winhttp_flag_secure] into un secure number.
   Llamada "winhttp.dll" "WinHttpOpenRequest"
   With el winhttp request's connection
@@ -2335,7 +2335,7 @@ Para create un vertex usando un x-coord y un y-coord:
 
 Para create un winhttp request for posting to un url:
   Allocate memory for el winhttp request.
-  Convert el url to un url record.
+  Convertir el url to un url record.
   Create el open handle of el winhttp request.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
   Create el connect handle of el winhttp request using el url record.
@@ -2632,7 +2632,7 @@ Para debug un box:
 \Para depurar un byte;
 Para debug un byte:
   Poner el byte into un number.
-  Convert el number to un string.
+  Convertir el number to un string.
   Debug el string.
 
 \Para depurar un color;
@@ -2648,7 +2648,7 @@ Para debug un color:
 
 \Para depurar una bandera;
 Para debug un flag:
-  Convert el flag to un string.
+  Convertir el flag to un string.
   Debug el string.
 
 \Para depurar una tipo de letra;
@@ -2684,7 +2684,7 @@ Para debug un line:
 
 \Para depurar un número;
 Para debug un number:
-  Convert el number to un string.
+  Convertir el number to un string.
   Debug el string.
 
 \Para depurar un número y otro número;
@@ -2702,7 +2702,7 @@ Para debug un pair:
 
 \Para depurar un puntero;
 Para debug un pointer:
-  Convert el pointer to un nibble string.
+  Convertir el pointer to un nibble string.
   Debug "$" then el nibble string.
 
 Para debug un rgb:
@@ -2734,7 +2734,7 @@ Para debug un string (quoted):
 \Para depurar una wyrd;
 Para debug un wyrd:
   Poner el wyrd into un number.
-  Convert el number to un string.
+  Convertir el number to un string.
   Debug el string.
 
 \Para decidir si una caja es otra caja;
@@ -3370,7 +3370,7 @@ Para decidir si un line es in un box:
   Diga sí.
 
 Para decidir si un mixed es un number:
-  Convert el mixed to un fraction.
+  Convertir el mixed to un fraction.
   Si el fraction es el number, diga sí.
   Diga no.
 
@@ -4208,7 +4208,7 @@ Para decrypt un buffer usando un passphrase string: \ sets i/o error if failure
   Borrar el error de e/s.
   Create un crypt session usando el passphrase.
   Si el crypt session es nil, salir.
-  Convert el buffer as un nibble string to un hex string.
+  Convertir el buffer as un nibble string to un hex string.
   Poner el hex string's length into un length.
   Llamada "advapi32.dll" "CryptDecrypt" with el crypt session's hcryptkey and 0 y 1  and 0 y el hex string's first
   y el length's whereabouts retornando un result number.
@@ -4508,9 +4508,9 @@ Para draw un box (focus style):
   Privatizar el box.
   Agregar el tpp to el box's right-bottom.
   Llamada "gdi32.dll" "LPtoDP" with el current canvas y el box's whereabouts and 2.
-  Convert el white color to un colorref.
+  Convertir el white color to un colorref.
   Llamada "gdi32.dll" "SetBkColor" with el current canvas y el colorref.
-  Convert el black color to another colorref.
+  Convertir el black color to another colorref.
   Llamada "gdi32.dll" "SetTextColor" with el current canvas y el other colorref.
   Llamada "gdi32.dll" "SetMapMode" with el current canvas y 1  [mm_text].
   Llamada "user32.dll" "DrawFocusRect" with el current canvas y el box's whereabouts.
@@ -4686,8 +4686,8 @@ Para draw un gpbitmap at un spot (pdf style):
   Adjuntar "/Width " then el gpbitmap's width to el xobject.
   Adjuntar "/Height " then el gpbitmap's height to el xobject.
   Adjuntar "/BitsPerComponent 8" to el xobject.
-  Convert el gpbitmap to un buffer (pdf style).
-  Convert el buffer to un nibble string.
+  Convertir el gpbitmap to un buffer (pdf style).
+  Convertir el buffer to un nibble string.
   Adjuntar "/Filter /ASCIIHexDecode" to el xobject.
   Adjuntar "/Length " then el nibble string's length to el xobject.
   Adjuntar ">>" to el xobject.
@@ -4784,7 +4784,7 @@ Para draw un line with un color:
   Create el hpen of el current canvas usando el color.
   Llamada "gdi32.dll" "MoveToEx" with el current canvas y el line's start's x-coord y el line's start's y-coord and nil.
   Llamada "gdi32.dll" "LineTo" with el current canvas y el line's end's x-coord y el line's end's y-coord.
-  Convert el color to un colorref.
+  Convertir el color to un colorref.
   Llamada "gdi32.dll" "SetPixelV" with el current canvas y el line's end's x-coord y el line's end's y-coord y el colorref.
   Destroy el hpen of el current canvas.
 
@@ -4926,7 +4926,7 @@ Para draw un polygon with un color (border only):
   Repetir.
   Destroy el hpen of el current canvas.
   Si el polygon's vertices' first's spot es el polygon's vertices' last's spot, salir.
-  Convert el color to un colorref.
+  Convertir el color to un colorref.
   Llamada "gdi32.dll" "SetPixelV" with el current canvas y el polygon's vertices' last's x-coord y el polygon's vertices' last's y-coord y el colorref.
 
 \Para dibujar un polígono con un color (solo relleno);
@@ -5073,7 +5073,7 @@ Para draw un spot:
 
 \Para dibujar un punto con un color;
 Para draw un spot with un color:
-  Convert el color to un colorref.
+  Convertir el color to un colorref.
   Llamada "gdi32.dll" "SetPixelV" with el current canvas y el spot's x-coord y el spot's y-coord y el colorref.
 
 Para draw un star usando un point count y un size:
@@ -5162,8 +5162,8 @@ Para draw un string at un spot with un color y un font (pdf style):
   Output el spot without advancing.
   Output "Td".
   Output "[" without advancing.
-  Convert el font info to pdf em units.
-  Convert el string y el font info y el definition's font info into un buffer for pdf output.
+  Convertir el font info to pdf em units.
+  Convertir el string y el font info y el definition's font info into un buffer for pdf output.
   Output el buffer without advancing.
   Output "]" without advancing.
   Output " TJ".
@@ -5318,7 +5318,7 @@ Para encrypt un buffer usando un passphrase string: \ sets i/o error if failure
   y el length's whereabouts y el length retornando un result number.
   Si el result number es 0, Poner "Error encriptando datos." into el error de e/s; destroy el crypt session; salir.
   Destroy el crypt session.
-  Convert el temp buffer to un nibble string.
+  Convertir el temp buffer to un nibble string.
   Poner el nibble string into el buffer.
 
 The end key es un key igual to 35.
@@ -5374,7 +5374,7 @@ Para end printing un pdf (append el outline entries):
   Poner el pdf outline entry's pdf object into un object pdf object.
   Adjuntar el object's number then " 0 obj" to el object.
   Adjuntar "<<" to el object.
-  Convert el pdf outline entry's title to un pdf string.
+  Convertir el pdf outline entry's title to un pdf string.
   Adjuntar "/Title " then el pdf string to el object.
   Adjuntar "/Parent " then el pdf state's outline's number then " 0 R" to el object.
   Si el pdf outline entry's next es not nil, Adjuntar "/Next " then el pdf outline entry's next's pdf object's number then " 0 R" to el object.
@@ -5727,14 +5727,14 @@ Para extract un picture usando un box:
 \Para extraer una cadena de un texto;
 Para extract un string desde un text:
   Si el text es nil, borrar el string; salir.
-  Convert el text's rows to el string.
+  Convertir el text's rows to el string.
   Remove any trailing linefeed byte desde el string.
   Remove any trailing return byte desde el string.
 
 \Para extraer una cadena de un texto (sin adiciones de avance de línea);
 Para extract un string desde un text (no linefeed additions):
   Si el text es nil, borrar el string; salir.
-  Convert el text's rows to el string (no linefeed additions).
+  Convertir el text's rows to el string (no linefeed additions).
   Remove any trailing return byte desde el string.
 
 \Para extraer una cadena de un texto (bytes seleccionados);
@@ -5966,7 +5966,7 @@ Para find next usando un text y un flag:
 Para find next usando un text y un flag (wrapped text):
   Borrar el flag.
   Si el text es nil, salir.
-  Convert el find anchor to un absolute position called offset usando el text.
+  Convertir el find anchor to un absolute position called offset usando el text.
   Extract un string desde el text (no linefeed additions).
   Poner el string's first plus el offset minus 1 into un substring's first.
   Poner el substring's first plus el find string's length minus 1 into el substring's last.
@@ -5978,8 +5978,8 @@ Para find next usando un text y un flag (wrapped text):
   Set el flag.
   Poner el substring's first minus el string's first plus 1 into un anchor absolute position.
   Poner el substring's last minus el string's first plus 2 into un caret absolute position.
-  Convert el anchor absolute position to el text's anchor usando el text.
-  Convert el caret absolute position to el text's caret usando el text.
+  Convertir el anchor absolute position to el text's anchor usando el text.
+  Convertir el caret absolute position to el text's caret usando el text.
 
 Para find el next misspelling usando un row y un text y un flag:
   Borrar el flag.
@@ -6193,7 +6193,7 @@ The form-feed byte es un byte igual to 12.
 
 \Para formatear un número y una cadena singular o una cadena plural en una cadena;
 Para format un number y un singular string or un plural string into un string:
-  Convert el number to el string.
+  Convertir el number to el string.
   Adjuntar el space byte to el string.
   Si el number es 1, Adjuntar el singular to el string.
   Si el number es not 1, Adjuntar el plural to el string.
@@ -6337,7 +6337,7 @@ Para get un center spot usando un spot and another spot:
 \Para obtener un color en un punto;
 Para get un color usando un spot:
   Llamada "gdi32.dll" "GetPixel" with el current canvas y el spot's x-coord y el spot's y-coord retornando un colorref.
-  Convert el colorref to el color.
+  Convertir el colorref to el color.
 
 Para get un column# usando un row y un spot y un text:
   Poner 0 into el column#.
@@ -6429,7 +6429,7 @@ Para get un drive name for un path:
   Reassign un buffer's first usando el length.
   Llamada "kernel32.dll" "GetVolumeInformationA" with el path's first y el buffer's first y el length and 0 and 0 and 0 and 0 and 0 retornando un number.
   Si el number es 0, borrar el drive name; salir.
-  Convert el buffer's first as un pchar to el drive name.
+  Convertir el buffer's first as un pchar to el drive name.
 
 Para get el first-eighth equivalent of un heading:
   Get el first-quarter equivalent of el heading.
@@ -6468,7 +6468,7 @@ Para get un ip address usando un host string:
   Si el error de e/s es not blank, salir.
   Poner el sockaddr's sin_addr's s_addr into el ip address' number.
   Llamada "ws2_32.dll" "inet_ntoa" with el ip address' number retornando un pchar.
-  Convert el pchar to el ip address' string.
+  Convertir el pchar to el ip address' string.
 
 Para get un item (not first time):
   Borrar el error de e/s.
@@ -6509,7 +6509,7 @@ Para get un number desde el stack:
   Poner 0 into el number.
   Get un stack entry desde el stack.
   Si el stack entry es nil, salir.
-  Convert el stack entry's string to el number.
+  Convertir el stack entry's string to el number.
   Remove el stack entry desde el stack.
   Destroy el stack entry.
 
@@ -6724,7 +6724,7 @@ Para get un string desde el windows clipboard:
   Llamada "user32.dll" "GetClipboardData" with 1 [cf_text] retornando un handle.
   Si el handle es 0, call "user32.dll" "CloseClipboard"; salir.
   Llamada "kernel32.dll" "GlobalLock" with el handle retornando un pchar.
-  Convert el pchar to el string.
+  Convertir el pchar to el string.
   Llamada "kernel32.dll" "GlobalUnlock" with el handle.
   Llamada "user32.dll" "CloseClipboard".
 
@@ -6898,7 +6898,7 @@ Para handle any wm-char with un w-param y un l-param:
   Poner "tecla abajo" into el event's clase.
   Si el shift key was down, set el event's shift flag.
   Poner el byte into el event's byte.
-  Convert el l-param to el event's key.
+  Convertir el l-param to el event's key.
   Enque el event.
 
 Para handle any wm-create with un window:
@@ -6914,7 +6914,7 @@ Para handle any wm-lbuttondblclk with un l-param:
   Si el alt key was down, set el event's alt flag.
   Si el ctrl key was down, set el event's ctrl flag.
   Si el shift key was down, set el event's shift flag.
-  Convert el l-param to el event's spot.
+  Convertir el l-param to el event's spot.
   Enque el event.
 
 Para handle any wm-lbuttondown with un l-param:
@@ -6924,7 +6924,7 @@ Para handle any wm-lbuttondown with un l-param:
   Si el alt key was down, set el event's alt flag.
   Si el ctrl key was down, set el event's ctrl flag.
   Si el shift key was down, set el event's shift flag.
-  Convert el l-param to el event's spot.
+  Convertir el l-param to el event's spot.
   Enque el event.
 
 Para handle any wm-paint with un window:
@@ -6942,7 +6942,7 @@ Para handle any wm-rbuttondblclk with un l-param:
   Si el alt key was down, set el event's alt flag.
   Si el ctrl key was down, set el event's ctrl flag.
   Si el shift key was down, set el event's shift flag.
-  Convert el l-param to el event's spot.
+  Convertir el l-param to el event's spot.
   Enque el event.
 
 Para handle any wm-rbuttondown with un l-param:
@@ -6952,7 +6952,7 @@ Para handle any wm-rbuttondown with un l-param:
   Si el alt key was down, set el event's alt flag.
   Si el ctrl key was down, set el event's ctrl flag.
   Si el shift key was down, set el event's shift flag.
-  Convert el l-param to el event's spot.
+  Convertir el l-param to el event's spot.
   Enque el event.
 
 Para handle any wm-setcursor:
@@ -7592,10 +7592,10 @@ Para include un font in el current pdf:
   Find un pdf object usando el font's name y el pdf state's font index.
   Si el pdf object es not nil, salir.
   Create un font info usando el font.
-  Convert el font info to pdf em units.
+  Convertir el font info to pdf em units.
 \ stream
   Poner el actual data of el font into un buffer.
-  Convert el buffer to un nibble string.
+  Convertir el buffer to un nibble string.
   Agregar un stream pdf object usando "font stream".
   Adjuntar el stream's number then " 0 obj" to el stream.
   Adjuntar "<<" to el stream without advancing.
@@ -8180,8 +8180,8 @@ Para initialize el screen canvas:
   Normalize el screen canvas.
 
 Para initialize un talker:
-  Convert "{96749377-3391-11D2-9EE3-00C04F797396}" [clsid_spvoice] to un clsid.
-  Convert "{6C44DF74-72B9-4992-A1EC-EF996E0422D4}" [iid_ispvoice] to un iid.
+  Convertir "{96749377-3391-11D2-9EE3-00C04F797396}" [clsid_spvoice] to un clsid.
+  Convertir "{6C44DF74-72B9-4992-A1EC-EF996E0422D4}" [iid_ispvoice] to un iid.
   Llamada "ole32.dll" "CoCreateInstance" with el clsid's whereabouts and 0 and 7 [clsctx_all] y el iid's whereabouts y el talker's whereabouts.
 
 Para initialize el window:
@@ -8240,7 +8240,7 @@ Para insert un string into un text:
   Poner el row's string's length minus el text's caret column# into un number.
   Poner el row's string into another string.
   Insert el string into el other string before el text's caret column#.
-  Convert el other string to some rows.
+  Convertir el other string to some rows.
   Poner el rows' last into another row.
   Insert el rows into el text's rows before el row.
   Remove el row desde el text's rows.
@@ -8535,9 +8535,9 @@ Para lighten un hue by some degrees:
 
 \Para aclarar un matiz por algunos pasos;
 Para lighten un hue by some points:
-  Convert el hue to some other points.
+  Convertir el hue to some other points.
   Agregar el points to el other points.
-  Convert el other points to el hue.
+  Convertir el other points to el hue.
 
 The lighter blue color es un color.
 
@@ -10149,13 +10149,13 @@ Para output el arc of un ellipse usando un string:
   Output "c".
 
 Para output un color without advancing:
-  Convert el color to un rgb.
+  Convertir el color to un rgb.
   Poner el rgb's red byte / 255 into un fraction.
-  Convert el fraction to un red string usando 4.
+  Convertir el fraction to un red string usando 4.
   Poner el rgb's green byte / 255 into el fraction.
-  Convert el fraction to un green string usando 4.
+  Convertir el fraction to un green string usando 4.
   Poner el rgb's blue byte / 255 into el fraction.
-  Convert el fraction to un blue string usando 4.
+  Convertir el fraction to un blue string usando 4.
   Output el red string then " " then el green string then " " then el blue string without advancing.
 
 Para output lineto usando un spot:
@@ -10175,7 +10175,7 @@ Para output moveto usando un x-number y un y-number:
   Output moveto usando el spot.
 
 Para output un number without advancing:
-  Convert el number to un string.
+  Convertir el number to un string.
   Output el string without advancing.
   Output " " without advancing.
 
@@ -11009,7 +11009,7 @@ Para poner un number into eax:
 
 \Para poner una bandera en una cadena;
 Para poner un flag into un string;
-Para convert un flag to un string:
+Para convertir un flag to un string:
   Si el flag es set, Poner "yes" into el string; salir. \ es un record con to be english for externalized reams
   Poner "no" into el string.
 
@@ -11040,12 +11040,12 @@ Para poner un fraction into another fraction:
 
 Para poner un fraction into un string;
 \Para convertir una fracción en una cadena;
-Para convert un fraction to un string:
+Para convertir un fraction to un string:
   Borrar el string.
   Privatizar el fraction.
   Si el fraction es negative, Poner "-" into el string; de-sign el fraction.
   Reduce el fraction.
-  Convert el fraction to un mixed.
+  Convertir el fraction to un mixed.
   Si el mixed es 0, Adjuntar "0" to el string; salir.
   Si el mixed's whole number es not 0, Adjuntar el mixed's whole number to el string.
   Si el mixed's fraction es 0, salir.
@@ -11240,7 +11240,7 @@ Para poner un number into un pair:
 
 Para poner un number into un string;
 \Para convertir un número en una cadena;
-Para convert un number to un string:
+Para convertir un number to un string:
   Borrar el string.
   Privatizar el number.
   De-sign el number.
@@ -11262,7 +11262,7 @@ Para poner un number into un wyrd:
   Intel $668903. \ mov [ebx],ax
 
 Para poner un number on el stack:
-  Convert el number to un token.
+  Convertir el number to un token.
   Poner el token on el stack.
 
 Para poner un number over another number in un fraction;
@@ -11474,7 +11474,7 @@ Para poner un string into un text:
   Deselect el text.
   Privatizar el string.
   Adjuntar el return byte to el string.
-  Convert el string to el text's rows.
+  Convertir el string to el text's rows.
   Wrap el text.
 
 \Para poner una cadena en el portapapeles de Windows;
@@ -11634,7 +11634,7 @@ Para poner un text's status string into un string:
   Si el count es not 0, format el count and "línea" or "líneas" into el string; salir.
   Poner el text's selected byte count into another count.
   Si el other count es not 0, format el other count and "byte" or "bytes" into el string; salir.
-  Convert el text's caret row# to el string.
+  Convertir el text's caret row# to el string.
   Adjuntar ":" to el string.
   Adjuntar el text's caret column# to el string.
 
@@ -11664,12 +11664,12 @@ Para poner some things' count into un count:
 \Para poner un temporizador en una cadena;
 Para poner un timer into un string;
 \Para convertir un temporizador a una cadena;
-Para convert un timer to un string:
-  Convert el timer's ticks to el string.
+Para convertir un timer to un string:
+  Convertir el timer's ticks to el string.
 
 \Para poner la cadena de un temporizador en una cadena;
 Para poner un timer's string into un string:
-  Convert el timer's ticks to el string.
+  Convertir el timer's ticks to el string.
 
 \Para poner los ticks de un temporizador en algunos ticks;
 Para poner un timer's ticks into some ticks:
@@ -11848,16 +11848,16 @@ Para read un file into un buffer:
 
 Para read un flag desde un console:
   Read un string desde el console.
-  Convert el string to el flag.
+  Convertir el string to el flag.
 
 Para leer una bandera desde una consola; To read un fraction desde un console:
   Read un string desde el console.
-  Convert el string to el fraction.
+  Convertir el string to el fraction.
 
 \Para leer un número desde una consola;
 Para read un number desde un console:
   Read un string desde el console.
-  Convert el string to el number.
+  Convertir el string to el number.
 
 Para load un path into un buffer;
 \Para leer una ruta en un búfer;
@@ -11933,7 +11933,7 @@ Para read StdIn into un buffer:
   Borrar el buffer.
   Find un string usando el environment variables and "CONTENT_LENGTH".
   Si el string es blank, Poner "Error obteniendo 'CONTENT_LENGTH'." into el error de e/s; salir.
-  Convert el string into un length.
+  Convertir el string into un length.
   Si el length es 0, salir.
   Reassign el buffer's first usando el length.
   Llamada "kernel32.dll" "ReadFile" with el StdIn handle y el buffer's first y el length y un number's whereabouts and nil.
@@ -12694,7 +12694,7 @@ Para speak un string:
   Si la bandera silenciosa es set, salir.
   Si el talker es nil, salir.
   Si el string es blank, salir.
-  Convert el string to un wide string.
+  Convertir el string to un wide string.
   Null terminate el wide string.
   Llamada el talker's vtable's speak with el talker y el wide string's first y 17 [svsfdefault+svsflagsasyn+svsfisnotxml] and 0.
 
@@ -12705,7 +12705,7 @@ Para speak un string and wait:
   Si la bandera silenciosa es set, salir.
   Si el talker es nil, salir.
   Si el string es blank, salir.
-  Convert el string to un wide string.
+  Convertir el string to un wide string.
   Null terminate el wide string.
   Llamada el talker's vtable's speak with el talker y el wide string's first y 16 [svsfdefault+svsfisnotxml] and 0.
 
@@ -13078,7 +13078,7 @@ Para send un string to un socket and receive un response string:
 A sender es un string.
 
 Para set el colorref of un canvas usando un color:
-  Convert el color to un colorref.
+  Convertir el color to un colorref.
   Llamada "gdi32.dll" "SetTextColor" with el canvas y el colorref.
 
 Para set el drawing origin to un spot:
@@ -13415,7 +13415,7 @@ Para split un buffer into some dyads:
   Adjuntar el dyad to el dyads.
   Split el rider's token into un name substring y un query substring usando el equal-sign byte.
   Poner el name substring into el dyad's name.
-  Convert el query substring as un query string into el dyad's value.
+  Convertir el query substring as un query string into el dyad's value.
   Repetir.
 
 Para split un byte into un nibble and another nibble:
@@ -16169,8 +16169,8 @@ A word es un substring.
 Para wrap un text:
   Si el text es nil, salir.
   Si el text's wrap flag es not set, salir.
-  Convert el text's anchor to un absolute position usando el text.
-  Convert el text's caret to another absolute position usando el text.
+  Convertir el text's anchor to un absolute position usando el text.
+  Convertir el text's caret to another absolute position usando el text.
   Poner el text's scale into un fraction.
   Scale el text to 1/1.
   Extract un string desde el text.
@@ -16187,8 +16187,8 @@ Para wrap un text:
   Destroy el hfont of el memory canvas.
   Renumber el text's rows.
   Scale el text to el fraction.
-  Convert el absolute position to el text's anchor usando el text.
-  Convert el other absolute position to el text's caret usando el text.
+  Convertir el absolute position to el text's anchor usando el text.
+  Convertir el other absolute position to el text's caret usando el text.
   Limit el origin of el text.
 
 \Para store un buffer in un file;
@@ -16232,37 +16232,37 @@ Para write un byte without advancing:
 
 Para escribir una bandera; \ will translate to English because "Convert un flag" es used to externalize reams for el Writer
 Para write un flag:
-  Convert el flag to un string.
+  Convertir el flag to un string.
   Write el string.
 
 \Para escribir una bandera sin avanzar;
 Para write un flag without advancing:
-  Convert el flag to un string.
+  Convertir el flag to un string.
   Write el string without advancing.
 
 \Para escribir una fracción;
 Para write un fraction:
-  Convert el fraction to un string.
+  Convertir el fraction to un string.
   Write el string.
 
 \Para escribir una fracción sin avanzar;
 Para write un fraction without advancing:
-  Convert el fraction to un string.
+  Convertir el fraction to un string.
   Write el string without advancing.
 
 \Para escribir un número;
 Para write un number:
-  Convert el number to un string.
+  Convertir el number to un string.
   Write el string.
 
 \Para escribir un número sin avanzar;
 Para write un number without advancing:
-  Convert el number to un string.
+  Convertir el number to un string.
   Write el string without advancing.
 
 \Para escribir un número en una consola;
 Para write un number on un console:
-  Convert el number to un string.
+  Convertir el number to un string.
   Write el string on el console.
 
 Para write some quoras in un box:
@@ -16558,7 +16558,7 @@ The zero box es un box.
 The zero byte es un byte igual to 48.
 
 Para zero fill un number usando un count and Adjuntar it to un string:
-  Convert el number to another string.
+  Convertir el number to another string.
   Zero fill el other string usando el count.
   Adjuntar el other string to el string.
 

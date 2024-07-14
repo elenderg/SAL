@@ -55,7 +55,7 @@ Para Mostrar el error de compilación:
 Para obtener una string desde the argumentos da linha de comando:
   Llamada "kernel32.dll" "GetCommandLineA" 
     retornando un pchar. [pchar]
-  Convert el pchar to una string called argumentos.
+  Convertir el pchar to una string called argumentos.
   Slap un substring on las argumentos.
   Lazo.
     Si el substring es blank, 
@@ -419,7 +419,7 @@ Para agregar push fragments usando some monikettes:
   Agregar un fragment usando el push address tag y el monikette's variable.
   Repetir.
   
-Para agregar el Poner or convert fragments usando un variable and another variable y un  locus:
+Para agregar el poner or convertir fragments usando un variable and another variable y un  locus:
   Agregar un fragment usando el push address tag y el other variable.
   Agregar another fragment usando el push address tag y el variable.
   Find un routine usando "Poner" y el variable's type and "into" y el other variable's type.
@@ -428,11 +428,11 @@ Para agregar el Poner or convert fragments usando un variable and another variab
   Si el routine es not nil, 
     Agregar un third fragment usando el call internal tag y el routine; salir.
   \ error message
-  Agregar un monikette to some monikettes usando "poner/convertir".
+  Agregar un monikette to some monikettes usando "Poner/Convertir".
   Agregar another monikette to el monikettes usando el variable's type.
   Agregar un third monikette to el monikettes usando "into/to".
   Agregar un fourth monikette to el monikettes usando el other variable's type.
-  Convert el monikettes to un moniker.
+  Convertir el monikettes to un moniker.
   Destroy el monikettes.
   Abort with "No sé cómo '" then el moniker then "'." y el locus.
   
@@ -456,7 +456,7 @@ Para agregar several fragments usando un string y un  variable and another strin
   Agregar un third monikette to el monikettes usando el other string.
   Agregar un fourth monikette to el monikettes usando el other variable's type.
   Find un routine usando el monikettes.
-  Si el routine es nil, convert el monikettes to un moniker.
+  Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
   Si el routine es nil, abort with "No sé cómo '" then el moniker then "'." y el locus; salir.
   Agregar un third fragment usando el call internal tag y el routine.
@@ -475,7 +475,7 @@ Para agregar several fragments usando un string y un  variable and
   Agregar un fifth monikette to el monikettes usando el third string.
   Agregar un sixth monikette to el monikettes usando el third variable's type.
   Find un routine usando el monikettes.
-  Si el routine es nil, convert el monikettes to un moniker.
+  Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
   Si el routine es nil, abort with "No sé cómo '" then el moniker then "'." y el byte pointer; salir.
   Agregar un fourth fragment usando el call internal tag y el routine.
@@ -490,7 +490,7 @@ Para agregar two fragments usando un string y un  variable y un  locus:
   Agregar un monikette to some monikettes usando el string.
   Agregar another monikette to el monikettes usando el variable's type.
   Find un routine usando el monikettes.
-  Si el routine es nil, convert el monikettes to un moniker.
+  Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
   Si el routine es nil, abort with "No sé cómo '" then el moniker then "'." y el locus; salir.
   Agregar another fragment usando el call internal tag y el routine.
@@ -713,7 +713,7 @@ Para adjuntar un entry to un buffer (with separator):
   Adjuntar el entry's name to el buffer (with separator).
   
 Para adjuntar un flag to un buffer (with separator):
-  Convert el flag to un string.
+  Convertir el flag to un string.
   Adjuntar el string to el buffer (with separator).
   
 Para adjuntar el global finalizers to un string:
@@ -746,15 +746,15 @@ Para adjuntar un monikette to un moniker (while bubbling):
   Si el monikette's current type es not nil, Adjuntar "[" y el monikette's current type's name and "]" to el moniker (fast); salir.
   
 Para adjuntar un number to un buffer (as hex with separator):
-  Convert el number to un nibble string.
+  Convertir el number to un nibble string.
   Adjuntar el nibble string to el buffer (with separator).
   
 Para adjuntar un number to un buffer (with separator):
-  Convert el number to un string.
+  Convertir el number to un string.
   Adjuntar el string to el buffer (with separator).
   
 Para adjuntar un ratio to un buffer (with separator):
-  Convert el ratio to un string.
+  Convertir el ratio to un string.
   Adjuntar el string to el buffer (with separator).
   
 Para adjuntar un routine to un buffer (with separator):
@@ -836,21 +836,21 @@ Para attach un hex string y un  address to un fragment: \ call or jump
   
 Para attach un hex string y un  number and another hex string to un third hex string:
   Adjuntar el hex string to el third hex string.
-  Convert el number to un fourth hex string.
+  Convertir el number to un fourth hex string.
   Adjuntar el fourth hex string to el third hex string.
   Adjuntar el other hex string to el third hex string.
   
 Para attach un hex string y un  number and another number to another hex string:
   Adjuntar el hex string to el other hex string.
-  Convert el number to un third hex string.
+  Convertir el number to un third hex string.
   Adjuntar el third hex string to el other hex string.
-  Convert el other number to un fourth hex string.
+  Convertir el other number to un fourth hex string.
   Adjuntar el fourth hex string to el other hex string.
   
 Para attach un hex string y un  flag to another hex string;
 Para attach un hex string y un  number to another hex string:
   Adjuntar el hex string to el other hex string.
-  Convert el number to un third hex string.
+  Convertir el number to un third hex string.
   Adjuntar el third hex string to el other hex string.
   
 Para attach un hex string to another hex string: employ Adjuntar un string to another string.
@@ -1113,7 +1113,7 @@ Para compile el body of un routine usando un rider (employ):
   Si el compiler's abort flag es set, salir.
   Move el rider (compiler rules).
   Compile un routine reference usando el rider.
-  Convert el routine reference to el routine's employs moniker.
+  Convertir el routine reference to el routine's employs moniker.
   Destroy el routine reference.
   Si el rider's token es not ".", abort with "Las oraciones usadas deben terminar en un punto y no '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
@@ -1347,8 +1347,8 @@ Para compile un expression usando un rider (then):
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort with "Inválido el 'luego', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un intermediate usando "string" y el rider's token's first.
-  Agregar el Poner or convert fragments usando el expression's variable y el intermediate y el rider's token's first.
-  Convert el term for concatenation usando el rider.
+  Agregar el Poner or convertir fragments usando el expression's variable y el intermediate y el rider's token's first.
+  Convertir el term for concatenation usando el rider.
   Agregar several fragments usando "Adjuntar" y el term's variable and "to" y el intermediate y el rider's token's first.
   Poner el intermediate into el expression's variable.
   Borrar el expression's phrase.
@@ -1383,7 +1383,7 @@ Para compile el header of un routine usando un rider (callback):
   Move el rider (compiler rules).
   Set el routine's callback flag.
   Compile el routine's monikettes y el routine's parameters usando el rider.
-  Convert el routine's monikettes to el routine's moniker.
+  Convertir el routine's monikettes to el routine's moniker.
   Si el routine's moniker es in el routine index, abort with "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
   Index el routine usando el routine's monikettes y el routine index.
   
@@ -1395,7 +1395,7 @@ Para compile el header of un routine usando un rider (decider):
   Set el routine's decider flag.
   Compile el routine's monikettes y el routine's parameters usando el rider.
   Si any of el routine's monikettes are negative words, abort with "No es buena idea usar negativos en los nombres de los decisores." y el rider; salir.
-  Convert el routine's monikettes to el routine's moniker.
+  Convertir el routine's monikettes to el routine's moniker.
   Si el routine's moniker es in el routine index, abort with "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
   Index el routine usando el routine's monikettes y el routine index.
   
@@ -1413,20 +1413,20 @@ Para compile el header of un routine usando un rider (function):
   Agregar another monikette to el routine's monikettes usando "'s " then el name.
   Si el rider's token es not "into", abort with "I was expecting el word 'into', but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
   Agregar un third monikette to el routine's monikettes usando "into".
-  Convert el routine's monikettes to un moniker.
+  Convertir el routine's monikettes to un moniker.
   Si el moniker es in el routine index, abort with "I already know how to '" then el moniker then "'." y el routine's locus; salir. \ not translated - no possessives in Spanish
   Index el routine usando el routine's monikettes y el routine index.
   Move el rider (compiler rules).
   Si el rider's token es not any indefinite article, abort with "I was expecting un indefinite article, but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
   Compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
   Si el rider's token es not blank, abort with "There's extra stuff on el end of this function." y el rider; salir. \ not translated - no possessives in Spanish
-  Convert el routine's monikettes to el routine's moniker.
+  Convertir el routine's monikettes to el routine's moniker.
   Index el routine usando el routine's monikettes y el routine index. \ for employs
   
 Para compile el header of un routine usando un rider (procedure):
   Si el compiler's abort flag es set, salir.
   Compile el routine's monikettes y el routine's parameters usando el rider.
-  Convert el routine's monikettes to el routine's moniker.
+  Convertir el routine's monikettes to el routine's moniker.
   Si el routine's moniker es in el routine index, abort with "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
   Index el routine usando el routine's monikettes y el routine index.
   
@@ -1449,8 +1449,8 @@ Para compile un literal usando un rider:
   
 Para compile un literal usando un rider (flag):
   Si el compiler's abort flag es set, salir.
-  Convert el rider's token to un flag.
-  Convert el flag to el literal's data.
+  Convertir el rider's token to un flag.
+  Convertir el flag to el literal's data.
   Move el rider (compiler rules).
   Poner "flag" into el literal's type name.
   Resolve el literal.
@@ -1459,30 +1459,30 @@ Para compile un literal usando un rider (hex):
   Si el compiler's abort flag es set, salir.
   Poner el rider's token into un nibble substring.
   Agregar 1 to el nibble substring's first.
-  Convert el nibble substring to el literal's data.
+  Convertir el nibble substring to el literal's data.
   Move el rider (compiler rules).
   Poner "hex string" into el literal's type name.
   Resolve el literal.
   
 Para compile un literal usando un rider (numeric - integer):
   Si el compiler's abort flag es set, salir.
-  Convert el rider's token to un number.
-  Convert el number to el literal's data.
+  Convertir el rider's token to un number.
+  Convertir el number to el literal's data.
   Move el rider (compiler rules).
   Poner "number" into el literal's type name.
   Resolve el literal.
   
 Para compile un literal usando un rider (numeric - ratio):
   Si el compiler's abort flag es set, salir.
-  Convert el rider's token to un ratio.
-  Convert el ratio to el literal's data.
+  Convertir el rider's token to un ratio.
+  Convertir el ratio to el literal's data.
   Move el rider (compiler rules).
   Poner "ratio" into el literal's type name.
   Resolve el literal.
   
 Para compile un literal usando un rider (numeric - with unit of measure):
   Si el compiler's abort flag es set, salir.
-  Convert el rider's token to un ratio.
+  Convertir el rider's token to un ratio.
   Move el rider (compiler rules).
   Scan un name usando el rider.
   Find un type usando el name y el type index.
@@ -1495,7 +1495,7 @@ Para compile un literal usando un rider (numeric - with unit of measure):
   Si el final ratio's denominator es 0, abort with "Parece que no tenemos una unidad de medida válida aquí." y el literal's locus.
   Poner el final ratio's numerator divided by el final ratio's denominator into un number.
   Poner el type's name into el literal's type name.
-  Convert el number to el literal's data.
+  Convertir el number to el literal's data.
   Resolve el literal.
   
 Para compile un literal usando un rider (numeric):
@@ -1507,7 +1507,7 @@ Para compile un literal usando un rider (numeric):
   
 Para compile un literal usando un rider (pointer):
   Si el compiler's abort flag es set, salir.
-  Convert 0 to el literal's data. \ was nil
+  Convertir 0 to el literal's data. \ was nil
   Move el rider (compiler rules).
   Poner "pointer" into el literal's type name.
   Resolve el literal.
@@ -1625,7 +1625,7 @@ Para compile el next statement usando un rider (call - internal):
   Find un routine usando el monikettes.
   Si el routine es not nil, Agregar push fragments usando el monikettes.
   Si el routine es not nil, destroy el monikettes; Agregar un fragment usando el call internal tag y el routine; salir.
-  Convert el monikettes to un moniker.
+  Convertir el monikettes to un moniker.
   Destroy el monikettes.
   Abort with "No sé cómo '" then el moniker then "'." y el rider.
   
@@ -1657,7 +1657,7 @@ Para compile el next statement usando un rider (if):
   Remove any negatives desde el monikettes retornando un flag.
   Find un routine usando el monikettes.
   Si el routine es not nil, Agregar push fragments usando el monikettes.
-  Si el routine es nil, convert el monikettes to un moniker.
+  Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
   Si el routine es nil, abort with "Necesito un decisor con las palabras '" then el moniker then "'." y el rider; salir.
   Si el routine's decider flag es not set, abort with "Sííí, necesitaré un decisor aquí, ¿bien?" y el rider; salir.
@@ -1680,7 +1680,7 @@ Para compile el next statement usando un rider (intel):
   Agregar un fragment usando el intel tag.
   Poner el rider's token into un nibble substring.
   Agregar 1 to el nibble substring's first.
-  Convert el nibble substring to el fragment's code.
+  Convertir el nibble substring to el fragment's code.
   Move el rider (compiler rules).
   
 Para compile el next statement usando un rider (loop):
@@ -1719,7 +1719,7 @@ Para compile el next statement usando un rider (point):
   Si el rider's token es not "routine", abort with "Esperaba la palabra 'rutina' pero encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   Compile un routine reference usando el rider.
-  Convert el routine reference to un moniker.
+  Convertir el routine reference to un moniker.
   Destroy el routine reference.
   Find un routine usando el moniker y el routine index.
   Si el routine es nil, abort with "No pude encontrar una rutina '" then el moniker then "' a la que te refieres." y el rider; salir.
@@ -1937,7 +1937,7 @@ Para compile un term usando un rider (possessive - magnitude):
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort with "Uso inválido de una magnitud, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un literal to el literals usando el rider's token's first.
-  Convert el term's type's length to el literal's data.
+  Convertir el term's type's length to el literal's data.
   Poner "number" into el literal's type name.
   Resolve el literal.
   Poner el literal into el term's variable.
@@ -2111,10 +2111,10 @@ The compiling routine bodies timer es un timer.
   
 The compiling routine headers timer es un timer.
   
-Para convert some monikettes to un moniker:
-  Convert el monikettes to el moniker usando el monikettes' last.
+Para convertir some monikettes to un moniker:
+  Convertir el monikettes to el moniker usando el monikettes' last.
   
-Para convert some monikettes to un moniker usando un monikette:
+Para convertir some monikettes to un moniker usando un monikette:
   Borrar el moniker.
   Lazo.
     Get un current monikette desde el monikettes.
@@ -2123,13 +2123,13 @@ Para convert some monikettes to un moniker usando un monikette:
     Si el current monikette es el monikette, salir.
   Repetir.
   
-Para convert un nibble substring to un string: employ convert un nibble string to un hex string.
+Para convertir un nibble substring to un string: employ convertir un nibble string to un hex string.
   
-Para convert un term for concatenation usando un rider: \ used for right-side THEN operand
+Para convertir un term for concatenation usando un rider: \ used for right-side THEN operand
   Si el term's variable es nil, abort with "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Si el term's type can be reduced to "string", salir.
   Agregar un intermediate usando "string" y el rider's token's first.
-  Agregar el Poner or convert fragments usando el term's variable y el intermediate y el rider's token's first.
+  Agregar el Poner or convertir fragments usando el term's variable y el intermediate y el rider's token's first.
   Poner el intermediate into el term's variable.
   Borrar el term's phrase.
   
@@ -3417,7 +3417,7 @@ A hex string called code.
 Para generate un name usando un string:
   Poner el string into el name.
   Agregar 1 to el compiler's name count.
-  Convert el compiler's name count to another string.
+  Convertir el compiler's name count to another string.
   Adjuntar el other string to el name.
   
 Para get un address usando un routine:
@@ -3492,7 +3492,7 @@ Para index un routine for utility use:
   Si el routine's parameters' count es 0, salir.
   Copy el routine's monikettes into some monikettes.
   Reduce el monikettes for utility use.
-  Convert el monikettes to un moniker.
+  Convertir el monikettes to un moniker.
   Destroy el monikettes.
   Si el moniker es in el routine index, salir.
   Find un refer usando el moniker y el utility index.
@@ -3716,7 +3716,7 @@ Para list un fragment in un buffer:
   Adjuntar el fragment's entry to el buffer (with separator).
   Adjuntar el fragment's number to el buffer (as hex with separator).
   Adjuntar el fragment's address to el buffer (as hex with separator).
-  Convert el fragment's code to un nibble string.
+  Convertir el fragment's code to un nibble string.
   Adjuntar el nibble string to el buffer (with separator).
   Advance el buffer.
   
@@ -3894,7 +3894,7 @@ Para list un variable in un buffer:
   Adjuntar el variable's reference flag to el buffer (with separator).
   Adjuntar el variable's redefinition target name to el buffer (with separator).
   Adjuntar el variable's literal to el buffer (with separator).
-  Convert el variable's data to un nibble string.
+  Convertir el variable's data to un nibble string.
   Adjuntar el nibble string to el buffer (with separator).
   Advance el buffer.
   
@@ -4621,7 +4621,7 @@ Para scan un field usando un rider (reference part):
   
 Para scan un field usando un rider (type part - byte array):
   Si el compiler's abort flag es set, salir.
-  Convert el rider's token to un ratio.
+  Convertir el rider's token to un ratio.
   Reduce el ratio.
   Si el ratio's denominator es not 1, abort with "Debes especificar un número entero de bytes para un arreglo de bytes." y el rider; salir.
   Poner el ratio's numerator into el field's count.
@@ -4839,7 +4839,7 @@ Para scan un type usando un rider (has or have):
   
 Para scan un type usando un rider (unit of measure):
   Si el compiler's abort flag es set, salir.
-  Convert el rider's token to el type's scale.
+  Convertir el rider's token to el type's scale.
   Si el type's scale es 0, abort with "Cero no es una escala válida." y el type's locus; salir.
   Move el rider (compiler rules).
   Scan el type's base name usando el rider.
@@ -4875,7 +4875,7 @@ Para set el compiled flag in un variable:
   Si el variable's kind es not "global", salir.
   Si el variable's literal es nil, salir.
   Find un routine usando "Poner" y el variable's literal's type and "into" y el variable's type.
-  Si el routine es nil, find el routine usando "convert" y el variable's literal's type and "to" y el variable's type; set un flag.
+  Si el routine es nil, find el routine usando "Convertir" y el variable's literal's type and "to" y el variable's type; set un flag.
   Si el routine es nil, abort with "El tipo de esta definición global y el tipo de su descripción literal no son compatibles." y el variable's locus; salir.
   Compile el body of el routine.
   Si el flag es set, Poner "Convertir el " then el variable's literal's name then " to el " then el variable's name then ". " into el variable's initializer string.
@@ -5117,14 +5117,14 @@ Para compile el header of un routine usando un rider (reverse-possessive functio
   Agregar another monikette to el routine's monikettes usando "'s " then el name.
   Si el rider's token es not any reverse-possessive function into, abort with "Esperaba la palabra 'en', pero encontré '" then el rider's token then "'." y el rider; salir.
   Agregar un third monikette to el routine's monikettes usando "into".
-  Convert el routine's monikettes to un moniker.
+  Convertir el routine's monikettes to un moniker.
   Si el moniker es in el routine index, abort with "Ya sé cómo '" then el moniker then "'." y el routine's locus; salir.
   Index el routine usando el routine's monikettes y el routine index.
   Move el rider (compiler rules).
   Si el rider's token es not any indefinite article, abort with "Esperaba un artículo indefinido, pero encontré '" then el rider's token then "'." y el rider; salir.
   Compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
   Si el rider's token es not blank, abort with "Hay cosas demás en el final de esta función." y el rider; salir.
-  Convert el routine's monikettes to el routine's moniker.
+  Convertir el routine's monikettes to el routine's moniker.
   Index el routine usando el routine's monikettes y el routine index. \ for employs
   
   \ dahn - reverse functions
