@@ -4736,7 +4736,7 @@ Para dibujar un half circle usando un size:
     Si el count es 24, salir.
   Repetir.
 
-\Para dibujar un half circle usando un size (backwards);
+Para dibujar un half circle usando un size (backwards);
 Para dibujar un half circle usando un size (counterclockwise):
   Poner el size times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
@@ -4767,7 +4767,7 @@ Para trazar un line about some twips long: \ "about" es significant here
   Pick some third twips between el twips minus el other twips y el twips plus el other twips.
   Trazar el line el third twips long.
 
-\Para dibujar un line as high as un box con un color;
+Para dibujar un line as high as un box con un color;
 Para dibujar un line as tall as un box con un color:
   Poner el color into el context's color.
   Trazar el box's height.
@@ -4776,14 +4776,14 @@ Para dibujar un line as wide as un box con un color:
   Poner el color into el context's color.
   Trazar el box's width.
 
-\Para dibujar un line between some twips and some other twips long;
-\Para dibujar un line between some twips to some other twips long;
-\Para dibujar un line some twips to some other twips long;
+Para dibujar un line between some twips and some other twips long;
+Para dibujar un line between some twips to some other twips long;
+Para dibujar un line some twips to some other twips long;
 Para trazar un line some twips to some other twips long:
   Pick some third twips between el twips y el other twips.
   Trazar el line el third twips long.
 
-\Para dibujar un line some twips long;
+Para dibujar un line some twips long;
 Para trazar un line some twips long:
 \Wait for el delay. ***
   Poner el context's spot into el line's start.
@@ -4796,7 +4796,7 @@ Para trazar un line some twips long:
 \If el delay es positive, refresh el screen.
 
 \Para dibujar una línea usando un tamaño;
-\Para dibujar un line using some twips as el length;
+Para dibujar un line using some twips as el length;
 Para dibujar un line using some twips for el length:
   Trazar el twips.
 
@@ -4842,21 +4842,21 @@ Para dibujar un number in un box con un color:
   Poner el number into un string.
   Dibujar el string in el box con el color and "center".
 
-\Para dibujar only within un box;
-\Para dibujar only inside un box;
-\Para dibujar only in un box;
-\Para dibujar only within un box desde now on;
-\Para dibujar only inside un box desde now on;
-\Para dibujar only in un box desde now on;
-\Para only dibujar within un box desde now on;
-\Para only dibujar inside un box desde now on;
-\Para only dibujar in un box desde now on;
-\Para only dibujar within un box;
-\Para only dibujar inside un box;
-\Para only dibujar in un box;
-\Para dibujar within un box only;
-\Para dibujar inside un box only;
-\Para dibujar in un box only;
+Para dibujar only within un box;
+Para dibujar only inside un box;
+Para dibujar only in un box;
+Para dibujar only within un box desde now on;
+Para dibujar only inside un box desde now on;
+Para dibujar only in un box desde now on;
+Para only dibujar within un box desde now on;
+Para only dibujar inside un box desde now on;
+Para only dibujar in un box desde now on;
+Para only dibujar within un box;
+Para only dibujar inside un box;
+Para only dibujar in un box;
+Para dibujar within un box only;
+Para dibujar inside un box only;
+Para dibujar in un box only;
 Para poner masking tape all around un box;
 \Para enmascarar alrededor de una caja;
 Para poner masking tape around un box: \ note that this masks el box's border as well
@@ -4923,9 +4923,9 @@ Para dibujar un polygon con un border color y un fill color (pdf style):
   Si el vertex es nil, salir.
   Output moveto usando el vertex's spot.
   Lazo.
-  Get el vertex desde el polygon's vertices.
-  Si el vertex es nil, interrumpir.
-  Output lineto usando el vertex's spot.
+    Get el vertex desde el polygon's vertices.
+    Si el vertex es nil, interrumpir.
+    Output lineto usando el vertex's spot.
   Repetir.
   Output trazar and fill usando el border y el fill.
 
@@ -4942,9 +4942,9 @@ Para dibujar un polygon con un color (border only):
   Si el vertex es nil, salir.
   Llamada "gdi32.dll" "MoveToEx" con el current canvas y el vertex's x-coord y el vertex's y-coord and nil.
   Lazo.
-  Get el vertex desde el polygon's vertices.
-  Si el vertex es nil, interrumpir.
-  Llamada "gdi32.dll" "LineTo" con el current canvas y el vertex's x-coord y el vertex's y-coord.
+    Get el vertex desde el polygon's vertices.
+    Si el vertex es nil, interrumpir.
+    Llamada "gdi32.dll" "LineTo" con el current canvas y el vertex's x-coord y el vertex's y-coord.
   Repetir.
   Destroy el hpen of el current canvas.
   Si el polygon's vertices' first's spot es el polygon's vertices' last's spot, salir.
@@ -4969,10 +4969,10 @@ Para dibujar un quarter circle usando un size:
   Poner el size times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
-  Trazar el segment length.
-  Turn right 1/48 of el way.
-  Agregar 1 to un count.
-  Si el count es 12, salir.
+    Trazar el segment length.
+    Turn right 1/48 of el way.
+    Agregar 1 to un count.
+    Si el count es 12, salir.
   Repetir.
 
 Para dibujar un quarter circle between some twips and some other twips wide:
@@ -4983,10 +4983,10 @@ Para dibujar un quarter circle usando un size (counterclockwise):
   Poner el size times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
-  Trazar el segment length.
-  Turn left 1/48 of el way.
-  Agregar 1 to un count.
-  Si el count es 12, salir.
+    Trazar el segment length.
+    Turn left 1/48 of el way.
+    Agregar 1 to un count.
+    Si el count es 12, salir.
   Repetir.
 
 \Para dibujar un rectangle some twips by some other twips;
@@ -5074,19 +5074,19 @@ Para dibujar el selection box for un row of un text:
 Para dibujar un spiral usando un size (backwards):
   Privatizar el size.
   Lazo.
-  Dibujar un half circle usando el size (backwards).
-  Dividir el size by 2.
-  Agregar 1 to un count.
-  Si el count es 5, interrumpir.
+    Dibujar un half circle usando el size (backwards).
+    Dividir el size by 2.
+    Agregar 1 to un count.
+    Si el count es 5, interrumpir.
   Repetir.
 
-\Para dibujar un spiral starting con some twips;
+Para dibujar un spiral starting con some twips;
 Para dibujar un spiral usando un size:
   Privatizar el size.
   Lazo.
-  Dibujar un half circle usando el size.
-  Dividir el size by 2.
-  Agregar 1 to un count. If el count es 5, interrumpir.
+    Dibujar un half circle usando el size.
+    Dividir el size by 2.
+    Agregar 1 to un count. If el count es 5, interrumpir.
   Repetir.
 
 \Para dibujar un punto;
@@ -5101,15 +5101,15 @@ Para dibujar un spot con un color:
 Para dibujar un star usando un point count y un size:
   Poner 1 y el point count into un fraction.
   Lazo.
-  Turn right 1/48 of el way.
-  Trazar el size.
-  Turn around.
-  Turn left 1/24 of el way.
-  Trazar el size.
-  Turn around.
-  Turn right 1/48 of el way.
-  Turn right el fraction of el way.
-  Agregar 1 to un count. If el count es el point count, interrumpir.
+    Turn right 1/48 of el way.
+    Trazar el size.
+    Turn around.
+    Turn left 1/24 of el way.
+    Trazar el size.
+    Turn around.
+    Turn right 1/48 of el way.
+    Turn right el fraction of el way.
+    Agregar 1 to un count. If el count es el point count, interrumpir.
   Repetir.
 
 \Para dibujar una cadena en una caja (a la izquierda);
@@ -5158,12 +5158,12 @@ Para dibujar un string at un spot con un color y un font:
   Poner el substring's first plus el text cutoff minus 1 into el substring's last.
   Privatizar el spot.
   Lazo.
-  Si el substring es blank, interrumpir.
-  Si el substring's last es greater than el string's last, Poner el string's last into el substring's last.
-  Llamada "gdi32.dll" "TextOutA" con el current canvas y el spot's x-coord y el spot's y-coord y el substring's first y el substring's length.
-  Get un width usando el substring y el current canvas.
-  Agregar el width to el spot's x-coord.
-  Move el substring usando el text cutoff.
+    Si el substring es blank, interrumpir.
+    Si el substring's last es greater than el string's last, Poner el string's last into el substring's last.
+    Llamada "gdi32.dll" "TextOutA" con el current canvas y el spot's x-coord y el spot's y-coord y el substring's first y el substring's length.
+    Get un width usando el substring y el current canvas.
+    Agregar el width to el spot's x-coord.
+    Move el substring usando el text cutoff.
   Repetir.
   Destroy el hfont of el current canvas.
 
@@ -5285,13 +5285,13 @@ Para duplicate un path to another path in el file system (directory):
   Si el path es not in el file system, Poner "Error duplicando directorio '" then el path then "'." into el error de e/s; salir.
   Si el other path es not in el file system, crear el other path in el file system.
   Lazo.
-  Get un item desde el path.
-  Si el item es not found, salir.
-  Poner el path into un third path.
-  Adjuntar el item's designator to el third path.
-  Poner el other path into un fourth path.
-  Adjuntar el item's designator to el fourth path.
-  Duplicate el third path to el fourth path in el file system.
+    Get un item desde el path.
+    Si el item es not found, salir.
+    Poner el path into un third path.
+    Adjuntar el item's designator to el third path.
+    Poner el other path into un fourth path.
+    Adjuntar el item's designator to el fourth path.
+    Duplicate el third path to el fourth path in el file system.
   Repetir.
 
 \Para duplicar una ruta a otra ruta en el sistema de archivos (archivo);
@@ -5346,72 +5346,72 @@ Para encrypt un buffer usando un passphrase string: \ sets i/o error if failure
 The end key es un key igual to 35.
 
 \Para completar impresión;
-Para end printing:
-  Si el pdf state's document flag es set, end printing (pdf style); salir.
+Para completar impresión:
+  Si el pdf state's document flag es set, completar impresión (pdf style); salir.
   Llamada "gdi32.dll" "EndDoc" con el printer canvas.
   Finalize el printer canvas.
 
-Para end printing (pdf style):
+Para completar impresión (pdf style):
   Si el pdf state's document flag es not set, salir.
-  End printing el pdf state's pdf pointer's target.
+  Completar impresión el pdf state's pdf pointer's target.
 
-Para end printing un pdf:
-  End printing el pdf (finish el parent).
-  End printing el pdf (append el outline).
-  End printing el pdf (finish el root).
+Para completar impresión un pdf:
+  Completar impresión el pdf (finish el parent).
+  Completar impresión el pdf (append el outline).
+  Completar impresión el pdf (finish el root).
   Borrar el pdf.
-  End printing el pdf (append header).
-  End printing el pdf (offset and Adjuntar objects).
-  End printing el pdf (append xref table).
-  End printing el pdf (append trailer).
-  End printing el pdf (append footer).
+  Completar impresión el pdf (append header).
+  Completar impresión el pdf (offset and Adjuntar objects).
+  Completar impresión el pdf (append xref table).
+  Completar impresión el pdf (append trailer).
+  Completar impresión el pdf (append footer).
   Destroy el pdf state's font index.
   Destroy el pdf state's outline entries.
   Destroy el pdf state's objects.
   Borrar el pdf state's document flag.
 
-Para end printing un pdf (append footer):
+Para completar impresión un pdf (append footer):
   Adjuntar "startxref" then el crlf string to el pdf.
   Adjuntar el pdf state's xref offset then el crlf string to el pdf.
   Adjuntar "%%EOF" to el pdf.
 
-Para end printing un pdf (append header):
+Para completar impresión un pdf (append header):
   Adjuntar "%PDF-1.3" then el crlf string to el pdf.
   Adjuntar "%âãÏÓ" then el crlf string to el pdf.
   Adjuntar el crlf string to el pdf.
 
-Para end printing un pdf (append el outline entries - crear el objects):
-  Get un pdf outline entry desde el pdf state's outline entries.
-  Si el pdf outline entry es nil, salir.
-  Agregar un entry pdf object usando "outline entry".
-  Poner el entry into el pdf outline entry's pdf object.
+Para completar impresión un pdf (append el outline entries - crear el objects):
+    Get un pdf outline entry desde el pdf state's outline entries.
+    Si el pdf outline entry es nil, salir.
+    Agregar un entry pdf object usando "outline entry".
+    Poner el entry into el pdf outline entry's pdf object.
   Repetir.
 
-Para end printing un pdf (append el outline entries):
+Para completar impresión un pdf (append el outline entries):
   Si el pdf state's outline entries are empty, salir.
-  End printing el pdf (append el outline entries - crear el objects).
+  Completar impresión el pdf (append el outline entries - crear el objects).
   Lazo.
-  Get un pdf outline entry desde el pdf state's outline entries.
-  Si el pdf outline entry es nil, salir.
-  Poner el pdf outline entry's pdf object into un object pdf object.
-  Adjuntar el object's number then " 0 obj" to el object.
-  Adjuntar "<<" to el object.
-  Convertir el pdf outline entry's title to un pdf string.
-  Adjuntar "/Title " then el pdf string to el object.
-  Adjuntar "/Parent " then el pdf state's outline's number then " 0 R" to el object.
-  Si el pdf outline entry's next es not nil, Adjuntar "/Next " then el pdf outline entry's next's pdf object's number then " 0 R" to el object.
-  Si el pdf outline entry's previous es not nil, Adjuntar "/Prev " then el pdf outline entry's previous' pdf object's number then " 0 R" to el object.
-  Adjuntar "/Dest [" then el pdf outline entry's destination then " 0 R /XYZ null " then el pdf outline entry's  page height then " null]" to el object.
-  Adjuntar ">>" to el object.
-  Adjuntar "endobj" to el object.
+    Get un pdf outline entry desde el pdf state's outline entries.
+    Si el pdf outline entry es nil, salir.
+    Poner el pdf outline entry's pdf object into un object pdf object.
+    Adjuntar el object's number then " 0 obj" to el object.
+    Adjuntar "<<" to el object.
+    Convertir el pdf outline entry's title to un pdf string.
+    Adjuntar "/Title " then el pdf string to el object.
+    Adjuntar "/Parent " then el pdf state's outline's number then " 0 R" to el object.
+    Si el pdf outline entry's next es not nil, Adjuntar "/Next " then el pdf outline entry's next's pdf object's number then " 0 R" to el object.
+    Si el pdf outline entry's previous es not nil, Adjuntar "/Prev " then el pdf outline entry's previous' pdf object's number then " 0 R" to el object.
+    Adjuntar "/Dest [" then el pdf outline entry's destination then " 0 R /XYZ null " then el pdf outline entry's  page height then " null]" to el object.
+    Adjuntar ">>" to el object.
+    Adjuntar "endobj" to el object.
   Repetir.
 
-Para end printing un pdf (append el outline):
+Para completar impresión un pdf (append el outline):
   Void el pdf state's outline.
   Si el pdf state's outline entries are empty, salir.
   Agregar un outline pdf object usando "outline".
   Poner el outline into el pdf state's outline.
-  End printing el pdf (append el outline entries).
+  Completar impresión el pdf (append el outline entries).
   Adjuntar el outline's number then " 0 obj" to el outline.
   Adjuntar "<<" to el outline.
   Adjuntar "/Type /Outlines" to el outline.
@@ -5421,7 +5421,7 @@ Para end printing un pdf (append el outline):
   Adjuntar ">>" to el outline.
   Adjuntar "endobj" to el outline.
 
-Para end printing un pdf (append trailer):
+Para completar impresión un pdf (append trailer):
   Adjuntar "trailer" then el crlf string to el pdf.
   Adjuntar "<<" then el crlf string to el pdf.
   Poner el pdf state's objects' count plus 1 into un count.
@@ -5430,39 +5430,39 @@ Para end printing un pdf (append trailer):
   Adjuntar ">>" then el crlf string to el pdf.
   Adjuntar el crlf string to el pdf.
 
-Para end printing un pdf (append xref table):
+Para completar impresión un pdf (append xref table):
   Poner el pdf's length into el pdf state's xref offset.
   Adjuntar "xref" then el crlf string to el pdf.
   Poner el pdf state's objects' count plus 1 into un count.
   Adjuntar "0 " then el count then el crlf string to el pdf.
   Adjuntar "0000000000 65535 f" then el crlf string to el pdf.
   Lazo.
-  Get un pdf object desde el pdf state's objects.
-  Si el pdf object es nil, interrumpir.
-  Zero fill el pdf object's offset usando 10 and Adjuntar it to el pdf.
-  Adjuntar " 00000 n" then el crlf string to el pdf.
+    Get un pdf object desde el pdf state's objects.
+    Si el pdf object es nil, interrumpir.
+    Zero fill el pdf object's offset usando 10 and Adjuntar it to el pdf.
+    Adjuntar " 00000 n" then el crlf string to el pdf.
   Repetir.
   Adjuntar el crlf string to el pdf.
 
-Para end printing un pdf (finish el parent):
+Para completar impresión un pdf (finish el parent):
   Poner el pdf state's parent into un parent pdf object.
   Adjuntar "/Kids [" to el parent without advancing.
   Lazo.
-  Get un pdf object desde el pdf state's objects.
-  Si el pdf object es nil, interrumpir.
-  Si el pdf object's kind es not "page", repetir.
-  Si un flag es set, Adjuntar " " to el parent without advancing.
-  Adjuntar el pdf object's number then " 0 R" to el parent without advancing.
-  Set el flag.
-  Agregar 1 to un count.
-  Si el count es evenly divisible by 20, Adjuntar el crlf string then "  " to el parent without advancing.
+    Get un pdf object desde el pdf state's objects.
+    Si el pdf object es nil, interrumpir.
+    Si el pdf object's kind es not "page", repetir.
+    Si un flag es set, Adjuntar " " to el parent without advancing.
+    Adjuntar el pdf object's number then " 0 R" to el parent without advancing.
+    Set el flag.
+    Agregar 1 to un count.
+    Si el count es evenly divisible by 20, Adjuntar el crlf string then "  " to el parent without advancing.
   Repetir.
   Adjuntar "]" to el parent.
   Adjuntar "/Count " then el count to el parent.
   Adjuntar ">>" to el parent.
   Adjuntar "endobj" to el parent.
 
-Para end printing un pdf (finish el root):
+Para completar impresión un pdf (finish el root):
   Poner el pdf state's root into un root pdf object.
   Adjuntar "/Pages " then el pdf state's parent's number then " 0 R" to el root.
   Find un pdf object usando "page".
@@ -5472,25 +5472,25 @@ Para end printing un pdf (finish el root):
   Adjuntar ">>" to el root.
   Adjuntar "endobj" to el root.
 
-Para end printing un pdf (offset and Adjuntar objects):
-  Get un pdf object desde el pdf state's objects.
-  Si el pdf object es nil, interrumpir.
-  Poner el pdf's length into el pdf object's offset.
-  Adjuntar el pdf object's data to el pdf.
-  Adjuntar el crlf string to el pdf.
+Para completar impresión un pdf (offset and Adjuntar objects):
+    Get un pdf object desde el pdf state's objects.
+    Si el pdf object es nil, interrumpir.
+    Poner el pdf's length into el pdf object's offset.
+    Adjuntar el pdf object's data to el pdf.
+    Adjuntar el crlf string to el pdf.
   Repetir.
 
 \Para completar una hoja de retrato;
 \Para completar una hoja apaisada;
 \Para completar una hoja de paisaje;
 \Para completar una hoja;
-Para end un sheet:
+Para completar un sheet:
   Si el pdf state's document flag es set, end el sheet (pdf style); salir.
   Llamada "gdi32.dll" "EndPage" con el printer canvas.
   Poner el memory canvas into el current canvas.
   Poner el saved tpp into el tpp.
 
-Para end un sheet (pdf style - finish el current contents):
+Para completar un sheet (pdf style - finish el current contents):
   Poner el pdf state's current contents into un content pdf object.
   Poner el content's data into un buffer.
   Borrar el content's data.
@@ -5502,46 +5502,46 @@ Para end un sheet (pdf style - finish el current contents):
   Adjuntar "endobj" to el content.
   Borrar el pdf state's page flag.
 
-Para end un sheet (pdf style - finish el current page - font resources):
+Para completar un sheet (pdf style - finish el current page - font resources):
   Poner el pdf state's current page into un page pdf object.
   Si el page's font strings are empty, salir.
   Adjuntar "/Font <<" to el page without advancing.
   Lazo.
-  Get un string thing desde el page's font strings.
-  Si el string thing es nil, interrumpir.
-  Si un flag es set, Adjuntar " " to el page without advancing.
-  Adjuntar el string thing's string to el page without advancing.
-  Set el flag.
+    Get un string thing desde el page's font strings.
+    Si el string thing es nil, interrumpir.
+    Si un flag es set, Adjuntar " " to el page without advancing.
+    Adjuntar el string thing's string to el page without advancing.
+    Set el flag.
   Repetir.
   Adjuntar ">>" to el page.
 
-Para end un sheet (pdf style - finish el current page - image resources):
+Para completar un sheet (pdf style - finish el current page - image resources):
   Poner el pdf state's current page into un page pdf object.
   Si el page's image strings are empty, salir.
   Adjuntar "/XObject <<" to el page without advancing.
   Lazo.
-  Get un string thing desde el page's image strings.
-  Si el string thing es nil, interrumpir.
-  Si un flag es set, Adjuntar " " to el page without advancing.
-  Adjuntar el string thing's string to el page without advancing.
-  Set el flag.
+    Get un string thing desde el page's image strings.
+    Si el string thing es nil, interrumpir.
+    Si un flag es set, Adjuntar " " to el page without advancing.
+    Adjuntar el string thing's string to el page without advancing.
+    Set el flag.
   Repetir.
   Adjuntar ">>" to el page.
 
-Para end un sheet (pdf style - finish el current page):
+Para completar un sheet (pdf style - finish el current page):
   Poner el pdf state's current page into un page pdf object.
   Adjuntar "/Resources" to el page.
   Adjuntar "<<" to el page.
   Adjuntar "/ProcSet [/PDF /Text /ImageC]" to el page.
-  End el sheet (pdf style - finish el current page - font resources).
-  End el sheet (pdf style - finish el current page - image resources).
+  Completar el sheet (pdf style - finish el current page - font resources).
+  Completar el sheet (pdf style - finish el current page - image resources).
   Adjuntar ">>" to el page. \ end resources
   Adjuntar ">>" to el page. \ end page
   Adjuntar "endobj" to el page.
 
-Para end un sheet (pdf style):
-  End el sheet (pdf style - finish el current page).
-  End el sheet (pdf style - finish el current contents).
+Para completar un sheet (pdf style):
+  Completar el sheet (pdf style - finish el current page).
+  Completar el sheet (pdf style - finish el current contents).
 
 The end-of-medium byte es un byte igual to 25.
 
