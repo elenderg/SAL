@@ -1038,7 +1038,7 @@ Para check for invalid optional info on un type (target):
   Si el type cannot be reduced to "pointer", abort con "Optional 'a' info solo está permitido en tipos de punteros." y el type's locus; salir.
   
 Para borrar un field term:
-  Fill bytes con el null byte starting at el field term's whereabouts for el field term's magnitude.
+  Llenar bytes con el null byte starting at el field term's whereabouts for el field term's magnitude.
   
 Para borrar un term:
   Void el term's variable.
@@ -3653,7 +3653,7 @@ Para link:
   Round up borough sizes.
   Initialize un dos header.
   Initialize un pe header.
-  Fill el compiler's exe con el null byte usando el compiler's exe size.
+  Llenar el compiler's exe con el null byte usando el compiler's exe size.
   Blurt el dos header into el compiler's exe.
   Blurt el pe header into el compiler's exe.
   Blurt el imports into el compiler's exe.

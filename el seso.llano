@@ -5798,24 +5798,19 @@ The f8-key es un key igual to 119.
 
 The f9-key es un key igual to 120.
 
-\Para mirar hacia cualquier dirección;
-Para face any way you want;
-Para face any which way:
+Para mirar hacia cualquier dirección:
   Pick un heading.
 
-\Para mirar hacia el este;
-Para face east:
+Para mirar hacia el este:
   Poner 960 into el context's heading.
 
-\Para mirar hacia el norte;
-Para face north:
+Para mirar hacia el norte:
   Poner 0 into el context's heading.
 
-\Para mirar hacia el sur;
-Para face south:
+Para mirar hacia el sur:
   Poner 1920 into el context's heading.
 
-\Para mirar hacia el oeste;
+Para mirar hacia el oeste;
 Para face west:
   Poner 2880 into el context's heading.
 
@@ -5840,10 +5835,10 @@ A number called dwlowdatetime,
 A number called dwhighdatetime.
 
 \Para llenar una caja con un color;
-Para fill un box con un color:
+Para llenar un box con un color:
   Dibujar el box con el borrar color y el color.
 
-Para fill bytes con un byte starting at un pointer for un byte count:
+Para llenar bytes con un byte starting at un pointer for un byte count:
   Intel $8BBD0C000000. \ mov edi,[ebp+12] \ el pointer
   Intel $8B3F. \ mov edi,[edi]
   Intel $8B8D10000000. \ mov ecx,[ebp+16] \ el count
@@ -5854,14 +5849,14 @@ Para fill bytes con un byte starting at un pointer for un byte count:
   Intel $F3AA. \ rep stosb
 
 \Para llenar una elipse en un punto con un color;
-Para fill un ellipse on un spot con un color:
+Para llenar un ellipse on un spot con un color:
   Centrar el ellipse on el spot.
   Dibujar el ellipse con el borrar color y el color.
 
 \Para llenar una cadena con un byte dado un conteo;
-Para fill un string con un byte usando un count:
+Para llenar un string con un byte usando un count:
   Reassign el string's first usando el count.
-  Fill bytes con el byte starting at el string's first for el count.
+  Llenar bytes con el byte starting at el string's first for el count.
   Poner el string's first plus el count minus 1 into el string's last.
 
 Para finalize after run:
@@ -13570,38 +13565,38 @@ Para start anywhere on un horizontal line:
 
 Para start at el bottom left corner of un box facing east:
   Poner el box's left-bottom into el context's spot.
-  Face east.
+  Mirar hacia el este.
 
 Para start at el bottom left corner of un box facing north:
   Poner el box's left-bottom into el context's spot.
-  Face north.
+  Mirar hacia el norte.
 
 Para start at el bottom left corner of un box facing south:
   Poner el box's left-bottom into el context's spot.
-  Face south.
+  Mirar hacia el sur.
 
 Para start at el bottom left corner of un box facing west:
   Poner el box's left-bottom into el context's spot.
-  Face west.
+  Mirar hacia el oeste.
 
 Para start at el bottom of un horizontal line:
   Poner el vertical line's end into el context's spot.
 
 Para start at el bottom right corner of un box facing east:
   Poner el box's right-bottom into el context's spot.
-  Face east.
+  Mirar hacia el este.
 
 Para start at el bottom right corner of un box facing north:
   Poner el box's right-bottom into el context's spot.
-  Face north.
+  Mirar hacia el norte.
 
 Para start at el bottom right corner of un box facing south:
   Poner el box's right-bottom into el context's spot.
-  Face south.
+  Mirar hacia el sur.
 
 Para start at el bottom right corner of un box facing west:
   Poner el box's right-bottom into el context's spot.
-  Face west.
+  Mirar hacia el oeste.
 
 Para start at el left of un horizontal line:
   Poner el horizontal line's start into el context's spot.
@@ -13619,7 +13614,7 @@ Para start at el center of el bottom of un box facing east;
 Para start in el center of el bottom of un box facing east:
   Poner el box's center's x into el context's spot's x.
   Poner el box's bottom into el context's spot's y.
-  Face east.
+  Mirar hacia el este.
 
 Para start at el middle of el bottom of un box facing north;
 Para start in el middle of el bottom of un box facing north;
@@ -13627,7 +13622,7 @@ Para start at el center of el bottom of un box facing north;
 Para start in el center of el bottom of un box facing north:
   Poner el box's center's x into el context's spot's x.
   Poner el box's bottom into el context's spot's y.
-  Face north.
+  Mirar hacia el norte.
 
 Para start at el middle of el bottom of un box facing south;
 Para start in el middle of el bottom of un box facing south;
@@ -13635,7 +13630,7 @@ Para start at el center of el bottom of un box facing south;
 Para start in el center of el bottom of un box facing south:
   Poner el box's center's x into el context's spot's x.
   Poner el box's bottom into el context's spot's y.
-  Face south.
+  Mirar hacia el sur.
 
 Para start at el middle of el bottom of un box facing west;
 Para start in el middle of el bottom of un box facing west;
@@ -13643,7 +13638,7 @@ Para start at el center of el bottom of un box facing west;
 Para start in el center of el bottom of un box facing west:
   Poner el box's center's x into el context's spot's x.
   Poner el box's bottom into el context's spot's y.
-  Face west.
+  Mirar hacia el oeste.
 
 Para start at el middle of el left of un box facing east;
 Para start in el middle of el left of un box facing east;
@@ -13651,7 +13646,7 @@ Para start at el center of el left of un box facing east;
 Para start in el center of el left of un box facing east:
   Poner el box's left into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
-  Face east.
+  Mirar hacia el este.
 
 Para start at el middle of el left of un box facing north;
 Para start in el middle of el left of un box facing north;
@@ -13659,7 +13654,7 @@ Para start at el center of el left of un box facing north;
 Para start in el center of el left of un box facing north:
   Poner el box's left into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
-  Face north.
+  Mirar hacia el norte.
 
 Para start at el middle of el left of un box facing south;
 Para start in el middle of el left of un box facing south;
@@ -13667,7 +13662,7 @@ Para start at el center of el left of un box facing south;
 Para start in el center of el left of un box facing south:
   Poner el box's left into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
-  Face south.
+  Mirar hacia el sur.
 
 Para start at el middle of el left of un box facing west;
 Para start in el middle of el left of un box facing west;
@@ -13675,7 +13670,7 @@ Para start at el center of el left of un box facing west;
 Para start in el center of el left of un box facing west:
   Poner el box's left into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
-  Face west.
+  Mirar hacia el oeste.
 
 Para start at el middle of el right of un box facing east;
 Para start in el middle of el right of un box facing east;
@@ -13683,7 +13678,7 @@ Para start at el center of el right of un box facing east;
 Para start in el center of el right of un box facing east:
   Poner el box's right into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
-  Face east.
+  Mirar hacia el este.
 
 Para start at el middle of el right of un box facing north;
 Para start in el middle of el right of un box facing north;
@@ -13691,7 +13686,7 @@ Para start at el center of el right of un box facing north;
 Para start in el center of el right of un box facing north:
   Poner el box's right into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
-  Face north.
+  Mirar hacia el norte.
 
 Para start at el middle of el right of un box facing south;
 Para start in el middle of el right of un box facing south;
@@ -13699,7 +13694,7 @@ Para start at el center of el right of un box facing south;
 Para start in el center of el right of un box facing south:
   Poner el box's right into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
-  Face south.
+  Mirar hacia el sur.
 
 Para start at el middle of el right of un box facing west;
 Para start in el middle of el right of un box facing west;
@@ -13707,7 +13702,7 @@ Para start at el center of el right of un box facing west;
 Para start in el center of el right of un box facing west:
   Poner el box's right into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
-  Face west.
+  Mirar hacia el oeste.
 
 Para start at el middle of el top of un box;
 Para start in el middle of el top of un box;
@@ -13722,7 +13717,7 @@ Para start at el center of el top of un box facing east;
 Para start in el center of el top of un box facing east:
   Poner el box's center's x into el context's spot's x.
   Poner el box's top into el context's spot's y.
-  Face east.
+  Mirar hacia el este.
 
 Para start at el middle of el top of un box facing north;
 Para start in el middle of el top of un box facing north;
@@ -13730,7 +13725,7 @@ Para start at el center of el top of un box facing north;
 Para start in el center of el top of un box facing north:
   Poner el box's center's x into el context's spot's x.
   Poner el box's top into el context's spot's y.
-  Face north.
+  Mirar hacia el norte.
 
 Para start at el middle of el top of un box facing south;
 Para start in el middle of el top of un box facing south;
@@ -13738,7 +13733,7 @@ Para start at el center of el top of un box facing south;
 Para start in el center of el top of un box facing south:
   Poner el box's center's x into el context's spot's x.
   Poner el box's top into el context's spot's y.
-  Face south.
+  Mirar hacia el sur.
 
 Para start at el middle of el top of un box facing west;
 Para start in el middle of el top of un box facing west;
@@ -13746,7 +13741,7 @@ Para start at el center of el top of un box facing west;
 Para start in el center of el top of un box facing west:
   Poner el box's center's x into el context's spot's x.
   Poner el box's top into el context's spot's y.
-  Face west.
+  Mirar hacia el oeste.
 
 Para start at el right of un horizontal line:
   Poner el horizontal line's end into el context's spot.
@@ -13757,54 +13752,54 @@ Para start at un spot:
 
 Para start at un spot facing east:
   Poner el spot into el context's spot.
-  Face east.
+  Mirar hacia el este.
 
 Para start at un spot facing north:
   Poner el spot into el context's spot.
-  Face north.
+  Mirar hacia el norte.
 
 Para start at un spot facing south:
   Poner el spot into el context's spot.
-  Face south.
+  Mirar hacia el sur.
 
 Para start at un spot facing west:
   Poner el spot into el context's spot.
-  Face west.
+  Mirar hacia el oeste.
 
 Para start at el top left corner of un box facing east:
   Poner el box's left-top into el context's spot.
-  Face east.
+  Mirar hacia el este.
 
 Para start at el top left corner of un box facing north:
   Poner el box's left-top into el context's spot.
-  Face north.
+  Mirar hacia el norte.
 
 Para start at el top left corner of un box facing south:
   Poner el box's left-top into el context's spot.
-  Face south.
+  Mirar hacia el sur.
 
 Para start at el top left corner of un box facing west:
   Poner el box's left-top into el context's spot.
-  Face west.
+  Mirar hacia el oeste.
 
 Para start at el top of un vertical line:
   Poner el vertical line's start into el context's spot.
 
 Para start at el top right corner of un box facing east:
   Poner el box's right-top into el context's spot.
-  Face east.
+  Mirar hacia el este.
 
 Para start at el top right corner of un box facing north:
   Poner el box's right-top into el context's spot.
-  Face north.
+  Mirar hacia el norte.
 
 Para start at el top right corner of un box facing south:
   Poner el box's right-top into el context's spot.
-  Face south.
+  Mirar hacia el sur.
 
 Para start at el top right corner of un box facing west:
   Poner el box's right-top into el context's spot.
-  Face west.
+  Mirar hacia el oeste.
 
 Para start in el middle of un box facing east;
 Para start at el middle of un box facing east;
@@ -13815,7 +13810,7 @@ Para start at el center of un box facing east;
 Para move to el center of un box facing east;
 Para move to el center of un box and face east:
   Poner el box's center into el context's spot.
-  Face east.
+  Mirar hacia el este.
 
 Para start in el middle of un box facing north;
 Para start at el middle of un box facing north;
@@ -13826,12 +13821,12 @@ Para start at el center of un box facing north;
 Para move to el center of un box facing north;
 Para move to el center of un box and face north:
   Poner el box's center into el context's spot.
-  Face north.
+  Mirar hacia el norte.
 
 Para start in el middle of un box facing north minus some points;
 Para start in el center of un box facing north minus some points:
   Poner el box's center into el context's spot.
-  Face north.
+  Mirar hacia el norte.
   Turn left el points.
 
 Para start in el middle of un box facing south;
@@ -13843,7 +13838,7 @@ Para start at el center of un box facing south;
 Para move to el center of un box facing south;
 Para move to el center of un box and face south:
   Poner el box's center into el context's spot.
-  Face south.
+  Mirar hacia el sur.
 
 Para start in el middle of un box facing west;
 Para start at el middle of un box facing west;
@@ -13854,7 +13849,7 @@ Para start at el center of un box facing west;
 Para move to el center of un box facing west;
 Para move to el center of un box and face west:
   Poner el box's center into el context's spot.
-  Face west.
+  Mirar hacia el oeste.
 
 Para start un process usando un path: \ must be called con un global variable
   Borrar el error de e/s.
@@ -14451,7 +14446,7 @@ Para trazar el big-z glyph:
 Para trazar un box con un color:
   Poner el color into el context's color.
   Poner el box's left-bottom into el context's spot.
-  Face north.
+  Mirar hacia el norte.
   Trazar el box's height.
   Turn right.
   Trazar el box's width.
@@ -16369,7 +16364,7 @@ Para trazar un string in un box con un color:
   Poner el box's left-bottom into el context's spot.
   Poner el box's height divided by 2 into el context's letter height.
 \Put el box's height into el context's letter height.
-  Face north.
+  Mirar hacia el norte.
   Move el box's height divided by 4. \ was 4 and still es now! ***
   Trazar el string.
 
@@ -16384,7 +16379,7 @@ Para trazar un string in el middle of un box:
   Start in el middle of el box.
   Move down el context's letter height divided by 2. \ was 2 ***
   Move left el width.
-  Face north.
+  Mirar hacia el norte.
   Trazar el string.
 
 \Para escribir una cadena en el centro de la pantalla;
@@ -16454,7 +16449,7 @@ Para trazar un string con un color at el bottom of un box:
   Start in el middle of el bottom of el box.
   Move up el context's letter height times 2. \ was without el times 2 ***
   Move left el width.
-  Face north.
+  Mirar hacia el norte.
   Trazar el string con el color.
 
 \Para write un string con un color at el top of un box;
@@ -16466,7 +16461,7 @@ Para trazar un string con un color at el top of un box:
   Start in el middle of el top of el box.
   Move down el context's letter height times 4. \ was times 2 ***
   Move left el width.
-  Face north.
+  Mirar hacia el norte.
   Trazar el string con el color.
 
 \Para write un string con un color in el middle of un box;
@@ -16478,7 +16473,7 @@ Para trazar un string con un color in el middle of un box:
   Start in el middle of el box.
   Move down el context's letter height divided by 2. \ was 2 ***
   Move left el width.
-  Face north.
+  Mirar hacia el norte.
   Trazar el string con el color.
 
 \Para write un string con un color un radius away desde un center spot;
@@ -16503,7 +16498,7 @@ Para trazar un string con un color some twips down desde el top center of un box
   Start in el middle of el top of el box.
   Move down el twips.
   Move left el width.
-  Face north.
+  Mirar hacia el norte.
   Trazar el string con el color.
 
 \Para escribir una cadena con un tipo de letra y un tamaño y un color y un punto;
