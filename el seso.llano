@@ -472,7 +472,7 @@ Para comenzar un sheet usando un box:
   Si el pdf state's document flag es set, comenzar el sheet usando el box (pdf style); salir.
   Llamada "kernel32.dll" "GlobalLock" with el printer device mode handle retornando un pdevmode.
   Si el pdevmode es nil, salir.
-  Bitwise or el pdevmode's dmfields with 1 [dm_orientation].
+  Bitwise OR el pdevmode's dmfields with 1 [dm_orientation].
   Poner 1 [dmorient_portrait] into el pdevmode's dmorientation.
   Si el box's width es greater than el box's height, Poner 2 [dmorient_landscape] into el pdevmode's dmorientation.
   Llamada "gdi32.dll" "ResetDCA" with el printer canvas y el pdevmode.
@@ -672,64 +672,64 @@ A bitmapdata es un record con
   A pointer called scan0,
   A number called reserved.
 
-\Para lógico y un byte con otro byte;
+Para lógico y un byte con otro byte;
 Para bitwise AND un byte with another byte:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el other byte
   Intel $8A00. \ mov al,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $2003. \ and [ebx],al
 
-\Para lógico y un byte con un número;
+Para lógico y un byte con un número;
 Para bitwise AND un byte with un number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el number
   Intel $8B00. \ mov eax,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $2003. \ and [ebx],al
 
-\Para lógico y un número con otro número;
+Para lógico y un número con otro número;
 Para bitwise AND un number with another number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el other number
   Intel $8B00. \ mov eax,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el number
   Intel $2103. \ and [ebx],eax
 
-\Para lógico o un byte con otro byte;
-Para bitwise or un byte with another byte:
+Para lógico o un byte con otro byte;
+Para bitwise OR un byte with another byte:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el other byte
   Intel $8A00. \ mov al,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $0803. \ or [ebx],al
 
-\Para lógico o un byte con un número;
-Para bitwise or un byte with un number:
+Para lógico o un byte con un número;
+Para bitwise OR un byte with un number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el number
   Intel $8B00. \ mov eax,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $0803. \ or [ebx],al
 
-\Para lógico o un número con otro número;
-Para bitwise or un number with another number:
+Para lógico o un número con otro número;
+Para bitwise OR un number with another number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el other number
   Intel $8B00. \ mov eax,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el number
   Intel $0903. \ or [ebx],eax
 
-\Para lógico xor un byte con otro byte;
-Para bitwise xor un byte with another byte:
+Para lógico xor un byte con otro byte;
+Para bitwise XOR un byte with another byte:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el other byte
   Intel $8A00. \ mov al,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $3003. \ xor [ebx],al
 
-\Para lógico xor un byte con un número;
-Para bitwise xor un byte with un number:
+Para lógico xor un byte con un número;
+Para bitwise XOR un byte with un number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el number
   Intel $8B00. \ mov eax,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $3003. \ or [ebx],al
 
-\Para lógico xor un número con otro número;
-Para bitwise xor un number with another number:
+Para lógico xor un número con otro número;
+Para bitwise XOR un number with another number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el other number
   Intel $8B00. \ mov eax,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el number
@@ -744,11 +744,20 @@ The blue color es un color.
 The blue pen es un pen.
 
 A box es un record con
-A left coord, un top coord, un right coord, un bottom coord,
-A left-top spot at el left, y un right-bottom spot at el right,
-A top-left spot at el left, y un bottom-right spot at el right,
-  una izquierda at el left coord, una superior at el top coord, una derecha at el right coord, una inferior at el bottom coord,
-  un punto superior-izquierda at el left, un punto inferior-derecha at el right.
+  A left coord, 
+  A top coord, 
+  A right coord, 
+  A bottom coord, y
+  A left-top spot at el left coord, 
+  A right-bottom spot at el right coord,
+  A top-left spot at el left coord, 
+  A bottom-right spot at el right coord, y
+  Una izquierda at el left coord, 
+  Una superior at el top coord, 
+  Una derecha at el right coord, 
+  Una inferior at el bottom coord, y
+  Un punto superior-izquierda at el left coord, 
+  Un punto inferior-derecha at el right coord.
 
 A brightness es un lightness.
 
@@ -1513,7 +1522,7 @@ Para convert un nibble string to un hex string:
   Shift el nibble left 4 bits.
   Agregar 1 to el substring's first.
   Convert el substring's first's target to another nibble.
-  Bitwise or el nibble with el other nibble.
+  Bitwise OR el nibble with el other nibble.
   Adjuntar el nibble to el hex string.
   Agregar 1 to el substring's first.
   Repetir.
@@ -1593,7 +1602,7 @@ Para convert un query string to un string:
   Shift el nibble left 4 bits.
   Agregar 1 to el substring's first.
   Convert el substring's first's target to another nibble.
-  Bitwise or el nibble with el other nibble.
+  Bitwise OR el nibble with el other nibble.
   Agregar 1 to el substring's first.
   Adjuntar el nibble to el string.
   Repetir.
@@ -1721,7 +1730,7 @@ Para convert un string to un pointer: \ assumes pointer es in nibble format
   Si el shift count es less than 0, salir.
   Poner el substring's first's target into un number.
   Shift el number left el shift count.
-  Bitwise or el pointer as un number with el number.
+  Bitwise OR el pointer as un number with el number.
   Agregar 1 to el substring's first.
   Restar 8 desde el shift count.
   Repetir.
