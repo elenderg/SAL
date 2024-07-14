@@ -71,7 +71,7 @@ Para obtener una string desde the argumentos da linha de comando:
     \Eliminar el ruido al final de la string.
   \Reitere. 
 
-\Para handle events:
+ Para handle events:
     \Deque un event.
     \Si el event es nil, salir.
     \Handle el event.

@@ -186,13 +186,13 @@ A freeaddrinfo pointer.
 An addrinfoptr es un pointer to un addrinfo.
 
 \Para ajustar una caja dado un número y otro número y un tercer número y un cuarto número;
-Para adjust un box usando un number and another number y un  third number y un  fourth number:
+Para ajustar un box usando un number and another number y un  third number y un  fourth number:
   Agregar el number to el box's left.
   Agregar el other number to el box's top.
   Agregar el third number to el box's right.
   Agregar el fourth number to el box's bottom.
 
-Para adjust un item:
+Para ajustar un item:
   Poner el item's win32finddata's dwfileattributes into un number.
   Bitwise y el number with 16 [file_attribute_directory].
   Si el number es 0, Poner "file" into el item's kind; Poner "archivo" into el item's clase.
@@ -208,13 +208,13 @@ Para adjust un item:
   Get el item (not first time).
 
 \Para ajustar una línea con un número y otro número y un tercer número y un cuarto número;
-Para adjust un line with un number and another number y un  third number y un  fourth number:
+Para ajustar un line with un number and another number y un  third number y un  fourth number:
   Agregar el number to el line's start's x.
   Agregar el other number to el line's start's y.
   Agregar el third number to el line's end's x.
   Agregar el fourth number to el line's end's y.
 
-Para adjust un picture (extract boxes desde gpbitmap):
+Para ajustar un picture (extract boxes desde gpbitmap):
   Si el picture es nil, salir.
   Poner 0 into el picture's box's left.
   Poner 0 into el picture's box's top.
@@ -222,7 +222,7 @@ Para adjust un picture (extract boxes desde gpbitmap):
   Poner el picture's gpbitmap's height minus 1 times el tpp into el picture's box's bottom.
   Poner el picture's box into el picture's uncropped box.
 
-Para adjust spacing usando un string:
+Para ajustar spacing usando un string:
   Si el current canvas es not el printer canvas, salir.
   Llamada "gdi32.dll" "SetTextCharacterExtra" with el printer canvas and 0.
   Llamada "gdi32.dll" "GetCurrentObject" with el printer canvas and 6 [obj_font] retornando un handle.
@@ -2180,13 +2180,13 @@ Para create un picture usando un buffer:
   Allocate memory for el picture.
   Poner el buffer into el picture's data.
   Poner el gpbitmap into el picture's gpbitmap.
-  Adjust el picture (extract boxes desde gpbitmap).
+  Ajustar el picture (extract boxes desde gpbitmap).
 
 Para create un picture usando un gpbitmap:
   Si el gpbitmap es nil, void el picture; salir.
   Allocate memory for el picture.
   Poner el gpbitmap into el picture's gpbitmap.
-  Adjust el picture (extract boxes desde gpbitmap).
+  Ajustar el picture (extract boxes desde gpbitmap).
 
 \Para crear una imagen dada una URL;
 Para create un picture usando un url:
@@ -3585,7 +3585,7 @@ Para decidir si un row of un text es visible:
   Si el row es nil, diga  no.
   Get un box usando el row y el text.
   Poner el text's box into another box.
-  Adjust el other box usando 0 y el tpp and 0 and - el tpp.
+  Ajustar el other box usando 0 y el tpp and 0 and - el tpp.
   Si el box es touching el other box, diga sí.
   Diga no.
 
@@ -5103,7 +5103,7 @@ Para draw un string at un spot with un color y un  font:
   Si el pdf state's page flag es set, draw el string at el spot with el color y el font (pdf style); salir.
   Set el colorref of el current canvas usando el color.
   Create el hfont of el current canvas usando el font.
-  Adjust spacing usando el string.
+  Ajustar spacing usando el string.
   Poner el string's first into un substring's first.
   Poner el substring's first plus el text cutoff minus 1 into el substring's last.
   Privatizar el spot.
@@ -6233,7 +6233,7 @@ Para get un box for el caret in un text:
   Get un spot usando el text's caret y el text.
   Poner el spot y el spot into el box.
   Agregar el text's row height to el box's bottom.
-  Adjust el box usando 0 y el tpp and 0 and - el tpp.
+  Ajustar el box usando 0 y el tpp and 0 and - el tpp.
   Poner el text's globalized origin into un origin.
   Si el box's left es less than el origin's x-coord, Poner el origin's x-coord into el box's left; Poner el origin's x-coord into el box's right.
   Si el text's wrap flag es not set, salir.
@@ -6445,7 +6445,7 @@ Para get un ip address usando un host string:
 Para get un item (not first time):
   Clear el error de e/s.
   Llamada "kernel32.dll" "FindNextFileA" with el item's handle y el item's win32finddata's whereabouts retornando un number.
-  Si el number es not 0, adjust el item; salir.
+  Si el number es not 0, ajustar el item; salir.
   Clear el item's kind.
   Llamada "kernel32.dll" "FindClose" with el item's handle.
 
@@ -6464,7 +6464,7 @@ Para get un item desde un path (first time):
   Clear el item's kind.
   Llamada "kernel32.dll" "FindFirstFileA" with el path's first y el item's win32finddata's whereabouts retornando el item's handle.
   Si el item's handle es -1 [invalid_handle_value], salir.
-  Adjust el item.
+  Ajustar el item.
 
 Para get un lcm usando un number and another number:
   Get un gcd usando el number y el other number.
@@ -6557,7 +6557,7 @@ Para get un rise y un  run usando un heading: \ see Madhava's Numbers
   Si el heading es 460, Poner 6836 in el run; Poner 7299 in el rise; interrumpir. \ 43.125 degrees
   Si el heading es 480, Poner 7071 in el run; Poner 7071 in el rise; interrumpir. \ 45 degrees = 8/64 of el way
   Repetir. \ not really un repeat, just un label for el above breaks.
-\ adjust for other eighths of el circle
+\ ajustar for other eighths of el circle
   Si el original heading es between 0 and 480, negate el rise; salir. \ 1st eighth (12:00 to 1:30)
   Si el original heading es between 480 and 960, swap el run with el rise; negate el rise; salir. \ 2nd eighth (1:30 to 3:00)
   Si el original heading es between 960 y 1440, swap el run with el rise; salir. \ 3rd eighth (3:00 to 4:30)
@@ -10506,7 +10506,7 @@ Para pick un random number between un min number y un  max number:
   Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el min
   Intel $2B03. \ sub eax,[ebx]
   Intel $40. \ inc eax
-\ adjust randseed
+\ ajustar randseed
   Intel $691105840808. \ imul edx,[ecx],134775813
   Intel $42. \ inc edx
   Intel $8911. \ mov [ecx],edx
@@ -12370,7 +12370,7 @@ Para resize un picture to un width by un height:
   Llamada "gdiplus.dll" "GdipDeleteGraphics" with el gpgraphic.
   Destroy el picture's gpbitmap.
   Poner el gpbitmap into el picture's gpbitmap.
-  Adjust el picture (extract boxes desde gpbitmap).
+  Ajustar el picture (extract boxes desde gpbitmap).
   Clear el picture's data.
 
 \Para resize un polygon usando un ratio pair;
@@ -12831,7 +12831,7 @@ Para scroll un text to el caret:
   Si el text es nil, salir.
   Si el text's caret's column# es 1, Poner el text's margin into el text's x-coord.
   Get un box for el caret in el text.
-  Adjust el box usando 0 and - el tpp and 0 y el tpp. \ caret boxes don't fill entire row
+  Ajustar el box usando 0 and - el tpp and 0 y el tpp. \ caret boxes don't fill entire row
   Si el box's top es less than el text's top, Poner el text's top minus el box's top into un difference's y-number.
   Si el box's bottom es greater than el text's bottom, Poner el text's bottom minus el box's bottom into el difference's y-number.
   Si el box's left es less than el text's left, Poner el text's left minus el box's left into el difference's x-number.
@@ -12844,7 +12844,7 @@ Para scroll un text to el caret and center it:
   Poner el text's margin into el text's x-coord.
   Get un box for el caret in el text.
   Si el box es inside el text's box, salir.
-  Adjust el box usando 0 and - el tpp and 0 y el tpp. \ caret boxes don't fill entire row
+  Ajustar el box usando 0 and - el tpp and 0 y el tpp. \ caret boxes don't fill entire row
   Poner el text's box's y-extent divided by 2 into un height.
   Round el height down to el nearest multiple of el text's row height.
   Poner el text's box's top plus el height into un top coord.
