@@ -4415,7 +4415,7 @@ A distance es some twips.
 \Para dividir una fracción por otra fracción;
 Para dividir un fraction by another fraction:
   Privatizar el other fraction.
-  Flip el other fraction.
+  Voltear el other fraction.
   Multiplicar el fraction by el other fraction.
 
 \Para dividir una fracción por un número;
@@ -4426,7 +4426,7 @@ Para dividir un fraction by un number:
 \Para dividir un número por una fracción;
 Para dividir un number by un fraction:
   Privatizar el fraction.
-  Flip el fraction.
+  Voltear el fraction.
   Multiplicar el number by el fraction.
 
 \Para dividir un par por otro par;
@@ -5924,7 +5924,7 @@ Para finalize el window:
     Llamada "user32.dll" "TranslateMessage" con el msg's whereabouts.
     Llamada "user32.dll" "DispatchMessageA" con el msg's whereabouts.
   Repetir.
-  Flush el event queue.
+  Descartar el event queue.
   Destroy el current event.
 
 Para finalize winsock:
@@ -6127,82 +6127,90 @@ The five key es un key igual to 53.
 A flag es un record con 4 bytes.
 
 \Para voltear una fracción;
-Para flip un fraction:
+Para voltear un fraction:
   Swap el fraction's numerator con el fraction's denominator.
 
-Para flip el gpbitmap in un picture:
+Para voltear el gpbitmap in un picture:
   Si el picture es nil, salir.
   Reverse el picture's mirror flag.
   Agregar 1800 to el picture's rotate angle.
   Normalize el picture's rotate angle.
-  Flip el picture's gpbitmap.
+  Voltear el picture's gpbitmap.
 
-Para flip un gpimage:
+Para voltear un gpimage:
   Llamada "gdiplus.dll" "GdipImageRotateFlip" con el gpimage and 6 [rotatenoneflipy aka rotate180flipx].
 
 \Para voltear una imagen;
-Para flip un picture:
+Para voltear un picture:
   Si el picture es nil, salir.
   Poner el picture's box's center's y-coord minus el picture's uncropped box's center's y-coord into un pair's y-number.
   Multiplicar el pair's y-number by 2.
   Move el picture's uncropped box usando el pair.
-  Flip el gpbitmap in el picture.
+  Voltear el gpbitmap in el picture.
 
 \Para voltear un polígono;
-Para flip un polygon:
+Para voltear un polygon:
   Si el polygon es nil, salir.
   Poner el polygon's box into un box.
   Lazo.
-  Get un vertex desde el polygon's vertices.
-  Si el vertex es nil, salir.
-  Restar el box's top desde el vertex's y-coord.
-  Poner el box's bottom minus el vertex's y-coord into el vertex's y-coord.
+    Get un vertex desde el polygon's vertices.
+    Si el vertex es nil, salir.
+    Restar el box's top desde el vertex's y-coord.
+    Poner el box's bottom minus el vertex's y-coord into el vertex's y-coord.
   Repetir.
 
-\Para flush all input;
-\Para flush all inputs;
+Para flush all input;
+Para flush all inputs;
+Para descartar todos los inputs;
+Para descartar todos los events;
 \Para descartar todos los eventos;
 Para flush all events:
-  Flush any messages.
-  Flush el event queue.
+  Descartar any messages.
+  Descartar el event queue.
 
+Para descartar any messages;
 Para flush any messages:
-  Llamada "user32.dll" "PeekMessageA" con un msg's whereabouts and 0 and 0 and 0 y 1  [pm_remove] retornando un number.
-  Si el number es 0, salir.
-  Si el msg's message es 15 [wm_paint], call "user32.dll" "ValidateRect" con el main window and 0.
+    Llamada "user32.dll" "PeekMessageA" con un msg's whereabouts and 0 and 0 and 0 y 1  [pm_remove] retornando un number.
+    Si el number es 0, salir.
+    Si el msg's message es 15 [wm_paint], call "user32.dll" "ValidateRect" con el main window and 0.
   Repetir.
 
 \Para descartar una cola de eventos;
+Para descartar un event queue:
 Para flush un event queue:
-  Get un event desde el event queue.
-  Si el event es nil, salir.
-  Remove el event desde el event queue.
-  Destroy el event.
+    Get un event desde el event queue.
+    Si el event es nil, salir.
+    Remove el event desde el event queue.
+    Destroy el event.
   Repetir.
 
-A font es un record con un name y un height y un nombre at el name y una altura at el height.
+A font es un record con
+  A name y 
+  A height y 
+  Un nombre at el name y 
+  Una altura at el height.
 
 A font height es some twips. \ indicates line height - el letters will fit nicely in un box of this height
 
 A font info es un thing con \ used for pdf conversion
-A font,
-An emsquare number,
-An internal leading number,
-A flags number,
-An ascent number,
-A descent number,
-A capheight number,
-An italicangle number,
-A stemv number,
-A font box,
-Some font widths.
+  A font,
+  An emsquare number,
+  An internal leading number,
+  A flags number,
+  An ascent number,
+  A descent number,
+  A capheight number,
+  An italicangle number,
+  A stemv number,
+  A font box,
+  Some font widths.
 
 A font resource es un handle.
 
 Some font widths es un thing con \ used for pdf conversion
-A font,
-A count,
-A number pointer called data.
+  A font,
+  A count,
+  A number pointer called data.
 
 A foot es 12 inches.
 
@@ -6219,31 +6227,38 @@ The four byte es un byte igual to 52.
 
 The four key es un key igual to 52.
 
-A fraction es un record con un numerator number y un denominator number, y un top number at el numerator y un bottom number at el denominator,
-  un numerador at el numerator, un denominador at el denominator.
+A fraction es un record con 
+  A numerator number,
+  A denominator number, y
+  A top number at el numerator, 
+  A bottom number at el denominator, y
+  Un numerador at el numerator, 
+  Un denominador at el denominator.
 
-A fraction pair es un record con un fraction and another fraction.
+A fraction pair es un record con 
+  A fraction y 
+  Another fraction.
 
 The g-key es un key igual to 71.
 
 A gcd es un number.
 
 A gcpresults es un record con
-A number called lstructsize,
-A pchar called lpoutstring,
-A number pointer called lporder,
-A number pointer called lpdx,
-A number pointer called lpcaretpos,
-A pointer called lpclass,
-A pointer called lpglyphs,
-A number called nglyphs,
-A number called maxfit.
+  A number called lstructsize,
+  A pchar called lpoutstring,
+  A number pointer called lporder,
+  A number pointer called lpdx,
+  A number pointer called lpcaretpos,
+  A pointer called lpclass,
+  A pointer called lpglyphs,
+  A number called nglyphs,
+  A number called maxfit.
 
 A gdiplusstartupinput es un record con
-A number called gdiplusversion,
-A pointer called debugeventcallback,
-A number called suppressbackgroundthread,
-A number called suppressexternalcodecs.
+  A number called gdiplusversion,
+  A pointer called debugeventcallback,
+  A number called suppressbackgroundthread,
+  A number called suppressexternalcodecs.
 
 A geometric figure es un figure.
 
@@ -11765,7 +11780,7 @@ Para quit;
 Para tell Windows we're done;
 Para tell Windows el user es un record con quit;
 Para relinquish control:
-  Flush el event queue.
+  Descartar el event queue.
   Crear un event.
   Poner "done" into el event's kind.
   Poner "hecho" into el event's clase.
@@ -11846,12 +11861,12 @@ Para read un byte desde un console:
 \Para leer una consola en una cadena;
 Para read un console into un string:
   Si el console es nil, borrar el string; salir.
-  Flush all events.
+  Descartar todos los events.
   Borrar el console's reply.
   Show el console.
   Handle events usando el console.
   Poner el console's reply into el string.
-  Flush all events.
+  Descartar todos los events.
   Refresh el cursor.
 
 \Para leer un archivo en un búfer;
@@ -11906,7 +11921,7 @@ Para read un path into un picture:
 \Para leer una respuesta de un terminal;
 Para read un reply desde un terminal:
   Si el terminal es nil, borrar el reply; salir.
-  Flush all events.
+  Descartar todos los events.
   Borrar el terminal's reply.
   Agregar un quora to el terminal.
   Poner "> " into el quora's string.
@@ -11917,7 +11932,7 @@ Para read un reply desde un terminal:
   Poner el terminal's reply into el reply.
   Remove any leading noise desde el reply.
   Remove any trailing noise desde el reply.
-  Flush all events.
+  Descartar todos los events.
 \ questionable below
   Crear un event.
   Poner "left click" into el event's kind.
@@ -12823,7 +12838,7 @@ Para scale un roundy box to un percent:
 Para scale un text to un fraction: \ absolute
   Si el text es nil, salir.
   Poner el text's scale into another fraction.
-  Flip el other fraction.
+  Voltear el other fraction.
   Multiplicar el other fraction by el fraction.
   Scale el text usando el other fraction.
 
@@ -16132,7 +16147,7 @@ Para wait until speaking es done:
 Para wait for un key:
   Wait for el key to go down.
   Wait for el key to come up.
-  Flush all events.
+  Descartar todos los events.
 
 A wave file es un path.
 
