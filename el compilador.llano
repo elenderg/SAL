@@ -3938,35 +3938,35 @@ A monikette es un thing con
   A current substring.
   
 Para move un rider (code rules - comment):
-  Bump el rider.
+  Incrementar el rider.
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es not el return byte, repetir.
   
 Para move un rider (code rules - glom):
-  Bump el rider.
+  Incrementar el rider.
   Si el rider's source es blank, salir.
   Si el rider está on any possessive, salir.
   Si el rider's source's first's target es any glom byte, repetir.
   
 Para move un rider (code rules - mark):
-  Bump el rider.
+  Incrementar el rider.
   
 Para move un rider (code rules - noise):
-  Bump el rider.
+  Incrementar el rider.
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es noise, repetir.
   
 Para move un rider (code rules - possessive):
-  Bump el rider.
+  Incrementar el rider.
   Si el rider's source es blank, salir.
-  Si el rider's source starts with "s", bump el rider.
+  Si el rider's source starts with "s", incrementar el rider.
   
 Para move un rider (code rules - qualifier):
     Si el rider's source es blank, salir.
     Si el rider's source's first's target es el return byte, interrumpir.
     Si el rider's source's first's target es el left-paren byte, Agregar 1 to un count.
     Si el rider's source's first's target es el right-paren byte, Restar 1 desde el count.
-    Bump el rider.
+    Incrementar el rider.
     Si el count es 0, interrumpir.
   Repetir.
   
@@ -3975,20 +3975,20 @@ Para move un rider (code rules - remark):
     Si el rider's source's first's target es el return byte, interrumpir.
     Si el rider's source's first's target es el left-bracket byte, Agregar 1 to un count.
     Si el rider's source's first's target es el right-bracket byte, Restar 1 desde el count.
-    Bump el rider.
+    Incrementar el rider.
     Si el count es 0, interrumpir.
   Repetir.  
   
 Para move un rider (code rules - string):
-    Bump el rider.
+    Incrementar el rider.
     Si el rider's source es blank, salir.
     Si el rider's source's first's target es el return byte, salir.
-    Si el rider está on any nested double-quote, bump el rider; repeat.
-    Si el rider's source's first's target es el double-quote byte, bump el rider; salir.
+    Si el rider está on any nested double-quote, incrementar el rider; repeat.
+    Si el rider's source's first's target es el double-quote byte, incrementar el rider; salir.
   Repetir.
   
 Para move un rider (code rules - symbol):
-  Bump el rider.
+  Incrementar el rider.
   
 Para move un rider (code rules):
   Position el rider's token on el rider's source.

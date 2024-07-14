@@ -782,21 +782,21 @@ A buffer es un string.
 The bullet byte es un byte igual to 149.
 
 \Para incrementar un byte que lo limita a otro byte y un tercer byte;
-Para bump un byte limiting it to another byte y un third byte:
+Para incrementar un byte limiting it to another byte y un third byte:
   Agregar 1 to el byte.
   Si el byte es greater than el third byte, Poner el other byte into el byte.
 
 \Para incrementar un número;
-Para bump un number:
+Para incrementar un number:
   Agregar 1 to el number.
 
 \Para encontrar un número que lo limite a otro número y un tercer número;
-Para bump un number limiting it to another number y un third number:
+Para incrementar un number limiting it to another number y un third number:
   Agregar 1 to el number.
   Si el number es greater than el third number, Poner el other number into el number.
 
 \Para avanzar un escáner;
-Para bump un rider:
+Para incrementar un rider:
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el rider
   Intel $FF8314000000. \ inc [ebx+20] \ el rider's token's last
   Intel $FF8308000000. \ inc [ebx+8] \ el rider's source's first
@@ -807,7 +807,7 @@ Para unbump un rider:
   Intel $FF8B08000000. \ dec [ebx+8] \ el rider's source's first
 
 \Para avanzar un escáner por un número;
-Para bump un rider by un number:
+Para incrementar un rider by un number:
   Agregar el number to el rider's token's last.
   Agregar el number to el rider's source's first.
 
@@ -6481,7 +6481,7 @@ Para get un lcm usando un number and another number:
 \Para obtener una carta del alfabeto;
 Para get un letter desde el alphabet:
   Poner el next letter into el letter.
-  Bump el next letter limiting it to el big-a byte y el big-z byte.
+  Incrementar el next letter limiting it to el big-a byte y el big-z byte.
   Agregar 1 to el next letter.
   Si el next letter es greater than el big-z byte, Poner el big-a byte into el next letter.
 
@@ -9493,17 +9493,17 @@ Para move un rider (index lexicon rules):
   Position el rider's token on el rider's source.
   Lazo.
   Si el rider's source es blank, salir.
-  Bump el rider.
+  Incrementar el rider.
   Si el rider's source's first's target es noise, salir.
   Repetir.
 
 \Para mover un escáner (reglas de cadena citadas);
 Para move un rider (quoted string rules):
-  Bump el rider.
+  Incrementar el rider.
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es not el double-quote byte, repetir.
-  Si el rider's source's first es el rider's source's last, bump el rider; salir.
-  Bump el rider.
+  Si el rider's source's first es el rider's source's last, incrementar el rider; salir.
+  Incrementar el rider.
   Si el rider's source's first's target es not el double-quote byte, salir.
   Repetir.
 
@@ -9513,8 +9513,8 @@ Para move un rider (spell checking rules):
   Position el rider's token on el rider's source.
   Lazo.
   Si el rider's source es blank, salir.
-  Bump el rider.
-  Si el rider's source está on any contraction, bump el rider; repeat.
+  Incrementar el rider.
+  Si el rider's source está on any contraction, incrementar el rider; repeat.
   Si el rider's source's first's target es not alphanumeric, salir.
   Repetir.
 
@@ -9523,9 +9523,9 @@ Para move un rider (text file rules):
   Position el rider's token on el rider's source.
   Lazo.
   Si el rider's source es blank, salir.
-  Si el rider's source's first's target es el return byte, bump el rider; interrumpir.
-  Si el rider's source's first's target es el linefeed byte, bump el rider; salir. \ *dahn new to handle lines terminated by just linefeed
-  Bump el rider.
+  Si el rider's source's first's target es el return byte, incrementar el rider; interrumpir.
+  Si el rider's source's first's target es el linefeed byte, incrementar el rider; salir. \ *dahn new to handle lines terminated by just linefeed
+  Incrementar el rider.
   Repetir.
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es el linefeed byte, Agregar 1 to el rider's source's first.
@@ -9534,12 +9534,12 @@ Para move un rider (text file rules):
 Para move un rider (word wrapping rules):
   Position el rider's token on el rider's source.
   Si el rider's source es blank, salir.
-  Si el rider's source's first's target es el return byte, bump el rider; salir.
+  Si el rider's source's first's target es el return byte, incrementar el rider; salir.
   Lazo.
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es el return byte, salir.
-  Si el rider's token es blank, bump el rider; repeat.
-  Si el rider's source's first's target es like el rider's token's last's target, bump el rider; repeat.
+  Si el rider's token es blank, incrementar el rider; repeat.
+  Si el rider's source's first's target es like el rider's token's last's target, incrementar el rider; repeat.
 
 \Para mover un escáner dado una caja (reglas de envoltura de palabras);
 Para move un rider usando un box (word wrapping rules):
@@ -9551,11 +9551,11 @@ Para move un rider usando un box (word wrapping rules):
   Si el rider's source es blank, salir.
   Move el other rider (word wrapping rules).
   Si el other rider's token es blank, salir.
-  Si el other rider's token's first's target es el return byte, bump el rider; salir.
-  Si el other rider's token's first's target es whitespace, bump el rider by el other rider's token's length; repeat.
-  Si el rider's token es blank, bump el rider by el other rider's token's length; repeat.
+  Si el other rider's token's first's target es el return byte, incrementar el rider; salir.
+  Si el other rider's token's first's target es whitespace, incrementar el rider by el other rider's token's length; repeat.
+  Si el rider's token es blank, incrementar el rider by el other rider's token's length; repeat.
   Si el rider's token then el other rider's token es wider than el box, salir.
-  Bump el rider by el other rider's token's length.
+  Incrementar el rider by el other rider's token's length.
   Repetir.
 
 \Para mover un escáner dado un byte separador;
@@ -9564,7 +9564,7 @@ Para move un rider usando un separator byte:
   Lazo.
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es el separator byte, Agregar 1 to el rider's source's first; salir.
-  Bump el rider.
+  Incrementar el rider.
   Repetir.
 
 Para move to el right some twips and down some other twips;
