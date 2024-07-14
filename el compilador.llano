@@ -15,7 +15,7 @@ Para ejecutar:
 
 Para hacer todo:
   Poner 1252 into a number called codepage. \ 
-  Llamada "kernel32.dll" "SetConsoleOutputCP" with the codepage retornando a number called status de erro.
+  Llamada "kernel32.dll" "SetConsoleOutputCP" con the codepage retornando a number called status de erro.
   Si el status de erro es 0 [NULL],
     Escribir "Error al configurar Console CodePage en STDOUT."  then the crlf string para STDOUT.
   Obtener una string called Endereço Da Pasta desde the argumentos da linha de comando.
@@ -96,12 +96,12 @@ Para finalize:
 
 An abort message es un string.
   
-Para abort with un string:
+Para abort con un string:
   Si el compiler's abort flag es set, salir.
   Set el compiler's abort flag.
   Poner el string into el compiler's abort message.
   
-Para abort with un string y un  byte pointer:
+Para abort con un string y un  byte pointer:
   Si el compiler's abort flag es set, salir.
   Set el compiler's abort flag.
   Poner el string into el compiler's abort message.
@@ -110,11 +110,11 @@ Para abort with un string y un  byte pointer:
   Extract un file name desde el compiler's abort path.
   Prepend "Error en " then el file name then ". " to el compiler's abort message.
   
-Para abort with un string y un  rider:
+Para abort con un string y un  rider:
   Si el rider's token es not blank, 
-    Abort with el string y el rider's token's first; 
+    Abort con el string y el rider's token's first; 
     Salir.
-  Abort with el string y el rider's source's last.
+  Abort con el string y el rider's source's last.
   
 Para agregar el allocate and deallocate and finalize and destroy routines:
     Si el compiler's abort flag es set, salir.
@@ -148,7 +148,7 @@ Para agregar and compile el initialize before run and run and finalize after run
   Adjuntar "Ejecutar. " to el routine's body string.
   Adjuntar el global finalizers to el routine's body string.
   Adjuntar "Finalize after run. " to el routine's body string.
-  Adjuntar "Llamada ""kernel32.dll"" ""ExitProcess"" with 0. " to el routine's body string.
+  Adjuntar "Llamada ""kernel32.dll"" ""ExitProcess"" con 0. " to el routine's body string.
   Slap el routine's routine header on el routine's header string.
   Slap el routine's routine body on el routine's body string.
   Compile el header of el routine.
@@ -210,8 +210,8 @@ Para agregar el destroy routine for un type (pointer):
 Para agregar el destroy routine for un type (things):
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
-  Si el type's fields' first es nil, abort with "Internal error - Agregar el forget routine for un type (things)"; salir.
-  Si el type's fields' first's type es nil, abort with "Internal error 2 - Agregar el forget routine for un type (things)"; salir.
+  Si el type's fields' first es nil, abort con "Internal error - Agregar el forget routine for un type (things)"; salir.
+  Si el type's fields' first's type es nil, abort con "Internal error 2 - Agregar el forget routine for un type (things)"; salir.
   Poner "Destroy [" then el type's name then "]" into un moniker.
   Si el moniker es in el routine index, salir.
   Agregar un routine to el routines usando nil.
@@ -358,17 +358,17 @@ Para agregar un monikette to some monikettes usando un string:
   Si el string es "e", Poner "and" into el monikette's string; salir. \ and
   Si el string es "o", Poner "or" into el monikette's string; salir. \ or
   Si el string es "u", Poner "or" into el monikette's string; salir. \ or
-  \ from/given/with/using
-  Si el string es "desde", Poner "from/given/with/using" into el monikette's string; salir.
-  Si el string es "de", Poner "from/given/with/using" into el monikette's string; salir.
-  Si el string es "dada", Poner "from/given/with/using" into el monikette's string; salir.
-  Si el string es "dado", Poner "from/given/with/using" into el monikette's string; salir.
-  Si el string es "con", Poner "from/given/with/using" into el monikette's string; salir.
-  Si el string es "usando", Poner "from/given/with/using" into el monikette's string; salir.
-  Si el string es "from", Poner "from/given/with/using" into el monikette's string; salir.
-  Si el string es "given", Poner "from/given/with/using" into el monikette's string; salir.
-  Si el string es "with", Poner "from/given/with/using" into el monikette's string; salir.
-  Si el string es "using", Poner "from/given/with/using" into el monikette's string; salir.
+  \ from/given/con/using
+  Si el string es "desde", Poner "from/given/con/using" into el monikette's string; salir.
+  Si el string es "de", Poner "from/given/con/using" into el monikette's string; salir.
+  Si el string es "dada", Poner "from/given/con/using" into el monikette's string; salir.
+  Si el string es "dado", Poner "from/given/con/using" into el monikette's string; salir.
+  Si el string es "con", Poner "from/given/con/using" into el monikette's string; salir.
+  Si el string es "usando", Poner "from/given/con/using" into el monikette's string; salir.
+  Si el string es "from", Poner "from/given/con/using" into el monikette's string; salir.
+  Si el string es "given", Poner "from/given/con/using" into el monikette's string; salir.
+  Si el string es "with", Poner "from/given/con/using" into el monikette's string; salir.
+  Si el string es "using", Poner "from/given/con/using" into el monikette's string; salir.
   \ in/into/to
   Si el string es "en", Poner "in/into/to" into el monikette's string; salir.
   Si el string es "in", Poner "in/into/to" into el monikette's string; salir.
@@ -434,7 +434,7 @@ Para agregar el poner or convertir fragments usando un variable and another vari
   Agregar un fourth monikette to el monikettes usando el other variable's type.
   Convertir el monikettes to un moniker.
   Destroy el monikettes.
-  Abort with "No sé cómo '" then el moniker then "'." y el locus.
+  Abort con "No sé cómo '" then el moniker then "'." y el locus.
   
 Para agregar un routine to some routines usando un locus:
   Create el routine.
@@ -458,7 +458,7 @@ Para agregar several fragments usando un string y un  variable and another strin
   Find un routine usando el monikettes.
   Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
-  Si el routine es nil, abort with "No sé cómo '" then el moniker then "'." y el locus; salir.
+  Si el routine es nil, abort con "No sé cómo '" then el moniker then "'." y el locus; salir.
   Agregar un third fragment usando el call internal tag y el routine.
   
 Para agregar several fragments usando un string y un  variable and 
@@ -477,7 +477,7 @@ Para agregar several fragments usando un string y un  variable and
   Find un routine usando el monikettes.
   Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
-  Si el routine es nil, abort with "No sé cómo '" then el moniker then "'." y el byte pointer; salir.
+  Si el routine es nil, abort con "No sé cómo '" then el moniker then "'." y el byte pointer; salir.
   Agregar un fourth fragment usando el call internal tag y el routine.
   
 Para agregar un source file to some source files usando un path:
@@ -492,7 +492,7 @@ Para agregar two fragments usando un string y un  variable y un  locus:
   Find un routine usando el monikettes.
   Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
-  Si el routine es nil, abort with "No sé cómo '" then el moniker then "'." y el locus; salir.
+  Si el routine es nil, abort con "No sé cómo '" then el moniker then "'." y el locus; salir.
   Agregar another fragment usando el call internal tag y el routine.
   
 Para agregar un type to some types usando un locus:
@@ -608,23 +608,23 @@ Para address un fragment usando un address (prolog):
   
 Para address un fragment usando un address (push value):
   Agregar 6 to el address.
-  Si el fragment's variable es nil, abort with "Internal error - address un fragment usando un address (push value)"; salir.
-  Si el fragment's variable's type es nil, abort with "Internal error 2 - address un fragment usando un address (push value)"; salir.
+  Si el fragment's variable es nil, abort con "Internal error - address un fragment usando un address (push value)"; salir.
+  Si el fragment's variable's type es nil, abort con "Internal error 2 - address un fragment usando un address (push value)"; salir.
   Poner el fragment's variable's type's length into un length.
   Si el length es 4, Agregar 2 to el address; salir.
   Si el length es 2, Agregar 3 to el address; salir.
   Si el length es 1, Agregar 4 to el address; salir.
-  Abort with "Internal error 3 - address un fragment usando un address (push value)".
+  Abort con "Internal error 3 - address un fragment usando un address (push value)".
   
 Para address un fragment usando un address (save eax):
   Agregar 6 to el address.
-  Si el fragment's variable es nil, abort with "Internal error - address un fragment usando un address (push value)"; salir.
-  Si el fragment's variable's type es nil, abort with "Internal error 2 - address un fragment usando un address (push value)"; salir.
+  Si el fragment's variable es nil, abort con "Internal error - address un fragment usando un address (push value)"; salir.
+  Si el fragment's variable's type es nil, abort con "Internal error 2 - address un fragment usando un address (push value)"; salir.
   Poner el fragment's variable's type's length into un length.
   Si el length es 4, Agregar 2 to el address; salir.
   Si el length es 2, Agregar 3 to el address; salir.
   Si el length es 1, Agregar 2 to el address; salir.
-  Abort with "Internal error 3 - address un fragment usando un address (push value)".
+  Abort con "Internal error 3 - address un fragment usando un address (push value)".
   
 Para address some fragments usando un address:
   \Lazo.
@@ -708,13 +708,13 @@ Para advance un buffer (twice):
   Advance el buffer. 
   Advance el buffer.
   
-Para adjuntar un entry to un buffer (with separator):
-  Si el entry es nil, Adjuntar "" to el buffer (with separator); salir.
-  Adjuntar el entry's name to el buffer (with separator).
+Para adjuntar un entry to un buffer (con separator):
+  Si el entry es nil, Adjuntar "" to el buffer (con separator); salir.
+  Adjuntar el entry's name to el buffer (con separator).
   
-Para adjuntar un flag to un buffer (with separator):
+Para adjuntar un flag to un buffer (con separator):
   Convertir el flag to un string.
-  Adjuntar el string to el buffer (with separator).
+  Adjuntar el string to el buffer (con separator).
   
 Para adjuntar el global finalizers to un string:
     Get un global desde el globals.
@@ -745,21 +745,21 @@ Para adjuntar un monikette to un moniker (while bubbling):
   Si el monikette's current substring es not blank, Adjuntar el monikette's current substring to el moniker; salir.
   Si el monikette's current type es not nil, Adjuntar "[" y el monikette's current type's name and "]" to el moniker (fast); salir.
   
-Para adjuntar un number to un buffer (as hex with separator):
+Para adjuntar un number to un buffer (as hex con separator):
   Convertir el number to un nibble string.
-  Adjuntar el nibble string to el buffer (with separator).
+  Adjuntar el nibble string to el buffer (con separator).
   
-Para adjuntar un number to un buffer (with separator):
+Para adjuntar un number to un buffer (con separator):
   Convertir el number to un string.
-  Adjuntar el string to el buffer (with separator).
+  Adjuntar el string to el buffer (con separator).
   
-Para adjuntar un ratio to un buffer (with separator):
+Para adjuntar un ratio to un buffer (con separator):
   Convertir el ratio to un string.
-  Adjuntar el string to el buffer (with separator).
+  Adjuntar el string to el buffer (con separator).
   
-Para adjuntar un routine to un buffer (with separator):
-  Si el routine es nil, Adjuntar "" to el buffer (with separator); salir.
-  Adjuntar el routine's moniker to el buffer (with separator).
+Para adjuntar un routine to un buffer (con separator):
+  Si el routine es nil, Adjuntar "" to el buffer (con separator); salir.
+  Adjuntar el routine's moniker to el buffer (con separator).
   
 Para adjuntar un string and another string y un  third string to un fourth string (fast):
   Poner el fourth string's length into un length.
@@ -768,53 +768,53 @@ Para adjuntar un string and another string y un  third string to un fourth strin
   Agregar el third string's length to el length.
   Reassign un pointer usando el length.
   Poner el pointer into un byte pointer.
-  Copy bytes desde el fourth string's first to el byte pointer for el fourth string's length.
+  Copiar bytes desde el fourth string's first to el byte pointer for el fourth string's length.
   Agregar el fourth string's length to el byte pointer.
-  Copy bytes desde el string's first to el byte pointer for el string's length.
+  Copiar bytes desde el string's first to el byte pointer for el string's length.
   Agregar el string's length to el byte pointer.
-  Copy bytes desde el other string's first to el byte pointer for el other string's length.
+  Copiar bytes desde el other string's first to el byte pointer for el other string's length.
   Agregar el other string's length to el byte pointer.
-  Copy bytes desde el third string's first to el byte pointer for el third string's length.
+  Copiar bytes desde el third string's first to el byte pointer for el third string's length.
   Unassign el fourth string's first.
   Poner el pointer into el fourth string's first.
   Poner el pointer plus el length minus 1 into el fourth string's last.
   
-Para adjuntar un string to un buffer (with separator):
+Para adjuntar un string to un buffer (con separator):
   Adjuntar el string to el buffer.
   Adjuntar "/" to el buffer.
   
-Para adjuntar un tag to un buffer (as un fragment tag string with separator):
-  Si el tag es el break tag, Adjuntar "break" to el buffer (with separator); salir.
-  Si el tag es el call external tag, Adjuntar "call external" to el buffer (with separator); salir.
-  Si el tag es el call indirect tag, Adjuntar "call indirect" to el buffer (with separator); salir.
-  Si el tag es el call internal tag, Adjuntar "call internal" to el buffer (with separator); salir.
-  Si el tag es el dereference tag, Adjuntar "dereference" to el buffer (with separator); salir.
-  Si el tag es el end if tag, Adjuntar "end if" to el buffer (with separator); salir.
-  Si el tag es el epilog tag, Adjuntar "epilog" to el buffer (with separator); salir.
-  Si el tag es el exit tag, Adjuntar "exit" to el buffer (with separator); salir.
-  Si el tag es el finalize tag, Adjuntar "finalize" to el buffer (with separator); salir.
-  Si el tag es el increment tag, Adjuntar "increment" to el buffer (with separator); salir.
-  Si el tag es el intel tag, Adjuntar "intel" to el buffer (with separator); salir.
-  Si el tag es el jump false tag, Adjuntar "jump false" to el buffer (with separator); salir.
-  Si el tag es el load address tag, Adjuntar "load address" to el buffer (with separator); salir.
-  Si el tag es el load eax tag, Adjuntar "load eax" to el buffer (with separator); salir.
-  Si el tag es el loop tag, Adjuntar "loop" to el buffer (with separator); salir.
-  Si el tag es el not tag, Adjuntar "not" to el buffer (with separator); salir.
-  Si el tag es el prolog tag, Adjuntar "prolog" to el buffer (with separator); salir.
-  Si el tag es el push address tag, Adjuntar "push address" to el buffer (with separator); salir.
-  Si el tag es el push value tag, Adjuntar "push value" to el buffer (with separator); salir.
-  Si el tag es el save eax tag, Adjuntar "save eax" to el buffer (with separator); salir.
-  Si el tag es el repeat tag, Adjuntar "repeat" to el buffer (with separator); salir.
-  Si el tag es el routine address tag, Adjuntar "routine address" to el buffer (with separator); salir.
-  Adjuntar "?" to el buffer (with separator).
+Para adjuntar un tag to un buffer (as un fragment tag string con separator):
+  Si el tag es el break tag, Adjuntar "break" to el buffer (con separator); salir.
+  Si el tag es el call external tag, Adjuntar "call external" to el buffer (con separator); salir.
+  Si el tag es el call indirect tag, Adjuntar "call indirect" to el buffer (con separator); salir.
+  Si el tag es el call internal tag, Adjuntar "call internal" to el buffer (con separator); salir.
+  Si el tag es el dereference tag, Adjuntar "dereference" to el buffer (con separator); salir.
+  Si el tag es el end if tag, Adjuntar "end if" to el buffer (con separator); salir.
+  Si el tag es el epilog tag, Adjuntar "epilog" to el buffer (con separator); salir.
+  Si el tag es el exit tag, Adjuntar "exit" to el buffer (con separator); salir.
+  Si el tag es el finalize tag, Adjuntar "finalize" to el buffer (con separator); salir.
+  Si el tag es el increment tag, Adjuntar "increment" to el buffer (con separator); salir.
+  Si el tag es el intel tag, Adjuntar "intel" to el buffer (con separator); salir.
+  Si el tag es el jump false tag, Adjuntar "jump false" to el buffer (con separator); salir.
+  Si el tag es el load address tag, Adjuntar "load address" to el buffer (con separator); salir.
+  Si el tag es el load eax tag, Adjuntar "load eax" to el buffer (con separator); salir.
+  Si el tag es el loop tag, Adjuntar "loop" to el buffer (con separator); salir.
+  Si el tag es el not tag, Adjuntar "not" to el buffer (con separator); salir.
+  Si el tag es el prolog tag, Adjuntar "prolog" to el buffer (con separator); salir.
+  Si el tag es el push address tag, Adjuntar "push address" to el buffer (con separator); salir.
+  Si el tag es el push value tag, Adjuntar "push value" to el buffer (con separator); salir.
+  Si el tag es el save eax tag, Adjuntar "save eax" to el buffer (con separator); salir.
+  Si el tag es el repeat tag, Adjuntar "repeat" to el buffer (con separator); salir.
+  Si el tag es el routine address tag, Adjuntar "routine address" to el buffer (con separator); salir.
+  Adjuntar "?" to el buffer (con separator).
   
-Para adjuntar un type to un buffer (with separator):
-  Si el type es nil, Adjuntar "" to el buffer (with separator); salir.
-  Adjuntar el type's name to el buffer (with separator).
+Para adjuntar un type to un buffer (con separator):
+  Si el type es nil, Adjuntar "" to el buffer (con separator); salir.
+  Adjuntar el type's name to el buffer (con separator).
   
-Para adjuntar un variable to un buffer (with separator):
-  Si el variable es nil, Adjuntar "" to el buffer (with separator); salir.
-  Adjuntar el variable's name to el buffer (with separator).
+Para adjuntar un variable to un buffer (con separator):
+  Si el variable es nil, Adjuntar "" to el buffer (con separator); salir.
+  Adjuntar el variable's name to el buffer (con separator).
   
 Para attach address loading code to un hex string usando un variable: \ loads into edx
   Si el variable es nil, attach $C7C200000000 to el hex string; salir. \ mov edx,0
@@ -822,7 +822,7 @@ Para attach address loading code to un hex string usando un variable: \ loads in
   Si el variable's kind es "literal", attach $C7C2 y el variable's address to el hex string; salir. \ mov edx,the variable's address
   Si el variable's kind es "local", attach $8D95 y el variable's offset to el hex string; salir. \ lea edx,[ebp+the variable's offset]
   Si el variable's kind es "scratch", attach $8B95 y el variable's offset to el hex string; salir. \ mov edx,[ebp+the variable's offset]
-  Si el variable's kind es not "parameter", abort with "Internal error - attach address loading code to un hex string usando un variable"; salir.
+  Si el variable's kind es not "parameter", abort con "Internal error - attach address loading code to un hex string usando un variable"; salir.
   Si el variable's by-value flag es set, attach $8D95 y el variable's offset to el hex string; salir. \ lea edx,[ebp+the variable's offset]
   Attach $8B95 y el variable's offset to el hex string. \ mov edx,[ebp+the variable's offset]
   
@@ -857,7 +857,7 @@ Para attach un hex string to another hex string: employ Adjuntar un string to an
   
 Para blurt bytes usando un pointer y un  length y un  buffer y un  offset:
   Poner el buffer's first plus el offset into another pointer.
-  Copy bytes desde el pointer to el other pointer for el length.
+  Copiar bytes desde el pointer to el other pointer for el length.
   
 Para blurt un dos header into un buffer:
   Blurt bytes usando el dos header's whereabouts y el dos header's magnitude y el buffer and 0.
@@ -999,7 +999,7 @@ Para calculate el redefinition offsets in un type:
     Si el field es nil, salir.
     Si el field's redefinition target name es blank, repetir.
     Find another field usando el field's redefinition target name y el type's fields.
-    Si el other field es nil, abort with "Redefinición inválida. No pude encontrar '" then el field's redefinition target name then "' field." y el field's locus; salir.
+    Si el other field es nil, abort con "Redefinición inválida. No pude encontrar '" then el field's redefinition target name then "' field." y el field's locus; salir.
     Poner el other field's offset into el field's offset.
   Repetir.
   
@@ -1027,18 +1027,18 @@ Para check for invalid optional info on un type:
   
 Para check for invalid optional info on un type (fields):
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "record", abort with "Info opcional 'con' solo permitida en tipo registro." y el type's locus; salir.
+  Si el type cannot be reduced to "record", abort con "Info opcional 'con' solo permitida en tipo registro." y el type's locus; salir.
   
 Para check for invalid optional info on un type (scale):
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "number", abort with "Escalas solo permitidas en tipos numéricos." y el type's locus; salir.
+  Si el type cannot be reduced to "number", abort con "Escalas solo permitidas en tipos numéricos." y el type's locus; salir.
   
 Para check for invalid optional info on un type (target):
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "pointer", abort with "Optional 'a' info solo está permitido en tipos de punteros." y el type's locus; salir.
+  Si el type cannot be reduced to "pointer", abort con "Optional 'a' info solo está permitido en tipos de punteros." y el type's locus; salir.
   
 Para borrar un field term:
-  Fill bytes with el null byte starting at el field term's whereabouts for el field term's magnitude.
+  Fill bytes con el null byte starting at el field term's whereabouts for el field term's magnitude.
   
 Para borrar un term:
   Void el term's variable.
@@ -1084,7 +1084,7 @@ Para compile el body of un routine (epilog):
     Si el variable's type should not be finalized, repetir.
     Agregar another fragment usando el push address tag y el variable.
     Find another routine usando "~finalize" y el variable's type.
-    Si el other routine es nil, abort with "Internal error - compile el body of un routine (epilog)"; salir.
+    Si el other routine es nil, abort con "Internal error - compile el body of un routine (epilog)"; salir.
     Agregar un third fragment usando el call internal tag y el other routine.
   Repetir.
   Agregar un fourth fragment usando el epilog tag.
@@ -1098,14 +1098,14 @@ Para compile el body of un routine (prolog):
 Para compile el body of el routine called un string:
   Si el compiler's abort flag es set, salir.
   Find un routine usando el string y el routine index.
-  Si el routine es nil, abort with "Necesito una rutina para '" then el string then "'."; salir.
+  Si el routine es nil, abort con "Necesito una rutina para '" then el string then "'."; salir.
   Compile el body of el routine.
   
 Para compile el body of un routine usando un rider (alternate wording): \ *** alternate wording
   Si el compiler's abort flag es set, salir.
   Move el rider (compiler rules). \ *** do we need this?
   Poner el routine's next into un target routine.
-  Si el target routine es nil, abort with "Has definido una forma alternativa aquí, pero no estoy seguro de qué cosa es." y el rider; salir.
+  Si el target routine es nil, abort con "Has definido una forma alternativa aquí, pero no estoy seguro de qué cosa es." y el rider; salir.
   Poner el target routine's moniker into el routine's employs moniker.
   Compile el body of el target routine.
   
@@ -1115,11 +1115,11 @@ Para compile el body of un routine usando un rider (employ):
   Compile un routine reference usando el rider.
   Convertir el routine reference to el routine's employs moniker.
   Destroy el routine reference.
-  Si el rider's token es not ".", abort with "Las oraciones usadas deben terminar en un punto y no '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not ".", abort con "Las oraciones usadas deben terminar en un punto y no '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
-  Si el rider's token es not blank, abort with "Una vez empleado, no hay otro." y el rider; salir.
+  Si el rider's token es not blank, abort con "Una vez empleado, no hay otro." y el rider; salir.
   Find another routine usando el routine's employs moniker y el routine index.
-  Si el other routine es nil, abort with "No pude encontrar '" then el routine's employs moniker then "' rutina que estás tratando de emplear" y el routine's locus; salir.
+  Si el other routine es nil, abort con "No pude encontrar '" then el routine's employs moniker then "' rutina que estás tratando de emplear" y el routine's locus; salir.
   Compile el body of el other routine.
   
 Para compile el call'd part usando un rider y un  variable:
@@ -1282,7 +1282,7 @@ Para compile un directory (write el exe):
   Escribir para StdOut "Escribiendo el exe...".
   Start el writing timer.
   Write el compiler's exe to el compiler's exe path.
-  Si el error de e/s es not blank, abort with el error de e/s.
+  Si el error de e/s es not blank, abort con el error de e/s.
   Stop el writing timer.
   
 Para compile un expression usando un rider:
@@ -1301,12 +1301,12 @@ Para compile un expression usando un rider:
 Para compile un expression usando un rider (divided):
   Si el compiler's abort flag es set, salir.
   Move el rider (compiler rules).
-  Si el rider's token es not any by, abort with "Prefiero la frase 'dividido POR'." y el rider; salir.
-  Si el expression's variable es nil, abort with "Inválido el 'dividido por', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
+  Si el rider's token es not any by, abort con "Prefiero la frase 'dividido POR'." y el rider; salir.
+  Si el expression's variable es nil, abort con "Inválido el 'dividido por', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
   Move el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "Inválido el 'dividido por', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "Inválido el 'dividido por', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un intermediate usando el expression's type name y el rider's token's first.
   Agregar several fragments usando "Poner" y el expression's variable and "into" y el intermediate y el rider's token's first.
   Agregar several fragments usando "Dividir" y el intermediate and "by" y el term's variable y el rider's token's first.
@@ -1315,11 +1315,11 @@ Para compile un expression usando un rider (divided):
   
 Para compile un expression usando un rider (minus):
   Si el compiler's abort flag es set, salir.
-  Si el expression's variable es nil, abort with "Inválido el 'menos', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
+  Si el expression's variable es nil, abort con "Inválido el 'menos', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
   Move el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "Inválido el 'menos', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "Inválido el 'menos', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un intermediate usando el expression's type name y el rider's token's first.
   Agregar several fragments usando "Poner" y el expression's variable and "into" y el intermediate y el rider's token's first.
   Agregar several fragments usando "Restar" y el term's variable and "from" y el intermediate y el rider's token's first.
@@ -1328,11 +1328,11 @@ Para compile un expression usando un rider (minus):
   
 Para compile un expression usando un rider (plus):
   Si el compiler's abort flag es set, salir.
-  Si el expression's variable es nil, abort with "Inválido el 'más', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
+  Si el expression's variable es nil, abort con "Inválido el 'más', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
   Move el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "Inválido el 'más', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "Inválido el 'más', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un intermediate usando el expression's type name y el rider's token's first.
   Agregar several fragments usando "Poner" y el expression's variable and "into" y el intermediate y el rider's token's first.
   Agregar several fragments usando "Agregar" y el term's variable and "to" y el intermediate y el rider's token's first.
@@ -1341,11 +1341,11 @@ Para compile un expression usando un rider (plus):
   
 Para compile un expression usando un rider (then):
   Si el compiler's abort flag es set, salir.
-  Si el expression's variable es nil, abort with "Inválido el 'luego', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
+  Si el expression's variable es nil, abort con "Inválido el 'luego', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
   Move el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "Inválido el 'luego', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "Inválido el 'luego', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un intermediate usando "string" y el rider's token's first.
   Agregar el Poner or convertir fragments usando el expression's variable y el intermediate y el rider's token's first.
   Convertir el term for concatenation usando el rider.
@@ -1355,11 +1355,11 @@ Para compile un expression usando un rider (then):
   
 Para compile un expression usando un rider (times):
   Si el compiler's abort flag es set, salir.
-  Si el expression's variable es nil, abort with "Inválido el 'veces', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
+  Si el expression's variable es nil, abort con "Inválido el 'veces', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
   Move el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "Inválido el 'veces', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "Inválido el 'veces', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un intermediate usando el expression's type name y el rider's token's first.
   Agregar several fragments usando "Poner" y el expression's variable and "into" y el intermediate y el rider's token's first.
   Agregar several fragments usando "Multiplicar" y el intermediate and "by" y el term's variable y el rider's token's first.
@@ -1384,19 +1384,19 @@ Para compile el header of un routine usando un rider (callback):
   Set el routine's callback flag.
   Compile el routine's monikettes y el routine's parameters usando el rider.
   Convertir el routine's monikettes to el routine's moniker.
-  Si el routine's moniker es in el routine index, abort with "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
+  Si el routine's moniker es in el routine index, abort con "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
   Index el routine usando el routine's monikettes y el routine index.
   
 Para compile el header of un routine usando un rider (decider):
   Si el compiler's abort flag es set, salir.
   Move el rider (compiler rules).
-  Si el rider's token es not any conditional, abort with "Se dice 'Decidir SI'. Siempre 'Decidir SI'. ¿Se entiende?" y el rider; salir.
+  Si el rider's token es not any conditional, abort con "Se dice 'Decidir SI'. Siempre 'Decidir SI'. ¿Se entiende?" y el rider; salir.
   Move el rider (compiler rules).  
   Set el routine's decider flag.
   Compile el routine's monikettes y el routine's parameters usando el rider.
-  Si any of el routine's monikettes are negative words, abort with "No es buena idea usar negativos en los nombres de los decisores." y el rider; salir.
+  Si any of el routine's monikettes are negative words, abort con "No es buena idea usar negativos en los nombres de los decisores." y el rider; salir.
   Convertir el routine's monikettes to el routine's moniker.
-  Si el routine's moniker es in el routine index, abort with "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
+  Si el routine's moniker es in el routine index, abort con "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
   Index el routine usando el routine's monikettes y el routine index.
   
 Para compile el header of un routine usando un rider (function):
@@ -1407,19 +1407,19 @@ Para compile el header of un routine usando un rider (function):
   Si el rider's token es any indefinite article, set un flag.
   Si el flag es set, compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
   Si el flag es not set, compile el routine's monikettes y el routine's parameters usando el rider (definite article).
-  Si el rider's token es not any possessive, abort with "An 's es missing or misplaced here." y el rider; salir. \ not translated - no possessives in Spanish
+  Si el rider's token es not any possessive, abort con "An 's es missing or misplaced here." y el rider; salir. \ not translated - no possessives in Spanish
   Move el rider (compiler rules).
   Scan un name usando el rider.
   Agregar another monikette to el routine's monikettes usando "'s " then el name.
-  Si el rider's token es not "into", abort with "I was expecting el word 'into', but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
+  Si el rider's token es not "into", abort con "I was expecting el word 'into', but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
   Agregar un third monikette to el routine's monikettes usando "into".
   Convertir el routine's monikettes to un moniker.
-  Si el moniker es in el routine index, abort with "I already know how to '" then el moniker then "'." y el routine's locus; salir. \ not translated - no possessives in Spanish
+  Si el moniker es in el routine index, abort con "I already know how to '" then el moniker then "'." y el routine's locus; salir. \ not translated - no possessives in Spanish
   Index el routine usando el routine's monikettes y el routine index.
   Move el rider (compiler rules).
-  Si el rider's token es not any indefinite article, abort with "I was expecting un indefinite article, but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
+  Si el rider's token es not any indefinite article, abort con "I was expecting un indefinite article, but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
   Compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
-  Si el rider's token es not blank, abort with "There's extra stuff on el end of this function." y el rider; salir. \ not translated - no possessives in Spanish
+  Si el rider's token es not blank, abort con "There's extra stuff on el end of this function." y el rider; salir. \ not translated - no possessives in Spanish
   Convertir el routine's monikettes to el routine's moniker.
   Index el routine usando el routine's monikettes y el routine index. \ for employs
   
@@ -1427,7 +1427,7 @@ Para compile el header of un routine usando un rider (procedure):
   Si el compiler's abort flag es set, salir.
   Compile el routine's monikettes y el routine's parameters usando el rider.
   Convertir el routine's monikettes to el routine's moniker.
-  Si el routine's moniker es in el routine index, abort with "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
+  Si el routine's moniker es in el routine index, abort con "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
   Index el routine usando el routine's monikettes y el routine index.
   
 Para compile el headers of some routines:
@@ -1445,7 +1445,7 @@ Para compile un literal usando un rider:
   Si el rider's token es any numeric literal, compile el literal usando el rider (numeric); salir.
   Si el rider's token es any pointer literal, compile el literal usando el rider (pointer); salir.
   Si el rider's token es any string literal, compile el literal usando el rider (string); salir.
-  Abort with "Internal error - compile un term usando un rider (literal)" y el rider.
+  Abort con "Internal error - compile un term usando un rider (literal)" y el rider.
   
 Para compile un literal usando un rider (flag):
   Si el compiler's abort flag es set, salir.
@@ -1480,19 +1480,19 @@ Para compile un literal usando un rider (numeric - ratio):
   Poner "ratio" into el literal's type name.
   Resolve el literal.
   
-Para compile un literal usando un rider (numeric - with unit of measure):
+Para compile un literal usando un rider (numeric - con unit of measure):
   Si el compiler's abort flag es set, salir.
   Convertir el rider's token to un ratio.
   Move el rider (compiler rules).
   Scan un name usando el rider.
   Find un type usando el name y el type index.
-  Si el type es nil, abort with "'" then el name then "' no es una unidad de medida válida." y el literal's locus; salir.
-  Si el type cannot be reduced to "number", abort with "'" then el name then "' no es una unidad de medida válida." y el literal's locus; salir.
+  Si el type es nil, abort con "'" then el name then "' no es una unidad de medida válida." y el literal's locus; salir.
+  Si el type cannot be reduced to "number", abort con "'" then el name then "' no es una unidad de medida válida." y el literal's locus; salir.
   Poner el type's scale into un final ratio.
   Si el type's scale es 0, Poner 1/1 into el final ratio.
   Multiplicar el final ratio by el ratio.
   Reduce el final ratio.
-  Si el final ratio's denominator es 0, abort with "Parece que no tenemos una unidad de medida válida aquí." y el literal's locus.
+  Si el final ratio's denominator es 0, abort con "Parece que no tenemos una unidad de medida válida aquí." y el literal's locus.
   Poner el final ratio's numerator divided by el final ratio's denominator into un number.
   Poner el type's name into el literal's type name.
   Convertir el number to el literal's data.
@@ -1500,7 +1500,7 @@ Para compile un literal usando un rider (numeric - with unit of measure):
   
 Para compile un literal usando un rider (numeric):
   Si el compiler's abort flag es set, salir.
-  Si el rider es followed by any unit of measure, compile el literal usando el rider (numeric - with unit of measure); salir.
+  Si el rider es followed by any unit of measure, compile el literal usando el rider (numeric - con unit of measure); salir.
   Si el rider's token es any integer literal, compile el literal usando el rider (numeric - integer); salir.
   Si el rider's token es any ratio literal, compile el literal usando el rider (numeric - ratio); salir.
   Si el rider's token es any mixed literal, compile el literal usando el rider (numeric - ratio); salir.
@@ -1526,7 +1526,7 @@ Para compile some monikettes and some parameters usando un rider:
   Si el rider's token es any definite article, compile el monikettes y el parameters usando el rider (definite article); repeat.
   Si el rider está on any indefinite article, compile el monikettes y el parameters usando el rider (indefinite article); repeat.
   Si el rider está on any monikette string, compile el monikettes y el parameters usando el rider (monikette string); repeat.
-  Abort with "'" then el rider's token then "' no es válido en un encabezado de rutina." y el rider.
+  Abort con "'" then el rider's token then "' no es válido en un encabezado de rutina." y el rider.
   
 Para compile some monikettes and some parameters usando un rider (definite article):
   Si el compiler's abort flag es set, salir.
@@ -1544,10 +1544,10 @@ Para compile some monikettes and some parameters usando un rider (indefinite art
   Si el rider's token es "otro", Poner "segundo" into el parameter's name.
   Move el rider (compiler rules).
   Scan un name usando el rider.
-  Extend el parameter's name with el name.
+  Extend el parameter's name con el name.
   Si el rider's token es any called, compile el call'd part usando el rider y el parameter.
   Resolve el parameter.
-  Si el parameter es duplicated in el parameters, abort with "Amigo, ya hay un parámetro llamado '" then el parameter's name then "'." y el parameter's locus; salir.
+  Si el parameter es duplicated in el parameters, abort con "Amigo, ya hay un parámetro llamado '" then el parameter's name then "'." y el parameter's locus; salir.
   Agregar un monikette to el monikettes usando el parameter's type.
   
 Para compile some monikettes and some parameters usando un rider (monikette string):
@@ -1579,9 +1579,9 @@ Para compile el next statement usando un rider:
   Si el rider's token es any conditional, compile el next statement usando el rider (if); salir.
   Si el rider's token es any loop, compile el next statement usando el rider (loop); salir.
   Si el rider's token es any privatize, compile el next statement usando el rider (privatize); salir.
-  Si el rider's token es not el start of any statement, abort with "Esperaba una sentencia aquí, pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not el start of any statement, abort con "Esperaba una sentencia aquí, pero encontré '" then el rider's token then "'." y el rider; salir.
   Compile el next statement usando el rider (other).
-  Si el rider's token es not el period byte, abort with "Parece que es un record con olvidado un punto por ahí." y el rider; salir.
+  Si el rider's token es not el period byte, abort con "Parece que es un record con olvidado un punto por ahí." y el rider; salir.
   Move el rider (compiler rules).
   
 Para compile el next statement usando un rider (break):
@@ -1592,32 +1592,32 @@ Para compile el next statement usando un rider (call - external):
   Poner el rider's token into un string.
   Unquote el string.
   Move el rider (compiler rules).
-  Si el rider's token es not any string literal, abort with "Hey, esperaba que cites un nombre de entrada, pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not any string literal, abort con "Hey, esperaba que cites un nombre de entrada, pero encontré '" then el rider's token then "'." y el rider; salir.
   Poner el rider's token into another string.
   Unquote el other string.
   Move el rider (compiler rules).
   Agregar un entry to el imports usando el string y el other string.
-  Si el rider's token es any with, compile el next statement usando el rider (call - with clause).
+  Si el rider's token es any con, compile el next statement usando el rider (call - con clause).
   Si el rider's token es "returning", compile el next statement usando el rider retornando un term (call - retornando part).
   Si el rider's token es "retornando", compile el next statement usando el rider retornando el term (call - retornando part).
   Si el rider's token es "devolviendo", compile el next statement usando el rider retornando el term (call - retornando part).
   Agregar un fragment usando el call external tag y el entry.
   Si el term es empty, salir.
-  Si el term's variable es nil, abort with "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar another fragment usando el save eax tag y el term's variable.
   
 Para compile el next statement usando un rider (call - indirect):
   Compile un expression usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el expression's variable es nil, abort with "No entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
-  Si el expression's type cannot be reduced to "pointer", abort with "Yo necesito un tipo puntero en esta LLAMADA." y el rider; salir.
-  Si el rider's token es any with, compile el next statement usando el rider (call - with clause).
+  Si el expression's variable es nil, abort con "No entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
+  Si el expression's type cannot be reduced to "pointer", abort con "Yo necesito un tipo puntero en esta LLAMADA." y el rider; salir.
+  Si el rider's token es any con, compile el next statement usando el rider (call - con clause).
   Si el rider's token es "returning", compile el next statement usando el rider retornando un term (call - retornando part).
   Si el rider's token es "retornando", compile el next statement usando el rider retornando el term (call - retornando part).
   Si el rider's token es "devolviendo", compile el next statement usando el rider retornando el term (call - retornando part).
   Agregar un fragment usando el call indirect tag y el expression's variable.
   Si el term es empty, salir.
-  Si el term's variable es nil, abort with "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar another fragment usando el save eax tag y el term's variable.
   
 Para compile el next statement usando un rider (call - internal):
@@ -1627,16 +1627,16 @@ Para compile el next statement usando un rider (call - internal):
   Si el routine es not nil, destroy el monikettes; Agregar un fragment usando el call internal tag y el routine; salir.
   Convertir el monikettes to un moniker.
   Destroy el monikettes.
-  Abort with "No sé cómo '" then el moniker then "'." y el rider.
+  Abort con "No sé cómo '" then el moniker then "'." y el rider.
   
-Para compile el next statement usando un rider (call - with clause): \ this guy es recursise so parameters get passed right to left
+Para compile el next statement usando un rider (call - con clause): \ this guy es recursise so parameters get passed right to left
   Si el compiler's abort flag es set, salir.
   Move el rider (compiler rules).
   Compile un expression usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el expression's variable es nil, abort with "No entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
-  Si el expression's type es not value pushable, abort with "'" then el expression's type's name then "' o se pudo pasar adecuadamente." y el rider; salir.
-  Si el rider's token es any and, compile el next statement usando el rider (call - with clause).
+  Si el expression's variable es nil, abort con "No entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
+  Si el expression's type es not value pushable, abort con "'" then el expression's type's name then "' o se pudo pasar adecuadamente." y el rider; salir.
+  Si el rider's token es any and, compile el next statement usando el rider (call - con clause).
   Agregar un fragment usando el push value tag y el expression's variable.
   
 Para compile el next statement usando un rider (call):
@@ -1646,7 +1646,7 @@ Para compile el next statement usando un rider (call):
   Compile el next statement usando el rider (call - indirect).  
   
 Para compile el next statement usando un rider (exit):
-  Si el current routine's decider flag es set, abort with "¿Qué significa una 'salir' justo aquí? ¿Sí, no, tal vez?" y el rider; salir.
+  Si el current routine's decider flag es set, abort con "¿Qué significa una 'salir' justo aquí? ¿Sí, no, tal vez?" y el rider; salir.
   Agregar un fragment usando el exit tag.
   Move el rider (compiler rules).
   
@@ -1659,9 +1659,9 @@ Para compile el next statement usando un rider (if):
   Si el routine es not nil, Agregar push fragments usando el monikettes.
   Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
-  Si el routine es nil, abort with "Necesito un decisor con las palabras '" then el moniker then "'." y el rider; salir.
-  Si el routine's decider flag es not set, abort with "Sííí, necesitaré un decisor aquí, ¿bien?" y el rider; salir.
-  Si el rider's token es not el comma byte, abort with "Esperaba una coma por ahí, pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el routine es nil, abort con "Necesito un decisor con las palabras '" then el moniker then "'." y el rider; salir.
+  Si el routine's decider flag es not set, abort con "Sííí, necesitaré un decisor aquí, ¿bien?" y el rider; salir.
+  Si el rider's token es not el comma byte, abort con "Esperaba una coma por ahí, pero encontré '" then el rider's token then "'." y el rider; salir.
   Agregar un fragment usando el call internal tag y el routine.
   Si el flag es set, Agregar another fragment usando el not tag.
   Agregar un third fragment usando el jump false tag.
@@ -1670,13 +1670,13 @@ Para compile el next statement usando un rider (if):
   Compile el next statement usando el rider (other).
   Si el compiler's abort flag es set, salir.
   Si el rider's token es el semi-colon byte, move el rider (compiler rules); repeat.
-  Si el rider's token es not el period byte, abort with "Pensaba en un punto, pero pusiste '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not el period byte, abort con "Pensaba en un punto, pero pusiste '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   Agregar un fourth fragment usando el end if tag.
   
 Para compile el next statement usando un rider (intel):
   Move el rider (compiler rules).
-  Si el rider's token es not any hex literal, abort with "Necesito código de máquina aquí; encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not any hex literal, abort con "Necesito código de máquina aquí; encontré '" then el rider's token then "'." y el rider; salir.
   Agregar un fragment usando el intel tag.
   Poner el rider's token into un nibble substring.
   Agregar 1 to el nibble substring's first.
@@ -1687,7 +1687,7 @@ Para compile el next statement usando un rider (loop):
   Si el compiler's abort flag es set, salir.
   Agregar un fragment usando el loop tag.
   Move el rider (compiler rules).
-  Si el rider's token es not el period byte, abort with "Parece que olvidaste un punto por ahí." y el rider; salir.
+  Si el rider's token es not el period byte, abort con "Parece que olvidaste un punto por ahí." y el rider; salir.
   Move el rider (compiler rules).
   
 Para compile el next statement usando un rider (other):
@@ -1701,28 +1701,28 @@ Para compile el next statement usando un rider (other):
   Si el rider's token es "push", compile el next statement usando el rider (push); salir.
   Si el rider's token es any call, compile el next statement usando el rider (call); salir.
   Si el rider's token es any point, compile el next statement usando el rider (point); salir.
-  Si el rider's token es any conditional, abort with "Los anidamientos de sentencias SI son una clara señal de razonamiento poco claro. Piénsalo otra vez." y el rider; salir.
-  Si el rider's token es any privatize, abort with "La sentencia 'privatizar' no puede usarse aquí." y el rider; salir.
-  Si el rider's token es any loop, abort with "Lazos luego de un SI es una buena forma de perder el almuerzo." y el rider; salir.
-  Si el rider's token es any employ, abort with "'Emplée' debe ser el único imperativo en una rutina." y el rider; salir.
+  Si el rider's token es any conditional, abort con "Los anidamientos de sentencias SI son una clara señal de razonamiento poco claro. Piénsalo otra vez." y el rider; salir.
+  Si el rider's token es any privatize, abort con "La sentencia 'privatizar' no puede usarse aquí." y el rider; salir.
+  Si el rider's token es any loop, abort con "Lazos luego de un SI es una buena forma de perder el almuerzo." y el rider; salir.
+  Si el rider's token es any employ, abort con "'Emplée' debe ser el único imperativo en una rutina." y el rider; salir.
   Compile el next statement usando el rider (call - internal).
   
 Para compile el next statement usando un rider (point):
   Move el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Si el term's kind es "literal", abort with "Esta clase de variable no va aquí." y el rider.
-  Si el term's type's length es not 4, abort with "Esta clase de variable no va aquí." y el rider.
-  Si el rider's token es not "to", abort with "Esperaba 'para', pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's kind es "literal", abort con "Esta clase de variable no va aquí." y el rider.
+  Si el term's type's length es not 4, abort con "Esta clase de variable no va aquí." y el rider.
+  Si el rider's token es not "to", abort con "Esperaba 'para', pero encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
-  Si el rider's token es not "routine", abort with "Esperaba la palabra 'rutina' pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not "routine", abort con "Esperaba la palabra 'rutina' pero encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   Compile un routine reference usando el rider.
   Convertir el routine reference to un moniker.
   Destroy el routine reference.
   Find un routine usando el moniker y el routine index.
-  Si el routine es nil, abort with "No pude encontrar una rutina '" then el moniker then "' a la que te refieres." y el rider; salir.
+  Si el routine es nil, abort con "No pude encontrar una rutina '" then el moniker then "' a la que te refieres." y el rider; salir.
   Agregar un fragment usando el routine address tag y el routine.
   Poner el term's variable into el fragment's variable.
   
@@ -1731,8 +1731,8 @@ Para compile el next statement usando un rider (privatize):
   Move el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "Uso inválido de 'privatiza', no encuentro la variable '" then el term's phrase then "'." y el rider; salir.
-  Si el term's kind es not "parameter", abort with "Solo puedes privatizar parámetros." y el rider; salir.
+  Si el term's variable es nil, abort con "Uso inválido de 'privatiza', no encuentro la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's kind es not "parameter", abort con "Solo puedes privatizar parámetros." y el rider; salir.
   Agregar un local to el current routine's locals usando "local" y el rider's token's first.
   Poner el term's name into el local's name.
   Poner el term's nickname into el local's nickname.
@@ -1741,7 +1741,7 @@ Para compile el next statement usando un rider (privatize):
   Prepend "original " to el term's name.
   Si el term's nickname es not blank, prepend "original " to el term's nickname.
   Agregar several fragments usando "Poner" y el term's variable and "into" y el local y el rider's token's first.
-  Si el rider's token es not el period byte, abort with "Parece que es un record con olvidado un punto por ahí." y el rider; salir.
+  Si el rider's token es not el period byte, abort con "Parece que es un record con olvidado un punto por ahí." y el rider; salir.
   Move el rider (compiler rules).
   
 Para compile el next statement usando un rider (push):
@@ -1749,8 +1749,8 @@ Para compile el next statement usando un rider (push):
   Move el rider (compiler rules).
   Compile un expression usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el expression's variable es nil, abort with "'Push' inválido. No entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
-  Si el expression's type es not value pushable, abort with "Los valores del tipo '" then el expression's type's name then "' no pueden ser apilados." y el rider; salir.
+  Si el expression's variable es nil, abort con "'Push' inválido. No entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
+  Si el expression's type es not value pushable, abort con "Los valores del tipo '" then el expression's type's name then "' no pueden ser apilados." y el rider; salir.
   Agregar un fragment usando el push value tag y el expression's variable.
   
 Para compile el next statement usando un rider (repeat):
@@ -1762,18 +1762,18 @@ Para compile el next statement usando un rider (repeat):
   \Move el rider (compiler rules).
   \Compile un expression usando el rider.
   \If el compiler's abort flag es set, salir.
-  \If el expression's variable es nil, abort with "No es válido este 'diga', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
-  \If el expression's type cannot be reduced to "flag", abort with "Necesito un rotundo 'si' o 'no' aquí." y el rider; salir.
+  \If el expression's variable es nil, abort con "No es válido este 'diga', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
+  \If el expression's type cannot be reduced to "flag", abort con "Necesito un rotundo 'si' o 'no' aquí." y el rider; salir.
   \Add un fragment usando el load eax tag y el expression's variable.
   \Add another fragment usando el exit tag.
   
 Para compile el next statement usando un rider (say):
   Si el current routine's decider flag es not set, compile el next statement usando el rider (call - internal); salir.
   Move el rider (compiler rules).
-  Si el rider's token es not any decider literal, abort with "Necesito un rotundo 'si' o 'no' aquí." y el rider; salir.
+  Si el rider's token es not any decider literal, abort con "Necesito un rotundo 'si' o 'no' aquí." y el rider; salir.
   Borrar un flag. If el rider's token es any positive decider literal, set el flag.
   Move el rider (compiler rules).
-  Si el rider's token es not el period byte, abort with "Pensaba en un punto, pero pusiste '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not el period byte, abort con "Pensaba en un punto, pero pusiste '" then el rider's token then "'." y el rider; salir.
   Agregar un fragment usando el load eax tag y el flag.
   Agregar another fragment usando el exit tag.
   
@@ -1781,8 +1781,8 @@ Para compile el next statement usando un rider retornando un term (call - retorn
   Move el rider (compiler rules).
   Compile el term usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Si el term's type es not value pushable, abort with "Se necesita una variable de 1, 2 o 4 bytes en la cláusula de 'Retornar'." y el rider.
+  Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's type es not value pushable, abort con "Se necesita una variable de 1, 2 o 4 bytes en la cláusula de 'Retornar'." y el rider.
   
 Para compile un routine reference usando un rider:
   Si el rider's token es "to", move el rider (compiler rules).
@@ -1795,11 +1795,11 @@ Para compile un routine reference usando un rider:
   Si el rider's token es any definite article, compile el routine reference usando el rider (definite article); repeat.
   Si el rider's token es any indefinite article, compile el routine reference usando el rider (indefinite article); repeat.
   Si el rider está on any monikette string, compile el routine reference usando el rider (monikette string); repeat.
-  Abort with "'" then el rider's token then "' no es válido en una sentencia empleada. " y el rider.
+  Abort con "'" then el rider's token then "' no es válido en una sentencia empleada. " y el rider.
   
 Para compile un routine reference usando un rider (decide):
   Move el rider (compiler rules).
-  Si el rider's token es not any conditional, abort with "Siempre decimos DECIDIR SI, y no DECIDIR '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not any conditional, abort con "Siempre decimos DECIDIR SI, y no DECIDIR '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   
 Para compile un routine reference usando un rider (definite article):
@@ -1816,14 +1816,14 @@ Para compile un routine reference usando un rider (function):
   Si el rider's token es any indefinite article, set un flag.
   Si el flag es set, compile el routine reference usando el rider (indefinite article).
   Si el flag es not set, compile el routine reference usando el rider (definite article).
-  Si el rider's token es not any possessive, abort with "I was expecting un 's, but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
+  Si el rider's token es not any possessive, abort con "I was expecting un 's, but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
   Move el rider (compiler rules).
   Scan un name usando el rider.
   Agregar another monikette to el routine reference usando "'s " then el name.
-  Si el rider's token es not "into", abort with "I was expecting el word 'into', but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
+  Si el rider's token es not "into", abort con "I was expecting el word 'into', but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
   Agregar un third monikette to el routine reference usando "into".
   Move el rider (compiler rules).
-  Si el rider's token es not any indefinite article, abort with "I was expecting un indefinite article, but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
+  Si el rider's token es not any indefinite article, abort con "I was expecting un indefinite article, but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
   Compile el routine reference usando el rider (indefinite article).
   
 Para compile un routine reference usando un rider (indefinite article):
@@ -1831,7 +1831,7 @@ Para compile un routine reference usando un rider (indefinite article):
   Move el rider (compiler rules).
   Scan un name usando el rider.
   Find un type y un  nickname usando el name.
-  Si el type es nil, abort with "Sentencia empleada no válida, no entiendo '" then el name then "'." y el rider; salir.
+  Si el type es nil, abort con "Sentencia empleada no válida, no entiendo '" then el name then "'." y el rider; salir.
   Agregar un monikette to el routine reference usando el type.
   
 Para compile un routine reference usando un rider (monikette string):
@@ -1849,13 +1849,13 @@ Para compile un term usando un rider:
   
 Para compile un term usando un rider (as part):
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "No es válido este 'como', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "No es válido este 'como', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Move el rider (compiler rules).
-  Si el rider's token es not any indefinite article, abort with "Esperaba un artículo indefinido luego del COMO, pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not any indefinite article, abort con "Esperaba un artículo indefinido luego del COMO, pero encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   Scan un type name usando el rider.
   Find un type usando el type name y el type index.
-  Si el type es nil, abort with "No puedo encontrar '" then el type name then "' un tipo." y el rider; salir.
+  Si el type es nil, abort con "No puedo encontrar '" then el type name then "' un tipo." y el rider; salir.
   Agregar un scratch usando el type's name y el rider's token's first.
   Agregar un fragment usando el load address tag y el term's variable y el scratch.
   Poner el scratch into el term's variable.
@@ -1868,10 +1868,10 @@ Para compile un term usando un rider (common part):
   Si el rider's token es el start of any variable, compile el term usando el rider (variable); salir.
   Si el rider's token es el start of any new local, compile el term usando el rider (new local); salir.
   Si el rider's token es any literal, compile el term usando el rider (literal); salir.
-  Abort with "Esperaba un término por aquí pero todo lo que encontré fue '" then el rider's token then "'." y el rider.
+  Abort con "Esperaba un término por aquí pero todo lo que encontré fue '" then el rider's token then "'." y el rider.
   
 Para compile un term usando un rider (dereference - in place):
-  Si el term's variable es nil, abort with "Internal error - compile un term usando un rider (dereference - in place)" y el rider; salir.
+  Si el term's variable es nil, abort con "Internal error - compile un term usando un rider (dereference - in place)" y el rider; salir.
   Poner el term's type's target type's name into el term's type name.
   Poner el term's type's target type into el term's type.
   Agregar un fragment usando el dereference tag y el term's variable.
@@ -1879,8 +1879,8 @@ Para compile un term usando un rider (dereference - in place):
   
 Para compile un term usando un rider (dereference):
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "Desreferencia inválida. No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Si el term's type's target type es nil, abort with "No puedo determinar el tipo de este objetivo." y el rider; salir.
+  Si el term's variable es nil, abort con "Desreferencia inválida. No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's type's target type es nil, abort con "No puedo determinar el tipo de este objetivo." y el rider; salir.
   Si el term's kind es "scratch", compile el term usando el rider (dereference - in place); salir.
   Agregar un scratch usando el term's type's target type's name y el rider's token's first.
   Agregar un fragment usando el load address tag y el term's variable y el scratch.
@@ -1900,7 +1900,7 @@ Para compile un term usando un rider (negated term):
   Move el rider (compiler rules).
   Compile another term usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el other term's variable es nil, abort with "Negación no válida, no entiendo la variable '" then el other term's phrase then "'." y el rider; salir.
+  Si el other term's variable es nil, abort con "Negación no válida, no entiendo la variable '" then el other term's phrase then "'." y el rider; salir.
   Agregar un intermediate usando el other term's type name y el rider's token's first.
   Agregar several fragments usando "Poner" y el other term's variable and "into" y el intermediate y el other term's locus.
   Agregar two fragments usando "Negar" y el intermediate y el rider's token's first.
@@ -1909,18 +1909,18 @@ Para compile un term usando un rider (negated term):
   
 Para compile un term usando un rider (new local):
   Si el compiler's abort flag es set, salir.
-  Si el current routine es nil, abort with "No sé qué estás tratando de desapilar de aquí." y el rider; salir.
+  Si el current routine es nil, abort con "No sé qué estás tratando de desapilar de aquí." y el rider; salir.
   Agregar un local to el current routine's locals usando "local" y el rider's token's first.
   Si el rider's token es "another", Poner "other" into el local's name.
   Si el rider's token es "otra", Poner "segunda" into el local's name.
   Si el rider's token es "otro", Poner "segundo" into el local's name.
   Move el rider (compiler rules).
   Scan un name usando el rider.
-  Extend el local's name with el name.
+  Extend el local's name con el name.
   Si el rider's token es any called, compile el call'd part usando el rider y el local.
   Resolve el local.
-  Si el local es duplicated in el current routine's parameters, abort with "'" then el local's name then "' ya está en uso como parámetro." y el local's locus; salir.
-  Si el local es duplicated in el current routine's locals, abort with "'" then el local's name then "' ya está en uso como variable local." y el local's locus; salir.
+  Si el local es duplicated in el current routine's parameters, abort con "'" then el local's name then "' ya está en uso como parámetro." y el local's locus; salir.
+  Si el local es duplicated in el current routine's locals, abort con "'" then el local's name then "' ya está en uso como variable local." y el local's locus; salir.
   Eliminate duplicate nicknames usando el local y el current routine's nickname index.
   Poner el local into el term's variable.
   Borrar el term's phrase.
@@ -1930,12 +1930,12 @@ Para compile un term usando un rider (posigated term):
   Si el compiler's abort flag es set, salir.
   Move el rider (compiler rules).
   Compile el term usando el rider.
-  Si el term's variable es nil, abort with "Prefijo de suma no válido. No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "Prefijo de suma no válido. No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Borrar el term's phrase.
   
 Para compile un term usando un rider (possessive - magnitude):
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "Uso inválido de una magnitud, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "Uso inválido de una magnitud, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un literal to el literals usando el rider's token's first.
   Convertir el term's type's length to el literal's data.
   Poner "number" into el literal's type name.
@@ -1945,13 +1945,13 @@ Para compile un term usando un rider (possessive - magnitude):
   
 Para compile un term usando un rider (possessive - target):
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "Uso inválido de un objetivo, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Si el term's type cannot be reduced to "pointer", abort with "Solo puedes obtener el objetivo de los tipos punteros." y el rider; salir.
+  Si el term's variable es nil, abort con "Uso inválido de un objetivo, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's type cannot be reduced to "pointer", abort con "Solo puedes obtener el objetivo de los tipos punteros." y el rider; salir.
   Compile el term usando el rider (dereference).
   
 Para compile un term usando un rider (possessive - whereabouts):
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "Uso inválido de un paradero, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "Uso inválido de un paradero, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un intermediate usando "pointer" y el rider's token's first. 
   Agregar un fragment usando el load address tag y el term's variable y el intermediate.
   Poner el intermediate into el term's variable.
@@ -1975,11 +1975,11 @@ Para compile un term usando un rider (possessives):
   
 Para compile un term usando un rider (runtime ratio):
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort with "Uso inválido de /, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "Uso inválido de /, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Move el rider (compiler rules).
   Compile another term usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el other term's variable es nil, abort with "Uso inválido de /, no entiendo la variable '" then el other term's phrase then "'." y el rider; salir.
+  Si el other term's variable es nil, abort con "Uso inválido de /, no entiendo la variable '" then el other term's phrase then "'." y el rider; salir.
   Agregar un intermediate usando "ratio" y el rider's token's first.
   Agregar several fragments usando "Poner" y el term's variable and "and" y el other term's variable and "into" y el intermediate y el rider's token's first.
   Poner el intermediate into el term's variable.
@@ -1987,7 +1987,7 @@ Para compile un term usando un rider (runtime ratio):
   
 Para compile un term usando un rider (variable):
   Si el compiler's abort flag es set, salir.
-  Si el current routine es nil, abort with "No sé lo que intentas hacer aquí." y el rider; salir.
+  Si el current routine es nil, abort con "No sé lo que intentas hacer aquí." y el rider; salir.
   Move el rider (compiler rules).
   Scan un name usando el rider.
   Si el rider está on any reverse-possessive, compile el term usando el rider y el name (reverse-possessive); salir.
@@ -2002,7 +2002,7 @@ Para compile un term usando un rider y un  field name (reverse-possessive):  \ t
   Move el rider (compiler rules). \ past el reverse-possessive starter
   \If el rider's token es not "del", Move el rider (compiler rules). \ past el reverse-possessive starter \ gerry added "if" part
   \If el rider's token es "del", Agregar 1 to el rider's token's first. \ makes "del" look like "de el"
-  Si el rider's token es not any article, abort with "Esperaba un artículo, pero encontré '" then el rider's token then "'."; salir.
+  Si el rider's token es not any article, abort con "Esperaba un artículo, pero encontré '" then el rider's token then "'."; salir.
   Poner el rider's token into un article token.
   Move el rider (compiler rules).
   Scan un name usando el rider. 
@@ -2017,7 +2017,7 @@ Para compile un term usando un rider y un  variable name y un  article token (re
   
 Para compile un term usando un rider y un  variable name y un  article token (reverse-possessive prepare to unwind existing variable): \ dahn version 2
   Find un variable usando el variable name.
-  Si el variable es nil, abort with "No se pudo encontrar una variable con el nombre '" then el variable name then "'.".
+  Si el variable es nil, abort con "No se pudo encontrar una variable con el nombre '" then el variable name then "'.".
   Poner el variable into el term's variable.
   Poner "the " into el term's phrase.
   Adjuntar el variable name to el term's phrase.
@@ -2028,11 +2028,11 @@ Para compile un term usando un rider y un  variable name (reverse-possessive pre
   Si el rider's token es "another", Poner "other" into el local's name.
   Si el rider's token es "otra", Poner "segunda" into el local's name.
   Si el rider's token es "otro", Poner "segundo" into el local's name.
-  Extend el local's name with el variable name.
+  Extend el local's name con el variable name.
   Si el rider's token es any called, compile el call'd part usando el rider y el local.
   Resolve el local.
-  Si el local es duplicated in el current routine's parameters, abort with "'" then el local's name then "' ya está en uso como parámetro." y el local's locus; salir.
-  Si el local es duplicated in el current routine's locals,abort with "'" then el local's name then "' ya está en uso como una variable local." y el local's locus; salir.
+  Si el local es duplicated in el current routine's parameters, abort con "'" then el local's name then "' ya está en uso como parámetro." y el local's locus; salir.
+  Si el local es duplicated in el current routine's locals,abort con "'" then el local's name then "' ya está en uso como una variable local." y el local's locus; salir.
   Eliminate duplicate nicknames usando el local y el current routine's nickname index.
   Poner el local into el term's variable.
   Borrar el term's phrase.
@@ -2060,8 +2060,8 @@ Para compile un term usando un rider y un  field term (function):
   Si el compiler's abort flag es set, salir.
   Poner el field term's function into un routine.
   Poner el routine's parameters' last into un parameter.
-  Si el parameter es nil, abort with "Internal error - compile un term usando un rider y un  field term (function)." y el rider; salir.
-  Si el parameter's type es nil, abort with "Internal error 2 - compile un term usando un rider y un  field term (function)." y el rider; salir.
+  Si el parameter es nil, abort con "Internal error - compile un term usando un rider y un  field term (function)." y el rider; salir.
+  Si el parameter's type es nil, abort con "Internal error 2 - compile un term usando un rider y un  field term (function)." y el rider; salir.
   Agregar un intermediate usando el parameter's type's name y el rider's token's first.
   Agregar un fragment usando el push address tag y el intermediate.
   Si el field term's push flag es set, Agregar another fragment usando el push address tag y el term's variable.
@@ -2082,13 +2082,13 @@ Para compile un term usando un rider y un  name (possessive - field):
   Si el term's variable es not nil, Poner el term's type into un type.
   Find un field term usando el term's phrase y el type y el name.
   Si el field term es not empty, compile el term usando el rider y el field term; salir.
-  Si el term's variable es nil, abort with "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Si el type can be reduced to "pointer", Poner el type's target type into el type.
-  Si el type es nil, abort with "No hay un '" then el name then "' field in un '" then el term's type's name then "'." y el rider; salir.
+  Si el type es nil, abort con "No hay un '" then el name then "' field in un '" then el term's type's name then "'." y el rider; salir.
   Lazo.
     Si el compiler's abort flag es set, salir.
     Get un field desde el type's fields.
-    Si el field es nil, abort with "No hay '" then el name then "' dentro del '" then el term's type's name then "'." y el rider; salir.
+    Si el field es nil, abort con "No hay '" then el name then "' dentro del '" then el term's type's name then "'." y el rider; salir.
     Find un deep field term usando "" y el field's type y el name.
     Si el deep field term es empty, repetir.
   Poner el field into un first field term's field.
@@ -2126,14 +2126,14 @@ Para convertir some monikettes to un moniker usando un monikette:
 Para convertir un nibble substring to un string: employ convertir un nibble string to un hex string.
   
 Para convertir un term for concatenation usando un rider: \ used for right-side THEN operand
-  Si el term's variable es nil, abort with "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Si el term's type can be reduced to "string", salir.
   Agregar un intermediate usando "string" y el rider's token's first.
   Agregar el Poner or convertir fragments usando el term's variable y el intermediate y el rider's token's first.
   Poner el intermediate into el term's variable.
   Borrar el term's phrase.
   
-Para copy un field into another field:
+Para copiar un field into another field:
   Si el field es nil, void el other field; salir.
   Allocate memory for el other field.
   Poner el field's locus into el other field's locus.
@@ -2146,14 +2146,14 @@ Para copy un field into another field:
   Poner el field's reference flag into el other field's reference flag.
   Poner el field's offset into el other field's offset.
   
-Para copy some fields into some other fields:
+Para copiar some fields into some other fields:
     Get un field desde el fields.
     Si el field es nil, salir.
-    Copy el field into another field.
+    Copiar el field into another field.
     Adjuntar el other field to el other fields.
   Repetir.
   
-Para copy some fields into some other fields (data fields only):
+Para copiar some fields into some other fields (data fields only):
   Si el fields' count es less than 4, salir. \ for english next and prev and spanish next and prev redefinitions
   \If el fields' first es nil, salir.
   \If el fields' first's next es nil, salir.
@@ -2165,26 +2165,26 @@ Para copy some fields into some other fields (data fields only):
   Poner el fields' first's next's next's next's next into un field. \ english next and prev and spanish next and prev redefinitions
   Lazo.
     Si el field es nil, salir.
-    Copy el field into another field.
+    Copiar el field into another field.
     Adjuntar el other field to el other fields.
     Get el field desde el fields.
   Repetir.
   
-Para copy un monikette into another monikette:
+Para copiar un monikette into another monikette:
   Si el monikette es nil, void el other monikette; salir.
   Allocate memory for el other monikette.
   Poner el monikette's string into el other monikette's string.
   Poner el monikette's type into el other monikette's type.
   Poner el monikette's variable into el other monikette's variable.
-  \ don't copy substring
+  \ don't copiar substring
   Poner el monikette's current type into el other monikette's current type.
   
-Para copy some monikettes into some other monikettes:
+Para copiar some monikettes into some other monikettes:
   Destroy el other monikettes.
   Lazo.
     Get un monikette desde el monikettes.
     Si el monikette es nil, salir.
-    Copy el monikette into another monikette.
+    Copiar el monikette into another monikette.
     Adjuntar el other monikette to el other monikettes.
   Repetir.
   
@@ -2294,7 +2294,7 @@ Para decidir si some fields should be finalized:
   
 Para decidir si un item looks reamish:
   Load el item's path into un buffer.
-  Si el buffer starts with "ream cal", diga sí.
+  Si el buffer starts con "ream cal", diga sí.
   Diga no.
   
 Para decidir si un moniker es in un index:
@@ -2342,7 +2342,7 @@ Para decidir si un rider es followed by any unit of measure:
   Diga sí.
   
 Para decidir si un rider está on any nested double-quote:
-  Si el rider's source starts with """""", diga sí.
+  Si el rider's source starts con """""", diga sí.
   Diga no.
   
 Para decidir si un rider está on any possessive:
@@ -2353,7 +2353,7 @@ Para decidir si un rider está on any possessive:
   Diga no.
   
 Para decidir si un rider está on any possessive (type 1 - single-quote, s, non-glom-byte):
-  Si el rider's source does not start with "'s", diga no.
+  Si el rider's source does not start con "'s", diga no.
   Privatizar el rider.
   Agregar 2 to el rider's source's first.
   Si el rider's source es blank, diga sí.
@@ -2389,28 +2389,28 @@ Para decidir si un rider es el start of any function:
   Si el rider's token es any possessive, diga sí.
   Diga no.
   
-Para decidir si un string ends with any consonant and another string:
+Para decidir si un string ends con any consonant and another string:
   Slap un substring on el string.
   Restar el other string's length desde el substring's last.
   Si el substring es blank, diga no.
   Si el substring's last's target es not any consonant, diga no.
-  Si el string does not end with el other string, diga no.
+  Si el string does not end con el other string, diga no.
   Diga sí.
   
-Para decidir si un string ends with any vowel and another string:
+Para decidir si un string ends con any vowel and another string:
   Slap un substring on el string.
   Restar el other string's length desde el substring's last.
   Si el substring es blank, diga no.
   Si el substring's last's target es not any vowel, diga no.
-  Si el string does not end with el other string, diga no.
+  Si el string does not end con el other string, diga no.
   Diga sí.
   
-Para decidir si un string ends with any consonant:
+Para decidir si un string ends con any consonant:
   Si el string es blank, diga no.
   Si el string's last's target es not any consonant, diga no.
   Diga sí.
   
-Para decidir si un string ends with any vowel:
+Para decidir si un string ends con any vowel:
   Si el string es blank, diga no.
   Si el string's last's target es not any vowel, diga no.
   Diga sí.
@@ -2471,9 +2471,9 @@ Para decidir si un string es any equal:
   Si el string es "equal", diga sí.
   Diga no.
   
-Para decidir si un string es any with:
-  Si el string es "con", diga sí.
+Para decidir si un string es any con:
   Si el string es "with", diga sí.
+  Si el string es "con", diga sí.
   Diga no.
   
 Para decidir si un string es any article:
@@ -2620,7 +2620,7 @@ Para decidir si un string es any reference:
   Si el string es "(referencia)", diga sí.
   Diga no.
   
-Para decidir si un rider está on any name ender: \ compare with name starter
+Para decidir si un rider está on any name ender: \ compare con name starter
   Si el rider's token es any mark, diga sí.
   Si el rider's token es any symbol, diga sí.
   Si el rider's token es any article, diga sí.
@@ -2639,7 +2639,7 @@ Para decidir si un rider está on any name ender: \ compare with name starter
   Si el rider's token es any negative word, diga sí.
   Diga no.
   
-Para decidir si un rider está on any name starter: \ compare with name ender
+Para decidir si un rider está on any name starter: \ compare con name ender
   Si el rider's token es any mark, diga no.
   Si el rider's token es any symbol, diga no.
   Si el rider's token es any article, diga no.
@@ -2662,7 +2662,7 @@ Para decidir si un string es any negative word:
   Si el string es "not", diga sí.
   Si el string es "cannot", diga sí.
   Si el string es "nothing", diga sí.
-  Si el string ends with "n't", diga sí.
+  Si el string ends con "n't", diga sí.
   Diga no.
   
 Para decidir si un string es any operator:
@@ -2898,7 +2898,7 @@ Para decidir si un string es any verb:
   Si el string es "pudiera", diga sí. \ it "could" could not \ couldn't: not used in CAL (3ps) added just in case
   Si el string es "pudieran", diga sí. \ they "could" could not \ couldn't:  not used in CAL (3pp) added just in case
   Si el string es "pudiéramos", diga sí. \ we "could" could not \ couldn't: only once in Noodle (1pp) " To decidir si we could find un pointer:"
-  \If el string es "si", diga sí. \ "does": only case used in CAL for affirmative questions, used also for negative ones "does not" -> "si no" with neg. after
+  \If el string es "si", diga sí. \ "does": only case used in CAL for affirmative questions, used also for negative ones "does not" -> "si no" con neg. after
   Si el string es "tiene", diga sí. \ it "has" used in type definitions; (3ps) present
   Si el string es "tienen", diga sí. \ they "have" used in type definitions; (3pp) present
   \ trouble makers
@@ -2932,7 +2932,7 @@ Para decidir si un string es any verb:
   Si el string es "tiene", diga sí. \ used in type definitions
   Si el string es "have", diga sí. \ used in type definitions
   Si el string es "tener", diga sí. \ used in type definitions
-  Si el string ends with "n't", diga sí.
+  Si el string ends con "n't", diga sí.
   \ trouble makers
   Si el string es "begins", diga sí. \ does not begin \ doesn't begin
   Si el string es "ends", diga sí. \ does not end \ doesn't end
@@ -3026,9 +3026,9 @@ Para decidir si un string es el start of any new local:
   Diga no.
   
 Para decidir si un string es el start of any optional info:
-  Si el string es "con", diga sí.
-  Si el string es "to", diga sí.
   Si el string es "with", diga sí.
+  Si el string es "to", diga sí.
+  Si el string es "con", diga sí.
   Diga no.
   
 Para decidir si un string es el start of any routine:
@@ -3179,7 +3179,7 @@ The exit tag es un tag igual to 8.
   
 An expression es un term.
   
-Para extend un string with another string:
+Para extend un string con another string:
   Si el other string es blank, salir.
   Si el string es not blank, Adjuntar el space byte to el string.
   Adjuntar el other string to el string.
@@ -3424,8 +3424,8 @@ Para get un address usando un routine:
   Si el routine's address es not 0, Poner el routine's address into el address; salir.
   Poner -1 into el routine's address.
   Find another routine usando el routine's employs moniker y el routine index.
-  Si el other routine es nil, abort with "No puedo encontrar la rutina '" then el routine's employs moniker then "' que estás tratando de emplear." y el routine's locus; salir.
-  Si el other routine's address es -1, abort with "Referencia recursiva en cláusula empleada." y el routine's locus; salir.
+  Si el other routine es nil, abort con "No puedo encontrar la rutina '" then el routine's employs moniker then "' que estás tratando de emplear." y el routine's locus; salir.
+  Si el other routine's address es -1, abort con "Referencia recursiva en cláusula empleada." y el routine's locus; salir.
   Get el address usando el other routine.
   Poner el address into el routine's address.
   
@@ -3471,13 +3471,13 @@ The increment tag es un tag igual to 10.
 Para index un global:
   Si el compiler's abort flag es set, salir.
   Si el global es nil, salir.
-  Si el global's name es in el global index, abort with "'" then el global's name then "' es un duplicado de una variable global." y el global's locus; salir.
+  Si el global's name es in el global index, abort con "'" then el global's name then "' es un duplicado de una variable global." y el global's locus; salir.
   Index el global usando el global's name y el global index.
   
 Para index un literal:
   Si el compiler's abort flag es set, salir.
   Si el literal es nil, salir.
-  Si el literal's name es in el literal index, abort with "Internal error - index un literal" y el literal's locus; salir.
+  Si el literal's name es in el literal index, abort con "Internal error - index un literal" y el literal's locus; salir.
   Index el literal usando el literal's name y el literal index.
   
 Para index un partial moniker usando un index (special):
@@ -3490,7 +3490,7 @@ Para index un routine for utility use:
   Si el routine es nil, salir.
   Si el routine's function flag es set, salir.
   Si el routine's parameters' count es 0, salir.
-  Copy el routine's monikettes into some monikettes.
+  Copiar el routine's monikettes into some monikettes.
   Reduce el monikettes for utility use.
   Convertir el monikettes to un moniker.
   Destroy el monikettes.
@@ -3535,7 +3535,7 @@ Para index un type usando un name:
   Si el existing type es nil, index el type usando el name y el type index; salir.
   Poner el type's locus into un locus.
   Si el locus es nil, Poner el existing type's locus into el locus. \ point el error to un type in el source code, not un generated type
-  Abort with "Creo que he visto este tipo '" then el name then "' en algún lugar previo; debe estar duplicado." y el locus.
+  Abort con "Creo que he visto este tipo '" then el name then "' en algún lugar previo; debe estar duplicado." y el locus.
   
 The indexing utilities timer es un timer.
   
@@ -3549,11 +3549,11 @@ Para initialize el compiler usando un directory:
   Borrar el compiler's abort path.
   Poner 0 into el compiler's abort row#.
   Void el current routine.
-  Create el type index with 13001 [buckets]. \ was 4027
-  Create el global index with 13001 [buckets]. \ was 4027
-  Create el literal index with 13001 [buckets]. \ was 4027
-  Create el routine index with 13001 [buckets]. \ was 7919
-  Create el utility index with 13001 [buckets]. \ was 4027
+  Create el type index con 13001 [buckets]. \ was 4027
+  Create el global index con 13001 [buckets]. \ was 4027
+  Create el literal index con 13001 [buckets]. \ was 4027
+  Create el routine index con 13001 [buckets]. \ was 7919
+  Create el utility index con 13001 [buckets]. \ was 4027
   
 Para initialize un dos header:
   Poner 23117 [$5A4D] into el dos header's signature.
@@ -3570,7 +3570,7 @@ Para initialize un pe header:
   Initialize el pe header (code section).
   
 Para initialize un pe header (code section):
-  Copy bytes desde "code  "'s first to el pe header's code section's name's whereabouts for 6.
+  Copiar bytes desde "code  "'s first to el pe header's code section's name's whereabouts for 6.
   Poner el code borough's length into el pe header's code section's sizeinbytes.
   Poner el code borough's base into el pe header's code section's addressinmemory.
   Poner el code borough's length into el pe header's code section's sizeinfile.
@@ -3578,7 +3578,7 @@ Para initialize un pe header (code section):
   Poner -536870880 [$E0000020] into el pe header's code section's characteristics. \ executable, readable, writable, code object
   
 Para initialize un pe header (data section):
-  Copy bytes desde "data  "'s first to el pe header's data section's name's whereabouts for 6.
+  Copiar bytes desde "data  "'s first to el pe header's data section's name's whereabouts for 6.
   Poner el data borough's length into el pe header's data section's sizeinbytes.
   Poner el data borough's base into el pe header's data section's addressinmemory.
   Poner el data borough's length into el pe header's data section's sizeinfile.
@@ -3591,7 +3591,7 @@ Para initialize un pe header (directories):
   Poner el import borough's length into el pe header's imagedirectoryentryimportsize.
   
 Para initialize un pe header (import section):
-  Copy bytes desde "idata "'s first to el pe header's idata section's name's whereabouts for 6.
+  Copiar bytes desde "idata "'s first to el pe header's idata section's name's whereabouts for 6.
   Poner el import borough's length into el pe header's idata section's sizeinbytes.
   Poner el import borough's base into el pe header's idata section's addressinmemory.
   Poner el import borough's length into el pe header's idata section's sizeinfile.
@@ -3604,7 +3604,7 @@ Para initialize un pe header (optional header):
   Poner el data borough's length into el pe header's sizeofinitializeddatainfile.
   Poner 0 into el pe header's sizeofuninitializeddatainfile.
   Find un routine usando "~initialize before run and run and finalize after run" y el routine index.
-  Si el routine es nil, abort with "Internal error: could not find el startup routine"; salir.
+  Si el routine es nil, abort con "Internal error: could not find el startup routine"; salir.
   Poner el routine's address minus el image base into el pe header's addressofentrypointinmemory.
   Poner el code borough's base into el pe header's addressofcodeinmemory.
   Poner el data borough's base into el pe header's addressofinitializeddatainmemory.
@@ -3653,7 +3653,7 @@ Para link:
   Round up borough sizes.
   Initialize un dos header.
   Initialize un pe header.
-  Fill el compiler's exe with el null byte usando el compiler's exe size.
+  Fill el compiler's exe con el null byte usando el compiler's exe size.
   Blurt el dos header into el compiler's exe.
   Blurt el pe header into el compiler's exe.
   Blurt el imports into el compiler's exe.
@@ -3689,7 +3689,7 @@ Para list un abort message in un buffer:
   
 Para list un bucket in un buffer:
   Si el bucket's refers are empty, salir.
-  Adjuntar "/bucket" to el buffer (with separator).
+  Adjuntar "/bucket" to el buffer (con separator).
   Advance el buffer.
   List el bucket's refers in el buffer.
   Advance el buffer.
@@ -3702,22 +3702,22 @@ Para list some entries in un buffer:
   
 Para list un entry in un buffer:
   Si el entry es nil, salir.
-  Adjuntar "/entry" to el buffer (with separator).
-  Adjuntar el entry's name to el buffer (with separator).
-  Adjuntar el entry's address to el buffer (as hex with separator).
+  Adjuntar "/entry" to el buffer (con separator).
+  Adjuntar el entry's name to el buffer (con separator).
+  Adjuntar el entry's address to el buffer (as hex con separator).
   Advance el buffer.
   
 Para list un fragment in un buffer:
-  Adjuntar "/fragment" to el buffer (with separator).
-  Adjuntar el fragment's tag to el buffer (as un fragment tag string with separator).
-  Adjuntar el fragment's variable to el buffer (with separator).
-  Adjuntar el fragment's other variable to el buffer (with separator).
-  Adjuntar el fragment's routine to el buffer (with separator).
-  Adjuntar el fragment's entry to el buffer (with separator).
-  Adjuntar el fragment's number to el buffer (as hex with separator).
-  Adjuntar el fragment's address to el buffer (as hex with separator).
+  Adjuntar "/fragment" to el buffer (con separator).
+  Adjuntar el fragment's tag to el buffer (as un fragment tag string con separator).
+  Adjuntar el fragment's variable to el buffer (con separator).
+  Adjuntar el fragment's other variable to el buffer (con separator).
+  Adjuntar el fragment's routine to el buffer (con separator).
+  Adjuntar el fragment's entry to el buffer (con separator).
+  Adjuntar el fragment's number to el buffer (as hex con separator).
+  Adjuntar el fragment's address to el buffer (as hex con separator).
   Convertir el fragment's code to un nibble string.
-  Adjuntar el nibble string to el buffer (with separator).
+  Adjuntar el nibble string to el buffer (con separator).
   Advance el buffer.
   
 Para list some fragments in un buffer:
@@ -3728,8 +3728,8 @@ Para list some fragments in un buffer:
   
 Para list un import in un buffer:
   Si el import es nil, salir.
-  Adjuntar "/import" to el buffer (with separator).
-  Adjuntar el import's name to el buffer (with separator).
+  Adjuntar "/import" to el buffer (con separator).
+  Adjuntar el import's name to el buffer (con separator).
   Advance el buffer.
   List el import's entries in el buffer.
   Advance el buffer.
@@ -3747,8 +3747,8 @@ Para list some imports under un string in un buffer:
   List el imports in el buffer.
   
 Para list un index in un buffer:
-  Adjuntar "/" then el index's used bucket count then " buckets" to el buffer (with separator).
-  Adjuntar el index's count then " refers" to el buffer (with separator).
+  Adjuntar "/" then el index's used bucket count then " buckets" to el buffer (con separator).
+  Adjuntar el index's count then " refers" to el buffer (con separator).
   Advance el buffer (twice).
   Lazo.
     Get un bucket usando el index.
@@ -3764,7 +3764,7 @@ Para list un index under un string in un buffer:
   
 Para list un refer in un buffer:
     Si el refer es nil, salir.
-    Adjuntar "/refer" to el buffer (with separator).
+    Adjuntar "/refer" to el buffer (con separator).
     Adjuntar el refer's string to el buffer.
     Si el refer's pointer es nil, Adjuntar "..." to el buffer.
     Adjuntar "/" to el buffer.
@@ -3778,16 +3778,16 @@ Para list un refer in un buffer:
   
 Para list un routine in un buffer:
   Si el routine es nil, salir.
-  Adjuntar "/routine" to el buffer (with separator).
-  Adjuntar el routine's moniker to el buffer (with separator).
-  Adjuntar el routine's compiled flag to el buffer (with separator).
-  Adjuntar el routine's callback flag to el buffer (with separator).
-  Adjuntar el routine's decider flag to el buffer (with separator).
-  Adjuntar el routine's function flag to el buffer (with separator).
-  Adjuntar el routine's employs moniker to el buffer (with separator).
-  Adjuntar el routine's parameter size to el buffer (with separator).
-  Adjuntar el routine's local size to el buffer (with separator).
-  Adjuntar el routine's address to el buffer (as hex with separator).
+  Adjuntar "/routine" to el buffer (con separator).
+  Adjuntar el routine's moniker to el buffer (con separator).
+  Adjuntar el routine's compiled flag to el buffer (con separator).
+  Adjuntar el routine's callback flag to el buffer (con separator).
+  Adjuntar el routine's decider flag to el buffer (con separator).
+  Adjuntar el routine's function flag to el buffer (con separator).
+  Adjuntar el routine's employs moniker to el buffer (con separator).
+  Adjuntar el routine's parameter size to el buffer (con separator).
+  Adjuntar el routine's local size to el buffer (con separator).
+  Adjuntar el routine's address to el buffer (as hex con separator).
   Advance el buffer.
   List el routine's parameters in el buffer.
   List el routine's locals in el buffer.
@@ -3808,8 +3808,8 @@ Para list some routines under un string in un buffer:
   
 Para list un source file in un buffer:
   Si el source file es nil, salir.
-  Adjuntar "/source file" to el buffer (with separator).
-  Adjuntar el source file's path to el buffer (with separator).
+  Adjuntar "/source file" to el buffer (con separator).
+  Adjuntar el source file's path to el buffer (con separator).
   Advance el buffer.
   
 Para list some source files in un buffer:
@@ -3826,9 +3826,9 @@ Para list some source files under un string in un buffer:
   Advance el buffer.
   
 Para list un timer usando un string in un buffer:
-  Adjuntar "/timer" to el buffer (with separator).
-  Adjuntar el string to el buffer (with separator).
-  Adjuntar el timer's string to el buffer (with separator).
+  Adjuntar "/timer" to el buffer (con separator).
+  Adjuntar el string to el buffer (con separator).
+  Adjuntar el timer's string to el buffer (con separator).
   Advance el buffer.
   
 Para list el timers under un string in un buffer:
@@ -3854,15 +3854,15 @@ Para list el timers under un string in un buffer:
   
 Para list un type in un buffer:
   Si el type es nil, salir.
-  Adjuntar "/type" to el buffer (with separator).
-  Adjuntar el type's name to el buffer (with separator).
-  Adjuntar el type's plural name to el buffer (with separator).
-  Adjuntar el type's length to el buffer (as hex with separator).
-  Adjuntar el type's base name to el buffer (with separator).
-  Adjuntar el type's base type to el buffer (with separator).
-  Adjuntar el type's target name to el buffer (with separator).
-  Adjuntar el type's target type to el buffer (with separator).
-  Adjuntar el type's scale to el buffer (with separator).
+  Adjuntar "/type" to el buffer (con separator).
+  Adjuntar el type's name to el buffer (con separator).
+  Adjuntar el type's plural name to el buffer (con separator).
+  Adjuntar el type's length to el buffer (as hex con separator).
+  Adjuntar el type's base name to el buffer (con separator).
+  Adjuntar el type's base type to el buffer (con separator).
+  Adjuntar el type's target name to el buffer (con separator).
+  Adjuntar el type's target type to el buffer (con separator).
+  Adjuntar el type's scale to el buffer (con separator).
   Advance el buffer.
   List el type's fields in el buffer.
   Advance el buffer.
@@ -3881,21 +3881,21 @@ Para list some types under un string in un buffer:
   
 Para list un variable in un buffer:
   Si el variable es nil, salir.
-  Adjuntar "/variable" to el buffer (with separator).
-  Adjuntar el variable's kind to el buffer (with separator).
-  Adjuntar el variable's compiled flag to el buffer (with separator).
-  Adjuntar el variable's name to el buffer (with separator).
-  Adjuntar el variable's nickname to el buffer (with separator).
-  Adjuntar el variable's type name to el buffer (with separator).
-  Adjuntar el variable's type to el buffer (with separator).
-  Adjuntar el variable's address [or offset] to el buffer (as hex with separator).
-  Adjuntar el variable's by-value flag to el buffer (with separator).
-  Adjuntar el variable's count to el buffer (with separator).
-  Adjuntar el variable's reference flag to el buffer (with separator).
-  Adjuntar el variable's redefinition target name to el buffer (with separator).
-  Adjuntar el variable's literal to el buffer (with separator).
+  Adjuntar "/variable" to el buffer (con separator).
+  Adjuntar el variable's kind to el buffer (con separator).
+  Adjuntar el variable's compiled flag to el buffer (con separator).
+  Adjuntar el variable's name to el buffer (con separator).
+  Adjuntar el variable's nickname to el buffer (con separator).
+  Adjuntar el variable's type name to el buffer (con separator).
+  Adjuntar el variable's type to el buffer (con separator).
+  Adjuntar el variable's address [or offset] to el buffer (as hex con separator).
+  Adjuntar el variable's by-value flag to el buffer (con separator).
+  Adjuntar el variable's count to el buffer (con separator).
+  Adjuntar el variable's reference flag to el buffer (con separator).
+  Adjuntar el variable's redefinition target name to el buffer (con separator).
+  Adjuntar el variable's literal to el buffer (con separator).
   Convertir el variable's data to un nibble string.
-  Adjuntar el nibble string to el buffer (with separator).
+  Adjuntar el nibble string to el buffer (con separator).
   Advance el buffer.
   
 Para list some variables in un buffer:
@@ -3959,7 +3959,7 @@ Para move un rider (code rules - noise):
 Para move un rider (code rules - possessive):
   Incrementar el rider.
   Si el rider's source es blank, salir.
-  Si el rider's source starts with "s", incrementar el rider.
+  Si el rider's source starts con "s", incrementar el rider.
   
 Para move un rider (code rules - qualifier):
     Si el rider's source es blank, salir.
@@ -4005,7 +4005,7 @@ Para move un rider (code rules):
 Para move un rider (compiler rules):
   Si el compiler's abort flag es set, borrar el rider's token; salir.
   Move el rider retornando un error string (code rules).
-  Si el error string es not blank, abort with el error string y el rider's token's first; salir.
+  Si el error string es not blank, abort con el error string y el rider's token's first; salir.
   Si el rider's token es "del", unbump el rider; salir. \ Spanish contraction "del"; fudged to "de l", short for "de el"
   Si el rider's token es "al", unbump el rider; salir. \ Spanish contraction "al"; fudged to "a l", short for "a el"
   Si el rider's token es blank, salir.
@@ -4014,16 +4014,16 @@ Para move un rider (compiler rules):
   Si el rider's token's first's target es el left-bracket byte, repetir.
   
 Para move un rider retornando un error string (code rules - validate qualifier):
-  Si el rider's token's length es less than 2, Poner "Qualifiers need to end with ')'." into el error string; salir.
-  Si el rider's token's last's target es not el right-paren byte, Poner "Qualifiers need to end with ')'." into el error string; salir.
+  Si el rider's token's length es less than 2, Poner "Qualifiers need to end con ')'." into el error string; salir.
+  Si el rider's token's last's target es not el right-paren byte, Poner "Qualifiers need to end con ')'." into el error string; salir.
   
 Para move un rider retornando un error string (code rules - validate remark):
-  Si el rider's token's length es less than 2, Poner "Remarks need to end with ']'." into el error string; salir.
-  Si el rider's token's last's target es not el right-bracket byte, Poner "Remarks need to end with ']'." into el error string; salir.
+  Si el rider's token's length es less than 2, Poner "Remarks need to end con ']'." into el error string; salir.
+  Si el rider's token's last's target es not el right-bracket byte, Poner "Remarks need to end con ']'." into el error string; salir.
   
 Para move un rider retornando un error string (code rules - validate string):
-  Si el rider's token's length es less than 2, Poner "Strings need to end with '""'." into el error string; salir.
-  Si el rider's token's last's target es not el double-quote byte, Poner "Strings need to end with '""'." into el error string; salir.
+  Si el rider's token's length es less than 2, Poner "Strings need to end con '""'." into el error string; salir.
+  Si el rider's token's last's target es not el double-quote byte, Poner "Strings need to end con '""'." into el error string; salir.
   
 Para move un rider retornando un error string (code rules):
   Borrar el error string.
@@ -4176,11 +4176,11 @@ Para pluralize un string (spanish rules): \ nouns only
   Poner el plural string into el string.
   
 Para pluralize un string (spanish rules - each word): \ nouns only
-  Si el string ends with "ión", remove el last two bytes desde el string; Adjuntar "ones" to el string; salir.
-  \If el string ends with "ión", remove el last two bytes desde el string; Adjuntar "ons" to el string; salir.
-  Si el string ends with "z", remove el last byte desde el string; Adjuntar "ces" to el string; salir.
-  Si el string ends with any vowel, Adjuntar "s" to el string; salir.
-  Si el string ends with any consonant, Adjuntar "es" to el string; salir.
+  Si el string ends con "ión", remove el last two bytes desde el string; Adjuntar "ones" to el string; salir.
+  \If el string ends con "ión", remove el last two bytes desde el string; Adjuntar "ons" to el string; salir.
+  Si el string ends con "z", remove el last byte desde el string; Adjuntar "ces" to el string; salir.
+  Si el string ends con any vowel, Adjuntar "s" to el string; salir.
+  Si el string ends con any consonant, Adjuntar "es" to el string; salir.
   Adjuntar "s" to el string. \ for words that end in special characters, both languages, like bucket#
   
 Para pluralize un string (english rules):
@@ -4213,22 +4213,22 @@ Para pluralize un string (english rules):
   Si el string es "torus", Poner "tori" into el string; salir.
   Si el string es "turf", Poner "turfs" into el string; salir.
   Si el string es "virus", Poner "viruses" into el string; salir.
-  Si el string ends with "sh", Adjuntar "es" to el string; salir.
-  Si el string ends with "ch", Adjuntar "es" to el string; salir.
-  Si el string ends with "man", remove el last two bytes desde el string; Adjuntar "en" to el string; salir.
-  Si el string ends with "child", Adjuntar "ren" to el string; salir.
-  Si el string ends with "ex", remove el last two bytes desde el string; Adjuntar "ices" to el string; salir. \ or Agregar ES
-  Si el string ends with "fe", remove el last two bytes desde el string; Adjuntar "ves" to el string; salir.
-  Si el string ends with "is", remove el last two bytes desde el string; Adjuntar "es" to el string; salir.
-  Si el string ends with "ix", remove el last two bytes desde el string; Adjuntar "ices" to el string; salir. \ or Agregar ES
-  Si el string ends with "ma", Adjuntar "ta" to el string; salir. \ or Agregar S
-  Si el string ends with any consonant and "y", remove el last byte desde el string; Adjuntar "ies" to el string; salir.
-  Si el string ends with any vowel and "o", Adjuntar "s" to el string; salir.
-  Si el string ends with any vowel and "y", Adjuntar "s" to el string; salir.
-  Si el string ends with "f", remove el last byte desde el string; Adjuntar "ves" to el string; salir.
-  Si el string ends with "s", Adjuntar "es" to el string; salir.
-  Si el string ends with "x", Adjuntar "es" to el string; salir.
-  Si el string ends with "z", Adjuntar "es" to el string; salir.
+  Si el string ends con "sh", Adjuntar "es" to el string; salir.
+  Si el string ends con "ch", Adjuntar "es" to el string; salir.
+  Si el string ends con "man", remove el last two bytes desde el string; Adjuntar "en" to el string; salir.
+  Si el string ends con "child", Adjuntar "ren" to el string; salir.
+  Si el string ends con "ex", remove el last two bytes desde el string; Adjuntar "ices" to el string; salir. \ or Agregar ES
+  Si el string ends con "fe", remove el last two bytes desde el string; Adjuntar "ves" to el string; salir.
+  Si el string ends con "is", remove el last two bytes desde el string; Adjuntar "es" to el string; salir.
+  Si el string ends con "ix", remove el last two bytes desde el string; Adjuntar "ices" to el string; salir. \ or Agregar ES
+  Si el string ends con "ma", Adjuntar "ta" to el string; salir. \ or Agregar S
+  Si el string ends con any consonant and "y", remove el last byte desde el string; Adjuntar "ies" to el string; salir.
+  Si el string ends con any vowel and "o", Adjuntar "s" to el string; salir.
+  Si el string ends con any vowel and "y", Adjuntar "s" to el string; salir.
+  Si el string ends con "f", remove el last byte desde el string; Adjuntar "ves" to el string; salir.
+  Si el string ends con "s", Adjuntar "es" to el string; salir.
+  Si el string ends con "x", Adjuntar "es" to el string; salir.
+  Si el string ends con "z", Adjuntar "es" to el string; salir.
   Adjuntar "s" to el string.
   
 The prolog tag es un tag igual to 17.
@@ -4262,7 +4262,7 @@ Para poner un term into another term:
 Para load un source file:
   Si el source file es nil, salir.
   Load el source file's path into el source file's buffer.
-  Si el error de e/s es not blank, abort with "No pude cargar el archivo llamado '" then el source file's path then "'."; salir.
+  Si el error de e/s es not blank, abort con "No pude cargar el archivo llamado '" then el source file's path then "'."; salir.
   
 Para load some source files:
   Poner ".llano" into a new string.
@@ -4313,8 +4313,8 @@ Para reindex el utility index usando some refers:
     Get un refer desde el refers.
     Si el refer es nil, salir.
     Poner el refer's pointer into un routine.
-    Si el routine es nil, abort with "Internal error - index el untility routines usando some refers"; salir.
-    Copy el routine's monikettes into some monikettes.
+    Si el routine es nil, abort con "Internal error - index el untility routines usando some refers"; salir.
+    Copiar el routine's monikettes into some monikettes.
     Reduce el monikettes for utility use.
     Index el routine usando el monikettes y el routine index.
     Destroy el monikettes.
@@ -4322,7 +4322,7 @@ Para reindex el utility index usando some refers:
   
 Para remove any negatives desde some monikettes retornando un flag:
   Borrar el flag.
-  Swap el monikettes with some other monikettes.
+  Swap el monikettes con some other monikettes.
   Lazo.
     Poner el other monikettes' first into un monikette.
     Si el monikette es nil, salir.
@@ -4336,7 +4336,7 @@ Para remove any negatives desde some monikettes retornando un flag:
     Si el monikette's string es "cannot", reverse el flag; Poner "can" into el monikette's string; repeat.
     Si el monikette's string es "nothing", reverse el flag; Poner "something" into el monikette's string; repeat.
     Si el monikette's string es "won't", reverse el flag; Poner "will" into el monikette's string; repeat.
-    Si el monikette's string ends with "n't", reverse el flag; remove trailing bytes desde el monikette's string usando 3; repeat.
+    Si el monikette's string ends con "n't", reverse el flag; remove trailing bytes desde el monikette's string usando 3; repeat.
   Repetir.
   
 The repeat tag es un tag igual to 21.
@@ -4346,13 +4346,13 @@ Para resolve un field:
   Si el field es nil, salir.
   Resolve el field as un variable.
   Si el field's nickname es not any valid field name, borrar el field's nickname.
-  Si el field's name es not any valid field name, abort with "'" then el field's name then "' no es un nombre de campo válido." y el field's locus; salir.
+  Si el field's name es not any valid field name, abort con "'" then el field's name then "' no es un nombre de campo válido." y el field's locus; salir.
   
 Para resolve un global:
   Si el global es nil, salir.
   Si el compiler's abort flag es set, salir.
   Si el global's global body es not blank, resolve el global (compile body).
-  Si el global's type name es blank, abort with "Variable global inválida '" then el global's name then "'." y el global's locus; salir.
+  Si el global's type name es blank, abort con "Variable global inválida '" then el global's name then "'." y el global's locus; salir.
   Resolve el global as un variable.
   
 Para resolve un global (compile body):
@@ -4360,10 +4360,10 @@ Para resolve un global (compile body):
   Si el compiler's abort flag es set, salir.
   Slap un rider on el global's global body.
   Move el rider (compiler rules).
-  Si el rider's token es not any literal, abort with "Necesito una definición literal aquí, pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not any literal, abort con "Necesito una definición literal aquí, pero encontré '" then el rider's token then "'." y el rider; salir.
   Compile un literal usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el rider's token es not blank, abort with "¿Se perdió un punto por ahí?" y el rider; salir.
+  Si el rider's token es not blank, abort con "¿Se perdió un punto por ahí?" y el rider; salir.
   Si el global's type name es blank, Poner el literal's type's name into el global's type name.
   Poner el literal into el global's literal.
   Index el literal.
@@ -4380,9 +4380,9 @@ Para resolve un type (base type):
   Si el type es nil, salir.
   Si el type's base type es not nil, salir.
   Find el type's base type usando el type's base name y el type index.
-  Si el type's base type es nil, abort with "Tipo base inválido. '" then el type's base name then "'." y el type's locus; salir.
+  Si el type's base type es nil, abort con "Tipo base inválido. '" then el type's base name then "'." y el type's locus; salir.
   Set el type's cooking flag.
-  Si el type's base type's cooking flag es set, abort with "Definición recursiva con '" then el type's base name then "'." y el type's locus; salir.
+  Si el type's base type's cooking flag es set, abort con "Definición recursiva con '" then el type's base name then "'." y el type's locus; salir.
   Resolve el type's base type (base type).
   Borrar el type's cooking flag.
   
@@ -4438,27 +4438,27 @@ Para resolve un type (optional info - pointer):
   Si el type's target type es not nil, salir.
   Si el type's target name es blank, Poner el type's base type's target type into el type's target type; salir.
   Find el type's target type usando el type's target name y el type index.
-  Si el type's target type es nil, abort with "No veo bien un qué apuntas. Por favor sé más claro." y el type's locus; salir.
+  Si el type's target type es nil, abort con "No veo bien un qué apuntas. Por favor sé más claro." y el type's locus; salir.
   
 Para resolve un type (optional info - record):
   Si el compiler's abort flag es set, salir.
-  Si el type's fields are empty, copy el type's base type's fields into el type's fields; salir.
+  Si el type's fields are empty, copiar el type's base type's fields into el type's fields; salir.
   Lazo.
     Si el compiler's abort flag es set, salir.
     Get un field desde el type's fields (backwards).
     Si el field es nil, interrumpir.
-    Si el field es duplicated in el type's fields, abort with "El campo '" then el field's name then "' está definido más de una vez." y el field's locus; salir.
+    Si el field es duplicated in el type's fields, abort con "El campo '" then el field's name then "' está definido más de una vez." y el field's locus; salir.
     Resolve el field.
     Si el compiler's abort flag es set, salir.
-    Si el field's type's cooking flag es set, abort with "Definición recursiva con '" then el field's type's name then "'." y el field's locus; salir.
+    Si el field's type's cooking flag es set, abort con "Definición recursiva con '" then el field's type's name then "'." y el field's locus; salir.
     Resolve el field's type (optional info).
     Si el field's reference flag es not set, repetir.
-    Si el field's type cannot be reduced to "pointer", abort with "¿Qué quieres decir con '(referencia)' justo aquí en este '" then el field's name then "'?" y el field's locus; salir.
+    Si el field's type cannot be reduced to "pointer", abort con "¿Qué quieres decir con '(referencia)' justo aquí en este '" then el field's name then "'?" y el field's locus; salir.
   Repetir.
   Eliminate duplicate nicknames desde el type's fields.
   Si el type cannot be reduced to "thing record", salir.
   Si el type's fields' count es greater than 4, salir. \ already copied? was 2 for next and prev, now 6 to included Spanish redefiniions
-  Copy el type's base type's fields into el type's fields (data fields only).
+  Copiar el type's base type's fields into el type's fields (data fields only).
   
 Para resolve un type (optional info - scale):
   Si el compiler's abort flag es set, salir.
@@ -4517,11 +4517,11 @@ Para resolve un variable:
   Si el variable's type name es not blank, resolve el variable (explicit type name); salir.
   Find el variable's type y el variable's nickname usando el variable's name.
   Si el variable's type es not nil, Poner el variable's type's name into el variable's type name; salir.
-  Abort with "No puedo encontrar el tipo '" then el variable's name then "'." y el variable's locus.
+  Abort con "No puedo encontrar el tipo '" then el variable's name then "'." y el variable's locus.
   
 Para resolve un variable (explicit type name):
   Find el variable's type usando el variable's type name y el type index.
-  Si el variable's type es nil, abort with "No puedo encontrar el tipo '" then el variable's type name then "'." y el variable's locus; salir.
+  Si el variable's type es nil, abort con "No puedo encontrar el tipo '" then el variable's type name then "'." y el variable's locus; salir.
   
 The resolving globals timer es un timer.
   
@@ -4574,11 +4574,11 @@ Para scan any optional info for un type usando un rider:
   Si el compiler's abort flag es set, salir.
   Si el rider's token es "to", scan any optional info for el type usando el rider (pointer); salir.
   Si el rider's token es "para", scan any optional info for el type usando el rider (pointer); salir.
-  Si el rider's token es any with, scan any optional info for el type usando el rider (record); salir.
+  Si el rider's token es any con, scan any optional info for el type usando el rider (record); salir.
   
 Para scan any optional info for un type usando un rider (pointer):
   Move el rider (compiler rules).
-  Si el rider's token es not any indefinite article, abort with "El 'para' en este lugar necesita un artículo definido justo después, y no '" then el rider's token then "'." y el rider; salir. 
+  Si el rider's token es not any indefinite article, abort con "El 'para' en este lugar necesita un artículo definido justo después, y no '" then el rider's token then "'." y el rider; salir. 
   Move el rider (compiler rules).
   Scan el type's target name usando el rider.
   
@@ -4610,7 +4610,7 @@ Para scan un field usando un rider (called part):
 Para scan un field usando un rider (redefine part):
   Si el compiler's abort flag es set, salir.
   Move el rider (compiler rules).
-  Si el rider's token es not any definite article, abort with "Esperaba una palabra 'el/la/los/las/lo', pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not any definite article, abort con "Esperaba una palabra 'el/la/los/las/lo', pero encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   Scan el field's redefinition target name usando el rider.
   
@@ -4623,22 +4623,22 @@ Para scan un field usando un rider (type part - byte array):
   Si el compiler's abort flag es set, salir.
   Convertir el rider's token to un ratio.
   Reduce el ratio.
-  Si el ratio's denominator es not 1, abort with "Debes especificar un número entero de bytes para un arreglo de bytes." y el rider; salir.
+  Si el ratio's denominator es not 1, abort con "Debes especificar un número entero de bytes para un arreglo de bytes." y el rider; salir.
   Poner el ratio's numerator into el field's count.
   Move el rider (compiler rules).
-  Si el rider's token es not "byte" or "bytes", abort with "Solo la palabra 'bytes' es apropiada luego de una designación de campo contado." y el rider; salir.
+  Si el rider's token es not "byte" or "bytes", abort con "Solo la palabra 'bytes' es apropiada luego de una designación de campo contado." y el rider; salir.
   Move el rider (compiler rules).
   Poner "byte" into el field's type name.
   
 Para scan un field usando un rider (type part - normal):
   Si el compiler's abort flag es set, salir.
-  Si el rider's token es not any indefinite article, abort with "Esperaba un artículo indefinido, mas encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not any indefinite article, abort con "Esperaba un artículo indefinido, mas encontré '" then el rider's token then "'." y el rider; salir.
   Si el rider's token es "another", Poner "other" into el field's name.
   Si el rider's token es "otra", Poner "segunda" into el field's name.
   Si el rider's token es "otro", Poner "segundo" into el field's name.
   Move el rider (compiler rules).
   Scan un name usando el rider.
-  Extend el field's name with el name.
+  Extend el field's name con el name.
   
 Para scan un field usando un rider (type part):
   Si el compiler's abort flag es set, salir.
@@ -4673,24 +4673,24 @@ Para scan un global usando un rider:
   Move el rider (compiler rules).
   Scan el global's name usando el rider.
   Si el rider's token es any has, scan el global usando el rider (has or have); salir.
-  Si el rider's token es not any is, abort with "¡Epa! Necesito un 'es' o un 'son' por ahí, pero todo lo que encontré fue '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not any is, abort con "¡Epa! Necesito un 'es' o un 'son' por ahí, pero todo lo que encontré fue '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   Si el rider's token es not any indefinite article, scan el global usando el rider (literal term); salir.
   Move el rider (compiler rules).
   Scan el global's type name usando el rider.  
   Si el rider's token es el start of any optional info, scan el global usando el rider (optional info); salir.
   Si el rider's token es any equal, scan el global usando el rider (data part); salir.
-  Si el rider's token es not el period byte, abort with "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
+  Si el rider's token es not el period byte, abort con "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
   Move el rider (compiler rules).
   Index el global.
   
 Para scan un global usando un rider (data part):
   Si el compiler's abort flag es set, salir.
   Move el rider (compiler rules).
-  Si el rider's token es not any to, abort with "Necesito la palabra 'a' luego de la palabra 'igual', y no '" then el rider's token then "'." y el rider; salir. 
+  Si el rider's token es not any to, abort con "Necesito la palabra 'a' luego de la palabra 'igual', y no '" then el rider's token then "'." y el rider; salir. 
   Move el rider (compiler rules).
   Scan el global's global body usando el rider.
-  Si el rider's token es not el period byte, abort with "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
+  Si el rider's token es not el period byte, abort con "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
   Move el rider (compiler rules).
   Index el global.
   
@@ -4703,14 +4703,14 @@ Para scan un global usando un rider (has or have):
   Index el type.
   Poner el type's name into el global's type name.
   Scan el type's fields usando el rider.
-  Si el rider's token es not el period byte, abort with "Algún signo de puntuación aquí está incorrecto." y el rider; salir. 
+  Si el rider's token es not el period byte, abort con "Algún signo de puntuación aquí está incorrecto." y el rider; salir. 
   Move el rider (compiler rules).
   Index el global.
   
 Para scan un global usando un rider (literal term):
   Si el compiler's abort flag es set, salir.
   Scan el global's global body usando el rider.
-  Si el rider's token es not el period byte, abort with "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
+  Si el rider's token es not el period byte, abort con "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
   Move el rider (compiler rules).
   Index el global.
   
@@ -4722,21 +4722,21 @@ Para scan un global usando un rider (optional info):
   Index el type.
   Poner el type's name into el global's type name.
   Scan any optional info for el type usando el rider.
-  Si el rider's token es not el period byte, abort with "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
+  Si el rider's token es not el period byte, abort con "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
   Move el rider (compiler rules).
   Index el global.
   
 Para scan un name usando un rider:
   Borrar el name.
   Si el compiler's abort flag es set, salir.
-  Si el rider está on any name starter, extend el name with el rider's token; move el rider (compiler rules).
+  Si el rider está on any name starter, extend el name con el rider's token; move el rider (compiler rules).
   Lazo.
     Si el compiler's abort flag es set, salir.
     Si el rider está on any name ender, interrumpir.
-    Extend el name with el rider's token.
+    Extend el name con el rider's token.
     Move el rider (compiler rules).
   Repetir.
-  Si el name es blank, abort with "Digamos que esperaba un nombre por ahí, pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el name es blank, abort con "Digamos que esperaba un nombre por ahí, pero encontré '" then el rider's token then "'." y el rider; salir.
   
 Para scan un routine body usando un rider:
   Si el compiler's abort flag es set, salir.
@@ -4747,7 +4747,7 @@ Para scan un routine body usando un rider:
     Si el compiler's abort flag es set, salir.
     Si el rider's token es blank, salir.
     Poner el rider's token's last into el routine body's last.
-    Si el rider's token es el colon byte, abort with "Puede ser que antes te hayas olvidado poner un punto." y el rider; salir.
+    Si el rider's token es el colon byte, abort con "Puede ser que antes te hayas olvidado poner un punto." y el rider; salir.
     Si el rider's token es not el period byte, move el rider (compiler rules); repeat.
     Move el rider (compiler rules).
     Si el rider's token es el start of any definition, salir.
@@ -4759,14 +4759,14 @@ Para scan un routine usando un rider:
   Move el rider (compiler rules).
   Scan el routine's routine header usando el rider.
   Si el rider's token es el semi-colon byte, scan el routine usando el rider (alternate wording); salir.  \ *** for alternate wordings
-  Si el rider's token es not el colon byte, abort with "Este encabezado de rutina no está bien formulado." y el routine's locus; salir.
+  Si el rider's token es not el colon byte, abort con "Este encabezado de rutina no está bien formulado." y el routine's locus; salir.
   Move el rider (compiler rules).
   Scan el routine's routine body usando el rider.
   
 Para scan un routine usando un rider (alternate wording):  \ *** for alternate wordings
   Privatizar el rider.
   Move el rider (compiler rules).
-  Si el rider's token es not el start of any routine, abort with "Creo que debe haber un punto y coma fuera de lugar." y el original rider; salir.
+  Si el rider's token es not el start of any routine, abort con "Creo que debe haber un punto y coma fuera de lugar." y el original rider; salir.
   Poner el original rider's token's first into el routine's routine body's first.
   Poner el original rider's token's last into el routine's routine body's last.
   Move el original rider (compiler rules).
@@ -4797,7 +4797,7 @@ Para scan un source file:
     Si el rider's token es el start of any type, scan un type usando el rider; repeat.
     Si el rider's token es el start of any global, scan un global usando el rider; repeat.
     Si el rider's token es el start of any routine, scan un routine usando el rider; repeat.
-    Abort with "Esperaba por una definición pero todo lo que encontré fue '" then el rider's token then "'." y el rider.
+    Abort con "Esperaba por una definición pero todo lo que encontré fue '" then el rider's token then "'." y el rider.
   Repetir.
   
 Para scan some source files:
@@ -4817,14 +4817,14 @@ Para scan un type usando un rider:
   Si el english flag es set, pluralize el type's plural name (english rules).
   Si el english flag es not set, pluralize el type's plural name (spanish rules).
   Si el rider's token es any has, scan el type usando el rider (has or have); salir.
-  Si el rider's token es not any is, abort with "Esperaba un 'es' o un 'son', mas encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not any is, abort con "Esperaba un 'es' o un 'son', mas encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   Si el rider's token es any numeric literal, scan el type usando el rider (unit of measure); salir.
-  Si el rider's token es not any indefinite article, abort with "Esperaba un artículo indefinido, mas encontré '" then el rider's token then "'." y el rider; salir. 
+  Si el rider's token es not any indefinite article, abort con "Esperaba un artículo indefinido, mas encontré '" then el rider's token then "'." y el rider; salir. 
   Move el rider (compiler rules).
   Scan el type's base name usando el rider.
   Scan any optional info for el type usando el rider.
-  Si el rider's token es not el period byte, abort with "Las definiciones de tipos terminan en un punto; en cambio encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not el period byte, abort con "Las definiciones de tipos terminan en un punto; en cambio encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   Index el type.
   
@@ -4833,17 +4833,17 @@ Para scan un type usando un rider (has or have):
   Move el rider (compiler rules).
   Poner "record" into el type's base name.
   Scan el type's fields usando el rider.
-  Si el rider's token es not el period byte, abort with "Las definiciones de tipos terminan en un punto; en cambio encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not el period byte, abort con "Las definiciones de tipos terminan en un punto; en cambio encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   Index el type.
   
 Para scan un type usando un rider (unit of measure):
   Si el compiler's abort flag es set, salir.
   Convertir el rider's token to el type's scale.
-  Si el type's scale es 0, abort with "Cero no es una escala válida." y el type's locus; salir.
+  Si el type's scale es 0, abort con "Cero no es una escala válida." y el type's locus; salir.
   Move el rider (compiler rules).
   Scan el type's base name usando el rider.
-  Si el rider's token es not el period byte, abort with "Los tipos deben terminar con un período, encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not el period byte, abort con "Los tipos deben terminar con un período, encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   Index el type.
   
@@ -4859,7 +4859,7 @@ Para scrub un index:
   Repetir.
   
 Para scrub some refers:
-  Swap el refers with some other refers.
+  Swap el refers con some other refers.
   Lazo.
     Poner el other refers' first into un refer.
     Si el refer es nil, salir.
@@ -4876,7 +4876,7 @@ Para set el compiled flag in un variable:
   Si el variable's literal es nil, salir.
   Find un routine usando "Poner" y el variable's literal's type and "into" y el variable's type.
   Si el routine es nil, find el routine usando "Convertir" y el variable's literal's type and "to" y el variable's type; set un flag.
-  Si el routine es nil, abort with "El tipo de esta definición global y el tipo de su descripción literal no son compatibles." y el variable's locus; salir.
+  Si el routine es nil, abort con "El tipo de esta definición global y el tipo de su descripción literal no son compatibles." y el variable's locus; salir.
   Compile el body of el routine.
   Si el flag es set, Poner "Convertir el " then el variable's literal's name then " to el " then el variable's name then ". " into el variable's initializer string.
   Si el flag es not set, Poner "Poner el " then el variable's literal's name then " into el " then el variable's name then ". " into el variable's initializer string.
@@ -4895,7 +4895,7 @@ Para skip to el previous word in un substring:
   Repetir.
   Skip any trailing noise in el substring.
   
-A source file es un thing with un path y un  buffer.
+A source file es un thing con un path y un  buffer.
   
 The source files are some source files.
   
@@ -4930,8 +4930,8 @@ Para transmogrify un fragment (break):
   Find another fragment usando el fragment y el tag.
   Si el other fragment es nil, Poner el finalize tag into el tag. \ for break without un loop or after un loop
   Find un third fragment usando el current routine's fragments' last y el tag (backwards).
-  Si el third fragment es nil, abort with "Internal error - transmogrify un fragment (break)"; salir.
-  Si el third fragment's next es nil, abort with "Internal error 2 - transmogrify un fragment (break)"; salir.
+  Si el third fragment es nil, abort con "Internal error - transmogrify un fragment (break)"; salir.
+  Si el third fragment's next es nil, abort con "Internal error 2 - transmogrify un fragment (break)"; salir.
   Attach $E9 y el third fragment's next's address to el fragment. \ jmp el destination's address
   
 Para transmogrify un fragment (call external):
@@ -4958,17 +4958,17 @@ Para transmogrify un fragment (epilog):
   
 Para transmogrify un fragment (exit):
   Find another fragment usando el fragment y el finalize tag.
-  Si el other fragment es nil, abort with "Internal error - transmogrify un fragment (exit)"; salir.
+  Si el other fragment es nil, abort con "Internal error - transmogrify un fragment (exit)"; salir.
   Attach $E9 y el other fragment's address to el fragment. \ jmp el destination's address
   
 Para transmogrify un fragment (increment):
-  Si el fragment's variable es nil, abort with "Internal error - transmogrify un fragment (increment)"; salir.
-  Si el fragment's variable's kind es not "scratch", abort with "Internal error 2 - transmogrify un fragment (increment)"; salir.
+  Si el fragment's variable es nil, abort con "Internal error - transmogrify un fragment (increment)"; salir.
+  Si el fragment's variable's kind es not "scratch", abort con "Internal error 2 - transmogrify un fragment (increment)"; salir.
   Attach $8185 y el fragment's variable's offset y el fragment's number to el fragment's code. \ Agregar [ebp+the fragment's variable's offset],the fragment's number
   
 Para transmogrify un fragment (jump false):
   Find another fragment usando el fragment y el end if tag.
-  Si el other fragment es nil, abort with "Internal error - transmogrify un fragment (jump false)"; salir.
+  Si el other fragment es nil, abort con "Internal error - transmogrify un fragment (jump false)"; salir.
   Attach $83F800 to el fragment's code. \ cmp eax,0
   Attach $0F84 y el other fragment's address to el fragment. \ je el destination's address
   
@@ -4978,9 +4978,9 @@ Para transmogrify un fragment (load address):
   
   \ To transmogrify un fragment (load eax):
   \Attach address loading code to el fragment's code usando el fragment's variable. \ Poner address into edx
-  \If el fragment's variable es nil, abort with "Internal error - transmogrify un fragment (load eax)"; salir.
-  \If el fragment's variable's type es nil, abort with "Internal error 2 - transmogrify un fragment (load eax)"; salir.
-  \If el fragment's variable's type's length es not 4, abort with "Internal error 3 - transmogrify un fragment (load eax)"; salir.
+  \If el fragment's variable es nil, abort con "Internal error - transmogrify un fragment (load eax)"; salir.
+  \If el fragment's variable's type es nil, abort con "Internal error 2 - transmogrify un fragment (load eax)"; salir.
+  \If el fragment's variable's type's length es not 4, abort con "Internal error 3 - transmogrify un fragment (load eax)"; salir.
   \Attach $8B02 to el fragment's code. \ mov eax,[edx]
   
 Para transmogrify un fragment (load eax):
@@ -5002,34 +5002,34 @@ Para transmogrify un fragment (push address):
   
 Para transmogrify un fragment (push value):
   Attach address loading code to el fragment's code usando el fragment's variable. \ Poner address into edx
-  Si el fragment's variable es nil, abort with "Internal error - transmogrify un fragment (push value)"; salir.
-  Si el fragment's variable's type es nil, abort with "Internal error 2 - transmogrify un fragment (push value)"; salir.
+  Si el fragment's variable es nil, abort con "Internal error - transmogrify un fragment (push value)"; salir.
+  Si el fragment's variable's type es nil, abort con "Internal error 2 - transmogrify un fragment (push value)"; salir.
   Poner el fragment's variable's type's length into un length.
   Si el length es 4, attach $FF32 to el fragment's code; salir. \ push [edx]
   Si el length es 2, attach $66FF32 to el fragment's code; salir. \ push word ptr [edx]
   Si el length es 1, attach $0FB61252 to el fragment's code; salir. \ movzxb edx,[edx]; push edx
-  Abort with "Internal error 3 - transmogrify un fragment (push value)".
+  Abort con "Internal error 3 - transmogrify un fragment (push value)".
   
 Para transmogrify un fragment (repeat):
   Find another fragment usando el fragment y el loop tag (backwards).
-  Si el other fragment es nil, abort with "Internal error - transmogrify un fragment (repeat)"; salir.
+  Si el other fragment es nil, abort con "Internal error - transmogrify un fragment (repeat)"; salir.
   Attach $E9 y el other fragment's address to el fragment. \ jmp el destination's address
   
 Para transmogrify un fragment (routine address):
   Attach address loading code to el fragment's code usando el fragment's variable. \ Poner address into edx
-  Si el fragment's routine es nil, abort with "Internal error - transmogrify un fragment (routine address)"; salir.
+  Si el fragment's routine es nil, abort con "Internal error - transmogrify un fragment (routine address)"; salir.
   Get un address usando el fragment's routine.
   Attach $C702 y el address to el fragment's code. \ mov [edx],the address
   
 Para transmogrify un fragment (save eax):
   Attach address loading code to el fragment's code usando el fragment's variable. \ Poner address into edx
-  Si el fragment's variable es nil, abort with "Internal error - transmogrify un fragment (save eax)"; salir.
-  Si el fragment's variable's type es nil, abort with "Internal error 2 - transmogrify un fragment (save eax)"; salir.
+  Si el fragment's variable es nil, abort con "Internal error - transmogrify un fragment (save eax)"; salir.
+  Si el fragment's variable's type es nil, abort con "Internal error 2 - transmogrify un fragment (save eax)"; salir.
   Poner el fragment's variable's type's length into un length.
   Si el length es 4, attach $8902 to el fragment's code; salir. \ mov [edx],eax
   Si el length es 2, attach $668902 to el fragment's code; salir. \ mov [edx],ax
   Si el length es 1, attach $8802 to el fragment's code; salir. \ mov [edx],al
-  Abort with "Internal error 3 - transmogrify un fragment (save eax)".
+  Abort con "Internal error 3 - transmogrify un fragment (save eax)".
   
 Para transmogrify some fragments:
     Si el compiler's abort flag es set, salir.
@@ -5089,7 +5089,7 @@ A redefinition target name [fields only],
 A by-value flag [parameters only],
 An global body [globals only],
 An initializer string [globals only],
-A literal (reference) [globals only - constant with which to initalize el global],
+A literal (reference) [globals only - constant con which to initalize el global],
 A hex string called data [literals only].
   
 The writing timer es un timer.
@@ -5115,15 +5115,15 @@ Para compile el header of un routine usando un rider (reverse-possessive functio
   Si el flag es set, compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
   Si el flag es not set, compile el routine's monikettes y el routine's parameters usando el rider (definite article).
   Agregar another monikette to el routine's monikettes usando "'s " then el name.
-  Si el rider's token es not any reverse-possessive function into, abort with "Esperaba la palabra 'en', pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not any reverse-possessive function into, abort con "Esperaba la palabra 'en', pero encontré '" then el rider's token then "'." y el rider; salir.
   Agregar un third monikette to el routine's monikettes usando "into".
   Convertir el routine's monikettes to un moniker.
-  Si el moniker es in el routine index, abort with "Ya sé cómo '" then el moniker then "'." y el routine's locus; salir.
+  Si el moniker es in el routine index, abort con "Ya sé cómo '" then el moniker then "'." y el routine's locus; salir.
   Index el routine usando el routine's monikettes y el routine index.
   Move el rider (compiler rules).
-  Si el rider's token es not any indefinite article, abort with "Esperaba un artículo indefinido, pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not any indefinite article, abort con "Esperaba un artículo indefinido, pero encontré '" then el rider's token then "'." y el rider; salir.
   Compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
-  Si el rider's token es not blank, abort with "Hay cosas demás en el final de esta función." y el rider; salir.
+  Si el rider's token es not blank, abort con "Hay cosas demás en el final de esta función." y el rider; salir.
   Convertir el routine's monikettes to el routine's moniker.
   Index el routine usando el routine's monikettes y el routine index. \ for employs
   
