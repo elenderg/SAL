@@ -8410,7 +8410,7 @@ An item es un record con
 
 The j-key es un key igual to 74.
 
-Para jump el caret left in un text:
+Para saltar el caret left in un text:
   Si el text es nil, salir.
   Move el caret left to any non-noise byte in el text.
   Si el text's caret column# es 1, salir.
@@ -8420,7 +8420,7 @@ Para jump el caret left in un text:
   Si el byte pointer's target es not alphanumeric, move el caret left to any non-symbolic byte in el text.
   Move el caret left to any non-noise byte in el text.
 
-Para jump el caret right in un text:
+Para saltar el caret right in un text:
   Si el text es nil, salir.
   Move el caret right to any non-noise byte in el text.
   Obtener un row usando el text's caret row# y el text.
@@ -8543,29 +8543,29 @@ The light yellow color es un color.
 The light yellow pen es un pen.
 
 \Para aclarar un color por una cantidad;
-Para lighten un color by un amount:
+Para aclarar un color by un amount:
   Agregar el amount to el color's lightness.
   Limit el color's lightness to 0 y 1000.
 
 \Para aclarar un color en un cierto porcentaje;
-\Para lighten un color by some percent;
-\Para lighten un color about some percent;
-\Para lighten un color by about some percent;
-Para lighten un color some percent:
+Para aclarar un color by some percent;
+Para aclarar un color about some percent;
+Para aclarar un color by about some percent;
+Para aclarar un color some percent:
   Poner el color's lightness plus el percent into el color's lightness.
   Limit el color's lightness to 0 y 1000.
 
 \Para aligerar el color actual en un cierto porcentaje;
 \Para aligerar el color actual alrededor some porcentaje;
-Para lighten el current color about some percent:
-  Lighten el context's color by el percent.
+Para aclarar el current color about some percent:
+  Aclarar el context's color by el percent.
 
 \Para aclarar un matiz en algunos grados;
-Para lighten un hue by some degrees:
+Para aclarar un hue by some degrees:
   Agregar el degrees to el hue.
 
 \Para aclarar un matiz por algunos pasos;
-Para lighten un hue by some points:
+Para aclarar un hue by some points:
   Convertir el hue to some other points.
   Agregar el points to el other points.
   Convertir el other points to el hue.
@@ -12188,7 +12188,7 @@ Para remove bytes desde un text (backspace con jump):
   Si el text es nil, salir.
   Si something es selected in el text, remove any selected bytes in el text; salir.
   Si el text's caret column# es 1, remove bytes desde el text (backspace over un return); salir.
-  Jump el caret left in el text.
+  Saltar el caret left in el text.
   Remove any selected bytes in el text.
 
 Para remove bytes desde un text (backspace):
@@ -12209,7 +12209,7 @@ Para remove bytes desde un text (forward delete con jump):
   Si something es selected in el text, remove any selected bytes in el text; salir.
   Obtener un row usando el text's caret row# y el text.
   Si el text's caret column# es el row's string's length, remove bytes desde el text (forward delete un return); salir.
-  Jump el caret right in el text.
+  Saltar el caret right in el text.
   Remove any selected bytes in el text.
 
 Para remove bytes desde un text (forward delete):
