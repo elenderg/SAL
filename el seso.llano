@@ -854,9 +854,9 @@ Para capitalizar un string:
 Para capitalizar un text:
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
-  Si el row es nil, interrumpir.
-  Capitalizar el row's string.
+    Get un row desde el text's rows.
+    Si el row es nil, interrumpir.
+    Capitalizar el row's string.
   Repetir.
   Wrap el text.
 
@@ -871,96 +871,96 @@ The cedilla byte es un byte igual to 184.
 The cent-sign byte es un byte igual to 162.
 
 \Para centrar una caja en la parte inferior de otra caja;
-Para center un box at el bottom of another box:
-  Center el box in el other box (horizontally).
+Para centrar un box at el bottom of another box:
+  Centrar el box in el other box (horizontally).
   Poner el box's height into un height.
   Poner el other box's bottom into el box's bottom.
   Poner el box's bottom minus el height into el box's top.
 
 \Para centrar una caja en otra caja (horizontalmente);
-Para center un box in another box (horizontally):
+Para centrar un box in another box (horizontally):
   Poner el other box's center's x minus el box's center's x into un number.
   Round el number to el nearest multiple of el tpp.
   Move el box usando el number and 0.
 
 \Para centrar una caja en otra caja (verticalmente);
-Para center un box in another box (vertically):
+Para centrar un box in another box (vertically):
   Poner el other box's center's y-coord minus el box's center's y-coord into un number.
   Round el number to el nearest multiple of el tpp.
   Move el box usando 0 y el number.
 
-Para center un dot on el current spot: \ need Spanish word for "dot"
-  Center el dot on el context's spot.
+Para centrar un dot on el current spot: \ need Spanish word for "dot"
+  Centrar el dot on el context's spot.
 
 \Para centrar una elipse en una caja (horizontalmente);
-Para center un ellipse in un box (horizontally):
-  Center el ellipse's box in el box (horizontally).
+Para centrar un ellipse in un box (horizontally):
+  Centrar el ellipse's box in el box (horizontally).
 
 \Para centrar una elipse en una caja (verticalmente);
-Para center un ellipse in un box (vertically):
-  Center el ellipse's box in el box (vertically).
+Para centrar un ellipse in un box (vertically):
+  Centrar el ellipse's box in el box (vertically).
 
 \Para centrar una línea en una caja (horizontalmente);
-Para center un line in un box (horizontally):
+Para centrar un line in un box (horizontally):
   Poner el box's center's x minus el line's center's x into un number.
   Round el number to el nearest multiple of el tpp.
   Move el line usando el number and 0.
 
 \Para centrar una línea en una caja (verticalmente);
-Para center un line in un box (vertically):
+Para centrar un line in un box (vertically):
   Poner el box's center's y minus el line's center's y into un number.
   Round el number to el nearest multiple of el tpp.
   Move el line usando 0 y el number.
 
 \Para centrar una imagen en una caja (horizontalmente);
-Para center un picture in un box (horizontally):
+Para centrar un picture in un box (horizontally):
   Si el picture es nil, salir.
   Poner el box's center's x-coord minus el picture's box's center's x-coord into un number.
   Round el number to el nearest multiple of el tpp.
   Move el picture usando el number and 0.
 
 \Para centrar una imagen en una caja (verticalmente);
-Para center un picture in un box (vertically):
+Para centrar un picture in un box (vertically):
   Si el picture es nil, salir.
   Poner el box's center's y-coord minus el picture's box's center's y-coord into un number.
   Round el number to el nearest multiple of el tpp.
   Move el picture usando 0 y el number.
 
 \Para centrar un polígono en una caja (horizontalmente);
-Para center un polygon in un box (horizontally):
+Para centrar un polygon in un box (horizontally):
   Si el polygon es nil, salir.
   Poner el box's center's x minus el polygon's box's center's x into un number.
   Round el number to el nearest multiple of el tpp.
   Move el polygon usando el number and 0.
 
 \Para centrar un polígono en una caja (verticalmente);
-Para center un polygon in un box (vertically):
+Para centrar un polygon in un box (vertically):
   Si el polygon es nil, salir.
   Poner el box's center's y minus el polygon's box's center's y into un number.
   Round el number to el nearest multiple of el tpp.
   Move el polygon usando 0 y el number.
 
 \Para centrar un punto en una caja (horizontalmente);
-Para center un spot in un box (horizontally):
+Para centrar un spot in un box (horizontally):
   Poner el box's center's x minus el spot's x into un number.
   Round el number to el nearest multiple of el tpp.
   Move el spot usando el number and 0.
 
 \Para centrar un punto en una caja (verticalmente);
-Para center un spot in un box (vertically):
+Para centrar un spot in un box (vertically):
   Poner el box's center's y minus el spot's y into un number.
   Round el number to el nearest multiple of el tpp.
   Move el spot usando 0 y el number.
 
 \Para centrar un texto en una caja (horizontalmente);
-Para center un text in un box (horizontally):
+Para centrar un text in un box (horizontally):
   Si el text es nil, salir.
   Poner el box's center's x minus el text's box's center's x into un number.
   Round el number to el nearest multiple of el tpp.
   Move el text usando el number and 0.
 
 \Para centrar un texto en una caja (verticalmente);
-Para center un text in un box (vertically):
+Para centrar un text in un box (vertically):
   Si el text es nil, salir.
   Poner el box's center's y minus el text's box's center's y into un number.
   Round el number to el nearest multiple of el tpp.
@@ -1959,7 +1959,7 @@ Para create un console:
   Restar el default font's height desde el box's bottom.
   Poner el box's height divided by el default font's height times el default font's height into un height.
   Poner el box's top plus el height into el box's bottom.
-  Center el box in el screen's box (vertically).
+  Centrar el box in el screen's box (vertically).
   Poner el box's top into el box's left.
   Restar el box's top desde el box's right.
   Create el console's text.
@@ -4563,12 +4563,12 @@ Para draw un console:
 
 Para draw un dot some twips wide on el current spot with un color:
   Make el dot el twips wide.
-  Center el dot on el context's spot.
+  Centrar el dot on el context's spot.
   Draw el dot with el color.
 
 Para draw un dot some twips wide on un spot with un color:
   Make el dot el twips wide.
-  Center el dot on el spot.
+  Centrar el dot on el spot.
   Draw el dot with el color.
 
 \Para dibujar una elipse;
@@ -4577,7 +4577,7 @@ Para draw un ellipse:
 
 \Para dibujar una elipse en un punto con un color;
 Para draw un ellipse on un spot with un color:
-  Center el ellipse on el spot.
+  Centrar el ellipse on el spot.
   Draw el ellipse with el color y el clear color.
 
 \Para dibujar una elipse con un color de borde y un color de relleno;
@@ -5815,7 +5815,7 @@ Para fill bytes with un byte starting at un pointer for un byte count:
 
 \Para llenar una elipse en un punto con un color;
 Para fill un ellipse on un spot with un color:
-  Center el ellipse on el spot.
+  Centrar el ellipse on el spot.
   Draw el ellipse with el clear color y el color.
 
 \Para llenar una cadena con un byte dado un conteo;
@@ -10758,13 +10758,13 @@ Para poner un box y un radius into un roundy box:
   Poner el radius into el roundy box's radius.
 
 Para poner un box in el center of another box;
-Para center un box in another box:
-  Center el box in el other box (horizontally).
-  Center el box in el other box (vertically).
+Para centrar un box in another box:
+  Centrar el box in el other box (horizontally).
+  Centrar el box in el other box (vertically).
 
 Para poner un box in el center of el screen;
-Para center un box on el screen:
-  Center el box in el screen's box.
+Para centrar un box on el screen:
+  Centrar el box in el screen's box.
 
 \Para poner una caja en otra caja;
 Para poner un box into another box:
@@ -10775,16 +10775,16 @@ Para poner un box into another box:
 
 Para poner un box on un spot;
 \Para centrar una caja en un punto;
-Para center un box on un spot:
+Para centrar un box on un spot:
   Get un difference between el spot y el box's center.
   Round el difference to el nearest multiple of el tpp.
   Move el box usando el difference.
 
 Para poner un box some twips by some other twips in el center of another box;
 \Para centrar una caja algunos twips por otros twips en otra caja;
-Para center un box some twips by some other twips in another box:
+Para centrar un box some twips by some other twips in another box:
   Make el box el twips by el other twips.
-  Center el box in el other box.
+  Centrar el box in el other box.
 
 Para poner un box's bottom line into un horizontal line: \ and "vertical" for left and right
   Poner el box's left y el box's bottom into el horizontal line's start.
@@ -10953,9 +10953,9 @@ Para poner eax into un wyrd:
 
 Para poner un ellipse in el middle of un box;
 \Para centrar una elipse en una caja;
-Para center un ellipse in un box:
-  Center el ellipse in el box (horizontally).
-  Center el ellipse in el box (vertically).
+Para centrar un ellipse in un box:
+  Centrar el ellipse in el box (horizontally).
+  Centrar el ellipse in el box (vertically).
 
 \Para poner una elipse en otra elipse;
 Para poner un ellipse into another ellipse:
@@ -10963,8 +10963,8 @@ Para poner un ellipse into another ellipse:
 
 Para poner un ellipse on un spot;
 \Para centrar una elipse en un punto;
-Para center un ellipse on un spot:
-  Center el ellipse's box on el spot.
+Para centrar un ellipse on un spot:
+  Centrar el ellipse's box on el spot.
 
 Para poner un finger on el first character of un string:
   Poner el string's first into el finger.
@@ -11123,9 +11123,9 @@ Para poner el left side of un box into un vertical line:
   Poner el box's left-bottom into el vertical line's end.
 
 Para poner un line in el middle of un box;
-Para center un line in un box:
-  Center el line in el box (horizontally).
-  Center el line in el box (vertically).
+Para centrar un line in un box:
+  Centrar el line in el box (horizontally).
+  Centrar el line in el box (vertically).
 
 Para poner un line into another line:
   Poner el line's start into el other line's start.
@@ -11174,7 +11174,7 @@ Para poner masking tape below un figure:
 
 Para poner el middle of un line on un spot;
 \Para centrar una línea en un punto;
-Para center un line on un spot:
+Para centrar un line on un spot:
   Get un difference between el spot y el line's center.
   Round el difference to el nearest multiple of el tpp.
   Move el line usando el difference.
@@ -11275,14 +11275,14 @@ Para poner un pair's absolute value into another pair:
 Para centrar una imagen en un hoja apaisada; \ unclear why this doesn't get called properly when I replce hoja apaisada with caja ***
 \Para centrar una imagen en una caja;
 Para poner un picture in el middle of un box;
-Para center un picture in un box:
+Para centrar un picture in un box:
   Si el picture es nil, salir.
-  Center el picture in el box (horizontally).
-  Center el picture in el box (vertically).
+  Centrar el picture in el box (horizontally).
+  Centrar el picture in el box (vertically).
 
 Para poner un picture on un spot;
 \Para centrar una imagen en un punto;
-Para center un picture on un spot:
+Para centrar un picture on un spot:
   Si el picture es nil, salir.
   Get un difference between el spot y el picture's box's center.
   Round el difference to el nearest multiple of el tpp.
@@ -11290,19 +11290,19 @@ Para center un picture on un spot:
 
 Para poner un polygon in el middle of un box;
 \Para centrar un polígono en una caja;
-Para center un polygon in un box:
+Para centrar un polygon in un box:
   Si el polygon es nil, salir.
-  Center el polygon in el box (horizontally).
-  Center el polygon in el box (vertically).
+  Centrar el polygon in el box (horizontally).
+  Centrar el polygon in el box (vertically).
 
 Para poner un polygon in el middle of el screen;
 \Para centrar un polígono en la pantalla;
-Para center un polygon on el screen:
-  Center el polygon in el screen's box.
+Para centrar un polygon on el screen:
+  Centrar el polygon in el screen's box.
 
 Para poner un polygon on un spot;
 \Para centrar un polígono en un punto;
-Para center un polygon on un spot:
+Para centrar un polygon on un spot:
   Si el polygon es nil, salir.
   Get un difference between el spot y el polygon's box's center.
   Round el difference to el nearest multiple of el tpp.
@@ -11431,9 +11431,9 @@ Para poner un spot and another spot into un line:
 
 Para poner un spot in el middle of un box;
 \Para centrar un punto en una caja;
-Para center un spot in un box:
-  Center el spot in el box (horizontally).
-  Center el spot in el box (vertically).
+Para centrar un spot in un box:
+  Centrar el spot in el box (horizontally).
+  Centrar el spot in el box (vertically).
 
 \Para poner una cadena en otra cadena;
 Para poner un string into another string:
@@ -11525,21 +11525,21 @@ Para poner el system's tick count into some ticks: \ wraps every 24.8 days or so
 
 Para poner un terminal in el middle of un box;
 \Para centrar una terminal en una caja;
-Para center un terminal in un box:
+Para centrar un terminal in un box:
   Privatizar el box.
   Indent el box 1/4 inch.
   Poner el box into el terminal's box.
 
 Para poner un text in el middle of un box;
 \Para centrar un texto en una caja;
-Para center un text in un box:
+Para centrar un text in un box:
   Si el text es nil, salir.
-  Center el text in el box (horizontally).
-  Center el text in el box (vertically).
+  Centrar el text in el box (horizontally).
+  Centrar el text in el box (vertically).
 
 Para poner un text on un spot;
 \Para centrar un texto en un punto;
-Para center un text on un spot:
+Para centrar un text on un spot:
   Si el text es nil, salir.
   Get un difference between el spot y el text's box's center.
   Round el difference to el nearest multiple of el tpp.
