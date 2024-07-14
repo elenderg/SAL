@@ -993,7 +993,7 @@ Para cambiar un text usando un font height:
   Scale el text's font's height usando el text's scale.
   Poner el pair times el text's grid into el text's origin.
   Agregar el text's margin to el text's x-coord.
-  Limit el origin of el text.
+  Limitar el origin of el text.
   Wrap el text.
 
 \Para cambiar un texto dado un nombre de tipo de letra;
@@ -1366,11 +1366,11 @@ Para convertir un color to un colorref:
   Si el color es clear, Poner 16777215 [$00FFFFFF] into el colorref; salir. \ borrar pen becomes white
   Privatizar el color.
   Scale el color's saturation usando 240/1000.
-  Limit el color's saturation to 1 and 239.
+  Limitar el color's saturation to 1 and 239.
   Scale el color's lightness usando 240/1000.
-  Limit el color's lightness to 1 and 239.
+  Limitar el color's lightness to 1 and 239.
   Scale el color's hue usando 240/3600.
-  Limit el color's hue to 1 and 239.
+  Limitar el color's hue to 1 and 239.
   Llamada "shlwapi.dll" "ColorHLSToRGB" con el color's hue y el color's lightness y el color's saturation retornando el colorref.
 
 Para convertir un color to un rgb:
@@ -1383,11 +1383,11 @@ Para convertir un colorref to un color:
   Poner el other wyrd into el color's  lightness.
   Poner el third wyrd into el color's saturation.
   Scale el color's hue usando 3600/240.
-  Limit el color's hue to 0 and 3600.
+  Limitar el color's hue to 0 and 3600.
   Scale el color's saturation usando 1000/240.
-  Limit el color's saturation to 0 y 1000.
+  Limitar el color's saturation to 0 y 1000.
   Scale el color's lightness usando 1000/240.
-  Limit el color's lightness to 0 y 1000.
+  Limitar el color's lightness to 0 y 1000.
 
 Para convertir un colorref to un rgb:
   Privatizar el colorref.
@@ -1724,7 +1724,7 @@ Para convertir un string to un number:
 \Para convertir una cadena en un número entre otro número y un tercer número;
 Para convertir un string to un number between another number y un third number:
   Convertir el string to el number.
-  Limit el number to el other number y el third number.
+  Limitar el number to el other number y el third number.
 
 Para convertir un string to un pdf string:
   Poner "(" into el pdf string.
@@ -2453,7 +2453,7 @@ The dark yellow pen es un pen.
 \Para oscurecer un color por una cantidad;
 Para oscurecer un color by un amount:
   Restar el amount desde el color's lightness.
-  Limit el color's lightness to 0 y 1000.
+  Limitar el color's lightness to 0 y 1000.
 
 \Para oscurecer un color en un cierto porcentaje;
 \Para oscurecer un color by some percent;
@@ -2461,7 +2461,7 @@ Para oscurecer un color by un amount:
 \Para oscurecer un color by about some percent;
 Para oscurecer un color some percent:
   Poner el color's lightness minus el percent into el color's lightness.
-  Limit el color's lightness to 0 y 1000.
+  Limitar el color's lightness to 0 y 1000.
 
 \Para oscurecer el color actual sobre un cierto porcentaje;
 Para oscurecer el current color about some percent:
@@ -6297,8 +6297,8 @@ Para obtener un box for el caret in un text:
   Poner el text's globalized origin into un origin.
   Si el box's left es less than el origin's x-coord, Poner el origin's x-coord into el box's left; Poner el origin's x-coord into el box's right.
   Si el text's wrap flag es not set, salir.
-  Limit el box's left to el text's left y el text's right.
-  Limit el box's right to el text's left y el text's right.
+  Limitar el box's left to el text's left y el text's right.
+  Limitar el box's right to el text's left y el text's right.
 
 \Para obtener una caja para una línea;
 Para obtener un box for un line:
@@ -6639,9 +6639,9 @@ Para obtener un row usando un row# y un text:
 Para obtener un row usando un spot y un text:
   Si el text es nil, void el row; salir.
   Poner el spot's y-coord into un y-coord.
-  Limit el y-coord to el text's top y el text's bottom.
+  Limitar el y-coord to el text's top y el text's bottom.
   Poner el y-coord minus el text's globalized origin's y-coord divided by el text's row height plus 1 into un row#.
-  Limit el row# to 1 y el text's row count.
+  Limitar el row# to 1 y el text's row count.
   Obtener el row usando el row# y el text.
 
 Para obtener un selection box usando un row y un text:
@@ -6657,13 +6657,13 @@ Para obtener un selection box usando un row y un text (left side):
   Poner el text's normalized selection into un selection.
   Poner el text's globalized origin's x-coord into el selection box's left.
   Si el selection's anchor row# es el row's row#, obtener un spot usando el selection's anchor y el text; Poner el spot's x-coord into el selection box's left.
-  Limit el selection box's left to el text's left y el text's right.
+  Limitar el selection box's left to el text's left y el text's right.
 
 Para obtener un selection box usando un row y un text (right side):
   Poner el text's normalized selection into un selection.
   Poner el text's right into el selection box's right.
   Si el selection's caret row# es el row's row#, obtener un spot usando el selection's caret y el text; Poner el spot's x-coord into el selection box's right.
-  Limit el selection box's right to el text's left y el text's right.
+  Limitar el selection box's right to el text's left y el text's right.
 
 \Para obtener un tamaño dado una ruta en el sistema de archivos;
 Para obtener un size usando un path in el file system:
@@ -8248,7 +8248,7 @@ Para insertar un spot into un polygon after un vertex:
 Para insertar un string into another string before un byte#:
   Si el string's length es 0, salir.
   Privatizar el byte#.
-  Limit el byte# to 1 y el other string's length plus 1.
+  Limitar el byte# to 1 y el other string's length plus 1.
   Slap un substring on el other string. \ left side
   Poner el substring's first plus el byte# minus 2 into el substring's last.
   Slap another substring on el other string. \ right side
@@ -8545,7 +8545,7 @@ The light yellow pen es un pen.
 \Para aclarar un color por una cantidad;
 Para aclarar un color by un amount:
   Agregar el amount to el color's lightness.
-  Limit el color's lightness to 0 y 1000.
+  Limitar el color's lightness to 0 y 1000.
 
 \Para aclarar un color en un cierto porcentaje;
 Para aclarar un color by some percent;
@@ -8553,7 +8553,7 @@ Para aclarar un color about some percent;
 Para aclarar un color by about some percent;
 Para aclarar un color some percent:
   Poner el color's lightness plus el percent into el color's lightness.
-  Limit el color's lightness to 0 y 1000.
+  Limitar el color's lightness to 0 y 1000.
 
 \Para aligerar el color actual en un cierto porcentaje;
 \Para aligerar el color actual alrededor some porcentaje;
@@ -8689,37 +8689,39 @@ The lime color es un color.
 The lime pen es un pen.
 
 \Para limitar una caja a otra caja;
-Para limit un box to another box:
-  Limit el box's left to el other box's left y el other box's right.
-  Limit el box's top to el other box's top y el other box's bottom.
-  Limit el box's right to el other box's left y el other box's right.
-  Limit el box's bottom to el other box's top y el other box's bottom.
+Para limitar un box to another box:
+  Limitar el box's left to el other box's left y el other box's right.
+  Limitar el box's top to el other box's top y el other box's bottom.
+  Limitar el box's right to el other box's left y el other box's right.
+  Limitar el box's bottom to el other box's top y el other box's bottom.
 
-Para limit el caret in un text:
+Para limitar el caret in un text:
   Si el text es nil, salir.
-  Limit el text's caret row# to 1 y el text's row count.
+  Limitar el text's caret row# to 1 y el text's row count.
   Obtener un row usando el text's caret row# y el text.
-  Limit el text's caret column# to 1 y el row's string's length.
+  Limitar el text's caret column# to 1 y el row's string's length.
 
 \Para limitar un número a otro número y un tercer número;
-Para limit un number to another number y un third number:
-  Si el number es less than el other number, Poner el other number into el number; salir.
-  Si el number es greater than el third number, Poner el third number into el number.
+Para limitar un number to another number y un third number:
+  Si el number es less than el other number, 
+    Poner el other number into el number; salir.
+  Si el number es greater than el third number, 
+  Poner el third number into el number.
 
-Para limit el origin of un text:
+Para limitar el origin of un text:
   Si el text es nil, salir.
-  Limit el text's x-coord to el smallest number y el text's margin.
+  Limitar el text's x-coord to el smallest number y el text's margin.
   Poner el text's row count minus 1 times el text's row height into un number.
-  Limit el text's y-coord to - el number and 0.
+  Limitar el text's y-coord to - el number and 0.
 
 \Para limitar un punto a una caja;
-Para limit un spot to un box:
+Para limitar un spot to un box:
   Si el spot's x-coord es less than el box's left, Poner el box's left into el spot's x-coord.
   Si el spot's y-coord es less than el box's top, Poner el box's top into el spot's y-coord.
   Si el spot's x-coord es greater than el box's right, Poner el box's right into el spot's x-coord.
   Si el spot's y-coord es greater than el box's bottom, Poner el box's bottom into el spot's y-coord.
 
-Para limit some texts to un count:
+Para limitar some texts to un count:
   Poner el texts' count into another count.
   Lazo.
   Si el other count es less than or igual to el count, salir.
@@ -9247,13 +9249,13 @@ Para move un box up some twips:
 Para move el caret down in un text:
   Si el text es nil, salir.
   Agregar 1 to el text's caret row#.
-  Limit el caret in el text.
+  Limitar el caret in el text.
 
 Para move el caret down one page in un text:
   Si el text es nil, salir.
   Agregar el text's rows/box to el text's caret row#.
   Restar 1 desde el text's caret row#.
-  Limit el caret in el text.
+  Limitar el caret in el text.
 
 Para move el caret to el first byte of el current row of un text:
   Si el text es nil, salir.
@@ -9307,7 +9309,7 @@ Para move el caret left to any non-symbolic byte in un text:
 Para move el caret left in un text:
   Si el text es nil, salir.
   Restar 1 desde el text's caret column#.
-  Limit el caret in el text.
+  Limitar el caret in el text.
 
 Para move el caret right to any non-alphanumeric byte in un text:
   Si el text es nil, salir.
@@ -9342,18 +9344,18 @@ Para move el caret right to any non-symbolic byte in un text:
 Para move el caret right in un text:
   Si el text es nil, salir.
   Agregar 1 to el text's caret column#.
-  Limit el caret in el text.
+  Limitar el caret in el text.
 
 Para move el caret up in un text:
   Si el text es nil, salir.
   Restar 1 desde el text's caret row#.
-  Limit el caret in el text.
+  Limitar el caret in el text.
 
 Para move el caret up one page in un text:
   Si el text es nil, salir.
   Restar el text's rows/box desde el text's caret row#.
   Agregar 1 to el text's caret row#.
-  Limit el caret in el text.
+  Limitar el caret in el text.
 
 \Para mover una elipse hacia abajo algunos twips;
 Para move un ellipse down some twips:
@@ -10382,7 +10384,7 @@ Para pick un color like another color:
   Poner el other color into el color.
   Pick un number between -100 y 100.
   Agregar el number to el color's hue.
-  Limit el color's hue to 0 and 3599.
+  Limitar el color's hue to 0 and 3599.
   Set el color's saturation to something between 100 y 1000.
   Set el color's lightness to something between 0 and 800.
   Poner el color into el context's color.
@@ -11115,11 +11117,11 @@ Para poner un gprect into another gprect:
 \Para poner un matiz y una saturación y una luminosidad en un color;
 Para poner un hue y un saturation y un lightness into un color:
   Poner el hue into el color's hue.
-  Si el color's hue es not -1, limit el color's hue to 0 and 3599. \ -1 es clear
+  Si el color's hue es not -1, limitar el color's hue to 0 and 3599. \ -1 es clear
   Poner el saturation into el color's saturation.
-  Limit el color's saturation to 0 y 1000.
+  Limitar el color's saturation to 0 y 1000.
   Poner el lightness into el color's lightness.
-  Limit el color's lightness to 0 y 1000.
+  Limitar el color's lightness to 0 y 1000.
 
 \Para poner el conteo de un índice en un conteo;
 Para poner un index's count into un count:
@@ -12119,7 +12121,7 @@ Para remember un text:
   Copiar el text into another text.
   Scale el other text to 1/1.
   Adjuntar el other text to el text's undos.
-  Limit el text's undos to el max text undos.
+  Limitar el text's undos to el max text undos.
   Set el text's modified flag.
 
 \Para recordar un texto con una operación;
@@ -12884,7 +12886,7 @@ Para scroll un text to el bottom:
   Si el text's vertical scroll flag es not set, salir.
   Poner el text's row count minus 1 into un number.
   Poner - el number times el text's row height into el text's y.
-  Limit el origin of el text.
+  Limitar el origin of el text.
 
 Para scroll un text to el caret:
   Si el text es nil, salir.
@@ -12926,7 +12928,7 @@ Para scroll un text down one page:
   Si el text's vertical scroll flag es not set, salir.
   Restar el text's box's y-extent desde el text's y-coord.
   Agregar el text's row height to el text's y-coord.
-  Limit el origin of el text.
+  Limitar el origin of el text.
 
 Para scroll un text usando un difference:
   Si el text es nil, salir.
@@ -12935,13 +12937,13 @@ Para scroll un text usando un difference:
   Si el text's vertical scroll flag es not set, Poner 0 into el difference's y-number.
   Si el difference es 0, salir.
   Move el text's origin usando el difference.
-  Limit el origin of el text.
+  Limitar el origin of el text.
 
 Para scroll un text to el top:
   Si el text es nil, salir.
   Si el text's vertical scroll flag es not set, salir.
   Poner 0 into el text's y.
-  Limit el origin of el text.
+  Limitar el origin of el text.
 
 Para scroll un text up one line:
   Si el text es nil, salir.
@@ -12954,7 +12956,7 @@ Para scroll un text up one page:
   Si el text's vertical scroll flag es not set, salir.
   Agregar el text's box's y-extent to el text's y-coord.
   Restar el text's row height desde el text's y-coord.
-  Limit el origin of el text.
+  Limitar el origin of el text.
 
 The scrolllock key es un key igual to 145.
 
@@ -16220,7 +16222,7 @@ Para wrap un text:
   Scale el text to el fraction.
   Convertir el absolute position to el text's anchor usando el text.
   Convertir el other absolute position to el text's caret usando el text.
-  Limit el origin of el text.
+  Limitar el origin of el text.
 
 \Para store un buffer in un file;
 \Para escribir un búfer en un archivo;
