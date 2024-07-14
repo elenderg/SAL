@@ -781,21 +781,23 @@ A buffer es un string.
 
 The bullet byte es un byte igual to 149.
 
-\Para incrementar un byte que lo limita a otro byte y un tercer byte;
+Para incrementar un byte que lo limita a otro byte y un tercer byte;
 Para incrementar un byte limiting it to another byte y un third byte:
   Agregar 1 to el byte.
-  Si el byte es greater than el third byte, Poner el other byte into el byte.
+  Si el byte es greater than el third byte, 
+    Poner el other byte into el byte.
 
 \Para incrementar un número;
 Para incrementar un number:
   Agregar 1 to el number.
 
-\Para encontrar un número que lo limite a otro número y un tercer número;
+Para encontrar un número que lo limite a otro número y un tercer número;
 Para incrementar un number limiting it to another number y un third number:
   Agregar 1 to el number.
-  Si el number es greater than el third number, Poner el other number into el number.
+  Si el number es greater than el third number, 
+    Poner el other number into el number.
 
-\Para avanzar un escáner;
+Para avanzar un escáner;
 Para incrementar un rider:
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el rider
   Intel $FF8314000000. \ inc [ebx+20] \ el rider's token's last
@@ -806,7 +808,7 @@ Para unbump un rider:
   Intel $FF8B14000000. \ dec [ebx+20] \ el rider's token's last
   Intel $FF8B08000000. \ dec [ebx+8] \ el rider's source's first
 
-\Para avanzar un escáner por un número;
+Para avanzar un escáner por un número;
 Para incrementar un rider by un number:
   Agregar el number to el rider's token's last.
   Agregar el number to el rider's source's first.
@@ -828,33 +830,33 @@ The cancel byte es un byte igual to 24.
 A canvas es un hdc.
 
 \Para capitalizar las filas seleccionadas en un texto;
-Para capitalize any selected rows in un text:
+Para capitalizar any selected rows in un text:
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
-  Si el row es nil, salir.
-  Si el row of el text es not selected, repetir.
-  Si el row es blank, repetir.
-  Capitalize el row's string.
+    Get un row desde el text's rows.
+    Si el row es nil, salir.
+    Si el row of el text es not selected, repetir.
+    Si el row es blank, repetir.
+    Capitalizar el row's string.
   Repetir.
 
 \Para capitalizar una cadena;
-Para capitalize un string:
+Para capitalizar un string:
   Slap un substring on el string.
   Lazo.
-  Si el substring es blank, salir.
-  Si el substring's first's target es not noise, interrumpir.
-  Agregar 1 to el substring's first.
+    Si el substring es blank, salir.
+    Si el substring's first's target es not noise, interrumpir.
+    Agregar 1 to el substring's first.
   Repetir.
   Uppercase el substring's first's target.
 
 \Para capitalizar un texto;
-Para capitalize un text:
+Para capitalizar un text:
   Si el text es nil, salir.
   Lazo.
   Get un row desde el text's rows.
   Si el row es nil, interrumpir.
-  Capitalize el row's string.
+  Capitalizar el row's string.
   Repetir.
   Wrap el text.
 
@@ -6953,11 +6955,11 @@ Para handle any wm-keydown with un w-param y un l-param:
   Enque el event.
 
 \Para manejar capitalizar dado un texto;
-Para handle capitalize usando un text:
+Para handle capitalizar usando un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
   Remember el text with "capitalize".
-  Capitalize any selected rows in el text.
+  Capitalizar any selected rows in el text.
   Square up any selection in el text.
   Wrap el text.
 
