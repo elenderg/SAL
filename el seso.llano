@@ -13871,7 +13871,7 @@ Para start some twips above un spot:
   Poner el spot's y into el context's y.
   Restar el twips desde el context's y.
 
-\Para poner en marcha;
+Para poner en marcha;
 Para start up:
   Initialize com.
   Initialize winsock.
