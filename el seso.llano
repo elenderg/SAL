@@ -13,7 +13,7 @@ Para escribir un byte para StdOut:
     El StdOut handle [hFile]
     y el byte's whereabouts [lpBuffer]
     y 1  [nNumberOfBytesToWrite]
-    y un  number's whereabouts [lpNumberOfBytesWritten]
+    y un number's whereabouts [lpNumberOfBytesWritten]
     and nil. [lpOverlapped]
 
 Para escribir para StdOut un string:
@@ -32,7 +32,7 @@ Para escribir un string para StdOut:
     el StdOut handle [hFile] and
     el string's first byte pointer [lpBuffer]
     and the string's length [nNumberOfBytesToWrite]
-    y un  number's whereabouts [lpNumberOfBytesWritten]
+    y un number's whereabouts [lpNumberOfBytesWritten]
     and nil [lpOverlapped]
   retornando a new number.
   Si el new number no es 0,
@@ -109,7 +109,7 @@ Para agregar un number and another number to un pair:
   Agregar el other number to el pair's y-number.
 
 \Para agregar un número a otro número y un tercer número a un cuarto número;
-Para agregar un number to another number y un  third number to un fourth number:
+Para agregar un number to another number y un third number to un fourth number:
   Agregar el number to el other number.
   Agregar el third number to el fourth number.
 
@@ -186,7 +186,7 @@ A freeaddrinfo pointer.
 An addrinfoptr es un pointer to un addrinfo.
 
 \Para ajustar una caja dado un número y otro número y un tercer número y un cuarto número;
-Para ajustar un box usando un number and another number y un  third number y un  fourth number:
+Para ajustar un box usando un number and another number y un third number y un fourth number:
   Agregar el number to el box's left.
   Agregar el other number to el box's top.
   Agregar el third number to el box's right.
@@ -194,7 +194,7 @@ Para ajustar un box usando un number and another number y un  third number y un 
 
 Para ajustar un item:
   Poner el item's win32finddata's dwfileattributes into un number.
-  Bitwise y el number with 16 [file_attribute_directory].
+  Bitwise AND el number with 16 [file_attribute_directory].
   Si el number es 0, Poner "file" into el item's kind; Poner "archivo" into el item's clase.
   Si el number es not 0, Poner "directory" into el item's kind; Poner "directorio" into el item's clase.
   Convert el item's win32finddata's ftcreationtime to el item's creation date/time string. \ added for email sorting
@@ -208,7 +208,7 @@ Para ajustar un item:
   Get el item (not first time).
 
 \Para ajustar una línea con un número y otro número y un tercer número y un cuarto número;
-Para ajustar un line with un number and another number y un  third number y un  fourth number:
+Para ajustar un line with un number and another number y un third number y un fourth number:
   Agregar el number to el line's start's x.
   Agregar el other number to el line's start's y.
   Agregar el third number to el line's end's x.
@@ -255,7 +255,7 @@ Para adjuntar un buffer to un file:
   Clear el error de e/s.
   Llamada "kernel32.dll" "SetFilePointer" with el file and 0 and 0 and 2 [file_end] retornando un result number.
   Si el result number es -1, Poner "Error posicionando puntero de archivo." into el error de e/s; salir.
-  Llamada "kernel32.dll" "WriteFile" with el file y el buffer's first y el buffer's length y un  number's whereabouts and 0 retornando el result number.
+  Llamada "kernel32.dll" "WriteFile" with el file y el buffer's first y el buffer's length y un number's whereabouts and 0 retornando el result number.
   Si el result number es 0, Poner "Error escribiendo archivo." into el error de e/s; salir.
 
 \Para adjuntar un byte a una cadena;
@@ -357,7 +357,7 @@ Para adjuntar un vertex to un polygon:
 
 \Para adjuntar una coord-x y una coord-y a un polígono;
 \Para adjuntar una coordenada-x y una coordenada-y a un polígono;
-Para adjuntar un x-coord y un  y-coord to un polygon:
+Para adjuntar un x-coord y un y-coord to un polygon:
   Si el polygon es nil, salir.
   Create un vertex usando el x-coord y el y-coord.
   Adjuntar el vertex to el polygon's vertices.
@@ -382,7 +382,7 @@ The asterisk byte es un byte igual to 42.
 
 The at-sign byte es un byte igual to 64.
 
-Para autoscroll un text usando un spot y un  flag:
+Para autoscroll un text usando un spot y un flag:
   Si el text es nil, clear el flag; salir.
   Poner el text's font's height into un number.
   Clear un difference.
@@ -499,10 +499,10 @@ Para comenzar un sheet usando un box (pdf style):
   Comenzar el sheet usando el box and "" (pdf style).
 
 \Para comenzar una hoja con una caja y una cadena de título;
-Para comenzar un sheet usando un box y un  title string:
+Para comenzar un sheet usando un box y un title string:
   Comenzar el sheet usando el box y el title (pdf style).
 
-Para comenzar un sheet usando un box y un  title string (pdf style - start el current page):
+Para comenzar un sheet usando un box y un title string (pdf style - start el current page):
   Agregar el pdf state's current page usando "page".
   Adjuntar el pdf state's current page's number then " 0 obj" to el pdf state's current page.
   Adjuntar "<<" to el pdf state's current page.
@@ -517,7 +517,7 @@ Para comenzar un sheet usando un box y un  title string (pdf style - start el cu
   Adjuntar "0.05 0 0 0.05 1 1 cm" to el pdf state's current contents. \ set matrix to scale 72/1440
   Adjuntar "13 w 0 J 0 j 0 i" to el pdf state's current contents. \ penwidth, linecap, linejoin, flatness \ 15 w on penwidth comes out to wide
 
-Para comenzar un sheet usando un box y un  title string (pdf style):
+Para comenzar un sheet usando un box y un title string (pdf style):
   Set el pdf state's page flag.
   Poner el clear color into el pdf state's current border.
   Poner el clear color into el pdf state's current fill.
@@ -665,29 +665,29 @@ A binary string es un string.
 A bit es un unit.
 
 A bitmapdata es un record con
-A width,
-A height,
-A number called stride,
-A number called pixelformat,
-A pointer called scan0,
-A number called reserved.
+  A width,
+  A height,
+  A number called stride,
+  A number called pixelformat,
+  A pointer called scan0,
+  A number called reserved.
 
 \Para lógico y un byte con otro byte;
-Para bitwise y un  byte with another byte:
+Para bitwise AND un byte with another byte:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el other byte
   Intel $8A00. \ mov al,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $2003. \ and [ebx],al
 
 \Para lógico y un byte con un número;
-Para bitwise y un  byte with un number:
+Para bitwise AND un byte with un number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el number
   Intel $8B00. \ mov eax,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $2003. \ and [ebx],al
 
 \Para lógico y un número con otro número;
-Para bitwise y un  number with another number:
+Para bitwise AND un number with another number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el other number
   Intel $8B00. \ mov eax,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el number
@@ -745,8 +745,8 @@ The blue pen es un pen.
 
 A box es un record con
 A left coord, un top coord, un right coord, un bottom coord,
-A left-top spot at el left, y un  right-bottom spot at el right,
-A top-left spot at el left, y un  bottom-right spot at el right,
+A left-top spot at el left, y un right-bottom spot at el right,
+A top-left spot at el left, y un bottom-right spot at el right,
   una izquierda at el left coord, una superior at el top coord, una derecha at el right coord, una inferior at el bottom coord,
   un punto superior-izquierda at el left, un punto inferior-derecha at el right.
 
@@ -773,7 +773,7 @@ A buffer es un string.
 The bullet byte es un byte igual to 149.
 
 \Para incrementar un byte que lo limita a otro byte y un tercer byte;
-Para bump un byte limiting it to another byte y un  third byte:
+Para bump un byte limiting it to another byte y un third byte:
   Agregar 1 to el byte.
   Si el byte es greater than el third byte, Poner el other byte into el byte.
 
@@ -782,7 +782,7 @@ Para bump un number:
   Agregar 1 to el number.
 
 \Para encontrar un número que lo limite a otro número y un tercer número;
-Para bump un number limiting it to another number y un  third number:
+Para bump un number limiting it to another number y un third number:
   Agregar 1 to el number.
   Si el number es greater than el third number, Poner el other number into el number.
 
@@ -993,7 +993,7 @@ Para change un text usando un font name:
 
 A character es un byte.
 
-A choice es un thing with un name y un  box.
+A choice es un thing with un name y un box.
 
 The choices are some choices.
 
@@ -1131,7 +1131,7 @@ The cluck sound es un wave igual to $524946463A02000057415645666D742012000000010
 
 The colon byte es un byte igual to 58.
 
-\un color es un record con un hue, un saturation, un lightness, y un  brightness at el lightness.
+\un color es un record con un hue, un saturation, un lightness, y un brightness at el lightness.
 
 A color es un record con un hue, un saturation, un lightness, un brightness at el lightness,
   un matiz at el hue, una saturación at el saturation, una luminosidad at el lightness y un brillo at el lightness.
@@ -1142,7 +1142,7 @@ A column# es un number.
 
 The comma byte es un byte igual to 44.
 
-Para compare un string to another string usando un length and another length y un  translation table (equal only):
+Para compare un string to another string usando un length and another length y un translation table (equal only):
   Intel $8BB508000000. \ mov esi,[ebp+8] \ el string
   Intel $8B36. \ mov esi,[esi] \ el string's first
   Intel $8BBD0C000000. \ mov edi,[ebp+12] \ el other string
@@ -1184,7 +1184,7 @@ Para compare un string to another string usando un length and another length ret
   Compare el string to el other string usando el length y el other length y el lowercase ascii table retornando el number.
 \Compare el string to el other string usando el length y el other length y el lowercase accent-free ascii table retornando el number.
 
-Para compare un string to another string usando un length and another length y un  translation table retornando un number:
+Para compare un string to another string usando un length and another length y un translation table retornando un number:
   Intel $8BB508000000. \ mov esi,[ebp+8] \ el string
   Intel $8B36. \ mov esi,[esi] \ el string's first
   Intel $8BBD0C000000. \ mov edi,[ebp+12] \ el other string
@@ -1229,7 +1229,7 @@ Para compare un string to another string usando un length and another length y u
   Intel $8B9D1C000000. \ mov ebx,[ebp+28] \ el number
   Intel $8903. \ mov [ebx],eax
 
-Para compatibly handle any message with un window un message number un w-param y un  l-param:
+Para compatibly handle any message with un window un message number un w-param y un l-param:
   Si el message es 006, handle any wm-activate with el w-param; Poner 0 into eax; salir.
   Si el message es 258, handle any wm-char with el w-param y el l-param; Poner 0 into eax; salir.
   Si el message es 001, handle any wm-create with el window; Poner 0 into eax; salir.
@@ -1273,7 +1273,7 @@ A reply string, una cadena de respuesta at el reply string.
 The context es un context.
 
 A context es un thing with un spot, un box, un heading, un letter height, un color, un number, \ pen width? ***
-  y un  letter size at el letter height, y un  pen at el color.
+  y un letter size at el letter height, y un pen at el color.
 
 The context stack es some contexts.
 
@@ -1349,7 +1349,7 @@ Para convert un color to un rgb:
   Convert el colorref to el rgb. 
 
 Para convert un colorref to un color:
-  Llamada "shlwapi.dll" "ColorRGBToHLS" with el colorref y un  wyrd's whereabouts and another wyrd's whereabouts y un  third wyrd's whereabouts.
+  Llamada "shlwapi.dll" "ColorRGBToHLS" with el colorref y un wyrd's whereabouts and another wyrd's whereabouts y un third wyrd's whereabouts.
   Poner el wyrd into el color's hue.
   Poner el other wyrd into el color's  lightness.
   Poner el third wyrd into el color's saturation.
@@ -1371,7 +1371,7 @@ Para convert un colorref to un rgb:
 
 Para convert un filetime to un string:
   Clear el string.
-  Llamada "kernel32.dll" "FileTimeToSystemTime" with el filetime's whereabouts y un  systemtime's whereabouts retornando un number.
+  Llamada "kernel32.dll" "FileTimeToSystemTime" with el filetime's whereabouts y un systemtime's whereabouts retornando un number.
   Si el number es 0, salir.
   Poner el systemtime's wyear into un date/time's year.
   Poner el systemtime's wmonth into el date/time's month.
@@ -1425,7 +1425,7 @@ Para convert un fraction to un hex string:
 
 Para convert un fraction to un mixed:
   Si el fraction's denominator es 0, Poner 0 into el mixed's whole number; Poner 0 into el mixed's ratio; salir.
-  Dividir el fraction's numerator by el fraction's denominator giving el mixed's whole number y un  remainder.
+  Dividir el fraction's numerator by el fraction's denominator giving el mixed's whole number y un remainder.
   Poner el remainder y el fraction's denominator into el mixed's fraction.
 
 \Para convertir una fracción en una cadena dado un número;
@@ -1471,7 +1471,7 @@ Para convert un hex string to un number:
 Para convert un l-param to un key: \ assumes l-param desde wm_char message
   Poner el l-param into el key.
   Shift el key right 16 bits.
-  Bitwise y el key with 255.
+  Bitwise AND el key with 255.
   Llamada "user32.dll" "MapVirtualKeyA" with el key y 1  retornando el key.
   Si el numlock key was not toggled, salir.
   Si el key es el insert key, Poner el numpad-zero key into el key; salir.
@@ -1522,7 +1522,7 @@ Para convert un nibble string to un hex string:
 Para convert un number to un byte:
   Poner el number into el byte.
 
-Para convert un number to pdf em units usando un emsquare number y un  font:
+Para convert un number to pdf em units usando un emsquare number y un font:
   Multiplicar el number by el emsquare / el font's adjusted height.
   Multiplicar el number by 1000 / el emsquare.
 
@@ -1536,7 +1536,7 @@ Para convert un pchar to un string:
   Agregar 1 to el pchar.
   Repetir.
 
-Para convert un pointer y un  length to un string:
+Para convert un pointer y un length to un string:
   Clear el string.
   Si el pointer es nil, salir.
   Si el length es 0, salir.
@@ -1615,7 +1615,7 @@ Para convert some rows to un string (no linefeed additions):
   Adjuntar el row's string to el string.
   Repetir.
 
-Para convert un string y un  actual font info y un  original font info into un buffer for pdf output:
+Para convert un string y un actual font info y un original font info into un buffer for pdf output:
   Clear el buffer.
   Poner 0 into un current byte#.
   Slap un substring on el first byte of el string.
@@ -1651,9 +1651,9 @@ Para convert un string to un fraction:
   Slap un substring on el string.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
   Si el substring es blank, salir.
-  Split el substring into un integer substring y un  fraction substring usando el dash byte.
+  Split el substring into un integer substring y un fraction substring usando el dash byte.
   Si el integer substring es blank, Poner el substring into el fraction substring.
-  Split el fraction substring into un numerator substring y un  denominator substring usando el slash byte.
+  Split el fraction substring into un numerator substring y un denominator substring usando el slash byte.
   Convert el integer substring to un whole number.
   Convert el numerator substring to un numerator number.
   Convert el denominator substring to un denominator number.
@@ -1693,7 +1693,7 @@ Para convert un string to un number:
   Si el string's first's target es el dash byte, negate el number.
 
 \Para convertir una cadena en un número entre otro número y un tercer número;
-Para convert un string to un number between another number y un  third number:
+Para convert un string to un number between another number y un third number:
   Convert el string to el number.
   Limit el number to el other number y el third number.
 
@@ -2003,7 +2003,7 @@ Para create un font info usando un font (basic data):
   Poner 0 into el font info's stemv. \ don't know where to get this from
   Poner el outlinetextmetric's otmrcfontbox into el font info's font box.
 
-Para create un font info usando un font y un  string: \ creates widths based on characters in string
+Para create un font info usando un font y un string: \ creates widths based on characters in string
   Create el font info usando el font (basic data).
   Create el font info's font widths usando el font y el string.
 
@@ -2028,7 +2028,7 @@ Para create some font widths usando un font:
   Repetir.
   Unassign el original abc pointer.
 
-Para create some font widths usando un font y un  string:
+Para create some font widths usando un font y un string:
   Allocate memory for el font widths.
   Poner el font into el font widths' font.
   Poner el string's length into el font widths' count.
@@ -2048,7 +2048,7 @@ Para create un gpbitmap usando un buffer:
   Llamada "kernel32.dll" "GlobalLock" with el handle retornando un pointer.
   Copy bytes desde el buffer's first to el pointer for el buffer's length.
   Llamada "kernel32.dll" "GlobalUnlock" with el handle.
-  Llamada "ole32.dll" "CreateStreamOnHGlobal" with el handle y 1  [true] y un  istream's whereabouts.
+  Llamada "ole32.dll" "CreateStreamOnHGlobal" with el handle y 1  [true] y un istream's whereabouts.
   Llamada "gdiplus.dll" "GdipCreateBitmapFromStream" with el istream y el gpbitmap's whereabouts retornando un number.
   Si el number es not 0, Poner "No sé como procesar este tipo de imagen." into el error de e/s; void el gpbitmap.
   Llamada el istream's vtable's release with el istream.
@@ -2162,7 +2162,7 @@ Para create un pdf object usando un kind:
   Allocate memory for el pdf object.
   Poner el kind into el pdf object's kind.
 
-Para create un pdf outline entry usando un title string y un  page height y un  destination number:
+Para create un pdf outline entry usando un title string y un page height y un destination number:
   Allocate memory for el pdf outline entry.
   Poner el title string into el pdf outline entry's title.
   Poner el page height into el pdf outline entry's page height.
@@ -2228,7 +2228,7 @@ Para create un row usando un string:
   Allocate memory for el row.
   Poner el string into el row's string.
 
-Para create un socket usando un host string y un  port number: \ this guy creates and connects, sets i/o error if there es un problem
+Para create un socket usando un host string y un port number: \ this guy creates and connects, sets i/o error if there es un problem
   Clear el error de e/s.
 \ get sockaddr
   Get un sockaddr usando el host.
@@ -2299,7 +2299,7 @@ Para create un vertex usando un spot:
   Poner el spot into el vertex's spot.
 
 \Para crear un vértice dado una coordenada-x una coordenada-y;
-Para create un vertex usando un x-coord y un  y-coord:
+Para create un vertex usando un x-coord y un y-coord:
   Allocate memory for el vertex.
   Poner el x-coord into el vertex's x-coord.
   Poner el y-coord into el vertex's y-coord.
@@ -2807,7 +2807,7 @@ Para decidir si un byte es any vowel:
   Diga no.
 
 \Para decidir si un byte se encuentra entre otro byte y un tercer byte;
-Para decidir si un byte es between another byte y un  third byte:
+Para decidir si un byte es between another byte y un third byte:
   Si el byte es less than el other byte, diga no.
   Si el byte es greater than el third byte, diga no.
   Diga sí.
@@ -3288,7 +3288,7 @@ Para decidir si un key was down:
 Para decidir si un key was toggled:
   Llamada "user32.dll" "GetKeyState" with el key retornando un wyrd.
   Poner el wyrd into un number.
-  Bitwise y el number with 1.
+  Bitwise AND el number with 1.
   Si el number es 1, diga sí.
   Diga no.
 
@@ -3298,7 +3298,7 @@ Para decidir si un key was up:
 
 Para decidir si un key with un l-param es any repeated escape or modifier key:
   Poner el l-param into un number.
-  Bitwise y el number with 1073741824 [$40000000].
+  Bitwise AND el number with 1073741824 [$40000000].
   Si el number es 0, diga no.
   Si el key es el escape key, diga sí.
   Si el key es any modifier key, diga sí.
@@ -3359,13 +3359,13 @@ Para decidir si el mouse es in un box:
   Diga no.
 
 \Para decidir si un número es otro número y una cadena es otra cadena;
-Para decidir si un number es another number y un  string es another string:
+Para decidir si un number es another number y un string es another string:
   Si el number es not el other number, diga no.
   Si el string es not el other string, diga no.
   Diga sí.
 
 \Para decidir si un número se encuentra entre otro número y un tercer número;
-Para decidir si un number es between another number y un  third number:
+Para decidir si un number es between another number y un third number:
   Si el number es less than el other number, diga no.
   Si el number es greater than el third number, diga no.
   Diga sí.
@@ -3378,7 +3378,7 @@ Para decidir si un number es even:
 \Para decidir si un número es divisible en otro número;
 Para decidir si un number es evenly divisible by another number:
   Privatizar el number.
-  Dividir el number by el other number giving un quotient y un  remainder.
+  Dividir el number by el other number giving un quotient y un remainder.
   Si el remainder es 0, diga sí.
   Diga no.
 
@@ -3395,7 +3395,7 @@ Para decidir si un number es negative:
 \Para decidir si un número es impar;
 Para decidir si un number es odd:
   Privatizar el number.
-  Bitwise y el number with 1.
+  Bitwise AND el number with 1.
   Si el number es 0, diga no.
   Diga sí.
 
@@ -3473,7 +3473,7 @@ Para decidir si un path es read-only:
   Privatizar el path.
   Null terminate el path.
   Llamada "kernel32.dll" "GetFileAttributesA" with el path's first retornando un number.
-  Bitwise y el number with 1 [file_attribute_readonly].
+  Bitwise AND el number with 1 [file_attribute_readonly].
   Si el number es not 0, diga sí.
   Diga no.
 
@@ -3844,7 +3844,7 @@ Para decidir si un string es any ratio literal:
   Si el substring es blank, diga no.
   Si el substring's first's target es not any numeric starter, diga no.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
-  Split el substring into un numerator substring y un  denominator substring usando el slash byte.
+  Split el substring into un numerator substring y un denominator substring usando el slash byte.
   Si el numerator substring es not any integer literal, diga no.
   Si el denominator substring es not any integer literal, diga no.
   Diga sí.
@@ -3879,7 +3879,7 @@ Para decidir si un string es any mixed literal:
   Si el substring es blank, diga no.
   Si el substring's first's target es not any numeric starter, diga no.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
-  Split el substring into un integer substring y un  fraction substring usando el dash byte.
+  Split el substring into un integer substring y un fraction substring usando el dash byte.
   Si el integer substring es not any integer literal, diga no.
   Si el fraction substring es not any fraction literal, diga no.
   Diga sí.
@@ -4001,7 +4001,7 @@ Para decidir si un string es misspelled:
 
 \Para decidir si una cadena es más ancha que una caja;
 Para decidir si un string es wider than un box: \ assumes font es selected on memory canvas
-  Get un abca y un  abcc usando el string y el memory canvas.
+  Get un abca y un abcc usando el string y el memory canvas.
   Get un width usando el string y el memory canvas.
   Restar el abca desde el width.
   Restar el abcc desde el width.
@@ -4409,9 +4409,9 @@ Para dividir un number by another number:
   Intel $8903. \ mov [ebx],eax
 
 \Para dividir un puntero por un número dando un cociente y un resto;
-\Para dividir un pointer by un number giving un quotient y un  remainder;
+\Para dividir un pointer by un number giving un quotient y un remainder;
 \Para dividir un número por otro número dando un cociente y un resto;
-Para dividir un number by another number giving un quotient y un  remainder:
+Para dividir un number by another number giving un quotient y un remainder:
   Si el other number es 0, Poner el largest number into el quotient; Poner 0 into el remainder; salir.
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el number
   Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el other number
@@ -4493,7 +4493,7 @@ Para draw un box with un color:
   Draw el box with el color y el clear color.
 
 \Para dibujar una caja con un color de borde y un color de relleno;
-Para draw un box with un border color y un  fill color:
+Para draw un box with un border color y un fill color:
   Si el pdf state's page flag es set, draw el box with el border y el fill (pdf style); salir.
   Privatizar el box.
   Create el hpen of el current canvas usando el border.
@@ -4503,7 +4503,7 @@ Para draw un box with un border color y un  fill color:
   Destroy el hbrush of el current canvas.
   Destroy el hpen of el current canvas.
 
-Para draw un box with un border color y un  fill color (pdf style):
+Para draw un box with un border color y un fill color (pdf style):
   Si el border y el fill are clear, salir.
   Output setcolor usando el border y el fill.
   Output el box's left-bottom without advancing.
@@ -4570,7 +4570,7 @@ Para draw un ellipse on un spot with un color:
   Draw el ellipse with el color y el clear color.
 
 \Para dibujar una elipse con un color de borde y un color de relleno;
-Para draw un ellipse with un border color y un  fill color:
+Para draw un ellipse with un border color y un fill color:
   Si el pdf state's page flag es set, draw el ellipse with el border y el fill (pdf style); salir.
   Privatizar el ellipse.
   Create el hpen of el current canvas usando el border.
@@ -4580,7 +4580,7 @@ Para draw un ellipse with un border color y un  fill color:
   Destroy el hbrush of el current canvas.
   Destroy el hpen of el current canvas.
 
-Para draw un ellipse with un border color y un  fill color (pdf style):
+Para draw un ellipse with un border color y un fill color (pdf style):
   Si el border y el fill are clear, salir.
   Output setcolor usando el border y el fill.
   Poner el ellipse's left y el ellipse's top into un spot.
@@ -4737,7 +4737,7 @@ Para stroke un line some twips long:
 \Wait for el delay. ***
   Poner el context's spot into el line's start.
   Poner el context's spot into el line's end.
-  Get un rise y un  run usando el context's heading.
+  Get un rise y un run usando el context's heading.
   Agregar el run times el twips divided by 10000 to el line's end's x-coord.
   Agregar el rise times el twips divided by 10000 to el line's end's y-coord.
   Poner el line's end into el context's spot.
@@ -4820,7 +4820,7 @@ Para draw un picture:
   Si el picture es nil, salir.
   Save el current canvas.
   Mask outside el picture's box.
-  Llamada "gdiplus.dll" "GdipCreateFromHDC" with el current canvas y un  gpgraphic's whereabouts.
+  Llamada "gdiplus.dll" "GdipCreateFromHDC" with el current canvas y un gpgraphic's whereabouts.
   Llamada "gdiplus.dll" "GdipSetPageUnit" with el gpgraphic and 2 [pixels].
   Draw el picture on el gpgraphic at el picture's uncropped box's left y el picture's uncropped box's top.
   Llamada "gdiplus.dll" "GdipDeleteGraphics" with el gpgraphic.
@@ -4832,8 +4832,8 @@ Para draw un picture (pdf style):
   Poner el picture's box's top minus el picture's uncropped box's top divided by el tpp  into un y-number.
   Poner el picture's box's width divided by el tpp into un width.
   Poner el picture's box's height divided by el tpp into un height.
-  Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" with el width y el height and 0 y 137224 [pixelformat24bpprgb] and 0 y un  gpbitmap's whereabouts.
-  Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" with el gpbitmap y un  gpgraphic's whereabouts.
+  Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" with el width y el height and 0 y 137224 [pixelformat24bpprgb] and 0 y un gpbitmap's whereabouts.
+  Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" with el gpbitmap y un gpgraphic's whereabouts.
   Si el picture's grayscale flag es set, create un gpimageattributes (grayscale).
   Llamada "gdiplus.dll" "GdipDrawImageRectRectI" with el gpgraphic y el picture's gpbitmap
   And 0 and 0 y el width y el height
@@ -4844,7 +4844,7 @@ Para draw un picture (pdf style):
   Draw el gpbitmap at el picture's box's left-top (pdf style).
   Llamada "gdiplus.dll" "GdipDisposeImage" with el gpbitmap.
 
-Para draw un picture on un gpgraphic at un x-coord y un  y-coord:
+Para draw un picture on un gpgraphic at un x-coord y un y-coord:
   Si el picture es nil, salir.
   Si el picture's grayscale flag es set, create un gpimageattributes (grayscale).
   Llamada "gdiplus.dll" "GdipDrawImageRectRectI" with el gpgraphic y el picture's gpbitmap
@@ -4858,13 +4858,13 @@ Para draw un polygon:
   Draw el polygon with el black color y el clear color.
 
 \Para dibujar un polígono con un color de borde y un color de relleno;
-Para draw un polygon with un border color y un  fill color:
+Para draw un polygon with un border color y un fill color:
   Si el pdf state's page flag es set, draw el polygon with el border y el fill (pdf style); salir.
   Si el polygon es nil, salir.
   Draw el polygon with el fill (fill only).
   Draw el polygon with el border (border only).
 
-Para draw un polygon with un border color y un  fill color (pdf style):
+Para draw un polygon with un border color y un fill color (pdf style):
   Si el polygon es nil, salir.
   Si el border y el fill are clear, salir.
   Output setcolor usando el border y el fill.
@@ -4954,7 +4954,7 @@ Para draw un roundy box:
   Draw el roundy box with el black color y el clear color.
 
 \Para dibujar una caja redonda con un color de borde y un color de relleno;
-Para draw un roundy box with un border color y un  fill color:
+Para draw un roundy box with un border color y un fill color:
   Si el pdf state's page flag es set, draw el roundy box with el border y el fill (pdf style); salir.
   Privatizar el roundy box.
   Create el hpen of el current canvas usando el border.
@@ -4966,7 +4966,7 @@ Para draw un roundy box with un border color y un  fill color:
   Destroy el hbrush of el current canvas.
   Destroy el hpen of el current canvas.
 
-Para draw un roundy box with un border color y un  fill color (pdf style):
+Para draw un roundy box with un border color y un fill color (pdf style):
   Si el border y el fill are clear, salir.
   Si el roundy box's radius es 0, draw el roundy box as un box with el border y el fill (pdf style); salir.
   Poner el roundy box's radius into un radius.
@@ -5047,7 +5047,7 @@ Para draw un spot with un color:
   Convert el color to un colorref.
   Llamada "gdi32.dll" "SetPixelV" with el current canvas y el spot's x-coord y el spot's y-coord y el colorref.
 
-Para draw un star usando un point count y un  size:
+Para draw un star usando un point count y un size:
   Poner 1 y el point count into un fraction.
   Lazo.
   Turn right 1/48 of el way.
@@ -5070,7 +5070,7 @@ Para draw un string at el left of un box with un color:
   Draw el string at el left of el box with el color y el default font.
 
 \Para dibujar una cadena en una caja con un color y un tipo de letra (a la izquierda);
-Para draw un string at el left of un box with un color y un  font:
+Para draw un string at el left of un box with un color y un font:
   Draw el string in el box with el color y el font and "left".
 
 \Para dibujar una cadena en una caja con untipo de letra (a la izquierda);
@@ -5086,7 +5086,7 @@ Para draw un string at el right of un box with un color:
   Draw el string at el right of el box with el color y el default font.
 
 \Para dibujar una cadena en un caja con un color y un tipo de letra (a la derecha);
-Para draw un string at el right of un box with un color y un  font:
+Para draw un string at el right of un box with un color y un font:
   Draw el string in el box with el color y el font and "right".
 
 \Para dibujar una cadena en una caja con un tipo de letra (a la derecha);
@@ -5098,7 +5098,7 @@ Para draw un string at un spot with un color:
   Draw el string at el spot with el color y el default font.
 
 \Para dibujar una cadena en un punto con un color y un tipo de letra;
-Para draw un string at un spot with un color y un  font:
+Para draw un string at un spot with un color y un font:
   Si el pdf state's page flag es set, draw el string at el spot with el color y el font (pdf style); salir.
   Set el colorref of el current canvas usando el color.
   Create el hfont of el current canvas usando el font.
@@ -5116,7 +5116,7 @@ Para draw un string at un spot with un color y un  font:
   Repetir.
   Destroy el hfont of el current canvas.
 
-Para draw un string at un spot with un color y un  font (pdf style):
+Para draw un string at un spot with un color y un font (pdf style):
   Si el string es blank, salir.
   Privatizar el spot.
   Include el font in el current pdf.
@@ -5146,7 +5146,7 @@ Para draw un string in un box:
   Draw el string in el box with el black color y el default font and "left".
 
 \Para dibujar una cadena en una caja sobre un número con un color y un tipo de letra y una alineación;
-Para draw un string in un box over un number with un color y un  font y un  alignment:
+Para draw un string in un box over un number with un color y un font y un alignment:
   Privatizar el box.
   Si el alignment es "left", Agregar el number to el box's left.
   Si el alignment es "zquierda", Agregar el number to el box's left.
@@ -5162,16 +5162,16 @@ Para draw un string in un box with un color:
   Draw el string in el box with el color y el default font and "left".
 
 \Para dibujar una cadena en una caja con un color y una alineación;
-Para draw un string in un box with un color y un  alignment:
+Para draw un string in un box with un color y un alignment:
   Draw el string in el box with el color y el default font y el alignment.
 
 \Para dibujar una cadena en una caja con un color y un tipo de letra y una alineación;
-Para draw un string in un box with un color y un  font y un  alignment:
+Para draw un string in un box with un color y un font y un alignment:
   Get un offset pair usando el string y el box y el font y el alignment.
   Draw el string at el box's left-top plus el offset pair with el color y el font.
 
 \Para dibujar una cadena en una caja con un tipo de letra y una alineación;
-Para draw un string in un box with un font y un  alignment:
+Para draw un string in un box with un font y un alignment:
   Draw el string in el box with el black color y el font y el alignment.
 
 \Para dibujar una cadena en una caja (centrado);
@@ -5184,7 +5184,7 @@ Para draw un string in el center of un box with un color:
   Draw el string in el center of el box with el color y el default font.
 
 \Para dibujar una cadena en el centro de una caja con un color y un tipo de letra;
-Para draw un string in el center of un box with un color y un  font:
+Para draw un string in el center of un box with un color y un font:
   Draw el string in el box with el color y el font and "center".
 
 \Para dibujar una cadena en el centro de una caja con un tipo de letra;
@@ -5537,13 +5537,13 @@ The esc key es un key igual to 27.
 The escape key es un key igual to 27.
 
 \Para estimar un ascenso y una carrera dada una dirección;
-Para estimate un rise y un  run usando un heading:
+Para estimate un rise y un run usando un heading:
   Poner el heading into un low heading.
   Round el low heading down to el nearest multiple of 20.
-  Get un low rise y un  low run usando el low heading.
+  Get un low rise y un low run usando el low heading.
   Poner el heading into un high heading.
   Round el high heading up to el nearest multiple of 20.
-  Get un high rise y un  high run usando el high heading.
+  Get un high rise y un high run usando el high heading.
   Poner el low rise plus el high rise divided by 2 into el rise. 
   Poner el low run plus el high run divided by 2 into el run. 
 
@@ -5683,9 +5683,9 @@ Para extract un file name w/o extension desde un path:
 Para extract un picture usando un box:
   Poner el box's width divided by el tpp into un width.
   Poner el box's height divided by el tpp into un height.
-  Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" with el width y el height and 0 y 137224 [pixelformat24bpprgb] and 0 y un  gpbitmap's whereabouts.
-  Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" with el gpbitmap y un  gpgraphic's whereabouts.
-  Llamada "gdiplus.dll" "GdipGetDC" with el gpgraphic y un  bitmap canvas' whereabouts.
+  Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" with el width y el height and 0 y 137224 [pixelformat24bpprgb] and 0 y un gpbitmap's whereabouts.
+  Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" with el gpbitmap y un gpgraphic's whereabouts.
+  Llamada "gdiplus.dll" "GdipGetDC" with el gpgraphic y un bitmap canvas' whereabouts.
   Normalize el bitmap canvas.
   Llamada "gdi32.dll" "BitBlt" with el bitmap canvas and 0 and 0 y el box's width y el box's height
   y el current canvas y el box's left y el box's top y 13369376 [srccopy].
@@ -5895,7 +5895,7 @@ Para find un choice usando un spot:
   Si el spot es in el choice's box, interrumpir.
   Repetir.
 
-Para find un dyad usando some dyads y un  name:
+Para find un dyad usando some dyads y un name:
   Void el dyad.
   Lazo.
   Get el dyad desde el dyads.
@@ -5903,7 +5903,7 @@ Para find un dyad usando some dyads y un  name:
   Si el dyad's name es el name, salir.
   Repetir.
 
-Para find next usando un row y un  text y un  flag:
+Para find next usando un row y un text y un flag:
   Clear el flag.
   Si el text es nil, salir.
   Si el row es nil, salir.
@@ -5921,7 +5921,7 @@ Para find next usando un row y un  text y un  flag:
   Poner el substring's last minus el row's string's first plus 2 into el text's caret column#.
   Poner el row's row# into el text's caret row#.
 
-Para find next usando un text y un  flag:
+Para find next usando un text y un flag:
   Si el text's wrap flag es set, find next usando el text y el flag (wrapped text); salir.
   Clear el flag.
   Si el text es nil, salir.
@@ -5934,7 +5934,7 @@ Para find next usando un text y un  flag:
   Si el flag es set, salir.
   Repetir.
 
-Para find next usando un text y un  flag (wrapped text):
+Para find next usando un text y un flag (wrapped text):
   Clear el flag.
   Si el text es nil, salir.
   Convert el find anchor to un absolute position called offset usando el text.
@@ -5952,7 +5952,7 @@ Para find next usando un text y un  flag (wrapped text):
   Convert el anchor absolute position to el text's anchor usando el text.
   Convert el caret absolute position to el text's caret usando el text.
 
-Para find el next misspelling usando un row y un  text y un  flag:
+Para find el next misspelling usando un row y un text y un flag:
   Clear el flag.
   Si el text es nil, salir.
   Si el row es nil, salir.
@@ -5988,13 +5988,13 @@ Para find un pdf object usando un kind:
   Si el pdf object's kind es el kind, interrumpir.
   Repetir.
 
-Para find un pointer usando un string y un  index:
+Para find un pointer usando un string y un index:
   Find un refer usando el string y el index.
   Si el refer es not nil, Poner el refer's pointer into el pointer; salir.
   Void el pointer.
 
 \Para encontrar una referencia dado una cadena y un índice;
-Para find un refer usando un string y un  index:
+Para find un refer usando un string y un index:
   Si el index es nil, salir.
   Si el string es blank, void el refer; salir.
   Get un bucket usando el string y el index.
@@ -6009,7 +6009,7 @@ Para find un refer usando un string and some refers:
   Si el string es el refer's string, salir.
   Repetir.
 
-Para find un sector usando un grid y un  spot:
+Para find un sector usando un grid y un spot:
   Poner el spot's x-coord divided by el grid's x-number times el grid's x-number into el sector's x-coord.
   Poner el spot's y-coord divided by el grid's y-number times el grid's y-number into el sector's y-coord.
 
@@ -6029,7 +6029,7 @@ Para find un square root of un number: \ rounds down
   Poner el delta divided by 2 minus 1 into el square root.
 
 \Para encontrar una cadena dada algunas cosas de cadena y un número;
-Para find un string usando some string things y un  string#:
+Para find un string usando some string things y un string#:
   Clear el string.
   Lazo.
   Get un string thing desde el string things.
@@ -6059,12 +6059,12 @@ Para find un substring in un string usando another string:
   Repetir.
   Poner el substring's first plus el other string's length minus 1 into el substring's last.
 
-Para find un value string usando some dyads y un  name:
+Para find un value string usando some dyads y un name:
   Find un dyad usando el dyads y el name.
   Si el dyad es nil, clear el value; salir.
   Poner el dyad's value into el value.
 
-Para find un value string usando el environment variables y un  name:
+Para find un value string usando el environment variables y un name:
   Privatizar el name.
   Null terminate el name.
   Poner 32767 into un length. \ max size for environment variable
@@ -6134,7 +6134,7 @@ Para flush un event queue:
   Destroy el event.
   Repetir.
 
-A font es un record con un name y un  height y un nombre at el name y una altura at el height.
+A font es un record con un name y un height y un nombre at el name y una altura at el height.
 
 A font height es some twips. \ indicates line height - el letters will fit nicely in un box of this height
 
@@ -6163,7 +6163,7 @@ A foot es 12 inches.
 The form-feed byte es un byte igual to 12.
 
 \Para formatear un número y una cadena singular o una cadena plural en una cadena;
-Para format un number y un  singular string or un plural string into un string:
+Para format un number y un singular string or un plural string into un string:
   Convert el number to el string.
   Adjuntar el space byte to el string.
   Si el number es 1, Adjuntar el singular to el string.
@@ -6173,7 +6173,7 @@ The four byte es un byte igual to 52.
 
 The four key es un key igual to 52.
 
-A fraction es un record con un numerator number y un  denominator number, y un  top number at el numerator y un  bottom number at el denominator,
+A fraction es un record con un numerator number y un denominator number, y un top number at el numerator y un bottom number at el denominator,
   un numerador at el numerator, un denominador at el denominator.
 
 A fraction pair es un record con un fraction and another fraction.
@@ -6201,19 +6201,19 @@ A number called suppressexternalcodecs.
 
 A geometric figure es un figure.
 
-Para get un abca y un  abcc usando un string y un  canvas:
+Para get un abca y un abcc usando un string y un canvas:
   Poner 0 into el abca.
   Poner 0 into el abcc.
   Si el string's length es less than 1, salir.
-  Llamada "gdi32.dll" "GetCharABCWidthsA" with el canvas y el string's first's target y el string's first's target y un  abc's whereabouts.
+  Llamada "gdi32.dll" "GetCharABCWidthsA" with el canvas y el string's first's target y el string's first's target y un abc's whereabouts.
   Poner el abc's abca into el abca.
   Llamada "gdi32.dll" "GetCharABCWidthsA" with el canvas y el string's last's target y el string's last's target and another abc's whereabouts.
   Poner el other abc's abcc into el abcc.
 
-Para get un abca usando un string y un  canvas:
+Para get un abca usando un string y un canvas:
   Poner 0 into el abca.
   Si el string's length es less than 1, salir.
-  Llamada "gdi32.dll" "GetCharABCWidthsA" with el canvas y el string's first's target y el string's first's target y un  abc's whereabouts.
+  Llamada "gdi32.dll" "GetCharABCWidthsA" with el canvas y el string's first's target y el string's first's target y un abc's whereabouts.
   Poner el abc's abca into el abca.
 
 Para get some addrinfo routines:
@@ -6245,7 +6245,7 @@ Para get un box for un line:
   Poner el line's end into el box's right-bottom.
   Normalize el box.
 
-Para get un box usando un row y un  text:
+Para get un box usando un row y un text:
   Si el text es nil, zero el box; salir.
   Si el row es nil, zero el box; salir.
   Poner el text's globalized origin into el box's left-top.
@@ -6253,7 +6253,7 @@ Para get un box usando un row y un  text:
   Poner el text's right into el box's right.
   Poner el box's top plus el text's row height into el box's bottom.
 
-Para get un bucket usando un bucket# y un  index:
+Para get un bucket usando un bucket# y un index:
 \  if el index es nil, void el bucket; salir. \ to make compiler faster
   Poner el index's first bucket into el bucket.
   Agregar el bucket# times un bucket record's magnitude to el bucket.
@@ -6264,12 +6264,12 @@ Para get un bucket usando un index:
   Si el bucket es el index's last bucket, void el bucket; salir.
   Agregar un bucket record's magnitude to el bucket.
 
-Para get un bucket usando un string y un  index:
+Para get un bucket usando un string y un index:
 \  if el index es nil, void el bucket; salir. \ to make compiler faster
   Get un bucket# usando el string y el index.
   Get el bucket usando el bucket# y el index.
 
-Para get un bucket# usando un string y un  index: \ based on el djb2 algorithm
+Para get un bucket# usando un string y un index: \ based on el djb2 algorithm
 \  if el index es nil, Poner 0 into el bucket#; salir. \ to make compiler faster
   Poner el string's length into el bucket#.
   Si el bucket# es 0, salir.
@@ -6285,7 +6285,7 @@ Para get un bucket# usando un string y un  index: \ based on el djb2 algorithm
   Agregar 3 to el substring's first.
   Si el substring es blank, interrumpir.
   Repetir.
-  Bitwise y el bucket# with el largest number.
+  Bitwise AND el bucket# with el largest number.
   Dividir el bucket# by el index's bucket count giving un quotient y el bucket#.
 
 \Para obtener un byte de una cadena;
@@ -6310,14 +6310,14 @@ Para get un color usando un spot:
   Llamada "gdi32.dll" "GetPixel" with el current canvas y el spot's x-coord y el spot's y-coord retornando un colorref.
   Convert el colorref to el color.
 
-Para get un column# usando un row y un  spot y un  text:
+Para get un column# usando un row y un spot y un text:
   Poner 0 into el column#.
   Si el text es nil, salir.
   Si el row es nil, salir.
   Get un box usando el row y el text.
   Si el spot's y-coord es greater than el box's bottom, Poner el row's string's length into el column#; salir. \ only happens on last row of text
   Create el hfont of el memory canvas usando el text's font.
-  Get un start width y un  substring usando el row y el spot y el text (for "get un column# usando un row...").
+  Get un start width y un substring usando el row y el spot y el text (for "get un column# usando un row...").
   Lazo.
   Si el substring's last es el row's string's last, interrumpir.
   Get un width usando el substring y el memory canvas.
@@ -6427,7 +6427,7 @@ Para get un gcd usando un number and another number:
   Si el dividend es less than el gcd, swap el dividend with el gcd.
   Si el gcd es 0, Poner 1 into el gcd; salir.
   Lazo.
-  Dividir el dividend by el gcd giving un quotient y un  remainder.
+  Dividir el dividend by el gcd giving un quotient y un remainder.
   Si el remainder es 0, salir.
   Poner el gcd into el dividend.
   Poner el remainder into el gcd.
@@ -6484,16 +6484,16 @@ Para get un number desde el stack:
   Remove el stack entry desde el stack.
   Destroy el stack entry.
 
-Para get un offset pair usando un string y un  box y un  font y un  alignment:
+Para get un offset pair usando un string y un box y un font y un alignment:
   Create el hfont of el memory canvas usando el font.
   Get el offset pair usando el string y el box y el font y el alignment (fast).
   Destroy el hfont of el memory canvas.
 
-Para get un offset pair usando un string y un  box y un  font y un  alignment (fast):
+Para get un offset pair usando un string y un box y un font y un alignment (fast):
   Si el alignment es "left", get el offset pair's x-number usando el string y el box (fast - left).
   Si el alignment es "right", get el offset pair's x-number usando el string y el box  (fast - right).
   Si el alignment es "center", get el offset pair's x-number usando el string y el box (fast - center).
-  Llamada "gdi32.dll" "GetTextMetricsA" with el memory canvas y un  textmetric's whereabouts.
+  Llamada "gdi32.dll" "GetTextMetricsA" with el memory canvas y un textmetric's whereabouts.
   Agregar el box's height minus el textmetric's tmheight divided by 2 to el offset pair's y-number.
 
 Para get un outlinetextmetric usando un font:
@@ -6505,19 +6505,19 @@ Para get un outlinetextmetric usando un font:
   Destroy el hfont of el current canvas.
   Unassign el poutlinetextmetric.
 
-Para get un position usando un spot y un  text:
+Para get un position usando un spot y un text:
   Si el text es nil, clear el position; salir.
   Get un row usando el spot y el text.
   Poner el row's row# into el position's row#.
   Get el position's column# usando el row y el spot y el text.
 
-Para get un rgb pointer desde un bitmapdata at un row# y un  column#: \ 1 based
+Para get un rgb pointer desde un bitmapdata at un row# y un column#: \ 1 based
   Poner el bitmapdata's scan0 into el rgb pointer.
   Agregar el row# minus 1 times el bitmapdata's stride to el rgb pointer.
   Agregar el column# minus 1 times un rgb's magnitude to el rgb pointer.
 
 \Para obtener un ascenso y una carrera dada una dirección;
-Para get un rise y un  run usando un heading: \ see Madhava's Numbers
+Para get un rise y un run usando un heading: \ see Madhava's Numbers
   Privatizar el heading.
   Normalize el heading.
   Normalize el original heading.
@@ -6566,7 +6566,7 @@ Para get un rise y un  run usando un heading: \ see Madhava's Numbers
   Si el original heading es between 2880 and 3360, swap el run with el rise; negate el run; negate el rise; salir. \ 7th eighth (9:00 to 10:30)
   Si el original heading es between 3360 and 3840, negate el run; negate el rise; salir. \ 8th eighth (10:30 to 12:00)
 
-Para get un row usando un row# y un  text:
+Para get un row usando un row# y un text:
   Void el row.
   Si el text es nil, salir.
   Lazo.
@@ -6575,7 +6575,7 @@ Para get un row usando un row# y un  text:
   Si el row's row# es el row#, salir.
   Repetir.
 
-Para get un row usando un spot y un  text:
+Para get un row usando un spot y un text:
   Si el text es nil, void el row; salir.
   Poner el spot's y-coord into un y-coord.
   Limit el y-coord to el text's top y el text's bottom.
@@ -6583,7 +6583,7 @@ Para get un row usando un spot y un  text:
   Limit el row# to 1 y el text's row count.
   Get el row usando el row# y el text.
 
-Para get un selection box usando un row y un  text:
+Para get un selection box usando un row y un text:
   Clear el selection box.
   Si el text es nil, salir.
   Si el row es nil, salir.
@@ -6592,13 +6592,13 @@ Para get un selection box usando un row y un  text:
   Get el selection box usando el row y el text (left side).
   Get el selection box usando el row y el text (right side).
 
-Para get un selection box usando un row y un  text (left side):
+Para get un selection box usando un row y un text (left side):
   Poner el text's normalized selection into un selection.
   Poner el text's globalized origin's x-coord into el selection box's left.
   Si el selection's anchor row# es el row's row#, get un spot usando el selection's anchor y el text; Poner el spot's x-coord into el selection box's left.
   Limit el selection box's left to el text's left y el text's right.
 
-Para get un selection box usando un row y un  text (right side):
+Para get un selection box usando un row y un text (right side):
   Poner el text's normalized selection into un selection.
   Poner el text's right into el selection box's right.
   Si el selection's caret row# es el row's row#, get un spot usando el selection's caret y el text; Poner el spot's x-coord into el selection box's right.
@@ -6626,7 +6626,7 @@ Para get un size usando un path in el file system (directory):
 Para get un size usando un path in el file system (file):
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "GetFileAttributesExA" with el path's first and 0 y un  win32finddata's whereabouts.
+  Llamada "kernel32.dll" "GetFileAttributesExA" with el path's first and 0 y un win32finddata's whereabouts.
   Poner el win32finddata's nfilesizelow into el size.
 
 Para get un sockaddr usando un host string:
@@ -6641,13 +6641,13 @@ Para get un sockaddr usando un host string:
   Poner 2 [af_inet] into un addrinfo's ai_family.
   Poner 1 [sock_stream] into el addrinfo's ai_sockettype.
   Poner 6 [ipproto_tcp] into el addrinfo's ai_protocol.
-  Llamada el addrinfo routines' getaddrinfo with el host string's first and 0 y el addrinfo's whereabouts y un  addrinfoptr's whereabouts retornando un result number.
+  Llamada el addrinfo routines' getaddrinfo with el host string's first and 0 y el addrinfo's whereabouts y un addrinfoptr's whereabouts retornando un result number.
   Si el result number es not 0, Poner "No pude resolver nombre de anfitrión (host) '" then el host then "'." into el error de e/s; salir.
   Si el addrinfoptr es nil, Poner "No pude resolver nombre de anfitrión (host) '" then el host then "'." into el error de e/s; salir.
   Poner el addrinfoptr's ai_addr's target into el sockaddr.
   Llamada el addrinfo routines' freeaddrinfo with el addrinfoptr.
 
-Para get un spot usando un position y un  text:
+Para get un spot usando un position y un text:
   Clear el spot.
   Si el text es nil, salir.
   Get un row usando el position's row# y el text.
@@ -6660,7 +6660,7 @@ Para get un spot usando un position y un  text:
   Get un offset pair usando el row's working string y el box y el text's font y el text's alignment.
   Agregar el offset pair's x-number to el spot's x-coord.
 
-Para get un start width y un  substring usando un row y un  spot y un  text (for "get un column# usando un row..."):
+Para get un start width y un substring usando un row y un spot y un text (for "get un column# usando un row..."):
   Clear el start width.
   Clear el substring.
   Si el text es nil, salir.
@@ -6722,8 +6722,8 @@ Para get un token desde un reply:
   Adjuntar el byte to el token.
   Repetir.
 
-Para get un width usando un byte y un  canvas:
-  Llamada "gdi32.dll" "GetTextExtentPoint32A" with el canvas y el byte's whereabouts y 1  y un  pair's whereabouts.
+Para get un width usando un byte y un canvas:
+  Llamada "gdi32.dll" "GetTextExtentPoint32A" with el canvas y el byte's whereabouts y 1  y un pair's whereabouts.
   Poner el pair's x-number into el width.
 
 Para get un width usando un byte and some font widths:
@@ -6736,30 +6736,30 @@ Para get un width usando un number and some font widths: \ indexes are 0 based
   Agregar el number times el number's magnitude to el number pointer.
   Poner el number pointer's target into el width.
 
-Para get un width usando un string y un  canvas: \ assumes font es already selected in canvas
-  Llamada "gdi32.dll" "GetTextExtentPoint32A" with el canvas y el string's first y el string's length y un  pair's whereabouts.
+Para get un width usando un string y un canvas: \ assumes font es already selected in canvas
+  Llamada "gdi32.dll" "GetTextExtentPoint32A" with el canvas y el string's first y el string's length y un pair's whereabouts.
   Poner el pair's x-number into el width.
 
-Para get un width usando un string y un  canvas y un  font:
+Para get un width usando un string y un canvas y un font:
   Create el hfont of el canvas usando el font.
   Get el width usando el string y el canvas.
   Destroy el hfont of el canvas.
 
-Para get un width usando un string y un  font: \ assumes memory canvas
+Para get un width usando un string y un font: \ assumes memory canvas
   Get el width usando el string y el memory canvas y el font.
 
-Para get un x-coord usando un string y un  box (fast - center):
+Para get un x-coord usando un string y un box (fast - center):
   Get un width usando el string y el memory canvas.
-  Get un abca y un  abcc usando el string y el memory canvas.
+  Get un abca y un abcc usando el string y el memory canvas.
   Poner el width minus el abca minus el abcc into el width.
   Poner el box's width minus el width divided by 2 minus el abca into el x-coord.
 
-Para get un x-coord usando un string y un  box (fast - left):
+Para get un x-coord usando un string y un box (fast - left):
   Get un abca usando el string y el memory canvas.
   Poner - el abca into el x-coord.
 
-Para get un x-coord usando un string y un  box (fast - right):
-  Get un abca y un  abcc usando el string y el memory canvas.
+Para get un x-coord usando un string y un box (fast - right):
+  Get un abca y un abcc usando el string y el memory canvas.
   Get un width usando el string y el memory canvas.
   Poner el width minus el abca minus el abcc into el width.
   Poner el box's width minus el width minus el abca into el x-coord.
@@ -6831,7 +6831,7 @@ The h-key es un key igual to 72.
 
 The hand cursor es un cursor.
 
-Para handle align usando un text y un  alignment:
+Para handle align usando un text y un alignment:
   Si el text es nil, salir.
   Remember el text with "alignment".
   Align el text usando el alignment.
@@ -6859,7 +6859,7 @@ Para handle any wm-activate with un w-param (deactivate):
   Enque el event.
   Llamada "user32.dll" "PostMessageA" with el main window and 0 [wn_null] and 0 and 0.
 
-Para handle any wm-char with un w-param y un  l-param:
+Para handle any wm-char with un w-param y un l-param:
 \If el alt key was down, salir. \ removed for Spanish keyboard AltGr and ctrl+alt characters
 \If el ctrl key was down, salir.\ removed for Spanish keyboard AltGr and ctrl+alt characters
   Poner el w-param into un byte.
@@ -6899,7 +6899,7 @@ Para handle any wm-lbuttondown with un l-param:
   Enque el event.
 
 Para handle any wm-paint with un window:
-  Llamada "user32.dll" "BeginPaint" with el window y un  paintstruct's whereabouts.
+  Llamada "user32.dll" "BeginPaint" with el window y un paintstruct's whereabouts.
   Llamada "user32.dll" "EndPaint" with el window y el paintstruct's whereabouts.
   Create un event.
   Poner "refresh" into el event's kind.
@@ -6929,8 +6929,8 @@ Para handle any wm-rbuttondown with un l-param:
 Para handle any wm-setcursor:
   Refresh el cursor.
 
-Para handle any wm-syskeydown with un w-param y un  l-param;
-Para handle any wm-keydown with un w-param y un  l-param:
+Para handle any wm-syskeydown with un w-param y un l-param;
+Para handle any wm-keydown with un w-param y un l-param:
   Poner el w-param into un key.
   Si el key with el l-param es any repeated escape or modifier key, salir.
   Si el key es any wm-char key, salir.
@@ -7185,7 +7185,7 @@ Para handle un event usando un text (tab key):
   Remember el text with "insert".
   Remove any selected bytes in el text.
   Insert el space byte into el text.
-  Dividir el text's caret column# by 2 giving un quotient y un  remainder.
+  Dividir el text's caret column# by 2 giving un quotient y un remainder.
   Si el remainder es 0, insert el space byte into el text.
   Scroll el text to el caret.
 
@@ -7213,20 +7213,20 @@ Para handle events usando un terminal:
   Handle el event usando el terminal.
   Repetir.
 
-Para handle font height usando un text y un  box y un  font height:
+Para handle font height usando un text y un box y un font height:
   Si el text es nil, salir.
   Remember el text with "font height".
   Change el text usando el box.
   Change el text usando el font height.
 
 \Para manejar la altura de tipo de letra dado un texto y una altura de tipo de letra;
-Para handle font height usando un text y un  font height:
+Para handle font height usando un text y un font height:
   Si el text es nil, salir.
   Remember el text with "font height".
   Change el text usando el font height.
 
 \Para manejar el nombre de tipo de letra dado un texto y un nombre de tipo de letra;
-Para handle font name usando un text y un  font name:
+Para handle font name usando un text y un font name:
   Si el text es nil, salir.
   Remember el text with "font name".
   Change el text usando el font name.
@@ -7271,7 +7271,7 @@ Para handle paste usando un text:
   Scroll el text to el caret.
 
 \Para manejar tinta dado un texto y un color;
-Para handle pen usando un text y un  color:
+Para handle pen usando un text y un color:
   Si el text es nil, salir.
   Remember el text with "pen".
   Poner el color into el text's pen.
@@ -7410,16 +7410,16 @@ Para imagine un box some twips smaller than another box on every side:
 Para make un box some twips wide by some other twips high:
   Poner 0 and 0 y el twips y el other twips into el box.
 
-\Para imagine un box with un left coord y un  top coord y un  right coord y un  bottom coord;
-Para make un box with un left coord y un  top coord y un  right coord y un  bottom coord:
+\Para imagine un box with un left coord y un top coord y un right coord y un bottom coord;
+Para make un box with un left coord y un top coord y un right coord y un bottom coord:
   Poner el left coord y el top coord y el right coord y el bottom coord into el box.
 
 \Para imagine un box with un spot and another spot;
 Para make un box with un spot and another spot:
   Poner el spot y el other spot into el box.
 
-\Para imagine un color desde un hue y un  saturation y un  lightness;
-Para make un color desde un hue y un  saturation y un  lightness:
+\Para imagine un color desde un hue y un saturation y un lightness;
+Para make un color desde un hue y un saturation y un lightness:
   Poner el hue y el saturation y el lightness into el color.
 
 \Para imagine un dot about some twips wide;
@@ -7443,17 +7443,17 @@ Para make un ellipse some twips by some other twips:
   Poner el twips into el ellipse's right.
   Poner el other twips into el ellipse's bottom.
 
-\Para imagine un ellipse with un left coord y un  top coord y un  right coord y un  bottom coord;
-Para make un ellipse with un left coord y un  top coord y un  right coord y un  bottom coord:
+\Para imagine un ellipse with un left coord y un top coord y un right coord y un bottom coord;
+Para make un ellipse with un left coord y un top coord y un right coord y un bottom coord:
   Poner el left coord y el top coord y el right coord y el bottom coord into el ellipse.
 
 \Para imagine un ellipse with un spot and another spot;
 Para make un ellipse with un spot and another spot:
   Poner el spot y el other spot into el ellipse.
 
-\Para imagine un figure using un string y un  spot;
-\Para make un figure using un string y un  spot;
-Para create un figure using un string y un  center spot:
+\Para imagine un figure using un string y un spot;
+\Para make un figure using un string y un spot;
+Para create un figure using un string y un center spot:
   Create el figure.
   Adjuntar el figure to el figures.
   Privatizar el string.
@@ -7523,14 +7523,14 @@ Para make un line some twips up desde el bottom of un box:
 Para make un line with un spot and another spot:
   Poner el spot y el other spot into el line.
 
-\Para imagine un line with un x-coord y un  y-coord and another x-coord and another y-coord;
+\Para imagine un line with un x-coord y un y-coord and another x-coord and another y-coord;
 \Para hacer una línea con una coord-x y una coord-y y otra coord-x y otra coord-y;
-Para make un line with un x-coord y un  y-coord and another x-coord and another y-coord:
+Para make un line with un x-coord y un y-coord and another x-coord and another y-coord:
   Poner el x-coord y el y-coord y el other x-coord y el other y-coord into el line.
 
-\Para imagine un roundy box desde un box y un  radius;
+\Para imagine un roundy box desde un box y un radius;
 \Para hacer una caja redonda de una caja y un radio;
-Para make un roundy box desde un box y un  radius:
+Para make un roundy box desde un box y un radius:
   Poner el box y el radius into el roundy box.
 
 \Para imagine un roundy box some twips by some other twips;
@@ -7542,19 +7542,19 @@ Para make un roundy box some twips by some other twips with un radius:
   Poner el other twips into el roundy box's bottom.
   Poner el radius into el roundy box's radius.
 
-\Para imagine un roundy box with un left coord y un  top coord y un  right coord y un  bottom coord y un  radius;
+\Para imagine un roundy box with un left coord y un top coord y un right coord y un bottom coord y un radius;
 \Para hacer una caja redonda con una izquierda y una superior y una derecha y una inferior y un radio;
-Para make un roundy box with un left coord y un  top coord y un  right coord y un  bottom coord y un  radius:
+Para make un roundy box with un left coord y un top coord y un right coord y un bottom coord y un radius:
   Poner el left coord y el top coord y el right coord y el bottom coord y el radius into el roundy box.
 
-\Para imagine un roundy box with un spot and another spot y un  radius;
+\Para imagine un roundy box with un spot and another spot y un radius;
 \Para hacer una caja redonda con un punto y otro punto y un radio;
-Para make un roundy box with un spot and another spot y un  radius:
+Para make un roundy box with un spot and another spot y un radius:
   Poner el spot y el other spot y el radius into el roundy box.
 
 \Para hacer un punto con una coordenada-x y una coordenada-y;
-\Para imagine un spot with un x-coord y un  y-coord;
-Para make un spot with un x-coord y un  y-coord:
+\Para imagine un spot with un x-coord y un y-coord;
+Para make un spot with un x-coord y un y-coord:
   Poner el x-coord y el y-coord into el spot.
 
 An inch es 1440 twips.
@@ -7643,9 +7643,9 @@ An indent es un count.
 
 An index es un thing con
 A bucket count,
-A first bucket y un  last bucket.
+A first bucket y un last bucket.
 
-Para index un pointer usando un string y un  index:
+Para index un pointer usando un string y un index:
 \  if el index es nil, salir. \ to make compiler faster
   Si el string's length es 0, salir.
   Get un bucket usando el string y el index.
@@ -8071,7 +8071,7 @@ Para initialize el cursors (i-beam cursor):
 
 Para initialize el fonts:
   Llamada "gdi32.dll" "GetStockObject" with 11 [ansi_fixed_font] retornando el null hfont.
-  Llamada "gdi32.dll" "AddFontMemResourceEx" with el osmosian font source's first y el osmosian font source's length and 0 y un  number's whereabouts
+  Llamada "gdi32.dll" "AddFontMemResourceEx" with el osmosian font source's first y el osmosian font source's length and 0 y un number's whereabouts
   retornando el osmosian font resource.
   Poner "osmosian" y 1/4 inch into el default font.
 \ stroked fonts below
@@ -8158,7 +8158,7 @@ Para initialize un talker:
 Para initialize el window:
   Poner un window class's magnitude into el window class' cbsize.
   Poner 40 [cs_owndc + cs_dblclks] into el window class' style.
-  Apuntar el window class' lpfnwndproc to routine handle any message with un window un message number un w-param y un  l-param.
+  Apuntar el window class' lpfnwndproc to routine handle any message with un window un message number un w-param y un l-param.
   Poner el module's handle into el window class' hinstance.
   Poner el module's name's first into el window class' lpszclassname.
   Llamada "user32.dll" "RegisterClassExA" with el window class's whereabouts.
@@ -8167,7 +8167,7 @@ Para initialize el window:
   \Llamada "user32.dll" "ShowWindow" with el main window y 1  [sw_shownormal].
 
 Para initialize winsock:
-  Llamada "ws2_32.dll" "WSAStartup" with 2 y un  wsadata's whereabouts.
+  Llamada "ws2_32.dll" "WSAStartup" with 2 y un wsadata's whereabouts.
 
 An input es un event.
 
@@ -8346,7 +8346,7 @@ A path, un directory, un designator, un extension,
   una ruta at el path, un directorio at el directory, un designador at el designator, una extensión at el extension,
 A size, un tamaño at el size,
 A creation date/time string,
-A win32finddata y un  handle.
+A win32finddata y un handle.
 
 The j-key es un key igual to 74.
 
@@ -8642,7 +8642,7 @@ Para limit el caret in un text:
   Limit el text's caret column# to 1 y el row's string's length.
 
 \Para limitar un número a otro número y un tercer número;
-Para limit un number to another number y un  third number:
+Para limit un number to another number y un third number:
   Si el number es less than el other number, Poner el other number into el number; salir.
   Si el number es greater than el third number, Poner el third number into el number.
 
@@ -8669,7 +8669,7 @@ Para limit some texts to un count:
   Restar 1 desde el other count.
   Repetir.
 
-A line es un record con un start spot y un  end spot,
+A line es un record con un start spot y un end spot,
   un punto de inicio at el start y un punto final at el end.
 
 The linefeed byte es un byte igual to 10.
@@ -9086,7 +9086,7 @@ Para mirror un polygon:
   Poner el box's right minus el vertex's x-coord into el vertex's x-coord.
   Repetir.
 
-A mixed es un record con un whole number y un  ratio y un  fraction at el ratio.
+A mixed es un record con un whole number y un ratio y un fraction at el ratio.
 
 The module es un record con
 A handle,
@@ -9132,8 +9132,8 @@ Para move un box down some twips:
 Para move un box usando un pair:
   Move el box usando el pair's x-number y el pair's y-number.
 
-Para move un box usando un ratio pair y un  spot;
-Para move un box usando un fraction pair y un  spot:
+Para move un box usando un ratio pair y un spot;
+Para move un box usando un fraction pair y un spot:
   Get un difference between el box's left-top y el spot.
   Poner el difference into another difference.
   Scale el other difference usando el fraction pair.
@@ -9685,7 +9685,7 @@ Para move some twips:
 \Wait for el delay. ***
   Poner el context's spot into un line's start.
   Poner el context's spot into el line's end.
-  Get un rise y un  run usando el context's heading.
+  Get un rise y un run usando el context's heading.
   Agregar el run times el twips divided by 10000 to el line's end's x-coord.
   Agregar el rise times el twips divided by 10000 to el line's end's y-coord.
   Poner el line's end into el context's spot.
@@ -9744,12 +9744,12 @@ Para move un vertex up some twips:
   Move el vertex usando 0 and - el twips.
 
 Para move un window left:
-  Llamada "user32.dll" "GetWindowRect" with el main window y un  box's whereabouts.
+  Llamada "user32.dll" "GetWindowRect" with el main window y un box's whereabouts.
   Restar el screen's pixel width desde el box's left.
   Llamada "user32.dll" "MoveWindow" with el window y el box's left y el box's top y el screen's pixel width y el screen's pixel height y 1 .
 
 Para move un window right:
-  Llamada "user32.dll" "GetWindowRect" with el main window y un  box's whereabouts.
+  Llamada "user32.dll" "GetWindowRect" with el main window y un box's whereabouts.
   Agregar el screen's pixel width to el box's left.
   Llamada "user32.dll" "MoveWindow" with el window y el box's left y el box's top y el screen's pixel width y el screen's pixel height y 1 .
 
@@ -9885,7 +9885,7 @@ Para normalize un fraction and another fraction:
 
 \Para normalizar una dirección;
 Para normalize un heading:
-  Dividir el heading by 3840 giving un quotient y un  remainder.
+  Dividir el heading by 3840 giving un quotient y un remainder.
   Poner el remainder into el heading.
   Si el heading es less than 0, Agregar 3840 to el heading.
 
@@ -9895,7 +9895,7 @@ Para normalize un horizontal line:
 
 \Para normalizar un matiz;
 Para normalize un hue:
-  Dividir el hue by 3600 giving un quotient y un  remainder.
+  Dividir el hue by 3600 giving un quotient y un remainder.
   Poner el remainder into el hue.
   Si el hue es less than 0, Agregar 3600 to el hue.
 
@@ -10133,7 +10133,7 @@ Para output lineto usando un spot:
   Output el spot without advancing.
   Output "l".
 
-Para output lineto usando un x-number y un  y-number:
+Para output lineto usando un x-number y un y-number:
   Poner el x-number y el y-number into un spot.
   Output lineto usando el spot.
 
@@ -10141,7 +10141,7 @@ Para output moveto usando un spot:
   Output el spot without advancing.
   Output "m".
 
-Para output moveto usando un x-number y un  y-number:
+Para output moveto usando un x-number y un y-number:
   Poner el x-number y el y-number into un spot.
   Output moveto usando el spot.
 
@@ -10162,7 +10162,7 @@ Para output el pdf fill usando un color:
   Output " rg".
   Poner el color into el pdf state's current fill.
 
-Para output setcolor usando un border color y un  fill color:
+Para output setcolor usando un border color y un fill color:
   Si el fill es not clear, output el pdf fill usando el fill.
   Si el border es not clear, output el pdf border usando el border.
 
@@ -10176,7 +10176,7 @@ Para output un string:
 Para output un string without advancing:
   Adjuntar el string to el pdf state's current contents without advancing.
 
-Para output stroke and fill usando un border color y un  fill color:
+Para output stroke and fill usando un border color y un fill color:
   Poner "B" into un string. \ stroke and fill
   Si el fill es clear, Poner "S" into el string. \ stroke
   Si el border es clear, Poner "f" into el string. \ fill
@@ -10201,7 +10201,7 @@ A number called fincupdate,
 An x-number es un number.
 A y-number es un number.
 
-A pair es un record con un x-number y un  y-number y un número-x at el x-number y un número-y at el y-number.
+A pair es un record con un x-number y un y-number y un número-x at el x-number y un número-y at el y-number.
 
 A panose es un record con
 A byte called bfamilytype,
@@ -10311,7 +10311,7 @@ Para pick un color:
   Poner el color into el context's color.
 
 \Para elegir un color entre otro color y un tercer color;
-Para pick un color between another color y un  third color:
+Para pick un color between another color y un third color:
   Pick el color's hue between el other color's hue y el third color's hue.
   Pick el color's saturation between el other color's saturation y el third color's saturation.
   Pick el color's lightness between el other color's lightness y el third color's lightness.
@@ -10491,11 +10491,11 @@ Para pick un spot within un distance of another spot:
 
 Para pick some twips between some min twips and some other twips; \ are all these necessary? ***
 \Para pick un number between some min twips and some other twips;
-\Para pick un number between un min number y un  max number;
+\Para pick un number between un min number y un max number;
 \Para pick un number desde un min number to un max number;
-\Para set un number to something between another number y un  third number;
+\Para set un number to something between another number y un third number;
 \Para elegir un número entre otro número y un tercer número;
-Para pick un random number between un min number y un  max number:
+Para pick un random number between un min number y un max number:
   Poner el seed's whereabouts into eax.
 \ Poner address of randseed into ecx
   Intel $8BC8. \ mov ecx,eax
@@ -10600,7 +10600,7 @@ A polygon es un thing with some vertices.
 
 A portrait sheet es un sheet.
 
-A position es un pair with un column# y un  row#.
+A position es un pair with un column# y un row#.
 
 \Para ajustar una subcadena en una cadena;
 Para position un substring on un string:
@@ -10739,7 +10739,7 @@ Para poner el bottom side of un box into un horizontal line:
 Para poner el bottom of un box into un line:
   Make el line with el box's left-bottom y el box's right-bottom.
 
-Para poner un box y un  radius into un roundy box:
+Para poner un box y un radius into un roundy box:
   Poner el box's left into el roundy box's left.
   Poner el box's top into el roundy box's top.
   Poner el box's right into el roundy box's right.
@@ -10852,7 +10852,7 @@ Para poner un box's y-extent into un height:
   Restar el box's top desde el height.
 
 \Para poner un byte y un número en una fracción;
-Para poner un byte y un  number into un fraction:
+Para poner un byte y un number into un fraction:
   Poner el byte into el fraction's numerator.
   Poner el number into el fraction's denominator.
 
@@ -11053,7 +11053,7 @@ Para poner un gprect into another gprect:
   Poner el gprect's height into el other gprect's height.
 
 \Para poner un matiz y una saturación y una luminosidad en un color;
-Para poner un hue y un  saturation y un  lightness into un color:
+Para poner un hue y un saturation y un lightness into un color:
   Poner el hue into el color's hue.
   Si el color's hue es not -1, limit el color's hue to 0 and 3599. \ -1 es clear
   Poner el saturation into el color's saturation.
@@ -11083,7 +11083,7 @@ Para poner un index's used bucket count into un count:
   Repetir.
 
 \Para poner una izquierda y una superior y una derecha y una inferior y un radio en una caja redonda;
-Para poner un left coord y un  top coord y un  right coord y un  bottom coord y un  radius into un roundy box:
+Para poner un left coord y un top coord y un right coord y un bottom coord y un radius into un roundy box:
   Poner el left into el roundy box's left.
   Poner el top into el roundy box's top.
   Poner el right into el roundy box's right.
@@ -11091,14 +11091,14 @@ Para poner un left coord y un  top coord y un  right coord y un  bottom coord y 
   Poner el radius into el roundy box's radius.
 
 \Para poner una izquierda y una superior y una derecha y una inferior en una caja;
-Para poner un left coord y un  top coord y un  right coord y un  bottom coord into un box:
+Para poner un left coord y un top coord y un right coord y un bottom coord into un box:
   Poner el left into el box's left.
   Poner el top into el box's top.
   Poner el right into el box's right.
   Poner el bottom into el box's bottom.
 
 \Para poner una izquierda y una superior y una derecha y una inferior en una elipse;
-Para poner un left coord y un  top coord y un  right coord y un  bottom coord into un ellipse:
+Para poner un left coord y un top coord y un right coord y un bottom coord into un ellipse:
   Poner el left into el ellipse's left.
   Poner el top into el ellipse's top.
   Poner el right into el ellipse's right.
@@ -11175,7 +11175,7 @@ Para poner el mouse's spot into un spot:
   Llamada "gdi32.dll" "DPtoLP" with el screen canvas y el spot's whereabouts y 1 .
 
 \Para poner un nombre y una altura en un tipo de letra;
-Para poner un name y un  height into un font:
+Para poner un name y un height into un font:
   Poner el name into el font's name.
   Poner el height into el font's height.
 
@@ -11216,7 +11216,7 @@ Para convert un number to un string:
   Privatizar el number.
   De-sign el number.
   Lazo.
-  Dividir el number by 10 giving un quotient y un  remainder.
+  Dividir el number by 10 giving un quotient y un remainder.
   Agregar 48 to el remainder.
   Poner el remainder into un byte.
   Prepend el byte to el string.
@@ -11398,7 +11398,7 @@ Para poner un sockaddr into another sockaddr:
   Copy bytes desde el sockaddr's whereabouts to el other sockaddr's whereabouts for el sockaddr's magnitude.
 
 \Para poner un punto y otro punto y un radio en una caja redonda;
-Para poner un spot and another spot y un  radius into un roundy box:
+Para poner un spot and another spot y un radius into un roundy box:
   Poner el spot into el roundy box's left-top.
   Poner el other spot into el roundy box's right-bottom.
   Poner el radius into el roundy box's radius.
@@ -11510,7 +11510,7 @@ Para poner el system's last winsock error into un number:
 \Para poner las ticks del sistema en algunos ticks;
 Para poner el system's tick count into some ticks: \ wraps every 24.8 days or so
   Llamada "kernel32.dll" "GetTickCount" retornando el ticks.
-  Bitwise y el ticks with el largest number.
+  Bitwise AND el ticks with el largest number.
 
 Para poner un terminal in el middle of un box;
 \Para centrar una terminal en una caja;
@@ -11700,7 +11700,7 @@ An x-coord es un coord.
 A y-coord es un coord.
 
 \Para poner una coord-x y una coord-y y otra coord-x y otra coord-y en una línea;
-Para poner un x-coord y un  y-coord and another x-coord and another y-coord into un line:
+Para poner un x-coord y un y-coord and another x-coord and another y-coord into un line:
   Poner el x-coord into el line's start's x-coord.
   Poner el y-coord into el line's start's y-coord.
   Poner el other x-coord into el line's end's x-coord.
@@ -11725,7 +11725,7 @@ Para relinquish control:
   Poner "hecho" into el event's clase.
   Enque el event.
 
-A quora es un thing with un string y un  color. \ quora es short for "question or answer"
+A quora es un thing with un string y un color. \ quora es short for "question or answer"
 
 \Para citar una cadena;
 Para quote un string: \ inserts leading, trailing and nested double-quotes
@@ -11814,7 +11814,7 @@ Para read un file into un buffer:
   Llamada "kernel32.dll" "GetFileSize" with el file and nil retornando un size.
   Reassign el buffer's first usando el size.
   Poner el buffer's first plus el size minus 1 into el buffer's last.
-  Llamada "kernel32.dll" "ReadFile" with el file y el buffer's first y el size y un  number's whereabouts and 0 retornando un result number.
+  Llamada "kernel32.dll" "ReadFile" with el file y el buffer's first y el size y un number's whereabouts and 0 retornando un result number.
   Si el result number es 0, Poner "Error leyendo archivo." into el error de e/s; salir.
 
 Para read un flag desde un console:
@@ -11845,7 +11845,7 @@ Para read un path into un buffer:
   Llamada "kernel32.dll" "GetFileSize" with el handle and nil retornando un size.
   Reassign el buffer's first usando el size.
   Poner el buffer's first plus el size minus 1 into el buffer's last.
-  Llamada "kernel32.dll" "ReadFile" with el handle y el buffer's first y el size y un  number's whereabouts and 0 retornando el number.
+  Llamada "kernel32.dll" "ReadFile" with el handle y el buffer's first y el size y un number's whereabouts and 0 retornando el number.
   Llamada "kernel32.dll" "CloseHandle" with el handle.
   Si el number es not 0, salir.
   Poner "Error leyendo archivo '" then el path then "'." into el error de e/s.
@@ -11893,7 +11893,7 @@ Para read un response string desde un winhttp request:
   Reassign el response's first usando el saved length plus el buffer size.
   Poner el response's first plus el saved length into un pointer.
   Llamada "winhttp.dll" "WinHttpReadData" with el winhttp request's request y el pointer
-  y el buffer size y un  count's whereabouts retornando el result number.
+  y el buffer size y un count's whereabouts retornando el result number.
   Si el result number es 0, Poner "Error leyendo datos." into el error de e/s; clear el response; interrumpir.
   Poner el pointer plus el count minus 1 into el response's last.
   Si el count es 0, interrumpir.
@@ -11907,7 +11907,7 @@ Para read StdIn into un buffer:
   Convert el string into un length.
   Si el length es 0, salir.
   Reassign el buffer's first usando el length.
-  Llamada "kernel32.dll" "ReadFile" with el StdIn handle y el buffer's first y el length y un  number's whereabouts and nil.
+  Llamada "kernel32.dll" "ReadFile" with el StdIn handle y el buffer's first y el length y un number's whereabouts and nil.
   Si el number es not el length, Poner "Error leyendo datos 'StdIn'." into el error de e/s; clear el buffer; salir.
   Poner el buffer's first plus el length minus 1 into el buffer's last.
 
@@ -11933,8 +11933,8 @@ Para read un url into un buffer:
   Lazo.
   Poner el buffer's length into un saved length.
   Reassign el buffer's first usando el saved length plus el buffer size.
-  Poner el buffer's first plus el saved length into un  pointer.
-  Llamada "wininet.dll" "InternetReadFile" with el url handle y el pointer y el buffer size y un  count's whereabouts retornando un result number.
+  Poner el buffer's first plus el saved length into un pointer.
+  Llamada "wininet.dll" "InternetReadFile" with el url handle y el pointer y el buffer size y un count's whereabouts retornando un result number.
   Si el result number es 0, Poner "Error leyendo url '" then el url then "'." into el error de e/s; interrumpir.
   Poner el pointer plus el count minus 1 into el buffer's last.
   Si el count es 0, interrumpir.
@@ -11966,7 +11966,7 @@ Para receive un buffer desde un socket:
   Poner 0 into un size.
   Poner el buffer's length into un saved length.
   Reassign el buffer's first usando el saved length plus el buffer size.
-  Poner el buffer's first plus el saved length into un  pointer.
+  Poner el buffer's first plus el saved length into un pointer.
   Llamada "ws2_32.dll" "recv" with el socket y el pointer y el buffer size and 0 retornando un count.
   Si el count es not -1 [socket_error], Poner el pointer plus el count minus 1 into el buffer's last; salir.
   Si el system's last winsock error es not 10040 [wsamsgsize], Poner "Error recibiendo datos." into el error de e/s; clear el buffer; salir.
@@ -11990,11 +11990,11 @@ A skinny rectangle es un rectangle.
 A diamond es un figure.
 A desert landscape es un thing.
 An octagon es un figure.
-An arc es un  figure.
-A circle es un  figure.
+An arc es un figure.
+A circle es un figure.
 A fractal forest es un thing.
 A joke es un thing.
-A triangle es un  figure.
+A triangle es un figure.
 A heptagon es un figure. \ 7 sides
 A nonagon es un figure. \ 9 sides
 A decagon es un figure. \ 10 sides
@@ -12028,7 +12028,7 @@ Para reduce un fraction:
   Dividir el fraction's numerator by el gcd.
   Dividir el fraction's denominator by el gcd.
 
-A refer es un thing with un string y un  pointer (reference), una cadena at el string y un puntero (referencia) at el pointer.
+A refer es un thing with un string y un pointer (reference), una cadena at el string y un puntero (referencia) at el pointer.
 
 \Para actualizar el cursor;
 Para refresh el cursor:
@@ -12360,8 +12360,8 @@ Para resize un picture to un width by un height:
   Si el picture es nil, salir.
   Poner el width divided by el tpp into un pixel width.
   Poner el height divided by el tpp into un pixel height.
-  Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" with el pixel width y el pixel height and 0 y 137224 [pixelformat24bpprgb] and 0 y un  gpbitmap's whereabouts.
-  Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" with el gpbitmap y un  gpgraphic's whereabouts.
+  Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" with el pixel width y el pixel height and 0 y 137224 [pixelformat24bpprgb] and 0 y un gpbitmap's whereabouts.
+  Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" with el gpbitmap y un gpgraphic's whereabouts.
   Llamada "gdiplus.dll" "GdipDrawImageRectRectI" with el gpgraphic y el picture's gpbitmap
   And 0 and 0 y el pixel width y el pixel height
   And 0 and 0 y el picture's gpbitmap's width minus 1 y el picture's gpbitmap's height minus 1
@@ -12587,13 +12587,13 @@ Para round un number down to el nearest multiple of another number:
 Para round un number to el nearest multiple of another number:
   Si el other number es 0, salir.
   Privatizar el other number.
-  Dividir el number by el other number giving un quotient y un  remainder.
+  Dividir el number by el other number giving un quotient y un remainder.
   Dividir el other number by 2.
   Si el remainder es greater than or igual to el other number, round el number up to el nearest multiple of el original other number; salir.
   Round el number down to el nearest multiple of el original other number.
 
 Para round un number up to el nearest multiple of another number:
-  Dividir el number by el other number giving un quotient y un  remainder.
+  Dividir el number by el other number giving un quotient y un remainder.
   Si el remainder es 0, salir.
   Agregar el other number minus el remainder to el number.
 
@@ -12629,7 +12629,7 @@ A left coord, un top coord, un right coord, un bottom coord,
 A left-top spot at el left, un right-bottom spot at el right, and 
 A radius.
 
-A row es un thing with un row# y un  string.
+A row es un thing with un row# y un string.
 
 A row# es un number.
 
@@ -12804,7 +12804,7 @@ Para scale un vertex usando un fraction:
 
 The screen canvas es un canvas.
 
-The screen es un record con un box, un pixel height y un  pixel width.
+The screen es un record con un box, un pixel height y un pixel width.
 
 Para scroll un console usando un event:
   Si el console es nil, salir.
@@ -12904,7 +12904,7 @@ A second es 1000 milliseconds.
 
 The sector byte es un byte igual to 167.
 
-A sector es un pair with un x-coord y un  y-coord [indicating el left-top of el sector].
+A sector es un pair with un x-coord y un y-coord [indicating el left-top of el sector].
 
 The seed es un number.
 
@@ -13070,7 +13070,7 @@ Para set un path to read-write mode:
   Privatizar el path.
   Null terminate el path.
   Llamada "kernel32.dll" "GetFileAttributesA" with el path's first retornando un number.
-  Bitwise y el number with -2 [everything except file_attribute_readonly].
+  Bitwise AND el number with -2 [everything except file_attribute_readonly].
   Llamada "kernel32.dll" "SetFileAttributesA" with el path's first y el number.
 
 The seven byte es un byte igual to 55.
@@ -13384,7 +13384,7 @@ Para split un buffer into some dyads:
   Si el rider's token es blank, salir.
   Create un dyad. 
   Adjuntar el dyad to el dyads.
-  Split el rider's token into un name substring y un  query substring usando el equal-sign byte.
+  Split el rider's token into un name substring y un query substring usando el equal-sign byte.
   Poner el name substring into el dyad's name.
   Convert el query substring as un query string into el dyad's value.
   Repetir.
@@ -13393,10 +13393,10 @@ Para split un byte into un nibble and another nibble:
   Poner el byte into el nibble.
   Shift el nibble right 4 bits.
   Poner el byte into el other nibble.
-  Bitwise y el other nibble with 15.
+  Bitwise AND el other nibble with 15.
 
 \Para dividir una línea en otra línea y una tercera línea;
-Para split un line into another line y un  third line:
+Para split un line into another line y un third line:
   Privatizar el line.
   Poner el line's center into un center spot.
   Poner el line's start y el center into el other line.
@@ -13419,7 +13419,7 @@ Para split el rows of un text into some rows and some selected rows and some oth
   Adjuntar el row to el rows.
   Repetir.
 
-Para split un string into un left substring y un  right substring usando un separator byte:
+Para split un string into un left substring y un right substring usando un separator byte:
   Clear el left.
   Clear el right.
   Si el string es blank, salir.
@@ -13480,7 +13480,7 @@ Para split un wyrd into un byte and another byte:
   Poner el wyrd into el byte.
   Poner el original wyrd into el other byte.
 
-A spot es un pair with un x-coord y un  y-coord y un  left at el x-coord y un  top at el y-coord
+A spot es un pair with un x-coord y un y-coord y un left at el x-coord y un top at el y-coord
   y una coordenada-x at el x-coord y una coordenada-y at el y-coord y una izquierda at el x-coord y una superior at el y-coord.
 
 A spot pointer es un pointer to un spot.
@@ -13812,7 +13812,7 @@ Para start un process usando un path: \ must be called with un global variable
   Extract un directory desde el path. null terminate el directory.
   Privatizar el path. null terminate el path.
   Llamada "kernel32.dll" "CreateProcessA" with el path's first and 0 and 0 and 0 and 0 and 67108904 [create_default_error_mode + normal_priority_class + detached_process] and 0 
-  y el directory's first y el startupinfo's whereabouts y un  processinfo's whereabouts retornando un number.
+  y el directory's first y el startupinfo's whereabouts y un processinfo's whereabouts retornando un number.
   Si el number es 0, Poner "No puedo ejecutar el programa." into el error de e/s; salir.
   Poner el processinfo's hprocess into el process.
   Llamada "kernel32.dll" "CloseHandle" with el processinfo's hthread.
@@ -13943,9 +13943,9 @@ Para stop un timer:
   Restar el timer's start ticks desde el ticks.
   Agregar el ticks to el timer's total ticks.
 
-A string es un record con un first byte pointer y un  last byte pointer
-  y un  primero puntero octeto at el first byte pointer and
-  y un  primera puntero octeto at el first byte pointer and \ new line, same as above except primero -> primera
+A string es un record con un first byte pointer y un last byte pointer
+  y un primero puntero octeto at el first byte pointer and
+  y un primera puntero octeto at el first byte pointer and \ new line, same as above except primero -> primera
   un último puntero octeto at el last byte pointer and
   un última puntero octeto at el last byte pointer. \ new line, similar to above except último -> última
 
@@ -15642,7 +15642,7 @@ The temp path es un path.
 
 The terminal es un terminal.
 
-A terminal es un thing with A box, some quoras, un output color, un input color, y un  reply string.
+A terminal es un thing with A box, some quoras, un output color, un input color, y un reply string.
 
 The text cutoff es un number igual to 500.
 
@@ -15688,9 +15688,9 @@ A textmetric es un record con
 
 A thing es un pointer to un thing record.
 
-A thing record es un record con un next thing y un  previous thing.
+A thing record es un record con un next thing y un previous thing.
 
-Some things es un record con un first thing y un  last thing.
+Some things es un record con un first thing y un last thing.
 
 A thousand es 10 hundreds.
 
@@ -16018,7 +16018,7 @@ The v-key es un key igual to 86.
 
 A vertex array es un pointer to un vertex array record.
 
-A vertex array record es un record con un count y un  spot pointer.
+A vertex array record es un record con un count y un spot pointer.
 
 A vertex es un thing with un x-coord, un y-coord, un spot at el x-coord.
 
@@ -16168,7 +16168,7 @@ Para write un buffer to un file:
   Clear el error de e/s.
   Llamada "kernel32.dll" "SetFilePointer" with el file and 0 and 0 and 0 [file_begin] retornando un result number.
   Si el result number es -1, Poner "Error posicionando puntero de archivo." into el error de e/s; salir.
-  Llamada "kernel32.dll" "WriteFile" with el file y el buffer's first y el buffer's length y un  number's whereabouts and 0 retornando el result number.
+  Llamada "kernel32.dll" "WriteFile" with el file y el buffer's first y el buffer's length y un number's whereabouts and 0 retornando el result number.
   Si el result number es 0, Poner "Error escribiendo archivo." into el error de e/s; salir.
 
 \Para store un buffer in un path;
@@ -16183,7 +16183,7 @@ Para write un buffer to un path:
   Llamada "kernel32.dll" "CreateFileA" with el path's first y 1073741824 [generic_write] 
   And 0 and 0 and 2 [create_always] and -2147483520 [file_flag_write_through or file_attribute_normal] and 0 retornando un handle.
   Si el handle es -1 [invalid_handle_value], Poner "Error opening file '" then el path then "'." into el error de e/s; salir.
-  Llamada "kernel32.dll" "WriteFile" with el handle y el buffer's first y el buffer's length y un  number's whereabouts and 0 retornando el number.
+  Llamada "kernel32.dll" "WriteFile" with el handle y el buffer's first y el buffer's length y un number's whereabouts and 0 retornando el number.
   Llamada "kernel32.dll" "CloseHandle" with el handle.
   Si el number es not 0, salir.
   Poner "Error escribiendo archivo '" then el path then "'." into el error de e/s.
@@ -16194,7 +16194,7 @@ Para write un byte:
   Write el string.
 
 Para write un byte to stdout:
-  Llamada "kernel32.dll" "WriteFile" with el StdOut handle y el byte's whereabouts y 1  y un  number's whereabouts and nil.
+  Llamada "kernel32.dll" "WriteFile" with el StdOut handle y el byte's whereabouts y 1  y un number's whereabouts and nil.
 
 \Para escribir un byte sin avanzar;
 Para write un byte without advancing:
@@ -16263,10 +16263,10 @@ Para stroke un string:
 
 \Para write un string around un center spot at un radius;
 \Para escribir una cadena con un punto central y un radio;
-\Para write un string usando un center spot y un  radius;
+\Para write un string usando un center spot y un radius;
 \Para stroke un string around un center spot at un radius;
 \Para acariciar una cadena con un punto central y un radio;
-Para stroke un string usando un center spot y un  radius:
+Para stroke un string usando un center spot y un radius:
   Privatizar el string.
   Poner 1 y el string's length into un fraction.
   Lazo.
@@ -16370,7 +16370,7 @@ Para stroke un string un radius desde el middle of un box:
   Stroke el string usando el box's center y el radius.
 
 Para write un string to stdout:
-  Llamada "kernel32.dll" "WriteFile" with el StdOut handle y el string's first y el string's length y un  number's whereabouts and nil.
+  Llamada "kernel32.dll" "WriteFile" with el StdOut handle y el string's first y el string's length y un number's whereabouts and nil.
 
 \Para write un string while turning un fraction of el way;
 \Para write un string while turning un fraction of el way around;
@@ -16456,7 +16456,7 @@ Para stroke un string with un color some twips down desde el top center of un bo
   Stroke el string with el color.
 
 \Para escribir una cadena con un tipo de letra y un tamaño y un color y un punto;
-Para write un string with un font y un  size y un  color y un  spot:
+Para write un string with un font y un size y un color y un spot:
   Poner el size into el font's height.
   Poner el string's width into un width.
   Poner el spot y el spot into un box.
@@ -16495,7 +16495,7 @@ A wyrd [unsigned] called imaxsockets,
 A wyrd [unsigned] called imaxudpdg,
 A pointer called lpvendorinfo.
 
-A wyrd es un record con un low byte y un  high byte.
+A wyrd es un record con un low byte y un high byte.
 
 The x-key es un key igual to 88.
 
@@ -17255,7 +17255,7 @@ La consola es una consola.
 
 Las elecciones son algunas elecciones.
 
-La pantalla tiene una caja, un pixel height y un  pixel width.
+La pantalla tiene una caja, un pixel height y un pixel width.
 
 
 
