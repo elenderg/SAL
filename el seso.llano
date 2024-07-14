@@ -4513,10 +4513,10 @@ Para dibujar any visible rows of un text:
 Para dibujar any visible rows of un text (editing):
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
-  Si el row es nil, salir.
-  Si el row of el text es not visible, repetir.
-  Dibujar el row of el text (editing).
+    Get un row desde el text's rows.
+    Si el row es nil, salir.
+    Si el row of el text es not visible, repetir.
+    Dibujar el row of el text (editing).
   Repetir.
 
 \Para dibujar una caja;
@@ -4559,7 +4559,7 @@ Para dibujar un box con un border color y un fill color (pdf style):
   Output el box's x-extent without advancing.
   Output el box's y-extent without advancing.
   Output "re".
-  Output stroke and fill usando el border y el fill.
+  Output trazar and fill usando el border y el fill.
 
 Para dibujar el caret in un text:
   Si el text es nil, salir.
@@ -4575,9 +4575,9 @@ Para dibujar un circle some twips wide:
   Poner el twips times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
-  Stroke el segment length.
-  Turn right 1/48 of el way.
-  Agregar 1 to un count. If el count es 48, interrumpir.
+    Trazar el segment length.
+    Turn right 1/48 of el way.
+    Agregar 1 to un count. If el count es 48, interrumpir.
   Repetir.
 
 \Para dibujar un circle some twips wide (backwards);
@@ -4585,9 +4585,9 @@ Para dibujar un circle some twips wide (counterclockwise):
   Poner el twips times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
-  Stroke el segment length.
-  Turn left 1/48 of el way.
-  Agregar 1 to un count. If el count es 48, interrumpir.
+    Trazar el segment length.
+    Turn left 1/48 of el way.
+    Agregar 1 to un count. If el count es 48, interrumpir.
   Repetir.
 
 \Para dibujar una consola;
@@ -4639,17 +4639,17 @@ Para dibujar un ellipse con un border color y un fill color (pdf style):
   Output el arc of el ellipse usando "right-top".
   Output el arc of el ellipse usando "right-bottom".
   Output el arc of el ellipse usando "left-bottom".
-  Output stroke and fill usando el border y el fill.
+  Output trazar and fill usando el border y el fill.
 
 \Para dibujar una elipse con un color;
 Para dibujar un ellipse con un color:
   Dibujar el ellipse con el color y el color.
 
 \Para dibujar un fancy arrow some twips long con un color;
-Para stroke un fancy arrow some twips long con un color:
+Para trazar un fancy arrow some twips long con un color:
   Poner el color into el context's color.
   Save el context.
-  Stroke el twips.
+  Trazar el twips.
   Turn around.
   Move el twips divided by 8.
   Save el context.
@@ -4669,18 +4669,18 @@ Para dibujar un figure con some sides about some twips wide:
   Poner el twips times el pizza pie divided by el sides into un segment length.
   Si el sides are 4, Poner el twips times 7/8 into el segment length. \ what es this? ***
   Lazo.
-  Stroke el segment length.
-  Turn el fraction.
-  Agregar 1 to un count. if el count es el sides, interrumpir.
+    Trazar el segment length.
+    Turn el fraction.
+    Agregar 1 to un count. if el count es el sides, interrumpir.
   Repetir.
 
 \Para dibujar un figure con some sides some twips long;
 Para dibujar un figure con some sides and some twips:
   Poner 1 y el sides into un fraction.
   Lazo.
-  Stroke el twips.
-  Turn el fraction.
-  Agregar 1 to un count. If el count es el sides, interrumpir.
+    Trazar el twips.
+    Turn el fraction.
+    Agregar 1 to un count. If el count es el sides, interrumpir.
   Repetir.
 
 \Para dibujar un figure con some sides some twips long using un color;
@@ -4730,10 +4730,10 @@ Para dibujar un half circle usando un size:
   Poner el size times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
-  Stroke el segment length.
-  Turn right 1/48 of el way.
-  Agregar 1 to un count.
-  Si el count es 24, salir.
+    Trazar el segment length.
+    Turn right 1/48 of el way.
+    Agregar 1 to un count.
+    Si el count es 24, salir.
   Repetir.
 
 \Para dibujar un half circle usando un size (backwards);
@@ -4741,16 +4741,18 @@ Para dibujar un half circle usando un size (counterclockwise):
   Poner el size times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
-  Stroke el segment length.
-  Turn left 1/48 of el way.
-  Agregar 1 to un count.
-  Si el count es 24, salir.
+    Trazar el segment length.
+    Turn left 1/48 of el way.
+    Agregar 1 to un count.
+    Si el count es 24, salir.
   Repetir.
 
 Para dibujar un hexagon usando un side length:
-  Stroke el side length.
-  Turn right 1/6 of el way.
-  Agregar 1 to un count. If el count es 6, interrumpir.
+  \Lazo.
+    Trazar el side length.
+    Turn right 1/6 of el way.
+    Agregar 1 to un count. 
+    If el count es 6, interrumpir.
   Repetir.
 
 \Para dibujar una línea;
@@ -4759,30 +4761,30 @@ Para dibujar un line:
 
 Para dibujar un line around some twips long; \ "around" es significant here
 Para dibujar un line about some twips long; \ "about" es significant here
-Para stroke un line around some twips long; \ "around" es significant here
-Para stroke un line about some twips long: \ "about" es significant here
+Para trazar un line around some twips long; \ "around" es significant here
+Para trazar un line about some twips long: \ "about" es significant here
   Poner el twips divided by 2 into some other twips.
   Pick some third twips between el twips minus el other twips y el twips plus el other twips.
-  Stroke el line el third twips long.
+  Trazar el line el third twips long.
 
 \Para dibujar un line as high as un box con un color;
 Para dibujar un line as tall as un box con un color:
   Poner el color into el context's color.
-  Stroke el box's height.
+  Trazar el box's height.
 
 Para dibujar un line as wide as un box con un color:
   Poner el color into el context's color.
-  Stroke el box's width.
+  Trazar el box's width.
 
 \Para dibujar un line between some twips and some other twips long;
 \Para dibujar un line between some twips to some other twips long;
 \Para dibujar un line some twips to some other twips long;
-Para stroke un line some twips to some other twips long:
+Para trazar un line some twips to some other twips long:
   Pick some third twips between el twips y el other twips.
-  Stroke el line el third twips long.
+  Trazar el line el third twips long.
 
 \Para dibujar un line some twips long;
-Para stroke un line some twips long:
+Para trazar un line some twips long:
 \Wait for el delay. ***
   Poner el context's spot into el line's start.
   Poner el context's spot into el line's end.
@@ -4796,7 +4798,7 @@ Para stroke un line some twips long:
 \Para dibujar una línea usando un tamaño;
 \Para dibujar un line using some twips as el length;
 Para dibujar un line using some twips for el length:
-  Stroke el twips.
+  Trazar el twips.
 
 \Para dibujar una línea con un color;
 Para dibujar un line con un color:
@@ -4813,27 +4815,27 @@ Para dibujar un line con un color (pdf style):
   Output setcolor usando el color y el borrar color.
   Output moveto usando el line's start.
   Output lineto usando el line's end.
-  Output stroke and fill usando el color y el borrar color.
+  Output trazar and fill usando el color y el borrar color.
 
 Para dibujar un line con un color around some twips long; \ "around" es significant here
 Para dibujar un line con un color about some twips long; \ "about" es significant here
-Para stroke un line con un color around some twips long; \ "around" es significant here
-Para stroke un line con un color about some twips long: \ "about" es significant here
+Para trazar un line con un color around some twips long; \ "around" es significant here
+Para trazar un line con un color about some twips long: \ "about" es significant here
   Poner el twips divided by 2 into some other twips.
   Pick some third twips between el twips minus el other twips y el twips plus el other twips.
-  Stroke el line con el color el third twips long.
+  Trazar el line con el color el third twips long.
 
 \Para dibujar un line con un color some twips long;
-Para stroke un line con un color some twips long:
+Para trazar un line con un color some twips long:
   Poner el color into el context's color.
   Poner el context's spot into el line's start.
-  Stroke el twips.
+  Trazar el twips.
   Poner el context's spot into el line's end.
 
 \Para dibujar un line con un color some twips to some other twips long;
-Para stroke un line con un color some twips to some other twips long:
+Para trazar un line con un color some twips to some other twips long:
   Pick some third twips between el twips y el other twips.
-  Stroke el line con el color el third twips long.
+  Trazar el line con el color el third twips long.
 
 \Para dibujar un número en una caja con un color;
 Para dibujar un number in un box con un color:
@@ -4925,7 +4927,7 @@ Para dibujar un polygon con un border color y un fill color (pdf style):
   Si el vertex es nil, interrumpir.
   Output lineto usando el vertex's spot.
   Repetir.
-  Output stroke and fill usando el border y el fill.
+  Output trazar and fill usando el border y el fill.
 
 \Para dibujar un polígono con un color;
 Para dibujar un polygon con un color:
@@ -4967,7 +4969,7 @@ Para dibujar un quarter circle usando un size:
   Poner el size times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
-  Stroke el segment length.
+  Trazar el segment length.
   Turn right 1/48 of el way.
   Agregar 1 to un count.
   Si el count es 12, salir.
@@ -4981,7 +4983,7 @@ Para dibujar un quarter circle usando un size (counterclockwise):
   Poner el size times el pizza pie divided by 48 into un segment length.
   Agregar 1 to el segment length.
   Lazo.
-  Stroke el segment length.
+  Trazar el segment length.
   Turn left 1/48 of el way.
   Agregar 1 to un count.
   Si el count es 12, salir.
@@ -4989,13 +4991,13 @@ Para dibujar un quarter circle usando un size (counterclockwise):
 
 \Para dibujar un rectangle some twips by some other twips;
 Para dibujar un rectangle some twips wide by some other twips high:
-  Stroke el other twips.
+  Trazar el other twips.
   Turn right.
-  Stroke el twips.
+  Trazar el twips.
   Turn right.
-  Stroke el other twips.
+  Trazar el other twips.
   Turn right.
-  Stroke el twips.
+  Trazar el twips.
   Turn right.
 
 \Para dibujar una caja redonda;
@@ -5041,7 +5043,7 @@ Para dibujar un roundy box con un border color y un fill color (pdf style):
   Output el arc of el ellipse usando "left-bottom".
 \ finish up
   Output "h".
-  Output stroke and fill usando el border y el fill.
+  Output trazar and fill usando el border y el fill.
 
 \Para dibujar una caja redonda con un color;
 Para dibujar un roundy box con un color:
@@ -5100,10 +5102,10 @@ Para dibujar un star usando un point count y un size:
   Poner 1 y el point count into un fraction.
   Lazo.
   Turn right 1/48 of el way.
-  Stroke el size.
+  Trazar el size.
   Turn around.
   Turn left 1/24 of el way.
-  Stroke el size.
+  Trazar el size.
   Turn around.
   Turn right 1/48 of el way.
   Turn right el fraction of el way.
@@ -8736,7 +8738,7 @@ Para dibujar some choices in un box:
   Si el choice es not el choices' first, Poner el choice's previous' bottom into el choice's top.
   Poner el choice's top plus 1/4 inch into el choice's bottom.
 \Draw el choice's box con el purple color. \ temp ***
-  Stroke el choice's name in el choice's box con el context's color.
+  Trazar el choice's name in el choice's box con el context's color.
   Repetir.
 
 \Para enumerar algunas elecciones en una caja con un color;
@@ -10225,8 +10227,8 @@ Para output un string:
 Para output un string without advancing:
   Adjuntar el string to el pdf state's current contents without advancing.
 
-Para output stroke and fill usando un border color y un fill color:
-  Poner "B" into un string. \ stroke and fill
+Para output trazar and fill usando un border color y un fill color:
+  Poner "B" into un string. \ trazar and fill
   Si el fill es clear, Poner "S" into el string. \ stroke
   Si el border es clear, Poner "f" into el string. \ fill
   Output el string.
@@ -14002,856 +14004,856 @@ A string thing es un thing con un string y una cadena at el string.
 
 A string# es un number.
 
-Para stroke el accent glyph:
+Para trazar el accent glyph:
   Save el context.
   Move 4 squares.
   Turn right.
   Turn right 7/96 of el way.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Restore el context.
 
-Para stroke el asterisk glyph:
+Para trazar el asterisk glyph:
   Save el context.
   Move 2 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn left.
   Move 1 square.
   Turn left.
   Move 1 square.
   Turn left.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Reset el context.
   Move 1 square.
   Turn right 1/8.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Reset el context.
   Move 3 squares.
   Turn right 3/8.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Restore el context.
 
-Para stroke el at-sign glyph:
+Para trazar el at-sign glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn around.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 3/8.
-  Stroke 1/2 square slantways.
+  Trazar 1/2 square slantways.
   Turn left.
-  Stroke 1/2 square slantways.
+  Trazar 1/2 square slantways.
   Turn left.
-  Stroke 1/2 square slantways.
+  Trazar 1/2 square slantways.
   Turn left.
-  Stroke 1/2 square slantways.
+  Trazar 1/2 square slantways.
   Restore el context.
 
-Para stroke el backslash glyph:
+Para trazar el backslash glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn left.
   Turn left 7/96 of el way.
-  Stroke 9/2 square.
+  Trazar 9/2 square.
   Restore el context.
 
-Para stroke el big-a glyph:
+Para trazar el big-a glyph:
   Save el context.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Turn around.
   Move 2 squares.
   Turn left.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el big-b glyph:
+Para trazar el big-b glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el big-c glyph:
+Para trazar el big-c glyph:
   Save el context.
   Move 2 squares.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Reset el context.
   Move 2 squares.
   Turn around.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el big-d glyph:
+Para trazar el big-d glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el big-e glyph:
+Para trazar el big-e glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Reset el context.
   Move 2 squares.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Reset el context.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el big-f glyph:
+Para trazar el big-f glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Reset el context.
   Move 2 squares.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el big-g glyph:
+Para trazar el big-g glyph:
   Save el context.
   Move 2 squares.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Reset el context.
   Move 2 squares.
   Turn around.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el big-h glyph:
+Para trazar el big-h glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Reset el context.
   Move 2 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Reset el context.
   Turn right.
   Move 2 squares.
   Turn left.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Restore el context.
 
-Para stroke el big-i glyph:
+Para trazar el big-i glyph:
   Save el context.
   Turn right.
   Move 1 square.
   Turn left.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Reset el context.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Reset el context.
   Move 4 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el big-j glyph:
+Para trazar el big-j glyph:
   Save el context.
   Move 2 squares.
   Turn around.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Restore el context.
 
-Para stroke el big-k glyph:
+Para trazar el big-k glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn around.
   Move 2 squares.
   Turn left.
-  Stroke 1 square.
+  Trazar 1 square.
   Save el context.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el big-l glyph:
+Para trazar el big-l glyph:
   Save el context.
   Move 4 squares.
   Turn around.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn left.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el big-m glyph:
+Para trazar el big-m glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn right 41/96.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Turn right 62/96.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Turn right 41/96.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Restore el context.
 
-Para stroke el big-n glyph:
+Para trazar el big-n glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn right 41/96.
-  Stroke 9/2 square.
+  Trazar 9/2 square.
   Turn left 41/96.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Restore el context.
 
-Para stroke el big-o glyph:
+Para trazar el big-o glyph:
   Save el context.
   Move 1 square.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/4.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/4.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el big-p glyph:
+Para trazar el big-p glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el big-q glyph:
+Para trazar el big-q glyph:
   Save el context.
   Move 1 square.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/4.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/4.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Reset el context.
   Move 1 square.
   Turn right.
   Move 1 square.
   Turn right 1/8 of el way.
-  Stroke 1-1/2 square.
+  Trazar 1-1/2 square.
   Restore el context.
 
-Para stroke el big-r glyph:
+Para trazar el big-r glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
   Turn left 7/96.
-  Stroke 7/2 square.
+  Trazar 7/2 square.
   Restore el context.
 
-Para stroke el big-s glyph:
+Para trazar el big-s glyph:
   Save el context.
   Move 1 square.
   Turn around.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el big-t glyph:
+Para trazar el big-t glyph:
   Save el context.
   Turn right.
   Move 1 square.
   Turn left.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn left.
   Move 1 square.
   Turn around.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el big-u glyph:
+Para trazar el big-u glyph:
   Save el context.
   Move 4 squares.
   Turn around.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn left.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn left.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Restore el context.
 
-Para stroke el big-v glyph:
+Para trazar el big-v glyph:
   Save el context.
   Move 4 squares.
   Turn around.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Restore el context.
 
-Para stroke el big-w glyph:
+Para trazar el big-w glyph:
   Save el context.
   Move 4 squares.
   Turn around.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn left 41/96.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Turn left 61/96.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Turn left 41/96.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Restore el context.
 
-Para stroke el big-x glyph:
+Para trazar el big-x glyph:
   Save el context.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Turn left 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Reset el context.
   Turn right.
   Move 2 squares.
   Turn left.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left 1/8.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el big-y glyph:
+Para trazar el big-y glyph:
   Save el context.
   Move 4 squares.
   Turn around.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Reset el context.
   Turn right.
   Move 1 square.
   Turn left.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el big-z glyph:
+Para trazar el big-z glyph:
   Save el context.
   Move 4 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Turn left 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
 \Para acariciar una caja con un color;
-Para stroke un box con un color:
+Para trazar un box con un color:
   Poner el color into el context's color.
   Poner el box's left-bottom into el context's spot.
   Face north.
-  Stroke el box's height.
+  Trazar el box's height.
   Turn right.
-  Stroke el box's width.
+  Trazar el box's width.
   Turn right.
-  Stroke el box's height.
+  Trazar el box's height.
   Turn right.
-  Stroke el box's width.
+  Trazar el box's width.
 
 \Para acariciar un byte;
-Para stroke un byte:
+Para trazar un byte:
   Poner el context's letter height divided by 4 into el square size. \ ***
-  Si el byte es el accent byte, stroke el accent glyph.
-  Si el byte es el asterisk byte, stroke el asterisk glyph.
-  Si el byte es el at-sign byte, stroke el at-sign glyph.
-  Si el byte es el backslash byte, stroke el backslash glyph.
-  Si el byte es el big-a byte, stroke el big-a glyph.
-  Si el byte es el big-b byte, stroke el big-b glyph.
-  Si el byte es el big-c byte, stroke el big-c glyph.
-  Si el byte es el big-d byte, stroke el big-d glyph.
-  Si el byte es el big-e byte, stroke el big-e glyph.
-  Si el byte es el big-f byte, stroke el big-f glyph.
-  Si el byte es el big-g byte, stroke el big-g glyph.
-  Si el byte es el big-h byte, stroke el big-h glyph.
-  Si el byte es el big-i byte, stroke el big-i glyph.
-  Si el byte es el big-j byte, stroke el big-j glyph.
-  Si el byte es el big-k byte, stroke el big-k glyph.
-  Si el byte es el big-l byte, stroke el big-l glyph.
-  Si el byte es el big-m byte, stroke el big-m glyph.
-  Si el byte es el big-n byte, stroke el big-n glyph.
-  Si el byte es el big-o byte, stroke el big-o glyph.
-  Si el byte es el big-p byte, stroke el big-p glyph.
-  Si el byte es el big-q byte, stroke el big-q glyph.
-  Si el byte es el big-r byte, stroke el big-r glyph.
-  Si el byte es el big-s byte, stroke el big-s glyph.
-  Si el byte es el big-t byte, stroke el big-t glyph.
-  Si el byte es el big-u byte, stroke el big-u glyph.
-  Si el byte es el big-v byte, stroke el big-v glyph.
-  Si el byte es el big-w byte, stroke el big-w glyph.
-  Si el byte es el big-x byte, stroke el big-x glyph.
-  Si el byte es el big-y byte, stroke el big-y glyph.
-  Si el byte es el big-z byte, stroke el big-z glyph.
-  Si el byte es el caret byte, stroke el caret glyph.
-  Si el byte es el colon byte, stroke el colon glyph.
-  Si el byte es el comma byte, stroke el comma glyph.
-  Si el byte es el dollar-sign byte, stroke el dollar-sign glyph.
-  Si el byte es el double-quote byte, stroke el double-quote glyph.
-  Si el byte es el eight byte, stroke el eight glyph.
-  Si el byte es el equal-sign byte, stroke el equal-sign glyph.
-  Si el byte es el exclamation-mark byte, stroke el exclamation-mark glyph.
-  Si el byte es el five byte, stroke el five glyph.
-  Si el byte es el four byte, stroke el four glyph.
-  Si el byte es el left-alligator byte, stroke el left-alligator glyph.
-  Si el byte es el left-brace byte, stroke el left-brace glyph.
-  Si el byte es el left-bracket byte, stroke el left-bracket glyph.
-  Si el byte es el left-paren byte, stroke el left-paren glyph.
-  Si el byte es el little-a byte, stroke el little-a glyph.
-  Si el byte es el little-b byte, stroke el little-b glyph.
-  Si el byte es el little-c byte, stroke el little-c glyph.
-  Si el byte es el little-d byte, stroke el little-d glyph.
-  Si el byte es el little-e byte, stroke el little-e glyph.
-  Si el byte es el little-f byte, stroke el little-f glyph.
-  Si el byte es el little-g byte, stroke el little-g glyph.
-  Si el byte es el little-h byte, stroke el little-h glyph.
-  Si el byte es el little-i byte, stroke el little-i glyph.
-  Si el byte es el little-j byte, stroke el little-j glyph.
-  Si el byte es el little-k byte, stroke el little-k glyph.
-  Si el byte es el little-l byte, stroke el little-l glyph.
-  Si el byte es el little-m byte, stroke el little-m glyph.
-  Si el byte es el little-n byte, stroke el little-n glyph.
-  Si el byte es el little-o byte, stroke el little-o glyph.
-  Si el byte es el little-p byte, stroke el little-p glyph.
-  Si el byte es el little-q byte, stroke el little-q glyph.
-  Si el byte es el little-r byte, stroke el little-r glyph.
-  Si el byte es el little-s byte, stroke el little-s glyph.
-  Si el byte es el little-t byte, stroke el little-t glyph.
-  Si el byte es el little-u byte, stroke el little-u glyph.
-  Si el byte es el little-v byte, stroke el little-v glyph.
-  Si el byte es el little-w byte, stroke el little-w glyph.
-  Si el byte es el little-x byte, stroke el little-x glyph.
-  Si el byte es el little-y byte, stroke el little-y glyph.
-  Si el byte es el little-z byte, stroke el little-z glyph.
-  Si el byte es el minus-sign byte, stroke el minus-sign glyph.
-  Si el byte es el nine byte, stroke el nine glyph.
-  Si el byte es el number-sign byte, stroke el number-sign glyph.
-  Si el byte es el one byte, stroke el one glyph.
-  Si el byte es el percent-sign byte, stroke el percent-sign glyph.
-  Si el byte es el period byte, stroke el period glyph.
-  Si el byte es el plus-sign byte, stroke el plus-sign glyph.
-  Si el byte es el question-mark byte, stroke el question-mark glyph.
-  Si el byte es el right-alligator byte, stroke el right-alligator glyph.
-  Si el byte es el right-brace byte, stroke el right-brace glyph.
-  Si el byte es el right-bracket byte, stroke el right-bracket glyph.
-  Si el byte es el right-paren byte, stroke el right-paren glyph.
-  Si el byte es el semi-colon byte, stroke el semi-colon glyph.
-  Si el byte es el seven byte, stroke el seven glyph.
-  Si el byte es el single-quote byte, stroke el single-quote glyph.
-  Si el byte es el six byte, stroke el six glyph.
-  Si el byte es el slash byte, stroke el slash glyph.
-  Si el byte es el three byte, stroke el three glyph.
-  Si el byte es el tilde byte, stroke el tilde glyph.
-  Si el byte es el two byte, stroke el two glyph.
-  Si el byte es el underscore byte, stroke el underscore glyph.
-  Si el byte es el vertical-bar byte, stroke el vertical-bar glyph.
-  Si el byte es el zero byte, stroke el zero glyph.
+  Si el byte es el accent byte, trazar el accent glyph.
+  Si el byte es el asterisk byte, trazar el asterisk glyph.
+  Si el byte es el at-sign byte, trazar el at-sign glyph.
+  Si el byte es el backslash byte, trazar el backslash glyph.
+  Si el byte es el big-a byte, trazar el big-a glyph.
+  Si el byte es el big-b byte, trazar el big-b glyph.
+  Si el byte es el big-c byte, trazar el big-c glyph.
+  Si el byte es el big-d byte, trazar el big-d glyph.
+  Si el byte es el big-e byte, trazar el big-e glyph.
+  Si el byte es el big-f byte, trazar el big-f glyph.
+  Si el byte es el big-g byte, trazar el big-g glyph.
+  Si el byte es el big-h byte, trazar el big-h glyph.
+  Si el byte es el big-i byte, trazar el big-i glyph.
+  Si el byte es el big-j byte, trazar el big-j glyph.
+  Si el byte es el big-k byte, trazar el big-k glyph.
+  Si el byte es el big-l byte, trazar el big-l glyph.
+  Si el byte es el big-m byte, trazar el big-m glyph.
+  Si el byte es el big-n byte, trazar el big-n glyph.
+  Si el byte es el big-o byte, trazar el big-o glyph.
+  Si el byte es el big-p byte, trazar el big-p glyph.
+  Si el byte es el big-q byte, trazar el big-q glyph.
+  Si el byte es el big-r byte, trazar el big-r glyph.
+  Si el byte es el big-s byte, trazar el big-s glyph.
+  Si el byte es el big-t byte, trazar el big-t glyph.
+  Si el byte es el big-u byte, trazar el big-u glyph.
+  Si el byte es el big-v byte, trazar el big-v glyph.
+  Si el byte es el big-w byte, trazar el big-w glyph.
+  Si el byte es el big-x byte, trazar el big-x glyph.
+  Si el byte es el big-y byte, trazar el big-y glyph.
+  Si el byte es el big-z byte, trazar el big-z glyph.
+  Si el byte es el caret byte, trazar el caret glyph.
+  Si el byte es el colon byte, trazar el colon glyph.
+  Si el byte es el comma byte, trazar el comma glyph.
+  Si el byte es el dollar-sign byte, trazar el dollar-sign glyph.
+  Si el byte es el double-quote byte, trazar el double-quote glyph.
+  Si el byte es el eight byte, trazar el eight glyph.
+  Si el byte es el equal-sign byte, trazar el equal-sign glyph.
+  Si el byte es el exclamation-mark byte, trazar el exclamation-mark glyph.
+  Si el byte es el five byte, trazar el five glyph.
+  Si el byte es el four byte, trazar el four glyph.
+  Si el byte es el left-alligator byte, trazar el left-alligator glyph.
+  Si el byte es el left-brace byte, trazar el left-brace glyph.
+  Si el byte es el left-bracket byte, trazar el left-bracket glyph.
+  Si el byte es el left-paren byte, trazar el left-paren glyph.
+  Si el byte es el little-a byte, trazar el little-a glyph.
+  Si el byte es el little-b byte, trazar el little-b glyph.
+  Si el byte es el little-c byte, trazar el little-c glyph.
+  Si el byte es el little-d byte, trazar el little-d glyph.
+  Si el byte es el little-e byte, trazar el little-e glyph.
+  Si el byte es el little-f byte, trazar el little-f glyph.
+  Si el byte es el little-g byte, trazar el little-g glyph.
+  Si el byte es el little-h byte, trazar el little-h glyph.
+  Si el byte es el little-i byte, trazar el little-i glyph.
+  Si el byte es el little-j byte, trazar el little-j glyph.
+  Si el byte es el little-k byte, trazar el little-k glyph.
+  Si el byte es el little-l byte, trazar el little-l glyph.
+  Si el byte es el little-m byte, trazar el little-m glyph.
+  Si el byte es el little-n byte, trazar el little-n glyph.
+  Si el byte es el little-o byte, trazar el little-o glyph.
+  Si el byte es el little-p byte, trazar el little-p glyph.
+  Si el byte es el little-q byte, trazar el little-q glyph.
+  Si el byte es el little-r byte, trazar el little-r glyph.
+  Si el byte es el little-s byte, trazar el little-s glyph.
+  Si el byte es el little-t byte, trazar el little-t glyph.
+  Si el byte es el little-u byte, trazar el little-u glyph.
+  Si el byte es el little-v byte, trazar el little-v glyph.
+  Si el byte es el little-w byte, trazar el little-w glyph.
+  Si el byte es el little-x byte, trazar el little-x glyph.
+  Si el byte es el little-y byte, trazar el little-y glyph.
+  Si el byte es el little-z byte, trazar el little-z glyph.
+  Si el byte es el minus-sign byte, trazar el minus-sign glyph.
+  Si el byte es el nine byte, trazar el nine glyph.
+  Si el byte es el number-sign byte, trazar el number-sign glyph.
+  Si el byte es el one byte, trazar el one glyph.
+  Si el byte es el percent-sign byte, trazar el percent-sign glyph.
+  Si el byte es el period byte, trazar el period glyph.
+  Si el byte es el plus-sign byte, trazar el plus-sign glyph.
+  Si el byte es el question-mark byte, trazar el question-mark glyph.
+  Si el byte es el right-alligator byte, trazar el right-alligator glyph.
+  Si el byte es el right-brace byte, trazar el right-brace glyph.
+  Si el byte es el right-bracket byte, trazar el right-bracket glyph.
+  Si el byte es el right-paren byte, trazar el right-paren glyph.
+  Si el byte es el semi-colon byte, trazar el semi-colon glyph.
+  Si el byte es el seven byte, trazar el seven glyph.
+  Si el byte es el single-quote byte, trazar el single-quote glyph.
+  Si el byte es el six byte, trazar el six glyph.
+  Si el byte es el slash byte, trazar el slash glyph.
+  Si el byte es el three byte, trazar el three glyph.
+  Si el byte es el tilde byte, trazar el tilde glyph.
+  Si el byte es el two byte, trazar el two glyph.
+  Si el byte es el underscore byte, trazar el underscore glyph.
+  Si el byte es el vertical-bar byte, trazar el vertical-bar glyph.
+  Si el byte es el zero byte, trazar el zero glyph.
 \ Refresh el screen. \ *** questionable doesn't work screws up console.
 
-Para stroke el caret glyph:
+Para trazar el caret glyph:
   Save el context.
   Move 3 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el colon glyph:
+Para trazar el colon glyph:
   Save el context.
   Turn right.
   Move 1 square.
   Turn left.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Move 1/2 square.
   Move 1 square.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Restore el context.
 
-Para stroke el comma glyph:
+Para trazar el comma glyph:
   Save el context.
   Turn around.
   Move 1 square.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Restore el context.
 
-Para stroke el dollar-sign glyph:
+Para trazar el dollar-sign glyph:
   Save el context.
   Move 1 square.
   Turn around.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Reset el context.
   Turn right.
   Move 1 square.
   Turn right.
   Move 1/2 square.
   Turn around.
-  Stroke 5 squares.
+  Trazar 5 squares.
   Restore el context.
 
-Para stroke el double-quote glyph:
+Para trazar el double-quote glyph:
   Save el context.
   Turn right.
   Move 1/2 square.
   Turn left.
   Move 2-1/2 squares.
-  Stroke 1-1/2 squares.
+  Trazar 1-1/2 squares.
   Reset el context.
   Turn right.
   Move 1-1/2 squares.
   Turn left.
   Move 2-1/2 squares.
-  Stroke 1-1/2 squares.
+  Trazar 1-1/2 squares.
   Restore el context.
 
-Para stroke el eight glyph:
+Para trazar el eight glyph:
   Save el context.
   Turn right.
   Move 1 square.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el equal-sign glyph:
+Para trazar el equal-sign glyph:
   Save el context.
   Move 1-1/2 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn left.
   Move 1 square.
   Turn left.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el exclamation-mark glyph:
+Para trazar el exclamation-mark glyph:
   Save el context.
   Move 4 squares.
   Turn right.
   Move 1 square.
   Turn right.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Move 1 square.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Restore el context.
 
-Para stroke el five glyph:
+Para trazar el five glyph:
   Save el context.
   Turn around.
   Move 1 square.
   Turn left 3/8.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el four glyph:
+Para trazar el four glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn left.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn left 3/8.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Turn left 3/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el left-alligator glyph:
+Para trazar el left-alligator glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn left.
   Move 1 square.
   Turn left 17/96 of el way.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Turn right 34/96 of el way.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Restore el context.
 
-Para stroke el left-brace glyph:
+Para trazar el left-brace glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn around.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el left-bracket glyph:
+Para trazar el left-bracket glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn around.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el left-paren glyph:
+Para trazar el left-paren glyph:
   Save el context.
   Turn right.
   Move 1-1/2 squares.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-\Para stroke un line as high as un box;
-\Para stroke un line as tall as un box;
+\Para trazar un line as high as un box;
+\Para trazar un line as tall as un box;
 \Para dibujar un line as high as un box;
 Para dibujar un line as tall as un box:
-  Stroke el box's height.
+  Trazar el box's height.
 
-\Para stroke un line as wide as un box;
+\Para trazar un line as wide as un box;
 Para dibujar un line as wide as un box:
-  Stroke el box's width.
+  Trazar el box's width.
 
-Para stroke el little-a glyph:
+Para trazar el little-a glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn left.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Turn around.
   Move 1 square.
   Turn right 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el little-b glyph:
+Para trazar el little-b glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn around.
   Move 2 squares.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el little-c glyph:
+Para trazar el little-c glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn left.
   Move 1 square.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el little-d glyph:
+Para trazar el little-d glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn left.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn around.
   Move 2 squares.
   Turn right 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el little-e glyph:
+Para trazar el little-e glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn around.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el little-f glyph:
+Para trazar el little-f glyph:
   Save el context.
   Turn right.
   Move 1 square.
@@ -14859,656 +14861,656 @@ Para stroke el little-f glyph:
   Save el context.
   Turn around.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Reset el context.
   Move 3 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el little-g glyph:
+Para trazar el little-g glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn left.
   Move 1 square.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Reset el context.
   Move 3 squares.
   Turn right.
   Move 2 squares.
   Turn right.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Turn right 1/8.
-  Stroke 1-1/2 square slantways.
+  Trazar 1-1/2 square slantways.
   Restore el context.
 
-Para stroke el little-h glyph:
+Para trazar el little-h glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn around.
   Move 2 squares.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el little-i glyph:
+Para trazar el little-i glyph:
   Save el context.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn around.
   Move 1 square.
   Turn right.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Turn left.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn around.
   Move 1 square.
   Turn left.
   Move 1/2 square.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Restore el context.
 
-Para stroke el little-j glyph:
+Para trazar el little-j glyph:
   Save el context.
   Move 1 square.
   Turn around.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Move 1/2 square.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Restore el context.
 
-Para stroke el little-k glyph:
+Para trazar el little-k glyph:
   Save el context.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn around.
   Move 2 squares.
   Turn left 1/8.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Reset el context.
   Move 2 squares.
   Turn right 17/96.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Restore el context.
 
-Para stroke el little-l glyph:
+Para trazar el little-l glyph:
   Save el context.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn around.
   Move 1 square.
   Turn right.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn left.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el little-m glyph:
+Para trazar el little-m glyph:
   Save el context.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Turn around.
   Move 1 square.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 3/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn around.
   Move 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 3/8.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Restore el context.
 
-Para stroke el little-n glyph:
+Para trazar el little-n glyph:
   Save el context.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Turn around.
   Move 1 square.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el little-o glyph:
+Para trazar el little-o glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn left.
   Move 1 square.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el little-p glyph:
+Para trazar el little-p glyph:
   Save el context.
   Move 3 squares.
   Turn around.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn around.
   Move 3 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el little-q glyph:
+Para trazar el little-q glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn left.
   Move 1 square.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 3/8.
   Move 1 square.
   Turn around.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Restore el context.
 
-Para stroke el little-r glyph:
+Para trazar el little-r glyph:
   Save el context.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Turn around.
   Move 1 square.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el little-s glyph:
+Para trazar el little-s glyph:
   Save el context.
   Move 1 square.
   Turn right 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Reset el context.
   Move 2 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Reset el context.
   Move 2 squares.
   Turn right 31/96.
-  Stroke 9/4 squares.
+  Trazar 9/4 squares.
   Restore el context.
 
-Para stroke el little-t glyph:
+Para trazar el little-t glyph:
   Save el context.
   Turn right.
   Move 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Reset el context.
   Turn right.
   Move 1 square.
   Turn left.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn around.
   Move 1 square.
   Turn right.
   Move 1 square.
   Turn around.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el little-u glyph:
+Para trazar el little-u glyph:
   Save el context.
   Move 3 squares.
   Turn around.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
   Move 2 squares.
   Turn around.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Restore el context.
 
-Para stroke el little-v glyph:
+Para trazar el little-v glyph:
   Save el context.
   Move 3 squares.
   Turn around.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el little-w glyph:
+Para trazar el little-w glyph:
   Save el context.
   Move 3 squares.
   Turn around.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Turn around.
   Turn right 7/96.
-  Stroke 9/4 squares.
+  Trazar 9/4 squares.
   Turn right 34/96.
-  Stroke 9/4 squares.
+  Trazar 9/4 squares.
   Turn left 41/96.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Restore el context.
 
-Para stroke el little-x glyph:
+Para trazar el little-x glyph:
   Save el context.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 17/96.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Turn left 17/96.
-  Stroke 1 square.
+  Trazar 1 square.
   Reset el context.
   Turn right.
   Move 2 squares.
   Turn left.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left 17/96.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Turn right 17/96.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el little-y glyph:
+Para trazar el little-y glyph:
   Save el context.
   Move 3 squares.
   Turn around.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
   Move 2 squares.
   Turn around.
-  Stroke 3 squares.
+  Trazar 3 squares.
   Turn right 1/8.
-  Stroke 1-1/2 squares slantways.
+  Trazar 1-1/2 squares slantways.
   Restore el context.
 
-Para stroke el little-z glyph:
+Para trazar el little-z glyph:
   Save el context.
   Move 3 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 17/96.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Turn left 17/96.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el minus-sign glyph:
+Para trazar el minus-sign glyph:
   Save el context.
   Move 2 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el nine glyph:
+Para trazar el nine glyph:
   Save el context.
   Move 1 square.
   Turn right 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el number-sign glyph:
+Para trazar el number-sign glyph:
   Save el context.
   Move 3 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Reset el context.
   Move 1 square.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Reset el context.
   Turn right.
   Move 1/2 square.
   Turn left.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Reset el context.
   Turn right.
   Move 1-1/2 squares.
   Turn left.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Restore el context.
 
-Para stroke el one glyph:
+Para trazar el one glyph:
   Save el context.
   Turn right.
   Move 1 square.
   Turn left.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Reset el context.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Reset el context.
   Move 3 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el percent-sign glyph:
+Para trazar el percent-sign glyph:
   Save el context.
   Turn right 7/96.
-  Stroke 9/2 squares.
+  Trazar 9/2 squares.
   Reset el context.
   Move 2-1/2 squares.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Reset el context.
   Turn right.
   Move 2 squares.
   Turn left.
   Move 1 square.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Restore el context.
 
-Para stroke el period glyph:
+Para trazar el period glyph:
   Save el context.
   Turn right.
   Move 1 square.
   Turn left.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Restore el context.
 
-Para stroke el plus-sign glyph:
+Para trazar el plus-sign glyph:
   Save el context.
   Move 2 squares.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn left.
   Move 1 square.
   Turn left.
   Move 1 square.
   Turn left.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el question-mark glyph:
+Para trazar el question-mark glyph:
   Save el context.
   Move 3 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Move 1 square.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Restore el context.
 
-Para stroke el right-alligator glyph:
+Para trazar el right-alligator glyph:
   Save el context.
   Move 1 square.
   Turn right 17/96 of el way.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Turn left 34/96 of el way.
-  Stroke 9/4 square.
+  Trazar 9/4 square.
   Restore el context.
 
-Para stroke el right-brace glyph:
+Para trazar el right-brace glyph:
   Save el context.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el right-bracket glyph:
+Para trazar el right-bracket glyph:
   Save el context.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left.
-  Stroke 4 squares.
+  Trazar 4 squares.
   Turn left.
-  Stroke 1 square.
+  Trazar 1 square.
   Restore el context.
 
-Para stroke el right-paren glyph:
+Para trazar el right-paren glyph:
   Save el context.
   Turn right.
   Move 1/2 square.
   Turn left.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el semi-colon glyph:
+Para trazar el semi-colon glyph:
   Save el context.
   Turn around.
   Move 1 square.
   Turn left 3/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Move 1/2 square.
   Move 1 square.
-  Stroke 1/2 square.
+  Trazar 1/2 square.
   Restore el context.
 
-Para stroke el seven glyph:
+Para trazar el seven glyph:
   Save el context.
   Move 3 squares.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el single-quote glyph:
+Para trazar el single-quote glyph:
   Save el context.
   Turn right.
   Move 1 square.
   Turn left.
   Move 2-1/2 squares.
-  Stroke 1-1/2 squares.
+  Trazar 1-1/2 squares.
   Restore el context.
 
-Para stroke el six glyph:
+Para trazar el six glyph:
   Save el context.
   Turn right.
   Move 2 squares.
   Turn left.
   Move 3 squares.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn left 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el slash glyph:
+Para trazar el slash glyph:
   Save el context.
   Turn right 7/96 of el way.
-  Stroke 9/2 square.
+  Trazar 9/2 square.
   Restore el context.
 
-Para stroke some squares:
-  Stroke el square size times el squares divided by 1 square. \ squares are scaled up for precision hence el division at el end
+Para trazar some squares:
+  Trazar el square size times el squares divided by 1 square. \ squares are scaled up for precision hence el division at el end
 
-\Para stroke some squares diagonally;
-Para stroke some squares slantways:
-  Stroke el square size times el squares times el squirt o' two divided by 1 square. \ squares are scaled up for precision hence el division at el end
+\Para trazar some squares diagonally;
+Para trazar some squares slantways:
+  Trazar el square size times el squares times el squirt o' two divided by 1 square. \ squares are scaled up for precision hence el division at el end
 
-Para stroke el three glyph:
+Para trazar el three glyph:
   Save el context.
   Move 3 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn left.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Restore el context.
 
-Para stroke el tilde glyph:
+Para trazar el tilde glyph:
   Save el context.
   Move 2 squares.
   Turn right 7/96 of el way.
-  Stroke 9/8 square.
+  Trazar 9/8 square.
   Turn right.
-  Stroke 9/6 square.
+  Trazar 9/6 square.
   Turn left.
-  Stroke 9/8 square.
+  Trazar 9/8 square.
   Restore el context.
 
-Para stroke some twips:
+Para trazar some twips:
   Dibujar un line el twips long.
 
-Para stroke el two glyph:
+Para trazar el two glyph:
   Save el context.
   Move 3 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right.
-  Stroke 2 squares slantways.
+  Trazar 2 squares slantways.
   Turn left 1/8.
-  Stroke 1 square.
+  Trazar 1 square.
   Turn left.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el underscore glyph:
+Para trazar el underscore glyph:
   Save el context.
   Turn around.
   Move 1 square.
   Turn left.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Restore el context.
 
-Para stroke el vertical-bar glyph:
+Para trazar el vertical-bar glyph:
   Save el context.
   Turn right.
   Move 1 square.
   Turn right.
   Move 1 square.
   Turn around.
-  Stroke 5 squares.
+  Trazar 5 squares.
   Restore el context.
 
-Para stroke el zero glyph:
+Para trazar el zero glyph:
   Save el context.
   Move 1 square.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/4.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
-  Stroke 2 squares.
+  Trazar 2 squares.
   Turn right 1/8.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/4.
-  Stroke 1 square slantways.
+  Trazar 1 square slantways.
   Turn right 1/8.
   Move 1 square.
   Turn right.
   Move 1 square.
-  Stroke 1 pixel.
+  Trazar 1 pixel.
   Restore el context.
 
 A subject es un string.
@@ -16301,21 +16303,21 @@ Para write some quoras in un box:
 \Para escribir una cadena;
 \Para write un string;
 \Para acariciar una cadena;
-Para stroke un string:
+Para trazar un string:
   Privatizar el string.
   Lazo.
   Si el string es blank, salir.
   Get un byte desde el string.
-  Stroke el byte.
+  Trazar el byte.
   Si el string es not blank, space between glyphs.
   Repetir.
 
 \Para write un string around un center spot at un radius;
 \Para escribir una cadena con un punto central y un radio;
 \Para write un string usando un center spot y un radius;
-\Para stroke un string around un center spot at un radius;
+\Para trazar un string around un center spot at un radius;
 \Para acariciar una cadena con un punto central y un radio;
-Para stroke un string usando un center spot y un radius:
+Para trazar un string usando un center spot y un radius:
   Privatizar el string.
   Poner 1 y el string's length into un fraction.
   Lazo.
@@ -16323,17 +16325,17 @@ Para stroke un string usando un center spot y un radius:
   Get un byte desde el string.
   Start at el center spot.
   Move el radius.
-  Stroke el byte.
+  Trazar el byte.
   Turn el fraction.
   Repetir.
 
 \Para escribir una cadena en un punto con un color;
 \Para write un string at un spot con un color;
 \Para acariciar una cadena en un punto con un color;
-Para stroke un string at un spot con un color:
+Para trazar un string at un spot con un color:
   Start at el spot.
   Poner el color into el context's color.
-  Stroke el string.
+  Trazar el string.
 
 \Para escribir una cadena en una consola;
 Para write un string on un console:
@@ -16356,25 +16358,25 @@ Para write un string on un console without advancing:
 \Para escribir una cadena en una caja;
 \Para write un string in un box;
 \Para acariciar una cadena en una caja;
-Para stroke un string in un box:
-  Stroke el string in el box con el context's color.
+Para trazar un string in un box:
+  Trazar el string in el box con el context's color.
 
 \Para escribir una cadena en una caja con un color;
 \Para write un string in un box con un color;
 \Para acariciar una cadena en una caja con un color;
-Para stroke un string in un box con un color:
+Para trazar un string in un box con un color:
   Poner el color into el context's color.
   Poner el box's left-bottom into el context's spot.
   Poner el box's height divided by 2 into el context's letter height.
 \Put el box's height into el context's letter height.
   Face north.
   Move el box's height divided by 4. \ was 4 and still es now! ***
-  Stroke el string.
+  Trazar el string.
 
 \Para escribir una cadena en el centro de una caja;
 \Para write un string in el middle of un box;
 \Para acariciar una cadena en el centro de una caja;
-Para stroke un string in el middle of un box:
+Para trazar un string in el middle of un box:
   Poner el context's letter height divided by 4 into un square size. \ was 4 ***
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
   Poner el string's length times el square size times 3 minus el square size into un width.
@@ -16383,11 +16385,11 @@ Para stroke un string in el middle of un box:
   Move down el context's letter height divided by 2. \ was 2 ***
   Move left el width.
   Face north.
-  Stroke el string.
+  Trazar el string.
 
 \Para escribir una cadena en el centro de la pantalla;
 Para write un string in el middle of el screen:
-  Stroke el string in el middle of el screen's box.
+  Trazar el string in el middle of el screen's box.
   Refresh el screen.
 
 \Para escribir una cadena en una terminal;
@@ -16402,21 +16404,21 @@ Para write un string on un terminal:
 \Para write un string un radius around un center spot;
 \Para write un string about un radius desde un center spot;
 \Para write un string un radius desde un center spot;
-\Para stroke un string un radius away desde un center spot;
-\Para stroke un string un radius around un center spot;
-\Para stroke un string about un radius desde un center spot;
-Para stroke un string un radius desde un center spot:
-  Stroke el string usando el center spot y el radius.
+\Para trazar un string un radius away desde un center spot;
+\Para trazar un string un radius around un center spot;
+\Para trazar un string about un radius desde un center spot;
+Para trazar un string un radius desde un center spot:
+  Trazar el string usando el center spot y el radius.
 
 \Para write un string un radius away desde el middle of un box;
 \Para write un string un radius around el middle of un box;
 \Para write un string about un radius desde el middle of un box;
 \Para write un string un radius desde el middle of un box;
-\Para stroke un string un radius away desde el middle of un box;
-\Para stroke un string un radius around el middle of un box;
-\Para stroke un string about un radius desde el middle of un box;
-Para stroke un string un radius desde el middle of un box:
-  Stroke el string usando el box's center y el radius.
+\Para trazar un string un radius away desde el middle of un box;
+\Para trazar un string un radius around el middle of un box;
+\Para trazar un string about un radius desde el middle of un box;
+Para trazar un string un radius desde el middle of un box:
+  Trazar el string usando el box's center y el radius.
 
 Para write un string to stdout:
   Llamada "kernel32.dll" "WriteFile" con el StdOut handle y el string's first y el string's length y un number's whereabouts and nil.
@@ -16424,14 +16426,14 @@ Para write un string to stdout:
 \Para write un string while turning un fraction of el way;
 \Para write un string while turning un fraction of el way around;
 \Para write un string while turning un fraction;
-\Para stroke un string while turning un fraction of el way;
-\Para stroke un string while turning un fraction of el way around;
-Para stroke un string while turning un fraction:
+\Para trazar un string while turning un fraction of el way;
+\Para trazar un string while turning un fraction of el way around;
+Para trazar un string while turning un fraction:
   Privatizar el string.
   Lazo.
   Si el string es blank, salir.
   Get un byte desde el string.
-  Stroke el byte.
+  Trazar el byte.
   Turn el fraction.
   Si el string es not blank, space between glyphs.
   Repetir.
@@ -16439,12 +16441,12 @@ Para stroke un string while turning un fraction:
 \Para escribir una cadena con un color;
 \Para write un string con un color;
 \Para acariciar una cadena con un color;
-Para stroke un string con un color:
+Para trazar un string con un color:
   Poner el color into el context's color.
-  Stroke el string.
+  Trazar el string.
 
 \Para write un string con un color at el bottom of un box;
-Para stroke un string con un color at el bottom of un box:
+Para trazar un string con un color at el bottom of un box:
   Poner el context's letter height divided by 4 into un square size. \ ***
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
   Poner el string's length times el square size times 3 minus el square size into un width.
@@ -16453,10 +16455,10 @@ Para stroke un string con un color at el bottom of un box:
   Move up el context's letter height times 2. \ was without el times 2 ***
   Move left el width.
   Face north.
-  Stroke el string con el color.
+  Trazar el string con el color.
 
 \Para write un string con un color at el top of un box;
-Para stroke un string con un color at el top of un box:
+Para trazar un string con un color at el top of un box:
   Poner el context's letter height divided by 4 into un square size. \ ***
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
   Poner el string's length times el square size times 3 minus el square size into un width.
@@ -16465,10 +16467,10 @@ Para stroke un string con un color at el top of un box:
   Move down el context's letter height times 4. \ was times 2 ***
   Move left el width.
   Face north.
-  Stroke el string con el color.
+  Trazar el string con el color.
 
 \Para write un string con un color in el middle of un box;
-Para stroke un string con un color in el middle of un box:
+Para trazar un string con un color in el middle of un box:
   Poner el context's letter height divided by 4 into un square size. \ was 4 ***
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
   Poner el string's length times el square size times 3 minus el square size into un width.
@@ -16477,23 +16479,23 @@ Para stroke un string con un color in el middle of un box:
   Move down el context's letter height divided by 2. \ was 2 ***
   Move left el width.
   Face north.
-  Stroke el string con el color.
+  Trazar el string con el color.
 
 \Para write un string con un color un radius away desde un center spot;
 \Para write un string con un color un radius around un center spot;
 \Para write un string con un color about un radius desde un center spot;
 \Para write un string con un color un radius desde un center spot;
-\Para stroke un string con un color un radius away desde un center spot;
-\Para stroke un string con un color un radius around un center spot;
-\Para stroke un string con un color about un radius desde un center spot;
-Para stroke un string con un color un radius desde un center spot:
+\Para trazar un string con un color un radius away desde un center spot;
+\Para trazar un string con un color un radius around un center spot;
+\Para trazar un string con un color about un radius desde un center spot;
+Para trazar un string con un color un radius desde un center spot:
   Poner el color into el context's color.
-  Stroke el string usando el center spot y el radius.
+  Trazar el string usando el center spot y el radius.
 
 \Para write un string con un color some twips down desde el top of un box;
 \Para write un string con un color some twips down desde el top center of un box;
-\Para stroke un string con un color some twips down desde el top of un box;
-Para stroke un string con un color some twips down desde el top center of un box:
+\Para trazar un string con un color some twips down desde el top of un box;
+Para trazar un string con un color some twips down desde el top center of un box:
   Poner el context's letter height divided by 4 into un square size. \ was 4 ***
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
   Poner el string's length times el square size times 3 minus el square size into un width.
@@ -16502,7 +16504,7 @@ Para stroke un string con un color some twips down desde el top center of un box
   Move down el twips.
   Move left el width.
   Face north.
-  Stroke el string con el color.
+  Trazar el string con el color.
 
 \Para escribir una cadena con un tipo de letra y un tamaño y un color y un punto;
 Para write un string con un font y un size y un color y un spot:
