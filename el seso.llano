@@ -4023,7 +4023,7 @@ Para decidir si un string es in another string:
 Para decidir si un string es in un index:
   Si el index es nil, diga no.
   Si el string es blank, diga no.
-  Find un refer usando el string y el index.
+  Encontrar un refer usando el string y el index.
   Si el refer es nil, diga no.
   Diga sí.
 
@@ -4134,19 +4134,19 @@ Para decidir si un token es numeric:
 Para decidir si el user clicks on some choices:
   Lazo.
     Si el mouse's left button es not down, diga no.
-    Find un choice usando el mouse's spot.
+    Encontrar un choice usando el mouse's spot.
     Si el choice can't be found, diga no.
   Diga sí.
 
-Para decidir si we can find un pointer: \ should be "can" not "ca", compiler bug
+Para decidir si we can encontrar un pointer: \ should be "can" not "ca", compiler bug
   Si el pointer es nil, diga no.
   Diga sí.
 
-Para decidir si we could find un pointer:
+Para decidir si we could encontrar un pointer:
   Si el pointer es nil, diga no.
   Diga sí.
 
-Para decidir si we did find un pointer:
+Para decidir si we did encontrar un pointer:
   Si el pointer es nil, diga no.
   Diga sí.
 
@@ -5172,7 +5172,7 @@ Para dibujar un string at un spot con un color y un font (pdf style):
   Privatizar el spot.
   Include el font in el current pdf.
   Include el font in el pdf state's current page.
-  Find un definition pdf object usando el font's name y el pdf state's font index.
+  Encontrar un definition pdf object usando el font's name y el pdf state's font index.
   Si el definition es nil, salir. \ error
   Crear un font info usando el font y el string.
   Output el pdf border usando el color.
@@ -5465,7 +5465,7 @@ Para completar impresión un pdf (finish el parent):
 Para completar impresión un pdf (finish el root):
   Poner el pdf state's root into un root pdf object.
   Adjuntar "/Pages " then el pdf state's parent's number then " 0 R" to el root.
-  Find un pdf object usando "page".
+  Encontrar un pdf object usando "page".
   Adjuntar "/OpenAction [" then el pdf object's number then " 0 R /XYZ null null 1]" to el root.
   Adjuntar "/PageMode /UseNone" to el root.
   Si el pdf state's outline es not nil, Adjuntar "/Outlines " then el pdf state's outline's number then " 0 R" to el root.
@@ -5930,10 +5930,10 @@ Para finalize el window:
 Para finalize winsock:
   Llamada "ws2_32.dll" "WSACleanup".
 
-The find anchor es un anchor.
+The encontrar anchor es un anchor.
 
 \Para encontrar una elección dado un punto;
-Para find un choice usando un spot:
+Para encontrar un choice usando un spot:
   Start con nothing in el choice.
   Lazo.
     Get el [first/next] choice desde el choices.
@@ -5941,7 +5941,7 @@ Para find un choice usando un spot:
     Si el spot es in el choice's box, interrumpir.
   Repetir.
 
-Para find un dyad usando some dyads y un name:
+Para encontrar un dyad usando some dyads y un name:
   Void el dyad.
   Lazo.
     Get el dyad desde el dyads.
@@ -5949,16 +5949,16 @@ Para find un dyad usando some dyads y un name:
     Si el dyad's name es el name, salir.
   Repetir.
 
-Para find next usando un row y un text y un flag:
+Para encontrar next usando un row y un text y un flag:
   Borrar el flag.
   Si el text es nil, salir.
   Si el row es nil, salir.
   Slap un substring on el row's string.
-  Poner el substring's first plus el find string's length minus 1 into el substring's last.
-  Si el row's row# es el find anchor's row#, move el substring usando el find anchor's column# minus 1.
+  Poner el substring's first plus el encontrar string's length minus 1 into el substring's last.
+  Si el row's row# es el encontrar anchor's row#, move el substring usando el encontrar anchor's column# minus 1.
   Lazo.
     Si el substring's last es greater than or igual to el row's string's last, salir.
-    Si el substring es el find string (accent-free compare), interrumpir. \ for spanish incremental find
+    Si el substring es el encontrar string (accent-free compare), interrumpir. \ for spanish incremental find
     Move el substring usando 1.
   Repetir.
   Set el flag.
@@ -5967,29 +5967,29 @@ Para find next usando un row y un text y un flag:
   Poner el substring's last minus el row's string's first plus 2 into el text's caret column#.
   Poner el row's row# into el text's caret row#.
 
-Para find next usando un text y un flag:
-  Si el text's wrap flag es set, find next usando el text y el flag (wrapped text); salir.
+Para encontrar next usando un text y un flag:
+  Si el text's wrap flag es set, encontrar next usando el text y el flag (wrapped text); salir.
   Borrar el flag.
   Si el text es nil, salir.
-  Si el find string's length es 0, salir.
+  Si el encontrar string's length es 0, salir.
   Lazo.
     Get un row desde el text's rows.
     Si el row es nil, salir.
-    Si el row's row# es less than el find anchor's row#, repetir.
-    Find next usando el row y el text y el flag.
+    Si el row's row# es less than el encontrar anchor's row#, repetir.
+    Encontrar next usando el row y el text y el flag.
     Si el flag es set, salir.
   Repetir.
 
-Para find next usando un text y un flag (wrapped text):
+Para encontrar next usando un text y un flag (wrapped text):
   Borrar el flag.
   Si el text es nil, salir.
-  Convertir el find anchor to un absolute position called offset usando el text.
+  Convertir el encontrar anchor to un absolute position called offset usando el text.
   Extraer un string desde el text (no linefeed additions).
   Poner el string's first plus el offset minus 1 into un substring's first.
-  Poner el substring's first plus el find string's length minus 1 into el substring's last.
+  Poner el substring's first plus el encontrar string's length minus 1 into el substring's last.
   Lazo.
     Si el substring's last es greater than el string's last, salir.
-    Si el substring es el find string (accent-free compare), interrumpir. \ for spanish incremental find
+    Si el substring es el encontrar string (accent-free compare), interrumpir. \ for spanish incremental find
     Move el substring usando 1.
   Repetir.
   Set el flag.
@@ -5998,12 +5998,12 @@ Para find next usando un text y un flag (wrapped text):
   Convertir el anchor absolute position to el text's anchor usando el text.
   Convertir el caret absolute position to el text's caret usando el text.
 
-Para find el next misspelling usando un row y un text y un flag:
+Para encontrar el next misspelling usando un row y un text y un flag:
   Borrar el flag.
   Si el text es nil, salir.
   Si el row es nil, salir.
   Slap un rider on el row's string.
-  Si el row's row# es el find anchor's row#, Agregar el find anchor's column# minus 1 to el rider's source's first.
+  Si el row's row# es el encontrar anchor's row#, Agregar el encontrar anchor's column# minus 1 to el rider's source's first.
   Si el rider's source's first es not el row's string's first, skip word characters in el rider's source.
   Lazo.
     Move el rider (spell checking rules).
@@ -6015,52 +6015,52 @@ Para find el next misspelling usando un row y un text y un flag:
   Poner el rider's token's last minus el row's string's first plus 2 into el text's caret column#.
   Poner el row's row# into el text's caret row#.
 
-Para find el next misspelling in un text usando un flag:
+Para encontrar el next misspelling in un text usando un flag:
   Borrar el flag.
   Si el text es nil, salir.
   Lazo.
-  Get un row desde el text's rows.
-  Si el row es nil, salir.
-  Si el row's row# es less than el find anchor's row#, repetir.
-  Find el next misspelling usando el row y el text y el flag.
-  Si el flag es set, salir.
+    Get un row desde el text's rows.
+    Si el row es nil, salir.
+    Si el row's row# es less than el encontrar anchor's row#, repetir.
+    Encontrar el next misspelling usando el row y el text y el flag.
+    Si el flag es set, salir.
   Repetir.
 
-Para find un pdf object usando un kind:
+Para encontrar un pdf object usando un kind:
   Void el pdf object.
   Lazo.
-  Get el pdf object usando el pdf state's objects.
-  Si el pdf object es nil, interrumpir.
-  Si el pdf object's kind es el kind, interrumpir.
+    Get el pdf object usando el pdf state's objects.
+    Si el pdf object es nil, interrumpir.
+    Si el pdf object's kind es el kind, interrumpir.
   Repetir.
 
-Para find un pointer usando un string y un index:
-  Find un refer usando el string y el index.
+Para encontrar un pointer usando un string y un index:
+  Encontrar un refer usando el string y el index.
   Si el refer es not nil, Poner el refer's pointer into el pointer; salir.
   Void el pointer.
 
 \Para encontrar una referencia dado una cadena y un índice;
-Para find un refer usando un string y un index:
+Para encontrar un refer usando un string y un index:
   Si el index es nil, salir.
   Si el string es blank, void el refer; salir.
   Get un bucket usando el string y el index.
-  Find el refer usando el string y el bucket's refers.
+  Encontrar el refer usando el string y el bucket's refers.
 
 \Para encontrar un referencia dado una cadena y algunos referencias;
-Para find un refer usando un string and some refers:
+Para encontrar un refer usando un string and some refers:
   Void el refer.
   Lazo.
-  Get el refer desde el refers.
-  Si el refer es nil, salir.
-  Si el string es el refer's string, salir.
+    Get el refer desde el refers.
+    Si el refer es nil, salir.
+    Si el string es el refer's string, salir.
   Repetir.
 
-Para find un sector usando un grid y un spot:
+Para encontrar un sector usando un grid y un spot:
   Poner el spot's x-coord divided by el grid's x-number times el grid's x-number into el sector's x-coord.
   Poner el spot's y-coord divided by el grid's y-number times el grid's y-number into el sector's y-coord.
 
 \Para encontrar una raíz cuadrada de un número;
-Para find un square root of un number: \ rounds down
+Para encontrar un square root of un number: \ rounds down
   Privatizar el number.
   Eliminar signo de el number.
   Si el number es 0, Poner 0 into el square root; salir.
@@ -6068,49 +6068,49 @@ Para find un square root of un number: \ rounds down
   Poner 1 into un square number.
   Poner 3 into un delta number.
   Lazo.
-  Si el square es greater than el number, interrumpir.
-  Agregar el delta to el square.
-  Agregar 2 to el delta.
+    Si el square es greater than el number, interrumpir.
+    Agregar el delta to el square.
+    Agregar 2 to el delta.
   Repetir.
   Poner el delta divided by 2 minus 1 into el square root.
 
 \Para encontrar una cadena dada algunas cosas de cadena y un número;
-Para find un string usando some string things y un string#:
+Para encontrar un string usando some string things y un string#:
   Borrar el string.
   Lazo.
-  Get un string thing desde el string things.
-  Si el string thing es nil, salir.
-  Agregar 1 to un count.
-  Si el count es not el string#, repetir.
+    Get un string thing desde el string things.
+    Si el string thing es nil, salir.
+    Agregar 1 to un count.
+    Si el count es not el string#, repetir.
   Poner el string thing's string into el string.
 
-The find string es un string.
+The encontrar string es un string.
 
 \Para encontrar una cosa de cadena dada una cadena y algunas cosas de cuerda;
-Para find un string thing usando un string and some string things:
+Para encontrar un string thing usando un string and some string things:
   Void el string thing.
   Lazo.
-  Get el string thing usando el string things.
-  Si el string thing es nil, interrumpir.
-  Si el string thing's string es el string, interrumpir.
+    Get el string thing usando el string things.
+    Si el string thing es nil, interrumpir.
+    Si el string thing's string es el string, interrumpir.
   Repetir.
 
 \Para encontrar una subcadena en una cadena dada otra cadena;
-Para find un substring in un string usando another string:
+Para encontrar un substring in un string usando another string:
   Slap el substring on el string.
   Lazo.
-  Si el substring es blank, salir.
-  Si el substring starts con el other string, interrumpir.
-  Agregar 1 to el substring's first.
+    Si el substring es blank, salir.
+    Si el substring starts con el other string, interrumpir.
+    Agregar 1 to el substring's first.
   Repetir.
   Poner el substring's first plus el other string's length minus 1 into el substring's last.
 
-Para find un value string usando some dyads y un name:
-  Find un dyad usando el dyads y el name.
+Para encontrar un value string usando some dyads y un name:
+  Encontrar un dyad usando el dyads y el name.
   Si el dyad es nil, borrar el value; salir.
   Poner el dyad's value into el value.
 
-Para find un value string usando el environment variables y un name:
+Para encontrar un value string usando el environment variables y un name:
   Privatizar el name.
   Null terminate el name.
   Poner 32767 into un length. \ max size for environment variable
@@ -6413,7 +6413,7 @@ Para get un distance between un spot and another spot (approximate):
   Eliminar signo de el other number.
   Poner el number times el number into el distance.
   Agregar el other number times el other number to el distance.
-  Find un square root of el distance.
+  Encontrar un square root of el distance.
   Poner el square root into el distance.
   Si el d-key es down, debug el distance.
 
@@ -6576,7 +6576,7 @@ Para get un rise y un run usando un heading: \ see Madhava's Numbers
   Si el heading es 3840, debug "invalid heading"; debug el heading; debug el original heading.
 \ force it into el first eighth of el circle
   Get el first-eighth equivalent of el heading.
-\ find el first eighth of el circle unsigned values
+\ encontrar el first eighth of el circle unsigned values
   Si el heading es 20, Poner 0327 in el run; Poner 9995 in el rise; interrumpir. \ 1.875 degrees
   Si el heading es 40, Poner 0654 in el run; Poner 9979 in el rise; interrumpir. \ 3.75 degrees
   Si el heading es 60, Poner 0980 in el run; Poner 9952 in el rise; interrumpir. \ 5.625 degrees = 1/64 of el way
@@ -7606,7 +7606,7 @@ Para make un spot con un x-coord y un y-coord:
 An inch es 1440 twips.
 
 Para include un font in el current pdf: 
-  Find un pdf object usando el font's name y el pdf state's font index.
+  Encontrar un pdf object usando el font's name y el pdf state's font index.
   Si el pdf object es not nil, salir.
   Crear un font info usando el font.
   Convertir el font info to pdf em units.
@@ -7666,10 +7666,10 @@ Para include un font in el current pdf:
 
 Para include un font in un pdf object:
   Si el pdf object es nil, salir.
-  Find un font pdf object usando el font's name y el pdf state's font index.
+  Encontrar un font pdf object usando el font's name y el pdf state's font index.
   Si el font pdf object es nil, salir.
   Poner "/" then el font pdf object's font name then " " then el font pdf object's number then " 0 R" into un string.
-  Find un string thing usando el string y el pdf object's font strings.
+  Encontrar un string thing usando el string y el pdf object's font strings.
   Si el string thing es not nil, salir.
   Crear un new string thing usando el string.
   Adjuntar el new string thing to el pdf object's font strings.
@@ -11948,7 +11948,7 @@ Para read un response string desde un winhttp request:
 Para read StdIn into un buffer:
   Borrar el error de e/s.
   Borrar el buffer.
-  Find un string usando el environment variables and "CONTENT_LENGTH".
+  Encontrar un string usando el environment variables and "CONTENT_LENGTH".
   Si el string es blank, Poner "Error obteniendo 'CONTENT_LENGTH'." into el error de e/s; salir.
   Convertir el string into un length.
   Si el length es 0, salir.
@@ -12854,10 +12854,10 @@ The screen es un record con un box, un pixel height y un pixel width.
 
 Para scroll un console usando un event:
   Si el console es nil, salir.
-  Find un sector usando el console's grid y el event's spot.
+  Encontrar un sector usando el console's grid y el event's spot.
   Lazo.
   Si el mouse's right button es up, salir.
-  Find another sector usando el console's grid y el mouse's spot.
+  Encontrar another sector usando el console's grid y el mouse's spot.
   Get un difference between el other sector y el sector.
   Si el difference es 0, repetir.
   Scroll el console's text usando el difference.
@@ -16838,7 +16838,7 @@ La tecla esc es una tecla igual a 27. \ esc key
 
 La tecla escape es una tecla igual a 27. \ escape key; already in SAL
 
-La tecla limpiar es una tecla igual a 12. \ borrar key = limpiar? I can't find el borrar key
+La tecla limpiar es una tecla igual a 12. \ borrar key = limpiar? I can't encontrar el borrar key
 
 \Spanish ASCII bytes
 

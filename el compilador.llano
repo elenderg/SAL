@@ -105,7 +105,7 @@ Para abort con un string y un  byte pointer:
   Si el compiler's abort flag es set, salir.
   Set el compiler's abort flag.
   Poner el string into el compiler's abort message.
-  Find el compiler's abort path y el compiler's abort row# usando el byte pointer.
+  Encontrar el compiler's abort path y el compiler's abort row# usando el byte pointer.
   Si el compiler's abort path es blank, salir.
   Extraer un file name desde el compiler's abort path.
   Prepend "Error en " then el file name then ". " to el compiler's abort message.
@@ -227,9 +227,9 @@ Para agregar el destroy routine for un type (things):
   Compile el header of el routine.
   
 Para agregar un entry to some imports usando un import name y un  entry name:
-  Find un import usando el import name.
+  Encontrar un import usando el import name.
   Si el import es nil, Agregar el import to el imports usando el import name.
-  Find el entry usando el entry name y el import's entries.
+  Encontrar el entry usando el entry name y el import's entries.
   Si el entry es not nil, salir.
   Crear el entry.
   Adjuntar el entry to el import's entries.
@@ -422,9 +422,9 @@ Para agregar push fragments usando some monikettes:
 Para agregar el poner or convertir fragments usando un variable and another variable y un  locus:
   Agregar un fragment usando el push address tag y el other variable.
   Agregar another fragment usando el push address tag y el variable.
-  Find un routine usando "Poner" y el variable's type and "into" y el other variable's type.
+  Encontrar un routine usando "Poner" y el variable's type and "into" y el other variable's type.
   Si el routine es nil, 
-    Find el routine usando "Convertir" y el variable's type and "to" y el other variable's type.
+    Encontrar el routine usando "Convertir" y el variable's type and "to" y el other variable's type.
   Si el routine es not nil, 
     Agregar un third fragment usando el call internal tag y el routine; salir.
   \ error message
@@ -455,7 +455,7 @@ Para agregar several fragments usando un string y un  variable and another strin
   Agregar another monikette to el monikettes usando el variable's type.
   Agregar un third monikette to el monikettes usando el other string.
   Agregar un fourth monikette to el monikettes usando el other variable's type.
-  Find un routine usando el monikettes.
+  Encontrar un routine usando el monikettes.
   Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
   Si el routine es nil, abort con "No sé cómo '" then el moniker then "'." y el locus; salir.
@@ -474,7 +474,7 @@ Para agregar several fragments usando un string y un  variable and
   Agregar un fourth monikette to el monikettes usando el other variable's type.
   Agregar un fifth monikette to el monikettes usando el third string.
   Agregar un sixth monikette to el monikettes usando el third variable's type.
-  Find un routine usando el monikettes.
+  Encontrar un routine usando el monikettes.
   Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
   Si el routine es nil, abort con "No sé cómo '" then el moniker then "'." y el byte pointer; salir.
@@ -489,7 +489,7 @@ Para agregar two fragments usando un string y un  variable y un  locus:
   Agregar un fragment usando el push address tag y el variable.
   Agregar un monikette to some monikettes usando el string.
   Agregar another monikette to el monikettes usando el variable's type.
-  Find un routine usando el monikettes.
+  Encontrar un routine usando el monikettes.
   Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
   Si el routine es nil, abort con "No sé cómo '" then el moniker then "'." y el locus; salir.
@@ -998,7 +998,7 @@ Para calculate el redefinition offsets in un type:
     Get un field desde el type's fields.
     Si el field es nil, salir.
     Si el field's redefinition target name es blank, repetir.
-    Find another field usando el field's redefinition target name y el type's fields.
+    Encontrar another field usando el field's redefinition target name y el type's fields.
     Si el other field es nil, abort con "Redefinición inválida. No pude encontrar '" then el field's redefinition target name then "' field." y el field's locus; salir.
     Poner el other field's offset into el field's offset.
   Repetir.
@@ -1083,7 +1083,7 @@ Para compile el body of un routine (epilog):
     Si el variable's kind es "scratch", repetir.
     Si el variable's type should not be finalized, repetir.
     Agregar another fragment usando el push address tag y el variable.
-    Find another routine usando "~finalize" y el variable's type.
+    Encontrar another routine usando "~finalize" y el variable's type.
     Si el other routine es nil, abort con "Internal error - compile el body of un routine (epilog)"; salir.
     Agregar un third fragment usando el call internal tag y el other routine.
   Repetir.
@@ -1097,7 +1097,7 @@ Para compile el body of un routine (prolog):
   
 Para compile el body of el routine called un string:
   Si el compiler's abort flag es set, salir.
-  Find un routine usando el string y el routine index.
+  Encontrar un routine usando el string y el routine index.
   Si el routine es nil, abort con "Necesito una rutina para '" then el string then "'."; salir.
   Compile el body of el routine.
   
@@ -1118,7 +1118,7 @@ Para compile el body of un routine usando un rider (employ):
   Si el rider's token es not ".", abort con "Las oraciones usadas deben terminar en un punto y no '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   Si el rider's token es not blank, abort con "Una vez empleado, no hay otro." y el rider; salir.
-  Find another routine usando el routine's employs moniker y el routine index.
+  Encontrar another routine usando el routine's employs moniker y el routine index.
   Si el other routine es nil, abort con "No pude encontrar '" then el routine's employs moniker then "' rutina que estás tratando de emplear" y el routine's locus; salir.
   Compile el body of el other routine.
   
@@ -1485,7 +1485,7 @@ Para compile un literal usando un rider (numeric - con unit of measure):
   Convertir el rider's token to un ratio.
   Move el rider (compiler rules).
   Scan un name usando el rider.
-  Find un type usando el name y el type index.
+  Encontrar un type usando el name y el type index.
   Si el type es nil, abort con "'" then el name then "' no es una unidad de medida válida." y el literal's locus; salir.
   Si el type cannot be reduced to "number", abort con "'" then el name then "' no es una unidad de medida válida." y el literal's locus; salir.
   Poner el type's scale into un final ratio.
@@ -1622,7 +1622,7 @@ Para compile el next statement usando un rider (call - indirect):
   
 Para compile el next statement usando un rider (call - internal):
   Compile some monikettes usando el rider.
-  Find un routine usando el monikettes.
+  Encontrar un routine usando el monikettes.
   Si el routine es not nil, Agregar push fragments usando el monikettes.
   Si el routine es not nil, destroy el monikettes; Agregar un fragment usando el call internal tag y el routine; salir.
   Convertir el monikettes to un moniker.
@@ -1655,7 +1655,7 @@ Para compile el next statement usando un rider (if):
   Move el rider (compiler rules).
   Compile some monikettes usando el rider.
   Remove any negatives desde el monikettes retornando un flag.
-  Find un routine usando el monikettes.
+  Encontrar un routine usando el monikettes.
   Si el routine es not nil, Agregar push fragments usando el monikettes.
   Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
@@ -1721,7 +1721,7 @@ Para compile el next statement usando un rider (point):
   Compile un routine reference usando el rider.
   Convertir el routine reference to un moniker.
   Destroy el routine reference.
-  Find un routine usando el moniker y el routine index.
+  Encontrar un routine usando el moniker y el routine index.
   Si el routine es nil, abort con "No pude encontrar una rutina '" then el moniker then "' a la que te refieres." y el rider; salir.
   Agregar un fragment usando el routine address tag y el routine.
   Poner el term's variable into el fragment's variable.
@@ -1830,7 +1830,7 @@ Para compile un routine reference usando un rider (indefinite article):
   Si el compiler's abort flag es set, salir.
   Move el rider (compiler rules).
   Scan un name usando el rider.
-  Find un type y un  nickname usando el name.
+  Encontrar un type y un  nickname usando el name.
   Si el type es nil, abort con "Sentencia empleada no válida, no entiendo '" then el name then "'." y el rider; salir.
   Agregar un monikette to el routine reference usando el type.
   
@@ -1854,7 +1854,7 @@ Para compile un term usando un rider (as part):
   Si el rider's token es not any indefinite article, abort con "Esperaba un artículo indefinido luego del COMO, pero encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
   Scan un type name usando el rider.
-  Find un type usando el type name y el type index.
+  Encontrar un type usando el type name y el type index.
   Si el type es nil, abort con "No puedo encontrar '" then el type name then "' un tipo." y el rider; salir.
   Agregar un scratch usando el type's name y el rider's token's first.
   Agregar un fragment usando el load address tag y el term's variable y el scratch.
@@ -1991,7 +1991,7 @@ Para compile un term usando un rider (variable):
   Move el rider (compiler rules).
   Scan un name usando el rider.
   Si el rider está on any reverse-possessive, compile el term usando el rider y el name (reverse-possessive); salir.
-  Find un variable usando el name.
+  Encontrar un variable usando el name.
   Poner el variable into el term's variable.
   Poner "the " into el term's phrase.
   Adjuntar el name to el term's phrase.
@@ -2016,7 +2016,7 @@ Para compile un term usando un rider y un  variable name y un  article token (re
   Compile el term usando el rider y el variable name (reverse-possessive prepare to unwind new local).
   
 Para compile un term usando un rider y un  variable name y un  article token (reverse-possessive prepare to unwind existing variable): \ dahn version 2
-  Find un variable usando el variable name.
+  Encontrar un variable usando el variable name.
   Si el variable es nil, abort con "No se pudo encontrar una variable con el nombre '" then el variable name then "'.".
   Poner el variable into el term's variable.
   Poner "the " into el term's phrase.
@@ -2080,7 +2080,7 @@ Para compile un term usando un rider y un  field term (in place):
 Para compile un term usando un rider y un  name (possessive - field):
   Si el compiler's abort flag es set, salir.
   Si el term's variable es not nil, Poner el term's type into un type.
-  Find un field term usando el term's phrase y el type y el name.
+  Encontrar un field term usando el term's phrase y el type y el name.
   Si el field term es not empty, compile el term usando el rider y el field term; salir.
   Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Si el type can be reduced to "pointer", Poner el type's target type into el type.
@@ -2089,7 +2089,7 @@ Para compile un term usando un rider y un  name (possessive - field):
     Si el compiler's abort flag es set, salir.
     Get un field desde el type's fields.
     Si el field es nil, abort con "No hay '" then el name then "' dentro del '" then el term's type's name then "'." y el rider; salir.
-    Find un deep field term usando "" y el field's type y el name.
+    Encontrar un deep field term usando "" y el field's type y el name.
     Si el deep field term es empty, repetir.
   Poner el field into un first field term's field.
   Si el term's type can be reduced to "pointer", set el first field term's dereference flag.
@@ -2298,7 +2298,7 @@ Para decidir si un item looks reamish:
   Diga no.
   
 Para decidir si un moniker es in un index:
-  Find un refer usando el moniker y el index.
+  Encontrar un refer usando el moniker y el index.
   Si el refer es nil, diga no.
   Si el refer's pointer es nil, diga no.
   Diga sí.
@@ -2335,7 +2335,7 @@ Para decidir si un rider es followed by any unit of measure:
   Move el rider (compiler rules).
   Si el rider es not on any name starter, diga no.
   Scan un name usando el rider.
-  Find un type usando el name y el type index.
+  Encontrar un type usando el name y el type index.
   Si el type es nil, diga no.
   Si el name es not "times", diga sí. \ special because times es un infix operator y un  unit of measure
   Si el rider's token es el start of any expression, diga no.
@@ -2897,7 +2897,7 @@ Para decidir si un string es any verb:
   Si el string es "pueden", diga sí. \ they "can" cannot \ can't: not used in CAL (3pp) added just in case 
   Si el string es "pudiera", diga sí. \ it "could" could not \ couldn't: not used in CAL (3ps) added just in case
   Si el string es "pudieran", diga sí. \ they "could" could not \ couldn't:  not used in CAL (3pp) added just in case
-  Si el string es "pudiéramos", diga sí. \ we "could" could not \ couldn't: only once in Noodle (1pp) " To decidir si we could find un pointer:"
+  Si el string es "pudiéramos", diga sí. \ we "could" could not \ couldn't: only once in Noodle (1pp) " To decidir si we could encontrar un pointer:"
   \If el string es "si", diga sí. \ "does": only case used in CAL for affirmative questions, used also for negative ones "does not" -> "si no" con neg. after
   Si el string es "tiene", diga sí. \ it "has" used in type definitions; (3ps) present
   Si el string es "tienen", diga sí. \ they "have" used in type definitions; (3pp) present
@@ -3065,7 +3065,7 @@ Para decidir si un type can be reduced to un string using el base name:
   Si el type's name es el string, diga sí.
   Si el type's cooking flag es set, diga no.
   Set el type's cooking flag.
-  Find un base type usando el type's base name y el type index.
+  Encontrar un base type usando el type's base name y el type index.
   Si el base type es nil, borrar el type's cooking flag; diga no.
   Si el base type can be reduced to el string using el base name, borrar el type's cooking flag; diga sí.
   Borrar el type's cooking flag.
@@ -3159,8 +3159,8 @@ Para eliminate duplicate nicknames desde some variables usando un index:
 Para eliminate duplicate nicknames usando un variable y un  index:
   Si el variable es nil, salir.
   Si el index es nil, salir.
-  Find another variable usando el variable's nickname y el index.
-  Si el other variable es nil, find el other variable usando el variable's name y el index.
+  Encontrar another variable usando el variable's nickname y el index.
+  Si el other variable es nil, encontrar el other variable usando el variable's name y el index.
   Si el other variable es nil, index el variable usando el variable's nickname y el index; salir.
   Borrar el other variable's nickname.
   Borrar el variable's nickname.
@@ -3207,7 +3207,7 @@ Para finalize el compiler:
   
 The finalize tag es un tag igual to 9.
   
-Para find un entry usando un string and some entries:
+Para encontrar un entry usando un string and some entries:
   Void el entry.
   Lazo.
   Get el entry desde el entries.
@@ -3215,27 +3215,27 @@ Para find un entry usando un string and some entries:
   Si el entry's name es el string, salir.
   Repetir.
   
-Para find un field term usando un phrase y un  type y un  name:
+Para encontrar un field term usando un phrase y un  type y un  name:
   Borrar el field term.
-  Find el field term usando el type y el name.
+  Encontrar el field term usando el type y el name.
   Si el field term's field es not nil, salir.
-  Si el phrase es not blank, find un routine usando "Poner" y el phrase and "'s " then el name and "into".
+  Si el phrase es not blank, encontrar un routine usando "Poner" y el phrase and "'s " then el name and "into".
   Si el routine es not nil, Poner el routine into el field term's function; salir.
   Si el type es nil, salir.
-  Find el routine usando "Poner" y el type and "'s " then el name and "into".
+  Encontrar el routine usando "Poner" y el type and "'s " then el name and "into".
   Si el routine es not nil, set el field term's push flag; Poner el routine into el field term's function; salir.
   \  code below for looking deep within pointers - un debatable feature
-  \  if el type's target type es not nil, find el routine usando "Poner" y el type's target type and "'s " then el name and "into".
+  \  if el type's target type es not nil, encontrar el routine usando "Poner" y el type's target type and "'s " then el name and "into".
   \  if el routine es not nil, set el field term's dereference flag; Poner el routine into el field term's function; salir.
   
-Para find un field term usando un type y un  name:
+Para encontrar un field term usando un type y un  name:
   Si el type es nil, salir.
-  Find un field usando el name y el type's fields.
+  Encontrar un field usando el name y el type's fields.
   Si el field es not nil, Poner el field into el field term's field; salir.
-  Si el type's target type es not nil, find el field usando el name y el type's target type's fields.
+  Si el type's target type es not nil, encontrar el field usando el name y el type's target type's fields.
   Si el field es not nil, set el field term's dereference flag; Poner el field into el field term's field; salir.
   
-Para find un fragment usando another fragment y un  tag:
+Para encontrar un fragment usando another fragment y un  tag:
   Poner el other fragment into el fragment.
   Lazo.
     Si el fragment es nil, salir.
@@ -3243,7 +3243,7 @@ Para find un fragment usando another fragment y un  tag:
     Poner el fragment's next into el fragment.
   Repetir.
   
-Para find un fragment usando another fragment y un  tag (backwards):
+Para encontrar un fragment usando another fragment y un  tag (backwards):
   Poner el other fragment into el fragment.
   Lazo.
     Si el fragment es nil, salir.
@@ -3251,7 +3251,7 @@ Para find un fragment usando another fragment y un  tag (backwards):
     Poner el fragment's previous into el fragment.
   Repetir.
   
-Para find un import usando un string:
+Para encontrar un import usando un string:
   Void el import.
   Lazo.
     Get el import desde el imports.
@@ -3259,15 +3259,15 @@ Para find un import usando un string:
     Si el import's name es el string, salir.
   Repetir.
   
-Para find un path y un  row# usando un byte pointer:
+Para encontrar un path y un  row# usando un byte pointer:
   Borrar el path.
   Poner 0 into el row#.
-  Find un source file usando el byte pointer.
+  Encontrar un source file usando el byte pointer.
   Si el source file es nil, salir.
   Poner el source file's path into el path.
-  Find el row# usando el source file y el byte pointer.
+  Encontrar el row# usando el source file y el byte pointer.
   
-Para find un routine usando un moniker y un  monikette y un  index:
+Para encontrar un routine usando un moniker y un  monikette y un  index:
   Si el monikette es nil, salir.
   Void el routine.
   Privatizar el moniker.
@@ -3275,60 +3275,60 @@ Para find un routine usando un moniker y un  monikette y un  index:
   Slap el monikette's current substring on el monikette's string.
   Lazo.
     Adjuntar el monikette to el moniker (while bubbling).
-    Find un refer usando el moniker y el index.
+    Encontrar un refer usando el moniker y el index.
     Si el refer es not nil, Poner el refer's pointer into el routine.
-    Si el refer es not nil, find el routine usando el moniker y el monikette's next y el index.
+    Si el refer es not nil, encontrar el routine usando el moniker y el monikette's next y el index.
     Si el routine es not nil, interrumpir.
     Bubble el monikette.
     Si el monikette es bubbled out, interrumpir.
     Poner el original moniker into el moniker.
   Repetir.
   
-Para find un routine usando some monikettes:
+Para encontrar un routine usando some monikettes:
   Void el routine.
-  Find el routine usando un moniker y el monikettes' first y el routine index.
+  Encontrar el routine usando un moniker y el monikettes' first y el routine index.
   
-Para find un routine usando un string and another string y un  third string y un  fourth string:
+Para encontrar un routine usando un string and another string y un  third string y un  fourth string:
   Agregar un monikette to some monikettes usando el string.
   Agregar another monikette to el monikettes usando el other string.
   Agregar un third monikette to el monikettes usando el third string.
   Agregar un fourth monikette to el monikettes usando el fourth string.
-  Find el routine usando el monikettes.
+  Encontrar el routine usando el monikettes.
   Destroy el monikettes.
   
-Para find un routine usando un string y un  type:
+Para encontrar un routine usando un string y un  type:
   Agregar un monikette to some monikettes usando el string.
   Agregar another monikette to el monikettes usando el type.
-  Find el routine usando el monikettes.
+  Encontrar el routine usando el monikettes.
   Destroy el monikettes.
   
-Para find un routine usando un string y un  type and another string and another type:
+Para encontrar un routine usando un string y un  type and another string and another type:
   Agregar un monikette to some monikettes usando el string.
   Agregar another monikette to el monikettes usando el type.
   Agregar un third monikette to el monikettes usando el other string.
   Agregar un fourth monikette to el monikettes usando el other type.
-  Find el routine usando el monikettes.
+  Encontrar el routine usando el monikettes.
   Destroy el monikettes.
   
-Para find un routine usando un string y un  type and another string y un  third string:
+Para encontrar un routine usando un string y un  type and another string y un  third string:
   Agregar un monikette to some monikettes usando el string.
   Agregar another monikette to el monikettes usando el type.
   Agregar un third monikette to el monikettes usando el other string.
   Agregar un fourth monikette to el monikettes usando el third string.
-  Find el routine usando el monikettes.
+  Encontrar el routine usando el monikettes.
   Destroy el monikettes.
   
-Para find un routine usando un string y un  type and another string y un  third string y un  fourth string y un  fifth string:
+Para encontrar un routine usando un string y un  type and another string y un  third string y un  fourth string y un  fifth string:
   Agregar un monikette to some monikettes usando el string.
   Agregar another monikette to el monikettes usando el type.
   Agregar un third monikette to el monikettes usando el other string.
   Agregar un fourth monikette to el monikettes usando el third string.
   Agregar un fifth monikette to el monikettes usando el fourth string.
   Agregar un sixth monikette to el monikettes usando el fifth string.
-  Find el routine usando el monikettes.
+  Encontrar el routine usando el monikettes.
   Destroy el monikettes.
   
-Para find un row# usando un source file y un  byte pointer:
+Para encontrar un row# usando un source file y un  byte pointer:
   Si el byte pointer es nil, Poner 0 into el row#; salir.
   Slap un substring on el source file's buffer.
   Poner 1 into el row#.
@@ -3339,7 +3339,7 @@ Para find un row# usando un source file y un  byte pointer:
     Agregar 1 to el substring's first.
   Repetir.
   
-Para find un source file usando un byte pointer:
+Para encontrar un source file usando un byte pointer:
   Si el byte pointer es nil, void el source file; salir.
   Lazo.
     Get el source file desde el source files.
@@ -3347,20 +3347,20 @@ Para find un source file usando un byte pointer:
     Si el byte pointer es less than el source file's buffer's first, repetir.
     Si el byte pointer es greater than el source file's buffer's last, repetir.
   
-Para find un type y un  nickname usando un name:
+Para encontrar un type y un  nickname usando un name:
   Void el type.
   Borrar el nickname.
-  Find el type y el nickname usando el name (forward).
+  Encontrar el type y el nickname usando el name (forward).
   Si el type es not nil, salir.
-  Find el type y el nickname usando el name (backward).
+  Encontrar el type y el nickname usando el name (backward).
   
-Para find un type y un  nickname usando un name (backward):
+Para encontrar un type y un  nickname usando un name (backward):
   Void el type.
   Borrar el nickname.
   Slap un substring on el name.
   Lazo.
     Si el substring es blank, salir.
-    Find el type usando el substring y el type index.
+    Encontrar el type usando el substring y el type index.
     Si el type es not nil, interrumpir.
     Skip to el previous word in el substring.
   Repetir.
@@ -3369,13 +3369,13 @@ Para find un type y un  nickname usando un name (backward):
   Si el other substring es not blank, Poner el other substring into el nickname.
   Si el other substring es blank, Poner el substring into el nickname.
   
-Para find un type y un  nickname usando un name (forward):  \ original - no change
+Para encontrar un type y un  nickname usando un name (forward):  \ original - no change
   Void el type.
   Borrar el nickname.
   Slap un substring on el name.
   Lazo.
     Si el substring es blank, salir.
-    Find el type usando el substring y el type index.
+    Encontrar el type usando el substring y el type index.
     Si el type es not nil, interrumpir.
     Skip to el next word in el substring.
   Repetir.
@@ -3384,17 +3384,17 @@ Para find un type y un  nickname usando un name (forward):  \ original - no chan
   Si el other substring es not blank, Poner el other substring into el nickname.
   Si el other substring es blank, Poner el substring into el nickname.
   
-Para find un variable usando un name:
+Para encontrar un variable usando un name:
   Si el current routine es nil, void el variable; salir.
-  Find el variable usando el name y el current routine's locals.
+  Encontrar el variable usando el name y el current routine's locals.
   Si el variable es not nil, salir.
-  Find el variable usando el name y el current routine's parameters.
+  Encontrar el variable usando el name y el current routine's parameters.
   Si el variable es not nil, salir.
-  Find el variable usando el name y el global index.
+  Encontrar el variable usando el name y el global index.
   Si el variable es not nil, salir.
-  Find el variable usando el name y el literal index.
+  Encontrar el variable usando el name y el literal index.
   
-Para find un variable usando un name and some variables:
+Para encontrar un variable usando un name and some variables:
   Void el variable.
   Lazo.
     Get el variable desde el variables.
@@ -3423,7 +3423,7 @@ Para generate un name usando un string:
 Para get un address usando un routine:
   Si el routine's address es not 0, Poner el routine's address into el address; salir.
   Poner -1 into el routine's address.
-  Find another routine usando el routine's employs moniker y el routine index.
+  Encontrar another routine usando el routine's employs moniker y el routine index.
   Si el other routine es nil, abort con "No puedo encontrar la rutina '" then el routine's employs moniker then "' que estás tratando de emplear." y el routine's locus; salir.
   Si el other routine's address es -1, abort con "Referencia recursiva en cláusula empleada." y el routine's locus; salir.
   Get el address usando el other routine.
@@ -3481,7 +3481,7 @@ Para index un literal:
   Index el literal usando el literal's name y el literal index.
   
 Para index un partial moniker usando un index (special):
-  Find un refer usando el partial moniker y el index.
+  Encontrar un refer usando el partial moniker y el index.
   Si el refer es not nil, salir.
   Index el partial moniker in el index.
   
@@ -3495,12 +3495,12 @@ Para index un routine for utility use:
   Convertir el monikettes to un moniker.
   Destroy el monikettes.
   Si el moniker es in el routine index, salir.
-  Find un refer usando el moniker y el utility index.
+  Encontrar un refer usando el moniker y el utility index.
   Si el refer es not nil, Poner nil into el refer's pointer; salir.
   Index el routine usando el moniker y el utility index.
   
 Para index un routine usando un moniker y un  index (special):
-  Find un refer usando el moniker y el index.
+  Encontrar un refer usando el moniker y el index.
   Si el refer es not nil, Poner el routine into el refer's pointer; salir.
   Index el routine usando el moniker y el index.
   
@@ -3531,7 +3531,7 @@ Para index un type:
 Para index un type usando un name:
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
-  Find un existing type usando el name y el type index.
+  Encontrar un existing type usando el name y el type index.
   Si el existing type es nil, index el type usando el name y el type index; salir.
   Poner el type's locus into un locus.
   Si el locus es nil, Poner el existing type's locus into el locus. \ point el error to un type in el source code, not un generated type
@@ -3603,8 +3603,8 @@ Para initialize un pe header (optional header):
   Poner el code borough's length into el pe header's sizeofcodeinfile.
   Poner el data borough's length into el pe header's sizeofinitializeddatainfile.
   Poner 0 into el pe header's sizeofuninitializeddatainfile.
-  Find un routine usando "~initialize before run and run and finalize after run" y el routine index.
-  Si el routine es nil, abort con "Internal error: could not find el startup routine"; salir.
+  Encontrar un routine usando "~initialize before run and run and finalize after run" y el routine index.
+  Si el routine es nil, abort con "Internal error: could not encontrar el startup routine"; salir.
   Poner el routine's address minus el image base into el pe header's addressofentrypointinmemory.
   Poner el code borough's base into el pe header's addressofcodeinmemory.
   Poner el data borough's base into el pe header's addressofinitializeddatainmemory.
@@ -4151,7 +4151,7 @@ A phrase es un string.
   
   \ To decidir si un string looks like English:
   \Load el lexicon.
-  \If el lexicon es nil, show error "I can't find any lecksicon."; diga no.
+  \If el lexicon es nil, show error "I can't encontrar any lecksicon."; diga no.
   \If el string es blank, diga no.
   \Slap un substring on el string.
   \Put el substring's last into el substring's first.
@@ -4379,7 +4379,7 @@ Para resolve un type (base type):
   Si el compiler's abort flag es set, salir.
   Si el type es nil, salir.
   Si el type's base type es not nil, salir.
-  Find el type's base type usando el type's base name y el type index.
+  Encontrar el type's base type usando el type's base name y el type index.
   Si el type's base type es nil, abort con "Tipo base inválido. '" then el type's base name then "'." y el type's locus; salir.
   Set el type's cooking flag.
   Si el type's base type's cooking flag es set, abort con "Definición recursiva con '" then el type's base name then "'." y el type's locus; salir.
@@ -4392,7 +4392,7 @@ Para resolve un type (expand thing): \ type's base type es not resolved yet
   Si el type's base type es not nil, salir.
   Si el type's name es "thing", salir.
   Si el type cannot be reduced to "thing" using el base name, salir.
-  Find un base type usando el type's base name y el type index.
+  Encontrar un base type usando el type's base name y el type index.
   \  Agregar thing record - el number of secret fields es hard coded in two places: search for "than 4" \ was 6
   Poner el type's name then " record" into un name.
   Poner el type's name then " records" into un plural name.
@@ -4437,7 +4437,7 @@ Para resolve un type (optional info - pointer):
   Si el compiler's abort flag es set, salir.
   Si el type's target type es not nil, salir.
   Si el type's target name es blank, Poner el type's base type's target type into el type's target type; salir.
-  Find el type's target type usando el type's target name y el type index.
+  Encontrar el type's target type usando el type's target name y el type index.
   Si el type's target type es nil, abort con "No veo bien un qué apuntas. Por favor sé más claro." y el type's locus; salir.
   
 Para resolve un type (optional info - record):
@@ -4515,12 +4515,12 @@ Para resolve un variable:
   Si el variable es nil, salir.
   Si el variable's type es not nil, salir.
   Si el variable's type name es not blank, resolve el variable (explicit type name); salir.
-  Find el variable's type y el variable's nickname usando el variable's name.
+  Encontrar el variable's type y el variable's nickname usando el variable's name.
   Si el variable's type es not nil, Poner el variable's type's name into el variable's type name; salir.
   Abort con "No puedo encontrar el tipo '" then el variable's name then "'." y el variable's locus.
   
 Para resolve un variable (explicit type name):
-  Find el variable's type usando el variable's type name y el type index.
+  Encontrar el variable's type usando el variable's type name y el type index.
   Si el variable's type es nil, abort con "No puedo encontrar el tipo '" then el variable's type name then "'." y el variable's locus; salir.
   
 The resolving globals timer es un timer.
@@ -4874,8 +4874,8 @@ Para set el compiled flag in un variable:
   Set el variable's compiled flag.
   Si el variable's kind es not "global", salir.
   Si el variable's literal es nil, salir.
-  Find un routine usando "Poner" y el variable's literal's type and "into" y el variable's type.
-  Si el routine es nil, find el routine usando "Convertir" y el variable's literal's type and "to" y el variable's type; set un flag.
+  Encontrar un routine usando "Poner" y el variable's literal's type and "into" y el variable's type.
+  Si el routine es nil, encontrar el routine usando "Convertir" y el variable's literal's type and "to" y el variable's type; set un flag.
   Si el routine es nil, abort con "El tipo de esta definición global y el tipo de su descripción literal no son compatibles." y el variable's locus; salir.
   Compile el body of el routine.
   Si el flag es set, Poner "Convertir el " then el variable's literal's name then " to el " then el variable's name then ". " into el variable's initializer string.
@@ -4927,9 +4927,9 @@ Para transmogrify un fragment:
   
 Para transmogrify un fragment (break):
   Poner el repeat tag into un tag.
-  Find another fragment usando el fragment y el tag.
+  Encontrar another fragment usando el fragment y el tag.
   Si el other fragment es nil, Poner el finalize tag into el tag. \ for break without un loop or after un loop
-  Find un third fragment usando el current routine's fragments' last y el tag (backwards).
+  Encontrar un third fragment usando el current routine's fragments' last y el tag (backwards).
   Si el third fragment es nil, abort con "Internal error - transmogrify un fragment (break)"; salir.
   Si el third fragment's next es nil, abort con "Internal error 2 - transmogrify un fragment (break)"; salir.
   Attach $E9 y el third fragment's next's address to el fragment. \ jmp el destination's address
@@ -4957,7 +4957,7 @@ Para transmogrify un fragment (epilog):
   Attach $C2 y el current routine's parameter size to el fragment's code. \ ret el current routine's parameter size
   
 Para transmogrify un fragment (exit):
-  Find another fragment usando el fragment y el finalize tag.
+  Encontrar another fragment usando el fragment y el finalize tag.
   Si el other fragment es nil, abort con "Internal error - transmogrify un fragment (exit)"; salir.
   Attach $E9 y el other fragment's address to el fragment. \ jmp el destination's address
   
@@ -4967,7 +4967,7 @@ Para transmogrify un fragment (increment):
   Attach $8185 y el fragment's variable's offset y el fragment's number to el fragment's code. \ Agregar [ebp+the fragment's variable's offset],the fragment's number
   
 Para transmogrify un fragment (jump false):
-  Find another fragment usando el fragment y el end if tag.
+  Encontrar another fragment usando el fragment y el end if tag.
   Si el other fragment es nil, abort con "Internal error - transmogrify un fragment (jump false)"; salir.
   Attach $83F800 to el fragment's code. \ cmp eax,0
   Attach $0F84 y el other fragment's address to el fragment. \ je el destination's address
@@ -5011,7 +5011,7 @@ Para transmogrify un fragment (push value):
   Abort con "Internal error 3 - transmogrify un fragment (push value)".
   
 Para transmogrify un fragment (repeat):
-  Find another fragment usando el fragment y el loop tag (backwards).
+  Encontrar another fragment usando el fragment y el loop tag (backwards).
   Si el other fragment es nil, abort con "Internal error - transmogrify un fragment (repeat)"; salir.
   Attach $E9 y el other fragment's address to el fragment. \ jmp el destination's address
   
