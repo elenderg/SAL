@@ -8,6 +8,8 @@
 \   there es always at least one row.
 \   there es always un return byte at el end of el last row.
 
+El error de e/s es una string.
+
 Para escribir un byte para StdOut:
   Llamada "kernel32.dll" "WriteFile" con
     El StdOut handle [hFile]
@@ -46,7 +48,7 @@ The off flag es un flag igual to 0.
 
 The a-key es un key igual to 65.
 
-An abc es un record con un number called abca, un number called abcb, un number called abcc.
+An abc es un record con un number llamado abca, un number llamado abcb, un number llamado abcc.
 
 An abc pointer es un pointer to un abc.
 
@@ -170,14 +172,14 @@ Para agregar un string to some string things:
   Adjuntar el string thing to el string things.
 
 An addrinfo es un record con
-A number called ai_flags,
-A number called ai_family,
-A number called ai_sockettype,
-A number called ai_protocol,
-A number called ai_addrlen,
-A pchar called ai_canonname,
-A sockaddrptr called ai_addr,
-A addrinfoptr called ai_next.
+A number llamado ai_flags,
+A number llamado ai_family,
+A number llamado ai_sockettype,
+A number llamado ai_protocol,
+A number llamado ai_addrlen,
+A pchar llamado ai_canonname,
+A sockaddrptr llamado ai_addr,
+A addrinfoptr llamado ai_next.
 
 Some addrinfo routines es un record con
 A getaddrinfo pointer,
@@ -195,8 +197,8 @@ Para ajustar un box usando un number y another number y un third number y un fou
 Para ajustar un item:
   Poner el item's win32finddata's dwfileattributes into un number.
   Bitwise AND el number con 16 [file_attribute_directory].
-  Si el number es 0, Poner "file" into el item's kind; Poner "archivo" into el item's clase.
-  Si el number es not 0, Poner "directory" into el item's kind; Poner "directorio" into el item's clase.
+  Si el number es 0, Poner "file" into el item's kind.\; Poner "archivo" into el item's clase.
+  Si el number es not 0, Poner "directory" into el item's kind.\; Poner "directorio" into el item's clase.
   Convertir el item's win32finddata's ftcreationtime to el item's creation date/time string. \ added for email sorting
   Poner el item's win32finddata's cfilename's whereabouts into un pchar.
   Convertir el pchar to el item's designator.
@@ -364,13 +366,13 @@ Para adjuntar un x-coord y un y-coord to un polygon:
 
 \Para adjuntar ceros a una cadena hasta que su longitud sea un número;
 Para adjuntar zeros to un string until its length es un number:
-  Si el string's length es greater than or igual to el number, salir.
-  Adjuntar "0" to el string.
+    Si el string's length es greater than or igual to el number, salir.
+    Adjuntar "0" to el string.
   Repetir.
 
 The arrow cursor es un cursor.
 
-Para asignar un puntero dado un conteo de bytes;
+\Para asignar un puntero dado un conteo de bytes;
 Para assign un pointer usando un byte count:
   Si el byte count es 0, void el pointer; salir.
   Privatizar el byte count.
@@ -667,10 +669,10 @@ A bit es un unit.
 A bitmapdata es un record con
   A width,
   A height,
-  A number called stride,
-  A number called pixelformat,
-  A pointer called scan0,
-  A number called reserved.
+  A number llamado stride,
+  A number llamado pixelformat,
+  A pointer llamado scan0,
+  A number llamado reserved.
 
 Para lógico y un byte con otro byte;
 Para bitwise AND un byte con another byte:
@@ -679,14 +681,14 @@ Para bitwise AND un byte con another byte:
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $2003. \ AND [ebx],al
 
-Para lógico y un byte con un número;
+\Para lógico y un byte con un número;
 Para bitwise AND un byte con un number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el number
   Intel $8B00. \ mov eax,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $2003. \ AND [ebx],al
 
-Para lógico y un número con otro número;
+\Para lógico y un número con otro número;
 Para bitwise AND un number con another number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el other number
   Intel $8B00. \ mov eax,[eax]
@@ -700,14 +702,14 @@ Para bitwise OR un byte con another byte:
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $0803. \ OR [ebx],al
 
-Para lógico o un byte con un número;
+\Para lógico o un byte con un número;
 Para bitwise OR un byte con un number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el number
   Intel $8B00. \ mov eax,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $0803. \ OR [ebx],al
 
-Para lógico o un número con otro número;
+\Para lógico o un número con otro número;
 Para bitwise OR un number con another number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el other number
   Intel $8B00. \ mov eax,[eax]
@@ -721,14 +723,14 @@ Para bitwise XOR un byte con another byte:
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $3003. \ XOR [ebx],al
 
-Para lógico xor un byte con un número;
+\Para lógico xor un byte con un número;
 Para bitwise XOR un byte con un number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el number
   Intel $8B00. \ mov eax,[eax]
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el byte
   Intel $3003. \ OR [ebx],al
 
-Para lógico xor un número con otro número;
+\Para lógico xor un número con otro número;
 Para bitwise XOR un number con another number:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el other number
   Intel $8B00. \ mov eax,[eax]
@@ -751,13 +753,13 @@ A box es un record con
   A left-top spot at el left coord, 
   A right-bottom spot at el right coord,
   A top-left spot at el left coord, 
-  A bottom-right spot at el right coord, y
-  Una izquierda at el left coord, 
-  Una superior at el top coord, 
-  Una derecha at el right coord, 
-  Una inferior at el bottom coord, y
-  Un punto superior-izquierda at el left coord, 
-  Un punto inferior-derecha at el right coord.
+  A bottom-right spot at el right coord.\ , y
+  \Una izquierda at el left coord, 
+  \Una superior at el top coord, 
+  \Una derecha at el right coord, 
+  \Una inferior at el bottom coord, y
+  \Un punto superior-izquierda at el left coord, 
+  \Un punto inferior-derecha at el right coord.
 
 A brightness es un lightness.
 
@@ -791,13 +793,13 @@ Para incrementar un byte limiting it to another byte y un third byte:
 Para incrementar un number:
   Agregar 1 to el number.
 
-Para encontrar un número que lo limite a otro número y un tercer número;
+\Para encontrar un número que lo limite a otro número y un tercer número;
 Para incrementar un number limiting it to another number y un third number:
   Agregar 1 to el number.
   Si el number es greater than el third number, 
     Poner el other number into el number.
 
-Para avanzar un escáner;
+\Para avanzar un escáner;
 Para incrementar un rider:
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el rider
   Intel $FF8314000000. \ inc [ebx+20] \ el rider's token's last
@@ -808,7 +810,7 @@ Para unbump un rider:
   Intel $FF8B14000000. \ dec [ebx+20] \ el rider's token's last
   Intel $FF8B08000000. \ dec [ebx+8] \ el rider's source's first
 
-Para avanzar un escáner por un número;
+\Para avanzar un escáner por un número;
 Para incrementar un rider by un number:
   Agregar el number to el rider's token's last.
   Agregar el number to el rider's source's first.
@@ -1148,11 +1150,11 @@ A color es un record con
   An hue, 
   A saturation, 
   A lightness, 
-  A brightness at el lightness,
-  Un matiz at el hue, 
-  Una saturación at el saturation, 
-  Una luminosidad at el lightness y 
-  Un brillo at el lightness.
+  A brightness at el lightness. \,
+  \Un matiz at el hue, 
+  \Una saturación at el saturation, 
+  \Una luminosidad at el lightness y 
+  \Un brillo at el lightness.
 
 A colorref es un number [like $00BBGGRR].
 
@@ -1285,12 +1287,12 @@ Para compatibly wait for un process pointer:
 \a reply string.
 
 A console es un thing con 
-  A box, una caja at el box,
-  A border color, un color de borde at el border color,
-  A fill color, un color de relleno at el fill color,
-  A text, un texto at el text,
-  A grid, una grilla at el grid,
-  A reply string, una cadena de respuesta at el reply string.
+  A box, \Una caja at el box,
+  A border color, \Un color de borde at el border color,
+  A fill color, \un color de relleno at el fill color,
+  A text, \un texto at el text,
+  A grid, \una grilla at el grid,
+  A reply string .\, una cadena de respuesta at el reply string.
 
 The context es un context.
 
@@ -1301,8 +1303,8 @@ A context es un thing con
   A letter height, 
   A color, 
   A number, \ pen width? ***
-  y A letter size at el letter height, 
-  y un pen at el color.
+  A letter size at el letter height, y
+  A pen at el color.
 
 The context stack es some contexts.
 
@@ -1958,7 +1960,7 @@ A counter es un number.
 
 Para crear el connect handle of un winhttp request usingA url record:
   Si el winhttp request es nil, salir.
-  Convertir el url record's host name into un wide string called wide host name y null terminate.
+  Convertir el url record's host name into un wide string llamado wide host name y null terminate.
   Llamada "winhttp.dll" "WinHttpConnect"
     con el winhttp request's session
     y el wide host name's first
@@ -2159,7 +2161,7 @@ Para crear el lexicon:
 
 Para crear el open handle of un winhttp request:
   Si el winhttp request es nil, salir.
-  Convertir el module's name to un wide string called wide module name y null terminate.
+  Convertir el module's name to un wide string llamado wide module name y null terminate.
   Llamada "winhttp.dll" "WinHttpOpen"
   con el wide module name's first
   And 0 [winhttp_access_type_default_proxy] 
@@ -2242,8 +2244,8 @@ Para crear un refer:
 
 Para crear el request handle of un winhttp request using un url record:
   Si el winhttp request es nil, salir.
-  Convertir el url record's path into un wide string called wide path y null terminate.
-  Convertir "POST" to un wide string called wide post string y null terminate.
+  Convertir el url record's path into un wide string llamado wide path y null terminate.
+  Convertir "POST" to un wide string llamado wide post string y null terminate.
   Si el url record's scheme es "https", Poner 8388608 [winhttp_flag_secure] into un secure number.
   Llamada "winhttp.dll" "WinHttpOpenRequest"
   con el winhttp request's connection
@@ -3383,7 +3385,7 @@ Para decidir si un line es below un coord:
   Diga sí.
 
 \Para decidir si un line es still in un box;
-Para decidir si una línea está en una caja:
+\Para decidir si una línea está en una caja:
 Para decidir si un line es in un box:
   Si el line's start es not in el box, diga no.
   Si el line's end es not in el box, diga no.
@@ -4039,7 +4041,7 @@ Para decidir si un string es less than or igual to another string:
   Si el number es less than or igual to 0, diga sí.
   Diga no.
 
-Para decidir si una cadena está mal escrita; \ needs work for Spanish
+\Para decidir si una cadena está mal escrita; \ needs work for Spanish
 Para decidir si un string es misspelled:
   Si el lexicon es nil, diga no.
   Si el string es not any word, diga no.
@@ -4367,38 +4369,38 @@ The device-control-three byte es un byte igual to 19.
 The device-control-two byte es un byte igual to 18.
 
 A devmode es un record con
-  32 bytes called dmdevicename,
-  A wyrd called dmspecversion,
-  A wyrd called dmdriverversion,
-  A wyrd called dmsize,
-  A wyrd called dmdriverextra,
-  A number called dmfields,
-  A wyrd called dmorientation,
-  A wyrd called dmpapersize,
-  A wyrd called paperlength,
-  A wyrd called paperwidth,
-  A wyrd called dmscale,
-  A wyrd called dmcopies,
-  A wyrd called dmdefaultsource,
-  A wyrd called dmprintquality,
-  A wyrd called dmcolor,
-  A wyrd called dmduplex,
-  A wyrd called ydmresolution,
-  A wyrd called dmttoption,
-  A wyrd called dmcollate,
-  32 bytes called dmformname,
-  A wyrd called dmlogpixels,
-  A number called dmbitsperpel,
-  A number called dmpelswidth,
-  A number called dmpelsheight,
-  A number called dmdisplayflags,
-  A number called dmdisplayfrequency,
-  A number called dmicmmethod,
-  A number called dmicmintent,
-  A number called dmmediatype,
-  A number called dmdithertype,
-  A number called dmreserved1,
-  A number called dmreserved2.
+  32 bytes llamado dmdevicename,
+  A wyrd llamado dmspecversion,
+  A wyrd llamado dmdriverversion,
+  A wyrd llamado dmsize,
+  A wyrd llamado dmdriverextra,
+  A number llamado dmfields,
+  A wyrd llamado dmorientation,
+  A wyrd llamado dmpapersize,
+  A wyrd llamado paperlength,
+  A wyrd llamado paperwidth,
+  A wyrd llamado dmscale,
+  A wyrd llamado dmcopies,
+  A wyrd llamado dmdefaultsource,
+  A wyrd llamado dmprintquality,
+  A wyrd llamado dmcolor,
+  A wyrd llamado dmduplex,
+  A wyrd llamado ydmresolution,
+  A wyrd llamado dmttoption,
+  A wyrd llamado dmcollate,
+  32 bytes llamado dmformname,
+  A wyrd llamado dmlogpixels,
+  A number llamado dmbitsperpel,
+  A number llamado dmpelswidth,
+  A number llamado dmpelsheight,
+  A number llamado dmdisplayflags,
+  A number llamado dmdisplayfrequency,
+  A number llamado dmicmmethod,
+  A number llamado dmicmintent,
+  A number llamado dmmediatype,
+  A number llamado dmdithertype,
+  A number llamado dmreserved1,
+  A number llamado dmreserved2.
 
 The diaeresis byte es un byte igual to 168.
 
@@ -4475,11 +4477,11 @@ Para dividir un number by another number giving un quotient y un remainder:
 The division-symbol byte es un byte igual to 247.
 
 A docinfo es un record con
-  A number called cbsize,
-  A pointer called lpszdocname,
-  A pointer called lpszoutput,
-  A pointer called lpszdatadtype,
-  A number called fwtype.
+  A number llamado cbsize,
+  A pointer llamado lpszdocname,
+  A pointer llamado lpszoutput,
+  A pointer llamado lpszdatadtype,
+  A number llamado fwtype.
 
 The dollar-sign byte es un byte igual to 36.
 
@@ -5610,12 +5612,12 @@ The euro-sign byte es un byte igual to 128.
 
 An event es un thing con
   A kind [refresh, definir cursor, key down, left click, left double click, right click, right double click, deactivate, activate, done], \ English
-  una clase [refrescar, cursor, tecla abajo, clic izquierdo, clic izquierdo doble, clic derecho, clic derecho doble, desactivar, activar, hecho],\ kind in Spanish
-  A shift flag, una bandera mayúsculas at el shift flag,
-  A ctrl flag, una bandera ctrl at el ctrl flag,
-  An alt flag, una bandera alt at el alt flag,
-  A spot, un foco at el spot, un punto at el spot,
-  A key, una tecla at el key,
+  \una clase [refrescar, cursor, tecla abajo, clic izquierdo, clic izquierdo doble, clic derecho, clic derecho doble, desactivar, activar, hecho],\ kind in Spanish
+  A shift flag, \una bandera mayúsculas at el shift flag,
+  A ctrl flag,\ una bandera ctrl at el ctrl flag,
+  An alt flag, \una bandera alt at el alt flag,
+  A spot, \un foco at el spot, un punto at el spot,
+  A key, \una tecla at el key,
   A byte.
 
 The event queue es un event queue.
@@ -5831,8 +5833,8 @@ A file name w/o extension es un string. \ after el last slash to last dot or end
 The file-separator byte es un byte igual to 28.
 
 A filetime es un record con
-A number called dwlowdatetime,
-A number called dwhighdatetime.
+A number llamado dwlowdatetime,
+A number llamado dwhighdatetime.
 
 \Para llenar una caja con un color;
 Para llenar un box con un color:
@@ -5983,7 +5985,7 @@ Para encontrar next usando un text y un flag:
 Para encontrar next usando un text y un flag (wrapped text):
   Borrar el flag.
   Si el text es nil, salir.
-  Convertir el encontrar anchor to un absolute position called offset usando el text.
+  Convertir el encontrar anchor to un absolute position llamado offset usando el text.
   Extraer un string desde el text (no linefeed additions).
   Poner el string's first plus el offset minus 1 into un substring's first.
   Poner el substring's first plus el encontrar string's length minus 1 into el substring's last.
@@ -6186,9 +6188,9 @@ Para flush un event queue:
 
 A font es un record con
   A name y 
-  A height y 
-  Un nombre at el name y 
-  Una altura at el height.
+  A height. \ y 
+  \Un nombre at el name y 
+  \Una altura at el height.
 
 A font height es some twips. \ indicates line height - el letters will fit nicely in un box of this height
 
@@ -6210,7 +6212,7 @@ A font resource es un handle.
 Some font widths es un thing con \ used for pdf conversion
   A font,
   A count,
-  A number pointer called data.
+  A number pointer llamado data.
 
 A foot es 12 inches.
 
@@ -6231,9 +6233,9 @@ A fraction es un record con
   A numerator number,
   A denominator number, y
   A top number at el numerator, 
-  A bottom number at el denominator, y
-  Un numerador at el numerator, 
-  Un denominador at el denominator.
+  A bottom number at el denominator.\, y
+  \Un numerador at el numerator, 
+  \Un denominador at el denominator.
 
 A fraction pair es un record con 
   A fraction y 
@@ -6244,21 +6246,21 @@ The g-key es un key igual to 71.
 A gcd es un number.
 
 A gcpresults es un record con
-  A number called lstructsize,
-  A pchar called lpoutstring,
-  A number pointer called lporder,
-  A number pointer called lpdx,
-  A number pointer called lpcaretpos,
-  A pointer called lpclass,
-  A pointer called lpglyphs,
-  A number called nglyphs,
-  A number called maxfit.
+  A number llamado lstructsize,
+  A pchar llamado lpoutstring,
+  A number pointer llamado lporder,
+  A number pointer llamado lpdx,
+  A number pointer llamado lpcaretpos,
+  A pointer llamado lpclass,
+  A pointer llamado lpglyphs,
+  A number llamado nglyphs,
+  A number llamado maxfit.
 
 A gdiplusstartupinput es un record con
-  A number called gdiplusversion,
-  A pointer called debugeventcallback,
-  A number called suppressbackgroundthread,
-  A number called suppressexternalcodecs.
+  A number llamado gdiplusversion,
+  A pointer llamado debugeventcallback,
+  A number llamado suppressbackgroundthread,
+  A number llamado suppressexternalcodecs.
 
 A geometric figure es un figure.
 
@@ -6849,10 +6851,10 @@ A gpimage es un pointer.
 A gpimageattributes es un pointer.
 
 A gprect es un record con
-  A number called x,
-  A number called y,
-  A number called width,
-  A number called height.
+  A number llamado x,
+  A number llamado y,
+  A number llamado width,
+  A number llamado height.
 
 The gptoken es un gptoken.
 
@@ -6908,14 +6910,14 @@ Para handle any wm-activate con un w-param (activate):
 \  seterrormode(sem_failcriticalerrors) \ keeps certain disk errors desde appearing
   Crear un event.
   Poner "activate" into el event's kind.
-  Poner "activar" into el event's clase.
+  \Poner "activar" into el event's clase.
   Enque el event.
   Llamada "user32.dll" "PostMessageA" con el main window y 0 [wm_null] y 0 y 0.
 
 Para handle any wm-activate con un w-param (deactivate):
   Crear un event.
   Poner "deactivate" into el event's kind.
-  Poner "desactivar" into el event's clase.
+  \Poner "desactivar" into el event's clase.
   Enque el event.
   Llamada "user32.dll" "PostMessageA" con el main window y 0 [wn_null] y 0 y 0.
 
@@ -6926,7 +6928,7 @@ Para handle any wm-char con un w-param y un l-param:
   Si el byte es not printable, salir.
   Crear un event.
   Poner "key down" into el event's kind.
-  Poner "tecla abajo" into el event's clase.
+  \Poner "tecla abajo" into el event's clase.
   Si el shift key was down, definir el event's shift flag.
   Poner el byte into el event's byte.
   Convertir el l-param to el event's key.
@@ -6941,7 +6943,7 @@ Para handle any wm-destroy:
 Para handle any wm-lbuttondblclk con un l-param:
   Crear un event.
   Poner "left double click" into el event's kind.
-  Poner "clic izquierdo doble" into el event's clase.
+  \Poner "clic izquierdo doble" into el event's clase.
   Si el alt key was down, definir el event's alt flag.
   Si el ctrl key was down, definir el event's ctrl flag.
   Si el shift key was down, definir el event's shift flag.
@@ -6951,7 +6953,7 @@ Para handle any wm-lbuttondblclk con un l-param:
 Para handle any wm-lbuttondown con un l-param:
   Crear un event.
   Poner "left click" into el event's kind.
-  Poner "clic izquierdo" into el event's clase.
+  \Poner "clic izquierdo" into el event's clase.
   Si el alt key was down, definir el event's alt flag.
   Si el ctrl key was down, definir el event's ctrl flag.
   Si el shift key was down, definir el event's shift flag.
@@ -6963,13 +6965,13 @@ Para handle any wm-paint con un window:
   Llamada "user32.dll" "EndPaint" con el window y el paintstruct's whereabouts.
   Crear un event.
   Poner "refresh" into el event's kind.
-  Poner "refrescar" into el event's clase.
+  \Poner "refrescar" into el event's clase.
   Enque el event.
 
 Para handle any wm-rbuttondblclk con un l-param:
   Crear un event.
   Poner "right double click" into el event's kind.
-  Poner "clic derecho doble" into el event's clase.
+  \Poner "clic derecho doble" into el event's clase.
   Si el alt key was down, definir el event's alt flag.
   Si el ctrl key was down, definir el event's ctrl flag.
   Si el shift key was down, definir el event's shift flag.
@@ -6979,7 +6981,7 @@ Para handle any wm-rbuttondblclk con un l-param:
 Para handle any wm-rbuttondown con un l-param:
   Crear un event.
   Poner "right click" into el event's kind.
-  Poner "clic derecho" into el event's clase.
+  \Poner "clic derecho" into el event's clase.
   Si el alt key was down, definir el event's alt flag.
   Si el ctrl key was down, definir el event's ctrl flag.
   Si el shift key was down, definir el event's shift flag.
@@ -6996,7 +6998,7 @@ Para handle any wm-keydown con un w-param y un l-param:
   Si el key es any wm-char key, salir.
   Crear un event.
   Poner "key down" into el event's kind.
-  Poner "tecla abajo" into el event's clase.
+  \Poner "tecla abajo" into el event's clase.
   Si el alt key was down, definir el event's alt flag.
   Si el ctrl key was down, definir el event's ctrl flag.
   Si el shift key was down, definir el event's shift flag.
@@ -7445,7 +7447,7 @@ A iid es un uuid.
 
 \Para imaginar una caja algunos twips por algunos otros twips;
 Para imaginar un box some twips by some other twips;
-Para hacer una caja algunos twips por algunos otros twips;
+\Para hacer una caja algunos twips por algunos otros twips;
 Para hacer un box some twips by some other twips:
   Poner 0 into el box's left.
   Poner 0 into el box's top.
@@ -7611,7 +7613,7 @@ Para imaginar un roundy box con un spot y another spot y un radius;
 Para hacer un roundy box con un spot y another spot y un radius:
   Poner el spot y el other spot y el radius into el roundy box.
 
-Para hacer un punto con una coordenada-x y una coordenada-y;
+\Para hacer un punto con una coordenada-x y una coordenada-y;
 Para imaginar un spot con un x-coord y un y-coord;
 Para hacer un spot con un x-coord y un y-coord:
   Poner el x-coord y el y-coord into el spot.
@@ -7966,110 +7968,110 @@ Para initialize el colors:
   Poner el darker sky color into el darker sky blue pen.
   Poner el darkest sky color into el darkest sky blue pen.
 \ Spanish colors
-  Poner el black color into el color negro.
-  Poner el white color into el color blanco.
-  Poner el borrar color into el color claro.
-  Poner el lightest gray color into el color gris muy muy claro.
-  Poner el lighter gray color into el color gris muy claro.
-  Poner el light gray color into el color gris claro.
-  Poner el gray color into el color gris.
-  Poner el dark gray color into el color gris oscuro.
-  Poner el darker gray color into el color gris muy oscuro.
-  Poner el darkest gray color into el color gris muy muy oscuro.
-  Poner el lightest red color into el color rojo muy muy claro.
-  Poner el lighter red color into el color rojo muy claro.
-  Poner el light red color into el color rojo claro.
-  Poner el red color into el color rojo.
-  Poner el dark red color into el color rojo oscuro.
-  Poner el darker red color into el color rojo muy oscuro.
-  Poner el darkest red color into el color rojo muy muy oscuro.
-  Poner el lightest orange color into el color naranja muy muy claro.
-  Poner el lighter orange color into el color naranja muy claro.
-  Poner el light orange color into el color naranja claro.
-  Poner el orange color into el color naranja.
-  Poner el dark orange color into el color naranja oscuro.
-  Poner el darker orange color into el color naranja muy oscuro.
-  Poner el darkest orange color into el color naranja muy muy oscuro.
-  Poner el lightest yellow color into el color amarillo muy muy claro.
-  Poner el lighter yellow color into el color amarillo muy claro.
-  Poner el light yellow color into el color amarillo claro.
-  Poner el yellow color into el color amarillo.
-  Poner el dark yellow color into el color amarillo oscuro.
-  Poner el darker yellow color into el color amarillo muy oscuro.
-  Poner el darkest yellow color into el color amarillo muy muy oscuro.
-  Poner el lightest lime color into el color lima muy muy claro.
-  Poner el lighter lime color into el color lima muy claro.
-  Poner el light lime color into el color lima claro.
-  Poner el lime color into el color lima.
-  Poner el dark lime color into el color lima oscuro.
-  Poner el darker lime color into el color lima muy oscuro.
-  Poner el darkest lime color into el color lima muy muy oscuro.
-  Poner el lightest green color into el color verde muy muy claro.
-  Poner el lighter green color into el color verde muy claro.
-  Poner el light green color into el color verde claro.
-  Poner el green color into el color verde.
-  Poner el dark green color into el color verde oscuro.
-  Poner el darker green color into el color verde muy oscuro.
-  Poner el darkest green color into el color verde muy muy oscuro.
-  Poner el lightest teal color into el color menta muy muy claro.
-  Poner el lighter teal color into el color menta muy claro.
-  Poner el light teal color into el color menta claro.
-  Poner el teal color into el color menta.
-  Poner el dark teal color into el color menta oscuro.
-  Poner el darker teal color into el color menta muy oscuro.
-  Poner el darkest teal color into el color menta muy muy oscuro.
-  Poner el lightest cyan color into el color cian muy muy claro.
-  Poner el lighter cyan color into el color cian muy claro.
-  Poner el light cyan color into el color cian claro.
-  Poner el cyan color into el color cian.
-  Poner el dark cyan color into el color cian oscuro.
-  Poner el darker cyan color into el color cian muy oscuro.
-  Poner el darkest cyan color into el color cian muy muy oscuro.
-  Poner el lightest sky color into el color celeste muy muy claro.
-  Poner el lighter sky color into el color celeste muy claro.
-  Poner el light sky color into el color celeste claro.
-  Poner el sky color into el color celeste.
-  Poner el dark sky color into el color celeste oscuro.
-  Poner el darker sky color into el color celeste muy oscuro.
-  Poner el darkest sky color into el color celeste muy muy oscuro.
-  Poner el lightest blue color into el color azul muy muy claro.
-  Poner el lighter blue color into el color azul muy claro.
-  Poner el light blue color into el color azul claro.
-  Poner el blue color into el color azul.
-  Poner el dark blue color into el color azul oscuro.
-  Poner el darker blue color into el color azul muy oscuro.
-  Poner el darkest blue color into el color azul muy muy oscuro.
-  Poner el lightest purple color into el color púrpura muy muy claro.
-  Poner el lighter purple color into el color púrpura muy claro.
-  Poner el light purple color into el color púrpura claro.
-  Poner el purple color into el color púrpura.
-  Poner el dark purple color into el color púrpura oscuro.
-  Poner el darker purple color into el color púrpura muy oscuro.
-  Poner el darkest purple color into el color púrpura muy muy oscuro.
-  Poner el lightest magenta color into el color magenta muy muy claro.
-  Poner el lighter magenta color into el color magenta muy claro.
-  Poner el light magenta color into el color magenta claro.
-  Poner el magenta color into el color magenta.
-  Poner el dark magenta color into el color magenta oscuro.
-  Poner el darker magenta color into el color magenta muy oscuro.
-  Poner el darkest magenta color into el color magenta muy muy oscuro.
-  Poner el lightest violet color into el color fucsia muy muy claro.
-  Poner el lighter violet color into el color fucsia muy claro.
-  Poner el light violet color into el color fucsia claro.
-  Poner el violet color into el color fucsia.
-  Poner el dark violet color into el color fucsia oscuro.
-  Poner el darker violet color into el color fucsia muy oscuro.
-  Poner el darkest violet color into el color fucsia muy muy oscuro.
+  \ Poner el black color into el color negro.
+  \ Poner el white color into el color blanco.
+  \ Poner el borrar color into el color claro.
+  \ Poner el lightest gray color into el color gris muy muy claro.
+  \ Poner el lighter gray color into el color gris muy claro.
+  \ Poner el light gray color into el color gris claro.
+  \ Poner el gray color into el color gris.
+  \ Poner el dark gray color into el color gris oscuro.
+  \ Poner el darker gray color into el color gris muy oscuro.
+  \ Poner el darkest gray color into el color gris muy muy oscuro.
+  \ Poner el lightest red color into el color rojo muy muy claro.
+  \ Poner el lighter red color into el color rojo muy claro.
+  \ Poner el light red color into el color rojo claro.
+  \ Poner el red color into el color rojo.
+  \ Poner el dark red color into el color rojo oscuro.
+  \ Poner el darker red color into el color rojo muy oscuro.
+  \ Poner el darkest red color into el color rojo muy muy oscuro.
+  \ Poner el lightest orange color into el color naranja muy muy claro.
+  \ Poner el lighter orange color into el color naranja muy claro.
+  \ Poner el light orange color into el color naranja claro.
+  \ Poner el orange color into el color naranja.
+  \ Poner el dark orange color into el color naranja oscuro.
+  \ Poner el darker orange color into el color naranja muy oscuro.
+  \ Poner el darkest orange color into el color naranja muy muy oscuro.
+  \ Poner el lightest yellow color into el color amarillo muy muy claro.
+  \ Poner el lighter yellow color into el color amarillo muy claro.
+  \ Poner el light yellow color into el color amarillo claro.
+  \ Poner el yellow color into el color amarillo.
+  \ Poner el dark yellow color into el color amarillo oscuro.
+  \ Poner el darker yellow color into el color amarillo muy oscuro.
+  \ Poner el darkest yellow color into el color amarillo muy muy oscuro.
+  \ Poner el lightest lime color into el color lima muy muy claro.
+  \ Poner el lighter lime color into el color lima muy claro.
+  \ Poner el light lime color into el color lima claro.
+  \ Poner el lime color into el color lima.
+  \ Poner el dark lime color into el color lima oscuro.
+  \ Poner el darker lime color into el color lima muy oscuro.
+  \ Poner el darkest lime color into el color lima muy muy oscuro.
+  \ Poner el lightest green color into el color verde muy muy claro.
+  \ Poner el lighter green color into el color verde muy claro.
+  \ Poner el light green color into el color verde claro.
+  \ Poner el green color into el color verde.
+  \ Poner el dark green color into el color verde oscuro.
+  \ Poner el darker green color into el color verde muy oscuro.
+  \ Poner el darkest green color into el color verde muy muy oscuro.
+  \ Poner el lightest teal color into el color menta muy muy claro.
+  \ Poner el lighter teal color into el color menta muy claro.
+  \ Poner el light teal color into el color menta claro.
+  \ Poner el teal color into el color menta.
+  \ Poner el dark teal color into el color menta oscuro.
+  \ Poner el darker teal color into el color menta muy oscuro.
+  \ Poner el darkest teal color into el color menta muy muy oscuro.
+  \ Poner el lightest cyan color into el color cian muy muy claro.
+  \ Poner el lighter cyan color into el color cian muy claro.
+  \ Poner el light cyan color into el color cian claro.
+  \ Poner el cyan color into el color cian.
+  \ Poner el dark cyan color into el color cian oscuro.
+  \ Poner el darker cyan color into el color cian muy oscuro.
+  \ Poner el darkest cyan color into el color cian muy muy oscuro.
+  \ Poner el lightest sky color into el color celeste muy muy claro.
+  \ Poner el lighter sky color into el color celeste muy claro.
+  \ Poner el light sky color into el color celeste claro.
+  \ Poner el sky color into el color celeste.
+  \ Poner el dark sky color into el color celeste oscuro.
+  \ Poner el darker sky color into el color celeste muy oscuro.
+  \ Poner el darkest sky color into el color celeste muy muy oscuro.
+  \ Poner el lightest blue color into el color azul muy muy claro.
+  \ Poner el lighter blue color into el color azul muy claro.
+  \ Poner el light blue color into el color azul claro.
+  \ Poner el blue color into el color azul.
+  \ Poner el dark blue color into el color azul oscuro.
+  \ Poner el darker blue color into el color azul muy oscuro.
+  \ Poner el darkest blue color into el color azul muy muy oscuro.
+  \ Poner el lightest purple color into el color púrpura muy muy claro.
+  \ Poner el lighter purple color into el color púrpura muy claro.
+  \ Poner el light purple color into el color púrpura claro.
+  \ Poner el purple color into el color púrpura.
+  \ Poner el dark purple color into el color púrpura oscuro.
+  \ Poner el darker purple color into el color púrpura muy oscuro.
+  \ Poner el darkest purple color into el color púrpura muy muy oscuro.
+  \ Poner el lightest magenta color into el color magenta muy muy claro.
+  \ Poner el lighter magenta color into el color magenta muy claro.
+  \ Poner el light magenta color into el color magenta claro.
+  \ Poner el magenta color into el color magenta.
+  \ Poner el dark magenta color into el color magenta oscuro.
+  \ Poner el darker magenta color into el color magenta muy oscuro.
+  \ Poner el darkest magenta color into el color magenta muy muy oscuro.
+  \ Poner el lightest violet color into el color fucsia muy muy claro.
+  \ Poner el lighter violet color into el color fucsia muy claro.
+  \ Poner el light violet color into el color fucsia claro.
+  \ Poner el violet color into el color fucsia.
+  \ Poner el dark violet color into el color fucsia oscuro.
+  \ Poner el darker violet color into el color fucsia muy oscuro.
+  \ Poner el darkest violet color into el color fucsia muy muy oscuro.
 \ Spanish special colors
-  Poner el lightest orange color into el color marrón muy muy claro.
-  Poner el lighter orange color into el color marrón muy claro.
-  Poner el light orange color into el color marrón claro.
-  Poner el orange color into el color marrón.
-  Poner el dark orange color into el color marrón oscuro.
-  Poner el darker orange color into el color marrón muy oscuro.
-  Poner el darkest orange color into el color marrón muy muy oscuro.
-  Poner el pink color into el color rosado.
-  Poner el gold color into el color oro.
+  \ Poner el lightest orange color into el color marrón muy muy claro.
+  \ Poner el lighter orange color into el color marrón muy claro.
+  \ Poner el light orange color into el color marrón claro.
+  \ Poner el orange color into el color marrón.
+  \ Poner el dark orange color into el color marrón oscuro.
+  \ Poner el darker orange color into el color marrón muy oscuro.
+  \ Poner el darkest orange color into el color marrón muy muy oscuro.
+  \ Poner el pink color into el color rosado.
+  \ Poner el gold color into el color oro.
 
 Para initialize com:
   Llamada "ole32.dll" "CoInitializeEx" con 0 y 2 [coinit_apartmentthreaded].
@@ -8087,9 +8089,9 @@ Para initialize el cursors:
   Initialize el cursors (arrow cursor).
   Initialize el cursors (hand cursor).
   Initialize el cursors (i-beam cursor).
-  Poner el arrow cursor into el cursor flecha.
-  Poner el hand cursor into el cursor mano.
-  Poner el i-beam cursor into el cursor rayo-i.
+  \Poner el arrow cursor into el cursor flecha.
+  \Poner el hand cursor into el cursor mano.
+  \Poner el i-beam cursor into el cursor rayo-i.
   Esconder el cursor.
 
 Para initialize el cursors (arrow cursor):
@@ -8202,9 +8204,9 @@ Para initialize el screen:
   Poner 0 y 0 y el width y el height into el screen's box.
   Restar el tpp desde el screen's right-bottom.
 \ new below
-  Poner el screen's box into la pantalla's caja.
-  Poner el screen's pixel height into la pantalla's pixel height.
-  Poner el screen's pixel width into la pantalla's pixel width.
+  \Poner el screen's box into la pantalla's caja.
+  \Poner el screen's pixel height into la pantalla's pixel height.
+  \Poner el screen's pixel width into la pantalla's pixel width.
 
 Para initialize el screen canvas:
   Llamada "user32.dll" "GetDC" con el main window retornando el screen canvas.
@@ -8363,50 +8365,56 @@ The inverted-exclamation-mark byte es un byte igual to 161.
 The inverted-question-mark byte es un byte igual to 191.
 
 A in_addr es un record con
-  A byte called s_b1,
-  A byte called s_b2,
-  A byte called s_b3,
-  A byte called s_b4,
-  A wyrd [unsigned] called  s_w1 at el s_b1,
-  A wyrd [unsigned] called s_w2 at el s_b3,
-  A number called s_addr at el s_b1.
+  A byte llamado s_b1,
+  A byte llamado s_b2,
+  A byte llamado s_b3,
+  A byte llamado s_b4,
+  A wyrd [unsigned] llamado  s_w1 at el s_b1,
+  A wyrd [unsigned] llamado s_w2 at el s_b3,
+  A number llamado s_addr at el s_b1.
 
 An ip address es un record con
-  A number, un número at el number,
+  A number, \un número at el number,
   A string. \, un cadena at el string.
 
 An istream es un pointer to un istream object.
 
-An istream object es un record con un istream vtable called vtable.
+An istream object es un record con un istream vtable llamado vtable.
 
 An istream vtable es un pointer to un istream vtable record.
 
 An istream vtable record es un record con
   \ iunknown
-  A pointer called queryinterface,
-  A pointer called addref,
-  A pointer called release, \ function(this:istream):number; stdcall;
+  A pointer llamado queryinterface,
+  A pointer llamado addref,
+  A pointer llamado release, \ function(this:istream):number; stdcall;
   \ istream
-  A pointer called read,
-  A pointer called write,
-  A pointer called seek,
-  A pointer called setsize,
-  A pointer called copyto,
-  A pointer called commit,
-  A pointer called revert,
-  A pointer called lockregion,
-  A pointer called unlockregion,
-  A pointer called stat,
-  A pointer called clone.
+  A pointer llamado read,
+  A pointer llamado write,
+  A pointer llamado seek,
+  A pointer llamado setsize,
+  A pointer llamado copyto,
+  A pointer llamado commit,
+  A pointer llamado revert,
+  A pointer llamado lockregion,
+  A pointer llamado unlockregion,
+  A pointer llamado stat,
+  A pointer llamado clone.
 
 An item es un record con
   A kind [directory, file], \ English
-    una clase [directorio, archivo], \ Spanish kind
-  A path, un directory, un designator, un extension,
-    una ruta at el path, un directorio at el directory, un designador at el designator, una extensión at el extension,
-  A size, un tamaño at el size,
+  \A clase [directorio, archivo], \ Spanish kind
+  A path, un directory, 
+  A designator, 
+  A extension,
+  \A ruta at el path, 
+  \A directorio at el directory, 
+  \A designador at el designator, 
+  \A extensión at el extension,
+  A size, \un tamaño at el size,
   A creation date/time string,
-  A win32finddata y un handle.
+  A win32finddata y 
+  A handle.
 
 The j-key es un key igual to 74.
 
@@ -8733,9 +8741,9 @@ Para limitar some texts to un count:
 
 A line es un record con 
   A start spot y 
-  A end spot,
-  Un punto de inicio at el start y 
-  Un punto final at el end.
+  A end spot. \,
+  \Un punto de inicio at el start y 
+  \Un punto final at el end.
 
 The linefeed byte es un byte igual to 10.
 
@@ -8937,9 +8945,9 @@ Para bloquear [una parte rectangular de] un gpbitmap usando un bitmapdata (24-bi
   el bitmapdata's whereabouts.
 
 A logbrush es un record con
-  A number called lbstyle,
-  A colorref called lbcolor,
-  A number called lbhatch.
+  A number llamado lbstyle,
+  A colorref llamado lbcolor,
+  A number llamado lbhatch.
 
 The lower-double-quote byte es un byte igual to 132.
 
@@ -9171,11 +9179,11 @@ The module es un record con
   A path,
   A directory,
   A root directory, \ one up desde el directory that exe es run from
-  A file name w/o extension called name.
+  A file name w/o extension llamado name.
 
 The mouse es un record con
-  A key called left button, una tecla llamada botón izquierdo at el left button,
-  A key called right button, una tecla llamada botón derecho at el right button.
+  A key llamado left button, \una tecla llamada botón izquierdo at el left button,
+  A key llamado right button. \, una tecla llamada botón derecho at el right button.
 
 Para mover el anchor left to any non-alphanumeric byte in un text:
   Si el text es nil, salir.
@@ -9834,12 +9842,12 @@ Para mover un window right:
 A ms es 1 millisecond.
 
 A msg es un record con
-  A window called hwnd,
-  A number called message,
-  A w-param called wparam,
-  A l-param called lparam,
-  A number called time,
-  A spot called pt.
+  A window llamado hwnd,
+  A number llamado message,
+  A w-param llamado wparam,
+  A l-param llamado lparam,
+  A number llamado time,
+  A spot llamado pt.
 
 A multiple es un number.
 
@@ -10131,40 +10139,40 @@ Para delinear un box con un color:
   Dibujar el box con el color y el borrar color.
 
 A outlinetextmetric es un record con
-  A number called otmsize,
-  A textmetric called otmtextmetrics,
+  A number llamado otmsize,
+  A textmetric llamado otmtextmetrics,
   3 bytes, \ needed to align structure
-  A byte called otmfiller,
-  A panose called otmpanosenumber,
+  A byte llamado otmfiller,
+  A panose llamado otmpanosenumber,
   1 bytes, \ needed to align structure
-  A number called otmfsselection,
-  A number called otmfstype,
-  A number called otmscharsloperise,
-  A number called otmscharsloperun,
-  A number called otmitalicangle,
-  A number called otmemsquare,
-  A number called otmascent,
-  A number called otmdescent,
-  A number called otmlinegap,
-  A number called otmscapemheight,
-  A number called otmsxheight,
-  A box called otmrcfontbox,
-  A number called otmmacascent,
-  A number called otmmacdescent,
-  A number called otmmaclinegap,
-  A number called otmusminiumppem,
-  A spot called otmptsubscriptsize,
-  A spot called otmptsubscriptoffset,
-  A spot called otmptsuperscriptsize,
-  A spot called otmptsuperscriptoffset,
-  A number called otmsstrikeoutsize,
-  A number called otmsstrikeoutposition,
-  A number called otmsunderscoresize,
-  A number called otmsunderscoreposition,
-  A pointer called otmpfamilyname,
-  A pointer called otmpfacename,
-  A pointer called otmpstylename,
-  A pointer called otmpfullname.
+  A number llamado otmfsselection,
+  A number llamado otmfstype,
+  A number llamado otmscharsloperise,
+  A number llamado otmscharsloperun,
+  A number llamado otmitalicangle,
+  A number llamado otmemsquare,
+  A number llamado otmascent,
+  A number llamado otmdescent,
+  A number llamado otmlinegap,
+  A number llamado otmscapemheight,
+  A number llamado otmsxheight,
+  A box llamado otmrcfontbox,
+  A number llamado otmmacascent,
+  A number llamado otmmacdescent,
+  A number llamado otmmaclinegap,
+  A number llamado otmusminiumppem,
+  A spot llamado otmptsubscriptsize,
+  A spot llamado otmptsubscriptoffset,
+  A spot llamado otmptsuperscriptsize,
+  A spot llamado otmptsuperscriptoffset,
+  A number llamado otmsstrikeoutsize,
+  A number llamado otmsstrikeoutposition,
+  A number llamado otmsunderscoresize,
+  A number llamado otmsunderscoreposition,
+  A pointer llamado otmpfamilyname,
+  A pointer llamado otmpfacename,
+  A pointer llamado otmpstylename,
+  A pointer llamado otmpfullname.
 
 An x-offset es un offset.
 A y-offset es un offset.
@@ -10269,11 +10277,11 @@ The page-down key es un key igual to 34.
 The page-up key es un key igual to 33.
 
 A paintstruct es un record con
-  An hdc called hdc,
-  A number called ferase,
-  A box called rcpaint,
-  A number called frestore,
-  A number called fincupdate,
+  An hdc llamado hdc,
+  A number llamado ferase,
+  A box llamado rcpaint,
+  A number llamado frestore,
+  A number llamado fincupdate,
   32 bytes.
 
 An x-number es un number.
@@ -10281,21 +10289,21 @@ A y-number es un number.
 
 A pair es un record con 
   A x-number y 
-  A y-number y 
-  Un número-x at el x-number y 
-  Un número-y at el y-number.
+  A y-number. \ y 
+  \Un número-x at el x-number y 
+  \Un número-y at el y-number.
 
 A panose es un record con
-  A byte called bfamilytype,
-  A byte called bserifstyle,
-  A byte called bweight,
-  A byte called bproportion,
-  A byte called bcontrast,
-  A byte called bstrokevariation,
-  A byte called barmstyle,
-  A byte called bletterform,
-  A byte called bmidline,
-  A byte called bxheight.
+  A byte llamado bfamilytype,
+  A byte llamado bserifstyle,
+  A byte llamado bweight,
+  A byte llamado bproportion,
+  A byte llamado bcontrast,
+  A byte llamado bstrokevariation,
+  A byte llamado barmstyle,
+  A byte llamado bletterform,
+  A byte llamado bmidline,
+  A byte llamado bxheight.
 
 The paragraph byte es un byte igual to 182.
 
@@ -10318,8 +10326,8 @@ A pdf object es un thing con
   A data buffer,
   A font name [font definition],
   A font info [font definition],
-  Some string things called font strings [page],
-  Some string things called image strings [page].
+  Some string things llamado font strings [page],
+  Some string things llamado image strings [page].
 
 A pdf outline entry es un thing con
   A pdf object (reference),
@@ -10334,10 +10342,10 @@ A pdf state es un record con
   A document flag,
   A page flag,
   An object number,
-  Some pdf objects called objects,
+  Some pdf objects llamado objects,
   An xref offset,
   An outline pdf object (reference),
-  Some pdf outline entries called outline entries,
+  Some pdf outline entries llamado outline entries,
   A root pdf object (reference),
   A parent pdf object (reference),
   A current contents pdf object (reference),
@@ -10634,12 +10642,12 @@ Para elegir  un really really light color:
 
 A picture es un thing con
   \ all boxes are in twits
-  A box [location of cropped picture on el page], una caja at el box,
+  A box [location of cropped picture on el page], \una caja at el box,
   A uncropped box [location of entire picture on el page],
   A grayscale flag,
   A mirror flag,
   A rotate angle, \ rotation es clockwise
-  A hex string called data [original bytes in original format],
+  A hex string llamado data [original bytes in original format],
   A gpbitmap.
 
 The pink color es un color.
@@ -10762,27 +10770,27 @@ Para anteponer some things to some other things:
 The print-screen key es un key igual to 44.
 
 A printdlgex es un record con
-  A number called lstructsize,
-  A window called hwndowner,
-  A handle called hdevmode,
-  A handle called hdevnames,
-  A canvas called hdc,
-  A number called flags,
-  A number called flags2,
-  A number called exclusionflags,
-  A number called npageranges,
-  A number called nmaxpageranges,
-  A pointer called lppageranges,
-  A number called nminpage,
-  A number called nmaxpage,
-  A number called ncopies,
-  A handle called hinstance,
-  A pointer called lpprinttemplatename,
-  A pointer called lpcallback,
-  A number called npropertypages,
-  A pointer called lphpropertypages,
-  A number called nstartpage,
-  A number called dwresultaction.
+  A number llamado lstructsize,
+  A window llamado hwndowner,
+  A handle llamado hdevmode,
+  A handle llamado hdevnames,
+  A canvas llamado hdc,
+  A number llamado flags,
+  A number llamado flags2,
+  A number llamado exclusionflags,
+  A number llamado npageranges,
+  A number llamado nmaxpageranges,
+  A pointer llamado lppageranges,
+  A number llamado nminpage,
+  A number llamado nmaxpage,
+  A number llamado ncopies,
+  A handle llamado hinstance,
+  A pointer llamado lpprinttemplatename,
+  A pointer llamado lpcallback,
+  A number llamado npropertypages,
+  A pointer llamado lphpropertypages,
+  A number llamado nstartpage,
+  A number llamado dwresultaction.
 
 The printer canvas es un canvas.
 
@@ -10793,10 +10801,10 @@ A process es un handle.
 A process pointer es un pointer to un process.
 
 A processinfo es un record con
-  A handle called hprocess,
-  A handle called hthread,
-  A number called dwprocessid,
-  A number called dwthreadid.
+  A handle llamado hprocess,
+  A handle llamado hthread,
+  A number llamado dwprocessid,
+  A number llamado dwthreadid.
 
 A punch line es un string.
 
@@ -11344,7 +11352,7 @@ Para poner un pair's absolute value into another pair:
   Poner el pair into el other pair.
   Eliminar signo de el other pair.
 
-Para centrar una imagen en un hoja apaisada; \ unclear why this doesn't get called properly when I replce hoja apaisada con caja ***
+\Para centrar una imagen en un hoja apaisada; \ unclear why this doesn't get llamado properly when I replce hoja apaisada con caja ***
 \Para centrar una imagen en una caja;
 Para poner un picture in el middle of un box;
 Para centrar un picture in un box:
@@ -11805,7 +11813,7 @@ Para relinquish control:
   Descartar el event queue.
   Crear un event.
   Poner "done" into el event's kind.
-  Poner "hecho" into el event's clase.
+  \Poner "hecho" into el event's clase.
   Enque el event.
 
 A quora es un thing con 
@@ -11902,11 +11910,12 @@ Para leer un file into un buffer:
   Llamada "kernel32.dll" "ReadFile" con el file y el buffer's first y el size y un number's whereabouts y 0 retornando un result number.
   Si el result number es 0, Poner "Error leyendo archivo." into el error de e/s; salir.
 
+\Para leer una bandera desde una consola; 
 Para leer un flag desde un console:
   Leer un string desde el console.
   Convertir el string to el flag.
 
-Para leer una bandera desde una consola; To read un fraction desde un console:
+Para leer un fraction desde un console:
   Leer un string desde el console.
   Convertir el string to el fraction.
 
@@ -11960,7 +11969,7 @@ Para leer un reply desde un terminal:
 \ questionable below
   Crear un event.
   Poner "left click" into el event's kind.
-  Poner "clic izquierdo" into el event's clase.
+  \Poner "clic izquierdo" into el event's clase.
   Poner el mouse's spot into el event's spot.
   Enque el event.
   Actualizar el cursor.
@@ -12115,15 +12124,15 @@ Para reducir un fraction:
 
 A refer es un thing con 
   A string y 
-  A pointer (reference), 
-  Una cadena at el string y 
-  Un puntero (referencia) at el pointer.
+  A pointer (reference). \, 
+  \Una cadena at el string y 
+  \Un puntero (referencia) at el pointer.
 
 \Para actualizar el cursor;
 Para actualizar el cursor:
   Crear un event.
   Poner "set cursor" into el event's kind.
-  Poner "cursor" into el event's clase.
+  \Poner "cursor" into el event's clase.
   Si el alt key es down, definir el event's alt flag.
   Si el ctrl key es down, definir el event's ctrl flag.
   Si el shift key es down, definir el event's shift flag.
@@ -12257,7 +12266,7 @@ Para eliminar el first byte desde un string:
   Colocar un substring on el first byte of el string.
   Eliminar bytes desde el string usando el substring.
 
-Para eliminar el último byte en un cadena; 
+\Para eliminar el último byte en un cadena; 
 Para eliminar el last byte desde un string:
   Colocar un substring on el last byte of el string.
   Eliminar bytes desde el string usando el substring.
@@ -12561,16 +12570,16 @@ Para reverse some things:
   Repetir.
 
 A rgb es un record con
-  A byte called blue byte,
-  A byte called green byte,
-  A byte called red byte.
+  A byte llamado blue byte,
+  A byte llamado green byte,
+  A byte llamado red byte.
 
 A rgb pointer es un pointer to un rgb.
 
 A rider es un record con \ Note: You will need to refactor the "bump a rider" y "unbump a rider" routines if you change the order of the fields of this record
-  An original substring, una subcadena primera at el original substring,
-  A source substring, una subcadena fuente at el source substring and
-  A token substring, una subcadena componente at el token substring.
+  An original substring, \una subcadena primera at el original substring,
+  A source substring, \una subcadena fuente at el source substring and
+  A token substring .\, una subcadena componente at el token substring.
 
 The right-alligator byte es un byte igual to 62.
 
@@ -12719,10 +12728,12 @@ A roundy box es un box con
   A right coord, 
   A bottom coord,
   A left-top spot at el left, 
-  Un right-bottom spot at el right, y 
+  A right-bottom spot at el right, y 
   A radius.
 
-A row es un thing con un row# y un string.
+A row es un thing con 
+  A row# y 
+  A string.
 
 A row# es un number.
 
@@ -12989,8 +13000,6 @@ Para scroll un text up one page:
   Limitar el origin of el text.
 
 The scrolllock key es un key igual to 145.
-
-Un segundo es 1000 milisegundos.
 
 A second es 1000 milliseconds.
 
@@ -13265,7 +13274,7 @@ Para shut down:
   Destroy el stack.
   Destroy el lexicon.
   Destroy el console.
-  Destroy la consola.
+  \Destroy la consola.
   Destroy el terminal.
   Finalize el context.
   Finalize el canvases.
@@ -13426,10 +13435,10 @@ Para suavizar un polygon some times: \ this use to "times" es un fluke, I think 
 An smtp server es un string.
 
 A sockaddr es un record con
-  A wyrd called sin_family,
-  A big-endian unsigned wyrd called sin_port,
-  A in_addr called sin_addr,
-  8 bytes called sin_zero.
+  A wyrd llamado sin_family,
+  A big-endian unsigned wyrd llamado sin_port,
+  A in_addr llamado sin_addr,
+  8 bytes llamado sin_zero.
 
 A sockaddrptr es un pointer to un sockaddr.
 
@@ -13580,11 +13589,11 @@ A spot es un pair con
   An x-coord y 
   An y-coord y 
   An left at el x-coord y 
-  An top at el y-coord y
-  Una coordenada-x at el x-coord y 
-  Una coordenada-y at el y-coord y 
-  Una izquierda at el x-coord y 
-  Una superior at el y-coord.
+  An top at el y-coord. \ y
+  \Una coordenada-x at el x-coord y 
+  \Una coordenada-y at el y-coord y 
+  \Una izquierda at el x-coord y 
+  \Una superior at el y-coord.
 
 A spot pointer es un pointer to un spot.
 
@@ -13911,7 +13920,7 @@ Para mover to el center of un box y face west:
   Poner el box's center into el context's spot.
   Mirar hacia el oeste.
 
-Para start un process usando un path: \ must be called con un global variable
+Para start un process usando un path: \ must be llamado con un global variable
   Borrar el error de e/s.
   Si el process es not 0, Poner "Lo lamento, pero el proceso ya se está ejecutando." into el error de e/s; salir.
   Poner un startupinfo's magnitude into el startupinfo's cb.
@@ -14014,24 +14023,24 @@ The start-of-heading byte es un byte igual to 1.
 The start-of-text byte es un byte igual to 2.
 
 A startupinfo es un record con
-  A number called cb,
-  A pointer called lpreserved,
-  A pointer called lpdesktop,
-  A pointer called lptitle,
-  A number called dwx,
-  A number called dwy,
-  A number called dwxsize,
-  A number called dwysize,
-  A number called dwxcountchars,
-  A number called cwycountchars,
-  A number called dwfillattribute,
-  A number called dwflags,
-  A wyrd called wshowwindow,
-  A wyrd called cbreserved2,
-  A pointer called lpreserved2,
-  A handle called hstdinput,
-  A handle called hstdoutput,
-  A handle called hstderror.
+  A number llamado cb,
+  A pointer llamado lpreserved,
+  A pointer llamado lpdesktop,
+  A pointer llamado lptitle,
+  A number llamado dwx,
+  A number llamado dwy,
+  A number llamado dwxsize,
+  A number llamado dwysize,
+  A number llamado dwxcountchars,
+  A number llamado cwycountchars,
+  A number llamado dwfillattribute,
+  A number llamado dwflags,
+  A wyrd llamado wshowwindow,
+  A wyrd llamado cbreserved2,
+  A pointer llamado lpreserved2,
+  A handle llamado hstdinput,
+  A handle llamado hstdoutput,
+  A handle llamado hstderror.
 
 The StdIn handle es un handle.
 
@@ -14051,13 +14060,16 @@ Para stop un timer:
   Restar el timer's start ticks desde el ticks.
   Agregar el ticks to el timer's total ticks.
 
-A string es un record con un first byte pointer y un last byte pointer
-  y un primero puntero octeto at el first byte pointer y
-  y un primera puntero octeto at el first byte pointer y \ new line, same as above except primero -> primera
-  un último puntero octeto at el last byte pointer y
-  un última puntero octeto at el last byte pointer. \ new line, similar to above except último -> última
+A string es un record con 
+  A first byte pointer y 
+  A last byte pointer.
+  \y un primero puntero octeto at el first byte pointer y
+  \y un primera puntero octeto at el first byte pointer y \ new line, same as above except primero -> primera
+  \un último puntero octeto at el last byte pointer y
+  \un última puntero octeto at el last byte pointer. \ new line, similar to above except último -> última
 
-A string thing es un thing con un string y una cadena at el string.
+A string thing es un thing con 
+  An string. \ y una cadena at el string.
 
 A string# es un number.
 
@@ -15669,14 +15681,14 @@ Para intercambiar some things con some other things:
 The synchronous-idle byte es un byte igual to 22.
 
 A systemtime es un record con
-  A wyrd called wyear,
-  A wyrd called wmonth,
-  A wyrd called wdayofweek,
-  A wyrd called wday,
-  A wyrd called whour,
-  A wyrd called wminute,
-  A wyrd called wsecond,
-  A wyrd called wmilliseconds.
+  A wyrd llamado wyear,
+  A wyrd llamado wmonth,
+  A wyrd llamado wdayofweek,
+  A wyrd llamado wday,
+  A wyrd llamado whour,
+  A wyrd llamado wminute,
+  A wyrd llamado wsecond,
+  A wyrd llamado wmilliseconds.
 
 The t-key es un key igual to 84.
 
@@ -15692,51 +15704,51 @@ A talker es un pointer to un talker object.
 
 The talker es un talker.
 
-A talker object es un record con un talker vtable called vtable.
+A talker object es un record con un talker vtable llamado vtable.
 
 A talker vtable es un pointer to un talker vtable record.
 
 A talker vtable record es un record con
   \ iunknown
-  A pointer called queryinterface,
-  A pointer called addref,
-  A pointer called release, \ in this:pspvoice out number
+  A pointer llamado queryinterface,
+  A pointer llamado addref,
+  A pointer llamado release, \ in this:pspvoice out number
   \ italker
-  A pointer called setnotifysink,
-  A pointer called setnotifywindowmessage,
-  A pointer called setnotifycallbackfunction,
-  A pointer called setnotifycallbackinterface,
-  A pointer called setnotifywin32event,
-  A pointer called waitfornotifyevent,
-  A pointer called getnotifyeventhandle,
-  A pointer called setinterest,
-  A pointer called getevents,
-  A pointer called getinfo,
-  A pointer called setoutput,
-  A pointer called getoutputobjecttoken,
-  A pointer called getoutputstream,
-  A pointer called pause,
-  A pointer called resume,
-  A pointer called setvoice,
-  A pointer called getvoice,
-  A pointer called speak, \ in this:pspvoice; pwcs:pwchar; dwflags:number; pulstreamnumber:pnumber out number
-  A pointer called speakstream,
-  A pointer called getstatus,
-  A pointer called skip,
-  A pointer called setpriority,
-  A pointer called getpriority,
-  A pointer called setalertboundary,
-  A pointer called getalertboundary,
-  A pointer called setrate,
-  A pointer called getrate,
-  A pointer called setvolume,
-  A pointer called getvolume,
-  A pointer called waituntildone,
-  A pointer called setsyncspeaktimeout,
-  A pointer called getsyncspeaktimeout,
-  A pointer called speakcompleteevent,
-  A pointer called isuisupported,
-  A pointer called displayui.
+  A pointer llamado setnotifysink,
+  A pointer llamado setnotifywindowmessage,
+  A pointer llamado setnotifycallbackfunction,
+  A pointer llamado setnotifycallbackinterface,
+  A pointer llamado setnotifywin32event,
+  A pointer llamado waitfornotifyevent,
+  A pointer llamado getnotifyeventhandle,
+  A pointer llamado setinterest,
+  A pointer llamado getevents,
+  A pointer llamado getinfo,
+  A pointer llamado setoutput,
+  A pointer llamado getoutputobjecttoken,
+  A pointer llamado getoutputstream,
+  A pointer llamado pause,
+  A pointer llamado resume,
+  A pointer llamado setvoice,
+  A pointer llamado getvoice,
+  A pointer llamado speak, \ in this:pspvoice; pwcs:pwchar; dwflags:number; pulstreamnumber:pnumber out number
+  A pointer llamado speakstream,
+  A pointer llamado getstatus,
+  A pointer llamado skip,
+  A pointer llamado setpriority,
+  A pointer llamado getpriority,
+  A pointer llamado setalertboundary,
+  A pointer llamado getalertboundary,
+  A pointer llamado setrate,
+  A pointer llamado getrate,
+  A pointer llamado setvolume,
+  A pointer llamado getvolume,
+  A pointer llamado waituntildone,
+  A pointer llamado setsyncspeaktimeout,
+  A pointer llamado getsyncspeaktimeout,
+  A pointer llamado speakcompleteevent,
+  A pointer llamado isuisupported,
+  A pointer llamado displayui.
 
 The tan color es un color.
 
@@ -15769,30 +15781,30 @@ A text es un thing con
   A selection,
   A modified flag,
   A last operation,
-  Some texts called undos,
-  Some texts called redos.
+  Some texts llamado undos,
+  Some texts llamado redos.
 
 A textmetric es un record con
-  A number called tmheight,
-  A number called tmascent,
-  A number called tmdescent,
-  A number called tminternalleading,
-  A number called tmexternalleading,
-  A number called tmavecharwidth,
-  A number called tmmaxcharwidth,
-  A number called tmweight,
-  A number called tmoverhang,
-  A number called tmdigitizedaspectx,
-  A number called tmdigitizedaspecty,
-  A byte called tmfirstchar,
-  A byte called tmlastchar,
-  A byte called tmdefaultchar,
-  A byte called tmbreakchar,
-  A byte called tmitalic,
-  A byte called tmunderlined,
-  A byte called tmstruckout,
-  A byte called tmpitchandfamily,
-  A byte called tmcharset.
+  A number llamado tmheight,
+  A number llamado tmascent,
+  A number llamado tmdescent,
+  A number llamado tminternalleading,
+  A number llamado tmexternalleading,
+  A number llamado tmavecharwidth,
+  A number llamado tmmaxcharwidth,
+  A number llamado tmweight,
+  A number llamado tmoverhang,
+  A number llamado tmdigitizedaspectx,
+  A number llamado tmdigitizedaspecty,
+  A byte llamado tmfirstchar,
+  A byte llamado tmlastchar,
+  A byte llamado tmdefaultchar,
+  A byte llamado tmbreakchar,
+  A byte llamado tmitalic,
+  A byte llamado tmunderlined,
+  A byte llamado tmstruckout,
+  A byte llamado tmpitchandfamily,
+  A byte llamado tmcharset.
 
 A thing es un pointer to un thing record.
 
@@ -16079,21 +16091,21 @@ A url record es un record con
   A port number.
 
 A urlcomponents es un record con
-  A number called dwstructsize,
-  A pchar called lpszscheme,
-  A number called dwschemelength,
-  A number called nscheme,
-  A pchar called lpszhostname,
-  A number called dwhostnamelength,
-  A number called nport, \ this es typed as un wyrd in windows documentation, but dosen't work
-  A pchar called lpszusername,
-  A number called dwusernamelength,
-  A pchar called lpszpassword,
-  A number called dwpasswordlength,
-  A pchar called lpszurlpath,
-  A number called dwurlpathlength,
-  A pchar called lpszextrainfo,
-  A number called dwextrainfolength.
+  A number llamado dwstructsize,
+  A pchar llamado lpszscheme,
+  A number llamado dwschemelength,
+  A number llamado nscheme,
+  A pchar llamado lpszhostname,
+  A number llamado dwhostnamelength,
+  A number llamado nport, \ this es typed as un wyrd in windows documentation, but dosen't work
+  A pchar llamado lpszusername,
+  A number llamado dwusernamelength,
+  A pchar llamado lpszpassword,
+  A number llamado dwpasswordlength,
+  A pchar llamado lpszurlpath,
+  A number llamado dwurlpathlength,
+  A pchar llamado lpszextrainfo,
+  A number llamado dwextrainfolength.
 
 \Para usar un color;
 Para usar un color:
@@ -16123,18 +16135,22 @@ Para usar small pointy letters: \ as opposed to "roundy letters" not yet impleme
   Usar small letters.
 
 A uuid es un record con
-  A number called d1,
-  A wyrd called d2,
-  A wyrd called d3,
-  8 bytes called d4.
+  A number llamado d1,
+  A wyrd llamado d2,
+  A wyrd llamado d3,
+  8 bytes llamado d4.
 
 The v-key es un key igual to 86.
 
 A vertex array es un pointer to un vertex array record.
 
-A vertex array record es un record con un count y un spot pointer.
+A vertex array record es un record con
+  A count y 
+  A spot pointer.
 
-A vertex es un thing con un x-coord, un y-coord, un spot at el x-coord.
+A vertex es un thing con
+  An x-coord, 
+  A y-coord. \ y un spot at el x-coord.
 
 The vertical-bar byte es un byte igual to 124.
 
@@ -16215,30 +16231,30 @@ A wide string es un string.
 A width es some twips.
 
 A win32finddata es un record con
-  A number called dwfileattributes,
-  A filetime called ftcreationtime,
-  A filetime called ftlastaccesstime,
-  A filetime called ftlastwritetime,
-  A number called nfilesizehigh,
-  A number called nfilesizelow,
-  A number called dwreserved0,
-  A number called dwreserved1,
-  260 bytes called cfilename,
-  14 bytes called calternatefilename.
+  A number llamado dwfileattributes,
+  A filetime llamado ftcreationtime,
+  A filetime llamado ftlastaccesstime,
+  A filetime llamado ftlastwritetime,
+  A number llamado nfilesizehigh,
+  A number llamado nfilesizelow,
+  A number llamado dwreserved0,
+  A number llamado dwreserved1,
+  260 bytes llamado cfilename,
+  14 bytes llamado calternatefilename.
 
 A window class es un record con
-  A number called cbsize,
-  A number called style,
-  A pointer called lpfnwndproc,
-  A number called cbclsextra,
-  A number called cbwndextra,
-  A handle called hinstance,
-  A hicon called hicon,
-  A cursor called hcursor,
-  An hbrush called hbrbackground,
-  A pointer called lpszmenuname,
-  A pointer called lpszclassname,
-  A hicon called hiconsm.
+  A number llamado cbsize,
+  A number llamado style,
+  A pointer llamado lpfnwndproc,
+  A number llamado cbclsextra,
+  A number llamado cbwndextra,
+  A handle llamado hinstance,
+  A hicon llamado hicon,
+  A cursor llamado hcursor,
+  An hbrush llamado hbrbackground,
+  A pointer llamado lpszmenuname,
+  A pointer llamado lpszclassname,
+  A hicon llamado hiconsm.
 
 The window class es un window class.
 
@@ -16315,7 +16331,7 @@ Para escribir un byte without advancing:
   Poner el byte into un string.
   Escribir el string without advancing.
 
-Para escribir una bandera; \ will translate to English because "Convert un flag" es used to externalize reams for el Writer
+\Para escribir una bandera; \ will translate to English because "Convert un flag" es used to externalize reams for el Writer
 Para escribir un flag:
   Convertir el flag to un string.
   Escribir el string.
@@ -16501,7 +16517,7 @@ Para trazar un string while turning un fraction:
     Si el string es not blank, space between glyphs.
   Repetir.
 
-Para escribir una cadena con un color;
+\Para escribir una cadena con un color;
 Para escribir un string con un color;
 \Para acariciar una cadena con un color;
 Para trazar un string con un color:
@@ -16601,13 +16617,13 @@ Para usar small letters:
   Poner el small letter height into el context's letter height.
 
 A wsadata es un record con
-  A wyrd called wversion,
-  A wyrd called whighversion,
-  257 bytes called szdescription,
-  127 bytes called szsystemstatus,
-  A wyrd [unsigned] called imaxsockets,
-  A wyrd [unsigned] called imaxudpdg,
-  A pointer called lpvendorinfo.
+  A wyrd llamado wversion,
+  A wyrd llamado whighversion,
+  257 bytes llamado szdescription,
+  127 bytes llamado szsystemstatus,
+  A wyrd [unsigned] llamado imaxsockets,
+  A wyrd [unsigned] llamado imaxudpdg,
+  A pointer llamado lpvendorinfo.
 
 A wyrd es un record con
   An low byte y 
@@ -16671,709 +16687,3 @@ The lowercase accent-free ascii table es un translation table igual to $00010203
 The lowercase ascii table es un translation table igual to $000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F202122232425262728292A2B2C2D2E2F303132333435363738393A3B3C3D3E3F406162636465666768696A6B6C6D6E6F707172737475767778797A5B5C5D5E5F606162636465666768696A6B6C6D6E6F707172737475767778797A7B7C7D7E7F808182838485868788899A8B9C8D9E8F909192939495969798999A9B9C9D9EFFA0A1A2A3A4A5A6A7A8A9AAABACADAEAFB0B1B2B3B4B5B6B7B8B9BABBBCBDBEBFE0E1E2E3E4E5E6E7E8E9EAEBECEDEEEFF0F1F2F3F4F5F6D7F8F9FAFBFCFDFEDFE0E1E2E3E4E5E6E7E8E9EAEBECEDEEEFF0F1F2F3F4F5F6F7F8F9FAFBFCFDFEFF.
 
 The uppercase ascii table es un translation table igual to $000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F202122232425262728292A2B2C2D2E2F303132333435363738393A3B3C3D3E3F404142434445464748494A4B4C4D4E4F505152535455565758595A5B5C5D5E5F604142434445464748494A4B4C4D4E4F505152535455565758595A7B7C7D7E7F808182838485868788898A8B8C8D8E8F909192939495969798998A9B8C9D8E9FA0A1A2A3A4A5A6A7A8A9AAABACADAEAFB0B1B2B3B4B5B6B7B8B9BABBBCBDBEBFC0C1C2C3C4C5C6C7C8C9CACBCCCDCECFD0D1D2D3D4D5D6D7D8D9DADBDCDDDEDFC0C1C2C3C4C5C6C7C8C9CACBCCCDCECFD0D1D2D3D4D5D6F7D8D9DADBDCDDDE9F.
-
-\ Spanish turtle color types
-
-Un color muy oscuro es un color. \ very dark color
-Un color muy claro es un color. \ very light color
-Un color muy muy oscuro es un color. \ very very dark color
-Un color muy muy claro es un color. \ very very light color
-Un color sólido es un color. \ solid color
-Un color amarronado es un color. \ brownish color
-Un color verdoso es un color. \ greenish color
-Un color arcoiris es un color. \ rainbow
-Un color claro es un color. \ light color
-Un color oscuro es un color. \ dark color
-Un color pastel es un color. \ pastel color
-
-\ Spanish color globals
-
-El color negro es un color.
-El color blanco es un color.
-El color claro es un color.
-El color gris muy muy claro es un color.
-El color gris muy claro es un color.
-El color gris claro es un color.
-El color gris es un color.
-El color gris oscuro es un color.
-El color gris muy oscuro es un color.
-El color gris muy muy oscuro es un color.
-El color rojo muy muy claro es un color.
-El color rojo muy claro es un color.
-El color rojo claro es un color.
-El color rojo es un color.
-El color rojo oscuro es un color.
-El color rojo muy oscuro es un color.
-El color rojo muy muy oscuro es un color.
-El color naranja muy muy claro es un color.
-El color naranja muy claro es un color.
-El color naranja claro es un color.
-El color naranja es un color.
-El color naranja oscuro es un color.
-El color naranja muy oscuro es un color.
-El color naranja muy muy oscuro es un color.
-El color amarillo muy muy claro es un color.
-El color amarillo muy claro es un color.
-El color amarillo claro es un color.
-El color amarillo es un color.
-El color amarillo oscuro es un color.
-El color amarillo muy oscuro es un color.
-El color amarillo muy muy oscuro es un color.
-El color lima muy muy claro es un color.
-El color lima muy claro es un color.
-El color lima claro es un color.
-El color lima es un color.
-El color lima oscuro es un color.
-El color lima muy oscuro es un color.
-El color lima muy muy oscuro es un color.
-El color verde muy muy claro es un color.
-El color verde muy claro es un color.
-El color verde claro es un color.
-El color verde es un color.
-El color verde oscuro es un color.
-El color verde muy oscuro es un color.
-El color verde muy muy oscuro es un color.
-El color menta muy muy claro es un color.
-El color menta muy claro es un color.
-El color menta claro es un color.
-El color menta es un color.
-El color menta oscuro es un color.
-El color menta muy oscuro es un color.
-El color menta muy muy oscuro es un color.
-El color cian muy muy claro es un color.
-El color cian muy claro es un color.
-El color cian claro es un color.
-El color cian es un color.
-El color cian oscuro es un color.
-El color cian muy oscuro es un color.
-El color cian muy muy oscuro es un color.
-El color celeste muy muy claro es un color.
-El color celeste muy claro es un color.
-El color celeste claro es un color.
-El color celeste es un color.
-El color celeste oscuro es un color.
-El color celeste muy oscuro es un color.
-El color celeste muy muy oscuro es un color.
-El color azul muy muy claro es un color.
-El color azul muy claro es un color.
-El color azul claro es un color.
-El color azul es un color.
-El color azul oscuro es un color.
-El color azul muy oscuro es un color.
-El color azul muy muy oscuro es un color.
-El color púrpura muy muy claro es un color.
-El color púrpura muy claro es un color.
-El color púrpura claro es un color.
-El color púrpura es un color.
-El color púrpura oscuro es un color.
-El color púrpura muy oscuro es un color.
-El color púrpura muy muy oscuro es un color.
-El color magenta muy muy claro es un color.
-El color magenta muy claro es un color.
-El color magenta claro es un color.
-El color magenta es un color.
-El color magenta oscuro es un color.
-El color magenta muy oscuro es un color.
-El color magenta muy muy oscuro es un color.
-El color fucsia muy muy claro es un color.
-El color fucsia muy claro es un color.
-El color fucsia claro es un color.
-El color fucsia es un color.
-El color fucsia oscuro es un color.
-El color fucsia muy oscuro es un color.
-El color fucsia muy muy oscuro es un color.
-
-\ Spanish special colors
-
-El color marrón muy muy claro es un color.
-El color marrón muy claro es un color.
-El color marrón claro es un color.
-El color marrón es un color.
-El color marrón oscuro es un color.
-El color marrón muy oscuro es un color.
-El color marrón muy muy oscuro es un color.
-El color rosado es un color.
-El color oro es un color.
-
-\ Spanish keys
-
-La tecla-a es una tecla igual a 65.
-La tecla-b es una tecla igual a 66.
-La tecla-c es una tecla igual a 67.
-La tecla-d es una tecla igual a 68.
-La tecla-e es una tecla igual a 69.
-La tecla-f es una tecla igual a 70.
-La tecla-g es una tecla igual a 71.
-La tecla-h es una tecla igual a 72.
-La tecla-i es una tecla igual a 73.
-La tecla-j es una tecla igual a 74.
-La tecla-k es una tecla igual a 75.
-La tecla-l es una tecla igual a 76.
-La tecla-m es una tecla igual a 77.
-La tecla-n es una tecla igual a 78.
-La tecla-o es una tecla igual a 79.
-La tecla-p es una tecla igual a 80.
-La tecla-q es una tecla igual a 81.
-La tecla-r es una tecla igual a 82.
-La tecla-s es una tecla igual a 83.
-La tecla-t es una tecla igual a 84.
-La tecla-u es una tecla igual a 85.
-La tecla-v es una tecla igual a 86.
-La tecla-w es una tecla igual a 87.
-La tecla-x es una tecla igual a 88.
-La tecla-y es una tecla igual a 89.
-La tecla-z es una tecla igual a 90.
-
-La tecla-f1 es una tecla igual a 112. \ f1-key, same for el rest of fn-keys
-La tecla-f2 es una tecla igual a 113.
-La tecla-f3 es una tecla igual a 114.
-La tecla-f4 es una tecla igual a 115.
-La tecla-f5 es una tecla igual a 116.
-La tecla-f6 es una tecla igual a 117.
-La tecla-f7 es una tecla igual a 118.
-La tecla-f8 es una tecla igual a 119.
-La tecla-f9 es una tecla igual a 120.
-La tecla-f10 es una tecla igual a 121.
-La tecla-f11 es una tecla igual a 122.
-La tecla-f12 es una tecla igual a 123.
-
-La tecla cero es una tecla igual a 48. \ 0, zero key
-La tecla uno es una tecla igual a 49. \ 1
-La tecla dos es una tecla igual a 50. \ 2
-La tecla tres es una tecla igual a 51. \ 3
-La tecla cuatro es una tecla igual a 52. \ 4
-La tecla cinco es una tecla igual a 53. \ 5
-La tecla seis es una tecla igual a 54. \ 6
-La tecla siete es una tecla igual a 55. \ 7
-La tecla ocho es una tecla igual a 56. \ 8
-La tecla nueve es una tecla igual a 57. \ 9
-
-La tecla inicio es una tecla igual a 36. \ home key 
-
-La tecla flecha-izquierda es una tecla igual a 37. \ left-arrow key
-La tecla flecha-arriba es una tecla igual a 38. \ up-arrow key
-La tecla flecha-derecha es una tecla igual a 39. \ right-arrow key
-La tecla flecha-abajo es una tecla igual a 40. \ down-arrow key
-
-La tecla insertar es una tecla igual a 45. \ insert key
-
-La tecla windows-izquierda es una tecla igual a 91. \ left-window key
-La tecla windows-derecha key es una tecla igual a 92. \ right-window key
-
-La tecla av-pág es una tecla igual a 34. \ page-down key; could use it without accent
-La tecla re-pág es una tecla igual a 33. \ page-up key; could use it without accent
-
-La tecla menú es una tecla igual a 93. \ menu key; alternative name: clic-derecho
-
-La tecla bloqueo-numérico es una tecla igual a 144. \ numlock key
-
-La tecla numpad-por es una tecla igual a 106. \ numpad-astrisk key; I'm using literal translation for numpad-..., for simplicity
-La tecla numpad-dividido es una tecla igual a 111. \ numpad-slash
-La tecla numpad-más es una tecla igual a 107. \ numpad-cross
-La tecla numpad-menos es una tecla igual a 109. \ numpad-dash
-La tecla numpad-cero es una tecla igual a 96. \ numpad-zero
-La tecla numpad-uno es una tecla igual a 97. \ numpad-one
-La tecla numpad-dos es una tecla igual a 98. \ numpad-two
-La tecla numpad-tres es una tecla igual a 99. \ numpad-three
-La tecla numpad-cuatro es una tecla igual a 100. \ numpad-four
-La tecla numpad-cinco es una tecla igual a 101. \ numpad-five
-La tecla numpad-seis es una tecla igual a 102. \ numpad-six
-La tecla numpad-siete es una tecla igual a 103. \ numpad-seven
-La tecla numpad-ocho es una tecla igual a 104. \ numpad-eight
-La tecla numpad-nueve es una tecla igual a 105. \ numpad-nine
-La tecla numpad-punto-decimal es una tecla igual a 110. \ numpad-period; alt. name: numpad-coma-decimal
-
-La tecla pausa es una tecla igual a 19. \ pause key
-La tecla imprime-pantalla es una tecla igual a 44. \ print-screen key
-
-La tecla bloqueo-desplazamiento es una tecla igual a 145. \ scrolllock key
-La tecla mayúsculas es una tecla igual a 16. \ shift key
-
-La tecla espacio es una tecla igual a 32. \ space key
-
-La tecla tab es una tecla igual a 9. \ tab key; alternative name: tabulador
-
-La tecla borrar es una tecla igual a 8. \ backspace key; alternative name: retroceso
-La tecla retroceso es una tecla igual a 8.
-La tecla acento-grave es una tecla igual a 192. \ accent key
-La tecla alt es una tecla igual a 18. \ alt key
-La tecla bloqueo-mayúsculas es una tecla igual a 20. \ caps key
-La tecla ctrl es una tecla igual a 17. \ ctrl key; alt. name: control
-La tecla guion es una tecla igual a 189. \ dash key; alt. name: guion
-La tecla suprimir es una tecla igual a 46. \ delete key
-La tecla fin es una tecla igual a 35. \ end key
-La tecla entrar es una tecla igual a 13. \ enter key
-
-La tecla-igual es una tecla igual a 187. \ equal-sign
-La tecla esc es una tecla igual a 27. \ esc key
-
-La tecla escape es una tecla igual a 27. \ escape key; already in SAL
-
-La tecla limpiar es una tecla igual a 12. \ borrar key = limpiar? I can't encontrar el borrar key
-
-\Spanish ASCII bytes
-
-El byte null es un byte igual a 0.
-El byte start-of-heading es un byte igual a 1.
-El byte start-of-text es un byte igual a 2.
-El byte end-of-text es un byte igual a 3.
-El byte end-of-transmission es un byte igual a 4.
-El byte enquiry es un byte igual a 5.
-El byte acknowledge es un byte igual a 6.
-El byte bell es un byte igual a 7.
-El byte backspace es un byte igual a 8. \ ? This line I can't found on any noodle desde CAL nor SAL.
-El byte tab es un byte igual a 9.
-El byte linefeed es un byte igual a 10.
-El byte vertical-tab es un byte igual a 11.
-El byte form-feed es un byte igual a 12.
-El byte return es un byte igual a 13.
-El byte shift-out es un byte igual a 14.
-El byte shift-in es un byte igual a 15.
-El byte data-link-escape es un byte igual a 16.
-El byte device-control-one es un byte igual a 17.
-El byte device-control-two es un byte igual a 18.
-El byte device-control-three es un byte igual a 19.
-El byte device-control-four es un byte igual a 20.
-El byte negative-acknowledge es un byte igual a 21.
-El byte synchronous-idle es un byte igual a 22.
-El byte end-of-transmission-block es un byte igual a 23.
-El byte cancel es un byte igual a 24.
-El byte end-of-medium es un byte igual a 25.
-El byte substitute es un byte igual a 26.
-El escape es un byte igual a 27.
-El byte file-separator es un byte igual a 28.
-El byte group-separator es un byte igual a 29.
-El byte record-separator es un byte igual a 30.
-El byte unit-separator es un byte igual a 31.
-El byte delete es un byte igual a 127.
-
-El byte acento-grave es un byte igual a 96. \ accent. This version for current hybrid SAL
-El byte acento-agudo es un byte igual a 180. \ acute-accent; alt. name: tilde
-El byte acento-circunflejo es un byte igual a 136. \ circumflex
-El byte elevado es un byte igual a 94. \ caret; used as y confused con "acento circunflejo"
-El byte virgulilla es un byte igual a 126. \ tilde: "tilde" in Spanish es el main accent sign for us, el acute one
-El byte virgulilla-baja es un byte igual a 184. \ cedilla
-El byte diéresis es un byte igual a 168. \ diaeresis
-
-El byte et es un byte igual a 38. \ ampersand: latin et 
-
-El byte asterisco es un byte igual a 42. \ asterisk
-
-El byte arroba es un byte igual a 64. \ at-sign
-
-El byte barra-invertida es un byte igual a 92. \ backslash
-El byte barra es un byte igual a 124. \ bar
-El byte barra-vertical es un byte igual a 124. \ vertical-bar: also known in Spanish as pleca or pleca-entera
-El byte pleca-partida es un byte igual a 166. \ broken-bar
-El byte barra-inclinada es un byte igual a 47. \ slash; alt. name: división, dividido
-
-El byte may-a es un byte igual a 65. \ big-a, I'm using un short y easy translation to speed up: may-a for mayúscula A
-El byte may-a-aguda es un byte igual a 193. \ all acute -> aguda
-El byte may-a-circunfleja es un byte igual a 194. \ all circumflex -> circunfleja
-El byte may-a-diéresis es un byte igual a 196. \ all diaeresis -> diéresis
-El byte may-a-grave es un byte igual a 192. \ all grave -> grave
-El byte may-a-anillo es un byte igual a 197. \ ring -> anillo
-El byte may-a-virgulilla es un byte igual a 195. \ all tilde -> virgulilla
-El byte may-ae es un byte igual a 198.
-El byte may-b es un byte igual a 66.
-El byte may-c es un byte igual a 67.
-El byte may-c-cedilla es un byte igual a 199.
-El byte may-d es un byte igual a 68.
-El byte may-e es un byte igual a 69.
-El byte may-e-aguda es un byte igual a 201.
-El byte may-e-circunfleja es un byte igual a 202.
-El byte may-e-diéresis es un byte igual a 203.
-El byte may-e-grave es un byte igual a 200.
-El byte may-eth es un byte igual a 208.
-El byte may-f es un byte igual a 70.
-El byte may-g es un byte igual a 71.
-El byte may-h es un byte igual a 72.
-El byte may-i es un byte igual a 73.
-El byte may-i-aguda es un byte igual a 205.
-El byte may-i-circunfleja es un byte igual a 206.
-El byte may-i-diéresis es un byte igual a 207.
-El byte may-i-grave es un byte igual a 204.
-El byte may-j es un byte igual a 74.
-El byte may-k es un byte igual a 75.
-El byte may-l es un byte igual a 76.
-El byte may-m es un byte igual a 77. 
-El byte may-n es un byte igual a 78.
-El byte may-n-virgulilla es un byte igual a 209.
-El byte may-o es un byte igual a 79.
-El byte may-o-aguda es un byte igual a 211.
-El byte may-o-circunfleja es un byte igual a 212.
-El byte may-o-diéresis es un byte igual a 214.
-El byte may-o-grave es un byte igual a 210.
-El byte may-o-barra es un byte igual a 216.
-El byte may-o-virgulilla es un byte igual a 213.
-El byte may-oe es un byte igual a 140.
-El byte may-p es un byte igual a 80.
-El byte may-q es un byte igual a 81.
-El byte may-r es un byte igual a 82.
-El byte may-s es un byte igual a 83.
-El byte may-s-carón es un byte igual a 138. \ caron -> carón
-El byte may-t es un byte igual a 84.
-El byte may-thorn es un byte igual a 222.
-El byte may-u es un byte igual a 85.
-El byte may-u-aguda es un byte igual a 218.
-El byte may-u-circunfleja es un byte igual a 219.
-El byte may-u-diéresis es un byte igual a 220.
-El byte may-u-grave es un byte igual a 217.
-El byte may-v es un byte igual a 86.
-El byte may-w es un byte igual a 87.
-El byte may-x es un byte igual a 88.
-El byte may-y es un byte igual a 89.
-El byte may-y-aguda es un byte igual a 221.
-El byte may-y-diéresis es un byte igual a 159.
-El byte may-z es un byte igual a 90.
-El byte may-z-carón es un byte igual a 142.
-
-El byte min-a es un byte igual a 97. \ little-a I'm using un short y easy translation to speed up: min-a for minúscula A
-El byte min-a-aguda es un byte igual a 225.
-El byte min-a-circunfleja es un byte igual a 226.
-El byte min-a-diéresis es un byte igual a 228.
-El byte min-a-grave es un byte igual a 224.
-El byte min-a-ring es un byte igual a 229.
-El byte min-a-virgulilla es un byte igual a 227.
-El byte min-ae es un byte igual a 230.
-El byte min-b es un byte igual a 98.
-El byte min-c es un byte igual a 99.
-El byte min-c-cedilla es un byte igual a 231.
-El byte min-d es un byte igual a 100.
-El byte min-e es un byte igual a 101.
-El byte min-e-aguda es un byte igual a 233.
-El byte min-e-circunfleja es un byte igual a 234.
-El byte min-e-diéresis es un byte igual a 235.
-El byte min-e-grave es un byte igual a 232.
-El byte min-eth es un byte igual a 240.
-El byte min-f es un byte igual a 102.
-El byte min-f-hook es un byte igual a 131.
-El byte min-g es un byte igual a 103.
-El byte min-h es un byte igual a 104.
-El byte min-i es un byte igual a 105.
-El byte min-i-aguda es un byte igual a 237.
-El byte min-i-circunfleja es un byte igual a 238.
-El byte min-i-diéresis es un byte igual a 239.
-El byte min-i-grave es un byte igual a 236.
-El byte min-j es un byte igual a 106.
-El byte min-k es un byte igual a 107.
-El byte min-l es un byte igual a 108.
-El byte min-m es un byte igual a 109.
-El byte min-n es un byte igual a 110.
-El byte min-n-virgulilla es un byte igual a 241.
-El byte min-o es un byte igual a 111.
-El byte min-o-aguda es un byte igual a 243.
-El byte min-o-circunfleja es un byte igual a 244.
-El byte min-o-diéresis es un byte igual a 246.
-El byte min-o-grave es un byte igual a 242.
-El byte min-o-stroke es un byte igual a 248.
-El byte min-o-virgulilla es un byte igual a 245.
-El byte min-oe es un byte igual a 156.
-El byte min-p es un byte igual a 112.
-El byte min-q es un byte igual a 113.
-El byte min-r es un byte igual a 114.
-El byte min-s es un byte igual a 115.
-El byte min-s-carón es un byte igual a 154.
-El byte min-t es un byte igual a 116.
-El byte min-thorn es un byte igual a 254.
-El byte min-virgulilla es un byte igual a 152.
-El byte min-u es un byte igual a 117.
-El byte min-u-aguda es un byte igual a 250.
-El byte min-u-circunfleja es un byte igual a 251.
-El byte min-u-diéresis es un byte igual a 252.
-El byte min-u-grave es un byte igual a 249.
-El byte min-v es un byte igual a 118.
-El byte min-w es un byte igual a 119.
-El byte min-x es un byte igual a 120.
-El byte min-y es un byte igual a 121.
-El byte min-y-aguda es un byte igual a 253.
-El byte min-y-diéresis es un byte igual a 255.
-El byte min-z es un byte igual a 122.
-El byte min-z-carón es un byte igual a 158.
-
-El byte numeral es un byte igual a 35. \ number-sign
-El byte cero es un byte igual a 48. \ 0
-El byte uno es un byte igual a 49. \ 1
-El byte dos es un byte igual a 50. \ 2
-El byte tres es un byte igual a 51. \ 3
-El byte cuatro es un byte igual a 52. \ 4
-El byte cinco es un byte igual a 53. \ 5
-El byte seis es un byte igual a 54. \ 6
-El byte siete es un byte igual a 55. \ 7
-El byte ocho es un byte igual a 56. \ 8
-El byte nueve es un byte igual a 57. \ 9
-
-
-El byte dos-puntos es un byte igual a 58. \ colon
-El byte coma es un byte igual a 44. \ comma
-
-El byte daga es un byte igual a 134. \ dagger byte
-El byte doble-daga es un byte igual a 135. \ double-dagger
-
-El byte grado es un byte igual a 176. \ degree-symbol
-
-El byte símbolo-división es un byte igual a 247. \ division-symbol
-
-\El byte hash-tag es un byte igual a 163.
-El byte libra es un byte igual a 163. \ pound-sign
-El byte centavos es un byte igual a 162. \ cent-sign
-El byte dólar es un byte igual a 36. \  dollar-sign
-El byte pesos es un byte igual a 36. \  dollar-sign: we call it "pesos"
-El byte símbolo-moneda es un byte igual a 164. \ currency-sign
-El byte euro es un byte igual a 128. \ euro-sign
-El byte yen es un byte igual a 165. \ yen-sign
-
-El byte puntos-suspensivos es un byte igual a 133. \ ellipsis
-
-El byte raya es un byte igual a 151. \ em-dash
-El byte semirraya es un byte igual a 150. \ en-dash
-
-El byte signo-igual es un byte igual a 61. \ equal-sign
-
-
-El byte ordinal-femenino es un byte igual a 170. \ feminine: in typography El byte name in Spanish es a-volada
-El byte ordinal-masculine es un byte igual a 186. \ masculine
-
-El byte menor-que es un byte igual a 60. \ less-than-sign
-El byte mayor-que es un byte igual a 62. \ greater-than-sign
-
-El byte porciento es un byte igual a 37. \ percent-sign
-El byte pormil es un byte igual a 137. \ per-mille-sign
-
-El byte abre-admiración es un byte igual a 161. \ inverted-exclamation-mark
-El byte admiración es un byte igual a 33. \ exclamation
-El byte cierra-admiración es un byte igual a 33. \ exclamation-mark; alt. name: signo-admiración-cierre
-
-El byte abre-interrogación es un byte igual a 191. \ inverted-question-mark
-El byte cierra-interrogación es un byte igual a 63. \ question-mark
-
-El byte abre-cita-angular es un byte igual a 139. \ left-alligator-quote
-El byte cierra-cita-angular es un byte igual a 155. \ right-alligator-quote
-
-El byte abre-llaves es un byte igual a 123. \ left-brace
-El byte cierra-llaves es un byte igual a 125. \ right-brace
-
-El byte abre-corchetes es un byte igual a 91. \ left-bracket
-El byte cierra-corchetes es un byte igual a 93. \ right-bracket
-
-El byte abre-comillas-latinas es un byte igual a 171. \ left-double-alligator-quote
-El byte cierra-comillas-latinas es un byte igual a 187. \ right-double-alligator-quote
-
-El byte abre-comillas es un byte igual a 147. \ left-double-quote
-El byte cierra-comillas es un byte igual a 148. \ right-double-quote
-
-El byte abre-paréntesis es un byte igual a 40. \ left-paren
-El byte cierra-paréntesis es un byte igual a 41. \ right-paren
-
-El byte abre-comilla-simple es un byte igual a 145. \  left-single-quote 
-El byte cierra-comilla-simple-derecha es un byte igual a 146. \ right-single-quote
-
-El byte comilla es un byte igual a 34. \ double-quote
-El byte comilla-doble es un byte igual a 34. \ double-quote
-
-El byte apóstrofe es un byte igual a 39. \ single-quote
-El byte comilla-simple es un byte igual a 39. \ single-quote
-
-El byte comilla-doble-baja es un byte igual a 132. \ lower-double-quote
-El byte comilla-simple-baja es un byte igual a 130. \ lower-single-quote
-
-El byte suma es un byte igual a 43. \ cross; alt. name: más but used for "plus"
-El byte signo-más es un byte igual a 43. \ plus-sign; did I diga only "más" on el keys?
-El byte guion es un byte igual a 45. \ dash; alt. name: menos ("minus"), resta
-El byte signo-menos es un byte igual a 45. \ minus-sign; did I diga only "menos" on el keys?
-
-El byte símbolo-multiplicación es un byte igual a 215. \ multiplication-symbol
-
-El byte negación es un byte igual a 172. \ not
-
-El byte un-medio es un byte igual a 189. \ one-half
-El byte un-cuarto es un byte igual a 188. \ one-quarter
-
-El byte calderón es un byte igual a 182. \ paragraph
-
-El byte punto es un byte igual a 46. \ period, point, dot: all are "puntos"
-
-El byte más-o-menos es un byte igual a 177. \ plus-or-minus
-
-El byte registrado es un byte igual a 174. \ registered 
-El byte marca-registrada es un byte igual a 174. \ registered-trade-mark
-
-El byte sección es un byte igual a 167. \ sector
-El byte punto-y-coma es un byte igual a 59. \ semi-colon
-
-El byte eszett es un byte igual a 223. \ sharp-s, here in Windows 7 I get ß con alt+225
-
-El byte puntito-medio es un byte igual a 183. \ small-bullet
-El byte punto-medio es un byte igual a 149. \ bullet
-
-El byte guion-divisor-sílaba es un byte igual a 173. \ soft-dash
-
-El byte espacio es un byte igual a 32. \ space
-
-El byte a-la-primera es un byte igual a 185. \ superscript-one; alt. name: superíndice-uno, elevado-a-la-primera(-potencia)
-El byte superíndice-uno es un byte igual a 185. \ superscript-one; alt. name: a-la-primera, elevado-a-la-primera(-potencia)
-
-El byte cubo es un byte igual a 179. \ superscript-three; alt. name: superíndice-tres
-El byte superíndice-tres es un byte igual a 179. \ superscript-three; alt. name: cubo
-
-El byte cuadrado es un byte igual a 178. \ superscript-two; alt. name: superíndice-dos
-El byte superíndice-dos es un byte igual a 178. \ superscript-two; alt. name: cuadrado
-
-El byte tres-cuartos es un byte igual a 190. \ three-quarter
-
-El byte subrayado es un byte igual a 95. \ underscore
-El byte macrón es un byte igual a 175. \ upperscore
-
-\No cambiar for these
-
-El byte copyright es un byte igual a 169.
-El byte micro es un byte igual a 181.
-El byte non-breaking-space es un byte igual a 160.
-El byte trade-mark es un byte igual a 153.
-
-\ various Spanish measurements (approximate)
-
-Un cm es 600 twips.
-Un mm es 60 twips.
-
-\ various Spanish types
-
-Un ancho es algunos twips. \ width
-Un ángulo es algunos grados precisos [0 un 3599].
-Un archivo es un handle.
-Un archivo de onda es un path. \ wave file
-Un ascenso es un number.
-Un bolígrafo es un color.
-Un brillo es un lightness.
-Un búfer es una cadena.
-\Un cadena# es un number. \ can't use special characters in Spanish types; pluralize doesn't work
-Un cociente es un number. \ quotient
-Un conteo es un número. \ un count
-Un contador es un número.
-Un denominador es un number.
-Un designador es una cadena.
-Un directorio es una ruta.
-Un elemento es un item.
-Un escáner es un rider.
-Un evento es una event.
-Un foco es un punto.
-Un grado es un number [0 to 359].
-Un grado preciso es un número [0 un 3599].
-Un índice es un index.
-Un matiz es un hue.
-Un milisegundo es un millisecond.
-Un múltiplo es un number.
-Un nombre de archivo es una cadena.
-Un nombre de directorio es una cadena.
-Un nombre de unidad es una cadena.
-Un nombre es una cadena.
-Un numerador es un number.
-Un número es un number.
-Un número-x es un número.
-Un número-y es un número.
-Un par es un pair.
-Un paso es un point.
-Un poco es un number.
-Un polígono es un polygon.
-Un por ciento es un número.
-Un porcentaje es un número.
-Un puntero es un pointer.
-Un puntero octeto es un pointer to un byte.
-Un punto es un spot.
-Un radio es un radius.
-Un rango es un número.
-Un recuento de elementos es un number.
-Un resto es un number. \ remainder
-Un tamaño es un size.
-Un temporizador es un timer.
-Un texto es un text.
-Un tipo de letra es un font.
-Un tipo de unidad es una cadena.
-Un verso es una cosa con una cadena.
-Un vértice es un vertex.
-Una alineación es una cadena [centro, izquierda o derecha].
-Una altura de tipo de letra es algunos twips.
-Una altura es algunos twips. \ height
-Una bandera es un flag.
-Una cadena binaria es un string.
-Una cadena es un string.
-Una caja es un box.
-Una caja redonda es un roundy box.
-Una cantidad es un número.
-Una carta es un byte.
-Una carrera es un number.
-Una clase es una cadena.
-Una cola de eventos es algunos eventos.
-Una consola es un console.
-Una consulta es una cadena.
-Una coord-x es una coordenada.
-Una coord-y es una coordenada.
-Una coordenada es un coord.
-Una coordenada-x es una coordenada.
-Una coordenada-y es una coordenada.
-Una copia es un número.
-Una cosa es un thing.
-Una cosa de cadena es un string thing.
-Una derecha es una coordenada.
-Una descripción es una cadena.
-Una diferencia es un pair.
-Una dirección es algunos pasos. \ heading
-Una distancia es algunos twips.
-Una elección es una cosa con un nombre y una caja.
-Una elipse es un ellipse.
-Una entrada es un event.
-Una extensión es una cadena.
-Una figura es un figure.
-Una fecha/hora es un date/time.
-Una flecha elegante es una figura.
-Una fracción es un fraction.
-Una grilla es un grid.
-Una hoja apaisada es un landscape sheet.
-Una hoja de paisaje es un landscape sheet.
-Una hoja de retrato es un portrait sheet.
-Una hoja es un sheet.
-Una imagen es un picture.
-Una inferior es una coordenada.
-Una izquierda es una coordenada.
-\ Una letra es un byte. \ do not use - tipo de letra es un font \ use carta
-Una línea es un line.
-Una longitud es un length.
-Una luminosidad es un lightness.
-Una palabra es un string.
-Una ola es un wave.
-Una operación es un string. \ for remembering text for undo y redo so we don't waste saves on every character typed
-Una raíz cuadrada es un number.
-Una referencia es un refer.
-Una respuesta es una cadena.
-Una ruta es un path.
-Una saturación es un saturation.
-Una selección es un selection.
-Una subcadena es un substring.
-Una superior es una coordenada.
-Una tecla es un key.
-Una unidad es una cadena.
-
-\ various Spanish globals
-
-El cursor flecha es un cursor.
-El cursor mano es un cursor.
-El cursor rayo-i es un cursor.
-
-El error de e/s es una cadena.
-
-El número máximo es 2147483647.
-El número mínimo es -2147483648.
-
-La bandera silenciosa es una bandera.
-
-La Biblia es una cosa con algunos versos.
-
-La consola es una consola.
-
-Las elecciones son algunas elecciones.
-
-La pantalla tiene una caja, un pixel height y un pixel width.
-
-
-
-  

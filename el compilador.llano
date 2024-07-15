@@ -4577,7 +4577,9 @@ Para scan any optional info for un type usando un rider:
   
 Para scan any optional info for un type usando un rider (pointer):
   Mover el rider (compiler rules).
-  Si el rider's token es not any indefinite article, abort con "El 'para' en este lugar necesita un artículo definido justo después, y no '" then el rider's token then "'." y el rider; salir. 
+  Si el rider's token es not any indefinite article, 
+    Abort con "El 'para' en este lugar necesita un artículo definido justo después, y no '" then el rider's token then "'." y el rider; 
+    Salir. 
   Mover el rider (compiler rules).
   Scan el type's target name usando el rider.
   
@@ -4603,7 +4605,8 @@ Para scan un field usando un rider:
 Para scan un field usando un rider (called part):
   Si el compiler's abort flag es set, salir.
   Mover el rider (compiler rules).
-  Si el field's type name es blank, Poner el field's name into el field's type name. \ byte array type name already filled in
+  Si el field's type name es blank, 
+    Poner el field's name into el field's type name. \ byte array type name already filled in
   Scan el field's name usando el rider.
   
 Para scan un field usando un rider (redefine part):
