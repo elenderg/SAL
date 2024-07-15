@@ -110,119 +110,119 @@ El color oro es un color.
 
 \ Spanish keys
 
-La tecla-a es una tecla igual a 65.
-La tecla-b es una tecla igual a 66.
-La tecla-c es una tecla igual a 67.
-La tecla-d es una tecla igual a 68.
-La tecla-e es una tecla igual a 69.
-La tecla-f es una tecla igual a 70.
-La tecla-g es una tecla igual a 71.
-La tecla-h es una tecla igual a 72.
-La tecla-i es una tecla igual a 73.
-La tecla-j es una tecla igual a 74.
-La tecla-k es una tecla igual a 75.
-La tecla-l es una tecla igual a 76.
-La tecla-m es una tecla igual a 77.
-La tecla-n es una tecla igual a 78.
-La tecla-o es una tecla igual a 79.
-La tecla-p es una tecla igual a 80.
-La tecla-q es una tecla igual a 81.
-La tecla-r es una tecla igual a 82.
-La tecla-s es una tecla igual a 83.
-La tecla-t es una tecla igual a 84.
-La tecla-u es una tecla igual a 85.
-La tecla-v es una tecla igual a 86.
-La tecla-w es una tecla igual a 87.
-La tecla-x es una tecla igual a 88.
-La tecla-y es una tecla igual a 89.
-La tecla-z es una tecla igual a 90.
+La tecla-a es una key igual a 65.
+La tecla-b es una key igual a 66.
+La tecla-c es una key igual a 67.
+La tecla-d es una key igual a 68.
+La tecla-e es una key igual a 69.
+La tecla-f es una key igual a 70.
+La tecla-g es una key igual a 71.
+La tecla-h es una key igual a 72.
+La tecla-i es una key igual a 73.
+La tecla-j es una key igual a 74.
+La tecla-k es una key igual a 75.
+La tecla-l es una key igual a 76.
+La tecla-m es una key igual a 77.
+La tecla-n es una key igual a 78.
+La tecla-o es una key igual a 79.
+La tecla-p es una key igual a 80.
+La tecla-q es una key igual a 81.
+La tecla-r es una key igual a 82.
+La tecla-s es una key igual a 83.
+La tecla-t es una key igual a 84.
+La tecla-u es una key igual a 85.
+La tecla-v es una key igual a 86.
+La tecla-w es una key igual a 87.
+La tecla-x es una key igual a 88.
+La tecla-y es una key igual a 89.
+La tecla-z es una key igual a 90.
 
-La tecla-f1 es una tecla igual a 112. \ f1-key, same for el rest of fn-keys
-La tecla-f2 es una tecla igual a 113.
-La tecla-f3 es una tecla igual a 114.
-La tecla-f4 es una tecla igual a 115.
-La tecla-f5 es una tecla igual a 116.
-La tecla-f6 es una tecla igual a 117.
-La tecla-f7 es una tecla igual a 118.
-La tecla-f8 es una tecla igual a 119.
-La tecla-f9 es una tecla igual a 120.
-La tecla-f10 es una tecla igual a 121.
-La tecla-f11 es una tecla igual a 122.
-La tecla-f12 es una tecla igual a 123.
+La tecla-f1 es una key igual a 112. \ f1-key, same for el rest of fn-keys
+La tecla-f2 es una key igual a 113.
+La tecla-f3 es una key igual a 114.
+La tecla-f4 es una key igual a 115.
+La tecla-f5 es una key igual a 116.
+La tecla-f6 es una key igual a 117.
+La tecla-f7 es una key igual a 118.
+La tecla-f8 es una key igual a 119.
+La tecla-f9 es una key igual a 120.
+La tecla-f10 es una key igual a 121.
+La tecla-f11 es una key igual a 122.
+La tecla-f12 es una key igual a 123.
 
-La tecla cero es una tecla igual a 48. \ 0, zero key
-La tecla uno es una tecla igual a 49. \ 1
-La tecla dos es una tecla igual a 50. \ 2
-La tecla tres es una tecla igual a 51. \ 3
-La tecla cuatro es una tecla igual a 52. \ 4
-La tecla cinco es una tecla igual a 53. \ 5
-La tecla seis es una tecla igual a 54. \ 6
-La tecla siete es una tecla igual a 55. \ 7
-La tecla ocho es una tecla igual a 56. \ 8
-La tecla nueve es una tecla igual a 57. \ 9
+La tecla cero es una key igual a 48. \ 0, zero key
+La tecla uno es una key igual a 49. \ 1
+La tecla dos es una key igual a 50. \ 2
+La tecla tres es una key igual a 51. \ 3
+La tecla cuatro es una key igual a 52. \ 4
+La tecla cinco es una key igual a 53. \ 5
+La tecla seis es una key igual a 54. \ 6
+La tecla siete es una key igual a 55. \ 7
+La tecla ocho es una key igual a 56. \ 8
+La tecla nueve es una key igual a 57. \ 9
 
-La tecla inicio es una tecla igual a 36. \ home key 
+La tecla inicio es una key igual a 36. \ home key 
 
-La tecla flecha-izquierda es una tecla igual a 37. \ left-arrow key
-La tecla flecha-arriba es una tecla igual a 38. \ up-arrow key
-La tecla flecha-derecha es una tecla igual a 39. \ right-arrow key
-La tecla flecha-abajo es una tecla igual a 40. \ down-arrow key
+La tecla flecha-izquierda es una key igual a 37. \ left-arrow key
+La tecla flecha-arriba es una key igual a 38. \ up-arrow key
+La tecla flecha-derecha es una key igual a 39. \ right-arrow key
+La tecla flecha-abajo es una key igual a 40. \ down-arrow key
 
-La tecla insertar es una tecla igual a 45. \ insert key
+La tecla insertar es una key igual a 45. \ insert key
 
-La tecla windows-izquierda es una tecla igual a 91. \ left-window key
-La tecla windows-derecha key es una tecla igual a 92. \ right-window key
+La tecla windows-izquierda es una key igual a 91. \ left-window key
+La tecla windows-derecha key es una key igual a 92. \ right-window key
 
-La tecla av-pág es una tecla igual a 34. \ page-down key; could use it without accent
-La tecla re-pág es una tecla igual a 33. \ page-up key; could use it without accent
+La tecla av-pág es una key igual a 34. \ page-down key; could use it without accent
+La tecla re-pág es una key igual a 33. \ page-up key; could use it without accent
 
-La tecla menú es una tecla igual a 93. \ menu key; alternative name: clic-derecho
+La tecla menú es una key igual a 93. \ menu key; alternative name: clic-derecho
 
-La tecla bloqueo-numérico es una tecla igual a 144. \ numlock key
+La tecla bloqueo-numérico es una key igual a 144. \ numlock key
 
-La tecla numpad-por es una tecla igual a 106. \ numpad-astrisk key; I'm using literal translation for numpad-..., for simplicity
-La tecla numpad-dividido es una tecla igual a 111. \ numpad-slash
-La tecla numpad-más es una tecla igual a 107. \ numpad-cross
-La tecla numpad-menos es una tecla igual a 109. \ numpad-dash
-La tecla numpad-cero es una tecla igual a 96. \ numpad-zero
-La tecla numpad-uno es una tecla igual a 97. \ numpad-one
-La tecla numpad-dos es una tecla igual a 98. \ numpad-two
-La tecla numpad-tres es una tecla igual a 99. \ numpad-three
-La tecla numpad-cuatro es una tecla igual a 100. \ numpad-four
-La tecla numpad-cinco es una tecla igual a 101. \ numpad-five
-La tecla numpad-seis es una tecla igual a 102. \ numpad-six
-La tecla numpad-siete es una tecla igual a 103. \ numpad-seven
-La tecla numpad-ocho es una tecla igual a 104. \ numpad-eight
-La tecla numpad-nueve es una tecla igual a 105. \ numpad-nine
-La tecla numpad-punto-decimal es una tecla igual a 110. \ numpad-period; alt. name: numpad-coma-decimal
+La tecla numpad-por es una key igual a 106. \ numpad-astrisk key; I'm using literal translation for numpad-..., for simplicity
+La tecla numpad-dividido es una key igual a 111. \ numpad-slash
+La tecla numpad-más es una key igual a 107. \ numpad-cross
+La tecla numpad-menos es una key igual a 109. \ numpad-dash
+La tecla numpad-cero es una key igual a 96. \ numpad-zero
+La tecla numpad-uno es una key igual a 97. \ numpad-one
+La tecla numpad-dos es una key igual a 98. \ numpad-two
+La tecla numpad-tres es una key igual a 99. \ numpad-three
+La tecla numpad-cuatro es una key igual a 100. \ numpad-four
+La tecla numpad-cinco es una key igual a 101. \ numpad-five
+La tecla numpad-seis es una key igual a 102. \ numpad-six
+La tecla numpad-siete es una key igual a 103. \ numpad-seven
+La tecla numpad-ocho es una key igual a 104. \ numpad-eight
+La tecla numpad-nueve es una key igual a 105. \ numpad-nine
+La tecla numpad-punto-decimal es una key igual a 110. \ numpad-period; alt. name: numpad-coma-decimal
 
-La tecla pausa es una tecla igual a 19. \ pause key
-La tecla imprime-pantalla es una tecla igual a 44. \ print-screen key
+La tecla pausa es una key igual a 19. \ pause key
+La tecla imprime-pantalla es una key igual a 44. \ print-screen key
 
-La tecla bloqueo-desplazamiento es una tecla igual a 145. \ scrolllock key
-La tecla mayúsculas es una tecla igual a 16. \ shift key
+La tecla bloqueo-desplazamiento es una key igual a 145. \ scrolllock key
+La tecla mayúsculas es una key igual a 16. \ shift key
 
-La tecla espacio es una tecla igual a 32. \ space key
+La tecla espacio es una key igual a 32. \ space key
 
-La tecla tab es una tecla igual a 9. \ tab key; alternative name: tabulador
+La tecla tab es una key igual a 9. \ tab key; alternative name: tabulador
 
-La tecla borrar es una tecla igual a 8. \ backspace key; alternative name: retroceso
-La tecla retroceso es una tecla igual a 8.
-La tecla acento-grave es una tecla igual a 192. \ accent key
-La tecla alt es una tecla igual a 18. \ alt key
-La tecla bloqueo-mayúsculas es una tecla igual a 20. \ caps key
-La tecla ctrl es una tecla igual a 17. \ ctrl key; alt. name: control
-La tecla guion es una tecla igual a 189. \ dash key; alt. name: guion
-La tecla suprimir es una tecla igual a 46. \ delete key
-La tecla fin es una tecla igual a 35. \ end key
-La tecla entrar es una tecla igual a 13. \ enter key
+La tecla borrar es una key igual a 8. \ backspace key; alternative name: retroceso
+La tecla retroceso es una key igual a 8.
+La tecla acento-grave es una key igual a 192. \ accent key
+La tecla alt es una key igual a 18. \ alt key
+La tecla bloqueo-mayúsculas es una key igual a 20. \ caps key
+La tecla ctrl es una key igual a 17. \ ctrl key; alt. name: control
+La tecla guion es una key igual a 189. \ dash key; alt. name: guion
+La tecla suprimir es una key igual a 46. \ delete key
+La tecla fin es una key igual a 35. \ end key
+La tecla entrar es una key igual a 13. \ enter key
 
-La tecla-igual es una tecla igual a 187. \ equal-sign
-La tecla esc es una tecla igual a 27. \ esc key
+La tecla-igual es una key igual a 187. \ equal-sign
+La tecla esc es una key igual a 27. \ esc key
 
-La tecla escape es una tecla igual a 27. \ escape key; already in SAL
+La tecla escape es una key igual a 27. \ escape key; already in SAL
 
-La tecla limpiar es una tecla igual a 12. \ borrar key = limpiar? I can't encontrar el borrar key
+La tecla limpiar es una key igual a 12. \ borrar key = limpiar? I can't encontrar el borrar key
 
 \Spanish ASCII bytes
 
@@ -597,53 +597,53 @@ Un archivo de onda es un path. \ wave file
 Un ascenso es un number.
 Un bolígrafo es un color.
 Un brillo es un lightness.
-Un búfer es una cadena.
+Un búfer es una string.
 \Un cadena# es un number. \ can't use special characters in Spanish types; pluralize doesn't work
 Un cociente es un number. \ quotient
-Un conteo es un número. \ un count
-Un contador es un número.
+Un conteo es un number. \ un count
+Un contador es un number.
 Un denominador es un number.
-Un designador es una cadena.
+Un designador es una string.
 Un directorio es una ruta.
 Un elemento es un item.
 Un escáner es un rider.
 Un evento es una event.
 Un foco es un punto.
 Un grado es un number [0 to 359].
-Un grado preciso es un número [0 un 3599].
+Un grado preciso es un number.[0 un 3599].
 Un índice es un index.
 Un matiz es un hue.
 Un milisegundo es un millisecond.
 Un múltiplo es un number.
-Un nombre de archivo es una cadena.
-Un nombre de directorio es una cadena.
-Un nombre de unidad es una cadena.
-Un nombre es una cadena.
+Un nombre de archivo es una string.
+Un nombre de directorio es una string.
+Un nombre de unidad es una string.
+Un nombre es una string.
 Un numerador es un number.
 Un número es un number.
-Un número-x es un número.
-Un número-y es un número.
+Un número-x es un number.
+Un número-y es un number.
 Un par es un pair.
 Un paso es un point.
 Un poco es un number.
 Un polígono es un polygon.
-Un por ciento es un número.
-Un porcentaje es un número.
+Un por ciento es un number.
+Un porcentaje es un number.
 Un puntero es un pointer.
 Un puntero octeto es un pointer to un byte.
 Un punto es un spot.
 Un radio es un radius.
-Un rango es un número.
+Un rango es un number.
 Un recuento de elementos es un number.
 Un resto es un number. \ remainder
 Un tamaño es un size.
 Un temporizador es un timer.
 Un texto es un text.
 Un tipo de letra es un font.
-Un tipo de unidad es una cadena.
+Un tipo de unidad es una string.
 Un verso es una cosa con una cadena.
 Un vértice es un vertex.
-Una alineación es una cadena [centro, izquierda o derecha].
+Una alineación es una string [centro, izquierda o derecha].
 Una altura de tipo de letra es algunos twips.
 Una altura es algunos twips. \ height
 Una bandera es un flag.
@@ -651,30 +651,30 @@ Una cadena binaria es un string.
 Una cadena es un string.
 Una caja es un box.
 Una caja redonda es un roundy box.
-Una cantidad es un número.
+Una cantidad es un number.
 Una carta es un byte.
 Una carrera es un number.
-Una clase es una cadena.
+Una clase es una string.
 Una cola de eventos es algunos eventos.
 Una consola es un console.
-Una consulta es una cadena.
+Una consulta es una string.
 Una coord-x es una coordenada.
 Una coord-y es una coordenada.
 Una coordenada es un coord.
 Una coordenada-x es una coordenada.
 Una coordenada-y es una coordenada.
-Una copia es un número.
+Una copia es un number.
 Una cosa es un thing.
 Una cosa de cadena es un string thing.
 Una derecha es una coordenada.
-Una descripción es una cadena.
+Una descripción es una string.
 Una diferencia es un pair.
 Una dirección es algunos pasos. \ heading
 Una distancia es algunos twips.
 Una elección es una cosa con un nombre y una caja.
 Una elipse es un ellipse.
 Una entrada es un event.
-Una extensión es una cadena.
+Una extensión es una string.
 Una figura es un figure.
 Una fecha/hora es un date/time.
 Una flecha elegante es una figura.
@@ -696,11 +696,11 @@ Una ola es un wave.
 Una operación es un string. \ for remembering text for undo y redo so we don't waste saves on every character typed
 Una raíz cuadrada es un number.
 Una referencia es un refer.
-Una respuesta es una cadena.
+Una respuesta es una string.
 Una ruta es un path.
 Una saturación es un saturation.
 Una selección es un selection.
 Una subcadena es un substring.
 Una superior es una coordenada.
 Una tecla es un key.
-Una unidad es una cadena.
+Una unidad es una string.

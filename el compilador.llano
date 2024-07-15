@@ -1149,21 +1149,21 @@ Para compile un directory:
   
 Para compile un directory (add and compile el built-in startup routine):
   Si el compiler's abort flag es set, salir.
-  Escribir para StdOut "Agregando...".
+  Escribir para StdOut "Agregar y Compilar la rutina de inicio...".
   Iniciar el adding built-in startup routine timer.
   Agregar and compile el initialize before run and run and finalize after run routine.
   Stop el adding built-in startup routine timer.
   
 Para compile un directory (add el built-in memory routines):
   Si el compiler's abort flag es set, salir.
-  Escribir para StdOut "Agregando...".
+  Escribir para StdOut "Agregar las rutinas incorporadas...".
   Iniciar el adding built-in memory routines timer.
   Agregar el allocate and deallocate and finalize and destroy routines.
   Stop el adding built-in memory routines timer.
   
 Para compile un directory (address):
   Si el compiler's abort flag es set, salir.
-  Escribir para StdOut "Calcular lugares...".
+  Escribir para StdOut "Calculando direcciones...".
   Iniciar el addressing timer.
   Poner 4096 into un address.
   Poner el address into el import borough's base.
@@ -1713,9 +1713,9 @@ Para compile el next statement usando un rider (point):
   Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Si el term's kind es "literal", abort con "Esta clase de variable no va aquí." y el rider.
   Si el term's type's length es not 4, abort con "Esta clase de variable no va aquí." y el rider.
-  Si el rider's token es not "to", abort con "Esperaba 'para', pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not "to", abort con "Esperaba 'para', pero encontré '" then el rider's token then "'." y el rider; salir. \ TRADUZIR
   Mover el rider (compiler rules).
-  Si el rider's token es not "routine", abort con "Esperaba la palabra 'rutina' pero encontré '" then el rider's token then "'." y el rider; salir.
+  Si el rider's token es not "routine", abort con "Esperaba la palabra 'rutina' pero encontré '" then el rider's token then "'." y el rider; salir. \ TRADUZIR
   Mover el rider (compiler rules).
   Compile un routine reference usando el rider.
   Convertir el routine reference to un moniker.
@@ -1784,7 +1784,7 @@ Para compile el next statement usando un rider retornando un term (call - retorn
   Si el term's type es not value pushable, abort con "Se necesita una variable de 1, 2 o 4 bytes en la cláusula de 'Retornar'." y el rider.
   
 Para compile un routine reference usando un rider:
-  Si el rider's token es "to", mover el rider (compiler rules).
+  Si el rider's token es "to", mover el rider (compiler rules). \ TRADUZIR
   Si el rider es el start of any function, compile el routine reference usando el rider (function); salir.
   Si el rider's token es any decide, compile el routine reference usando el rider (decide).
   Lazo.
