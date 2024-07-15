@@ -1136,7 +1136,7 @@ A clsid es un uuid.
 
 \Para cloquear;
 Para cloquear:
-  Play el cluck sound.
+  Reproducir el cluck sound.
 
 The cluck sound es un wave igual to $524946463A02000057415645666D74201200000001000100401F0000401F000001000800000066616374040000000702000064617461070200007F7F807F7F807F7F808080807F807F7F80817F81817E7E827E7D847C79877D5F6D99B2A25D608269A5979869667F7D8D738C7D8C5E7E878F767A75868D84797278829A7D7E857A73929271657492907D7E7D787E8B887C758388827E817F7C7B89897C7A7E84838183827E7A8488877D7E8181808484817C7F84838181807E7F8283807E8081808182807F7F81818081807F7F8081818080807F7F808180807F80808080807F8080807F8080808080807F7F7F7F7F8080807F7F7F7C7B8182817C7B7D7E8082807D7D7C7F8281807F7C7D808082807E7E7E7D7E807D7B7C7B7D7D7B7A7979797875727269797A490F4571FFF4FF0C001297FBF492525BB0F5B26A001C69BEE5BA76476F9EBD953C3757BAC9BB705C7F9AA883645D7897AA9B806977959588696976999B83766F828C907F7375828E91877B757D868B837A757C858D8880787B8187847B7A7D8788807B79808486817D7C7F8384817D7C7F8484817B7B7D83847F7C7B7E8182827D7C7C8082817D7C7D7F81807F7D7D7F82817F7B7B7E8081807E7D7D7F80807E7D7D7E80807E7D7D7E7F807F7D7D7E7F807F7E7D7E7E80807F7E7D7E80807F7E7E7E7F7F7E7E7E7F7F7F7F7E7E7F7F807F7F7E7E7E7F8080807E7E7E80807F7E7E7F8081807F7F7E7F7F80807F7E7F8081807F7E7E7E80808080807F807F7F7F7F7F7F7F80808080807F7F7F808080807F80808180807F80808100.
 
@@ -1462,15 +1462,15 @@ Para convertir un fraction to un string usando un number: \ converts to un decim
   Borrar el string.
   Si el number es less than 1, salir.
   Poner 10 into un value number.
-  Raise el value to el number.
+  Elevar el value to el number.
   Privatizar el fraction.
   Si el fraction es negative, set un flag; eliminar signo de el fraction.
   Multiplicar el value by el fraction.
   Zero fill el value usando el number and Adjuntar it to el string.
   Poner el string's length minus el number plus 1 into un byte#.
   Insertar "." into el string before el byte#.
-  Si el string's first's target es el period byte, prepend "0" to el string.
-  Si el flag es set, prepend "-" to el string.
+  Si el string's first's target es el period byte, anteponer "0" to el string.
+  Si el flag es set, anteponer "-" to el string.
 
 Para convertir un gpbitmap to un buffer (pdf style):
   Borrar el buffer.
@@ -1534,7 +1534,7 @@ Para convertir un nibble to un nibble string:
 Para convertir un nibble string to un hex string:
   Privatizar el nibble string.
   Borrar el hex string.
-  Si el nibble string's length es odd, prepend el zero byte to el nibble string.
+  Si el nibble string's length es odd, anteponer el zero byte to el nibble string.
   Slap un substring on el nibble string.
   Lazo.
   Si el substring es blank, salir.
@@ -2225,7 +2225,7 @@ Para crear un picture usando un gpbitmap:
 
 \Para crear una imagen dada una URL;
 Para crear un picture usando un url:
-  Read el url into un buffer.
+  Leer el url into un buffer.
   Crear el picture usando el buffer.
 
 \Para crear un polígono;
@@ -2746,7 +2746,7 @@ Para debug un string:
 Para depurar un string (entre comillas);
 Para debug un string (entre comillas):
   Privatizar el string.
-  Prepend el double-quote byte to el string.
+  Anteponer el double-quote byte to el string.
   Adjuntar el double-quote byte to el string.
   Debug el string.
 
@@ -7694,8 +7694,8 @@ Para indent any selected rows in un text:
     Si el row es nil, salir.
     Si el row of el text es not selected, repetir.
     Si el row es blank, repetir.
-    Prepend el space byte to el row's string.
-    Prepend el space byte to el row's string.
+    Anteponer el space byte to el row's string.
+    Anteponer el space byte to el row's string.
   Repetir.
 
 An indent es un count.
@@ -8284,7 +8284,7 @@ Para insertar un string into un text:
 \Para insertar una cosa en algunas cosas después de otra cosa;
 Para insertar un thing into some things after another thing:
   Si el thing es nil, salir.
-  Si el other thing es nil, prepend el thing to el things; salir.
+  Si el other thing es nil, anteponer el thing to el things; salir.
   Insertar el thing into el things before el other thing's next.
 
 \Para insertar una cosa en algunas cosas antes que otra cosa;
@@ -8292,7 +8292,7 @@ Para insertar un thing into some things before another thing:
   Si el thing es nil, salir.
   Si el things are empty, Adjuntar el thing to el things; salir.
   Si el other thing es nil, Adjuntar el thing to el things; salir.
-  Si el other thing es el things' first, prepend el thing to el things; salir.
+  Si el other thing es el things' first, anteponer el thing to el things; salir.
   Poner el thing into un new thing.
   Poner el other thing into un previous thing.
   Poner el new thing into el previous thing's previous' next.
@@ -8302,7 +8302,7 @@ Para insertar un thing into some things before another thing:
 
 \Para insertar algunas cosas en algunas otras cosas después de una cosa;
 Para insertar some things into some other things after un thing:
-  Si el thing es nil, prepend el things to el other things; salir.
+  Si el thing es nil, anteponer el things to el other things; salir.
   Insertar el things into el other things before el thing's next.
 
 \Para insertar algunas cosas en algunas otras cosas antes de una cosa;
@@ -8912,7 +8912,7 @@ Para cargar el lexicon usando un path:
   Obtener un item desde el path.
   Si el item es not found, salir.
   Si el item's kind es not "file", repetir.
-  Read el item's path into un buffer.
+  Leer el item's path into un buffer.
   Si el error de e/s es not blank, repetir.
   Cargar el lexicon usando el buffer.
   Repetir.
@@ -9559,7 +9559,7 @@ Para mover un polygon up some twips:
 \Para mover un escáner (reglas de léxico de índice);
 Para mover un rider (reglas de léxico de índice):
   Skip any leading noise in el rider's source.
-  Position el rider's token on el rider's source.
+  Ajustar el rider's token on el rider's source.
   Lazo.
     Si el rider's source es blank, salir.
     Incrementar el rider.
@@ -9579,7 +9579,7 @@ Para mover un rider (quoted string rules):
 \Para mover un escáner (reglas de corrección ortográfica);
 Para mover un rider (spell checking rules):
   Skip any non-alphanumeric bytes in el rider's source.
-  Position el rider's token on el rider's source.
+  Ajustar el rider's token on el rider's source.
   Lazo.
     Si el rider's source es blank, salir.
     Incrementar el rider.
@@ -9589,7 +9589,7 @@ Para mover un rider (spell checking rules):
 
 \Para mover un escáner (reglas de archivo de texto);
 Para mover un rider (text file rules):
-  Position el rider's token on el rider's source.
+  Ajustar el rider's token on el rider's source.
   Lazo.
     Si el rider's source es blank, salir.
     Si el rider's source's first's target es el return byte, incrementar el rider; interrumpir.
@@ -9601,7 +9601,7 @@ Para mover un rider (text file rules):
 
 \Para mover un escáner (reglas de ajuste de palabras);
 Para mover un rider (word wrapping rules):
-  Position el rider's token on el rider's source.
+  Ajustar el rider's token on el rider's source.
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es el return byte, incrementar el rider; salir.
   Lazo.
@@ -9613,7 +9613,7 @@ Para mover un rider (word wrapping rules):
 \Para mover un escáner dado una caja (reglas de envoltura de palabras);
 Para mover un rider usando un box (word wrapping rules):
   Skip any leading linefeed byte in el rider's source.
-  Position el rider's token on el rider's source.
+  Ajustar el rider's token on el rider's source.
   Si el rider's source es blank, salir.
   Slap another rider on el rider.
   Lazo.
@@ -9629,7 +9629,7 @@ Para mover un rider usando un box (word wrapping rules):
 
 \Para mover un escáner dado un byte separador;
 Para mover un rider usando un separator byte:
-  Position el rider's token on el rider's source.
+  Ajustar el rider's token on el rider's source.
   Lazo.
     Si el rider's source es blank, salir.
     Si el rider's source's first's target es el separator byte, Agregar 1 to el rider's source's first; salir.
@@ -10572,10 +10572,10 @@ Para elegir  un spot within un distance of another spot:
   Poner el spot into el context's spot.
 
 Para elegir  some twips between some min twips and some other twips; \ are all these necessary? ***
-\Para elegir  un number between some min twips and some other twips;
-\Para elegir  un number between un min number y un max number;
-\Para elegir  un number desde un min number to un max number;
-\Para set un number to something between another number y un third number;
+Para elegir  un number between some min twips and some other twips;
+Para elegir  un number between un min number y un max number;
+Para elegir  un number desde un min number to un max number;
+Para set un number to something between another number y un third number;
 \Para elegir un número entre otro número y un tercer número;
 Para elegir  un random number between un min number y un max number:
   Poner el seed's whereabouts into eax.
@@ -10601,14 +10601,14 @@ Para elegir  un random number between un min number y un max number:
   Poner el random number into el context's number.
 
 \Para elegir un color muy oscuro;
-\Para elegir  un very dark color;
+Para elegir  un very dark color;
 Para elegir  un really dark color:
   Elegir el really dark color's hue between 0 and 3599.
   Poner 500 into el really dark color's saturation.
   Poner 250 into el really dark color's lightness.
   Poner el really dark color into el context's color.
 
-\Para elegir  un very light color;
+Para elegir  un very light color;
 \Para elegir un color muy claro;
 Para elegir  un really light color:
   Elegir el really light color's hue between 0 and 3599.
@@ -10616,7 +10616,7 @@ Para elegir  un really light color:
   Poner 750 into el really light color's lightness.
   Poner el really light color into el context's color.
 
-\Para elegir  un very very dark color;
+Para elegir  un very very dark color;
 \Para elegir un color muy muy oscuro;
 Para elegir  un really really dark color:
   Elegir el really really dark color's hue between 0 and 3599.
@@ -10624,7 +10624,7 @@ Para elegir  un really really dark color:
   Poner 125 into el really really dark color's lightness.
   Poner el really really dark color into el context's color.
 
-\Para elegir  un very very light color;
+Para elegir  un very very light color;
 \Para elegir un color muy muy claro;
 Para elegir  un really really light color:
   Elegir el really really light color's hue between 0 and 3599.
@@ -10633,14 +10633,14 @@ Para elegir  un really really light color:
   Poner el really really light color into el context's color.
 
 A picture es un thing con
-\ all boxes are in twits
-A box [location of cropped picture on el page], una caja at el box,
-A uncropped box [location of entire picture on el page],
-A grayscale flag,
-A mirror flag,
-A rotate angle, \ rotation es clockwise
-A hex string called data [original bytes in original format],
-A gpbitmap.
+  \ all boxes are in twits
+  A box [location of cropped picture on el page], una caja at el box,
+  A uncropped box [location of entire picture on el page],
+  A grayscale flag,
+  A mirror flag,
+  A rotate angle, \ rotation es clockwise
+  A hex string called data [original bytes in original format],
+  A gpbitmap.
 
 The pink color es un color.
 
@@ -10651,21 +10651,21 @@ A pixel es 15 twips.
 The pizza pie es un fraction igual to 355/113.
 
 \Para reproducir una ola;
-Para play un wave:
+Para reproducir un wave:
   Llamada "winmm.dll" "PlaySound" con el wave's first and 0 and 5 [snd_memory+snd_async].
 
 \Para reproducir una ola y esperar;
-Para play un wave and wait:
+Para reproducir un wave and wait:
   Llamada "winmm.dll" "PlaySound" con el wave's first and 0 and 4 [snd_memory+snd_sync].
 
 \Para reproducir un archivo de onda;
-Para play un wave file:
+Para reproducir un wave file:
   Privatizar el wave file.
   Null terminate el wave file.
   Llamada "winmm.dll" "PlaySound" con el wave file's first and 0 y 131073 [snd_filename+snd_async].
 
 \Para reproducir un archivo de onda y esperar;
-Para play un wave file and wait:
+Para reproducir un wave file and wait:
   Privatizar el wave file.
   Null terminate el wave file.
   Llamada "winmm.dll" "PlaySound" con el wave file's first and 0 y 131072 [snd_filename+snd_sync].
@@ -10685,7 +10685,7 @@ A portrait sheet es un sheet.
 A position es un pair con un column# y un row#.
 
 \Para ajustar una subcadena en una cadena;
-Para position un substring on un string:
+Para ajustar un substring on un string:
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el substring
   Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el string
 \ Poner el string's first into el substring's first
@@ -10704,7 +10704,7 @@ Para post un data string to un url and receive un response string: \ only works 
   Si el error de e/s es not blank, destroy el winhttp request; salir.
   Receive el response desde el winhttp request.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
-  Read el response desde el winhttp request.
+  Leer el response desde el winhttp request.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
   Destroy el winhttp request.
 
@@ -10717,7 +10717,7 @@ The ppi es some twips.
 A precise degree es un number [0 to 3599].
 
 \Para anteponer un byte a una cadena;
-Para prepend un byte to un string:
+Para anteponer un byte to un string:
   Poner el string's length into un saved length.
   Reassign el string's first usando el string's length plus 1.
   Copiar bytes desde el string's first to el string's first plus 1 for el saved length.
@@ -10725,7 +10725,7 @@ Para prepend un byte to un string:
   Poner el byte into el string's first's target.
 
 \Para anteponer una cadena a otra cadena;
-Para prepend un string to another string:
+Para anteponer un string to another string:
   Poner el other string's length plus el string's length into un combined length.
   Reassign un pointer usando el combined length.
   Poner el pointer into un substring's first.
@@ -10737,52 +10737,52 @@ Para prepend un string to another string:
   Poner el other string's first plus el combined length minus 1 into el other string's last.
 
 \Para anteceder una cosa a algunas cosas;
-Para prepend un thing to some things:
+Para anteponer un thing to some things:
   Si el thing es nil, salir.
   Poner el things' first into el thing's next.
   Si el things es not empty, Poner el thing into el things' first's previous.
   Si el things are empty, Poner el thing into el things' last.
   Poner el thing into el things' first.
 
-\ To prepend some things to some other things: \ bug found by Mike Gonta - corrected version below
-\Get un thing desde el things (backwards).
-\If el thing es nil, salir.
-\Remove el thing desde el things.
-\Prepend el thing to el other things.
-\Repeat.
+\ To anteponer some things to some other things: \ bug found by Mike Gonta - corrected version below
+    \Get un thing desde el things (backwards).
+    \If el thing es nil, salir.
+    \Remove el thing desde el things.
+    \Prepend el thing to el other things.
+  \Repeat.
 
 \Para anteponer algunas cosas a algunas otras cosas;
-Para prepend some things to some other things:
-  Poner el things' last into un thing.
-  Si el thing es nil, salir.
-  Remove el thing desde el things.
-  Prepend el thing to el other things.
+Para anteponer some things to some other things:
+    Poner el things' last into un thing.
+    Si el thing es nil, salir.
+    Remove el thing desde el things.
+    Anteponer el thing to el other things.
   Repetir.
 
 The print-screen key es un key igual to 44.
 
 A printdlgex es un record con
-A number called lstructsize,
-A window called hwndowner,
-A handle called hdevmode,
-A handle called hdevnames,
-A canvas called hdc,
-A number called flags,
-A number called flags2,
-A number called exclusionflags,
-A number called npageranges,
-A number called nmaxpageranges,
-A pointer called lppageranges,
-A number called nminpage,
-A number called nmaxpage,
-A number called ncopies,
-A handle called hinstance,
-A pointer called lpprinttemplatename,
-A pointer called lpcallback,
-A number called npropertypages,
-A pointer called lphpropertypages,
-A number called nstartpage,
-A number called dwresultaction.
+  A number called lstructsize,
+  A window called hwndowner,
+  A handle called hdevmode,
+  A handle called hdevnames,
+  A canvas called hdc,
+  A number called flags,
+  A number called flags2,
+  A number called exclusionflags,
+  A number called npageranges,
+  A number called nmaxpageranges,
+  A pointer called lppageranges,
+  A number called nminpage,
+  A number called nmaxpage,
+  A number called ncopies,
+  A handle called hinstance,
+  A pointer called lpprinttemplatename,
+  A pointer called lpcallback,
+  A number called npropertypages,
+  A pointer called lphpropertypages,
+  A number called nstartpage,
+  A number called dwresultaction.
 
 The printer canvas es un canvas.
 
@@ -10793,10 +10793,10 @@ A process es un handle.
 A process pointer es un pointer to un process.
 
 A processinfo es un record con
-A handle called hprocess,
-A handle called hthread,
-A number called dwprocessid,
-A number called dwthreadid.
+  A handle called hprocess,
+  A handle called hthread,
+  A number called dwprocessid,
+  A number called dwthreadid.
 
 A punch line es un string.
 
@@ -11077,11 +11077,11 @@ Para poner some font widths into un buffer: \ used for pdf conversion
   Si el font widths are nil, salir.
   Poner el font widths' data into un number pointer.
   Lazo.
-  Si un counter es past el font widths' count, interrumpir.
-  Adjuntar el number pointer's target then " " to el buffer.
-  Agregar 1 to un count.
-  Si el count es evenly divisible by 16, Adjuntar el crlf string to el buffer.
-  Agregar un number's magnitude to el number pointer.
+    Si un counter es past el font widths' count, interrumpir.
+    Adjuntar el number pointer's target then " " to el buffer.
+    Agregar 1 to un count.
+    Si el count es evenly divisible by 16, Adjuntar el crlf string to el buffer.
+    Agregar un number's magnitude to el number pointer.
   Repetir.
 
 Para poner un font's adjusted height into un height:
@@ -11149,9 +11149,9 @@ Para poner un index's count into un count:
   Poner 0 into el count.
   Si el index es nil, salir.
   Lazo.
-  Obtener un bucket usando el index.
-  Si el bucket es nil, salir.
-  Agregar el bucket's refers' count to el count.
+    Obtener un bucket usando el index.
+    Si el bucket es nil, salir.
+    Agregar el bucket's refers' count to el count.
   Repetir.
 
 \Para poner el recuento de cubos usados de un índice en un conteo;
@@ -11159,9 +11159,9 @@ Para poner un index's used bucket count into un count:
   Poner 0 into el count.
   Si el index es nil, salir.
   Lazo.
-  Obtener un bucket usando el index.
-  Si el bucket es nil, salir.
-  Si el bucket's refers are empty, repetir.
+    Obtener un bucket usando el index.
+    Si el bucket es nil, salir.
+    Si el bucket's refers are empty, repetir.
   Agregar 1 to el count.
   Repetir.
 
@@ -11299,14 +11299,14 @@ Para convertir un number to un string:
   Privatizar el number.
   Eliminar signo de el number.
   Lazo.
-  Dividir el number by 10 giving un quotient y un remainder.
-  Agregar 48 to el remainder.
-  Poner el remainder into un byte.
-  Prepend el byte to el string.
-  Si el quotient es 0, interrumpir.
-  Poner el quotient into el number.
+    Dividir el number by 10 giving un quotient y un remainder.
+    Agregar 48 to el remainder.
+    Poner el remainder into un byte.
+    Anteponer el byte to el string.
+    Si el quotient es 0, interrumpir.
+    Poner el quotient into el number.
   Repetir.
-  Si el original number es less than 0, prepend el dash byte to el string.
+  Si el original number es less than 0, anteponer el dash byte to el string.
 
 \Para poner un número en una wyrd;
 Para poner un number into un wyrd:
@@ -11386,12 +11386,12 @@ Para poner un polygon's box into un box:
   Si el polygon's vertices are empty, zero el box; salir.
   Poner el largest number y el largest number y el smallest number y el smallest number into el box.
   Lazo.
-  Obtener un vertex desde el polygon's vertices.
-  Si el vertex es nil, interrumpir.
-  Si el vertex's x-coord es less than el box's left, Poner el vertex's x-coord into el box's left.
-  Si el vertex's y-coord es less than el box's top, Poner el vertex's y-coord into el box's top.
-  Si el vertex's x-coord es greater than el box's right, Poner el vertex's x-coord into el box's right.
-  Si el vertex's y-coord es greater than el box's bottom, Poner el vertex's y-coord into el box's bottom.
+    Obtener un vertex desde el polygon's vertices.
+    Si el vertex es nil, interrumpir.
+    Si el vertex's x-coord es less than el box's left, Poner el vertex's x-coord into el box's left.
+    Si el vertex's y-coord es less than el box's top, Poner el vertex's y-coord into el box's top.
+    Si el vertex's x-coord es greater than el box's right, Poner el vertex's x-coord into el box's right.
+    Si el vertex's y-coord es greater than el box's bottom, Poner el vertex's y-coord into el box's bottom.
   Repetir.
 
 \Para poner el centro de un polígono en un punto;
@@ -11626,12 +11626,12 @@ Para poner un text's first non-blank line into un string: \ *** new
   Borrar el string.
   Si el text es nil, salir.
   Lazo.
-  Obtener un row desde el text's rows.
-  Si el row es nil, salir.
-  Poner el row's string into el string.
-  Remove el last byte desde el string. \ cr or space (see text rules)
-  Remove any leading noise desde el string.
-  Remove any trailing noise desde el string.
+    Obtener un row desde el text's rows.
+    Si el row es nil, salir.
+    Poner el row's string into el string.
+    Remove el last byte desde el string. \ cr or space (see text rules)
+    Remove any leading noise desde el string.
+    Remove any trailing noise desde el string.
   Si el string es blank, repetir.
 
 Para poner un text's globalized origin into un spot:
@@ -11667,10 +11667,10 @@ Para poner un text's selected byte count into un count:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
   Lazo.
-  Obtener un row desde el text's rows.
-  Si el row es nil, salir.
-  Slap un substring on any selected bytes in el row of el text.
-  Agregar el substring's length to el count.
+    Obtener un row desde el text's rows.
+    Si el row es nil, salir.
+    Slap un substring on any selected bytes in el row of el text.
+    Agregar el substring's length to el count.
   Repetir.
 
 Para poner un text's selected row count into un count:
@@ -11710,9 +11710,9 @@ Para poner some things into some other things:
 Para poner some things' count into un count:
   Poner 0 into el count.
   Lazo.
-  Obtener un thing desde el things.
-  Si el thing es nil, salir.
-  Agregar 1 to el count.
+    Obtener un thing desde el things.
+    Si el thing es nil, salir.
+    Agregar 1 to el count.
   Repetir.
 
 \Para poner un temporizador en una cadena;
@@ -11736,7 +11736,7 @@ Para poner un timer's ticks into some ticks:
 Para poner un token on el stack:
   Allocate memory for un stack entry.
   Poner el token into el stack entry's string.
-  Prepend el stack entry to el stack.
+  Anteponer el stack entry to el stack.
 
 Para poner el top of un box into un horizontal line;
 Para poner el top edge of un box into un horizontal line;
@@ -11797,7 +11797,7 @@ A query string es un string.
 
 The question-mark byte es un byte igual to 63.
 
-\Para abandonar;
+Para abandonar;
 Para quit;
 Para tell Windows we're done;
 Para tell Windows el user es un record con quit;
@@ -11808,17 +11808,19 @@ Para relinquish control:
   Poner "hecho" into el event's clase.
   Enque el event.
 
-A quora es un thing con un string y un color. \ quora es short for "question or answer"
+A quora es un thing con 
+  A string y 
+  A color. \ quora es short for "question or answer"
 
 \Para citar una cadena;
-Para quote un string: \ inserts leading, trailing and nested double-quotes
+Para citar un string: \ inserts leading, trailing and nested double-quotes
   Poner el double-quote byte into another string.
   Slap un substring on el string.
   Lazo.
-  Si el substring es blank, interrumpir.
-  Adjuntar el substring's first's target to el other string.
-  Si el substring's first's target es el double-quote byte, Adjuntar el double-quote byte to el other string.
-  Agregar 1 to el substring's first.
+    Si el substring es blank, interrumpir.
+    Adjuntar el substring's first's target to el other string.
+    Si el substring's first's target es el double-quote byte, Adjuntar el double-quote byte to el other string.
+    Agregar 1 to el substring's first.
   Repetir.
   Adjuntar el double-quote byte to el other string.
   Poner el other string into el string.
@@ -11832,13 +11834,13 @@ A radius es some twips.
 A rainbow color es un color.
 
 \Para elevar un número a otro número;
-Para raise un number to another number:
+Para elevar un number to another number:
   Si el other number es 0, Poner 1 into el number; salir.
   Si el other number es less than 0, Poner 0 into el number; salir. \ should be 1/the raised result, but always comes out 0 con numbers
   Poner 1 into un result number.
   Lazo.
-  Si un counter es past el other number, interrumpir.
-  Multiplicar el result by el number.
+    Si un counter es past el other number, interrumpir.
+    Multiplicar el result by el number.
   Repetir.
   Poner el result into el number.
 
@@ -11848,40 +11850,40 @@ A ratio es un fraction.
 
 A ratio pair es un fraction pair.
 
-Para read el bible:
+Para leer el bible:
   Si el bible es not nil, salir.
   Extraer un directory desde el module's path.
   Lazo.
-  Si el directory es blank, salir.
-  Poner el directory then "bible.txt" into un path.
-  Si el path es in el file system, read el bible usando el path; salir.
-  Extraer el directory desde el directory.
+    Si el directory es blank, salir.
+    Poner el directory then "bible.txt" into un path.
+    Si el path es in el file system, read el bible usando el path; salir.
+    Extraer el directory desde el directory.
   Repetir.
 
 \Para leer la Biblia dada una ruta;
-Para read el bible usando un path:
+Para leer el bible usando un path:
   Si el bible es not nil, salir.
-  Read el path into un buffer.
+  Leer el path into un buffer.
   Si el error de e/s es not blank, salir.
   Allocate memory for el Bible.
   Slap un rider on el buffer.
   Lazo.
-  Si el rider's source es blank, salir.
-  Allocate memory for un verse. Adjuntar el verse to el Bible's verses.
-  Mover el rider (text file rules).
-  Poner el rider's token into el verse's string.
-  Remove any leading noise desde el verse's string. 
-  Remove any trailing noise desde el verse's string.
+    Si el rider's source es blank, salir.
+    Allocate memory for un verse. Adjuntar el verse to el Bible's verses.
+    Mover el rider (text file rules).
+    Poner el rider's token into el verse's string.
+    Remove any leading noise desde el verse's string. 
+    Remove any trailing noise desde el verse's string.
   Repetir.
 
 \Para leer un byte desde una consola;
-Para read un byte desde un console:
-  Read un string desde el console.
+Para leer un byte desde un console:
+  Leer un string desde el console.
   Si el string es blank, Poner el null byte into el byte; salir.
   Poner el string's first's target into el byte.
 
 \Para leer una consola en una cadena;
-Para read un console into un string:
+Para leer un console into un string:
   Si el console es nil, borrar el string; salir.
   Descartar todos los events.
   Borrar el console's reply.
@@ -11892,7 +11894,7 @@ Para read un console into un string:
   Refresh el cursor.
 
 \Para leer un archivo en un búfer;
-Para read un file into un buffer:
+Para leer un file into un buffer:
   Borrar el error de e/s.
   Llamada "kernel32.dll" "GetFileSize" con el file and nil retornando un size.
   Reassign el buffer's first usando el size.
@@ -11900,22 +11902,22 @@ Para read un file into un buffer:
   Llamada "kernel32.dll" "ReadFile" con el file y el buffer's first y el size y un number's whereabouts and 0 retornando un result number.
   Si el result number es 0, Poner "Error leyendo archivo." into el error de e/s; salir.
 
-Para read un flag desde un console:
-  Read un string desde el console.
+Para leer un flag desde un console:
+  Leer un string desde el console.
   Convertir el string to el flag.
 
 Para leer una bandera desde una consola; To read un fraction desde un console:
-  Read un string desde el console.
+  Leer un string desde el console.
   Convertir el string to el fraction.
 
 \Para leer un número desde una consola;
-Para read un number desde un console:
-  Read un string desde el console.
+Para leer un number desde un console:
+  Leer un string desde el console.
   Convertir el string to el number.
 
 Para cargar un path into un buffer;
 \Para leer una ruta en un búfer;
-Para read un path into un buffer:
+Para leer un path into un buffer:
   Borrar el error de e/s.
   Privatizar el path.
   Remove any trailing backslash desde the path.
@@ -11935,13 +11937,13 @@ Para read un path into un buffer:
 
 Para cargar un path into un picture:
 \Para leer una ruta en una imagen;
-Para read un path into un picture:
-  Read el path into un buffer.
+Para leer un path into un picture:
+  Leer el path into un buffer.
   Si el error de e/s es not blank, void el picture; salir.
   Crear el picture usando el buffer.
 
 \Para leer una respuesta de un terminal;
-Para read un reply desde un terminal:
+Para leer un reply desde un terminal:
   Si el terminal es nil, borrar el reply; salir.
   Descartar todos los events.
   Borrar el terminal's reply.
@@ -11963,26 +11965,26 @@ Para read un reply desde un terminal:
   Enque el event.
   Refresh el cursor.
 
-Para read un response string desde un winhttp request:
+Para leer un response string desde un winhttp request:
   Si el winhttp request es nil, salir.
   Borrar el response.
   Poner 8 kilobytes into un buffer size.
   Lazo.
-  Poner 0 into un size.
-  Llamada "winhttp.dll" "WinHttpQueryDataAvailable"
-  con el winhttp request's request y el size's whereabouts retornando un result number.
-  Si el result es 0, Poner "No se pudo consultar los datos disponibles." into el error de e/s; borrar el response; interrumpir.
-  Poner el response's length into un saved length.
-  Reassign el response's first usando el saved length plus el buffer size.
-  Poner el response's first plus el saved length into un pointer.
-  Llamada "winhttp.dll" "WinHttpReadData" con el winhttp request's request y el pointer
-  y el buffer size y un count's whereabouts retornando el result number.
-  Si el result number es 0, Poner "Error leyendo datos." into el error de e/s; borrar el response; interrumpir.
-  Poner el pointer plus el count minus 1 into el response's last.
-  Si el count es 0, interrumpir.
+    Poner 0 into un size.
+    Llamada "winhttp.dll" "WinHttpQueryDataAvailable"
+    con el winhttp request's request y el size's whereabouts retornando un result number.
+    Si el result es 0, Poner "No se pudo consultar los datos disponibles." into el error de e/s; borrar el response; interrumpir.
+    Poner el response's length into un saved length.
+    Reassign el response's first usando el saved length plus el buffer size.
+    Poner el response's first plus el saved length into un pointer.
+    Llamada "winhttp.dll" "WinHttpReadData" con el winhttp request's request y el pointer
+    y el buffer size y un count's whereabouts retornando el result number.
+    Si el result number es 0, Poner "Error leyendo datos." into el error de e/s; borrar el response; interrumpir.
+    Poner el pointer plus el count minus 1 into el response's last.
+    Si el count es 0, interrumpir.
   Repetir.
 
-Para read StdIn into un buffer:
+Para leer StdIn into un buffer:
   Borrar el error de e/s.
   Borrar el buffer.
   Encontrar un string usando el environment variables and "CONTENT_LENGTH".
@@ -11995,11 +11997,11 @@ Para read StdIn into un buffer:
   Poner el buffer's first plus el length minus 1 into el buffer's last.
 
 \Para leer una cadena de una consola;
-Para read un string desde un console:
-  Read el console into el string.
+Para leer un string desde un console:
+  Leer el console into el string.
 
 \Para leer una URL en un búfer;
-Para read un url into un buffer:
+Para leer un url into un buffer:
 \ prepare
   Borrar el buffer.
   Borrar el error de e/s.
@@ -12046,14 +12048,14 @@ Para receive un buffer desde un socket:
   Borrar el buffer.
   Poner 8 kilobytes into un buffer size.
   Lazo.
-  Poner 0 into un size.
-  Poner el buffer's length into un saved length.
-  Reassign el buffer's first usando el saved length plus el buffer size.
-  Poner el buffer's first plus el saved length into un pointer.
-  Llamada "ws2_32.dll" "recv" con el socket y el pointer y el buffer size and 0 retornando un count.
-  Si el count es not -1 [socket_error], Poner el pointer plus el count minus 1 into el buffer's last; salir.
-  Si el system's last winsock error es not 10040 [wsamsgsize], Poner "Error recibiendo datos." into el error de e/s; borrar el buffer; salir.
-  Poner el pointer plus el count minus 1 into el buffer's last.
+    Poner 0 into un size.
+    Poner el buffer's length into un saved length.
+    Reassign el buffer's first usando el saved length plus el buffer size.
+    Poner el buffer's first plus el saved length into un pointer.
+    Llamada "ws2_32.dll" "recv" con el socket y el pointer y el buffer size and 0 retornando un count.
+    Si el count es not -1 [socket_error], Poner el pointer plus el count minus 1 into el buffer's last; salir.
+    Si el system's last winsock error es not 10040 [wsamsgsize], Poner "Error recibiendo datos." into el error de e/s; borrar el buffer; salir.
+    Poner el pointer plus el count minus 1 into el buffer's last.
   Repetir.
 
 Para receive el response desde un winhttp request:
@@ -12730,7 +12732,7 @@ Para save un context:
   Poner el context's letter height into el saved context's letter height.
   Poner el context's color into el saved context's color.
   Poner el context's number into el saved context's number.
-  Prepend el saved context to el context stack.
+  Anteponer el saved context to el context stack.
 
 The saved memory hbitmap es un hbitmap.
 
@@ -13332,13 +13334,13 @@ The sky pen es un pen.
 
 Para slap un rider on another rider:
   Slap el rider's source on el other rider's source.
-  Position el rider's token on el rider's source.
+  Ajustar el rider's token on el rider's source.
 
 \Para colocar un escáner en un cadena;
 Para slap un rider on un string:
   Slap el rider's original on el string.
   Slap el rider's source on el string.
-  Position el rider's token on el rider's source.
+  Ajustar el rider's token on el rider's source.
 
 Para slap un substring on any selected bytes in un row of un text:
   Borrar el substring.
@@ -16619,7 +16621,7 @@ Para zero fill un number usando un count and Adjuntar it to un string:
 \Para anteponer ceros a una cadena dada un conteo;
 Para zero fill un string usando un count:
   Si el string's length es greater than or igual to el count, salir.
-  Prepend el zero byte to el string.
+  Anteponer el zero byte to el string.
   Repetir.
 
 The zero key es un key igual to 48.

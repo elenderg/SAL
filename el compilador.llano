@@ -108,7 +108,7 @@ Para abort con un string y un  byte pointer:
   Encontrar el compiler's abort path y el compiler's abort row# usando el byte pointer.
   Si el compiler's abort path es blank, salir.
   Extraer un file name desde el compiler's abort path.
-  Prepend "Error en " then el file name then ". " to el compiler's abort message.
+  Anteponer "Error en " then el file name then ". " to el compiler's abort message.
   
 Para abort con un string y un  rider:
   Si el rider's token es not blank, 
@@ -1533,7 +1533,7 @@ Para compile some monikettes and some parameters usando un rider (definite artic
   Mover el rider (compiler rules).
   Scan un name usando el rider.
   Si el compiler's abort flag es set, salir.
-  Prepend "the " to el name.
+  Anteponer "the " to el name.
   Agregar un monikette to el monikettes usando el name.
   
 Para compile some monikettes and some parameters usando un rider (indefinite article):
@@ -1738,8 +1738,8 @@ Para compile el next statement usando un rider (privatize):
   Poner el term's nickname into el local's nickname.
   Poner el term's type name into el local's type name.
   Resolve el local.
-  Prepend "original " to el term's name.
-  Si el term's nickname es not blank, prepend "original " to el term's nickname.
+  Anteponer "original " to el term's name.
+  Si el term's nickname es not blank, anteponer "original " to el term's nickname.
   Agregar several fragments usando "Poner" y el term's variable and "into" y el local y el rider's token's first.
   Si el rider's token es not el period byte, abort con "Parece que es un record con olvidado un punto por ahí." y el rider; salir.
   Mover el rider (compiler rules).
@@ -1806,7 +1806,7 @@ Para compile un routine reference usando un rider (definite article):
   Si el compiler's abort flag es set, salir.
   Mover el rider (compiler rules).
   Scan un name usando el rider.
-  Prepend "the " to el name.
+  Anteponer "the " to el name.
   Agregar un monikette to el routine reference usando el name.
   
 Para compile un routine reference usando un rider (function):
@@ -3991,7 +3991,7 @@ Para mover un rider (code rules - symbol):
   Incrementar el rider.
   
 Para mover un rider (code rules):
-  Position el rider's token on el rider's source.
+  Ajustar el rider's token on el rider's source.
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es noise, mover el rider (code rules - noise); salir.
   Si el rider's source's first's target es el backslash byte, mover el rider (code rules - comment); salir.
