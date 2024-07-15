@@ -315,7 +315,7 @@ Para adjuntar un string to another string (handling email transparency):
   Si el string es blank, salir.
   Slap un rider on el string.
   Lazo.
-    Move el rider (text file rules).
+    Mover el rider (text file rules).
     Si el rider's token es blank, salir.
     Si el rider's token starts con ".", Adjuntar "." to el other string.
     Adjuntar el rider's token to el other string.
@@ -881,13 +881,13 @@ Para centrar un box at el bottom of another box:
 Para centrar un box in another box (horizontalmente):
   Poner el other box's center's x minus el box's center's x into un number.
   Round el number to el nearest multiple of el tpp.
-  Move el box usando el number and 0.
+  Mover el box usando el number and 0.
 
 \Para centrar una caja en otra caja (verticalmente);
 Para centrar un box in another box (verticalmente):
   Poner el other box's center's y-coord minus el box's center's y-coord into un number.
   Round el number to el nearest multiple of el tpp.
-  Move el box usando 0 y el number.
+  Mover el box usando 0 y el number.
 
 Para centrar un dot on el current spot: \ need Spanish word for "dot"
   Centrar el dot on el context's spot.
@@ -904,67 +904,67 @@ Para centrar un ellipse in un box (verticalmente):
 Para centrar un line in un box (horizontalmente):
   Poner el box's center's x minus el line's center's x into un number.
   Round el number to el nearest multiple of el tpp.
-  Move el line usando el number and 0.
+  Mover el line usando el number and 0.
 
 \Para centrar una línea en una caja (verticalmente);
 Para centrar un line in un box (verticalmente):
   Poner el box's center's y minus el line's center's y into un number.
   Round el number to el nearest multiple of el tpp.
-  Move el line usando 0 y el number.
+  Mover el line usando 0 y el number.
 
 \Para centrar una imagen en una caja (horizontalmente);
 Para centrar un picture in un box (horizontalmente):
   Si el picture es nil, salir.
   Poner el box's center's x-coord minus el picture's box's center's x-coord into un number.
   Round el number to el nearest multiple of el tpp.
-  Move el picture usando el number and 0.
+  Mover el picture usando el number and 0.
 
 \Para centrar una imagen en una caja (verticalmente);
 Para centrar un picture in un box (verticalmente):
   Si el picture es nil, salir.
   Poner el box's center's y-coord minus el picture's box's center's y-coord into un number.
   Round el number to el nearest multiple of el tpp.
-  Move el picture usando 0 y el number.
+  Mover el picture usando 0 y el number.
 
 \Para centrar un polígono en una caja (horizontalmente);
 Para centrar un polygon in un box (horizontalmente):
   Si el polygon es nil, salir.
   Poner el box's center's x minus el polygon's box's center's x into un number.
   Round el number to el nearest multiple of el tpp.
-  Move el polygon usando el number and 0.
+  Mover el polygon usando el number and 0.
 
 \Para centrar un polígono en una caja (verticalmente);
 Para centrar un polygon in un box (verticalmente):
   Si el polygon es nil, salir.
   Poner el box's center's y minus el polygon's box's center's y into un number.
   Round el number to el nearest multiple of el tpp.
-  Move el polygon usando 0 y el number.
+  Mover el polygon usando 0 y el number.
 
 \Para centrar un punto en una caja (horizontalmente);
 Para centrar un spot in un box (horizontalmente):
   Poner el box's center's x minus el spot's x into un number.
   Round el number to el nearest multiple of el tpp.
-  Move el spot usando el number and 0.
+  Mover el spot usando el number and 0.
 
 \Para centrar un punto en una caja (verticalmente);
 Para centrar un spot in un box (verticalmente):
   Poner el box's center's y minus el spot's y into un number.
   Round el number to el nearest multiple of el tpp.
-  Move el spot usando 0 y el number.
+  Mover el spot usando 0 y el number.
 
 \Para centrar un texto en una caja (horizontalmente);
 Para centrar un text in un box (horizontalmente):
   Si el text es nil, salir.
   Poner el box's center's x minus el text's box's center's x into un number.
   Round el number to el nearest multiple of el tpp.
-  Move el text usando el number and 0.
+  Mover el text usando el number and 0.
 
 \Para centrar un texto en una caja (verticalmente);
 Para centrar un text in un box (verticalmente):
   Si el text es nil, salir.
   Poner el box's center's y minus el text's box's center's y into un number.
   Round el number to el nearest multiple of el tpp.
-  Move el text usando 0 y el number.
+  Mover el text usando 0 y el number.
 
 \Para cambiar el matiz actual en algunos pasos;
 Para cambiar el current hue by some points:
@@ -1769,7 +1769,7 @@ Para convertir un string to un query string:
 Para convertir un string to some rows:
   Slap un rider on el string.
   Lazo.
-    Move el rider (text file rules).
+    Mover el rider (text file rules).
     Si el rider's token es blank, interrumpir.
     Crear un row usando el rider's token.
     Adjuntar el row to el rows.
@@ -4016,7 +4016,7 @@ Para decidir si un string es in another string:
   Lazo.
     Si el substring's last es greater than el other string's last, diga no.
     Si el substring es el string, diga sí.
-    Move el substring usando 1.
+    Mover el substring usando 1.
   Repetir.
 
 \Para decidir si una cadena está en un índice;
@@ -4651,7 +4651,7 @@ Para trazar un fancy arrow some twips long con un color:
   Save el context.
   Trazar el twips.
   Turn around.
-  Move el twips divided by 8.
+  Mover el twips divided by 8.
   Save el context.
   Turn left 1/8 of el way.
   Dibujar un spiral starting con el twips divided by 4.
@@ -5163,7 +5163,7 @@ Para dibujar un string at un spot con un color y un font:
     Llamada "gdi32.dll" "TextOutA" con el current canvas y el spot's x-coord y el spot's y-coord y el substring's first y el substring's length.
     Obtener un width usando el substring y el current canvas.
     Agregar el width to el spot's x-coord.
-    Move el substring usando el text cutoff.
+    Mover el substring usando el text cutoff.
   Repetir.
   Destroy el hfont of el current canvas.
 
@@ -5955,11 +5955,11 @@ Para encontrar next usando un row y un text y un flag:
   Si el row es nil, salir.
   Slap un substring on el row's string.
   Poner el substring's first plus el encontrar string's length minus 1 into el substring's last.
-  Si el row's row# es el encontrar anchor's row#, move el substring usando el encontrar anchor's column# minus 1.
+  Si el row's row# es el encontrar anchor's row#, mover el substring usando el encontrar anchor's column# minus 1.
   Lazo.
     Si el substring's last es greater than or igual to el row's string's last, salir.
     Si el substring es el encontrar string (accent-free compare), interrumpir. \ for spanish incremental find
-    Move el substring usando 1.
+    Mover el substring usando 1.
   Repetir.
   Set el flag.
   Poner el substring's first minus el row's string's first plus 1 into el text's anchor column#.
@@ -5990,7 +5990,7 @@ Para encontrar next usando un text y un flag (wrapped text):
   Lazo.
     Si el substring's last es greater than el string's last, salir.
     Si el substring es el encontrar string (accent-free compare), interrumpir. \ for spanish incremental find
-    Move el substring usando 1.
+    Mover el substring usando 1.
   Repetir.
   Set el flag.
   Poner el substring's first minus el string's first plus 1 into un anchor absolute position.
@@ -6006,7 +6006,7 @@ Para encontrar el next misspelling usando un row y un text y un flag:
   Si el row's row# es el encontrar anchor's row#, Agregar el encontrar anchor's column# minus 1 to el rider's source's first.
   Si el rider's source's first es not el row's string's first, skip word characters in el rider's source.
   Lazo.
-    Move el rider (spell checking rules).
+    Mover el rider (spell checking rules).
     Si el rider's token es blank, salir.
     Si el rider's token es not misspelled, repetir.
   Set el flag.
@@ -6145,7 +6145,7 @@ Para voltear un picture:
   Si el picture es nil, salir.
   Poner el picture's box's center's y-coord minus el picture's uncropped box's center's y-coord into un pair's y-number.
   Multiplicar el pair's y-number by 2.
-  Move el picture's uncropped box usando el pair.
+  Mover el picture's uncropped box usando el pair.
   Voltear el gpbitmap in el picture.
 
 \Para voltear un polígono;
@@ -6737,7 +6737,7 @@ Para obtener un start width y un substring usando un row y un spot y un text (fo
     Poner el start width plus el width into another width.
     Si el spot's x-coord es less than or igual to el other width, interrumpir.
     Agregar el width to el start width.
-    Move el substring usando el text cutoff.
+    Mover el substring usando el text cutoff.
   Repetir.
   Poner el substring's first into el substring's last.
 
@@ -6828,10 +6828,10 @@ Para obtener un x-coord usando un string y un box (fast - right):
 A gigabyte es 1024 megabytes.
 
 Para globalize un box usando un pair:
-  Move el box usando el pair.
+  Mover el box usando el pair.
 
 Para globalize un spot usando un pair:
-  Move el spot usando el pair.
+  Mover el spot usando el pair.
 
 Para volver al lugar donde estábamos:
   Restore el context.
@@ -7152,8 +7152,8 @@ Para handle un event usando un text (delete key):
 Para handle un event usando un text (down-arrow key):
   Si el text es nil, salir.
   Si el caret of el text está on el last line, set un flag.
-  Si el flag es set, move el caret to el last byte of el text.
-  Si el flag es not set, move el caret down in el text.
+  Si el flag es set, mover el caret to el last byte of el text.
+  Si el flag es not set, mover el caret down in el text.
   Si el event's shift flag es not set, deselect el text.
   Borrar el text's last operation.
   Scroll el text to el caret.
@@ -7161,8 +7161,8 @@ Para handle un event usando un text (down-arrow key):
 \Para manejar un evento dado un texto (tecla fin);
 Para handle un event usando un text (end key):
   Si el text es nil, salir.
-  Si el event es modified, move el caret to el last byte of el text.
-  Si el event es not modified, move el caret to el last byte of el current row of el text.
+  Si el event es modified, mover el caret to el last byte of el text.
+  Si el event es not modified, mover el caret to el last byte of el current row of el text.
   Si el event's shift flag es not set, deselect el text.
   Borrar el text's last operation.
   Scroll el text to el caret.
@@ -7184,8 +7184,8 @@ Para handle un event usando un text (escape key):
 \Para manejar un evento dado un texto (tecla inicio);
 Para handle un event usando un text (home key):
   Si el text es nil, salir.
-  Si el event es modified, move el caret to el first byte of el text.
-  Si el event es not modified, move el caret to el first byte of el current row of el text.
+  Si el event es modified, mover el caret to el first byte of el text.
+  Si el event es not modified, mover el caret to el first byte of el current row of el text.
   Si el event's shift flag es not set, deselect el text.
   Borrar el text's last operation.
   Scroll el text to el caret.
@@ -7194,14 +7194,14 @@ Para handle un event usando un text (home key):
 Para handle un event usando un text (left double click):
   Si el text es nil, salir.
   Deselect el text.
-  Move el caret right to any non-alphanumeric byte in el text.
-  Move el anchor left to any non-alphanumeric byte in el text.
+  Mover el caret right to any non-alphanumeric byte in el text.
+  Mover el anchor left to any non-alphanumeric byte in el text.
 
 \Para manejar un evento dado un texto (tecla flecha-izquierda);
 Para handle un event usando un text (left-arrow key):
   Si el text es nil, salir.
   Si el event es modified, jump el caret left in el text.
-  Si el event es not modified, move el caret left in el text.
+  Si el event es not modified, mover el caret left in el text.
   Si el event's shift flag es not set, deselect el text.
   Borrar el text's last operation.
   Scroll el text to el caret.
@@ -7210,7 +7210,7 @@ Para handle un event usando un text (left-arrow key):
 Para handle un event usando un text (page-down key):
   Si el text es nil, salir.
   Scroll el text down one page.
-  Move el caret down one page in el text.
+  Mover el caret down one page in el text.
   Si el event's shift flag es not set, deselect el text.
   Borrar el text's last operation.
 
@@ -7218,7 +7218,7 @@ Para handle un event usando un text (page-down key):
 Para handle un event usando un text (page-up key):
   Si el text es nil, salir.
   Scroll el text up one page.
-  Move el caret up one page in el text.
+  Mover el caret up one page in el text.
   Si el event's shift flag es not set, deselect el text.
   Borrar el text's last operation.
 
@@ -7234,7 +7234,7 @@ Para handle un event usando un text (printable key):
 Para handle un event usando un text (right-arrow key):
   Si el text es nil, salir.
   Si el event es modified, jump el caret right in el text.
-  Si el event es not modified, move el caret right in el text.
+  Si el event es not modified, mover el caret right in el text.
   Si el event's shift flag es not set, deselect el text.
   Borrar el text's last operation.
   Scroll el text to el caret.
@@ -7252,7 +7252,7 @@ Para handle un event usando un text (tab key):
 \Para manejar un evento dado un texto (tecla flecha-arriba);
 Para handle un event usando un text (up-arrow key):
   Si el text es nil, salir.
-  Move el caret up in el text.
+  Mover el caret up in el text.
   Si el event's shift flag es not set, deselect el text.
   Borrar el text's last operation.
   Scroll el text to el caret.
@@ -8412,23 +8412,23 @@ The j-key es un key igual to 74.
 
 Para saltar el caret left in un text:
   Si el text es nil, salir.
-  Move el caret left to any non-noise byte in el text.
+  Mover el caret left to any non-noise byte in el text.
   Si el text's caret column# es 1, salir.
   Obtener un row usando el text's caret row# y el text.
   Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
-  Si el byte pointer's target es alphanumeric, move el caret left to any non-alphanumeric byte in el text.
-  Si el byte pointer's target es not alphanumeric, move el caret left to any non-symbolic byte in el text.
-  Move el caret left to any non-noise byte in el text.
+  Si el byte pointer's target es alphanumeric, mover el caret left to any non-alphanumeric byte in el text.
+  Si el byte pointer's target es not alphanumeric, mover el caret left to any non-symbolic byte in el text.
+  Mover el caret left to any non-noise byte in el text.
 
 Para saltar el caret right in un text:
   Si el text es nil, salir.
-  Move el caret right to any non-noise byte in el text.
+  Mover el caret right to any non-noise byte in el text.
   Obtener un row usando el text's caret row# y el text.
   Si el text's caret column# es el row's string's length, salir.
   Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
-  Si el byte pointer's target es alphanumeric, move el caret right to any non-alphanumeric byte in el text.
-  Si el byte pointer's target es not alphanumeric, move el caret right to any non-symbolic byte in el text.
-  Move el caret right to any non-noise byte in el text.
+  Si el byte pointer's target es alphanumeric, mover el caret right to any non-alphanumeric byte in el text.
+  Si el byte pointer's target es not alphanumeric, mover el caret right to any non-symbolic byte in el text.
+  Mover el caret right to any non-noise byte in el text.
 
 The k-key es un key igual to 75.
 
@@ -8902,7 +8902,7 @@ Para cargar el lexicon usando un buffer:
   Si el lexicon es nil, crear el lexicon.
   Slap un rider on el buffer.
   Lazo.
-    Move el rider (index lexicon rules).
+    Mover el rider (index lexicon rules).
     Si el rider's token es blank, salir.
     Indexar el rider's token in el lexicon's index.
   Repetir.
@@ -8920,12 +8920,12 @@ Para cargar el lexicon usando un path:
 Para localizar un box usando un pair:
   Privatizar el pair.
   Negate el pair.
-  Move el box usando el pair.
+  Mover el box usando el pair.
 
 Para localizar un spot usando un pair:
   Privatizar el pair.
   Negate el pair.
-  Move el spot usando el pair.
+  Mover el spot usando el pair.
 
 Para bloquear [una parte rectangular de] un gpbitmap usando un bitmapdata (24-bit rgb):
   Poner el gpbitmap's gprect into un gprect.
@@ -9134,162 +9134,165 @@ The minus-sign byte es un byte igual to 45.
 
 A minute es 60 seconds.
 
-Para mirror el gpbitmap in un picture:
+Para reflejar el gpbitmap in un picture:
   Si el picture es nil, salir.
   Reverse el picture's mirror flag.
-  Mirror el picture's gpbitmap.
+  Reflejar el picture's gpbitmap.
 
-Para mirror un gpimage:
+Para reflejar un gpimage:
   Llamada "gdiplus.dll" "GdipImageRotateFlip" con el gpimage and 4 [rotatenoneflipx].
 
 \Para reflejar una imagen;
-Para mirror un picture:
+Para reflejar un picture:
   Si el picture es nil, salir.
   Poner el picture's box's center's x-coord minus el picture's uncropped box's center's x-coord into un pair's x-number.
   Multiplicar el pair's x-number by 2.
-  Move el picture's uncropped box usando el pair.
-  Mirror el gpbitmap in el picture.
+  Mover el picture's uncropped box usando el pair.
+  Reflejar el gpbitmap in el picture.
 
 \Para reflejar un polígono;
-Para mirror un polygon:
+Para reflejar un polygon:
   Si el polygon es nil, salir.
   Poner el polygon's box into un box.
   Lazo.
-  Obtener un vertex desde el polygon's vertices.
-  Si el vertex es nil, salir.
-  Restar el box's left desde el vertex's x-coord.
-  Poner el box's right minus el vertex's x-coord into el vertex's x-coord.
+    Obtener un vertex desde el polygon's vertices.
+    Si el vertex es nil, salir.
+    Restar el box's left desde el vertex's x-coord.
+    Poner el box's right minus el vertex's x-coord into el vertex's x-coord.
   Repetir.
 
-A mixed es un record con un whole number y un ratio y un fraction at el ratio.
+A mixed es un record con 
+  A whole number y 
+  A ratio y 
+  A fraction at el ratio.
 
 The module es un record con
-A handle,
-A path,
-A directory,
-A root directory, \ one up desde el directory that exe es run from
-A file name w/o extension called name.
+  A handle,
+  A path,
+  A directory,
+  A root directory, \ one up desde el directory that exe es run from
+  A file name w/o extension called name.
 
 The mouse es un record con
-A key called left button, una tecla llamada botón izquierdo at el left button,
-A key called right button, una tecla llamada botón derecho at el right button.
+  A key called left button, una tecla llamada botón izquierdo at el left button,
+  A key called right button, una tecla llamada botón derecho at el right button.
 
-Para move el anchor left to any non-alphanumeric byte in un text:
+Para mover el anchor left to any non-alphanumeric byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's anchor row# y el text.
   Lazo.
-  Si el text's anchor column# es 1, salir.
-  Poner el row's string's first plus el text's anchor column# minus 2 into un byte pointer.
-  Si el byte pointer's target es not alphanumeric, salir.
-  Restar 1 desde el text's anchor column#.
+    Si el text's anchor column# es 1, salir.
+    Poner el row's string's first plus el text's anchor column# minus 2 into un byte pointer.
+    Si el byte pointer's target es not alphanumeric, salir.
+    Restar 1 desde el text's anchor column#.
   Repetir.
 
-\Para retroceder algunos twips;
-Para move back some twips:
+Para retroceder algunos twips:
+\Para mover back some twips:
   Turn around.
-  Move el twips.
+  Mover el twips.
   Turn around.
 
-Para move un box to el bottom of another box:
-  Move el box down el other box's bottom minus el box's bottom.
+Para mover un box to el bottom of another box:
+  Mover el box down el other box's bottom minus el box's bottom.
 
-Para move un box close to el left side of another box;
-Para move un box close to el left of another box:
-  Move el box to el left of el other box.
+Para mover un box close to el left side of another box;
+Para mover un box close to el left of another box:
+  Mover el box to el left of el other box.
   Pick un length between 0 y el box's width times 3/4.
-  Move el box right el length.
+  Mover el box right el length.
 
 \Para mover una caja hacia abajo algunos twips;
-Para move un box down some twips:
-  Move el box usando 0 y el twips.
+Para mover un box down some twips:
+  Mover el box usando 0 y el twips.
 
 \Para mover una caja dado un par;
-Para move un box usando un pair:
-  Move el box usando el pair's x-number y el pair's y-number.
+Para mover un box usando un pair:
+  Mover el box usando el pair's x-number y el pair's y-number.
 
-Para move un box usando un ratio pair y un spot;
-Para move un box usando un fraction pair y un spot:
+Para mover un box usando un ratio pair y un spot;
+Para mover un box usando un fraction pair y un spot:
   Obtener un difference between el box's left-top y el spot.
   Poner el difference into another difference.
   Scale el other difference usando el fraction pair.
   Restar el difference desde el other difference.
-  Move el box usando el other difference.
+  Mover el box usando el other difference.
 
 Some x-twips are some twips.
 Some y-twips are some twips.
 
 \Para mover una caja dado algunos x-twips y algunos y-twips;
-Para move un box usando some x-twips and some y-twips:
+Para mover un box usando some x-twips and some y-twips:
   Agregar el x-twips to el box's left.
   Agregar el y-twips to el box's top.
   Agregar el x-twips to el box's right.
   Agregar el y-twips to el box's bottom.
 
-Para move un box left to un coord:
-  Move el box left el box's left minus el coord.
+Para mover un box left to un coord:
+  Mover el box left el box's left minus el coord.
 
-Para move un box to el left side of another box;
-Para move un box to el left of another box:
-  Move el box left el box's left minus el other box's left.
+Para mover un box to el left side of another box;
+Para mover un box to el left of another box:
+  Mover el box left el box's left minus el other box's left.
 
 \Para mover una caja hacia la izquierda algunos twips;
-Para move un box left some twips:
-  Move el box usando - el twips and 0.
+Para mover un box left some twips:
+  Mover el box usando - el twips and 0.
 
-Para move un box to el right side of another box;
-Para move un box to el right of another box:
-  Move el box right el other box's right minus el box's right.
+Para mover un box to el right side of another box;
+Para mover un box to el right of another box:
+  Mover el box right el other box's right minus el box's right.
 
 \Para mover una caja hacia la derecha algunos twips;
-Para move un box right some twips:
-  Move el box usando el twips and 0.
+Para mover un box right some twips:
+  Mover el box usando el twips and 0.
 
 \Para mover una caja a un punto;
-Para move un box to un spot:
+Para mover un box to un spot:
   Obtener un difference between el spot y el box's left-top.
-  Move el box usando el difference.
+  Mover el box usando el difference.
 
-Para move un box to el top left corner of another box:
-  Move el box to el other box's left-top.
+Para mover un box to el top left corner of another box:
+  Mover el box to el other box's left-top.
 
-Para move un box to el top of another box:
-  Move el box up el box's top minus el other box's top.
+Para mover un box to el top of another box:
+  Mover el box up el box's top minus el other box's top.
 
 \Para mover una caja hacia arriba algunos twips;
-Para move un box up some twips:
-  Move el box usando 0 and - el twips.
+Para mover un box up some twips:
+  Mover el box usando 0 and - el twips.
 
-Para move el caret down in un text:
+Para mover el caret down in un text:
   Si el text es nil, salir.
   Agregar 1 to el text's caret row#.
   Limitar el caret in el text.
 
-Para move el caret down one page in un text:
+Para mover el caret down one page in un text:
   Si el text es nil, salir.
   Agregar el text's rows/box to el text's caret row#.
   Restar 1 desde el text's caret row#.
   Limitar el caret in el text.
 
-Para move el caret to el first byte of el current row of un text:
+Para mover el caret to el first byte of el current row of un text:
   Si el text es nil, salir.
   Poner 1 into el text's caret column#.
 
-Para move el caret to el first byte of un text:
+Para mover el caret to el first byte of un text:
   Si el text es nil, salir.
   Poner 1 y 1  into el text's caret.
 
-Para move el caret to el last byte of el current row of un text:
+Para mover el caret to el last byte of el current row of un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Poner el row's string's length into el text's caret column#.
 
-Para move el caret to el last byte of un text:
+Para mover el caret to el last byte of un text:
   Si el text es nil, salir.
   Poner el text's row count into el text's caret row#.
   Obtener un row usando el text's caret row# y el text.
   Poner el row's string's length into el text's caret column#.
 
-Para move el caret left to any non-alphanumeric byte in un text:
+Para mover el caret left to any non-alphanumeric byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Lazo.
@@ -9299,7 +9302,7 @@ Para move el caret left to any non-alphanumeric byte in un text:
   Restar 1 desde el text's caret column#.
   Repetir.
 
-Para move el caret left to any non-noise byte in un text:
+Para mover el caret left to any non-noise byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Lazo.
@@ -9309,7 +9312,7 @@ Para move el caret left to any non-noise byte in un text:
   Restar 1 desde el text's caret column#.
   Repetir.
 
-Para move el caret left to any non-symbolic byte in un text:
+Para mover el caret left to any non-symbolic byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Lazo.
@@ -9319,12 +9322,12 @@ Para move el caret left to any non-symbolic byte in un text:
   Restar 1 desde el text's caret column#.
   Repetir.
 
-Para move el caret left in un text:
+Para mover el caret left in un text:
   Si el text es nil, salir.
   Restar 1 desde el text's caret column#.
   Limitar el caret in el text.
 
-Para move el caret right to any non-alphanumeric byte in un text:
+Para mover el caret right to any non-alphanumeric byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Lazo.
@@ -9334,7 +9337,7 @@ Para move el caret right to any non-alphanumeric byte in un text:
   Agregar 1 to el text's caret column#.
   Repetir.
 
-Para move el caret right to any non-noise byte in un text:
+Para mover el caret right to any non-noise byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Lazo.
@@ -9344,7 +9347,7 @@ Para move el caret right to any non-noise byte in un text:
   Agregar 1 to el text's caret column#.
   Repetir.
 
-Para move el caret right to any non-symbolic byte in un text:
+Para mover el caret right to any non-symbolic byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Lazo.
@@ -9354,207 +9357,207 @@ Para move el caret right to any non-symbolic byte in un text:
   Agregar 1 to el text's caret column#.
   Repetir.
 
-Para move el caret right in un text:
+Para mover el caret right in un text:
   Si el text es nil, salir.
   Agregar 1 to el text's caret column#.
   Limitar el caret in el text.
 
-Para move el caret up in un text:
+Para mover el caret up in un text:
   Si el text es nil, salir.
   Restar 1 desde el text's caret row#.
   Limitar el caret in el text.
 
-Para move el caret up one page in un text:
+Para mover el caret up one page in un text:
   Si el text es nil, salir.
   Restar el text's rows/box desde el text's caret row#.
   Agregar 1 to el text's caret row#.
   Limitar el caret in el text.
 
 \Para mover una elipse hacia abajo algunos twips;
-Para move un ellipse down some twips:
-  Move el ellipse usando 0 y el twips.
+Para mover un ellipse down some twips:
+  Mover el ellipse usando 0 y el twips.
 
 \Para mover una elipse dado un par;
-Para move un ellipse usando un pair:
-  Move el ellipse usando el pair's x y el pair's y.
+Para mover un ellipse usando un pair:
+  Mover el ellipse usando el pair's x y el pair's y.
 
 \Para mover una elipse dado algunos x-twips y algunos y-twips;
-Para move un ellipse usando some x-twips and some y-twips:
-  Move el ellipse's box usando el x-twips y el y-twips.
+Para mover un ellipse usando some x-twips and some y-twips:
+  Mover el ellipse's box usando el x-twips y el y-twips.
 
 \Para mover una elipse hacia la izquierda algunos twips;
-Para move un ellipse left some twips:
-  Move el ellipse usando - el twips and 0.
+Para mover un ellipse left some twips:
+  Mover el ellipse usando - el twips and 0.
 
 \Para mover una elipse hacia la derecha algunos twips;
-Para move un ellipse right some twips:
-  Move el ellipse usando el twips and 0.
+Para mover un ellipse right some twips:
+  Mover el ellipse usando el twips and 0.
 
 \Para mover una elipse a un punto;
-Para move un ellipse to un spot:
+Para mover un ellipse to un spot:
   Obtener un difference between el spot y el ellipse's left-top.
-  Move el ellipse usando el difference.
+  Mover el ellipse usando el difference.
 
 \Para mover una elipse hacia arriba algunos twips;
-Para move un ellipse up some twips:
-  Move el ellipse usando 0 and - el twips.
+Para mover un ellipse up some twips:
+  Mover el ellipse usando 0 and - el twips.
 
-Para move un finger over un number:
+Para mover un finger over un number:
   Si el finger es nil, salir.
   Agregar 1 to el finger.
 
 \Para mover hacia la izquierda unos twips y hacia abajo algunos otros twips;
-Para move to el left some twips and down some other twips;
-Para move left some twips and down some other twips;
-Para move some twips to el left and some other twips down;
-Para move some twips left and some other twips down:
-  Move el context's spot left el twips.
-  Move el context's spot down el other twips.
+Para mover to el left some twips and down some other twips;
+Para mover left some twips and down some other twips;
+Para mover some twips to el left and some other twips down;
+Para mover some twips left and some other twips down:
+  Mover el context's spot left el twips.
+  Mover el context's spot down el other twips.
 
 \Para mover hacia la izquierda algunos twips y hacia arriba algunos otros twips;
-Para move to el left some twips and up some other twips;
-Para move left some twips and up some other twips;
-Para move some twips to el left and some other twips up;
-Para move some twips left and some other twips up:
-  Move el context's spot left el twips.
-  Move el context's spot up el other twips.
+Para mover to el left some twips and up some other twips;
+Para mover left some twips and up some other twips;
+Para mover some twips to el left and some other twips up;
+Para mover some twips left and some other twips up:
+  Mover el context's spot left el twips.
+  Mover el context's spot up el other twips.
 
 \Para mover una línea hacia abajo algunos twips;
-Para move un line down some twips:
-  Move el line usando 0 y el twips.
+Para mover un line down some twips:
+  Mover el line usando 0 y el twips.
 
 \Para mover una línea dada un par;
-Para move un line usando un pair:
-  Move el line usando el pair's x y el pair's y.
+Para mover un line usando un pair:
+  Mover el line usando el pair's x y el pair's y.
 
 \Para mover una línea dado algunos x-twips y algunos y-twips;
-Para move un line usando some x-twips and some y-twips:
+Para mover un line usando some x-twips and some y-twips:
   Agregar el x-twips to el line's start's x-coord.
   Agregar el y-twips to el line's start's y-coord.
   Agregar el x-twips to el line's end's x-coord.
   Agregar el y-twips to el line's end's y-coord.
 
 \Para mover una línea hacia la izquierda algunos twips;
-Para move un line left some twips:
-  Move el line usando - el twips and 0.
+Para mover un line left some twips:
+  Mover el line usando - el twips and 0.
 
 \Para mover una línea a un punto;
-Para move un line to un spot:
+Para mover un line to un spot:
   Obtener un difference between el spot y el line's start.
-  Move el line usando el difference.
+  Mover el line usando el difference.
 
 \Para mover una línea hacia la derecha algunos twips;
-Para move un line some twips to el right;
-Para move un line right some twips:
-  Move el line usando el twips and 0.
+Para mover un line some twips to el right;
+Para mover un line right some twips:
+  Mover el line usando el twips and 0.
 
 \Para mover una línea hacia arriba algunos twips;
-Para move un line up some twips:
-  Move el line usando 0 and - el twips.
+Para mover un line up some twips:
+  Mover el line usando 0 and - el twips.
 
-Para move to el middle;
+Para mover to el middle;
 Para start in el middle;
-Para move to el center;
+Para mover to el center;
 \Para comenzar en el centro;
 Para start in el center:
   Poner el context's box's center into el context's spot.
 
-Para move to el middle of un box;
+Para mover to el middle of un box;
 Para start in el middle of un box;
-Para move to el center of un box;
+Para mover to el center of un box;
 \Para comenzar en el centro en una caja;
 Para start in el center of un box:
   Poner el box's center into el context's spot.
 
 \Para mover una imagen hacia abajo algunos twips;
-Para move un picture down some twips:
-  Move el picture usando 0 y el twips.
+Para mover un picture down some twips:
+  Mover el picture usando 0 y el twips.
 
 \Para mover una imagen dada un par;
-Para move un picture usando un pair:
-  Move el picture usando el pair's x-number y el pair's y-number.
+Para mover un picture usando un pair:
+  Mover el picture usando el pair's x-number y el pair's y-number.
 
 \Para mover una imagen dado algunos x-twips y algunos y-twips;
-Para move un picture usando some x-twips and some y-twips:
+Para mover un picture usando some x-twips and some y-twips:
   Si el picture es nil, salir.
-  Move el picture's box usando el x-twips y el y-twips.
-  Move el picture's uncropped box usando el x-twips y el y-twips.
+  Mover el picture's box usando el x-twips y el y-twips.
+  Mover el picture's uncropped box usando el x-twips y el y-twips.
 
 \Para mover una imagen hacia la izquierda algunos twips;
-Para move un picture left some twips:
-  Move el picture usando - el twips and 0.
+Para mover un picture left some twips:
+  Mover el picture usando - el twips and 0.
 
 \Para mover una imagen hacia la derecha algunos twips;
-Para move un picture right some twips:
-  Move el picture usando el twips and 0.
+Para mover un picture right some twips:
+  Mover el picture usando el twips and 0.
 
 \Para mover una imagen a un punto;
-Para move un picture to un spot:
+Para mover un picture to un spot:
   Si el picture es nil, salir.
   Obtener un difference between el spot y el picture's left-top.
-  Move el picture usando el difference.
+  Mover el picture usando el difference.
 
 \Para mover una imagen hacia arriba algunos twips;
-Para move un picture up some twips:
-  Move el picture usando 0 and - el twips.
+Para mover un picture up some twips:
+  Mover el picture usando 0 and - el twips.
 
 \Para mover un polígono hacia abajo algunos twips;
-Para move un polygon down some twips:
-  Move el polygon usando 0 y el twips.
+Para mover un polygon down some twips:
+  Mover el polygon usando 0 y el twips.
 
 \Para mover un polígono dado un par;
-Para move un polygon usando un pair:
-  Move el polygon usando el pair's x-number y el pair's y-number.
+Para mover un polygon usando un pair:
+  Mover el polygon usando el pair's x-number y el pair's y-number.
 
 \Para mover un polígono dado algunos x-twips y algunos y-twips;
-Para move un polygon usando some x-twips and some y-twips:
+Para mover un polygon usando some x-twips and some y-twips:
   Si el polygon es nil, salir.
   Lazo.
   Obtener un vertex desde el polygon's vertices.
   Si el vertex es nil, salir.
-  Move el vertex usando el x-twips y el y-twips.
+  Mover el vertex usando el x-twips y el y-twips.
   Repetir.
 
 \Para mover un polígono hacia la izquierda algunos twips;
-Para move un polygon left some twips:
-  Move el polygon usando - el twips and 0.
+Para mover un polygon left some twips:
+  Mover el polygon usando - el twips and 0.
 
 \Para mover un polígono hacia la izquierda algunos twips y hacia abajo otros twips;
-Para move un polygon left some twips and down some other twips:
-  Move el polygon left el twips.
-  Move el polygon down el other twips.
+Para mover un polygon left some twips and down some other twips:
+  Mover el polygon left el twips.
+  Mover el polygon down el other twips.
 
 \Para mover un polígono hacia la izquierda algunos twips y hacia arriba otros twips;
-Para move un polygon left some twips and up some other twips:
-  Move el polygon left el twips.
-  Move el polygon up el other twips.
+Para mover un polygon left some twips and up some other twips:
+  Mover el polygon left el twips.
+  Mover el polygon up el other twips.
 
 \Para mover un polígono hacia la derecha algunos twips;
-Para move un polygon right some twips:
-  Move el polygon usando el twips and 0.
+Para mover un polygon right some twips:
+  Mover el polygon usando el twips and 0.
 
 \Para mover un polígono hacia la derecha algunos twips y hacia abajo otros twips;
-Para move un polygon right some twips and down some other twips:
-  Move el polygon right el twips.
-  Move el polygon down el other twips.
+Para mover un polygon right some twips and down some other twips:
+  Mover el polygon right el twips.
+  Mover el polygon down el other twips.
 
 \Para mover un polígono hacia la derecha algunos twips y hacia arriba otros twips;
-Para move un polygon right some twips and up some other twips:
-  Move el polygon right el twips.
-  Move el polygon up el other twips.
+Para mover un polygon right some twips and up some other twips:
+  Mover el polygon right el twips.
+  Mover el polygon up el other twips.
 
 \Para mover un polígono a un punto;
-Para move un polygon to un spot:
+Para mover un polygon to un spot:
   Si el polygon es nil, salir.
   Obtener un difference between el spot y el polygon's box's left-top.
-  Move el polygon usando el difference.
+  Mover el polygon usando el difference.
 
 \Para mover un polígono hacia arriba algunos twips;
-Para move un polygon up some twips:
-  Move el polygon usando 0 and - el twips.
+Para mover un polygon up some twips:
+  Mover el polygon usando 0 and - el twips.
 
 \Para mover un escáner (reglas de léxico de índice);
-Para move un rider (index lexicon rules):
+Para mover un rider (index lexicon rules):
   Skip any leading noise in el rider's source.
   Position el rider's token on el rider's source.
   Lazo.
@@ -9564,7 +9567,7 @@ Para move un rider (index lexicon rules):
   Repetir.
 
 \Para mover un escáner (reglas de cadena citadas);
-Para move un rider (quoted string rules):
+Para mover un rider (quoted string rules):
   Incrementar el rider.
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es not el double-quote byte, repetir.
@@ -9574,7 +9577,7 @@ Para move un rider (quoted string rules):
   Repetir.
 
 \Para mover un escáner (reglas de corrección ortográfica);
-Para move un rider (spell checking rules):
+Para mover un rider (spell checking rules):
   Skip any non-alphanumeric bytes in el rider's source.
   Position el rider's token on el rider's source.
   Lazo.
@@ -9585,7 +9588,7 @@ Para move un rider (spell checking rules):
   Repetir.
 
 \Para mover un escáner (reglas de archivo de texto);
-Para move un rider (text file rules):
+Para mover un rider (text file rules):
   Position el rider's token on el rider's source.
   Lazo.
   Si el rider's source es blank, salir.
@@ -9597,7 +9600,7 @@ Para move un rider (text file rules):
   Si el rider's source's first's target es el linefeed byte, Agregar 1 to el rider's source's first.
 
 \Para mover un escáner (reglas de ajuste de palabras);
-Para move un rider (word wrapping rules):
+Para mover un rider (word wrapping rules):
   Position el rider's token on el rider's source.
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es el return byte, incrementar el rider; salir.
@@ -9608,14 +9611,14 @@ Para move un rider (word wrapping rules):
   Si el rider's source's first's target es like el rider's token's last's target, incrementar el rider; repeat.
 
 \Para mover un escáner dado una caja (reglas de envoltura de palabras);
-Para move un rider usando un box (word wrapping rules):
+Para mover un rider usando un box (word wrapping rules):
   Skip any leading linefeed byte in el rider's source.
   Position el rider's token on el rider's source.
   Si el rider's source es blank, salir.
   Slap another rider on el rider.
   Lazo.
   Si el rider's source es blank, salir.
-  Move el other rider (word wrapping rules).
+  Mover el other rider (word wrapping rules).
   Si el other rider's token es blank, salir.
   Si el other rider's token's first's target es el return byte, incrementar el rider; salir.
   Si el other rider's token's first's target es whitespace, incrementar el rider by el other rider's token's length; repeat.
@@ -9625,7 +9628,7 @@ Para move un rider usando un box (word wrapping rules):
   Repetir.
 
 \Para mover un escáner dado un byte separador;
-Para move un rider usando un separator byte:
+Para mover un rider usando un separator byte:
   Position el rider's token on el rider's source.
   Lazo.
   Si el rider's source es blank, salir.
@@ -9633,130 +9636,130 @@ Para move un rider usando un separator byte:
   Incrementar el rider.
   Repetir.
 
-Para move to el right some twips and down some other twips;
+Para mover to el right some twips and down some other twips;
 \Para mover hacia la derecha algunos twips y hacia abajo algunos otros twips;
-Para move right some twips and down some other twips;
-Para move some twips to el right and some other twips down;
-Para move some twips right and some other twips down:
-  Move el context's spot right el twips.
-  Move el context's spot down el other twips.
+Para mover right some twips and down some other twips;
+Para mover some twips to el right and some other twips down;
+Para mover some twips right and some other twips down:
+  Mover el context's spot right el twips.
+  Mover el context's spot down el other twips.
 
-Para move to el right some twips and up some other twips;
+Para mover to el right some twips and up some other twips;
 \Para mover hacia la derecha algunos twips y hacia arriba algunos otros twips;
-Para move right some twips and up some other twips;
-Para move some twips to el right and some other twips up;
-Para move some twips right and some other twips up:
-  Move el context's spot right el twips.
-  Move el context's spot up el other twips.
+Para mover right some twips and up some other twips;
+Para mover some twips to el right and some other twips up;
+Para mover some twips right and some other twips up:
+  Mover el context's spot right el twips.
+  Mover el context's spot up el other twips.
 
 \Para movar a un punto;
-Para move to un spot:
+Para mover to un spot:
   Poner el spot into el context's spot.
 
 \Para mover un punto sobre algunos twips en cualquier dirección;
-Para move un spot about some twips in any direction:
+Para mover un spot about some twips in any direction:
   Pick another spot within el twips of el spot.
   Poner el other spot into el spot.
 
 \Para mover un punto a otro punto;
-Para move un spot to another spot:
+Para mover un spot to another spot:
   Poner el other spot into el spot.
 
 \Para mover un punto dado un par;
-Para move un spot usando un pair:
-  Move el spot usando el pair's x-number y el pair's y-number.
+Para mover un spot usando un pair:
+  Mover el spot usando el pair's x-number y el pair's y-number.
 
 \Para mover un punto dado algunos x-twips y algunos y-twips;
-Para move un spot usando some x-twips and some y-twips:
+Para mover un spot usando some x-twips and some y-twips:
   Agregar el x-twips to el spot's x-coord.
   Agregar el y-twips to el spot's y-coord.
 
-Para move un spot some twips down;
+Para mover un spot some twips down;
 \Para mover un punto hacia abajo algunos twips;
-Para move un spot down some twips:
-  Move el spot usando 0 y el twips.
+Para mover un spot down some twips:
+  Mover el spot usando 0 y el twips.
 
-Para move un spot some twips to el left;
-Para move un spot some twips left;
+Para mover un spot some twips to el left;
+Para mover un spot some twips left;
 \Para mover un punto hacia la izquierda algunos twips;
-Para move un spot left some twips:
-  Move el spot usando - el twips and 0.
+Para mover un spot left some twips:
+  Mover el spot usando - el twips and 0.
 
-Para move un spot some twips right;
-Para move un spot some twips to el right;
+Para mover un spot some twips right;
+Para mover un spot some twips to el right;
 \Para mover un punto hacia la derecha algunos twips;
-Para move un spot right some twips:
-  Move el spot usando el twips and 0.
+Para mover un spot right some twips:
+  Mover el spot usando el twips and 0.
 
-Para move un spot some twips to el right and some other twips down;
+Para mover un spot some twips to el right and some other twips down;
 \Para mover un punto hacia la derecha algunos twips y hacia abajo otros twips;
-Para move un spot some twips right and some other twips down:
+Para mover un spot some twips right and some other twips down:
   Agregar el twips to el spot's x.
   Agregar el other twips to el spot's y.
 
-Para move un spot some twips up;
+Para mover un spot some twips up;
 \Para mover un punto algunos twips;
-Para move un spot up some twips:
-  Move el spot usando 0 and - el twips.
+Para mover un spot up some twips:
+  Mover el spot usando 0 and - el twips.
 
-Para move some squares:
-  Move el square size times el squares divided by 1 square. \ squares are scaled up for precision hence el division at el end
+Para mover some squares:
+  Mover el square size times el squares divided by 1 square. \ squares are scaled up for precision hence el division at el end
 
-Para move some squares diagonally;
-Para move some squares slantways:
-  Move el square size times el squares times el squirt o' two divided by 1 square. \ squares are scaled up for precision hence el division at el end
+Para mover some squares diagonally;
+Para mover some squares slantways:
+  Mover el square size times el squares times el squirt o' two divided by 1 square. \ squares are scaled up for precision hence el division at el end
 
 \Para mover una subcadena dado un número;
-Para move un substring usando un number:
+Para mover un substring usando un number:
   Agregar el number to el substring's first.
   Agregar el number to el substring's last.
 
 \Para mover un texto hacia abajo algunos twips;
-Para move un text down some twips:
-  Move el text usando 0 y el twips.
+Para mover un text down some twips:
+  Mover el text usando 0 y el twips.
 
 \Para mover un texto dado un par;
-Para move un text usando un pair:
-  Move el text usando el pair's x-number y el pair's y-number.
+Para mover un text usando un pair:
+  Mover el text usando el pair's x-number y el pair's y-number.
 
 \Para mover un texto dado algunos x-twips y algunos y-twips;
-Para move un text usando some x-twips and some y-twips:
+Para mover un text usando some x-twips and some y-twips:
   Si el text es nil, salir.
-  Move el text's box usando el x-twips y el y-twips.
+  Mover el text's box usando el x-twips y el y-twips.
 
 \Para mover un texto hacia la izquierda algunos twips;
-Para move un text left some twips:
-  Move el text usando - el twips and 0.
+Para mover un text left some twips:
+  Mover el text usando - el twips and 0.
 
 \Para mover un texto hacia la derecha algunos twips;
-Para move un text right some twips:
-  Move el text usando el twips and 0.
+Para mover un text right some twips:
+  Mover el text usando el twips and 0.
 
 \Para mover un texto a un punto;
-Para move un text to un spot:
+Para mover un text to un spot:
   Si el text es nil, salir.
   Obtener un difference between el spot y el text's left-top.
-  Move el text usando el difference.
+  Mover el text usando el difference.
 
 \Para mover un texto hacia arriba algunos twips;
-Para move un text up some twips:
-  Move el text usando 0 and - el twips.
+Para mover un text up some twips:
+  Mover el text usando 0 and - el twips.
 
 \Para mover una cosa de algunas cosas un otras cosas;
-Para move un thing desde some things to some other things:
+Para mover un thing desde some things to some other things:
   Si el thing es nil, salir.
   Privatizar el thing.
   Remove el thing desde el things.
   Adjuntar el thing to el other things.
 
 \Para mover algunas cosas un otras cosas;
-Para move some things to some other things:
+Para mover some things to some other things:
   Poner el things' first into el other things' first.
   Poner el things' last into el other things' last.
   Borrar el things.
 
 \Para mover algunos twips;
-Para move some twips:
+Para mover some twips:
 \Wait for el delay. ***
   Poner el context's spot into un line's start.
   Poner el context's spot into el line's end.
@@ -9765,65 +9768,65 @@ Para move some twips:
   Agregar el rise times el twips divided by 10000 to el line's end's y-coord.
   Poner el line's end into el context's spot.
 
-Para move some twips down;
+Para mover some twips down;
 \Para mover hacia abajo algunos twips;
-Para move down some twips:
+Para mover down some twips:
   Agregar el twips to el context's y.
 
-Para move some twips to el left;
-Para move some twips left;
+Para mover some twips to el left;
+Para mover some twips left;
 \Para mover hacia la izquierda algunos twips;
-Para move left some twips:
+Para mover left some twips:
   Restar el twips desde el context's x.
 
-Para move some twips to el right;
-Para move some twips right;
+Para mover some twips to el right;
+Para mover some twips right;
 \Para mover hacia la derecha algunos twips;
-Para move right some twips: 
+Para mover right some twips: 
   Agregar el twips to el context's x.
 
-Para move some twips up;
+Para mover some twips up;
 \Para mover hacia arriba algunos twips;
-Para move up some twips: 
+Para mover up some twips: 
   Restar el twips desde el context's y.
 
 \Para mover un vértice hacia abajo algunos twips;
-Para move un vertex down some twips:
-  Move el vertex usando 0 y el twips.
+Para mover un vertex down some twips:
+  Mover el vertex usando 0 y el twips.
 
 \Para mover un vértice dado un par;
-Para move un vertex usando un pair:
-  Move el vertex usando el pair's x-number y el pair's y-number.
+Para mover un vertex usando un pair:
+  Mover el vertex usando el pair's x-number y el pair's y-number.
 
 \Para mover un vértice dado algunos x-twips y algunos y-twips;
-Para move un vertex usando some x-twips and some y-twips:
+Para mover un vertex usando some x-twips and some y-twips:
   Si el vertex es nil, salir.
   Agregar el x-twips to el vertex's x-coord.
   Agregar el y-twips to el vertex's y-coord.
 
 \Para mover un vértice hacia la izquierda algunos twips;
-Para move un vertex left some twips:
-  Move el vertex usando - el twips and 0.
+Para mover un vertex left some twips:
+  Mover el vertex usando - el twips and 0.
 
 \Para mover un vértice hacia la derecha algunos twips;
-Para move un vertex right some twips:
-  Move el vertex usando el twips and 0.
+Para mover un vertex right some twips:
+  Mover el vertex usando el twips and 0.
 
 \Para mover un vértice a un punto;
-Para move un vertex to un spot:
+Para mover un vertex to un spot:
   Si el vertex es nil, salir.
   Poner el spot into el vertex's spot.
 
 \Para mover un vértice hacia arriba algunos twips;
-Para move un vertex up some twips:
-  Move el vertex usando 0 and - el twips.
+Para mover un vertex up some twips:
+  Mover el vertex usando 0 and - el twips.
 
-Para move un window left:
+Para mover un window left:
   Llamada "user32.dll" "GetWindowRect" con el main window y un box's whereabouts.
   Restar el screen's pixel width desde el box's left.
   Llamada "user32.dll" "MoveWindow" con el window y el box's left y el box's top y el screen's pixel width y el screen's pixel height y 1 .
 
-Para move un window right:
+Para mover un window right:
   Llamada "user32.dll" "GetWindowRect" con el main window y un box's whereabouts.
   Agregar el screen's pixel width to el box's left.
   Llamada "user32.dll" "MoveWindow" con el window y el box's left y el box's top y el screen's pixel width y el screen's pixel height y 1 .
@@ -9915,7 +9918,7 @@ The non-breaking-space byte es un byte igual to 160.
 \Para non-destructively resize un picture usando un ratio pair;
 Para non-destructively resize un picture usando un fraction pair:
   Si el picture es nil, salir.
-  Move el picture's uncropped box usando el fraction pair y el picture's box's left-top.
+  Mover el picture's uncropped box usando el fraction pair y el picture's box's left-top.
   Resize el picture's uncropped box usando el fraction pair.
   Resize el picture's box usando el fraction pair.
   Si el picture's right es less than el picture's left, mirror el gpbitmap in el picture.
@@ -10842,7 +10845,7 @@ Para poner un box on un spot;
 Para centrar un box on un spot:
   Obtener un difference between el spot y el box's center.
   Round el difference to el nearest multiple of el tpp.
-  Move el box usando el difference.
+  Mover el box usando el difference.
 
 Para poner un box some twips by some other twips in el center of another box;
 \Para centrar una caja algunos twips por otros twips en otra caja;
@@ -11242,7 +11245,7 @@ Para poner el middle of un line on un spot;
 Para centrar un line on un spot:
   Obtener un difference between el spot y el line's center.
   Round el difference to el nearest multiple of el tpp.
-  Move el line usando el difference.
+  Mover el line usando el difference.
 
 \Para poner el punto del mouse en un punto;
 Para poner el mouse's spot into un spot:
@@ -11351,7 +11354,7 @@ Para centrar un picture on un spot:
   Si el picture es nil, salir.
   Obtener un difference between el spot y el picture's box's center.
   Round el difference to el nearest multiple of el tpp.
-  Move el picture usando el difference.
+  Mover el picture usando el difference.
 
 Para poner un polygon in el middle of un box;
 \Para centrar un polígono en una caja;
@@ -11371,7 +11374,7 @@ Para centrar un polygon on un spot:
   Si el polygon es nil, salir.
   Obtener un difference between el spot y el polygon's box's center.
   Round el difference to el nearest multiple of el tpp.
-  Move el polygon usando el difference.
+  Mover el polygon usando el difference.
 
 \Para poner una caja de polígono en una caja;
 Para poner un polygon's box into un box:
@@ -11608,7 +11611,7 @@ Para centrar un text on un spot:
   Si el text es nil, salir.
   Obtener un difference between el spot y el text's box's center.
   Round el difference to el nearest multiple of el tpp.
-  Move el text usando el difference.
+  Mover el text usando el difference.
 
 Para poner un text's first line into un string:
   Si el text es nil, borrar el string; salir.
@@ -11861,7 +11864,7 @@ Para read el bible usando un path:
   Lazo.
   Si el rider's source es blank, salir.
   Allocate memory for un verse. Adjuntar el verse to el Bible's verses.
-  Move el rider (text file rules).
+  Mover el rider (text file rules).
   Poner el rider's token into el verse's string.
   Remove any leading noise desde el verse's string. 
   Remove any trailing noise desde el verse's string.
@@ -12211,7 +12214,7 @@ Para remove bytes desde un text (backspace):
   Si el text es nil, salir.
   Si something es selected in el text, remove any selected bytes in el text; salir.
   Si el text's caret column# es 1, remove bytes desde el text (backspace over un return); salir.
-  Move el caret left in el text.
+  Mover el caret left in el text.
   Remove any selected bytes in el text.
 
 Para remove bytes desde un text (forward delete un return):
@@ -12233,7 +12236,7 @@ Para remove bytes desde un text (forward delete):
   Si something es selected in el text, remove any selected bytes in el text; salir.
   Obtener un row usando el text's caret row# y el text.
   Si el text's caret column# es el row's string's length, remove bytes desde el text (forward delete un return); salir.
-  Move el caret right in el text.
+  Mover el caret right in el text.
   Remove any selected bytes in el text.
 
 Para remove every byte in un text:
@@ -12544,7 +12547,7 @@ Para reverse some things:
   Lazo.
   Poner el other things' last into un thing.
   Si el thing es nil, salir.
-  Move el thing desde el other things to el things.
+  Mover el thing desde el other things to el things.
   Repetir.
 
 A rgb es un record con
@@ -12627,7 +12630,7 @@ Para rotate un picture:
   Restar el other center's x-coord desde el twip pair's x-number.
   Poner el center's y-coord plus el other center's x-coord minus el center's x-coord into el twip pair's y-number.
   Restar el other center's y-coord desde el twip pair's y-number.
-  Move el picture's uncropped box usando el twip pair.
+  Mover el picture's uncropped box usando el twip pair.
   Rotate el picture's gpbitmap.
 
 \Para rotar un polígono;
@@ -12950,7 +12953,7 @@ Para scroll un text usando un difference:
   Si el text's horizontal scroll flag es not set, Poner 0 into el difference's x-number.
   Si el text's vertical scroll flag es not set, Poner 0 into el difference's y-number.
   Si el difference es 0, salir.
-  Move el text's origin usando el difference.
+  Mover el text's origin usando el difference.
   Limitar el origin of el text.
 
 Para scroll un text to el top:
@@ -13438,12 +13441,12 @@ Para sort some rows:
   Poner el right rows' first into un right row.
   Si el left row es nil, Adjuntar el right rows to el rows; salir.
   Si el right row es nil, Adjuntar el left rows to el rows; salir.
-  Si el left row's string es greater than el right row's string, move el right row desde el right rows to el rows; repeat.
-  Move el left row desde el left rows to el rows.
+  Si el left row's string es greater than el right row's string, mover el right row desde el right rows to el rows; repeat.
+  Mover el left row desde el left rows to el rows.
   Repetir.
 
 Para space between glyphs:
-  Turn right. Move 3 squares. Turn left.
+  Turn right. Mover 3 squares. Turn left.
 
 The space byte es un byte igual to 32.
 
@@ -13456,7 +13459,7 @@ Para split un buffer into some dyads:
   Si el buffer es blank, salir.
   Slap un rider on el buffer.
   Lazo.
-  Move el rider usando el ampersand byte.
+  Mover el rider usando el ampersand byte.
   Si el rider's token es blank, salir.
   Crear un dyad. 
   Adjuntar el dyad to el dyads.
@@ -13516,7 +13519,7 @@ Para split un string into some string things usando un separator byte:
   Si el string es blank, salir.
   Slap un rider on el string.
   Lazo.
-  Move el rider usando el separator byte.
+  Mover el rider usando el separator byte.
   Agregar el rider's token to el string things.
   Si el rider's source es blank, interrumpir.
   Repetir.
@@ -13833,23 +13836,23 @@ Para start at el top right corner of un box facing west:
 
 Para start in el middle of un box facing east;
 Para start at el middle of un box facing east;
-Para move to el middle of un box facing east;
-Para move to el middle of un box and face east;
+Para mover to el middle of un box facing east;
+Para mover to el middle of un box and face east;
 Para start in el center of un box facing east;
 Para start at el center of un box facing east;
-Para move to el center of un box facing east;
-Para move to el center of un box and face east:
+Para mover to el center of un box facing east;
+Para mover to el center of un box and face east:
   Poner el box's center into el context's spot.
   Mirar hacia el este.
 
 Para start in el middle of un box facing north;
 Para start at el middle of un box facing north;
-Para move to el middle of un box facing north;
-Para move to el middle of un box and face north;
+Para mover to el middle of un box facing north;
+Para mover to el middle of un box and face north;
 Para start in el center of un box facing north;
 Para start at el center of un box facing north;
-Para move to el center of un box facing north;
-Para move to el center of un box and face north:
+Para mover to el center of un box facing north;
+Para mover to el center of un box and face north:
   Poner el box's center into el context's spot.
   Mirar hacia el norte.
 
@@ -13861,23 +13864,23 @@ Para start in el center of un box facing north minus some points:
 
 Para start in el middle of un box facing south;
 Para start at el middle of un box facing south;
-Para move to el middle of un box facing south;
-Para move to el middle of un box and face south;
+Para mover to el middle of un box facing south;
+Para mover to el middle of un box and face south;
 Para start in el center of un box facing south;
 Para start at el center of un box facing south;
-Para move to el center of un box facing south;
-Para move to el center of un box and face south:
+Para mover to el center of un box facing south;
+Para mover to el center of un box and face south:
   Poner el box's center into el context's spot.
   Mirar hacia el sur.
 
 Para start in el middle of un box facing west;
 Para start at el middle of un box facing west;
-Para move to el middle of un box facing west;
-Para move to el middle of un box and face west;
+Para mover to el middle of un box facing west;
+Para mover to el middle of un box and face west;
 Para start in el center of un box facing west;
 Para start at el center of un box facing west;
-Para move to el center of un box facing west;
-Para move to el center of un box and face west:
+Para mover to el center of un box facing west;
+Para mover to el center of un box and face west:
   Poner el box's center into el context's spot.
   Mirar hacia el oeste.
 
@@ -13912,7 +13915,7 @@ Para start some twips below un spot:
 
 Para start some twips desde el center of un box:
   Poner el box's center into el context's spot.
-  Move el twips.
+  Mover el twips.
 
 Para start some twips to el left and some other twips down desde un spot;
 Para start some twips left and some other twips down desde un spot:
@@ -14031,7 +14034,7 @@ A string# es un number.
 
 Para trazar el accent glyph:
   Save el context.
-  Move 4 squares.
+  Mover 4 squares.
   Turn right.
   Turn right 7/96 of el way.
   Trazar 9/4 square.
@@ -14039,21 +14042,21 @@ Para trazar el accent glyph:
 
 Para trazar el asterisk glyph:
   Save el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn right.
   Trazar 2 squares.
   Turn left.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
   Trazar 2 squares.
   Reset el context.
-  Move 1 square.
+  Mover 1 square.
   Turn right 1/8.
   Trazar 2 squares slantways.
   Reset el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn right 3/8.
   Trazar 2 squares slantways.
   Restore el context.
@@ -14061,7 +14064,7 @@ Para trazar el asterisk glyph:
 Para trazar el at-sign glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn around.
   Trazar 1 square.
   Turn right 1/8.
@@ -14087,7 +14090,7 @@ Para trazar el at-sign glyph:
 Para trazar el backslash glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
   Turn left 7/96 of el way.
   Trazar 9/2 square.
@@ -14103,7 +14106,7 @@ Para trazar el big-a glyph:
   Turn right 1/8.
   Trazar 3 squares.
   Turn around.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
   Trazar 1 square.
   Restore el context.
@@ -14125,14 +14128,14 @@ Para trazar el big-b glyph:
 
 Para trazar el big-c glyph:
   Save el context.
-  Move 2 squares.
+  Mover 2 squares.
   Trazar 1 square.
   Turn right 1/8.
   Trazar 1 square slantways.
   Turn right.
   Trazar 1 square slantways.
   Reset el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn around.
   Trazar 1 square.
   Turn left 1/8.
@@ -14162,7 +14165,7 @@ Para trazar el big-e glyph:
   Turn right.
   Trazar 2 squares.
   Reset el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn right.
   Trazar 1 square.
   Reset el context.
@@ -14176,21 +14179,21 @@ Para trazar el big-f glyph:
   Turn right.
   Trazar 2 squares.
   Reset el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn right.
   Trazar 1 square.
   Restore el context.
 
 Para trazar el big-g glyph:
   Save el context.
-  Move 2 squares.
+  Mover 2 squares.
   Trazar 1 square.
   Turn right 1/8.
   Trazar 1 square slantways.
   Turn right.
   Trazar 1 square slantways.
   Reset el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn around.
   Trazar 1 square.
   Turn left 1/8.
@@ -14207,12 +14210,12 @@ Para trazar el big-h glyph:
   Save el context.
   Trazar 4 squares.
   Reset el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn right.
   Trazar 2 squares.
   Reset el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
   Trazar 4 squares.
   Restore el context.
@@ -14220,21 +14223,21 @@ Para trazar el big-h glyph:
 Para trazar el big-i glyph:
   Save el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
   Trazar 4 squares.
   Reset el context.
   Turn right.
   Trazar 2 squares.
   Reset el context.
-  Move 4 squares.
+  Mover 4 squares.
   Turn right.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el big-j glyph:
   Save el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn around.
   Trazar 1 square.
   Turn left 1/8.
@@ -14249,7 +14252,7 @@ Para trazar el big-k glyph:
   Save el context.
   Trazar 4 squares.
   Turn around.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
   Trazar 1 square.
   Save el context.
@@ -14266,7 +14269,7 @@ Para trazar el big-k glyph:
 
 Para trazar el big-l glyph:
   Save el context.
-  Move 4 squares.
+  Mover 4 squares.
   Turn around.
   Trazar 4 squares.
   Turn left.
@@ -14295,7 +14298,7 @@ Para trazar el big-n glyph:
 
 Para trazar el big-o glyph:
   Save el context.
-  Move 1 square.
+  Mover 1 square.
   Trazar 2 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
@@ -14322,7 +14325,7 @@ Para trazar el big-p glyph:
 
 Para trazar el big-q glyph:
   Save el context.
-  Move 1 square.
+  Mover 1 square.
   Trazar 2 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
@@ -14335,9 +14338,9 @@ Para trazar el big-q glyph:
   Turn right 1/4.
   Trazar 1 square slantways.
   Reset el context.
-  Move 1 square.
+  Mover 1 square.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn right 1/8 of el way.
   Trazar 1-1/2 square.
   Restore el context.
@@ -14358,7 +14361,7 @@ Para trazar el big-r glyph:
 
 Para trazar el big-s glyph:
   Save el context.
-  Move 1 square.
+  Mover 1 square.
   Turn around.
   Turn left 1/8.
   Trazar 1 square slantways.
@@ -14375,18 +14378,18 @@ Para trazar el big-s glyph:
 Para trazar el big-t glyph:
   Save el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
   Trazar 4 squares.
   Turn left.
-  Move 1 square.
+  Mover 1 square.
   Turn around.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el big-u glyph:
   Save el context.
-  Move 4 squares.
+  Mover 4 squares.
   Turn around.
   Trazar 4 squares.
   Turn left.
@@ -14397,7 +14400,7 @@ Para trazar el big-u glyph:
 
 Para trazar el big-v glyph:
   Save el context.
-  Move 4 squares.
+  Mover 4 squares.
   Turn around.
   Trazar 3 squares.
   Turn left 1/8.
@@ -14410,7 +14413,7 @@ Para trazar el big-v glyph:
 
 Para trazar el big-w glyph:
   Save el context.
-  Move 4 squares.
+  Mover 4 squares.
   Turn around.
   Trazar 4 squares.
   Turn left 41/96.
@@ -14430,7 +14433,7 @@ Para trazar el big-x glyph:
   Trazar 1 square.
   Reset el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
   Trazar 1 square.
   Turn left 1/8.
@@ -14441,7 +14444,7 @@ Para trazar el big-x glyph:
 
 Para trazar el big-y glyph:
   Save el context.
-  Move 4 squares.
+  Mover 4 squares.
   Turn around.
   Trazar 1 square.
   Turn left 1/8.
@@ -14452,14 +14455,14 @@ Para trazar el big-y glyph:
   Trazar 1 square.
   Reset el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el big-z glyph:
   Save el context.
-  Move 4 squares.
+  Mover 4 squares.
   Turn right.
   Trazar 2 squares.
   Turn right.
@@ -14585,7 +14588,7 @@ Para trazar un byte:
 
 Para trazar el caret glyph:
   Save el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
   Turn right.
@@ -14595,18 +14598,18 @@ Para trazar el caret glyph:
 Para trazar el colon glyph:
   Save el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
   Trazar 1/2 square.
-  Move 1/2 square.
-  Move 1 square.
+  Mover 1/2 square.
+  Mover 1 square.
   Trazar 1/2 square.
   Restore el context.
 
 Para trazar el comma glyph:
   Save el context.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn left 1/8.
@@ -14615,7 +14618,7 @@ Para trazar el comma glyph:
 
 Para trazar el dollar-sign glyph:
   Save el context.
-  Move 1 square.
+  Mover 1 square.
   Turn around.
   Turn left 1/8.
   Trazar 1 square slantways.
@@ -14629,9 +14632,9 @@ Para trazar el dollar-sign glyph:
   Trazar 1 square slantways.
   Reset el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn right.
-  Move 1/2 square.
+  Mover 1/2 square.
   Turn around.
   Trazar 5 squares.
   Restore el context.
@@ -14639,22 +14642,22 @@ Para trazar el dollar-sign glyph:
 Para trazar el double-quote glyph:
   Save el context.
   Turn right.
-  Move 1/2 square.
+  Mover 1/2 square.
   Turn left.
-  Move 2-1/2 squares.
+  Mover 2-1/2 squares.
   Trazar 1-1/2 squares.
   Reset el context.
   Turn right.
-  Move 1-1/2 squares.
+  Mover 1-1/2 squares.
   Turn left.
-  Move 2-1/2 squares.
+  Mover 2-1/2 squares.
   Trazar 1-1/2 squares.
   Restore el context.
 
 Para trazar el eight glyph:
   Save el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn right.
@@ -14671,30 +14674,30 @@ Para trazar el eight glyph:
 
 Para trazar el equal-sign glyph:
   Save el context.
-  Move 1-1/2 squares.
+  Mover 1-1/2 squares.
   Turn right.
   Trazar 2 squares.
   Turn left.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el exclamation-mark glyph:
   Save el context.
-  Move 4 squares.
+  Mover 4 squares.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn right.
   Trazar 3 squares.
-  Move 1 square.
+  Mover 1 square.
   Trazar 1/2 square.
   Restore el context.
 
 Para trazar el five glyph:
   Save el context.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn left 3/8.
   Trazar 2 squares slantways.
   Turn left.
@@ -14710,7 +14713,7 @@ Para trazar el five glyph:
 Para trazar el four glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
   Trazar 4 squares.
   Turn left 3/8.
@@ -14722,9 +14725,9 @@ Para trazar el four glyph:
 Para trazar el left-alligator glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
-  Move 1 square.
+  Mover 1 square.
   Turn left 17/96 of el way.
   Trazar 9/4 square.
   Turn right 34/96 of el way.
@@ -14734,7 +14737,7 @@ Para trazar el left-alligator glyph:
 Para trazar el left-brace glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn around.
   Trazar 1 square.
   Turn right.
@@ -14752,7 +14755,7 @@ Para trazar el left-brace glyph:
 Para trazar el left-bracket glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn around.
   Trazar 1 square.
   Turn right.
@@ -14764,7 +14767,7 @@ Para trazar el left-bracket glyph:
 Para trazar el left-paren glyph:
   Save el context.
   Turn right.
-  Move 1-1/2 squares.
+  Mover 1-1/2 squares.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn right 1/8.
@@ -14786,11 +14789,11 @@ Para dibujar un line as wide as un box:
 Para trazar el little-a glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
   Trazar 3 squares.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn right 3/8.
   Trazar 1 square slantways.
   Turn left.
@@ -14807,7 +14810,7 @@ Para trazar el little-b glyph:
   Save el context.
   Trazar 4 squares.
   Turn around.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn right.
@@ -14823,9 +14826,9 @@ Para trazar el little-b glyph:
 Para trazar el little-c glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
-  Move 1 square.
+  Mover 1 square.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn right.
@@ -14841,11 +14844,11 @@ Para trazar el little-c glyph:
 Para trazar el little-d glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
   Trazar 4 squares.
   Turn around.
-  Move 2 squares.
+  Mover 2 squares.
   Turn right 3/8.
   Trazar 1 square slantways.
   Turn left.
@@ -14861,7 +14864,7 @@ Para trazar el little-d glyph:
 Para trazar el little-e glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn around.
   Trazar 1 square.
   Turn right 1/8.
@@ -14881,7 +14884,7 @@ Para trazar el little-e glyph:
 Para trazar el little-f glyph:
   Save el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
   Save el context.
   Turn around.
@@ -14892,7 +14895,7 @@ Para trazar el little-f glyph:
   Turn right 1/8.
   Trazar 1 square slantways.
   Reset el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn right.
   Trazar 2 squares.
   Restore el context.
@@ -14900,9 +14903,9 @@ Para trazar el little-f glyph:
 Para trazar el little-g glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
-  Move 1 square.
+  Mover 1 square.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn right.
@@ -14914,9 +14917,9 @@ Para trazar el little-g glyph:
   Turn right.
   Trazar 1 square slantways.
   Reset el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn right.
   Trazar 3 squares.
   Turn right 1/8.
@@ -14927,7 +14930,7 @@ Para trazar el little-h glyph:
   Save el context.
   Trazar 4 squares.
   Turn around.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn right.
@@ -14941,21 +14944,21 @@ Para trazar el little-i glyph:
   Turn right.
   Trazar 2 squares.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn right.
   Trazar 3 squares.
   Turn left.
   Trazar 1 square.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
-  Move 1/2 square.
+  Mover 1/2 square.
   Trazar 1/2 square.
   Restore el context.
 
 Para trazar el little-j glyph:
   Save el context.
-  Move 1 square.
+  Mover 1 square.
   Turn around.
   Trazar 1 square.
   Turn left 1/8.
@@ -14964,7 +14967,7 @@ Para trazar el little-j glyph:
   Trazar 1 square slantways.
   Turn left 1/8.
   Trazar 3 squares.
-  Move 1/2 square.
+  Mover 1/2 square.
   Trazar 1/2 square.
   Restore el context.
 
@@ -14972,11 +14975,11 @@ Para trazar el little-k glyph:
   Save el context.
   Trazar 4 squares.
   Turn around.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left 1/8.
   Trazar 2 squares slantways.
   Reset el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn right 17/96.
   Trazar 9/4 square.
   Restore el context.
@@ -14986,7 +14989,7 @@ Para trazar el little-l glyph:
   Turn right.
   Trazar 2 squares.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn right.
   Trazar 4 squares.
   Turn left.
@@ -14997,13 +15000,13 @@ Para trazar el little-m glyph:
   Save el context.
   Trazar 3 squares.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn right 3/8.
   Trazar 2 squares.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn right 1/8.
   Trazar 1 square slantways.
   Turn right 3/8.
@@ -15014,7 +15017,7 @@ Para trazar el little-n glyph:
   Save el context.
   Trazar 3 squares.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn right.
@@ -15026,9 +15029,9 @@ Para trazar el little-n glyph:
 Para trazar el little-o glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
-  Move 1 square.
+  Mover 1 square.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn right.
@@ -15045,11 +15048,11 @@ Para trazar el little-o glyph:
 
 Para trazar el little-p glyph:
   Save el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn around.
   Trazar 4 squares.
   Turn around.
-  Move 3 squares.
+  Mover 3 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
   Turn right.
@@ -15065,9 +15068,9 @@ Para trazar el little-p glyph:
 Para trazar el little-q glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
-  Move 1 square.
+  Mover 1 square.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn right.
@@ -15079,7 +15082,7 @@ Para trazar el little-q glyph:
   Turn right.
   Trazar 1 square slantways.
   Turn left 3/8.
-  Move 1 square.
+  Mover 1 square.
   Turn around.
   Trazar 4 squares.
   Restore el context.
@@ -15088,7 +15091,7 @@ Para trazar el little-r glyph:
   Save el context.
   Trazar 3 squares.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn right.
@@ -15097,19 +15100,19 @@ Para trazar el little-r glyph:
 
 Para trazar el little-s glyph:
   Save el context.
-  Move 1 square.
+  Mover 1 square.
   Turn right 3/8.
   Trazar 1 square slantways.
   Turn left.
   Trazar 1 square slantways.
   Reset el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
   Turn right.
   Trazar 1 square slantways.
   Reset el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn right 31/96.
   Trazar 9/4 squares.
   Restore el context.
@@ -15117,25 +15120,25 @@ Para trazar el little-s glyph:
 Para trazar el little-t glyph:
   Save el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn right 1/8.
   Trazar 1 square slantways.
   Reset el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
   Trazar 4 squares.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn around.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el little-u glyph:
   Save el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn around.
   Trazar 2 squares.
   Turn left 1/8.
@@ -15143,14 +15146,14 @@ Para trazar el little-u glyph:
   Turn left.
   Trazar 1 square slantways.
   Turn left 1/8.
-  Move 2 squares.
+  Mover 2 squares.
   Turn around.
   Trazar 3 squares.
   Restore el context.
 
 Para trazar el little-v glyph:
   Save el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn around.
   Trazar 2 squares.
   Turn left 1/8.
@@ -15163,7 +15166,7 @@ Para trazar el little-v glyph:
 
 Para trazar el little-w glyph:
   Save el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn around.
   Trazar 3 squares.
   Turn around.
@@ -15184,7 +15187,7 @@ Para trazar el little-x glyph:
   Trazar 1 square.
   Reset el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
   Trazar 1 square.
   Turn left 17/96.
@@ -15195,7 +15198,7 @@ Para trazar el little-x glyph:
 
 Para trazar el little-y glyph:
   Save el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn around.
   Trazar 2 squares.
   Turn left 1/8.
@@ -15203,7 +15206,7 @@ Para trazar el little-y glyph:
   Turn left.
   Trazar 1 square slantways.
   Turn left 1/8.
-  Move 2 squares.
+  Mover 2 squares.
   Turn around.
   Trazar 3 squares.
   Turn right 1/8.
@@ -15212,7 +15215,7 @@ Para trazar el little-y glyph:
 
 Para trazar el little-z glyph:
   Save el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn right.
   Trazar 2 squares.
   Turn right.
@@ -15227,14 +15230,14 @@ Para trazar el little-z glyph:
 
 Para trazar el minus-sign glyph:
   Save el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn right.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el nine glyph:
   Save el context.
-  Move 1 square.
+  Mover 1 square.
   Turn right 3/8.
   Trazar 1 square slantways.
   Turn left.
@@ -15251,21 +15254,21 @@ Para trazar el nine glyph:
 
 Para trazar el number-sign glyph:
   Save el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn right.
   Trazar 2 squares.
   Reset el context.
-  Move 1 square.
+  Mover 1 square.
   Turn right.
   Trazar 2 squares.
   Reset el context.
   Turn right.
-  Move 1/2 square.
+  Mover 1/2 square.
   Turn left.
   Trazar 4 squares.
   Reset el context.
   Turn right.
-  Move 1-1/2 squares.
+  Mover 1-1/2 squares.
   Turn left.
   Trazar 4 squares.
   Restore el context.
@@ -15273,14 +15276,14 @@ Para trazar el number-sign glyph:
 Para trazar el one glyph:
   Save el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
   Trazar 4 squares.
   Reset el context.
   Turn right.
   Trazar 2 squares.
   Reset el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
   Restore el context.
@@ -15290,40 +15293,40 @@ Para trazar el percent-sign glyph:
   Turn right 7/96.
   Trazar 9/2 squares.
   Reset el context.
-  Move 2-1/2 squares.
+  Mover 2-1/2 squares.
   Trazar 1/2 square.
   Reset el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
-  Move 1 square.
+  Mover 1 square.
   Trazar 1/2 square.
   Restore el context.
 
 Para trazar el period glyph:
   Save el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
   Trazar 1/2 square.
   Restore el context.
 
 Para trazar el plus-sign glyph:
   Save el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn right.
   Trazar 2 squares.
   Turn left.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el question-mark glyph:
   Save el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
   Turn right.
@@ -15332,13 +15335,13 @@ Para trazar el question-mark glyph:
   Trazar 1 square slantways.
   Turn left 1/8.
   Trazar 1 square.
-  Move 1 square.
+  Mover 1 square.
   Trazar 1/2 square.
   Restore el context.
 
 Para trazar el right-alligator glyph:
   Save el context.
-  Move 1 square.
+  Mover 1 square.
   Turn right 17/96 of el way.
   Trazar 9/4 square.
   Turn left 34/96 of el way.
@@ -15374,7 +15377,7 @@ Para trazar el right-bracket glyph:
 Para trazar el right-paren glyph:
   Save el context.
   Turn right.
-  Move 1/2 square.
+  Mover 1/2 square.
   Turn left.
   Turn right 1/8.
   Trazar 1 square slantways.
@@ -15387,19 +15390,19 @@ Para trazar el right-paren glyph:
 Para trazar el semi-colon glyph:
   Save el context.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn left 3/8.
   Trazar 1 square slantways.
   Turn left 1/8.
   Trazar 1/2 square.
-  Move 1/2 square.
-  Move 1 square.
+  Mover 1/2 square.
+  Mover 1 square.
   Trazar 1/2 square.
   Restore el context.
 
 Para trazar el seven glyph:
   Save el context.
-  Move 3 squares.
+  Mover 3 squares.
   Trazar 1 square.
   Turn right.
   Trazar 2 squares.
@@ -15414,18 +15417,18 @@ Para trazar el seven glyph:
 Para trazar el single-quote glyph:
   Save el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
-  Move 2-1/2 squares.
+  Mover 2-1/2 squares.
   Trazar 1-1/2 squares.
   Restore el context.
 
 Para trazar el six glyph:
   Save el context.
   Turn right.
-  Move 2 squares.
+  Mover 2 squares.
   Turn left.
-  Move 3 squares.
+  Mover 3 squares.
   Turn left 1/8.
   Trazar 1 square slantways.
   Turn left.
@@ -15455,7 +15458,7 @@ Para trazar some squares slantways:
 
 Para trazar el three glyph:
   Save el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
   Turn right.
@@ -15472,7 +15475,7 @@ Para trazar el three glyph:
 
 Para trazar el tilde glyph:
   Save el context.
-  Move 2 squares.
+  Mover 2 squares.
   Turn right 7/96 of el way.
   Trazar 9/8 square.
   Turn right.
@@ -15486,7 +15489,7 @@ Para trazar some twips:
 
 Para trazar el two glyph:
   Save el context.
-  Move 3 squares.
+  Mover 3 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
   Turn right.
@@ -15502,7 +15505,7 @@ Para trazar el two glyph:
 Para trazar el underscore glyph:
   Save el context.
   Turn around.
-  Move 1 square.
+  Mover 1 square.
   Turn left.
   Trazar 2 squares.
   Restore el context.
@@ -15510,16 +15513,16 @@ Para trazar el underscore glyph:
 Para trazar el vertical-bar glyph:
   Save el context.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Turn around.
   Trazar 5 squares.
   Restore el context.
 
 Para trazar el zero glyph:
   Save el context.
-  Move 1 square.
+  Mover 1 square.
   Trazar 2 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
@@ -15532,9 +15535,9 @@ Para trazar el zero glyph:
   Turn right 1/4.
   Trazar 1 square slantways.
   Turn right 1/8.
-  Move 1 square.
+  Mover 1 square.
   Turn right.
-  Move 1 square.
+  Mover 1 square.
   Trazar 1 pixel.
   Restore el context.
 
@@ -16226,7 +16229,7 @@ Para wrap un text:
   Slap un rider on el string.
   Crear el hfont of el memory canvas usando el text's font.
   Lazo.
-  Move el rider usando el text's box (word wrapping rules).
+  Mover el rider usando el text's box (word wrapping rules).
   Si el rider's token es blank, interrumpir.
   Crear un row usando el rider's token.
   Adjuntar el row to el text's rows.
@@ -16322,7 +16325,7 @@ Para write some quoras in un box:
 \draw really fast. ***
 \ Dibujar el quora box con el yellow color. \ temp ***
   Write el quora's string in el quora box con el quora's color.
-  Move el quora box down 1/4 inch.
+  Mover el quora box down 1/4 inch.
   Repetir.
 
 \Para escribir una cadena;
@@ -16349,7 +16352,7 @@ Para trazar un string usando un center spot y un radius:
   Si el string es blank, salir.
   Obtener un byte desde el string.
   Start at el center spot.
-  Move el radius.
+  Mover el radius.
   Trazar el byte.
   Turn el fraction.
   Repetir.
@@ -16395,7 +16398,7 @@ Para trazar un string in un box con un color:
   Poner el box's height divided by 2 into el context's letter height.
 \Put el box's height into el context's letter height.
   Mirar hacia el norte.
-  Move el box's height divided by 4. \ was 4 and still es now! ***
+  Mover el box's height divided by 4. \ was 4 and still es now! ***
   Trazar el string.
 
 \Para escribir una cadena en el centro de una caja;
@@ -16407,8 +16410,8 @@ Para trazar un string in el middle of un box:
   Poner el string's length times el square size times 3 minus el square size into un width.
   Dividir el width by 2.
   Start in el middle of el box.
-  Move down el context's letter height divided by 2. \ was 2 ***
-  Move left el width.
+  Mover down el context's letter height divided by 2. \ was 2 ***
+  Mover left el width.
   Mirar hacia el norte.
   Trazar el string.
 
@@ -16477,8 +16480,8 @@ Para trazar un string con un color at el bottom of un box:
   Poner el string's length times el square size times 3 minus el square size into un width.
   Dividir el width by 2.
   Start in el middle of el bottom of el box.
-  Move up el context's letter height times 2. \ was without el times 2 ***
-  Move left el width.
+  Mover up el context's letter height times 2. \ was without el times 2 ***
+  Mover left el width.
   Mirar hacia el norte.
   Trazar el string con el color.
 
@@ -16489,8 +16492,8 @@ Para trazar un string con un color at el top of un box:
   Poner el string's length times el square size times 3 minus el square size into un width.
   Dividir el width by 2.
   Start in el middle of el top of el box.
-  Move down el context's letter height times 4. \ was times 2 ***
-  Move left el width.
+  Mover down el context's letter height times 4. \ was times 2 ***
+  Mover left el width.
   Mirar hacia el norte.
   Trazar el string con el color.
 
@@ -16501,8 +16504,8 @@ Para trazar un string con un color in el middle of un box:
   Poner el string's length times el square size times 3 minus el square size into un width.
   Dividir el width by 2.
   Start in el middle of el box.
-  Move down el context's letter height divided by 2. \ was 2 ***
-  Move left el width.
+  Mover down el context's letter height divided by 2. \ was 2 ***
+  Mover left el width.
   Mirar hacia el norte.
   Trazar el string con el color.
 
@@ -16526,8 +16529,8 @@ Para trazar un string con un color some twips down desde el top center of un box
   Poner el string's length times el square size times 3 minus el square size into un width.
   Dividir el width by 2.
   Start in el middle of el top of el box.
-  Move down el twips.
-  Move left el width.
+  Mover down el twips.
+  Mover left el width.
   Mirar hacia el norte.
   Trazar el string con el color.
 

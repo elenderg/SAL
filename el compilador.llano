@@ -1057,7 +1057,7 @@ Para compile el body of un routine:
   Si el routine's compiled flag es set, salir.
   Set el routine's compiled flag.
   Slap un rider on el routine's routine body.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es el semi-colon byte, compile el body of el routine usando el rider (alternate wording); salir. \ *** alternate wording
   Si el rider's token es any employ, compile el body of el routine usando el rider (employ); salir.
   Poner el current routine into un saved routine.
@@ -1103,7 +1103,7 @@ Para compile el body of el routine called un string:
   
 Para compile el body of un routine usando un rider (alternate wording): \ *** alternate wording
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules). \ *** do we need this?
+  Mover el rider (compiler rules). \ *** do we need this?
   Poner el routine's next into un target routine.
   Si el target routine es nil, abort con "Has definido una forma alternativa aquí, pero no estoy seguro de qué cosa es." y el rider; salir.
   Poner el target routine's moniker into el routine's employs moniker.
@@ -1111,12 +1111,12 @@ Para compile el body of un routine usando un rider (alternate wording): \ *** al
   
 Para compile el body of un routine usando un rider (employ):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile un routine reference usando el rider.
   Convertir el routine reference to el routine's employs moniker.
   Destroy el routine reference.
   Si el rider's token es not ".", abort con "Las oraciones usadas deben terminar en un punto y no '" then el rider's token then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not blank, abort con "Una vez empleado, no hay otro." y el rider; salir.
   Encontrar another routine usando el routine's employs moniker y el routine index.
   Si el other routine es nil, abort con "No pude encontrar '" then el routine's employs moniker then "' rutina que estás tratando de emplear" y el routine's locus; salir.
@@ -1126,7 +1126,7 @@ Para compile el call'd part usando un rider y un  variable:
   Si el compiler's abort flag es set, salir.
   Si el variable es nil, salir.
   Poner el variable's name into el variable's type name.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan el variable's name usando el rider.
   
 Para compile un directory:
@@ -1300,10 +1300,10 @@ Para compile un expression usando un rider:
   
 Para compile un expression usando un rider (divided):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any by, abort con "Prefiero la frase 'dividido POR'." y el rider; salir.
   Si el expression's variable es nil, abort con "Inválido el 'dividido por', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Inválido el 'dividido por', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
@@ -1316,7 +1316,7 @@ Para compile un expression usando un rider (divided):
 Para compile un expression usando un rider (minus):
   Si el compiler's abort flag es set, salir.
   Si el expression's variable es nil, abort con "Inválido el 'menos', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Inválido el 'menos', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
@@ -1329,7 +1329,7 @@ Para compile un expression usando un rider (minus):
 Para compile un expression usando un rider (plus):
   Si el compiler's abort flag es set, salir.
   Si el expression's variable es nil, abort con "Inválido el 'más', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Inválido el 'más', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
@@ -1342,7 +1342,7 @@ Para compile un expression usando un rider (plus):
 Para compile un expression usando un rider (then):
   Si el compiler's abort flag es set, salir.
   Si el expression's variable es nil, abort con "Inválido el 'luego', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Inválido el 'luego', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
@@ -1356,7 +1356,7 @@ Para compile un expression usando un rider (then):
 Para compile un expression usando un rider (times):
   Si el compiler's abort flag es set, salir.
   Si el expression's variable es nil, abort con "Inválido el 'veces', no entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Inválido el 'veces', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
@@ -1370,7 +1370,7 @@ Para compile el header of un routine:
   Si el routine es nil, salir.
   Si el compiler's abort flag es set, salir.
   Slap un rider on el routine's routine header.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es any decide, compile el header of el routine usando el rider (decider); salir.
   Si el rider es el start of any reverse-possessive function, compile el header of el routine usando el rider (reverse-possessive function); salir.
   Si el rider es el start of any function, compile el header of el routine usando el rider (function); salir.
@@ -1380,7 +1380,7 @@ Para compile el header of un routine:
   
 Para compile el header of un routine usando un rider (callback):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Set el routine's callback flag.
   Compile el routine's monikettes y el routine's parameters usando el rider.
   Convertir el routine's monikettes to el routine's moniker.
@@ -1389,9 +1389,9 @@ Para compile el header of un routine usando un rider (callback):
   
 Para compile el header of un routine usando un rider (decider):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any conditional, abort con "Se dice 'Decidir SI'. Siempre 'Decidir SI'. ¿Se entiende?" y el rider; salir.
-  Move el rider (compiler rules).  
+  Mover el rider (compiler rules).  
   Set el routine's decider flag.
   Compile el routine's monikettes y el routine's parameters usando el rider.
   Si any of el routine's monikettes are negative words, abort con "No es buena idea usar negativos en los nombres de los decisores." y el rider; salir.
@@ -1403,12 +1403,12 @@ Para compile el header of un routine usando un rider (function):
   Si el compiler's abort flag es set, salir.
   Set el routine's function flag.
   Agregar un monikette to el routine's monikettes usando "Poner".
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es any indefinite article, set un flag.
   Si el flag es set, compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
   Si el flag es not set, compile el routine's monikettes y el routine's parameters usando el rider (definite article).
   Si el rider's token es not any possessive, abort con "An 's es missing or misplaced here." y el rider; salir. \ not translated - no possessives in Spanish
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Agregar another monikette to el routine's monikettes usando "'s " then el name.
   Si el rider's token es not "into", abort con "I was expecting el word 'into', but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
@@ -1416,7 +1416,7 @@ Para compile el header of un routine usando un rider (function):
   Convertir el routine's monikettes to un moniker.
   Si el moniker es in el routine index, abort con "I already know how to '" then el moniker then "'." y el routine's locus; salir. \ not translated - no possessives in Spanish
   Indexar el routine usando el routine's monikettes y el routine index.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any indefinite article, abort con "I was expecting un indefinite article, but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
   Compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
   Si el rider's token es not blank, abort con "There's extra stuff on el end of this function." y el rider; salir. \ not translated - no possessives in Spanish
@@ -1451,7 +1451,7 @@ Para compile un literal usando un rider (flag):
   Si el compiler's abort flag es set, salir.
   Convertir el rider's token to un flag.
   Convertir el flag to el literal's data.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Poner "flag" into el literal's type name.
   Resolve el literal.
   
@@ -1460,7 +1460,7 @@ Para compile un literal usando un rider (hex):
   Poner el rider's token into un nibble substring.
   Agregar 1 to el nibble substring's first.
   Convertir el nibble substring to el literal's data.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Poner "hex string" into el literal's type name.
   Resolve el literal.
   
@@ -1468,7 +1468,7 @@ Para compile un literal usando un rider (numeric - integer):
   Si el compiler's abort flag es set, salir.
   Convertir el rider's token to un number.
   Convertir el number to el literal's data.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Poner "number" into el literal's type name.
   Resolve el literal.
   
@@ -1476,14 +1476,14 @@ Para compile un literal usando un rider (numeric - ratio):
   Si el compiler's abort flag es set, salir.
   Convertir el rider's token to un ratio.
   Convertir el ratio to el literal's data.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Poner "ratio" into el literal's type name.
   Resolve el literal.
   
 Para compile un literal usando un rider (numeric - con unit of measure):
   Si el compiler's abort flag es set, salir.
   Convertir el rider's token to un ratio.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Encontrar un type usando el name y el type index.
   Si el type es nil, abort con "'" then el name then "' no es una unidad de medida válida." y el literal's locus; salir.
@@ -1508,7 +1508,7 @@ Para compile un literal usando un rider (numeric):
 Para compile un literal usando un rider (pointer):
   Si el compiler's abort flag es set, salir.
   Convertir 0 to el literal's data. \ was nil
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Poner "pointer" into el literal's type name.
   Resolve el literal.
   
@@ -1516,7 +1516,7 @@ Para compile un literal usando un rider (string):
   Si el compiler's abort flag es set, salir.
   Poner el rider's token into el literal's data.
   Unquote el literal's data.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Poner "string" into el literal's type name.
   Resolve el literal.
   
@@ -1530,7 +1530,7 @@ Para compile some monikettes and some parameters usando un rider:
   
 Para compile some monikettes and some parameters usando un rider (definite article):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Si el compiler's abort flag es set, salir.
   Prepend "the " to el name.
@@ -1542,7 +1542,7 @@ Para compile some monikettes and some parameters usando un rider (indefinite art
   Si el rider's token es "another", Poner "other" into el parameter's name.
   Si el rider's token es "otra", Poner "segunda" into el parameter's name.
   Si el rider's token es "otro", Poner "segundo" into el parameter's name.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Extend el parameter's name con el name.
   Si el rider's token es any called, compile el call'd part usando el rider y el parameter.
@@ -1553,12 +1553,12 @@ Para compile some monikettes and some parameters usando un rider (indefinite art
 Para compile some monikettes and some parameters usando un rider (monikette string):
   Si el compiler's abort flag es set, salir.
   Agregar un monikette to el monikettes usando el rider's token.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   
 Para compile some monikettes usando un rider: 
     Si el compiler's abort flag es set, salir.
     \If el rider's token es "del", Agregar un special monikette to el monikettes usando "de"; Agregar 1 to el rider's token's first. \ to make "del" in un call look like "de el"
-    Si el rider está on any monikette string, Agregar un monikette to el monikettes usando el rider's token; move el rider (compiler rules); repeat.
+    Si el rider está on any monikette string, Agregar un monikette to el monikettes usando el rider's token; mover el rider (compiler rules); repeat.
     Si el rider's token es not el start of any expression, salir.
     Compile un expression usando el rider.
     Si el compiler's abort flag es set, salir.
@@ -1567,7 +1567,7 @@ Para compile some monikettes usando un rider:
   
   \ To compile some monikettes usando un rider:
   \If el compiler's abort flag es set, salir.
-  \If el rider's token es any monikette string, Agregar un monikette to el monikettes usando el rider's token; move el rider (compiler rules); repeat.
+  \If el rider's token es any monikette string, Agregar un monikette to el monikettes usando el rider's token; mover el rider (compiler rules); repeat.
   \If el rider's token es not el start of any expression, salir.
   \Compile un expression usando el rider.
   \If el compiler's abort flag es set, salir.
@@ -1582,20 +1582,20 @@ Para compile el next statement usando un rider:
   Si el rider's token es not el start of any statement, abort con "Esperaba una sentencia aquí, pero encontré '" then el rider's token then "'." y el rider; salir.
   Compile el next statement usando el rider (other).
   Si el rider's token es not el period byte, abort con "Parece que es un record con olvidado un punto por ahí." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   
 Para compile el next statement usando un rider (break):
   Agregar un fragment usando el break tag.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   
 Para compile el next statement usando un rider (call - external):
   Poner el rider's token into un string.
   Unquote el string.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any string literal, abort con "Hey, esperaba que cites un nombre de entrada, pero encontré '" then el rider's token then "'." y el rider; salir.
   Poner el rider's token into another string.
   Unquote el other string.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Agregar un entry to el imports usando el string y el other string.
   Si el rider's token es any con, compile el next statement usando el rider (call - con clause).
   Si el rider's token es "returning", compile el next statement usando el rider retornando un term (call - retornando part).
@@ -1631,7 +1631,7 @@ Para compile el next statement usando un rider (call - internal):
   
 Para compile el next statement usando un rider (call - con clause): \ this guy es recursise so parameters get passed right to left
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile un expression usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el expression's variable es nil, abort con "No entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
@@ -1641,18 +1641,18 @@ Para compile el next statement usando un rider (call - con clause): \ this guy e
   
 Para compile el next statement usando un rider (call):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es any string literal, compile el next statement usando el rider (call - external); salir.
   Compile el next statement usando el rider (call - indirect).  
   
 Para compile el next statement usando un rider (exit):
   Si el current routine's decider flag es set, abort con "¿Qué significa una 'salir' justo aquí? ¿Sí, no, tal vez?" y el rider; salir.
   Agregar un fragment usando el exit tag.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   
 Para compile el next statement usando un rider (if):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile some monikettes usando el rider.
   Remove any negatives desde el monikettes retornando un flag.
   Encontrar un routine usando el monikettes.
@@ -1665,30 +1665,30 @@ Para compile el next statement usando un rider (if):
   Agregar un fragment usando el call internal tag y el routine.
   Si el flag es set, Agregar another fragment usando el not tag.
   Agregar un third fragment usando el jump false tag.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Lazo.
   Compile el next statement usando el rider (other).
   Si el compiler's abort flag es set, salir.
-  Si el rider's token es el semi-colon byte, move el rider (compiler rules); repeat.
+  Si el rider's token es el semi-colon byte, mover el rider (compiler rules); repeat.
   Si el rider's token es not el period byte, abort con "Pensaba en un punto, pero pusiste '" then el rider's token then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Agregar un fourth fragment usando el end if tag.
   
 Para compile el next statement usando un rider (intel):
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any hex literal, abort con "Necesito código de máquina aquí; encontré '" then el rider's token then "'." y el rider; salir.
   Agregar un fragment usando el intel tag.
   Poner el rider's token into un nibble substring.
   Agregar 1 to el nibble substring's first.
   Convertir el nibble substring to el fragment's code.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   
 Para compile el next statement usando un rider (loop):
   Si el compiler's abort flag es set, salir.
   Agregar un fragment usando el loop tag.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not el period byte, abort con "Parece que olvidaste un punto por ahí." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   
 Para compile el next statement usando un rider (other):
   Si el compiler's abort flag es set, salir.
@@ -1708,16 +1708,16 @@ Para compile el next statement usando un rider (other):
   Compile el next statement usando el rider (call - internal).
   
 Para compile el next statement usando un rider (point):
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Si el term's kind es "literal", abort con "Esta clase de variable no va aquí." y el rider.
   Si el term's type's length es not 4, abort con "Esta clase de variable no va aquí." y el rider.
   Si el rider's token es not "to", abort con "Esperaba 'para', pero encontré '" then el rider's token then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not "routine", abort con "Esperaba la palabra 'rutina' pero encontré '" then el rider's token then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile un routine reference usando el rider.
   Convertir el routine reference to un moniker.
   Destroy el routine reference.
@@ -1728,7 +1728,7 @@ Para compile el next statement usando un rider (point):
   
 Para compile el next statement usando un rider (privatize):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Uso inválido de 'privatiza', no encuentro la variable '" then el term's phrase then "'." y el rider; salir.
@@ -1742,11 +1742,11 @@ Para compile el next statement usando un rider (privatize):
   Si el term's nickname es not blank, prepend "original " to el term's nickname.
   Agregar several fragments usando "Poner" y el term's variable and "into" y el local y el rider's token's first.
   Si el rider's token es not el period byte, abort con "Parece que es un record con olvidado un punto por ahí." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   
 Para compile el next statement usando un rider (push):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile un expression usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el expression's variable es nil, abort con "'Push' inválido. No entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
@@ -1755,7 +1755,7 @@ Para compile el next statement usando un rider (push):
   
 Para compile el next statement usando un rider (repeat):
   Agregar un fragment usando el repeat tag.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   
   \ To compile el next statement usando un rider (say):
   \If el current routine's decider flag es not set, compile el next statement usando el rider (call - internal); salir.
@@ -1769,23 +1769,23 @@ Para compile el next statement usando un rider (repeat):
   
 Para compile el next statement usando un rider (say):
   Si el current routine's decider flag es not set, compile el next statement usando el rider (call - internal); salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any decider literal, abort con "Necesito un rotundo 'si' o 'no' aquí." y el rider; salir.
   Borrar un flag. If el rider's token es any positive decider literal, set el flag.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not el period byte, abort con "Pensaba en un punto, pero pusiste '" then el rider's token then "'." y el rider; salir.
   Agregar un fragment usando el load eax tag y el flag.
   Agregar another fragment usando el exit tag.
   
 Para compile el next statement usando un rider retornando un term (call - retornando part):
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile el term usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Si el term's type es not value pushable, abort con "Se necesita una variable de 1, 2 o 4 bytes en la cláusula de 'Retornar'." y el rider.
   
 Para compile un routine reference usando un rider:
-  Si el rider's token es "to", move el rider (compiler rules).
+  Si el rider's token es "to", mover el rider (compiler rules).
   Si el rider es el start of any function, compile el routine reference usando el rider (function); salir.
   Si el rider's token es any decide, compile el routine reference usando el rider (decide).
   Lazo.
@@ -1798,13 +1798,13 @@ Para compile un routine reference usando un rider:
   Abort con "'" then el rider's token then "' no es válido en una sentencia empleada. " y el rider.
   
 Para compile un routine reference usando un rider (decide):
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any conditional, abort con "Siempre decimos DECIDIR SI, y no DECIDIR '" then el rider's token then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   
 Para compile un routine reference usando un rider (definite article):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Prepend "the " to el name.
   Agregar un monikette to el routine reference usando el name.
@@ -1812,23 +1812,23 @@ Para compile un routine reference usando un rider (definite article):
 Para compile un routine reference usando un rider (function):
   Si el compiler's abort flag es set, salir.
   Agregar un monikette to el routine reference usando "Poner".
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es any indefinite article, set un flag.
   Si el flag es set, compile el routine reference usando el rider (indefinite article).
   Si el flag es not set, compile el routine reference usando el rider (definite article).
   Si el rider's token es not any possessive, abort con "I was expecting un 's, but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Agregar another monikette to el routine reference usando "'s " then el name.
   Si el rider's token es not "into", abort con "I was expecting el word 'into', but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
   Agregar un third monikette to el routine reference usando "into".
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any indefinite article, abort con "I was expecting un indefinite article, but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
   Compile el routine reference usando el rider (indefinite article).
   
 Para compile un routine reference usando un rider (indefinite article):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Encontrar un type y un  nickname usando el name.
   Si el type es nil, abort con "Sentencia empleada no válida, no entiendo '" then el name then "'." y el rider; salir.
@@ -1837,7 +1837,7 @@ Para compile un routine reference usando un rider (indefinite article):
 Para compile un routine reference usando un rider (monikette string):
   Si el compiler's abort flag es set, salir.
   Agregar un monikette to el routine reference usando el rider's token.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   
 Para compile un term usando un rider:
   Borrar el term.
@@ -1850,9 +1850,9 @@ Para compile un term usando un rider:
 Para compile un term usando un rider (as part):
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "No es válido este 'como', no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any indefinite article, abort con "Esperaba un artículo indefinido luego del COMO, pero encontré '" then el rider's token then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un type name usando el rider.
   Encontrar un type usando el type name y el type index.
   Si el type es nil, abort con "No puedo encontrar '" then el type name then "' un tipo." y el rider; salir.
@@ -1897,7 +1897,7 @@ Para compile un term usando un rider (literal):
   
 Para compile un term usando un rider (negated term):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile another term usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el other term's variable es nil, abort con "Negación no válida, no entiendo la variable '" then el other term's phrase then "'." y el rider; salir.
@@ -1914,7 +1914,7 @@ Para compile un term usando un rider (new local):
   Si el rider's token es "another", Poner "other" into el local's name.
   Si el rider's token es "otra", Poner "segunda" into el local's name.
   Si el rider's token es "otro", Poner "segundo" into el local's name.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Extend el local's name con el name.
   Si el rider's token es any called, compile el call'd part usando el rider y el local.
@@ -1928,7 +1928,7 @@ Para compile un term usando un rider (new local):
   
 Para compile un term usando un rider (posigated term):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile el term usando el rider.
   Si el term's variable es nil, abort con "Prefijo de suma no válido. No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Borrar el term's phrase.
@@ -1959,7 +1959,7 @@ Para compile un term usando un rider (possessive - whereabouts):
   
 Para compile un term usando un rider (possessive): \ similar to "compile un term usando un rider (reverse-possessive)
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el name es any magnitude, compile el term usando el rider (possessive - magnitude); salir.
@@ -1976,7 +1976,7 @@ Para compile un term usando un rider (possessives):
 Para compile un term usando un rider (runtime ratio):
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Uso inválido de /, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Compile another term usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el other term's variable es nil, abort con "Uso inválido de /, no entiendo la variable '" then el other term's phrase then "'." y el rider; salir.
@@ -1988,7 +1988,7 @@ Para compile un term usando un rider (runtime ratio):
 Para compile un term usando un rider (variable):
   Si el compiler's abort flag es set, salir.
   Si el current routine es nil, abort con "No sé lo que intentas hacer aquí." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Si el rider está on any reverse-possessive, compile el term usando el rider y el name (reverse-possessive); salir.
   Encontrar un variable usando el name.
@@ -1999,12 +1999,12 @@ Para compile un term usando un rider (variable):
   
 Para compile un term usando un rider y un  field name (reverse-possessive):  \ this es recursive \ dahn version 2
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules). \ past el reverse-possessive starter
-  \If el rider's token es not "del", Move el rider (compiler rules). \ past el reverse-possessive starter \ gerry added "if" part
+  Mover el rider (compiler rules). \ past el reverse-possessive starter
+  \If el rider's token es not "del", Mover el rider (compiler rules). \ past el reverse-possessive starter \ gerry added "if" part
   \If el rider's token es "del", Agregar 1 to el rider's token's first. \ makes "del" look like "de el"
   Si el rider's token es not any article, abort con "Esperaba un artículo, pero encontré '" then el rider's token then "'."; salir.
   Poner el rider's token into un article token.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider. 
   Si el rider está on any reverse-possessive, set un reverse-possessive flag.
   Si el reverse-possessive flag es set, compile el term usando el rider y el name (reverse-possessive).
@@ -2332,7 +2332,7 @@ Para decidir si un name es any valid field name:
   
 Para decidir si un rider es followed by any unit of measure:
   Privatizar el rider.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider es not on any name starter, diga no.
   Scan un name usando el rider.
   Encontrar un type usando el name y el type index.
@@ -2374,7 +2374,7 @@ Para decidir si un rider está on any simile: \ added for invisible turtle projec
   Privatizar el rider.
   Si el rider's token es "LIKE", diga sí.
   Si el rider's token es not "AS", diga no.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es any indefinite article, diga no.
   Diga sí.
   
@@ -2382,9 +2382,9 @@ Para decidir si un rider es el start of any function:
   Si el compiler's abort flag es set, diga no.
   Si el rider's token es not any put, diga no.
   Privatizar el rider.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any article, diga no.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Si el rider's token es any possessive, diga sí.
   Diga no.
@@ -2561,7 +2561,7 @@ Para decidir si un rider está on any indefinite article:
   
 Para decidir si un rider está on any Spanish to:
   Si el rider's token es not "a", diga no.
-  Privatizar el rider. Move el rider (compiler rules).
+  Privatizar el rider. Mover el rider (compiler rules).
   Si el rider's token es any article, diga sí.
   Diga no.
   
@@ -2860,7 +2860,7 @@ Para decidir si un rider está on any reverse-possessive:
   Si el rider's token es "uv", diga sí.
   \If el rider's token es "del", diga sí. \ short for "de el", expanded in "compile un term usando un rider y un  field name (reverse-possessive)"
   Si el rider's token es not "de", diga no.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es any article, diga sí.
   Diga no.
   
@@ -3937,31 +3937,31 @@ A monikette es un thing con
   A current type (reference),
   A current substring.
   
-Para move un rider (code rules - comment):
+Para mover un rider (code rules - comment):
   Incrementar el rider.
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es not el return byte, repetir.
   
-Para move un rider (code rules - glom):
+Para mover un rider (code rules - glom):
   Incrementar el rider.
   Si el rider's source es blank, salir.
   Si el rider está on any possessive, salir.
   Si el rider's source's first's target es any glom byte, repetir.
   
-Para move un rider (code rules - mark):
+Para mover un rider (code rules - mark):
   Incrementar el rider.
   
-Para move un rider (code rules - noise):
+Para mover un rider (code rules - noise):
   Incrementar el rider.
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es noise, repetir.
   
-Para move un rider (code rules - possessive):
+Para mover un rider (code rules - possessive):
   Incrementar el rider.
   Si el rider's source es blank, salir.
   Si el rider's source starts con "s", incrementar el rider.
   
-Para move un rider (code rules - qualifier):
+Para mover un rider (code rules - qualifier):
     Si el rider's source es blank, salir.
     Si el rider's source's first's target es el return byte, interrumpir.
     Si el rider's source's first's target es el left-paren byte, Agregar 1 to un count.
@@ -3970,7 +3970,7 @@ Para move un rider (code rules - qualifier):
     Si el count es 0, interrumpir.
   Repetir.
   
-Para move un rider (code rules - remark):
+Para mover un rider (code rules - remark):
     Si el rider's source es blank, salir.
     Si el rider's source's first's target es el return byte, interrumpir.
     Si el rider's source's first's target es el left-bracket byte, Agregar 1 to un count.
@@ -3979,7 +3979,7 @@ Para move un rider (code rules - remark):
     Si el count es 0, interrumpir.
   Repetir.  
   
-Para move un rider (code rules - string):
+Para mover un rider (code rules - string):
     Incrementar el rider.
     Si el rider's source es blank, salir.
     Si el rider's source's first's target es el return byte, salir.
@@ -3987,24 +3987,24 @@ Para move un rider (code rules - string):
     Si el rider's source's first's target es el double-quote byte, incrementar el rider; salir.
   Repetir.
   
-Para move un rider (code rules - symbol):
+Para mover un rider (code rules - symbol):
   Incrementar el rider.
   
-Para move un rider (code rules):
+Para mover un rider (code rules):
   Position el rider's token on el rider's source.
   Si el rider's source es blank, salir.
-  Si el rider's source's first's target es noise, move el rider (code rules - noise); salir.
-  Si el rider's source's first's target es el backslash byte, move el rider (code rules - comment); salir.
-  Si el rider's source's first's target es el left-bracket byte, move el rider (code rules - remark); salir.
-  Si el rider's source's first's target es el double-quote byte, move el rider (code rules - string); salir.
-  Si el rider's source's first's target es el left-paren byte, move el rider (code rules - qualifier); salir.
-  Si el rider's source's first's target es any mark, move el rider (code rules - mark); salir.
-  Si el rider está on any possessive, move el rider (code rules - possessive); salir.
-  Move el rider (code rules - glom).
+  Si el rider's source's first's target es noise, mover el rider (code rules - noise); salir.
+  Si el rider's source's first's target es el backslash byte, mover el rider (code rules - comment); salir.
+  Si el rider's source's first's target es el left-bracket byte, mover el rider (code rules - remark); salir.
+  Si el rider's source's first's target es el double-quote byte, mover el rider (code rules - string); salir.
+  Si el rider's source's first's target es el left-paren byte, mover el rider (code rules - qualifier); salir.
+  Si el rider's source's first's target es any mark, mover el rider (code rules - mark); salir.
+  Si el rider está on any possessive, mover el rider (code rules - possessive); salir.
+  Mover el rider (code rules - glom).
   
-Para move un rider (compiler rules):
+Para mover un rider (compiler rules):
   Si el compiler's abort flag es set, borrar el rider's token; salir.
-  Move el rider retornando un error string (code rules).
+  Mover el rider retornando un error string (code rules).
   Si el error string es not blank, abort con el error string y el rider's token's first; salir.
   Si el rider's token es "del", unbump el rider; salir. \ Spanish contraction "del"; fudged to "de l", short for "de el"
   Si el rider's token es "al", unbump el rider; salir. \ Spanish contraction "al"; fudged to "a l", short for "a el"
@@ -4013,25 +4013,25 @@ Para move un rider (compiler rules):
   Si el rider's token's first's target es el backslash byte, repetir.
   Si el rider's token's first's target es el left-bracket byte, repetir.
   
-Para move un rider retornando un error string (code rules - validate qualifier):
+Para mover un rider retornando un error string (code rules - validate qualifier):
   Si el rider's token's length es less than 2, Poner "Qualifiers need to end con ')'." into el error string; salir.
   Si el rider's token's last's target es not el right-paren byte, Poner "Qualifiers need to end con ')'." into el error string; salir.
   
-Para move un rider retornando un error string (code rules - validate remark):
+Para mover un rider retornando un error string (code rules - validate remark):
   Si el rider's token's length es less than 2, Poner "Remarks need to end con ']'." into el error string; salir.
   Si el rider's token's last's target es not el right-bracket byte, Poner "Remarks need to end con ']'." into el error string; salir.
   
-Para move un rider retornando un error string (code rules - validate string):
+Para mover un rider retornando un error string (code rules - validate string):
   Si el rider's token's length es less than 2, Poner "Strings need to end con '""'." into el error string; salir.
   Si el rider's token's last's target es not el double-quote byte, Poner "Strings need to end con '""'." into el error string; salir.
   
-Para move un rider retornando un error string (code rules):
+Para mover un rider retornando un error string (code rules):
   Borrar el error string.
-  Move el rider (code rules).
+  Mover el rider (code rules).
   Si el rider's token es blank, salir.
-  Si el rider's token's first's target es el left-bracket byte, move el rider retornando el error string (code rules - validate remark); salir.
-  Si el rider's token's first's target es el double-quote byte, move el rider retornando el error string (code rules - validate string); salir.
-  Si el rider's token's first's target es el left-paren byte, move el rider retornando el error string (code rules - validate qualifier); salir.
+  Si el rider's token's first's target es el left-bracket byte, mover el rider retornando el error string (code rules - validate remark); salir.
+  Si el rider's token's first's target es el double-quote byte, mover el rider retornando el error string (code rules - validate string); salir.
+  Si el rider's token's first's target es el left-paren byte, mover el rider retornando el error string (code rules - validate qualifier); salir.
   
 A nibble substring es un substring.
   
@@ -4166,7 +4166,7 @@ A phrase es un string.
 Para pluralize un string (spanish rules): \ nouns only
   Slap un rider on el string.
   Lazo.
-    Move el rider (spell checking rules).
+    Mover el rider (spell checking rules).
     Si el rider's token es blank, interrumpir.
     Si un plural string es not blank, Adjuntar " " to el plural string.
     Adjuntar el rider's token to el plural string.
@@ -4359,7 +4359,7 @@ Para resolve un global (compile body):
   Si el global es nil, salir.
   Si el compiler's abort flag es set, salir.
   Slap un rider on el global's global body.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any literal, abort con "Necesito una definición literal aquí, pero encontré '" then el rider's token then "'." y el rider; salir.
   Compile un literal usando el rider.
   Si el compiler's abort flag es set, salir.
@@ -4577,19 +4577,19 @@ Para scan any optional info for un type usando un rider:
   Si el rider's token es any con, scan any optional info for el type usando el rider (record); salir.
   
 Para scan any optional info for un type usando un rider (pointer):
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any indefinite article, abort con "El 'para' en este lugar necesita un artículo definido justo después, y no '" then el rider's token then "'." y el rider; salir. 
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan el type's target name usando el rider.
   
 Para scan any optional info for un type usando un rider (record):
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan el type's fields usando el rider.
   
 Para scan any pauses usando un rider:
     Si el compiler's abort flag es set, salir.
     Si el rider's token es not any pause, salir.
-    Move el rider (compiler rules).
+    Mover el rider (compiler rules).
   Repetir.
   
 Para scan un field usando un rider:
@@ -4603,20 +4603,20 @@ Para scan un field usando un rider:
   
 Para scan un field usando un rider (called part):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el field's type name es blank, Poner el field's name into el field's type name. \ byte array type name already filled in
   Scan el field's name usando el rider.
   
 Para scan un field usando un rider (redefine part):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any definite article, abort con "Esperaba una palabra 'el/la/los/las/lo', pero encontré '" then el rider's token then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan el field's redefinition target name usando el rider.
   
 Para scan un field usando un rider (reference part):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Set el field's reference flag.
   
 Para scan un field usando un rider (type part - byte array):
@@ -4625,9 +4625,9 @@ Para scan un field usando un rider (type part - byte array):
   Reduce el ratio.
   Si el ratio's denominator es not 1, abort con "Debes especificar un número entero de bytes para un arreglo de bytes." y el rider; salir.
   Poner el ratio's numerator into el field's count.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not "byte" or "bytes", abort con "Solo la palabra 'bytes' es apropiada luego de una designación de campo contado." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Poner "byte" into el field's type name.
   
 Para scan un field usando un rider (type part - normal):
@@ -4636,7 +4636,7 @@ Para scan un field usando un rider (type part - normal):
   Si el rider's token es "another", Poner "other" into el field's name.
   Si el rider's token es "otra", Poner "segunda" into el field's name.
   Si el rider's token es "otro", Poner "segundo" into el field's name.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Extend el field's name con el name.
   
@@ -4664,39 +4664,39 @@ Para scan un global body usando un rider:
     Si el rider's token es el colon byte, salir.
     Si el rider's token es el period byte, salir.
     Poner el rider's token's last into el global body's last.
-    Move el rider (compiler rules).
+    Mover el rider (compiler rules).
   Repetir.
   
 Para scan un global usando un rider:
   Si el compiler's abort flag es set, salir.
   Agregar el global to el globals usando "global" y el rider's token's first.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan el global's name usando el rider.
   Si el rider's token es any has, scan el global usando el rider (has or have); salir.
   Si el rider's token es not any is, abort con "¡Epa! Necesito un 'es' o un 'son' por ahí, pero todo lo que encontré fue '" then el rider's token then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any indefinite article, scan el global usando el rider (literal term); salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan el global's type name usando el rider.  
   Si el rider's token es el start of any optional info, scan el global usando el rider (optional info); salir.
   Si el rider's token es any equal, scan el global usando el rider (data part); salir.
   Si el rider's token es not el period byte, abort con "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Indexar el global.
   
 Para scan un global usando un rider (data part):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any to, abort con "Necesito la palabra 'a' luego de la palabra 'igual', y no '" then el rider's token then "'." y el rider; salir. 
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan el global's global body usando el rider.
   Si el rider's token es not el period byte, abort con "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Indexar el global.
   
 Para scan un global usando un rider (has or have):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Poner "~inline " then el global's name then " type" into un name.
   Poner el name then "s" into un plural name.
   Agregar un type to el types usando el name y el plural name and "record" y el global's locus.
@@ -4704,14 +4704,14 @@ Para scan un global usando un rider (has or have):
   Poner el type's name into el global's type name.
   Scan el type's fields usando el rider.
   Si el rider's token es not el period byte, abort con "Algún signo de puntuación aquí está incorrecto." y el rider; salir. 
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Indexar el global.
   
 Para scan un global usando un rider (literal term):
   Si el compiler's abort flag es set, salir.
   Scan el global's global body usando el rider.
   Si el rider's token es not el period byte, abort con "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Indexar el global.
   
 Para scan un global usando un rider (optional info):
@@ -4723,18 +4723,18 @@ Para scan un global usando un rider (optional info):
   Poner el type's name into el global's type name.
   Scan any optional info for el type usando el rider.
   Si el rider's token es not el period byte, abort con "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Indexar el global.
   
 Para scan un name usando un rider:
   Borrar el name.
   Si el compiler's abort flag es set, salir.
-  Si el rider está on any name starter, extend el name con el rider's token; move el rider (compiler rules).
+  Si el rider está on any name starter, extend el name con el rider's token; mover el rider (compiler rules).
   Lazo.
     Si el compiler's abort flag es set, salir.
     Si el rider está on any name ender, interrumpir.
     Extend el name con el rider's token.
-    Move el rider (compiler rules).
+    Mover el rider (compiler rules).
   Repetir.
   Si el name es blank, abort con "Digamos que esperaba un nombre por ahí, pero encontré '" then el rider's token then "'." y el rider; salir.
   
@@ -4748,28 +4748,28 @@ Para scan un routine body usando un rider:
     Si el rider's token es blank, salir.
     Poner el rider's token's last into el routine body's last.
     Si el rider's token es el colon byte, abort con "Puede ser que antes te hayas olvidado poner un punto." y el rider; salir.
-    Si el rider's token es not el period byte, move el rider (compiler rules); repeat.
-    Move el rider (compiler rules).
+    Si el rider's token es not el period byte, mover el rider (compiler rules); repeat.
+    Mover el rider (compiler rules).
     Si el rider's token es el start of any definition, salir.
   Repetir.
   
 Para scan un routine usando un rider:
   Si el compiler's abort flag es set, salir.
   Agregar el routine to el routines usando el rider's token's first.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan el routine's routine header usando el rider.
   Si el rider's token es el semi-colon byte, scan el routine usando el rider (alternate wording); salir.  \ *** for alternate wordings
   Si el rider's token es not el colon byte, abort con "Este encabezado de rutina no está bien formulado." y el routine's locus; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan el routine's routine body usando el rider.
   
 Para scan un routine usando un rider (alternate wording):  \ *** for alternate wordings
   Privatizar el rider.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not el start of any routine, abort con "Creo que debe haber un punto y coma fuera de lugar." y el original rider; salir.
   Poner el original rider's token's first into el routine's routine body's first.
   Poner el original rider's token's last into el routine's routine body's last.
-  Move el original rider (compiler rules).
+  Mover el original rider (compiler rules).
   
 Para scan un routine header usando un rider:
   Si el compiler's abort flag es set, salir.
@@ -4783,14 +4783,14 @@ Para scan un routine header usando un rider:
     Si el rider's token es el colon byte, salir.
     Si el rider's token es el period byte, salir.
     Poner el rider's token's last into el routine header's last.
-    Move el rider (compiler rules).
+    Mover el rider (compiler rules).
   Repetir.
   
 Para scan un source file:
   Si el source file es nil, salir.
   Si el compiler's abort flag es set, salir.
   Slap un rider on el source file's buffer.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Lazo.
     Si el compiler's abort flag es set, salir.
     Si el rider's token es blank, salir.
@@ -4811,40 +4811,40 @@ Para scan un type usando un rider:
   Si el compiler's abort flag es set, salir.
   Si el rider's token es any english indefinite article, set un english flag.
   Agregar el type to el types usando el rider's token's first.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan el type's name usando el rider.
   Poner el type's name into el type's plural name.
   Si el english flag es set, pluralize el type's plural name (english rules).
   Si el english flag es not set, pluralize el type's plural name (spanish rules).
   Si el rider's token es any has, scan el type usando el rider (has or have); salir.
   Si el rider's token es not any is, abort con "Esperaba un 'es' o un 'son', mas encontré '" then el rider's token then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es any numeric literal, scan el type usando el rider (unit of measure); salir.
   Si el rider's token es not any indefinite article, abort con "Esperaba un artículo indefinido, mas encontré '" then el rider's token then "'." y el rider; salir. 
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan el type's base name usando el rider.
   Scan any optional info for el type usando el rider.
   Si el rider's token es not el period byte, abort con "Las definiciones de tipos terminan en un punto; en cambio encontré '" then el rider's token then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Indexar el type.
   
 Para scan un type usando un rider (has or have):
   Si el compiler's abort flag es set, salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Poner "record" into el type's base name.
   Scan el type's fields usando el rider.
   Si el rider's token es not el period byte, abort con "Las definiciones de tipos terminan en un punto; en cambio encontré '" then el rider's token then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Indexar el type.
   
 Para scan un type usando un rider (unit of measure):
   Si el compiler's abort flag es set, salir.
   Convertir el rider's token to el type's scale.
   Si el type's scale es 0, abort con "Cero no es una escala válida." y el type's locus; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan el type's base name usando el rider.
   Si el rider's token es not el period byte, abort con "Los tipos deben terminar con un período, encontré '" then el rider's token then "'." y el rider; salir.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Indexar el type.
   
 The scanning timer es un timer.
@@ -5107,10 +5107,10 @@ Para compile el header of un routine usando un rider (reverse-possessive functio
   Si el compiler's abort flag es set, salir.
   Set el routine's function flag.
   Agregar un monikette to el routine's monikettes usando "Poner".
-  Move el rider (compiler rules). \ skip "put" or "poner"
-  Move el rider (compiler rules). \ skip "the" or Spanish definite article
+  Mover el rider (compiler rules). \ skip "put" or "poner"
+  Mover el rider (compiler rules). \ skip "the" or Spanish definite article
   Scan un name usando el rider. \ field name
-  Move el rider (compiler rules). \ skip "uv" or "de"
+  Mover el rider (compiler rules). \ skip "uv" or "de"
   Si el rider's token es any indefinite article, set un flag.
   Si el flag es set, compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
   Si el flag es not set, compile el routine's monikettes y el routine's parameters usando el rider (definite article).
@@ -5120,7 +5120,7 @@ Para compile el header of un routine usando un rider (reverse-possessive functio
   Convertir el routine's monikettes to un moniker.
   Si el moniker es in el routine index, abort con "Ya sé cómo '" then el moniker then "'." y el routine's locus; salir.
   Indexar el routine usando el routine's monikettes y el routine index.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any indefinite article, abort con "Esperaba un artículo indefinido, pero encontré '" then el rider's token then "'." y el rider; salir.
   Compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
   Si el rider's token es not blank, abort con "Hay cosas demás en el final de esta función." y el rider; salir.
@@ -5133,9 +5133,9 @@ Para decidir si un rider es el start of any reverse-possessive function:
   Si el compiler's abort flag es set, diga no.
   Si el rider's token es not any put, diga no.
   Privatizar el rider.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Si el rider's token es not any definite article, diga no.
-  Move el rider (compiler rules).
+  Mover el rider (compiler rules).
   Scan un name usando el rider.
   Si el rider es not on any reverse-possessive, diga no.
   Diga sí.  
