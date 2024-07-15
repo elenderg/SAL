@@ -1280,7 +1280,7 @@ Para compile un directory (write el exe):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Escribiendo el exe...".
   Iniciar el writing timer.
-  Write el compiler's exe to el compiler's exe path.
+  Escribir el compiler's exe to el compiler's exe path.
   Si el error de e/s es not blank, abort con el error de e/s.
   Stop el writing timer.
   
@@ -3677,7 +3677,7 @@ Para list:
   Listar el imports under "IMPORTS:" in el compiler's listing.
   Listar el source files under "SOURCE FILES:" in el compiler's listing.
   Listar el timers under "TIMERS:" in el compiler's listing.
-  Write el compiler's listing to el compiler's listing path.
+  Escribir el compiler's listing to el compiler's listing path.
   
 Para listar un abort message in un buffer:
   Si el abort message es blank, salir.

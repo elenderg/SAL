@@ -5248,7 +5248,7 @@ Para dibujar un terminal:
   Save el current canvas.
   Mask only outside el terminal's box.
   Dibujar and fill el terminal's box con el black color.
-  Write el terminal's quoras in el terminal's box.
+  Escribir el terminal's quoras in el terminal's box.
   Restore el current canvas.
 
 \Para dibujar un texto;
@@ -13326,7 +13326,7 @@ Para omitir any non-alphanumeric bytes in un substring:
 
 \Para omitir una línea en la terminal;
 Para omitir un line on el terminal:
-  Write "" on el terminal.
+  Escribir "" on el terminal.
 
 Para omitir word characters in un substring:
     Si el substring es blank, salir.
@@ -16042,27 +16042,28 @@ Para translate un byte using un translation hex string:
   Intel $D7. \ xlat al,[ebx]
   Intel $8901. \ mov [ecx],eax
 
-Para uppercase el character under un finger and Poner it into un string:
+Para uppercase el character under un finger and poner it into un string:
   Si el finger es nil, salir.
   Poner el finger's target into el string.
   Uppercase el string.
 
 \Para mayúsculas de una cadena;
+Para poner en mayúscula un string;
 Para uppercase un string:
   Colocar un substring on el string.
   Lazo.
-  Si el substring es blank, salir.
-  Uppercase el substring's first's target.
-  Agregar 1 to el substring's first.
+    Si el substring es blank, salir.
+    Uppercase el substring's first's target.
+    Agregar 1 to el substring's first.
   Repetir.
 
 \Para mayúsculas de un texto;
 Para uppercase un text:
   Si el text es nil, salir.
   Lazo.
-  Obtener un row desde el text's rows.
-  Si el row es nil, interrumpir.
-  Uppercase el row's string.
+    Obtener un row desde el text's rows.
+    Si el row es nil, interrumpir.
+    Uppercase el row's string.
   Repetir.
   Wrap el text.
 
@@ -16071,60 +16072,60 @@ The upperscore byte es un byte igual to 175.
 A url es un string.
 
 A url record es un record con
-A scheme string,
-A host name string,
-A path string,
-An extra string,
-A port number.
+  A scheme string,
+  A host name string,
+  A path string,
+  An extra string,
+  A port number.
 
 A urlcomponents es un record con
-A number called dwstructsize,
-A pchar called lpszscheme,
-A number called dwschemelength,
-A number called nscheme,
-A pchar called lpszhostname,
-A number called dwhostnamelength,
-A number called nport, \ this es typed as un wyrd in windows documentation, but dosen't work
-A pchar called lpszusername,
-A number called dwusernamelength,
-A pchar called lpszpassword,
-A number called dwpasswordlength,
-A pchar called lpszurlpath,
-A number called dwurlpathlength,
-A pchar called lpszextrainfo,
-A number called dwextrainfolength.
+  A number called dwstructsize,
+  A pchar called lpszscheme,
+  A number called dwschemelength,
+  A number called nscheme,
+  A pchar called lpszhostname,
+  A number called dwhostnamelength,
+  A number called nport, \ this es typed as un wyrd in windows documentation, but dosen't work
+  A pchar called lpszusername,
+  A number called dwusernamelength,
+  A pchar called lpszpassword,
+  A number called dwpasswordlength,
+  A pchar called lpszurlpath,
+  A number called dwurlpathlength,
+  A pchar called lpszextrainfo,
+  A number called dwextrainfolength.
 
 \Para usar un color;
-Para use un color:
+Para usar un color:
   Poner el color into el context's color.
 
 \Para usar el bolígrafo gordo;
-Para use el fat pen:
+Para usar el fat pen:
   Poner 3 into el pen size.
 
-Para use un letter height:
+Para usar un letter height:
   Poner el letter height into el context's letter height.
 
 \Para usar una altura de letra de algunos twips;
-Para use un letter height of some twips:
+Para usar un letter height of some twips:
   Poner el twips into el letter height.
   Poner el twips into el context's letter height.
 
 \Para usar un bolígrafo;
-Para use un pen:
+Para usar un pen:
   Poner el pen into el context's pen.
 
-\Para usar el bolígrafo delgado;
-Para use el skinny pen:
+Para usar el bolígrafo delgado;
+Para usar el skinny pen:
   Poner 1 into el pen size.
 
-Para use small pointy letters: \ as opposed to "roundy letters" not yet implemented
-  Use small letters.
+Para usar small pointy letters: \ as opposed to "roundy letters" not yet implemented
+  Usar small letters.
 
 A uuid es un record con
-A number called d1,
-A wyrd called d2,
-A wyrd called d3,
+  A number called d1,
+  A wyrd called d2,
+  A wyrd called d3,
   8 bytes called d4.
 
 The v-key es un key igual to 86.
@@ -16157,7 +16158,7 @@ A w-param es un number.
 
 \Para desencolar un evento;
 \Para esperar un evento;
-\Para wait for un event;
+Para wait for un event;
 Para deque un event:
   Yield to windows.
   Poner el event queue's first into el event.
@@ -16169,10 +16170,10 @@ Para deque un event:
 
 \Para esperar algunos milisegundos;
 \Para esperar algunos milliseconds;
-\Para wait for some grains of sand;
-\Para wait for some grains of sand to fall;
-\Para wait for some grains of sand to fall in el hourglass;
-\Para wait some milliseconds;
+Para wait for some grains of sand;
+Para wait for some grains of sand to fall;
+Para wait for some grains of sand to fall in el hourglass;
+Para wait some milliseconds;
 Para wait for some milliseconds:
   Si el milliseconds are less than or igual to 0, salir.
   Llamada "kernel32.dll" "Sleep" con el milliseconds.
@@ -16214,39 +16215,39 @@ A wide string es un string.
 A width es some twips.
 
 A win32finddata es un record con
-A number called dwfileattributes,
-A filetime called ftcreationtime,
-A filetime called ftlastaccesstime,
-A filetime called ftlastwritetime,
-A number called nfilesizehigh,
-A number called nfilesizelow,
-A number called dwreserved0,
-A number called dwreserved1,
+  A number called dwfileattributes,
+  A filetime called ftcreationtime,
+  A filetime called ftlastaccesstime,
+  A filetime called ftlastwritetime,
+  A number called nfilesizehigh,
+  A number called nfilesizelow,
+  A number called dwreserved0,
+  A number called dwreserved1,
   260 bytes called cfilename,
   14 bytes called calternatefilename.
 
 A window class es un record con
-A number called cbsize,
-A number called style,
-A pointer called lpfnwndproc,
-A number called cbclsextra,
-A number called cbwndextra,
-A handle called hinstance,
-A hicon called hicon,
-A cursor called hcursor,
-An hbrush called hbrbackground,
-A pointer called lpszmenuname,
-A pointer called lpszclassname,
-A hicon called hiconsm.
+  A number called cbsize,
+  A number called style,
+  A pointer called lpfnwndproc,
+  A number called cbclsextra,
+  A number called cbwndextra,
+  A handle called hinstance,
+  A hicon called hicon,
+  A cursor called hcursor,
+  An hbrush called hbrbackground,
+  A pointer called lpszmenuname,
+  A pointer called lpszclassname,
+  A hicon called hiconsm.
 
 The window class es un window class.
 
 A window es un handle.
 
 A winhttp request es un thing con
-A session handle,
-A connection handle,
-A request handle.
+  A session handle,
+  A connection handle,
+  A request handle.
 
 A word es un substring.
 
@@ -16263,10 +16264,10 @@ Para wrap un text:
   Colocar un rider on el string.
   Crear el hfont of el memory canvas usando el text's font.
   Lazo.
-  Mover el rider usando el text's box (word wrapping rules).
-  Si el rider's token es blank, interrumpir.
-  Crear un row usando el rider's token.
-  Adjuntar el row to el text's rows.
+    Mover el rider usando el text's box (word wrapping rules).
+    Si el rider's token es blank, interrumpir.
+    Crear un row usando el rider's token.
+    Adjuntar el row to el text's rows.
   Repetir.
   Destroy el hfont of el memory canvas.
   Renumber el text's rows.
@@ -16277,16 +16278,16 @@ Para wrap un text:
 
 \Para store un buffer in un file;
 \Para escribir un búfer en un archivo;
-Para write un buffer to un file:
+Para escribir un buffer to un file:
   Borrar el error de e/s.
-  Llamada "kernel32.dll" "SetFilePointer" con el file and 0 y 0 and 0 [file_begin] retornando un result number.
+  Llamada "kernel32.dll" "SetFilePointer" con el file y 0 y 0 y 0 [file_begin] retornando un result number.
   Si el result number es -1, Poner "Error posicionando puntero de archivo." into el error de e/s; salir.
   Llamada "kernel32.dll" "WriteFile" con el file y el buffer's first y el buffer's length y un number's whereabouts and 0 retornando el result number.
   Si el result number es 0, Poner "Error escribiendo archivo." into el error de e/s; salir.
 
 \Para store un buffer in un path;
 \Para escribir un búfer en una ruta;
-Para write un buffer to un path:
+Para escribir un buffer to un path:
   Borrar el error de e/s.
   Extraer un directory desde el path.
   Si el directory es not in el file system, Poner "Directorio '" then el directory then "' no existe." into el error de e/s; salir.
@@ -16302,97 +16303,97 @@ Para write un buffer to un path:
   Poner "Error escribiendo archivo '" then el path then "'." into el error de e/s.
 
 \Para escribir un byte;
-Para write un byte:
+Para escribir un byte:
   Poner el byte into un string.
-  Write el string.
+  Escribir el string.
 
-Para write un byte to stdout:
+Para escribir un byte to stdout:
   Llamada "kernel32.dll" "WriteFile" con el StdOut handle y el byte's whereabouts y 1  y un number's whereabouts and nil.
 
 \Para escribir un byte sin avanzar;
-Para write un byte without advancing:
+Para escribir un byte without advancing:
   Poner el byte into un string.
-  Write el string without advancing.
+  Escribir el string without advancing.
 
 Para escribir una bandera; \ will translate to English because "Convert un flag" es used to externalize reams for el Writer
-Para write un flag:
+Para escribir un flag:
   Convertir el flag to un string.
-  Write el string.
+  Escribir el string.
 
 \Para escribir una bandera sin avanzar;
-Para write un flag without advancing:
+Para escribir un flag without advancing:
   Convertir el flag to un string.
-  Write el string without advancing.
+  Escribir el string without advancing.
 
 \Para escribir una fracción;
-Para write un fraction:
+Para escribir un fraction:
   Convertir el fraction to un string.
-  Write el string.
+  Escribir el string.
 
 \Para escribir una fracción sin avanzar;
-Para write un fraction without advancing:
+Para escribir un fraction without advancing:
   Convertir el fraction to un string.
-  Write el string without advancing.
+  Escribir el string without advancing.
 
 \Para escribir un número;
-Para write un number:
+Para escribir un number:
   Convertir el number to un string.
-  Write el string.
+  Escribir el string.
 
 \Para escribir un número sin avanzar;
-Para write un number without advancing:
+Para escribir un number without advancing:
   Convertir el number to un string.
-  Write el string without advancing.
+  Escribir el string without advancing.
 
 \Para escribir un número en una consola;
-Para write un number on un console:
+Para escribir un number on un console:
   Convertir el number to un string.
-  Write el string on el console.
+  Escribir el string on el console.
 
-Para write some quoras in un box:
+Para escribir some quoras in un box:
 \Draw el box con el red color y el borrar color. \ temp ***
   Poner el box into un quora box.
   Poner el quora box's top plus 1/4 inch into el quora box's bottom.
   Lazo.
-  Obtener un quora desde el quoras.
-  Si el quora es nil, interrumpir.
-\draw really fast. ***
-\ Dibujar el quora box con el yellow color. \ temp ***
-  Write el quora's string in el quora box con el quora's color.
-  Mover el quora box down 1/4 inch.
+    Obtener un quora desde el quoras.
+    Si el quora es nil, interrumpir.
+  \draw really fast. ***
+  \ Dibujar el quora box con el yellow color. \ temp ***
+    Escribir el quora's string in el quora box con el quora's color.
+    Mover el quora box down 1/4 inch.
   Repetir.
 
 \Para escribir una cadena;
-\Para write un string;
+Para escribir un string;
 \Para acariciar una cadena;
 Para trazar un string:
   Privatizar el string.
   Lazo.
-  Si el string es blank, salir.
-  Obtener un byte desde el string.
-  Trazar el byte.
-  Si el string es not blank, space between glyphs.
+    Si el string es blank, salir.
+    Obtener un byte desde el string.
+    Trazar el byte.
+    Si el string es not blank, space between glyphs.
   Repetir.
 
-\Para write un string around un center spot at un radius;
+Para escribir un string around un center spot at un radius;
 \Para escribir una cadena con un punto central y un radio;
-\Para write un string usando un center spot y un radius;
-\Para trazar un string around un center spot at un radius;
+Para escribir un string usando un center spot y un radius;
+Para trazar un string around un center spot at un radius;
 \Para acariciar una cadena con un punto central y un radio;
 Para trazar un string usando un center spot y un radius:
   Privatizar el string.
   Poner 1 y el string's length into un fraction.
   Lazo.
-  Si el string es blank, salir.
-  Obtener un byte desde el string.
-  Comenzar en el center spot.
-  Mover el radius.
-  Trazar el byte.
-  Turn el fraction.
+    Si el string es blank, salir.
+    Obtener un byte desde el string.
+    Comenzar en el center spot.
+    Mover el radius.
+    Trazar el byte.
+    Turn el fraction.
   Repetir.
 
 \Para escribir una cadena en un punto con un color;
-\Para write un string at un spot con un color;
+Para escribir un string at un spot con un color;
 \Para acariciar una cadena en un punto con un color;
 Para trazar un string at un spot con un color:
   Comenzar en el spot.
@@ -16400,7 +16401,7 @@ Para trazar un string at un spot con un color:
   Trazar el string.
 
 \Para escribir una cadena en una consola;
-Para write un string on un console:
+Para escribir un string on un console:
   Si el console es nil, salir.
   Insertar el string into el console's text.
   Insertar el return byte into el console's text.
@@ -16409,8 +16410,8 @@ Para write un string on un console:
   Mostrar el console.
 
 \Para escribir una cadena en una consola sin avanzar;
-\Para write un string to un console without advancing;
-Para write un string on un console without advancing:
+Para escribir un string to un console without advancing;
+Para escribir un string on un console without advancing:
   Si el console es nil, salir.
   Insertar el string into el console's text.
   Wrap el console's text.
@@ -16418,13 +16419,13 @@ Para write un string on un console without advancing:
   Mostrar el console.
 
 \Para escribir una cadena en una caja;
-\Para write un string in un box;
+Para escribir un string in un box;
 \Para acariciar una cadena en una caja;
 Para trazar un string in un box:
   Trazar el string in el box con el context's color.
 
 \Para escribir una cadena en una caja con un color;
-\Para write un string in un box con un color;
+Para escribir un string in un box con un color;
 \Para acariciar una cadena en una caja con un color;
 Para trazar un string in un box con un color:
   Poner el color into el context's color.
@@ -16436,7 +16437,7 @@ Para trazar un string in un box con un color:
   Trazar el string.
 
 \Para escribir una cadena en el centro de una caja;
-\Para write un string in el middle of un box;
+Para escribir un string in el middle of un box;
 \Para acariciar una cadena en el centro de una caja;
 Para trazar un string in el middle of un box:
   Poner el context's letter height divided by 4 into un square size. \ was 4 ***
@@ -16450,64 +16451,64 @@ Para trazar un string in el middle of un box:
   Trazar el string.
 
 \Para escribir una cadena en el centro de la pantalla;
-Para write un string in el middle of el screen:
+Para escribir un string in el middle of el screen:
   Trazar el string in el middle of el screen's box.
   Actualizar el screen.
 
 \Para escribir una cadena en una terminal;
-Para write un string on un terminal:
+Para escribir un string on un terminal:
   Si el terminal es nil, salir.
   Agregar un quora to el terminal.
   Poner el string into el quora's string.
   Poner el terminal's output color into el quora's color.
   Mostrar el terminal.
 
-\Para write un string un radius away desde un center spot;
-\Para write un string un radius around un center spot;
-\Para write un string about un radius desde un center spot;
-\Para write un string un radius desde un center spot;
-\Para trazar un string un radius away desde un center spot;
-\Para trazar un string un radius around un center spot;
-\Para trazar un string about un radius desde un center spot;
+Para escribir un string un radius away desde un center spot;
+Para escribir un string un radius around un center spot;
+Para escribir un string about un radius desde un center spot;
+Para escribir un string un radius desde un center spot;
+Para trazar un string un radius away desde un center spot;
+Para trazar un string un radius around un center spot;
+Para trazar un string about un radius desde un center spot;
 Para trazar un string un radius desde un center spot:
   Trazar el string usando el center spot y el radius.
 
-\Para write un string un radius away desde el middle of un box;
-\Para write un string un radius around el middle of un box;
-\Para write un string about un radius desde el middle of un box;
-\Para write un string un radius desde el middle of un box;
-\Para trazar un string un radius away desde el middle of un box;
-\Para trazar un string un radius around el middle of un box;
-\Para trazar un string about un radius desde el middle of un box;
+Para escribir un string un radius away desde el middle of un box;
+Para escribir un string un radius around el middle of un box;
+Para escribir un string about un radius desde el middle of un box;
+Para escribir un string un radius desde el middle of un box;
+Para trazar un string un radius away desde el middle of un box;
+Para trazar un string un radius around el middle of un box;
+Para trazar un string about un radius desde el middle of un box;
 Para trazar un string un radius desde el middle of un box:
   Trazar el string usando el box's center y el radius.
 
-Para write un string to stdout:
+Para escribir un string to stdout:
   Llamada "kernel32.dll" "WriteFile" con el StdOut handle y el string's first y el string's length y un number's whereabouts and nil.
 
-\Para write un string while turning un fraction of el way;
-\Para write un string while turning un fraction of el way around;
-\Para write un string while turning un fraction;
-\Para trazar un string while turning un fraction of el way;
-\Para trazar un string while turning un fraction of el way around;
+Para escribir un string while turning un fraction of el way;
+Para escribir un string while turning un fraction of el way around;
+Para escribir un string while turning un fraction;
+Para trazar un string while turning un fraction of el way;
+Para trazar un string while turning un fraction of el way around;
 Para trazar un string while turning un fraction:
   Privatizar el string.
   Lazo.
-  Si el string es blank, salir.
-  Obtener un byte desde el string.
-  Trazar el byte.
-  Turn el fraction.
-  Si el string es not blank, space between glyphs.
+    Si el string es blank, salir.
+    Obtener un byte desde el string.
+    Trazar el byte.
+    Turn el fraction.
+    Si el string es not blank, space between glyphs.
   Repetir.
 
-\Para escribir una cadena con un color;
-\Para write un string con un color;
+Para escribir una cadena con un color;
+Para escribir un string con un color;
 \Para acariciar una cadena con un color;
 Para trazar un string con un color:
   Poner el color into el context's color.
   Trazar el string.
 
-\Para write un string con un color at el bottom of un box;
+Para escribir un string con un color at el bottom of un box;
 Para trazar un string con un color at el bottom of un box:
   Poner el context's letter height divided by 4 into un square size. \ ***
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
@@ -16519,7 +16520,7 @@ Para trazar un string con un color at el bottom of un box:
   Mirar hacia el norte.
   Trazar el string con el color.
 
-\Para write un string con un color at el top of un box;
+Para escribir un string con un color at el top of un box;
 Para trazar un string con un color at el top of un box:
   Poner el context's letter height divided by 4 into un square size. \ ***
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
@@ -16531,7 +16532,7 @@ Para trazar un string con un color at el top of un box:
   Mirar hacia el norte.
   Trazar el string con el color.
 
-\Para write un string con un color in el middle of un box;
+Para escribir un string con un color in el middle of un box;
 Para trazar un string con un color in el middle of un box:
   Poner el context's letter height divided by 4 into un square size. \ was 4 ***
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
@@ -16543,20 +16544,20 @@ Para trazar un string con un color in el middle of un box:
   Mirar hacia el norte.
   Trazar el string con el color.
 
-\Para write un string con un color un radius away desde un center spot;
-\Para write un string con un color un radius around un center spot;
-\Para write un string con un color about un radius desde un center spot;
-\Para write un string con un color un radius desde un center spot;
-\Para trazar un string con un color un radius away desde un center spot;
-\Para trazar un string con un color un radius around un center spot;
-\Para trazar un string con un color about un radius desde un center spot;
+Para escribir un string con un color un radius away desde un center spot;
+Para escribir un string con un color un radius around un center spot;
+Para escribir un string con un color about un radius desde un center spot;
+Para escribir un string con un color un radius desde un center spot;
+Para trazar un string con un color un radius away desde un center spot;
+Para trazar un string con un color un radius around un center spot;
+Para trazar un string con un color about un radius desde un center spot;
 Para trazar un string con un color un radius desde un center spot:
   Poner el color into el context's color.
   Trazar el string usando el center spot y el radius.
 
-\Para write un string con un color some twips down desde el top of un box;
-\Para write un string con un color some twips down desde el top center of un box;
-\Para trazar un string con un color some twips down desde el top of un box;
+Para escribir un string con un color some twips down desde el top of un box;
+Para escribir un string con un color some twips down desde el top center of un box;
+Para trazar un string con un color some twips down desde el top of un box;
 Para trazar un string con un color some twips down desde el top center of un box:
   Poner el context's letter height divided by 4 into un square size. \ was 4 ***
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
@@ -16569,7 +16570,7 @@ Para trazar un string con un color some twips down desde el top center of un box
   Trazar el string con el color.
 
 \Para escribir una cadena con un tipo de letra y un tamaño y un color y un punto;
-Para write un string con un font y un size y un color y un spot:
+Para escribir un string con un font y un size y un color y un spot:
   Poner el size into el font's height.
   Poner el string's width into un width.
   Poner el spot y el spot into un box.
@@ -16580,35 +16581,37 @@ Para write un string con un font y un size y un color y un spot:
   Dibujar el string in el box con el color y el font and "center".
   Actualizar el screen.
 
-\Para write con large letters;
-\Para usar letras grandes;
-Para use large letters:
+Para escribir con large letters;
+Para usar letras grandes;
+Para usar large letters:
   Poner el large letter height into el context's letter height.
 
-\Para usar letras medianas;
-\Para write con medium letters;
-\Para use medium size letters;
-\Para use medium-size letters;
-\Para use medium sized letters;
-\Para use medium-sized letters;
-Para use medium letters:
+Para usar letras medianas;
+Para escribir con medium letters;
+Para usar medium size letters;
+Para usar medium-size letters;
+Para usar medium sized letters;
+Para usar medium-sized letters;
+Para usar medium letters:
   Poner el medium letter height into el context's letter height.
 
-\Para write con small letters;
+\Para escribir con small letters;
 \Para usar letras minúsculas;
-Para use small letters:
+Para usar small letters:
   Poner el small letter height into el context's letter height.
 
 A wsadata es un record con
-A wyrd called wversion,
-A wyrd called whighversion,
+  A wyrd called wversion,
+  A wyrd called whighversion,
   257 bytes called szdescription,
   127 bytes called szsystemstatus,
-A wyrd [unsigned] called imaxsockets,
-A wyrd [unsigned] called imaxudpdg,
-A pointer called lpvendorinfo.
+  A wyrd [unsigned] called imaxsockets,
+  A wyrd [unsigned] called imaxudpdg,
+  A pointer called lpvendorinfo.
 
-A wyrd es un record con un low byte y un high byte.
+A wyrd es un record con
+  An low byte y 
+  An high byte.
 
 The x-key es un key igual to 88.
 
@@ -16624,7 +16627,7 @@ The yen-sign byte es un byte igual to 165.
 
 Para yield to windows:
   Si el event queue es not empty, salir.
-  Llamada "user32.dll" "GetMessageA" con un msg's whereabouts and 0 y 0 and 0 retornando un number.
+  Llamada "user32.dll" "GetMessageA" con un msg's whereabouts y 0 y 0 y 0 retornando un number.
   Si el number es 0, salir.
   Llamada "user32.dll" "TranslateMessage" con el msg's whereabouts.
   Llamada "user32.dll" "DispatchMessageA" con el msg's whereabouts.
@@ -16646,6 +16649,7 @@ Para zero fill un number usando un count and Adjuntar it to un string:
   Zero fill el other string usando el count.
   Adjuntar el other string to el string.
 
+Para anteponer ceros a una string dada un count;
 \Para anteponer ceros a una cadena dada un conteo;
 Para zero fill un string usando un count:
   Si el string's length es greater than or igual to el count, salir.
