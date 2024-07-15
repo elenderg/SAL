@@ -1232,7 +1232,7 @@ Para compile un directory (load el source files):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Cargando archivos fuente...".
   Start el loading timer.
-  Load el source files.
+  Cargar el source files.
   Stop el loading timer.
   
 Para compile un directory (resolve el globals):
@@ -2293,7 +2293,7 @@ Para decidir si some fields should be finalized:
   Repetir.
   
 Para decidir si un item looks reamish:
-  Load el item's path into un buffer.
+  Cargar el item's path into un buffer.
   Si el buffer starts con "ream cal", diga sí.
   Diga no.
   
@@ -3665,49 +3665,49 @@ The linking timer es un timer.
   
 Para list:
   Borrar el compiler's listing.
-  List el compiler's abort message in el compiler's listing.
-  List el types under "TYPES:" in el compiler's listing.
-  List el globals under "GLOBALS:" in el compiler's listing.
-  List el literals under "LITERALS:" in el compiler's listing.
-  List el routines under "ROUTINES:" in el compiler's listing.
-  List el type index under "TYPE INDEX:" in el compiler's listing.
-  List el global index under "GLOBAL INDEX:" in el compiler's listing.
-  List el literal index under "LITERAL INDEX:" in el compiler's listing.
-  List el routine index under "ROUTINE INDEX:" in el compiler's listing.
-  List el utility index under "UTILITY INDEX:" in el compiler's listing.
-  List el imports under "IMPORTS:" in el compiler's listing.
-  List el source files under "SOURCE FILES:" in el compiler's listing.
-  List el timers under "TIMERS:" in el compiler's listing.
+  Listar el compiler's abort message in el compiler's listing.
+  Listar el types under "TYPES:" in el compiler's listing.
+  Listar el globals under "GLOBALS:" in el compiler's listing.
+  Listar el literals under "LITERALS:" in el compiler's listing.
+  Listar el routines under "ROUTINES:" in el compiler's listing.
+  Listar el type index under "TYPE INDEX:" in el compiler's listing.
+  Listar el global index under "GLOBAL INDEX:" in el compiler's listing.
+  Listar el literal index under "LITERAL INDEX:" in el compiler's listing.
+  Listar el routine index under "ROUTINE INDEX:" in el compiler's listing.
+  Listar el utility index under "UTILITY INDEX:" in el compiler's listing.
+  Listar el imports under "IMPORTS:" in el compiler's listing.
+  Listar el source files under "SOURCE FILES:" in el compiler's listing.
+  Listar el timers under "TIMERS:" in el compiler's listing.
   Write el compiler's listing to el compiler's listing path.
   
-Para list un abort message in un buffer:
+Para listar un abort message in un buffer:
   Si el abort message es blank, salir.
   Adjuntar "COMPILE ABORTED - LISTING INCOMPLETE" to el buffer.
   Advance el buffer (twice).
   Adjuntar el abort message to el buffer.
   Advance el buffer (twice).
   
-Para list un bucket in un buffer:
+Para listar un bucket in un buffer:
   Si el bucket's refers are empty, salir.
   Adjuntar "/bucket" to el buffer (con separator).
   Advance el buffer.
-  List el bucket's refers in el buffer.
+  Listar el bucket's refers in el buffer.
   Advance el buffer.
   
-Para list some entries in un buffer:
+Para listar some entries in un buffer:
     Obtener un entry desde el entries.
     Si el entry es nil, salir.
-    List el entry in el buffer.
+    Listar el entry in el buffer.
   Repetir.
   
-Para list un entry in un buffer:
+Para listar un entry in un buffer:
   Si el entry es nil, salir.
   Adjuntar "/entry" to el buffer (con separator).
   Adjuntar el entry's name to el buffer (con separator).
   Adjuntar el entry's address to el buffer (as hex con separator).
   Advance el buffer.
   
-Para list un fragment in un buffer:
+Para listar un fragment in un buffer:
   Adjuntar "/fragment" to el buffer (con separator).
   Adjuntar el fragment's tag to el buffer (as un fragment tag string con separator).
   Adjuntar el fragment's variable to el buffer (con separator).
@@ -3720,49 +3720,49 @@ Para list un fragment in un buffer:
   Adjuntar el nibble string to el buffer (con separator).
   Advance el buffer.
   
-Para list some fragments in un buffer:
+Para listar some fragments in un buffer:
     Obtener un fragment desde el fragments.
     Si el fragment es nil, salir.
-    List el fragment in el buffer.
+    Listar el fragment in el buffer.
   Repetir.
   
-Para list un import in un buffer:
+Para listar un import in un buffer:
   Si el import es nil, salir.
   Adjuntar "/import" to el buffer (con separator).
   Adjuntar el import's name to el buffer (con separator).
   Advance el buffer.
-  List el import's entries in el buffer.
+  Listar el import's entries in el buffer.
   Advance el buffer.
   
-Para list some imports in un buffer:
+Para listar some imports in un buffer:
     Obtener un import desde el imports.
     Si el import es nil, salir.
-    List el import in el buffer.
+    Listar el import in el buffer.
   Repetir.
   
-Para list some imports under un string in un buffer:
+Para listar some imports under un string in un buffer:
   Adjuntar el string to el buffer.
   Advance el buffer (twice).
   Si el imports are empty, salir.
-  List el imports in el buffer.
+  Listar el imports in el buffer.
   
-Para list un index in un buffer:
+Para listar un index in un buffer:
   Adjuntar "/" then el index's used bucket count then " buckets" to el buffer (con separator).
   Adjuntar el index's count then " refers" to el buffer (con separator).
   Advance el buffer (twice).
   Lazo.
     Obtener un bucket usando el index.
     Si el bucket es nil, salir.
-    List el bucket in el buffer.
+    Listar el bucket in el buffer.
   Repetir.
   
-Para list un index under un string in un buffer:
+Para listar un index under un string in un buffer:
   Adjuntar el string to el buffer.
   Advance el buffer (twice).
   Si el index es empty, salir.
-  List el index in el buffer.
+  Listar el index in el buffer.
   
-Para list un refer in un buffer:
+Para listar un refer in un buffer:
     Si el refer es nil, salir.
     Adjuntar "/refer" to el buffer (con separator).
     Adjuntar el refer's string to el buffer.
@@ -3770,13 +3770,13 @@ Para list un refer in un buffer:
     Adjuntar "/" to el buffer.
     Advance el buffer.
     
-  Para list some refers in un buffer:
+  Para listar some refers in un buffer:
     Obtener un refer desde el refers.
     Si el refer es nil, salir.
-    List el refer in el buffer.
+    Listar el refer in el buffer.
   Repetir.
   
-Para list un routine in un buffer:
+Para listar un routine in un buffer:
   Si el routine es nil, salir.
   Adjuntar "/routine" to el buffer (con separator).
   Adjuntar el routine's moniker to el buffer (con separator).
@@ -3789,70 +3789,70 @@ Para list un routine in un buffer:
   Adjuntar el routine's local size to el buffer (con separator).
   Adjuntar el routine's address to el buffer (as hex con separator).
   Advance el buffer.
-  List el routine's parameters in el buffer.
-  List el routine's locals in el buffer.
-  List el routine's fragments in el buffer.
+  Listar el routine's parameters in el buffer.
+  Listar el routine's locals in el buffer.
+  Listar el routine's fragments in el buffer.
   Advance el buffer.
   
-Para list some routines in un buffer:
+Para listar some routines in un buffer:
     Obtener un routine desde el routines.
     Si el routine es nil, salir.
-    List el routine in el buffer.
+    Listar el routine in el buffer.
   Repetir.
   
-Para list some routines under un string in un buffer:
+Para listar some routines under un string in un buffer:
   Adjuntar el string to el buffer.
   Advance el buffer (twice).
   Si el routines are empty, salir.
-  List el routines in el buffer.
+  Listar el routines in el buffer.
   
-Para list un source file in un buffer:
+Para listar un source file in un buffer:
   Si el source file es nil, salir.
   Adjuntar "/source file" to el buffer (con separator).
   Adjuntar el source file's path to el buffer (con separator).
   Advance el buffer.
   
-Para list some source files in un buffer:
+Para listar some source files in un buffer:
     Obtener un source file desde el source files.
     Si el source file es nil, salir.
-    List el source file in el buffer.
+    Listar el source file in el buffer.
   Repetir.
   
-Para list some source files under un string in un buffer:
+Para listar some source files under un string in un buffer:
   Adjuntar el string to el buffer.
   Advance el buffer (twice).
   Si el source files are empty, salir.
-  List el source files in el buffer.
+  Listar el source files in el buffer.
   Advance el buffer.
   
-Para list un timer usando un string in un buffer:
+Para listar un timer usando un string in un buffer:
   Adjuntar "/timer" to el buffer (con separator).
   Adjuntar el string to el buffer (con separator).
   Adjuntar el timer's string to el buffer (con separator).
   Advance el buffer.
   
-Para list el timers under un string in un buffer:
+Para listar el timers under un string in un buffer:
   Adjuntar el string to el buffer.
   Advance el buffer (twice).
-  List el loading timer usando "loading" in el buffer.
-  List el scanning timer usando "scanning" in el buffer.
-  List el resolving types timer usando "resolving types" in el buffer.
-  List el resolving globals timer usando "resolving globals" in el buffer.
-  List el compiling routine headers timer usando "compiling routine headers" in el buffer.
-  List el calculating timer usando "calculating" in el buffer.
-  List el adding built-in memory routines timer usando "adding built-in memory routines" in el buffer.
-  List el indexing utilities timer usando "indexing utilities" in el buffer.
-  List el compiling routine bodies timer usando "compiling routine bodies" in el buffer.
-  List el adding built-in startup routine timer usando "adding built-in startup routine" in el buffer.
-  List el offsetting timer usando "offsetting" in el buffer.
-  List el addressing timer usando "addressing" in el buffer.
-  List el transmogrifying timer usando "transmogrifying" in el buffer.
-  List el linking timer usando "linking" in el buffer.
-  List el writing timer usando "writing" in el buffer.
-  List el compiler's timer usando "total" in el buffer.
+  Listar el loading timer usando "loading" in el buffer.
+  Listar el scanning timer usando "scanning" in el buffer.
+  Listar el resolving types timer usando "resolving types" in el buffer.
+  Listar el resolving globals timer usando "resolving globals" in el buffer.
+  Listar el compiling routine headers timer usando "compiling routine headers" in el buffer.
+  Listar el calculating timer usando "calculating" in el buffer.
+  Listar el adding built-in memory routines timer usando "adding built-in memory routines" in el buffer.
+  Listar el indexing utilities timer usando "indexing utilities" in el buffer.
+  Listar el compiling routine bodies timer usando "compiling routine bodies" in el buffer.
+  Listar el adding built-in startup routine timer usando "adding built-in startup routine" in el buffer.
+  Listar el offsetting timer usando "offsetting" in el buffer.
+  Listar el addressing timer usando "addressing" in el buffer.
+  Listar el transmogrifying timer usando "transmogrifying" in el buffer.
+  Listar el linking timer usando "linking" in el buffer.
+  Listar el writing timer usando "writing" in el buffer.
+  Listar el compiler's timer usando "total" in el buffer.
   Advance el buffer.
   
-Para list un type in un buffer:
+Para listar un type in un buffer:
   Si el type es nil, salir.
   Adjuntar "/type" to el buffer (con separator).
   Adjuntar el type's name to el buffer (con separator).
@@ -3864,22 +3864,22 @@ Para list un type in un buffer:
   Adjuntar el type's target type to el buffer (con separator).
   Adjuntar el type's scale to el buffer (con separator).
   Advance el buffer.
-  List el type's fields in el buffer.
+  Listar el type's fields in el buffer.
   Advance el buffer.
   
-Para list some types in un buffer:
+Para listar some types in un buffer:
   Obtener un type desde el types.
   Si el type es nil, salir.
-  List el type in el buffer.
+  Listar el type in el buffer.
   Repetir.
   
-Para list some types under un string in un buffer:
+Para listar some types under un string in un buffer:
   Adjuntar el string to el buffer.
   Advance el buffer (twice).
   Si el types are empty, salir.
-  List el types in el buffer.
+  Listar el types in el buffer.
   
-Para list un variable in un buffer:
+Para listar un variable in un buffer:
   Si el variable es nil, salir.
   Adjuntar "/variable" to el buffer (con separator).
   Adjuntar el variable's kind to el buffer (con separator).
@@ -3898,17 +3898,17 @@ Para list un variable in un buffer:
   Adjuntar el nibble string to el buffer (con separator).
   Advance el buffer.
   
-Para list some variables in un buffer:
+Para listar some variables in un buffer:
     Obtener un variable desde el variables.
     Si el variable es nil, salir.
-    List el variable in el buffer.
+    Listar el variable in el buffer.
   Repetir.
   
-Para list some variables under un string in un buffer:
+Para listar some variables under un string in un buffer:
   Adjuntar el string to el buffer.
   Advance el buffer (twice).
   Si el variables are empty, salir.
-  List el variables in el buffer.
+  Listar el variables in el buffer.
   Advance el buffer.
   
 The literal index es un index.
@@ -4259,12 +4259,12 @@ Para poner un term into another term:
   Poner el term's variable into el other term's variable.
   Poner el term's phrase into el other term's phrase.
   
-Para load un source file:
+Para cargar un source file:
   Si el source file es nil, salir.
-  Load el source file's path into el source file's buffer.
+  Cargar el source file's path into el source file's buffer.
   Si el error de e/s es not blank, abort con "No pude cargar el archivo llamado '" then el source file's path then "'."; salir.
   
-Para load some source files:
+Para cargar some source files:
   Poner ".llano" into a new string.
   Null terminate the new string.
   Lazo.
@@ -4275,7 +4275,7 @@ Para load some source files:
     Si el item's extension es not the new string, repetir.
     Si el item looks reamish, repetir.
     Agregar un source file to el source files usando el item's path.
-    Load el source file.
+    Cargar el source file.
   Repetir.
   
 The loading timer es un timer.

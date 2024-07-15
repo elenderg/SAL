@@ -8740,7 +8740,7 @@ A line es un record con
 The linefeed byte es un byte igual to 10.
 
 \Para enumerar algunas elecciones en una caja;
-\Para list some choices in un box;
+Para listar some choices in un box;
 \Para dibujar algunas elecciones en una caja;
 Para dibujar some choices in un box:
 \Draw really fast. ***
@@ -8756,7 +8756,7 @@ Para dibujar some choices in un box:
   Repetir.
 
 \Para enumerar algunas elecciones en una caja con un color;
-\Para list some choices in un box con un color;
+Para listar some choices in un box con un color;
 \Para dibujar algunas elecciones en una caja con un color;
 Para dibujar some choices in un box con un color:
   Poner el color into el context's color.
@@ -8887,7 +8887,7 @@ The little-z byte es un byte igual to 122.
 The little-z-caron byte es un byte igual to 158.
 
 \Para cargar el léxico;
-Para load el lexicon:
+Para cargar el lexicon:
   Si el lexicon es not nil, salir.
   Extraer un directory desde el module's path.
   Lazo.
@@ -8898,7 +8898,7 @@ Para load el lexicon:
   Repetir.
 
 \Para cargar el léxico dado un búfer;
-Para load el lexicon usando un buffer:
+Para cargar el lexicon usando un buffer:
   Si el lexicon es nil, crear el lexicon.
   Slap un rider on el buffer.
   Lazo.
@@ -8908,34 +8908,38 @@ Para load el lexicon usando un buffer:
   Repetir.
 
 \Para cargar el léxico dado un ruta;
-Para load el lexicon usando un path:
+Para cargar el lexicon usando un path:
   Obtener un item desde el path.
   Si el item es not found, salir.
   Si el item's kind es not "file", repetir.
   Read el item's path into un buffer.
   Si el error de e/s es not blank, repetir.
-  Load el lexicon usando el buffer.
+  Cargar el lexicon usando el buffer.
   Repetir.
 
-Para localize un box usando un pair:
+Para localizar un box usando un pair:
   Privatizar el pair.
   Negate el pair.
   Move el box usando el pair.
 
-Para localize un spot usando un pair:
+Para localizar un spot usando un pair:
   Privatizar el pair.
   Negate el pair.
   Move el spot usando el pair.
 
-Para lock un gpbitmap usando un bitmapdata (24-bit rgb):
+Para bloquear [una parte rectangular de] un gpbitmap usando un bitmapdata (24-bit rgb):
   Poner el gpbitmap's gprect into un gprect.
-  Llamada "gdiplus.dll" "GdipBitmapLockBits" con el gpbitmap y el gprect's whereabouts and 3 [imagelockmoderead or imagelockmodewrite]
-  y 137224 [pixelformat24bpprgb] y el bitmapdata's whereabouts.
+  Llamada "gdiplus.dll" "GdipBitmapLockBits" con 
+  el gpbitmap y 
+  el gprect's whereabouts and 
+  3 [imagelockmoderead or imagelockmodewrite]
+  y 137224 [pixelformat24bpprgb] y 
+  el bitmapdata's whereabouts.
 
 A logbrush es un record con
-A number called lbstyle,
-A colorref called lbcolor,
-A number called lbhatch.
+  A number called lbstyle,
+  A colorref called lbcolor,
+  A number called lbhatch.
 
 The lower-double-quote byte es un byte igual to 132.
 
@@ -8952,6 +8956,8 @@ Para lowercase any selected bytes in un text:
   Repetir.
 
 \Para minúsculas de un byte;
+\Para poner en minúscula un byte;
+\Para poner un byte en minúscula;
 Para lowercase un byte:
   Translate el byte usando el lowercase ascii table.
 
@@ -8961,21 +8967,25 @@ Para lowercase el character under un finger and Poner it into un string:
   Lowercase el string.
 
 \Para minúsculas de una cadena;
+\Para poner en minúscula un string;
+\Para poner un string en minúscula;
 Para lowercase un string:
   Slap un substring on el string.
   Lazo.
-  Si el substring es blank, salir.
-  Lowercase el substring's first's target.
-  Agregar 1 to el substring's first.
+    Si el substring es blank, salir.
+    Lowercase el substring's first's target.
+    Agregar 1 to el substring's first.
   Repetir.
 
 \Para minúsculas de un texto;
+\Para poner en minúscula un text;
+\Para poner un text en minúscula;
 Para lowercase un text:
   Si el text es nil, salir.
   Lazo.
-  Obtener un row desde el text's rows.
-  Si el row es nil, interrumpir.
-  Lowercase el row's string.
+    Obtener un row desde el text's rows.
+    Si el row es nil, interrumpir.
+    Lowercase el row's string.
   Repetir.
   Wrap el text.
 
@@ -11896,7 +11906,7 @@ Para read un number desde un console:
   Read un string desde el console.
   Convertir el string to el number.
 
-Para load un path into un buffer;
+Para cargar un path into un buffer;
 \Para leer una ruta en un búfer;
 Para read un path into un buffer:
   Borrar el error de e/s.
@@ -11916,7 +11926,7 @@ Para read un path into un buffer:
   Si el number es not 0, salir.
   Poner "Error leyendo archivo '" then el path then "'." into el error de e/s.
 
-Para load un path into un picture:
+Para cargar un path into un picture:
 \Para leer una ruta en una imagen;
 Para read un path into un picture:
   Read el path into un buffer.
