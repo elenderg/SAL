@@ -158,7 +158,7 @@ Para agregar un built-in type usando un name y un  plural name y un  length:
   Agregar el built-in type to el types usando el name y el plural name y el name.
   Poner el length into el built-in type's length.
   Poner el built-in type into el built-in type's base type.
-  Index el built-in type.
+  Indexar el built-in type.
   
 Para agregar el built-in types:
   Agregar un built-in type usando "byte" and "bytes" y 1 .
@@ -1208,7 +1208,7 @@ Para compile un directory (index el routines for utility use):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Indexando las rutinas para uso general....".
   Start el indexing utilities timer.
-  Index el routines for utility use.
+  Indexar el routines for utility use.
   Scrub el utility index.
   Reindex el utility index.
   Stop el indexing utilities timer.
@@ -1385,7 +1385,7 @@ Para compile el header of un routine usando un rider (callback):
   Compile el routine's monikettes y el routine's parameters usando el rider.
   Convertir el routine's monikettes to el routine's moniker.
   Si el routine's moniker es in el routine index, abort con "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
-  Index el routine usando el routine's monikettes y el routine index.
+  Indexar el routine usando el routine's monikettes y el routine index.
   
 Para compile el header of un routine usando un rider (decider):
   Si el compiler's abort flag es set, salir.
@@ -1397,7 +1397,7 @@ Para compile el header of un routine usando un rider (decider):
   Si any of el routine's monikettes are negative words, abort con "No es buena idea usar negativos en los nombres de los decisores." y el rider; salir.
   Convertir el routine's monikettes to el routine's moniker.
   Si el routine's moniker es in el routine index, abort con "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
-  Index el routine usando el routine's monikettes y el routine index.
+  Indexar el routine usando el routine's monikettes y el routine index.
   
 Para compile el header of un routine usando un rider (function):
   Si el compiler's abort flag es set, salir.
@@ -1415,20 +1415,20 @@ Para compile el header of un routine usando un rider (function):
   Agregar un third monikette to el routine's monikettes usando "into".
   Convertir el routine's monikettes to un moniker.
   Si el moniker es in el routine index, abort con "I already know how to '" then el moniker then "'." y el routine's locus; salir. \ not translated - no possessives in Spanish
-  Index el routine usando el routine's monikettes y el routine index.
+  Indexar el routine usando el routine's monikettes y el routine index.
   Move el rider (compiler rules).
   Si el rider's token es not any indefinite article, abort con "I was expecting un indefinite article, but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
   Compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
   Si el rider's token es not blank, abort con "There's extra stuff on el end of this function." y el rider; salir. \ not translated - no possessives in Spanish
   Convertir el routine's monikettes to el routine's moniker.
-  Index el routine usando el routine's monikettes y el routine index. \ for employs
+  Indexar el routine usando el routine's monikettes y el routine index. \ for employs
   
 Para compile el header of un routine usando un rider (procedure):
   Si el compiler's abort flag es set, salir.
   Compile el routine's monikettes y el routine's parameters usando el rider.
   Convertir el routine's monikettes to el routine's moniker.
   Si el routine's moniker es in el routine index, abort con "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
-  Index el routine usando el routine's monikettes y el routine index.
+  Indexar el routine usando el routine's monikettes y el routine index.
   
 Para compile el headers of some routines:
     Si el compiler's abort flag es set, salir.
@@ -3161,7 +3161,7 @@ Para eliminate duplicate nicknames usando un variable y un  index:
   Si el index es nil, salir.
   Encontrar another variable usando el variable's nickname y el index.
   Si el other variable es nil, encontrar el other variable usando el variable's name y el index.
-  Si el other variable es nil, index el variable usando el variable's nickname y el index; salir.
+  Si el other variable es nil, indexar el variable usando el variable's nickname y el index; salir.
   Borrar el other variable's nickname.
   Borrar el variable's nickname.
   
@@ -3468,24 +3468,24 @@ The imports are some imports.
   
 The increment tag es un tag igual to 10.
   
-Para index un global:
+Para indexar un global:
   Si el compiler's abort flag es set, salir.
   Si el global es nil, salir.
   Si el global's name es in el global index, abort con "'" then el global's name then "' es un duplicado de una variable global." y el global's locus; salir.
-  Index el global usando el global's name y el global index.
+  Indexar el global usando el global's name y el global index.
   
-Para index un literal:
+Para indexar un literal:
   Si el compiler's abort flag es set, salir.
   Si el literal es nil, salir.
   Si el literal's name es in el literal index, abort con "Internal error - index un literal" y el literal's locus; salir.
-  Index el literal usando el literal's name y el literal index.
+  Indexar el literal usando el literal's name y el literal index.
   
-Para index un partial moniker usando un index (special):
+Para indexar un partial moniker usando un index (special):
   Encontrar un refer usando el partial moniker y el index.
   Si el refer es not nil, salir.
-  Index el partial moniker in el index.
+  Indexar el partial moniker in el index.
   
-Para index un routine for utility use:
+Para indexar un routine for utility use:
   Si el compiler's abort flag es set, salir.
   Si el routine es nil, salir.
   Si el routine's function flag es set, salir.
@@ -3497,14 +3497,14 @@ Para index un routine for utility use:
   Si el moniker es in el routine index, salir.
   Encontrar un refer usando el moniker y el utility index.
   Si el refer es not nil, Poner nil into el refer's pointer; salir.
-  Index el routine usando el moniker y el utility index.
+  Indexar el routine usando el moniker y el utility index.
   
-Para index un routine usando un moniker y un  index (special):
+Para indexar un routine usando un moniker y un  index (special):
   Encontrar un refer usando el moniker y el index.
   Si el refer es not nil, Poner el routine into el refer's pointer; salir.
-  Index el routine usando el moniker y el index.
+  Indexar el routine usando el moniker y el index.
   
-Para index un routine usando some monikettes y un  index:
+Para indexar un routine usando some monikettes y un  index:
   Si el routine es nil, salir.
   Borrar un partial moniker.
   Lazo.
@@ -3512,27 +3512,27 @@ Para index un routine usando some monikettes y un  index:
     Si el monikette es nil, salir.
     Adjuntar el monikette to el partial moniker.
     Si el monikette es el monikettes' last, interrumpir.
-    Index el partial moniker usando el index (special).
+    Indexar el partial moniker usando el index (special).
   Repetir.
-  Index el routine usando el partial moniker as un moniker y el index (special).
+  Indexar el routine usando el partial moniker as un moniker y el index (special).
   
-Para index some routines for utility use:
+Para indexar some routines for utility use:
     Si el compiler's abort flag es set, salir.
     Obtener un routine desde el routines.
     Si el routine es nil, salir.
-    Index el routine for utility use.
+    Indexar el routine for utility use.
   Repetir.
   
-Para index un type:
+Para indexar un type:
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
-  Index el type usando el type's name.
+  Indexar el type usando el type's name.
   
-Para index un type usando un name:
+Para indexar un type usando un name:
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
   Encontrar un existing type usando el name y el type index.
-  Si el existing type es nil, index el type usando el name y el type index; salir.
+  Si el existing type es nil, indexar el type usando el name y el type index; salir.
   Poner el type's locus into un locus.
   Si el locus es nil, Poner el existing type's locus into el locus. \ point el error to un type in el source code, not un generated type
   Abort con "Creo que he visto este tipo '" then el name then "' en algún lugar previo; debe estar duplicado." y el locus.
@@ -4316,7 +4316,7 @@ Para reindex el utility index usando some refers:
     Si el routine es nil, abort con "Internal error - index el untility routines usando some refers"; salir.
     Copiar el routine's monikettes into some monikettes.
     Reduce el monikettes for utility use.
-    Index el routine usando el monikettes y el routine index.
+    Indexar el routine usando el monikettes y el routine index.
     Destroy el monikettes.
   Repetir.
   
@@ -4366,7 +4366,7 @@ Para resolve un global (compile body):
   Si el rider's token es not blank, abort con "¿Se perdió un punto por ahí?" y el rider; salir.
   Si el global's type name es blank, Poner el literal's type's name into el global's type name.
   Poner el literal into el global's literal.
-  Index el literal.
+  Indexar el literal.
   
 Para resolve some globals:
     Si el compiler's abort flag es set, salir.
@@ -4409,7 +4409,7 @@ Para resolve un type (expand thing): \ type's base type es not resolved yet
   Agregar another spanish reverse field to el record type's fields usando el type's name then " anterior" and "anterior" y el type's name y el on flag.
   Poner "previous " then el type's name into el other spanish reverse field's redefinition target name.
   Si el type's fields are not empty, Adjuntar el type's fields to el record type's fields.
-  Index el record type.
+  Indexar el record type.
   \ fix up original type to look like un pointer
   Poner el record type's name into el type's target name.
   \ Agregar chain type
@@ -4424,14 +4424,14 @@ Para resolve un type (expand thing): \ type's base type es not resolved yet
   Poner "last " then el type's name into el fourth spanish field's redefinition target name.
   Agregar un fourth spanish feminine field to el chain type's fields usando "última " then el type's name and "última" y el type's name y el on flag.
   Poner "last " then el type's name into el fourth spanish feminine field's redefinition target name.
-  Index el chain type.
+  Indexar el chain type.
   
 Para resolve un type (index plural):
   Si el compiler's abort flag es set, salir.
   Si el type es nil, salir.
   Si el type's plural name es blank, salir.
   Si el type can be reduced to "thing" using el base name, salir.
-  Index el type usando el type's plural name.
+  Indexar el type usando el type's plural name.
   
 Para resolve un type (optional info - pointer):
   Si el compiler's abort flag es set, salir.
@@ -4682,7 +4682,7 @@ Para scan un global usando un rider:
   Si el rider's token es any equal, scan el global usando el rider (data part); salir.
   Si el rider's token es not el period byte, abort con "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
   Move el rider (compiler rules).
-  Index el global.
+  Indexar el global.
   
 Para scan un global usando un rider (data part):
   Si el compiler's abort flag es set, salir.
@@ -4692,7 +4692,7 @@ Para scan un global usando un rider (data part):
   Scan el global's global body usando el rider.
   Si el rider's token es not el period byte, abort con "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
   Move el rider (compiler rules).
-  Index el global.
+  Indexar el global.
   
 Para scan un global usando un rider (has or have):
   Si el compiler's abort flag es set, salir.
@@ -4700,31 +4700,31 @@ Para scan un global usando un rider (has or have):
   Poner "~inline " then el global's name then " type" into un name.
   Poner el name then "s" into un plural name.
   Agregar un type to el types usando el name y el plural name and "record" y el global's locus.
-  Index el type.
+  Indexar el type.
   Poner el type's name into el global's type name.
   Scan el type's fields usando el rider.
   Si el rider's token es not el period byte, abort con "Algún signo de puntuación aquí está incorrecto." y el rider; salir. 
   Move el rider (compiler rules).
-  Index el global.
+  Indexar el global.
   
 Para scan un global usando un rider (literal term):
   Si el compiler's abort flag es set, salir.
   Scan el global's global body usando el rider.
   Si el rider's token es not el period byte, abort con "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
   Move el rider (compiler rules).
-  Index el global.
+  Indexar el global.
   
 Para scan un global usando un rider (optional info):
   Si el compiler's abort flag es set, salir.
   Poner "~inline " then el global's name then " type" into un name.
   Poner el name then "s" into un plural name.
   Agregar un type to el types usando el name y el plural name y el global's type name y el global's locus.
-  Index el type.
+  Indexar el type.
   Poner el type's name into el global's type name.
   Scan any optional info for el type usando el rider.
   Si el rider's token es not el period byte, abort con "Todas las definiciones gloables deben terminar con un punto." y el rider; salir. 
   Move el rider (compiler rules).
-  Index el global.
+  Indexar el global.
   
 Para scan un name usando un rider:
   Borrar el name.
@@ -4826,7 +4826,7 @@ Para scan un type usando un rider:
   Scan any optional info for el type usando el rider.
   Si el rider's token es not el period byte, abort con "Las definiciones de tipos terminan en un punto; en cambio encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
-  Index el type.
+  Indexar el type.
   
 Para scan un type usando un rider (has or have):
   Si el compiler's abort flag es set, salir.
@@ -4835,7 +4835,7 @@ Para scan un type usando un rider (has or have):
   Scan el type's fields usando el rider.
   Si el rider's token es not el period byte, abort con "Las definiciones de tipos terminan en un punto; en cambio encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
-  Index el type.
+  Indexar el type.
   
 Para scan un type usando un rider (unit of measure):
   Si el compiler's abort flag es set, salir.
@@ -4845,7 +4845,7 @@ Para scan un type usando un rider (unit of measure):
   Scan el type's base name usando el rider.
   Si el rider's token es not el period byte, abort con "Los tipos deben terminar con un período, encontré '" then el rider's token then "'." y el rider; salir.
   Move el rider (compiler rules).
-  Index el type.
+  Indexar el type.
   
 The scanning timer es un timer.
   
@@ -5119,13 +5119,13 @@ Para compile el header of un routine usando un rider (reverse-possessive functio
   Agregar un third monikette to el routine's monikettes usando "into".
   Convertir el routine's monikettes to un moniker.
   Si el moniker es in el routine index, abort con "Ya sé cómo '" then el moniker then "'." y el routine's locus; salir.
-  Index el routine usando el routine's monikettes y el routine index.
+  Indexar el routine usando el routine's monikettes y el routine index.
   Move el rider (compiler rules).
   Si el rider's token es not any indefinite article, abort con "Esperaba un artículo indefinido, pero encontré '" then el rider's token then "'." y el rider; salir.
   Compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
   Si el rider's token es not blank, abort con "Hay cosas demás en el final de esta función." y el rider; salir.
   Convertir el routine's monikettes to el routine's moniker.
-  Index el routine usando el routine's monikettes y el routine index. \ for employs
+  Indexar el routine usando el routine's monikettes y el routine index. \ for employs
   
   \ dahn - reverse functions
   \ to Poner el xxx uv a/the yyy into zzz

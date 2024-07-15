@@ -7675,7 +7675,7 @@ Para incluir un font in el current pdf:
   Adjuntar ">>" to el definition.
   Adjuntar "endobj" to el definition.
   Poner el font info into el definition's font info.
-  Index el definition usando el font's name y el pdf state's font index.
+  Indexar el definition usando el font's name y el pdf state's font index.
 
 Para incluir un font in un pdf object:
   Si el pdf object es nil, salir.
@@ -7700,12 +7700,12 @@ Para indent any selected rows in un text:
 
 An indent es un count.
 
-An index es un thing con
+An index es un thing con \ catálogo -> catálogoes
   A bucket count,
   A first bucket y 
   A last bucket.
 
-Para index un pointer usando un string y un index:
+Para indexar un pointer usando un string y un index:
 \  if el index es nil, salir. \ to make compiler faster
   Si el string's length es 0, salir.
   Obtener un bucket usando el string y el index.
@@ -7714,9 +7714,9 @@ Para index un pointer usando un string y un index:
   Poner el string into el refer's string.
   Poner el pointer into el refer's pointer.
 
-Para index un string in un index:
+Para indexar un string in un index:
 \  if el index es nil, salir. \ to make compiler faster
-  Index nil usando el string y el index.
+  Indexar nil usando el string y el index.
 
 Para initalize el terminal:
   Crear el terminal in el screen's box.
@@ -8724,15 +8724,18 @@ Para limitar un spot to un box:
 Para limitar some texts to un count:
   Poner el texts' count into another count.
   Lazo.
-  Si el other count es less than or igual to el count, salir.
-  Poner el texts' first into un text.
-  Remove el text desde el texts.
-  Destroy el text.
-  Restar 1 desde el other count.
+    Si el other count es less than or igual to el count, salir.
+    Poner el texts' first into un text.
+    Remove el text desde el texts.
+    Destroy el text.
+    Restar 1 desde el other count.
   Repetir.
 
-A line es un record con un start spot y un end spot,
-  un punto de inicio at el start y un punto final at el end.
+A line es un record con 
+  A start spot y 
+  A end spot,
+  Un punto de inicio at el start y 
+  Un punto final at el end.
 
 The linefeed byte es un byte igual to 10.
 
@@ -8741,15 +8744,15 @@ The linefeed byte es un byte igual to 10.
 \Para dibujar algunas elecciones en una caja;
 Para dibujar some choices in un box:
 \Draw really fast. ***
-  Obtener un [first/next] choice desde el choices.
-  Si el choice es missing [because we've drawn them all], salir.
-  Poner el box's left plus 1/4 inch into el choice's left.
-  Poner el box's right minus 1/4 inch into el choice's right.
-  Si el choice es el choices' first, Poner el box's top plus 1/4 inch into el choice's top.
-  Si el choice es not el choices' first, Poner el choice's previous' bottom into el choice's top.
-  Poner el choice's top plus 1/4 inch into el choice's bottom.
-\Draw el choice's box con el purple color. \ temp ***
-  Trazar el choice's name in el choice's box con el context's color.
+    Obtener un [first/next] choice desde el choices.
+    Si el choice es missing [because we've drawn them all], salir.
+    Poner el box's left plus 1/4 inch into el choice's left.
+    Poner el box's right minus 1/4 inch into el choice's right.
+    Si el choice es el choices' first, Poner el box's top plus 1/4 inch into el choice's top.
+    Si el choice es not el choices' first, Poner el choice's previous' bottom into el choice's top.
+    Poner el choice's top plus 1/4 inch into el choice's bottom.
+  \Draw el choice's box con el purple color. \ temp ***
+    Trazar el choice's name in el choice's box con el context's color.
   Repetir.
 
 \Para enumerar algunas elecciones en una caja con un color;
@@ -8888,10 +8891,10 @@ Para load el lexicon:
   Si el lexicon es not nil, salir.
   Extraer un directory desde el module's path.
   Lazo.
-  Si el directory es blank, salir.
-  Poner el directory then "lexicon\" into un path.
-  Si el path es in el file system, load el lexicon usando el path; salir.
-  Extraer el directory desde el directory.
+    Si el directory es blank, salir.
+    Poner el directory then "lexicon\" into un path.
+    Si el path es in el file system, load el lexicon usando el path; salir.
+    Extraer el directory desde el directory.
   Repetir.
 
 \Para cargar el léxico dado un búfer;
@@ -8899,9 +8902,9 @@ Para load el lexicon usando un buffer:
   Si el lexicon es nil, crear el lexicon.
   Slap un rider on el buffer.
   Lazo.
-  Move el rider (index lexicon rules).
-  Si el rider's token es blank, salir.
-  Index el rider's token in el lexicon's index.
+    Move el rider (index lexicon rules).
+    Si el rider's token es blank, salir.
+    Indexar el rider's token in el lexicon's index.
   Repetir.
 
 \Para cargar el léxico dado un ruta;
@@ -10842,6 +10845,7 @@ Para poner un box's bottom line into un horizontal line: \ and "vertical" for le
   Poner el box's right y el box's bottom into el horizontal line's end.
 
 Para poner un box's bottom-center into un spot: \ *** need these without dashs too
+\ calculated field
   Poner el box's center's x into el spot's x.
   Poner el box's bottom into el spot's y.
 
