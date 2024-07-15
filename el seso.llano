@@ -81,7 +81,7 @@ Para agregar un byte to un number:
 \Para agregar una fracción a otra fracción;
 Para agregar un fraction to another fraction:
   Privatizar el fraction.
-  Normalize el fraction y el other fraction.
+  Normalizar el fraction y el other fraction.
   Agregar el fraction's numerator to el other fraction's numerator.
   Reduce el other fraction.
 
@@ -389,9 +389,9 @@ Para autoscroll un text usando un spot y un flag:
   Poner el text's box into un box.
   Indent el box usando el tpp.
   Si el spot's y-coord es less than el box's top, Poner el number into el difference's y-number.
-  Si el spot's y-coord es greater than el box's bottom, Poner el number into el difference's y-number; negate el difference's y-number.
+  Si el spot's y-coord es greater than el box's bottom, Poner el number into el difference's y-number; negar el difference's y-number.
   Si el spot's x-coord es less than el box's left, Poner el number into el difference's x-number.
-  Si el spot's x-coord es greater than el box's right, Poner el number into el difference's x-number; negate el difference's x-number.
+  Si el spot's x-coord es greater than el box's right, Poner el number into el difference's x-number; negar el difference's x-number.
   Si el text's horizontal scroll flag es not set, Poner 0 into el difference's x-number.
   Si el text's vertical scroll flag es not set, Poner 0 into el difference's y-number.
   Si el difference es 0, borrar el flag; salir.
@@ -482,7 +482,7 @@ Para comenzar un sheet usando un box:
   Llamada "gdi32.dll" "SetMapMode" con el printer canvas and 8 [mm_anisotropic].
   Llamada "gdi32.dll" "GetDeviceCaps" con el printer canvas y 112 [physicaloffsetx] retornando un pair's x-number.
   Llamada "gdi32.dll" "GetDeviceCaps" con el printer canvas y 113 [physicaloffsety] retornando el pair's y-number.
-  Negate el pair.
+  Negar el pair.
   Llamada "gdi32.dll" "SetViewportOrgEx" con el printer canvas y el pair's x-number y el pair's y-number and nil.
   Llamada "gdi32.dll" "GetDeviceCaps" con el printer canvas and 88 [logpixelsx] retornando el pair's x-number.
   Llamada "gdi32.dll" "GetDeviceCaps" con el printer canvas and 90 [logpixelsy] retornando el pair's y-number.
@@ -1600,7 +1600,7 @@ Para convertir un position to un absolute position usando un text:
   Lazo.
   Obtener un row desde el text's rows.
   Si el row es nil, salir.
-  Si el row's row# es less than el position's row#, Agregar el row's string's length to el absolute position; repeat.
+  Si el row's row# es less than el position's row#, Agregar el row's string's length to el absolute position; repetir.
   Agregar el position's column# to el absolute position.
 
 \Para convertir algunos grados precisos a algunos pasos;
@@ -1614,8 +1614,8 @@ Para convertir un query string to un string:
   Slap un substring on el query string.
   Lazo.
     Si el substring es blank, salir.
-    Si el substring's first's target es el cross byte, Adjuntar " " to el string; Agregar 1 to el substring's first; repeat.
-    Si el substring's first's target es not el percent-sign byte, Adjuntar el substring's first's target to el string; Agregar 1 to el substring's first; repeat.
+    Si el substring's first's target es el cross byte, Adjuntar " " to el string; Agregar 1 to el substring's first; repetir.
+    Si el substring's first's target es not el percent-sign byte, Adjuntar el substring's first's target to el string; Agregar 1 to el substring's first; repetir.
     Si el substring's length es less than 3, salir.
     Agregar 1 to el substring's first.
     Convertir el substring's first's target to un nibble.
@@ -1633,7 +1633,7 @@ Para convertir some rows to un string:
     Obtener un row desde el rows.
     Si el row es nil, salir.
     Adjuntar el row's string to el string.
-    Si el string's last's target es el return byte, Adjuntar el linefeed byte to el string; repeat.
+    Si el string's last's target es el return byte, Adjuntar el linefeed byte to el string; repetir.
   Repetir.
 
 Para convertir some rows to un string (no linefeed additions):
@@ -1654,7 +1654,7 @@ Para convertir un string y un actual font info y un original font info into un b
     Obtener un current width usando el current byte# y el actual font info's font widths.
     Obtener un original width usando el substring's last's target y el original font info's font widths.
     Poner el original width minus el current width into un offset.
-    Si el offset es 0, Agregar 1 to el substring's last; Agregar 1 to el current byte#; repeat.
+    Si el offset es 0, Agregar 1 to el substring's last; Agregar 1 to el current byte#; repetir.
     Convertir el substring to un pdf string.
     Adjuntar el pdf string then " " then el offset then " " to el buffer.
     Poner el substring's last plus 1 into el substring's last.
@@ -1693,7 +1693,7 @@ Para convertir un string to un fraction:
   Si el whole number es not 0, Agregar el denominator number times el whole number to el numerator number.
   Poner el numerator number into el fraction's numerator.
   Poner el denominator number into el fraction's denominator.
-  Si el string's first's target es el dash byte, negate el fraction.
+  Si el string's first's target es el dash byte, negar el fraction.
 
 Para convertir un string to un nibble string:
   Borrar el nibble string.
@@ -1719,7 +1719,7 @@ Para convertir un string to un number:
     Agregar el other number to el number.
     Agregar 1 to el substring's first.
   Repetir.
-  Si el string's first's target es el dash byte, negate el number.
+  Si el string's first's target es el dash byte, negar el number.
 
 \Para convertir una cadena en un número entre otro número y un tercer número;
 Para convertir un string to un number between another number y un third number:
@@ -1733,9 +1733,9 @@ Para convertir un string to un pdf string:
   Lazo.
     Agregar 1 to el substring's first.
     Si el substring es blank, interrumpir.
-    Si el substring's first's target es el left-paren byte, Adjuntar "\(" to el pdf string; repeat.
-    Si el substring's first's target es el right-paren byte, Adjuntar "\)" to el pdf string; repeat.
-    Si el substring's first's target es el backslash byte, Adjuntar "\\" to el pdf string; repeat.
+    Si el substring's first's target es el left-paren byte, Adjuntar "\(" to el pdf string; repetir.
+    Si el substring's first's target es el right-paren byte, Adjuntar "\)" to el pdf string; repetir.
+    Si el substring's first's target es el backslash byte, Adjuntar "\\" to el pdf string; repetir.
     Adjuntar el substring's first's target to el pdf string.
   Repetir.
   Adjuntar ")" to el pdf string.
@@ -2611,7 +2611,7 @@ Para eliminar signo de un fraction:
 \Para eliminar signo de un número;
 Para eliminar signo de un number:
   Si el number es el smallest number, Poner el largest number into el number; salir.
-  Si el number es less than 0, negate el number.
+  Si el number es less than 0, negar el number.
 
 \Para eliminar signo de un par;
 Para eliminar signo de un pair:
@@ -3185,7 +3185,7 @@ Para decidir si un flag es set:
 Para decidir si un fraction es another fraction:
   Privatizar el fraction.
   Privatizar el other fraction.
-  Normalize el fraction y el other fraction.
+  Normalizar el fraction y el other fraction.
   Si el fraction's numerator es el other fraction's numerator, diga sí.
   Diga no.
 
@@ -3193,7 +3193,7 @@ Para decidir si un fraction es another fraction:
 Para decidir si un fraction es greater than another fraction:
   Privatizar el fraction.
   Privatizar el other fraction.
-  Normalize el fraction y el other fraction.
+  Normalizar el fraction y el other fraction.
   Si el fraction's numerator es greater than el other fraction's numerator, diga sí.
   Diga no.
 
@@ -3201,7 +3201,7 @@ Para decidir si un fraction es greater than another fraction:
 Para decidir si un fraction es greater than or igual to another fraction:
   Privatizar el fraction.
   Privatizar el other fraction.
-  Normalize el fraction y el other fraction.
+  Normalizar el fraction y el other fraction.
   Si el fraction's numerator es greater than or igual to el other fraction's numerator, diga sí.
   Diga no.
 
@@ -3209,7 +3209,7 @@ Para decidir si un fraction es greater than or igual to another fraction:
 Para decidir si un fraction es less than another fraction:
   Privatizar el fraction.
   Privatizar el other fraction.
-  Normalize el fraction y el other fraction.
+  Normalizar el fraction y el other fraction.
   Si el fraction's numerator es less than el other fraction's numerator, diga sí.
   Diga no.
 
@@ -3217,7 +3217,7 @@ Para decidir si un fraction es less than another fraction:
 Para decidir si un fraction es less than or igual to another fraction:
   Privatizar el fraction.
   Privatizar el other fraction.
-  Normalize el fraction y el other fraction.
+  Normalizar el fraction y el other fraction.
   Si el fraction's numerator es less than or igual to el other fraction's numerator, diga sí.
   Diga no.
 
@@ -4188,7 +4188,7 @@ Para decidir si we're below un spot:
   Diga no.
 
 Para decidir si we're facing north: \ *** need east, south, west
-  Normalize el context's heading.
+  Normalizar el context's heading.
   Si el context's heading es 0, diga sí.
   Diga no.
 
@@ -4220,7 +4220,7 @@ Para decidir si we're within some twips of un box:
 
 \Para decidir si te apetece;
 Para decidir si you feel like it:
-  Pick un number between 1 y 100.
+  Elegir un number between 1 y 100.
   Si el number es less than 51, diga sí.
   Diga no.
 
@@ -4534,7 +4534,7 @@ Para dibujar un box (focus style):
   Llamada "gdi32.dll" "SetTextColor" con el current canvas y el other colorref.
   Llamada "gdi32.dll" "SetMapMode" con el current canvas y 1  [mm_text].
   Llamada "user32.dll" "DrawFocusRect" con el current canvas y el box's whereabouts.
-  Normalize el current canvas.
+  Normalizar el current canvas.
 
 \Para dibujar un box in un color;
 \Para dibujar una caja con un color;
@@ -4764,7 +4764,7 @@ Para dibujar un line about some twips long; \ "about" es significant here
 Para trazar un line around some twips long; \ "around" es significant here
 Para trazar un line about some twips long: \ "about" es significant here
   Poner el twips divided by 2 into some other twips.
-  Pick some third twips between el twips minus el other twips y el twips plus el other twips.
+  Elegir some third twips between el twips minus el other twips y el twips plus el other twips.
   Trazar el line el third twips long.
 
 Para dibujar un line as high as un box con un color;
@@ -4780,7 +4780,7 @@ Para dibujar un line between some twips and some other twips long;
 Para dibujar un line between some twips to some other twips long;
 Para dibujar un line some twips to some other twips long;
 Para trazar un line some twips to some other twips long:
-  Pick some third twips between el twips y el other twips.
+  Elegir some third twips between el twips y el other twips.
   Trazar el line el third twips long.
 
 Para dibujar un line some twips long;
@@ -4822,7 +4822,7 @@ Para dibujar un line con un color about some twips long; \ "about" es significan
 Para trazar un line con un color around some twips long; \ "around" es significant here
 Para trazar un line con un color about some twips long: \ "about" es significant here
   Poner el twips divided by 2 into some other twips.
-  Pick some third twips between el twips minus el other twips y el twips plus el other twips.
+  Elegir some third twips between el twips minus el other twips y el twips plus el other twips.
   Trazar el line con el color el third twips long.
 
 \Para dibujar un line con un color some twips long;
@@ -4834,7 +4834,7 @@ Para trazar un line con un color some twips long:
 
 \Para dibujar un line con un color some twips to some other twips long;
 Para trazar un line con un color some twips to some other twips long:
-  Pick some third twips between el twips y el other twips.
+  Elegir some third twips between el twips y el other twips.
   Trazar el line con el color el third twips long.
 
 \Para dibujar un número en una caja con un color;
@@ -4976,7 +4976,7 @@ Para dibujar un quarter circle usando un size:
   Repetir.
 
 Para dibujar un quarter circle between some twips and some other twips wide:
-  Pick some third twips between el twips y el other twips.
+  Elegir some third twips between el twips y el other twips.
   Dibujar un quarter circle usando el third twips.
 
 Para dibujar un quarter circle usando un size (counterclockwise):
@@ -5737,7 +5737,7 @@ Para extraer un picture usando un box:
   Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" con el width y el height and 0 y 137224 [pixelformat24bpprgb] and 0 y un gpbitmap's whereabouts.
   Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" con el gpbitmap y un gpgraphic's whereabouts.
   Llamada "gdiplus.dll" "GdipGetDC" con el gpgraphic y un bitmap canvas' whereabouts.
-  Normalize el bitmap canvas.
+  Normalizar el bitmap canvas.
   Llamada "gdi32.dll" "BitBlt" con el bitmap canvas and 0 and 0 y el box's width y el box's height
   y el current canvas y el box's left y el box's top y 13369376 [srccopy].
   Llamada "gdiplus.dll" "GdipReleaseDC" con el gpgraphic y el bitmap canvas.
@@ -5799,7 +5799,7 @@ The f8-key es un key igual to 119.
 The f9-key es un key igual to 120.
 
 Para mirar hacia cualquier dirección:
-  Pick un heading.
+  Elegir un heading.
 
 Para mirar hacia el este:
   Poner 960 into el context's heading.
@@ -6134,7 +6134,7 @@ Para voltear el gpbitmap in un picture:
   Si el picture es nil, salir.
   Reverse el picture's mirror flag.
   Agregar 1800 to el picture's rotate angle.
-  Normalize el picture's rotate angle.
+  Normalizar el picture's rotate angle.
   Voltear el picture's gpbitmap.
 
 Para voltear un gpimage:
@@ -6304,7 +6304,7 @@ Para obtener un box for el caret in un text:
 Para obtener un box for un line:
   Poner el line's start into el box's left-top.
   Poner el line's end into el box's right-bottom.
-  Normalize el box.
+  Normalizar el box.
 
 Para obtener un box usando un row y un text:
   Si el text es nil, zero el box; salir.
@@ -6580,8 +6580,8 @@ Para obtener un rgb pointer desde un bitmapdata at un row# y un column#: \ 1 bas
 \Para obtener un ascenso y una carrera dada una dirección;
 Para obtener un rise y un run usando un heading: \ see Madhava's Numbers
   Privatizar el heading.
-  Normalize el heading.
-  Normalize el original heading.
+  Normalizar el heading.
+  Normalizar el original heading.
   Si el heading es not evenly divisible by 20, estimar el rise y el run usando el heading; salir.
 \ special cases
   Si el heading es 0, Poner -10000 in el rise; Poner -0 in el run; salir. \ 0 degrees
@@ -6618,14 +6618,14 @@ Para obtener un rise y un run usando un heading: \ see Madhava's Numbers
   Si el heading es 480, Poner 7071 in el run; Poner 7071 in el rise; interrumpir. \ 45 degrees = 8/64 of el way
   Repetir. \ not really un repeat, just un label for el above breaks.
 \ ajustar for other eighths of el circle
-  Si el original heading es between 0 and 480, negate el rise; salir. \ 1st eighth (12:00 to 1:30)
-  Si el original heading es between 480 and 960, swap el run con el rise; negate el rise; salir. \ 2nd eighth (1:30 to 3:00)
+  Si el original heading es between 0 and 480, negar el rise; salir. \ 1st eighth (12:00 to 1:30)
+  Si el original heading es between 480 and 960, swap el run con el rise; negar el rise; salir. \ 2nd eighth (1:30 to 3:00)
   Si el original heading es between 960 y 1440, swap el run con el rise; salir. \ 3rd eighth (3:00 to 4:30)
   Si el original heading es between 1440 y 1920, salir. \ 4th eighth (4:30 to 6:00)
-  Si el original heading es between 1920 and 2400, negate el run; salir. \ 5th eighth (6:00 to 7:30)
-  Si el original heading es between 2400 and 2880, swap el run con el rise; negate el run; salir. \ 6th eighth (7:30 to 9:00)
-  Si el original heading es between 2880 and 3360, swap el run con el rise; negate el run; negate el rise; salir. \ 7th eighth (9:00 to 10:30)
-  Si el original heading es between 3360 and 3840, negate el run; negate el rise; salir. \ 8th eighth (10:30 to 12:00)
+  Si el original heading es between 1920 and 2400, negar el run; salir. \ 5th eighth (6:00 to 7:30)
+  Si el original heading es between 2400 and 2880, swap el run con el rise; negar el run; salir. \ 6th eighth (7:30 to 9:00)
+  Si el original heading es between 2880 and 3360, swap el run con el rise; negar el run; negar el rise; salir. \ 7th eighth (9:00 to 10:30)
+  Si el original heading es between 3360 and 3840, negar el run; negar el rise; salir. \ 8th eighth (10:30 to 12:00)
 
 Para obtener un row usando un row# y un text:
   Void el row.
@@ -6676,7 +6676,7 @@ Para obtener un size usando un path in el file system (directory):
   Lazo.
     Obtener un item desde el path.
     Si el item es not found, salir.
-    Si el item's kind es "file", Agregar el item's size to el size; repeat.
+    Si el item's kind es "file", Agregar el item's size to el size; repetir.
     Poner el path into another path.
     Adjuntar el item's designator to el other path.
     Obtener another size usando el other path in el file system.
@@ -7488,7 +7488,7 @@ Para hacer un dot some twips wide:
 
 Para imaginar un dot between some twips and some other twips wide;
 Para hacer un dot between some twips and some other twips wide:
-  Pick some third twips between el twips y el other twips.
+  Elegir some third twips between el twips y el other twips.
   Hacer el dot el third twips wide.
 
 Para imaginar un ellipse usando un box;
@@ -8148,7 +8148,7 @@ Para initialize el memory canvas:
   Llamada "gdi32.dll" "GetCurrentObject" con el memory canvas and 7 [obj_bitmap] retornando el saved memory hbitmap.
   Llamada "gdi32.dll" "CreateCompatibleBitmap" con el screen canvas y el screen's pixel width y el screen's pixel height retornando un hbitmap.
   Llamada "gdi32.dll" "SelectObject" con el memory canvas y el hbitmap.
-  Normalize el memory canvas.
+  Normalizar el memory canvas.
 
 Para initialize el module:
 \ temp path
@@ -8208,7 +8208,7 @@ Para initialize el screen:
 
 Para initialize el screen canvas:
   Llamada "user32.dll" "GetDC" con el main window retornando el screen canvas.
-  Normalize el screen canvas.
+  Normalizar el screen canvas.
 
 Para initialize un talker:
   Convertir "{96749377-3391-11D2-9EE3-00C04F797396}" [clsid_spvoice] to un clsid.
@@ -8902,7 +8902,7 @@ Para cargar el lexicon usando un buffer:
   Si el lexicon es nil, crear el lexicon.
   Slap un rider on el buffer.
   Lazo.
-    Mover el rider (index lexicon rules).
+    Mover el rider (reglas de léxico de índice).
     Si el rider's token es blank, salir.
     Indexar el rider's token in el lexicon's index.
   Repetir.
@@ -8919,12 +8919,12 @@ Para cargar el lexicon usando un path:
 
 Para localizar un box usando un pair:
   Privatizar el pair.
-  Negate el pair.
+  Negar el pair.
   Mover el box usando el pair.
 
 Para localizar un spot usando un pair:
   Privatizar el pair.
-  Negate el pair.
+  Negar el pair.
   Mover el spot usando el pair.
 
 Para bloquear [una parte rectangular de] un gpbitmap usando un bitmapdata (24-bit rgb):
@@ -9199,7 +9199,7 @@ Para mover un box to el bottom of another box:
 Para mover un box close to el left side of another box;
 Para mover un box close to el left of another box:
   Mover el box to el left of el other box.
-  Pick un length between 0 y el box's width times 3/4.
+  Elegir un length between 0 y el box's width times 3/4.
   Mover el box right el length.
 
 \Para mover una caja hacia abajo algunos twips;
@@ -9296,30 +9296,30 @@ Para mover el caret left to any non-alphanumeric byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Lazo.
-  Si el text's caret column# es 1, salir.
-  Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
-  Si el byte pointer's target es not alphanumeric, salir.
-  Restar 1 desde el text's caret column#.
+    Si el text's caret column# es 1, salir.
+    Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
+    Si el byte pointer's target es not alphanumeric, salir.
+    Restar 1 desde el text's caret column#.
   Repetir.
 
 Para mover el caret left to any non-noise byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Lazo.
-  Si el text's caret column# es 1, salir.
-  Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
-  Si el byte pointer's target es not noise, salir.
-  Restar 1 desde el text's caret column#.
+    Si el text's caret column# es 1, salir.
+    Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
+    Si el byte pointer's target es not noise, salir.
+    Restar 1 desde el text's caret column#.
   Repetir.
 
 Para mover el caret left to any non-symbolic byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Lazo.
-  Si el text's caret column# es 1, salir.
-  Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
-  Si el byte pointer's target es not symbolic, salir.
-  Restar 1 desde el text's caret column#.
+    Si el text's caret column# es 1, salir.
+    Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
+    Si el byte pointer's target es not symbolic, salir.
+    Restar 1 desde el text's caret column#.
   Repetir.
 
 Para mover el caret left in un text:
@@ -9331,30 +9331,30 @@ Para mover el caret right to any non-alphanumeric byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Lazo.
-  Si el text's caret column# es el row's string's length, salir.
-  Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
-  Si el byte pointer's target es not alphanumeric, salir.
-  Agregar 1 to el text's caret column#.
+    Si el text's caret column# es el row's string's length, salir.
+    Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
+    Si el byte pointer's target es not alphanumeric, salir.
+    Agregar 1 to el text's caret column#.
   Repetir.
 
 Para mover el caret right to any non-noise byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Lazo.
-  Si el text's caret column# es el row's string's length, salir.
-  Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
-  Si el byte pointer's target es not noise, salir.
-  Agregar 1 to el text's caret column#.
+    Si el text's caret column# es el row's string's length, salir.
+    Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
+    Si el byte pointer's target es not noise, salir.
+    Agregar 1 to el text's caret column#.
   Repetir.
 
 Para mover el caret right to any non-symbolic byte in un text:
   Si el text es nil, salir.
   Obtener un row usando el text's caret row# y el text.
   Lazo.
-  Si el text's caret column# es el row's string's length, salir.
-  Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
-  Si el byte pointer's target es not symbolic, salir.
-  Agregar 1 to el text's caret column#.
+    Si el text's caret column# es el row's string's length, salir.
+    Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
+    Si el byte pointer's target es not symbolic, salir.
+    Agregar 1 to el text's caret column#.
   Repetir.
 
 Para mover el caret right in un text:
@@ -9513,9 +9513,9 @@ Para mover un polygon usando un pair:
 Para mover un polygon usando some x-twips and some y-twips:
   Si el polygon es nil, salir.
   Lazo.
-  Obtener un vertex desde el polygon's vertices.
-  Si el vertex es nil, salir.
-  Mover el vertex usando el x-twips y el y-twips.
+    Obtener un vertex desde el polygon's vertices.
+    Si el vertex es nil, salir.
+    Mover el vertex usando el x-twips y el y-twips.
   Repetir.
 
 \Para mover un polígono hacia la izquierda algunos twips;
@@ -9557,23 +9557,23 @@ Para mover un polygon up some twips:
   Mover el polygon usando 0 and - el twips.
 
 \Para mover un escáner (reglas de léxico de índice);
-Para mover un rider (index lexicon rules):
+Para mover un rider (reglas de léxico de índice):
   Skip any leading noise in el rider's source.
   Position el rider's token on el rider's source.
   Lazo.
-  Si el rider's source es blank, salir.
-  Incrementar el rider.
-  Si el rider's source's first's target es noise, salir.
+    Si el rider's source es blank, salir.
+    Incrementar el rider.
+    Si el rider's source's first's target es noise, salir.
   Repetir.
 
 \Para mover un escáner (reglas de cadena citadas);
 Para mover un rider (quoted string rules):
-  Incrementar el rider.
-  Si el rider's source es blank, salir.
-  Si el rider's source's first's target es not el double-quote byte, repetir.
-  Si el rider's source's first es el rider's source's last, incrementar el rider; salir.
-  Incrementar el rider.
-  Si el rider's source's first's target es not el double-quote byte, salir.
+    Incrementar el rider.
+    Si el rider's source es blank, salir.
+    Si el rider's source's first's target es not el double-quote byte, repetir.
+    Si el rider's source's first es el rider's source's last, incrementar el rider; salir.
+    Incrementar el rider.
+    Si el rider's source's first's target es not el double-quote byte, salir.
   Repetir.
 
 \Para mover un escáner (reglas de corrección ortográfica);
@@ -9581,19 +9581,19 @@ Para mover un rider (spell checking rules):
   Skip any non-alphanumeric bytes in el rider's source.
   Position el rider's token on el rider's source.
   Lazo.
-  Si el rider's source es blank, salir.
-  Incrementar el rider.
-  Si el rider's source está on any contraction, incrementar el rider; repeat.
-  Si el rider's source's first's target es not alphanumeric, salir.
+    Si el rider's source es blank, salir.
+    Incrementar el rider.
+    Si el rider's source está on any contraction, incrementar el rider; repetir.
+    Si el rider's source's first's target es not alphanumeric, salir.
   Repetir.
 
 \Para mover un escáner (reglas de archivo de texto);
 Para mover un rider (text file rules):
   Position el rider's token on el rider's source.
   Lazo.
-  Si el rider's source es blank, salir.
-  Si el rider's source's first's target es el return byte, incrementar el rider; interrumpir.
-  Si el rider's source's first's target es el linefeed byte, incrementar el rider; salir. \ *dahn new to handle lines terminated by just linefeed
+    Si el rider's source es blank, salir.
+    Si el rider's source's first's target es el return byte, incrementar el rider; interrumpir.
+    Si el rider's source's first's target es el linefeed byte, incrementar el rider; salir. \ *dahn new to handle lines terminated by just linefeed
   Incrementar el rider.
   Repetir.
   Si el rider's source es blank, salir.
@@ -9605,10 +9605,10 @@ Para mover un rider (word wrapping rules):
   Si el rider's source es blank, salir.
   Si el rider's source's first's target es el return byte, incrementar el rider; salir.
   Lazo.
-  Si el rider's source es blank, salir.
-  Si el rider's source's first's target es el return byte, salir.
-  Si el rider's token es blank, incrementar el rider; repeat.
-  Si el rider's source's first's target es like el rider's token's last's target, incrementar el rider; repeat.
+    Si el rider's source es blank, salir.
+    Si el rider's source's first's target es el return byte, salir.
+    Si el rider's token es blank, incrementar el rider; repetir.
+    Si el rider's source's first's target es like el rider's token's last's target, incrementar el rider; repetir.
 
 \Para mover un escáner dado una caja (reglas de envoltura de palabras);
 Para mover un rider usando un box (word wrapping rules):
@@ -9617,23 +9617,23 @@ Para mover un rider usando un box (word wrapping rules):
   Si el rider's source es blank, salir.
   Slap another rider on el rider.
   Lazo.
-  Si el rider's source es blank, salir.
-  Mover el other rider (word wrapping rules).
-  Si el other rider's token es blank, salir.
-  Si el other rider's token's first's target es el return byte, incrementar el rider; salir.
-  Si el other rider's token's first's target es whitespace, incrementar el rider by el other rider's token's length; repeat.
-  Si el rider's token es blank, incrementar el rider by el other rider's token's length; repeat.
-  Si el rider's token then el other rider's token es wider than el box, salir.
-  Incrementar el rider by el other rider's token's length.
+    Si el rider's source es blank, salir.
+    Mover el other rider (word wrapping rules).
+    Si el other rider's token es blank, salir.
+    Si el other rider's token's first's target es el return byte, incrementar el rider; salir.
+    Si el other rider's token's first's target es whitespace, incrementar el rider by el other rider's token's length; repetir.
+    Si el rider's token es blank, incrementar el rider by el other rider's token's length; repetir.
+    Si el rider's token then el other rider's token es wider than el box, salir.
+    Incrementar el rider by el other rider's token's length.
   Repetir.
 
 \Para mover un escáner dado un byte separador;
 Para mover un rider usando un separator byte:
   Position el rider's token on el rider's source.
   Lazo.
-  Si el rider's source es blank, salir.
-  Si el rider's source's first's target es el separator byte, Agregar 1 to el rider's source's first; salir.
-  Incrementar el rider.
+    Si el rider's source es blank, salir.
+    Si el rider's source's first's target es el separator byte, Agregar 1 to el rider's source's first; salir.
+    Incrementar el rider.
   Repetir.
 
 Para mover to el right some twips and down some other twips;
@@ -9658,7 +9658,7 @@ Para mover to un spot:
 
 \Para mover un punto sobre algunos twips en cualquier dirección;
 Para mover un spot about some twips in any direction:
-  Pick another spot within el twips of el spot.
+  Elegir another spot within el twips of el spot.
   Poner el other spot into el spot.
 
 \Para mover un punto a otro punto;
@@ -9834,12 +9834,12 @@ Para mover un window right:
 A ms es 1 millisecond.
 
 A msg es un record con
-A window called hwnd,
-A number called message,
-A w-param called wparam,
-A l-param called lparam,
-A number called time,
-A spot called pt.
+  A window called hwnd,
+  A number called message,
+  A w-param called wparam,
+  A l-param called lparam,
+  A number called time,
+  A spot called pt.
 
 A multiple es un number.
 
@@ -9851,7 +9851,7 @@ Para multiplicar un fraction by un number:
   Reduce el fraction.
 
 \Para multiplicar un número por una fracción;
-\Para multiplicar un number by un fraction;
+Para multiplicar un number by un fraction;
 \Para scale un number usando un ratio;
 Para scale un number usando un fraction:
   Si el fraction's denominator es 0, salir.
@@ -9873,7 +9873,7 @@ Para multiplicar un pair by un number and another number:
   Multiplicar el pair's y-number by el other number.
 
 \Para multiplicar un puntero por un número;
-\Para multiplicar un pointer by un number;
+Para multiplicar un pointer by un number;
 \Para multiplicar un número por otro número;
 Para multiplicar un number by another number:
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el number
@@ -9888,18 +9888,18 @@ The n-key es un key igual to 78.
 A name es un string.
 
 \Para negar una fracción;
-Para negate un fraction:
-  Negate el fraction's numerator.
+Para negar un fraction:
+  Negar el fraction's numerator.
 
 \Para negar un número;
-Para negate un number:
+Para negar un number:
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el number
   Intel $F718.\ neg [eax]
 
 \Para negar un par;
-Para negate un pair:
-  Negate el pair's x-number.
-  Negate el pair's y-number.
+Para negar un pair:
+  Negar el pair's x-number.
+  Negar el pair's y-number.
 
 The negative-acknowledge byte es un byte igual to 21.
 
@@ -9915,7 +9915,7 @@ The nine key es un key igual to 57.
 
 The non-breaking-space byte es un byte igual to 160.
 
-\Para non-destructively resize un picture usando un ratio pair;
+Para non-destructively resize un picture usando un ratio pair;
 Para non-destructively resize un picture usando un fraction pair:
   Si el picture es nil, salir.
   Mover el picture's uncropped box usando el fraction pair y el picture's box's left-top.
@@ -9932,15 +9932,15 @@ Para non-destructively resize un picture usando un twip pair:
   Non-destructively resize el picture usando el fraction pair.
 
 \Para normalizar un ángulo;
-Para normalize un angle:
+Para normalizar un angle:
   Dividir el angle by 3600 giving un quotient y el angle.
 
 \Para normalizar una caja;
-Para normalize un box:
+Para normalizar un box:
   Si el box's right es less than el box's left, swap el box's left con el box's right.
   Si el box's bottom es less than el box's top, swap el box's top con el box's bottom.
 
-Para normalize un canvas:
+Para normalizar un canvas:
   Llamada "gdi32.dll" "SetGraphicsMode" con el canvas and 2 [gm_advanced].
   Llamada "gdi32.dll" "SetBkMode" con el canvas y 1  [transparent].
   Llamada "gdi32.dll" "SetMapMode" con el canvas and 8 [mm_anisotropic].
@@ -9950,11 +9950,11 @@ Para normalize un canvas:
   Llamada "gdi32.dll" "SetWindowExtEx" con el canvas y el tpi y el tpi and nil.
 
 \Para normalizar una elipse;
-Para normalize un ellipse:
-  Normalize el ellipse's box.
+Para normalizar un ellipse:
+  Normalizar el ellipse's box.
 
 \Para normalizar una fracción y otra fracción;
-Para normalize un fraction and another fraction:
+Para normalizar un fraction and another fraction:
   Obtener un lcm usando el fraction's denominator y el other fraction's denominator.
   Multiplicar el fraction's numerator by el lcm divided by el fraction's denominator.
   Poner el lcm into el fraction's denominator.
@@ -9962,39 +9962,39 @@ Para normalize un fraction and another fraction:
   Poner el lcm into el other fraction's denominator.
 
 \Para normalizar una dirección;
-Para normalize un heading:
+Para normalizar un heading:
   Dividir el heading by 3840 giving un quotient y un remainder.
   Poner el remainder into el heading.
   Si el heading es less than 0, Agregar 3840 to el heading.
 
 \Para normalizar una línea (horizontal);
-Para normalize un horizontal line:
+Para normalizar un horizontal line:
   Si el line's end es less than el line's start, swap el line's end con el line's start.
 
 \Para normalizar un matiz;
-Para normalize un hue:
+Para normalizar un hue:
   Dividir el hue by 3600 giving un quotient y un remainder.
   Poner el remainder into el hue.
   Si el hue es less than 0, Agregar 3600 to el hue.
 
 \Para normalizar una imagen;
-Para normalize un picture:
+Para normalizar un picture:
   Si el picture es nil, salir.
-  Normalize el picture's box.
-  Normalize el picture's uncropped box.
+  Normalizar el picture's box.
+  Normalizar el picture's uncropped box.
 
-Para normalize un selection:
+Para normalizar un selection:
   Si el selection's anchor row# es less than el selection's caret row#, salir.
   Si el selection's anchor row# es greater than el selection's caret row#, swap el selection's anchor con el selection's caret; salir.
   Si el selection's anchor column# es greater than el selection's caret column#, swap el selection's anchor column# con el selection's caret column#.
 
 \Para normalizar un texto;
-Para normalize un text:
+Para normalizar un text:
   Si el text es nil, salir.
-  Normalize el text's box.
+  Normalizar el text's box.
 
 \Para normalizar una línea (vertical);
-Para normalize un vertical line:
+Para normalizar un vertical line:
   Si el line's end es less than el line's start, swap el line's end con el line's start.
 
 The not byte es un byte igual to 172.
@@ -10020,12 +10020,12 @@ Para null terminate un wide string:
   Poner el wide string's first plus el saved length minus 1 into el wide string's last.
 
 A number es un record con
-A first byte,
-A second byte,
-A third byte,
-A fourth byte,
-A low wyrd at el first byte,
-A high wyrd at el third byte.
+  A first byte,
+  A second byte,
+  A third byte,
+  A fourth byte,
+  A low wyrd at el first byte,
+  A high wyrd at el third byte.
 
 A number pointer es un pointer to un number.
 
@@ -10076,7 +10076,7 @@ The one-half byte es un byte igual to 189.
 The one-quarter byte es un byte igual to 188.
 
 \Para abrir un archivo dado una ruta;
-Para open un file usando un path:
+Para abrir un file usando un path:
   Borrar el error de e/s.
   Extraer un directory desde el path.
   Si el directory es not in el file system, Poner "Directory '" then el directory then "' doesn't exist." into el error de e/s; salir.
@@ -10087,12 +10087,12 @@ Para open un file usando un path:
   And -2147483520 [file_flag_write_through or file_attribute_normal] and 0 retornando el file.
   Si el file es -1 [invalid_handle_value], Poner "Error abriendo archivo '" then el path then "'." into el error de e/s; salir.
 
-Para open un file usando un path and some milliseconds:
+Para abrir un file usando un path and some milliseconds:
   Start un timer.
   Lazo.
-  Open el file usando el path.
-  Si el error de e/s es blank, salir.
-  Si el timer's ticks are greater than el milliseconds, salir.
+    Abrir el file usando el path.
+    Si el error de e/s es blank, salir.
+    Si el timer's ticks are greater than el milliseconds, salir.
   Repetir.
 
 An operation es un string.
@@ -10110,14 +10110,14 @@ The osmosian font source es un hex string igual to $00010000000B0080000300304F53
 Para outdent any selected rows in un text:
   Si el text es nil, salir.
   Lazo.
-  Obtener un row desde el text's rows.
-  Si el row es nil, salir.
-  Si el row of el text es not selected, repetir.
-  Si el row's string's first's target es el space byte, remove el first byte desde el row's string.
-  Si el row's string's first's target es el space byte, remove el first byte desde el row's string.
+    Obtener un row desde el text's rows.
+    Si el row es nil, salir.
+    Si el row of el text es not selected, repetir.
+    Si el row's string's first's target es el space byte, remove el first byte desde el row's string.
+    Si el row's string's first's target es el space byte, remove el first byte desde el row's string.
   Repetir.
 
-\Para outdent un box some twips;
+Para outdent un box some twips;
 Para outdent un box usando some twips:
   Restar el twips desde el box's left.
   Restar el twips desde el box's top.
@@ -10127,44 +10127,44 @@ Para outdent un box usando some twips:
 An outdent es un number.
 
 \Para delinear una caja con un color;
-Para outline un box con un color:
+Para delinear un box con un color:
   Dibujar el box con el color y el borrar color.
 
 A outlinetextmetric es un record con
-A number called otmsize,
-A textmetric called otmtextmetrics,
+  A number called otmsize,
+  A textmetric called otmtextmetrics,
   3 bytes, \ needed to align structure
-A byte called otmfiller,
-A panose called otmpanosenumber,
+  A byte called otmfiller,
+  A panose called otmpanosenumber,
   1 bytes, \ needed to align structure
-A number called otmfsselection,
-A number called otmfstype,
-A number called otmscharsloperise,
-A number called otmscharsloperun,
-A number called otmitalicangle,
-A number called otmemsquare,
-A number called otmascent,
-A number called otmdescent,
-A number called otmlinegap,
-A number called otmscapemheight,
-A number called otmsxheight,
-A box called otmrcfontbox,
-A number called otmmacascent,
-A number called otmmacdescent,
-A number called otmmaclinegap,
-A number called otmusminiumppem,
-A spot called otmptsubscriptsize,
-A spot called otmptsubscriptoffset,
-A spot called otmptsuperscriptsize,
-A spot called otmptsuperscriptoffset,
-A number called otmsstrikeoutsize,
-A number called otmsstrikeoutposition,
-A number called otmsunderscoresize,
-A number called otmsunderscoreposition,
-A pointer called otmpfamilyname,
-A pointer called otmpfacename,
-A pointer called otmpstylename,
-A pointer called otmpfullname.
+  A number called otmfsselection,
+  A number called otmfstype,
+  A number called otmscharsloperise,
+  A number called otmscharsloperun,
+  A number called otmitalicangle,
+  A number called otmemsquare,
+  A number called otmascent,
+  A number called otmdescent,
+  A number called otmlinegap,
+  A number called otmscapemheight,
+  A number called otmsxheight,
+  A box called otmrcfontbox,
+  A number called otmmacascent,
+  A number called otmmacdescent,
+  A number called otmmaclinegap,
+  A number called otmusminiumppem,
+  A spot called otmptsubscriptsize,
+  A spot called otmptsubscriptoffset,
+  A spot called otmptsuperscriptsize,
+  A spot called otmptsuperscriptoffset,
+  A number called otmsstrikeoutsize,
+  A number called otmsstrikeoutposition,
+  A number called otmsunderscoresize,
+  A number called otmsunderscoreposition,
+  A pointer called otmpfamilyname,
+  A pointer called otmpfacename,
+  A pointer called otmpstylename,
+  A pointer called otmpfullname.
 
 An x-offset es un offset.
 A y-offset es un offset.
@@ -10269,29 +10269,33 @@ The page-down key es un key igual to 34.
 The page-up key es un key igual to 33.
 
 A paintstruct es un record con
-An hdc called hdc,
-A number called ferase,
-A box called rcpaint,
-A number called frestore,
-A number called fincupdate,
+  An hdc called hdc,
+  A number called ferase,
+  A box called rcpaint,
+  A number called frestore,
+  A number called fincupdate,
   32 bytes.
 
 An x-number es un number.
 A y-number es un number.
 
-A pair es un record con un x-number y un y-number y un número-x at el x-number y un número-y at el y-number.
+A pair es un record con 
+  A x-number y 
+  A y-number y 
+  Un número-x at el x-number y 
+  Un número-y at el y-number.
 
 A panose es un record con
-A byte called bfamilytype,
-A byte called bserifstyle,
-A byte called bweight,
-A byte called bproportion,
-A byte called bcontrast,
-A byte called bstrokevariation,
-A byte called barmstyle,
-A byte called bletterform,
-A byte called bmidline,
-A byte called bxheight.
+  A byte called bfamilytype,
+  A byte called bserifstyle,
+  A byte called bweight,
+  A byte called bproportion,
+  A byte called bcontrast,
+  A byte called bstrokevariation,
+  A byte called barmstyle,
+  A byte called bletterform,
+  A byte called bmidline,
+  A byte called bxheight.
 
 The paragraph byte es un byte igual to 182.
 
@@ -10308,40 +10312,40 @@ A pdevmode es un pointer to un devmode.
 A pdf es un buffer.
 
 A pdf object es un thing con
-A kind [contents, font definition, font descriptor, font streamoutline, image object, outline entry, page, parent, root],
-A number,
-An offset,
-A data buffer,
-A font name [font definition],
-A font info [font definition],
-Some string things called font strings [page],
-Some string things called image strings [page].
+  A kind [contents, font definition, font descriptor, font streamoutline, image object, outline entry, page, parent, root],
+  A number,
+  An offset,
+  A data buffer,
+  A font name [font definition],
+  A font info [font definition],
+  Some string things called font strings [page],
+  Some string things called image strings [page].
 
 A pdf outline entry es un thing con
-A pdf object (reference),
-A title string,
-A page height,
-A destination number.
+  A pdf object (reference),
+  A title string,
+  A page height,
+  A destination number.
 
 A pdf pointer es un pointer to un pdf.
 
 A pdf state es un record con
-A pdf pointer,
-A document flag,
-A page flag,
-An object number,
-Some pdf objects called objects,
-An xref offset,
-An outline pdf object (reference),
-Some pdf outline entries called outline entries,
-A root pdf object (reference),
-A parent pdf object (reference),
-A current contents pdf object (reference),
-A current page pdf object (reference),
-A current height,
-A current border color,
-A current fill color,
-A font index.
+  A pdf pointer,
+  A document flag,
+  A page flag,
+  An object number,
+  Some pdf objects called objects,
+  An xref offset,
+  An outline pdf object (reference),
+  Some pdf outline entries called outline entries,
+  A root pdf object (reference),
+  A parent pdf object (reference),
+  A current contents pdf object (reference),
+  A current page pdf object (reference),
+  A current height,
+  A current border color,
+  A current fill color,
+  A font index.
 
 The pdf state es un pdf state.
 
@@ -10359,46 +10363,46 @@ The percent-sign byte es un byte igual to 37.
 
 The period byte es un byte igual to 46.
 
-\Para pick un brightness between un percent and another percent;
-\Para vary un lightness between un percent and another percent;
+Para elegir  un brightness between un percent and another percent;
+Para vary un lightness between un percent and another percent;
 \Para elegir una luminosidad entre un por ciento y otro por ciento;
 \Para elegir una luminosidad entre un porcentaje y otro porcentaje;
-Para pick un lightness between un percent and another percent:
-  Pick un number between el percent y el other percent.
+Para elegir  un lightness between un percent and another percent:
+  Elegir un number between el percent y el other percent.
   Poner el number times 10 into el lightness.
   Poner el lightness into el context's lightness.
 
 \Para elegir un color amarronado;
-Para pick un brownish color:
-  Pick el brownish color's hue between 250 and 350.
-  Pick el brownish color's saturation between 500 y 1000.
-  Pick el brownish color's brightness between 125 and 375.
+Para elegir  un brownish color:
+  Elegir el brownish color's hue between 250 and 350.
+  Elegir el brownish color's saturation between 500 y 1000.
+  Elegir el brownish color's brightness between 125 and 375.
   Poner el brownish color into el context's color.
 
-Para pick un brownish color about some percent of el time: \ *** generalize this for all colors
-  Pick un number between 1 y 100.
+Para elegir  un brownish color about some percent of el time: \ *** generalize this for all colors
+  Elegir un number between 1 y 100.
   Si el number es greater than el percent, salir.
-  Pick el brownish color.
+  Elegir el brownish color.
   Poner el brownish color into el context's color.
 
 \Para elegir un color;
-Para pick un color:
-  Pick el color's hue between 0 and 3600.
-  Pick el color's saturation between 0 y 1000.
-  Pick el color's lightness between 0 y 1000.
+Para elegir  un color:
+  Elegir el color's hue between 0 and 3600.
+  Elegir el color's saturation between 0 y 1000.
+  Elegir el color's lightness between 0 y 1000.
   Poner el color into el context's color.
 
 \Para elegir un color entre otro color y un tercer color;
-Para pick un color between another color y un third color:
-  Pick el color's hue between el other color's hue y el third color's hue.
-  Pick el color's saturation between el other color's saturation y el third color's saturation.
-  Pick el color's lightness between el other color's lightness y el third color's lightness.
+Para elegir  un color between another color y un third color:
+  Elegir el color's hue between el other color's hue y el third color's hue.
+  Elegir el color's saturation between el other color's saturation y el third color's saturation.
+  Elegir el color's lightness between el other color's lightness y el third color's lightness.
   Poner el color into el context's color.
 
 \Para elegir un color como otro color;
-Para pick un color like another color:
+Para elegir  un color like another color:
   Poner el other color into el color.
-  Pick un number between -100 y 100.
+  Elegir un number between -100 y 100.
   Agregar el number to el color's hue.
   Limitar el color's hue to 0 and 3599.
   Set el color's saturation to something between 100 y 1000.
@@ -10406,66 +10410,66 @@ Para pick un color like another color:
   Poner el color into el context's color.
 
 \Para elegir un color oscuro;
-Para pick un dark color:
-  Pick el dark color's hue between 0 and 3599.
+Para elegir  un dark color:
+  Elegir el dark color's hue between 0 and 3599.
   Poner 1000 into el dark color's saturation.
   Poner 375 into el dark color's lightness.
   Poner el dark color into el context's color.
 
 \Para elegir un color verdoso;
-Para pick un greenish color:
-  Pick el greenish color's hue between 900 y 1200.
-  Pick el greenish color's saturation between 500 y 1000.
-  Pick el greenish color's brightness between 250 and 875.
+Para elegir  un greenish color:
+  Elegir el greenish color's hue between 900 y 1200.
+  Elegir el greenish color's saturation between 500 y 1000.
+  Elegir el greenish color's brightness between 250 and 875.
   Poner el greenish color into el context's color.
 
-Para pick un greenish color about some percent of el time: \ *** generalize this for all colors
-  Pick un number between 1 y 100.
+Para elegir  un greenish color about some percent of el time: \ *** generalize this for all colors
+  Elegir un number between 1 y 100.
   Si el number es greater than el percent, salir.
-  Pick el greenish color.
+  Elegir el greenish color.
   Poner el greenish color into el context's color.
 
 \Para elegir una dirección;
-Para pick un heading:
-  Pick el heading between 0 and 3839.
+Para elegir  un heading:
+  Elegir el heading between 0 and 3839.
   Poner el heading into el context's heading.
 
 \Para elegir una altura de letra entre algunos twips y algunos otros twips;
-Para pick un letter height between some twips and some other twips:
-  Pick un random number between el twips y el other twips.
+Para elegir  un letter height between some twips and some other twips:
+  Elegir un random number between el twips y el other twips.
   Poner el random number into el letter height.
   Poner el random number into el context's letter height.
 
-Para pick un letter of el alphabet:\ Poner letter into context? ***
-  Pick un number between 65 and 90.
+Para elegir  un letter of el alphabet:\ Poner letter into context? ***
+  Elegir un number between 65 and 90.
   Poner el number into el letter.
 
 \Para elegir un color claro;
-Para pick un light color:
-  Pick el light color's hue between 0 and 3599.
+Para elegir  un light color:
+  Elegir el light color's hue between 0 and 3599.
   Poner 1000 into el light color's saturation.
   Poner 625 into el light color's lightness.
   Poner el light color into el context's color.
 
 \Para elegir un número;
-Para pick un number:
-  Pick el number between 0 y el largest number. 
+Para elegir  un number:
+  Elegir el number between 0 y el largest number. 
   Poner el number into el context's number.
 
 \Para elegir un número dentro de una cantidad de otro número;
-Para pick un number within un amount of another number:
-  Pick el number between el other number minus el amount y el other number plus el amount.
+Para elegir  un number within un amount of another number:
+  Elegir el number between el other number minus el amount y el other number plus el amount.
   Poner el number into el context's number.
 
 \Para elegir un color pastel;
-Para pick un pastel color:
-  Pick el pastel color's hue between 0 and 3599.
+Para elegir  un pastel color:
+  Elegir el pastel color's hue between 0 and 3599.
   Poner 1000 into el pastel color's saturation.
   Poner 875 into el pastel color's lightness.
   Poner el pastel color into el context's color.
 
 \Para elegir un color arcoiris;
-Para pick un rainbow color:
+Para elegir  un rainbow color:
   Agregar 1 to el current rainbow color number.
   Si el current rainbow color number es greater than 6, Poner 1 into el current rainbow color number.
   Si el current rainbow color number es 1, Poner el red color into el rainbow color.
@@ -10477,103 +10481,103 @@ Para pick un rainbow color:
   Poner el rainbow color into el context's color.
 
 \Para elegir un color sólido;
-Para pick un solid color:
-  Pick el solid color's hue between 0 and 3599.
+Para elegir  un solid color:
+  Elegir el solid color's hue between 0 and 3599.
   Poner 1000 into el solid color's saturation.
   Poner 500 into el solid color's lightness.
   Poner el solid color into el context's color.
 
-\Para pick un spot anywhere in el bottom un fraction of un box;
-Para pick un spot in el bottom un fraction of un box:
+\Para elegir  un spot anywhere in el bottom un fraction of un box;
+Para elegir  un spot in el bottom un fraction of un box:
   Privatizar el box.
   Poner el box's height times el fraction into some twips.
   Poner el box's bottom minus el twips into el box's top.
-  Pick el spot in el box.
+  Elegir el spot in el box.
 
 \Para elegir un punto en cualquier lugar en una caja;
-Para pick un spot anywhere in un box:
-  Pick el spot's x-coord between el box's left y el box's right.
-  Pick el spot's y-coord between el box's top y el box's bottom.
+Para elegir  un spot anywhere in un box:
+  Elegir el spot's x-coord between el box's left y el box's right.
+  Elegir el spot's y-coord between el box's top y el box's bottom.
   Poner el spot into el context's spot.
 
-\Para pick un spot anywhere in el middle un fraction of un box;
-Para pick un spot in el middle un fraction of un box:
+\Para elegir  un spot anywhere in el middle un fraction of un box;
+Para elegir  un spot in el middle un fraction of un box:
   Privatizar el box.
   Poner el box's center's y into un coord.
   Poner el box's height times el fraction divided by 2 into un number.
   Poner el coord minus el number into el box's top.
   Poner el coord plus el number into el box's bottom.
-  Pick el spot in el box.
+  Elegir el spot in el box.
 
-\Para pick un spot anywhere in el top half of un box;
-Para pick un spot in el top half of un box:
+\Para elegir  un spot anywhere in el top half of un box;
+Para elegir  un spot in el top half of un box:
   Privatizar el box.
   Poner el box's center's y into el box's bottom.
-  Pick el spot in el box.
+  Elegir el spot in el box.
 
-\Para pick un spot anywhere in el top middle un fraction of un box;
-Para pick un spot in el top middle un fraction of un box:
+\Para elegir  un spot anywhere in el top middle un fraction of un box;
+Para elegir  un spot in el top middle un fraction of un box:
   Privatizar el box.
   Poner el box's center's y into un coord.
   Poner el box's height times el fraction into un number.
   Poner el coord minus el number into el box's top.
   Poner el coord into el box's bottom.
-  Pick el spot in el box.
+  Elegir el spot in el box.
 
-\Para pick un spot anywhere on un horizontal line;
-Para pick un spot on un horizontal line:
-  Pick el spot's x between el horizontal line's start's x y el horizontal line's end's x.
+\Para elegir  un spot anywhere on un horizontal line;
+Para elegir  un spot on un horizontal line:
+  Elegir el spot's x between el horizontal line's start's x y el horizontal line's end's x.
   Poner el horizontal line's y into el spot's y.
 
 \Para elegir un punto en una caja;
-Para pick un spot in un box:
-  Pick el spot's x between el box's left y el box's right.
-  Pick el spot's y between el box's top y el box's bottom.
+Para elegir  un spot in un box:
+  Elegir el spot's x between el box's left y el box's right.
+  Elegir el spot's y between el box's top y el box's bottom.
   Poner el spot into el context's spot.
 
-\Para pick un spot in un box about some twips above el middle;
-Para pick un spot in un box about some twips above el center:
+\Para elegir  un spot in un box about some twips above el middle;
+Para elegir  un spot in un box about some twips above el center:
   Poner el box into un bounding box.
   Poner el twips divided by 2 into some other twips.
   Poner el box's center's y minus el other twips into el bounding box's bottom.
   Poner el bounding box's bottom minus el twips into el bounding box's top.
-  Pick el spot anywhere in el bounding box.
+  Elegir el spot anywhere in el bounding box.
 
-\Para pick un spot in un box about some twips below el middle;
-Para pick un spot in un box about some twips below el center:
+\Para elegir  un spot in un box about some twips below el middle;
+Para elegir  un spot in un box about some twips below el center:
   Poner el box into un bounding box.
   Poner el twips divided by 2 into some other twips.
   Poner el box's center's y plus el other twips into el bounding box's top.
   Poner el bounding box's top plus el twips into el bounding box's bottom.
-  Pick el spot anywhere in el bounding box.
+  Elegir el spot anywhere in el bounding box.
 
-\Para pick un spot in un box some twips to some other twips above el middle;
-Para pick un spot in un box some twips to some other twips above el center:
+\Para elegir  un spot in un box some twips to some other twips above el middle;
+Para elegir  un spot in un box some twips to some other twips above el center:
   Poner el box into un bounding box.
   Poner el box's center's y minus el twips into el bounding box's bottom.
   Poner el bounding box's bottom minus el other twips into el bounding box's top.
-  Pick el spot anywhere in el bounding box.
+  Elegir el spot anywhere in el bounding box.
 
-\Para pick un spot in un box some twips to some other twips below el middle;
-Para pick un spot in un box some twips to some other twips below el center:
+\Para elegir  un spot in un box some twips to some other twips below el middle;
+Para elegir  un spot in un box some twips to some other twips below el center:
   Poner el box into un bounding box.
   Poner el box's center's y plus el twips into el bounding box's top.
   Poner el bounding box's top plus el other twips into el bounding box's bottom.
-  Pick el spot anywhere in el bounding box.
+  Elegir el spot anywhere in el bounding box.
 
 \Para elegir un punto usando un rango y otro punto;
-Para pick un spot within un distance of another spot:
-  Pick el spot's x-coord within el distance of el other spot's x-coord.
-  Pick el spot's y-coord within el distance of el other spot's y-coord.
+Para elegir  un spot within un distance of another spot:
+  Elegir el spot's x-coord within el distance of el other spot's x-coord.
+  Elegir el spot's y-coord within el distance of el other spot's y-coord.
   Poner el spot into el context's spot.
 
-Para pick some twips between some min twips and some other twips; \ are all these necessary? ***
-\Para pick un number between some min twips and some other twips;
-\Para pick un number between un min number y un max number;
-\Para pick un number desde un min number to un max number;
+Para elegir  some twips between some min twips and some other twips; \ are all these necessary? ***
+\Para elegir  un number between some min twips and some other twips;
+\Para elegir  un number between un min number y un max number;
+\Para elegir  un number desde un min number to un max number;
 \Para set un number to something between another number y un third number;
 \Para elegir un número entre otro número y un tercer número;
-Para pick un random number between un min number y un max number:
+Para elegir  un random number between un min number y un max number:
   Poner el seed's whereabouts into eax.
 \ Poner address of randseed into ecx
   Intel $8BC8. \ mov ecx,eax
@@ -10597,33 +10601,33 @@ Para pick un random number between un min number y un max number:
   Poner el random number into el context's number.
 
 \Para elegir un color muy oscuro;
-\Para pick un very dark color;
-Para pick un really dark color:
-  Pick el really dark color's hue between 0 and 3599.
+\Para elegir  un very dark color;
+Para elegir  un really dark color:
+  Elegir el really dark color's hue between 0 and 3599.
   Poner 500 into el really dark color's saturation.
   Poner 250 into el really dark color's lightness.
   Poner el really dark color into el context's color.
 
-\Para pick un very light color;
+\Para elegir  un very light color;
 \Para elegir un color muy claro;
-Para pick un really light color:
-  Pick el really light color's hue between 0 and 3599.
+Para elegir  un really light color:
+  Elegir el really light color's hue between 0 and 3599.
   Poner 1000 into el really light color's saturation.
   Poner 750 into el really light color's lightness.
   Poner el really light color into el context's color.
 
-\Para pick un very very dark color;
+\Para elegir  un very very dark color;
 \Para elegir un color muy muy oscuro;
-Para pick un really really dark color:
-  Pick el really really dark color's hue between 0 and 3599.
+Para elegir  un really really dark color:
+  Elegir el really really dark color's hue between 0 and 3599.
   Poner 500 into el really really dark color's saturation.
   Poner 125 into el really really dark color's lightness.
   Poner el really really dark color into el context's color.
 
-\Para pick un very very light color;
+\Para elegir  un very very light color;
 \Para elegir un color muy muy claro;
-Para pick un really really light color:
-  Pick el really really light color's hue between 0 and 3599.
+Para elegir  un really really light color:
+  Elegir el really really light color's hue between 0 and 3599.
   Poner 1000 into el really really light color's saturation.
   Poner 875 into el really really light color's lightness.
   Poner el really really light color into el context's color.
@@ -11206,7 +11210,7 @@ Para poner un line's bottom into un coord:
 Para poner un line's box into un box:
   Poner el line's start into el box's left-top.
   Poner el line's end into el box's right-bottom.
-  Normalize el box.
+  Normalizar el box.
 
 \Para poner el centro de una línea en un punto;
 Para poner un line's center into un spot:
@@ -11643,7 +11647,7 @@ Para poner un text's grid into un grid:
 Para poner un text's normalized selection into un selection:
   Si el text es nil, salir.
   Poner el text's selection into el selection.
-  Normalize el selection.
+  Normalizar el selection.
 
 Para poner un text's row count into un count:
   Si el text es nil, Poner 0 into el count; salir.
@@ -12158,7 +12162,7 @@ Para remove any selected bytes in un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
   Poner el text's selection into un selection.
-  Normalize el selection.
+  Normalizar el selection.
   Obtener un row usando el selection's anchor row# y el text.
   Slap un substring on el row's string.
   Poner el substring's first plus el selection's anchor column# minus 2 into el substring's last.
@@ -12340,7 +12344,7 @@ Para replace un byte con another byte in un string:
   Slap un substring on el string.
   Lazo.
   Si el substring es blank, salir.
-  Si el substring's first's target es not el byte, Agregar 1 to el substring's first; repeat.
+  Si el substring's first's target es not el byte, Agregar 1 to el substring's first; repetir.
   Poner el other byte into el substring's first's target.
   Agregar 1 to el substring's first.
   Repetir.
@@ -12521,7 +12525,7 @@ Para reverse un color:
   Si el color es el white color, Poner el black color into el color; salir.
   Poner 1000 minus el color's lightness into el color's lightness.
 \Put 1000 minus el color's saturation into el color's saturation.
-  Agregar 1800 to el color's hue. Normalize el color's hue.
+  Agregar 1800 to el color's hue. Normalizar el color's hue.
 
 \Para invert un flag;
 Para reverse un flag:
@@ -12621,7 +12625,7 @@ Para rotate un picture:
   Si el picture es nil, salir.
   Agregar 900 to el picture's rotate angle.
   Si el picture's mirror flag es set, Agregar 1800 to el picture's rotate angle.
-  Normalize el picture's rotate angle.
+  Normalizar el picture's rotate angle.
   Rotate el picture's box.
   Rotate el picture's uncropped box.
   Poner el picture's box's center into un center spot.
@@ -13134,7 +13138,7 @@ Para set el colorref of un canvas usando un color:
 Para set el drawing origin to un spot:
   Llamada "gdi32.dll" "GetDeviceCaps" con el current canvas y 112 [physicaloffsetx] retornando un pair's x-number.
   Llamada "gdi32.dll" "GetDeviceCaps" con el current canvas y 113 [physicaloffsety] retornando el pair's y-number.
-  Negate el pair.
+  Negar el pair.
   Si el current canvas es not el printer canvas, borrar el pair.
   Llamada "gdi32.dll" "SetViewportOrgEx" con el current canvas y el pair's x-number y el pair's y-number and nil.
   Privatizar el spot.
@@ -13313,7 +13317,7 @@ Para skip un line on el terminal:
 
 Para skip word characters in un substring:
   Si el substring es blank, salir.
-  Si el substring está on any contraction, Agregar 1 to el substring's first; repeat.
+  Si el substring está on any contraction, Agregar 1 to el substring's first; repetir.
   Si el substring's first's target es not alphanumeric, salir.
   Agregar 1 to el substring's first.
   Repetir.
@@ -13386,7 +13390,7 @@ Para smooth un polygon:
   Obtener un center spot usando el left vertex's spot y el right vertex's spot.
   Insertar el center into el polygon after el left vertex.
   Poner el left vertex's next into un new vertex.
-  Si el left vertex's previous es nil, Poner el right vertex into el left vertex; repeat.
+  Si el left vertex's previous es nil, Poner el right vertex into el left vertex; repetir.
   Obtener another center spot usando el left vertex's previous' spot y el new vertex's spot.
   Obtener un difference between el other center y el left vertex's spot.
   Dividir el difference by 2.
@@ -13441,7 +13445,7 @@ Para sort some rows:
   Poner el right rows' first into un right row.
   Si el left row es nil, Adjuntar el right rows to el rows; salir.
   Si el right row es nil, Adjuntar el left rows to el rows; salir.
-  Si el left row's string es greater than el right row's string, mover el right row desde el right rows to el rows; repeat.
+  Si el left row's string es greater than el right row's string, mover el right row desde el right rows to el rows; repetir.
   Mover el left row desde el left rows to el rows.
   Repetir.
 
@@ -13493,8 +13497,8 @@ Para split el rows of un text into some rows and some selected rows and some oth
   Poner el text's rows' first into un row.
   Si el row es nil, salir.
   Remove el row desde el text's rows.
-  Si el row of el text es selected, set un flag; Adjuntar el row to el selected rows; repeat.
-  Si el flag es set, Adjuntar el row to el other rows; repeat.
+  Si el row of el text es selected, set un flag; Adjuntar el row to el selected rows; repetir.
+  Si el flag es set, Adjuntar el row to el other rows; repetir.
   Adjuntar el row to el rows.
   Repetir.
 
@@ -13573,7 +13577,7 @@ The square size es some twips.
 Para square up any selection in un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
-  Normalize el text's selection.
+  Normalizar el text's selection.
   Obtener un row usando el text's caret row# y el text.
   Poner 1 into el text's anchor column#.
   Si el text's caret column# es not 1, Agregar 1 to el text's caret row#; Poner 1 into el text's caret column#.
@@ -13589,11 +13593,11 @@ The stack es some stack entries.
 
 \Para comenzar en cualquier lugar de una caja;
 Para start anywhere in un box:
-  Pick el context's spot in el box.
+  Elegir el context's spot in el box.
 
 \Para comenzar en cualquier lugar en una línea horizontal;
 Para start anywhere on un horizontal line:
-  Pick un spot on el horizontal line.
+  Elegir un spot on el horizontal line.
   Poner el spot into el context's spot.
 
 Para start at el bottom left corner of un box facing east:
@@ -15564,7 +15568,7 @@ Para restar un byte desde un number:
 \Para restar una fracción de otra fracción;
 Para restar un fraction desde another fraction:
   Privatizar el fraction.
-  Normalize el fraction y el other fraction.
+  Normalizar el fraction y el other fraction.
   Restar el fraction's numerator desde el other fraction's numerator.
   Reduce el other fraction.
 
@@ -15815,7 +15819,7 @@ Para turn un fraction igual to un number over another number:
 Para turn un fraction:
   Si el fraction es 1/1, salir.
   Poner 3840 times el fraction plus el context's heading into el context's heading.
-  Normalize el context's heading.
+  Normalizar el context's heading.
 
 \Para girar izquierda;
 Para turn left:
@@ -15830,7 +15834,7 @@ Para turn left un fraction igual to un number over another number:
 \Para turn left un fraction of el way around;
 Para turn left un fraction:
   Privatizar el fraction.
-  Negate el fraction.
+  Negar el fraction.
   Turn el fraction.
 
 Para turn left some points:
@@ -15865,7 +15869,7 @@ Para turn right un fraction:
 \Para turn right un fraction about some percent of el time;
 \Para turn right un fraction of el way about some percent of el time;
 Para turn right un fraction some percent of el time:
-  Pick un number between 1 y 100.
+  Elegir un number between 1 y 100.
   Si el number es greater than el percent, salir.
   Turn right el fraction.
 

@@ -1292,11 +1292,11 @@ Para compile un expression usando un rider:
   Lazo.
   Si el compiler's abort flag es set, salir.
   Si el rider's token es not any operator, salir.
-  Si el rider's token es any divided, compile el expression usando el rider (divided); repeat.
-  Si el rider's token es any minus, compile el expression usando el rider (minus); repeat.
-  Si el rider's token es any plus, compile el expression usando el rider (plus); repeat.
-  Si el rider's token es any then, compile el expression usando el rider (then); repeat.
-  Si el rider's token es any times, compile el expression usando el rider (times); repeat.
+  Si el rider's token es any divided, compile el expression usando el rider (divided); repetir.
+  Si el rider's token es any minus, compile el expression usando el rider (minus); repetir.
+  Si el rider's token es any plus, compile el expression usando el rider (plus); repetir.
+  Si el rider's token es any then, compile el expression usando el rider (then); repetir.
+  Si el rider's token es any times, compile el expression usando el rider (times); repetir.
   
 Para compile un expression usando un rider (divided):
   Si el compiler's abort flag es set, salir.
@@ -1523,9 +1523,9 @@ Para compile un literal usando un rider (string):
 Para compile some monikettes and some parameters usando un rider:
   Si el compiler's abort flag es set, salir.
   Si el rider's token es blank, salir.
-  Si el rider's token es any definite article, compile el monikettes y el parameters usando el rider (definite article); repeat.
-  Si el rider está on any indefinite article, compile el monikettes y el parameters usando el rider (indefinite article); repeat.
-  Si el rider está on any monikette string, compile el monikettes y el parameters usando el rider (monikette string); repeat.
+  Si el rider's token es any definite article, compile el monikettes y el parameters usando el rider (definite article); repetir.
+  Si el rider está on any indefinite article, compile el monikettes y el parameters usando el rider (indefinite article); repetir.
+  Si el rider está on any monikette string, compile el monikettes y el parameters usando el rider (monikette string); repetir.
   Abort con "'" then el rider's token then "' no es válido en un encabezado de rutina." y el rider.
   
 Para compile some monikettes and some parameters usando un rider (definite article):
@@ -1558,7 +1558,7 @@ Para compile some monikettes and some parameters usando un rider (monikette stri
 Para compile some monikettes usando un rider: 
     Si el compiler's abort flag es set, salir.
     \If el rider's token es "del", Agregar un special monikette to el monikettes usando "de"; Agregar 1 to el rider's token's first. \ to make "del" in un call look like "de el"
-    Si el rider está on any monikette string, Agregar un monikette to el monikettes usando el rider's token; mover el rider (compiler rules); repeat.
+    Si el rider está on any monikette string, Agregar un monikette to el monikettes usando el rider's token; mover el rider (compiler rules); repetir.
     Si el rider's token es not el start of any expression, salir.
     Compile un expression usando el rider.
     Si el compiler's abort flag es set, salir.
@@ -1567,7 +1567,7 @@ Para compile some monikettes usando un rider:
   
   \ To compile some monikettes usando un rider:
   \If el compiler's abort flag es set, salir.
-  \If el rider's token es any monikette string, Agregar un monikette to el monikettes usando el rider's token; mover el rider (compiler rules); repeat.
+  \If el rider's token es any monikette string, Agregar un monikette to el monikettes usando el rider's token; mover el rider (compiler rules); repetir.
   \If el rider's token es not el start of any expression, salir.
   \Compile un expression usando el rider.
   \If el compiler's abort flag es set, salir.
@@ -1669,7 +1669,7 @@ Para compile el next statement usando un rider (if):
   Lazo.
   Compile el next statement usando el rider (other).
   Si el compiler's abort flag es set, salir.
-  Si el rider's token es el semi-colon byte, mover el rider (compiler rules); repeat.
+  Si el rider's token es el semi-colon byte, mover el rider (compiler rules); repetir.
   Si el rider's token es not el period byte, abort con "Pensaba en un punto, pero pusiste '" then el rider's token then "'." y el rider; salir.
   Mover el rider (compiler rules).
   Agregar un fourth fragment usando el end if tag.
@@ -1792,9 +1792,9 @@ Para compile un routine reference usando un rider:
   Si el compiler's abort flag es set, salir.
   Si el rider's token es blank, salir.
   Si el rider's token es ".", salir.
-  Si el rider's token es any definite article, compile el routine reference usando el rider (definite article); repeat.
-  Si el rider's token es any indefinite article, compile el routine reference usando el rider (indefinite article); repeat.
-  Si el rider está on any monikette string, compile el routine reference usando el rider (monikette string); repeat.
+  Si el rider's token es any definite article, compile el routine reference usando el rider (definite article); repetir.
+  Si el rider's token es any indefinite article, compile el routine reference usando el rider (indefinite article); repetir.
+  Si el rider está on any monikette string, compile el routine reference usando el rider (monikette string); repetir.
   Abort con "'" then el rider's token then "' no es válido en una sentencia empleada. " y el rider.
   
 Para compile un routine reference usando un rider (decide):
@@ -3983,7 +3983,7 @@ Para mover un rider (code rules - string):
     Incrementar el rider.
     Si el rider's source es blank, salir.
     Si el rider's source's first's target es el return byte, salir.
-    Si el rider está on any nested double-quote, incrementar el rider; repeat.
+    Si el rider está on any nested double-quote, incrementar el rider; repetir.
     Si el rider's source's first's target es el double-quote byte, incrementar el rider; salir.
   Repetir.
   
@@ -4170,7 +4170,7 @@ Para pluralize un string (spanish rules): \ nouns only
     Si el rider's token es blank, interrumpir.
     Si un plural string es not blank, Adjuntar " " to el plural string.
     Adjuntar el rider's token to el plural string.
-    Si el rider's token es "de", set un flag; repeat.
+    Si el rider's token es "de", set un flag; repetir.
     Si el flag es not set, pluralize el plural string (spanish rules - each word).
   Repetir.
   Poner el plural string into el string.
@@ -4327,16 +4327,16 @@ Para remove any negatives desde some monikettes retornando un flag:
     Poner el other monikettes' first into un monikette.
     Si el monikette es nil, salir.
     Remove el monikette desde el other monikettes.
-    Si el monikette's string es "not", reverse el flag; destroy el monikette; repeat.
-    Si el monikette's string es "ni", reverse el flag; destroy el monikette; repeat.
-    Si el monikette's string es "no", reverse el flag; destroy el monikette; repeat.
-    Si el monikette's string es "nada", reverse el flag; destroy el monikette; repeat.
+    Si el monikette's string es "not", reverse el flag; destroy el monikette; repetir.
+    Si el monikette's string es "ni", reverse el flag; destroy el monikette; repetir.
+    Si el monikette's string es "no", reverse el flag; destroy el monikette; repetir.
+    Si el monikette's string es "nada", reverse el flag; destroy el monikette; repetir.
     Adjuntar el monikette to el monikettes.
-    Si el monikette's string es "can't", reverse el flag; Poner "can" into el monikette's string; repeat.
-    Si el monikette's string es "cannot", reverse el flag; Poner "can" into el monikette's string; repeat.
-    Si el monikette's string es "nothing", reverse el flag; Poner "something" into el monikette's string; repeat.
-    Si el monikette's string es "won't", reverse el flag; Poner "will" into el monikette's string; repeat.
-    Si el monikette's string ends con "n't", reverse el flag; remove trailing bytes desde el monikette's string usando 3; repeat.
+    Si el monikette's string es "can't", reverse el flag; Poner "can" into el monikette's string; repetir.
+    Si el monikette's string es "cannot", reverse el flag; Poner "can" into el monikette's string; repetir.
+    Si el monikette's string es "nothing", reverse el flag; Poner "something" into el monikette's string; repetir.
+    Si el monikette's string es "won't", reverse el flag; Poner "will" into el monikette's string; repetir.
+    Si el monikette's string ends con "n't", reverse el flag; remove trailing bytes desde el monikette's string usando 3; repetir.
   Repetir.
   
 The repeat tag es un tag igual to 21.
@@ -4597,9 +4597,9 @@ Para scan un field usando un rider:
   Scan el field usando el rider (type part).
   Lazo.
     Si el compiler's abort flag es set, salir.
-    Si el rider's token es any called, scan el field usando el rider (called part); repeat.
-    Si el rider's token es "at", scan el field usando el rider (redefine part); repeat.
-    Si el rider's token es any reference, scan el field usando el rider (reference part); repeat.
+    Si el rider's token es any called, scan el field usando el rider (called part); repetir.
+    Si el rider's token es "at", scan el field usando el rider (redefine part); repetir.
+    Si el rider's token es any reference, scan el field usando el rider (reference part); repetir.
   
 Para scan un field usando un rider (called part):
   Si el compiler's abort flag es set, salir.
@@ -4748,7 +4748,7 @@ Para scan un routine body usando un rider:
     Si el rider's token es blank, salir.
     Poner el rider's token's last into el routine body's last.
     Si el rider's token es el colon byte, abort con "Puede ser que antes te hayas olvidado poner un punto." y el rider; salir.
-    Si el rider's token es not el period byte, mover el rider (compiler rules); repeat.
+    Si el rider's token es not el period byte, mover el rider (compiler rules); repetir.
     Mover el rider (compiler rules).
     Si el rider's token es el start of any definition, salir.
   Repetir.
@@ -4794,9 +4794,9 @@ Para scan un source file:
   Lazo.
     Si el compiler's abort flag es set, salir.
     Si el rider's token es blank, salir.
-    Si el rider's token es el start of any type, scan un type usando el rider; repeat.
-    Si el rider's token es el start of any global, scan un global usando el rider; repeat.
-    Si el rider's token es el start of any routine, scan un routine usando el rider; repeat.
+    Si el rider's token es el start of any type, scan un type usando el rider; repetir.
+    Si el rider's token es el start of any global, scan un global usando el rider; repetir.
+    Si el rider's token es el start of any routine, scan un routine usando el rider; repetir.
     Abort con "Esperaba por una definición pero todo lo que encontré fue '" then el rider's token then "'." y el rider.
   Repetir.
   
@@ -4864,7 +4864,7 @@ Para scrub some refers:
     Poner el other refers' first into un refer.
     Si el refer es nil, salir.
     Remove el refer desde el other refers.
-    Si el refer's pointer es nil, destroy el refer; repeat.
+    Si el refer's pointer es nil, destroy el refer; repetir.
     Adjuntar el refer to el refers.
   Repetir.
   
