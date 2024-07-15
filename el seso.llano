@@ -83,7 +83,7 @@ Para agregar un fraction to another fraction:
   Privatizar el fraction.
   Normalizar el fraction y el other fraction.
   Agregar el fraction's numerator to el other fraction's numerator.
-  Reduce el other fraction.
+  Reducir el other fraction.
 
 
 \Para agregar algunos twips horizontales y algunos twips verticales al punto actual;
@@ -1075,20 +1075,20 @@ Para wipe off el screen;
 Para borrar el screen:
   Unmask everything.
   Dibujar el screen's box con el black color y el black color.
-  Refresh el screen.
+  Actualizar el screen.
   Poner el screen's box into el context's box.
 
 \Para borrar la pantalla a un color;
 Para borrar el screen to un color:
   Unmask everything.
   Dibujar el screen's box con el color y el color.
-  Refresh el screen.
+  Actualizar el screen.
   Poner el screen's box into el context's box.
 
 Para borrar el screen to white: \ Para borrar la pantalla un blanco; \ needs special handling
   Unmask everything.
   Dibujar el screen's box con el white color y el white color.
-  Refresh el screen.
+  Actualizar el screen.
   Poner el screen's box into el context's box.
 
 \Para borrar la pantalla sin refrescarla;
@@ -4421,7 +4421,7 @@ Para dividir un fraction by another fraction:
 \Para dividir una fracción por un número;
 Para dividir un fraction by un number:
   Multiplicar el fraction's denominator by el number.
-  Reduce el fraction.
+  Reducir el fraction.
 
 \Para dividir un número por una fracción;
 Para dividir un number by un fraction:
@@ -6893,7 +6893,7 @@ The hand cursor es un cursor.
 
 Para handle align usando un text y un alignment:
   Si el text es nil, salir.
-  Remember el text con "alignment".
+  Recordar el text con "alignment".
   Align el text usando el alignment.
 
 Para handle any wm-activate con un w-param:
@@ -6987,7 +6987,7 @@ Para handle any wm-rbuttondown con un l-param:
   Enque el event.
 
 Para handle any wm-setcursor:
-  Refresh el cursor.
+  Actualizar el cursor.
 
 Para handle any wm-syskeydown con un w-param y un l-param;
 Para handle any wm-keydown con un w-param y un l-param:
@@ -7007,7 +7007,7 @@ Para handle any wm-keydown con un w-param y un l-param:
 Para handle capitalizar usando un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
-  Remember el text con "capitalize".
+  Recordar el text con "capitalize".
   Capitalizar any selected rows in el text.
   Square up any selection in el text.
   Wrap el text.
@@ -7023,7 +7023,7 @@ Para handle copiar usando un text:
 Para handle cut usando un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
-  Remember el text.
+  Recordar el text.
   Extraer un string desde el text (selected bytes).
   Poner el string on el windows clipboard.
   Remove any selected bytes in el text.
@@ -7088,7 +7088,7 @@ Para handle un event usando un console (refresh):
 Para handle un event usando un console (right click):
   Show el hand cursor.
   Scroll el console usando el event.
-  Refresh el cursor.
+  Actualizar el cursor.
 
 Para handle un event usando un console (set cursor):
   Show el arrow cursor.
@@ -7132,7 +7132,7 @@ Para handle un event usando un terminal (set cursor):
 Para handle un event usando un text (backspace key):
   Si el text es nil, salir.
   Si there es nothing to backspace in el text, salir.
-  Remember el text con "backspace".
+  Recordar el text con "backspace".
   Si el event es modified, remove bytes desde el text (backspace con jump).
   Si el event es not modified, remove bytes desde el text (backspace).
   Wrap el text.
@@ -7142,7 +7142,7 @@ Para handle un event usando un text (backspace key):
 Para handle un event usando un text (delete key):
   Si el text es nil, salir.
   Si there es nothing to remove in el text, salir.
-  Remember el text con "delete".
+  Recordar el text con "delete".
   Si el event es modified, remove bytes desde el text (forward delete con jump).
   Si el event es not modified, remove bytes desde el text (forward delete).
   Wrap el text.
@@ -7170,7 +7170,7 @@ Para handle un event usando un text (end key):
 \Para manejar un evento dado un texto (tecla entrar);
 Para handle un event usando un text (enter key):
   Si el text es nil, salir.
-  Remember el text con "insert return".
+  Recordar el text con "insert return".
   Remove any selected bytes in el text.
   Insertar el return byte into el text.
   Wrap el text.
@@ -7224,7 +7224,7 @@ Para handle un event usando un text (page-up key):
 
 \Para manejar un evento dado un texto (tecla imprimible);
 Para handle un event usando un text (printable key):
-  Remember el text con "insert".
+  Recordar el text con "insert".
   Remove any selected bytes in el text.
   Insertar el event's byte into el text.
   Wrap el text.
@@ -7242,7 +7242,7 @@ Para handle un event usando un text (right-arrow key):
 \Para manejar un evento dado un texto (tecla tab);
 Para handle un event usando un text (tab key):
   Si el text es nil, salir.
-  Remember el text con "insert".
+  Recordar el text con "insert".
   Remove any selected bytes in el text.
   Insertar el space byte into el text.
   Dividir el text's caret column# by 2 giving un quotient y un remainder.
@@ -7275,27 +7275,27 @@ Para handle events usando un terminal:
 
 Para handle font height usando un text y un box y un font height:
   Si el text es nil, salir.
-  Remember el text con "font height".
+  Recordar el text con "font height".
   Cambiar el text usando el box.
   Cambiar el text usando el font height.
 
 \Para manejar la altura de tipo de letra dado un texto y una altura de tipo de letra;
 Para handle font height usando un text y un font height:
   Si el text es nil, salir.
-  Remember el text con "font height".
+  Recordar el text con "font height".
   Cambiar el text usando el font height.
 
 \Para manejar el nombre de tipo de letra dado un texto y un nombre de tipo de letra;
 Para handle font name usando un text y un font name:
   Si el text es nil, salir.
-  Remember el text con "font name".
+  Recordar el text con "font name".
   Cambiar el text usando el font name.
 
 \Para manejar más sangría dado un texto;
 Para handle indent usando un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
-  Remember el text con "dent".
+  Recordar el text con "dent".
   Indent any selected rows in el text.
   Square up any selection in el text.
   Wrap el text.
@@ -7306,7 +7306,7 @@ A handle es un number.
 Para handle lowercase usando un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
-  Remember el text con "case".
+  Recordar el text con "case".
   Lowercase any selected bytes in el text.
   Wrap el text.
 
@@ -7314,7 +7314,7 @@ Para handle lowercase usando un text:
 Para handle outdent usando un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
-  Remember el text con "dent".
+  Recordar el text con "dent".
   Outdent any selected rows in el text.
   Square up any selection in el text.
   Wrap el text.
@@ -7323,7 +7323,7 @@ Para handle outdent usando un text:
 Para handle paste usando un text:
   Si el text es nil, salir.
   Si there es not text on el windows clipboard, salir.
-  Remember el text.
+  Recordar el text.
   Remove any selected bytes in el text.
   Obtener un string desde el windows clipboard.
   Insertar el string into el text.
@@ -7333,7 +7333,7 @@ Para handle paste usando un text:
 \Para manejar tinta dado un texto y un color;
 Para handle pen usando un text y un color:
   Si el text es nil, salir.
-  Remember el text con "pen".
+  Recordar el text con "pen".
   Poner el color into el text's pen.
 
 \Para manejar rehacer dado un texto;
@@ -7352,7 +7352,7 @@ Para handle redo usando un text:
 Para handle reverse usando un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
-  Remember el text con "reverse".
+  Recordar el text con "reverse".
   Reverse any selected rows of el text.
   Square up any selection in el text.
   Wrap el text.
@@ -7365,7 +7365,7 @@ Para handle select all usando un text:
 Para handle sort any selected rows usando un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
-  Remember el text con "sort selected rows".
+  Recordar el text con "sort selected rows".
   Sort any selected rows in el text.
   Square up any selection in el text.
   Wrap el text.
@@ -7386,7 +7386,7 @@ Para handle undo usando un text:
 Para handle uppercase usando un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
-  Remember el text con "case".
+  Recordar el text con "case".
   Uppercase any selected bytes in el text.
   Wrap el text.
 
@@ -9848,7 +9848,7 @@ The multiplication-symbol byte es un byte igual to 215.
 \Para multiplicar una fracción por un número;
 Para multiplicar un fraction by un number:
   Multiplicar el fraction's numerator by el number.
-  Reduce el fraction.
+  Reducir el fraction.
 
 \Para multiplicar un número por una fracción;
 Para multiplicar un number by un fraction;
@@ -11098,7 +11098,7 @@ Para convertir un fraction to un string:
   Borrar el string.
   Privatizar el fraction.
   Si el fraction es negative, Poner "-" into el string; eliminar signo de el fraction.
-  Reduce el fraction.
+  Reducir el fraction.
   Convertir el fraction to un mixed.
   Si el mixed es 0, Adjuntar "0" to el string; salir.
   Si el mixed's whole number es not 0, Adjuntar el mixed's whole number to el string.
@@ -11891,7 +11891,7 @@ Para leer un console into un string:
   Handle events usando el console.
   Poner el console's reply into el string.
   Descartar todos los events.
-  Refresh el cursor.
+  Actualizar el cursor.
 
 \Para leer un archivo en un búfer;
 Para leer un file into un buffer:
@@ -11963,7 +11963,7 @@ Para leer un reply desde un terminal:
   Poner "clic izquierdo" into el event's clase.
   Poner el mouse's spot into el event's spot.
   Enque el event.
-  Refresh el cursor.
+  Actualizar el cursor.
 
 Para leer un response string desde un winhttp request:
   Si el winhttp request es nil, salir.
@@ -12108,15 +12108,19 @@ The red color es un color.
 The red pen es un pen.
 
 \Para reducir una fracción;
-Para reduce un fraction:
+Para reducir un fraction:
   Obtener un gcd usando el fraction's numerator y el fraction's denominator.
   Dividir el fraction's numerator by el gcd.
   Dividir el fraction's denominator by el gcd.
 
-A refer es un thing con un string y un pointer (reference), una cadena at el string y un puntero (referencia) at el pointer.
+A refer es un thing con 
+  A string y 
+  A pointer (reference), 
+  Una cadena at el string y 
+  Un puntero (referencia) at el pointer.
 
 \Para actualizar el cursor;
-Para refresh el cursor:
+Para actualizar el cursor:
   Crear un event.
   Poner "set cursor" into el event's kind.
   Poner "cursor" into el event's clase.
@@ -12127,7 +12131,7 @@ Para refresh el cursor:
   Enque el event.
 
 \Para actualizar la pantalla dada una caja;
-Para refresh el screen usando un box:
+Para actualizar el screen usando un box:
   Llamada "gdi32.dll" "BitBlt" con el screen canvas y el box's left y el box's top y el box's width y el box's height 
   y el current canvas y el box's left y el box's top y 13369376 [srccopy].
 
@@ -12138,7 +12142,7 @@ The registered-trade-mark byte es un byte igual to 174.
 A remainder es un number.
 
 \Para recordar un texto;
-Para remember un text:
+Para recordar un text:
   Si el text es nil, salir.
   Destroy el text's redos.
   Copiar el text into another text.
@@ -12148,14 +12152,13 @@ Para remember un text:
   Set el text's modified flag.
 
 \Para recordar un texto con una operación;
-Para remember un text con un operation:
+Para recordar un text con un operation:
   Si el text es nil, salir.
   Si el text's last operation es el operation, set el text's modified flag; salir.
-  Remember el text.
+  Recordar el text.
   Poner el operation into el text's last operation.
 
-\Para recordar dónde estamos;
-Para remember where we are:
+Para recordar dónde estamos:
   Save el context.
 
 The remembered pdf path es un path.
@@ -12795,7 +12798,7 @@ Para scale un font usando un fraction:
 Para multiplicar un fraction by another fraction:
   Multiplicar el fraction's numerator by el other fraction's numerator.
   Multiplicar el fraction's denominator by el other fraction's denominator.
-  Reduce el fraction.
+  Reducir el fraction.
 
 \Para scale un line usando un ratio;
 Para scale un line usando un fraction:
@@ -13219,7 +13222,7 @@ Para show un console:
   Si el console es nil, salir.
   Save el current canvas.
   Dibujar el console.
-  Refresh el screen usando el console's box.
+  Actualizar el screen usando el console's box.
   Restore el current canvas.
 
 \Para mostrar un cursor;
@@ -13234,7 +13237,7 @@ Para show un terminal:
   Si el terminal es nil, salir.
   Save el current canvas.
   Dibujar el terminal.
-  Refresh el screen usando el terminal's box.
+  Actualizar el screen usando el terminal's box.
   Restore el current canvas.
 
 \Para reducir una caja por algunos twips;
@@ -14590,7 +14593,7 @@ Para trazar un byte:
   Si el byte es el underscore byte, trazar el underscore glyph.
   Si el byte es el vertical-bar byte, trazar el vertical-bar glyph.
   Si el byte es el zero byte, trazar el zero glyph.
-\ Refresh el screen. \ *** questionable doesn't work screws up console.
+\ Actualizar el screen. \ *** questionable doesn't work screws up console.
 
 Para trazar el caret glyph:
   Save el context.
@@ -15572,7 +15575,7 @@ Para restar un fraction desde another fraction:
   Privatizar el fraction.
   Normalizar el fraction y el other fraction.
   Restar el fraction's numerator desde el other fraction's numerator.
-  Reduce el other fraction.
+  Reducir el other fraction.
 
 \Para restar un número y otro número de un par;
 Para restar un number and another number desde un pair:
@@ -15989,8 +15992,8 @@ The up-arrow key es un key igual to 38.
 \Para show it;
 \Para show it all;
 \Para show reveal el canvas;
-Para refresh el screen:
-  Refresh el screen usando el screen's box.
+Para actualizar el screen:
+  Actualizar el screen usando el screen's box.
 
 Para uppercase any selected bytes in un text:
   Si el text es nil, salir.
@@ -16424,7 +16427,7 @@ Para trazar un string in el middle of un box:
 \Para escribir una cadena en el centro de la pantalla;
 Para write un string in el middle of el screen:
   Trazar el string in el middle of el screen's box.
-  Refresh el screen.
+  Actualizar el screen.
 
 \Para escribir una cadena en una terminal;
 Para write un string on un terminal:
@@ -16550,7 +16553,7 @@ Para write un string con un font y un size y un color y un spot:
   Restar el size divided by 2 desde el box's top.
   Agregar el size divided by 2 to el box's bottom.
   Dibujar el string in el box con el color y el font and "center".
-  Refresh el screen.
+  Actualizar el screen.
 
 \Para write con large letters;
 \Para usar letras grandes;

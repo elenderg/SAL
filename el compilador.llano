@@ -1491,7 +1491,7 @@ Para compile un literal usando un rider (numeric - con unit of measure):
   Poner el type's scale into un final ratio.
   Si el type's scale es 0, Poner 1/1 into el final ratio.
   Multiplicar el final ratio by el ratio.
-  Reduce el final ratio.
+  Reducir el final ratio.
   Si el final ratio's denominator es 0, abort con "Parece que no tenemos una unidad de medida válida aquí." y el literal's locus.
   Poner el final ratio's numerator divided by el final ratio's denominator into un number.
   Poner el type's name into el literal's type name.
@@ -3491,7 +3491,7 @@ Para indexar un routine for utility use:
   Si el routine's function flag es set, salir.
   Si el routine's parameters' count es 0, salir.
   Copiar el routine's monikettes into some monikettes.
-  Reduce el monikettes for utility use.
+  Reducir el monikettes for utility use.
   Convertir el monikettes to un moniker.
   Destroy el monikettes.
   Si el moniker es in el routine index, salir.
@@ -4280,15 +4280,15 @@ Para cargar some source files:
   
 The loading timer es un timer.
   
-Para reduce some monikettes for utility use:
+Para reducir some monikettes for utility use:
     Obtener un monikette desde el monikettes.
     Si el monikette es nil, salir.
     Si el monikette's type es nil, repetir.
-    Reduce el monikette's type to un type for utility use.
+    Reducir el monikette's type to un type for utility use.
     Si el type es not nil, Poner el type into el monikette's type.
   Repetir.
   
-Para reduce un type to another type for utility use:
+Para reducir un type to another type for utility use:
   Poner el type into el other type.
   Lazo.
     Si el other type es nil, salir.
@@ -4315,7 +4315,7 @@ Para reindex el utility index usando some refers:
     Poner el refer's pointer into un routine.
     Si el routine es nil, abort con "Internal error - index el untility routines usando some refers"; salir.
     Copiar el routine's monikettes into some monikettes.
-    Reduce el monikettes for utility use.
+    Reducir el monikettes for utility use.
     Indexar el routine usando el monikettes y el routine index.
     Destroy el monikettes.
   Repetir.
@@ -4622,7 +4622,7 @@ Para scan un field usando un rider (reference part):
 Para scan un field usando un rider (type part - byte array):
   Si el compiler's abort flag es set, salir.
   Convertir el rider's token to un ratio.
-  Reduce el ratio.
+  Reducir el ratio.
   Si el ratio's denominator es not 1, abort con "Debes especificar un número entero de bytes para un arreglo de bytes." y el rider; salir.
   Poner el ratio's numerator into el field's count.
   Mover el rider (compiler rules).
