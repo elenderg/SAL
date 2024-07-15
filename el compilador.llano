@@ -128,7 +128,8 @@ Para agregar el allocate and deallocate and finalize and destroy routines:
 Para agregar el allocate routine for un type:
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "pointer", salir.
+  Si el type cannot be reduced to "pointer", salir. \ TRADUZIR
+  \Si el type cannot be reduced to "puntero", salir.
   Si el type's contenido type es nil, salir.
   Agregar un routine to el routines usando nil.
   Adjuntar "Allocate memory for un " then el type's name to el routine's header string.
@@ -166,7 +167,8 @@ Para agregar el built-in types:
 Para agregar el deallocate routine for un type:
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "pointer", salir.
+  Si el type cannot be reduced to "pointer", salir. \ TRADUZIR
+  \Si el type cannot be reduced to "puntero", salir.
   Si el type's contenido type es nil, salir.
   Agregar un routine to el routines usando nil.
   Adjuntar "Deallocate un " then el type's name to el routine's header string.
@@ -181,8 +183,10 @@ Para agregar el destroy routine for un type:
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
   Si el type should not be forgotten, salir.
-  Si el type can be reduced to "things", Agregar el destroy routine for el type (things); salir.
+  Si el type can be reduced to "things", Agregar el destroy routine for el type (things); salir. \ TRADUZIR
+  \Si el type can be reduced to "listas", Agregar el destroy routine for el type (things); salir.
   Si el type can be reduced to "pointer", Agregar el destroy routine for el type (pointer); salir.
+  \Si el type can be reduced to "puntero", Agregar el destroy routine for el type (pointer); salir.
   
 Para agregar el destroy routine for un type (pointer):
   Si el type es nil, salir.
@@ -192,8 +196,10 @@ Para agregar el destroy routine for un type (pointer):
   Agregar un routine to el routines usando nil.
   Adjuntar "Destroy un " then el type's name to el routine's header string.
   Adjuntar "Si el " then el type's name then " es nil, salir. " to el routine's body string.
-  Si el type's contenido type can be reduced to "pointer", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
+  Si el type's contenido type can be reduced to "pointer", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string. \ TRADUZIR
+  \Si el type's contenido type can be reduced to "puntero", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
   Si el type's contenido type can be reduced to "things", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
+  \Si el type's contenido type can be reduced to "listas", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
   Lazo.
     Obtener un field desde el type's contenido type's fields.
     Si el field es nil, interrumpir.
@@ -1026,15 +1032,15 @@ Para check for invalid optional info on un type:
   
 Para check for invalid optional info on un type (fields):
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "record", abort con "Info opcional 'con' solo permitida en tipo registro." y el type's locus; salir.
+  Si el type cannot be reduced to "record", abort con "Info opcional 'con' solo permitida en tipo registro." y el type's locus; salir. \ TRADUZIR
   
 Para check for invalid optional info on un type (scale):
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "number", abort con "Escalas solo permitidas en tipos numéricos." y el type's locus; salir.
+  Si el type cannot be reduced to "number", abort con "Escalas solo permitidas en tipos numéricos." y el type's locus; salir. \ TRADUZIR
   
 Para check for invalid optional info on un type (contenido):
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "pointer", abort con "Optional 'a' info solo está permitido en tipos de punteros." y el type's locus; salir.
+  Si el type cannot be reduced to "pointer", abort con "Optional 'a' info solo está permitido en tipos de punteros." y el type's locus; salir. \ TRADUZIR
   
 Para borrar un field term:
   Llenar bytes con el null byte starting at el field term's dirección for el field term's magnitude.
@@ -1468,7 +1474,7 @@ Para compile un literal usando un rider (numeric - integer):
   Convertir el rider's token to un number.
   Convertir el number to el literal's data.
   Mover el rider (compiler rules).
-  Poner "number" into el literal's type name.
+  Poner "number" into el literal's type name. \ TRADUZIR
   Resolve el literal.
   
 Para compile un literal usando un rider (numeric - ratio):
@@ -1486,7 +1492,8 @@ Para compile un literal usando un rider (numeric - con unit of measure):
   Scan un name usando el rider.
   Encontrar un type usando el name y el type index.
   Si el type es nil, abort con "'" then el name then "' no es una unidad de medida válida." y el literal's locus; salir.
-  Si el type cannot be reduced to "number", abort con "'" then el name then "' no es una unidad de medida válida." y el literal's locus; salir.
+  Si el type cannot be reduced to "number",  \ TRADUZIR
+    Abort con "'" then el name then "' no es una unidad de medida válida." y el literal's locus; salir.
   Poner el type's scale into un final ratio.
   Si el type's scale es 0, Poner 1/1 into el final ratio.
   Multiplicar el final ratio by el ratio.
@@ -1508,7 +1515,7 @@ Para compile un literal usando un rider (pointer):
   Si el compiler's abort flag es set, salir.
   Convertir 0 to el literal's data. \ was nil
   Mover el rider (compiler rules).
-  Poner "pointer" into el literal's type name.
+  Poner "pointer" into el literal's type name. \ TRADUZIR
   Resolve el literal.
   
 Para compile un literal usando un rider (string):
@@ -1609,7 +1616,8 @@ Para compile el next statement usando un rider (call - indirect):
   Compile un expression usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el expression's variable es nil, abort con "No entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
-  Si el expression's type cannot be reduced to "pointer", abort con "Yo necesito un tipo puntero en esta LLAMADA." y el rider; salir.
+  Si el expression's type cannot be reduced to "pointer", \ TRADUZIR
+    Abort con "Yo necesito un tipo puntero en esta LLAMADA." y el rider; salir. 
   Si el rider's token es any con, compile el next statement usando el rider (call - con clause).
   Si el rider's token es "returning", compile el next statement usando el rider retornando un term (call - retornando part).
   Si el rider's token es "retornando", compile el next statement usando el rider retornando el term (call - retornando part).
@@ -1937,7 +1945,7 @@ Para compile un term usando un rider (possessive - magnitude):
   Si el term's variable es nil, abort con "Uso inválido de una magnitud, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un literal to el literals usando el rider's token's first.
   Convertir el term's type's length to el literal's data.
-  Poner "number" into el literal's type name.
+  Poner "number" into el literal's type name. \ TRADUZIR
   Resolve el literal.
   Poner el literal into el term's variable.
   Borrar el term's phrase.
@@ -1945,13 +1953,14 @@ Para compile un term usando un rider (possessive - magnitude):
 Para compile un term usando un rider (possessive - contenido):
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Uso inválido de un contenido, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Si el term's type cannot be reduced to "pointer", abort con "Solo puedes obtener el contenido de los tipos punteros." y el rider; salir.
+  Si el term's type cannot be reduced to "pointer",  \ TRADUZIR
+    Abort con "Solo puedes obtener el contenido de los tipos punteros." y el rider; salir.
   Compile el term usando el rider (dereference).
   
 Para compile un term usando un rider (possessive - dirección):
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Uso inválido de una dirección, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Agregar un intermediate usando "pointer" y el rider's token's first. 
+  Agregar un intermediate usando "pointer" y el rider's token's first. \ TRADUZIR
   Agregar un fragment usando el load address tag y el term's variable y el intermediate.
   Poner el intermediate into el term's variable.
   Borrar el term's phrase.
@@ -2082,7 +2091,7 @@ Para compile un term usando un rider y un  name (possessive - field):
   Encontrar un field term usando el term's phrase y el type y el name.
   Si el field term es not empty, compile el term usando el rider y el field term; salir.
   Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Si el type can be reduced to "pointer", Poner el type's contenido type into el type.
+  Si el type can be reduced to "pointer", Poner el type's contenido type into el type. \ TRADUZIR
   Si el type es nil, abort con "No hay un '" then el name then "' field in un '" then el term's type's name then "'." y el rider; salir.
   Lazo.
     Si el compiler's abort flag es set, salir.
@@ -3096,18 +3105,25 @@ Para decidir si un type es value pushable:
 Para decidir si un type should be finalized:
   Si el type es nil, diga no.
   Si el type can be reduced to "substring", diga no.
+  \Si el type can be reduced to "subcadena", diga no.
   Si el type can be reduced to "string", diga sí.
+  \Si el type can be reduced to "cadena", diga sí.
   Si el type's fields should be finalized, diga sí.
   Diga no.
   
 Para decidir si un type should be forgotten:
   Si el type es nil, diga no.
   Si el type's name es "thing", diga no.
+  \Si el type's name es "lista", diga no.
   Si el type's name es "things", diga no.
+  \Si el type's name es "listas", diga no.
   Si el type can be reduced to "things", diga sí.
+  \Si el type can be reduced to "listas", diga sí.
   Si el type can not be reduced to "pointer", diga no.
+  \Si el type can not be reduced to "puntero", diga no.
   Si el type's contenido type es nil, diga no.
   Si el type's contenido type cannot be reduced to "pointer", diga sí.
+  \Si el type's contenido type cannot be reduced to "puntero", diga sí.
   Si el type's contenido type should not be forgotten, diga no.
   Diga sí.
   
@@ -4290,12 +4306,17 @@ Para reducir some monikettes for utility use:
 Para reducir un type to another type for utility use:
   Poner el type into el other type.
   Lazo.
-    Si el other type es nil, salir.
+    Si el other type es nil, salir.  \ TRADUZIR
     Si el other type's name es "hex string", salir.
+    \Si el other type's name es "string hexadecimal", salir.
     Si el other type's name es "string", salir.
+    \Si el other type's name es "cadena", salir.
     Si el other type's name es "number", salir.
+    \Si el other type's name es "número", salir.
     Si el other type's name es "pointer", salir.
+    \Si el other type's name es "puntero", salir.
     Si el other type's name es "thing", void el other type; salir.
+    \Si el other type's name es "lista", void el other type; salir.
     Si el other type's base type es el other type, void el other type; salir.
     Poner el other type's base type into el other type.
   Repetir.
@@ -4452,7 +4473,8 @@ Para resolve un type (optional info - record):
     Si el field's type's cooking flag es set, abort con "Definición recursiva con '" then el field's type's name then "'." y el field's locus; salir.
     Resolve el field's type (optional info).
     Si el field's reference flag es not set, repetir.
-    Si el field's type cannot be reduced to "pointer", abort con "¿Qué quieres decir con '(referencia)' justo aquí en este '" then el field's name then "'?" y el field's locus; salir.
+    Si el field's type cannot be reduced to "pointer", \ TRADUZIR
+      Abort con "¿Qué quieres decir con '(referencia)' justo aquí en este '" then el field's name then "'?" y el field's locus; salir.
   Repetir.
   Eliminate duplicate nicknames desde el type's fields.
   Si el type cannot be reduced to "thing record", salir.
@@ -4478,6 +4500,9 @@ Para resolve un type (optional info):
   Si el type can be reduced to "pointer", resolve el type (optional info - pointer).
   Si el type can be reduced to "record", resolve el type (optional info - record).
   Si el type can be reduced to "number", resolve el type (optional info - scale).
+  \Si el type can be reduced to "puntero", resolve el type (optional info - pointer).
+  \Si el type can be reduced to "número", resolve el type (optional info - scale).
+  \Si el type can be reduced to "registro", resolve el type (optional info - record).
   Borrar el type's cooking flag.
   Definir el type's optional info resolved flag.
   

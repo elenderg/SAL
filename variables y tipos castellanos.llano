@@ -609,8 +609,8 @@ Un elemento es un item.
 Un escáner es un rider.
 Un evento es una event.
 Un foco es un punto.
-Un grado es un number [0 to 359].
-Un grado preciso es un number.[0 un 3599].
+Un grado es un number. [0 to 359]
+Un grado preciso es un number. [0 a 3599]
 Un índice es un index.
 Un matiz es un hue.
 Un milisegundo es un millisecond.
