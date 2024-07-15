@@ -56,7 +56,7 @@ Para obtener una string desde the argumentos da linha de comando:
   Llamada "kernel32.dll" "GetCommandLineA" 
     retornando un pchar. [pchar]
   Convertir el pchar to una string called argumentos.
-  Slap un substring on las argumentos.
+  Colocar un substring on las argumentos.
   Lazo.
     Si el substring es blank, 
       Borrar el string; 
@@ -98,12 +98,12 @@ An abort message es un string.
   
 Para abort con un string:
   Si el compiler's abort flag es set, salir.
-  Set el compiler's abort flag.
+  Definir el compiler's abort flag.
   Poner el string into el compiler's abort message.
   
 Para abort con un string y un  byte pointer:
   Si el compiler's abort flag es set, salir.
-  Set el compiler's abort flag.
+  Definir el compiler's abort flag.
   Poner el string into el compiler's abort message.
   Encontrar el compiler's abort path y el compiler's abort row# usando el byte pointer.
   Si el compiler's abort path es blank, salir.
@@ -135,8 +135,8 @@ Para agregar el allocate routine for un type:
   Adjuntar "Allocate memory for un " then el type's name to el routine's header string.
   Adjuntar "Assign el " then el type's name then " usando " to el routine's body string.
   Adjuntar el type's target type's length then "." to el routine's body string.
-  Slap el routine's routine header on el routine's header string.
-  Slap el routine's routine body on el routine's body string.
+  Colocar el routine's routine header on el routine's header string.
+  Colocar el routine's routine body on el routine's body string.
   Compile el header of el routine.
   
 Para agregar and compile el initialize before run and run and finalize after run routine:
@@ -149,8 +149,8 @@ Para agregar and compile el initialize before run and run and finalize after run
   Adjuntar el global finalizers to el routine's body string.
   Adjuntar "Finalize after run. " to el routine's body string.
   Adjuntar "Llamada ""kernel32.dll"" ""ExitProcess"" con 0. " to el routine's body string.
-  Slap el routine's routine header on el routine's header string.
-  Slap el routine's routine body on el routine's body string.
+  Colocar el routine's routine header on el routine's header string.
+  Colocar el routine's routine body on el routine's body string.
   Compile el header of el routine.
   Compile el body of el routine.
   
@@ -174,8 +174,8 @@ Para agregar el deallocate routine for un type:
   Adjuntar "Si el " then el type's name then " es nil, salir. " to el routine's body string.
   Si el type's target type should be finalized, Adjuntar "~Finalize el " then el type's name then "'s target. " to el routine's body string.
   Adjuntar "Unassign el " then el type's name then "." to el routine's body string.
-  Slap el routine's routine header on el routine's header string.
-  Slap el routine's routine body on el routine's body string.
+  Colocar el routine's routine header on el routine's header string.
+  Colocar el routine's routine body on el routine's body string.
   Compile el header of el routine.
   
 Para agregar el destroy routine for un type:
@@ -203,8 +203,8 @@ Para agregar el destroy routine for un type (pointer):
     Adjuntar "Destroy el " then el type's name then "'s " then el field's name then ". " to el routine's body string.
   Repetir.
   Adjuntar "Deallocate el " then el type's name then ". " to el routine's body string.
-  Slap el routine's routine header on el routine's header string.
-  Slap el routine's routine body on el routine's body string.
+  Colocar el routine's routine header on el routine's header string.
+  Colocar el routine's routine body on el routine's body string.
   Compile el header of el routine.
   
 Para agregar el destroy routine for un type (things):
@@ -222,8 +222,8 @@ Para agregar el destroy routine for un type (things):
   Adjuntar "Eliminar el " then el name then " desde el " then el type's name then ". " to el routine's body string.
   Adjuntar "Destroy el " then el name then ". " to el routine's body string.
   Adjuntar "Repetir. " to el routine's body string.
-  Slap el routine's routine header on el routine's header string.
-  Slap el routine's routine body on el routine's body string.
+  Colocar el routine's routine header on el routine's header string.
+  Colocar el routine's routine body on el routine's body string.
   Compile el header of el routine.
   
 Para agregar un entry to some imports usando un import name y un  entry name:
@@ -263,8 +263,8 @@ Para agregar el finalize routine for un type (record):
   Adjuntar "~Finalize el " then el type's name then "'s " then el field's name then ". " to el routine's body string.
   Repetir.
   Adjuntar "Intel $58." to el routine's body string. \ pop eax
-  Slap el routine's routine header on el routine's header string.
-  Slap el routine's routine body on el routine's body string.
+  Colocar el routine's routine header on el routine's header string.
+  Colocar el routine's routine body on el routine's body string.
   Compile el header of el routine.
   
 Para agregar el finalize routine for un type (string):
@@ -275,8 +275,8 @@ Para agregar el finalize routine for un type (string):
   Adjuntar "Intel $50. " to el routine's body string. \ push eax
   Adjuntar "Unassign el string's first. " to el routine's body string.
   Adjuntar "Intel $58." to el routine's body string. \ pop eax
-  Slap el routine's routine header on el routine's header string.
-  Slap el routine's routine body on el routine's body string.
+  Colocar el routine's routine header on el routine's header string.
+  Colocar el routine's routine body on el routine's body string.
   Compile el header of el routine.
   
 Para agregar un fragment usando un tag:
@@ -308,7 +308,7 @@ Para agregar un fragment usando un tag y un  variable:
   Crear el fragment usando el tag.
   Adjuntar el fragment to el current routine's fragments.
   Poner el variable into el fragment's variable.
-  Set el compiled flag in el variable.
+  Definir el compiled flag in el variable.
   
 Para agregar un fragment usando un tag y un  variable and another variable:
   Si el current routine es nil, void el fragment; salir.
@@ -316,8 +316,8 @@ Para agregar un fragment usando un tag y un  variable and another variable:
   Adjuntar el fragment to el current routine's fragments.
   Poner el variable into el fragment's variable.
   Poner el other variable into el fragment's other variable.
-  Set el compiled flag in el variable.
-  Set el compiled flag in el other variable.
+  Definir el compiled flag in el variable.
+  Definir el compiled flag in el other variable.
   
 Para agregar un fragment usando un tag y un  variable y un  number:
   Si el current routine es nil, void el fragment; salir.
@@ -325,7 +325,7 @@ Para agregar un fragment usando un tag y un  variable y un  number:
   Adjuntar el fragment to el current routine's fragments.
   Poner el variable into el fragment's variable.
   Poner el number into el fragment's number.
-  Set el compiled flag in el variable.
+  Definir el compiled flag in el variable.
   
 Para agregar un import to some imports usando un import name:
   Crear el import.
@@ -529,7 +529,7 @@ Para address some entries:
 Para address un entry:
   Poner el current name address into el entry's name address.
   Poner el entry's name's length plus 3 into un number.
-  Round el number up to el nearest multiple of 2.
+  Redondear el number up to el nearest multiple of 2.
   Agregar el number to el current name address.
   Poner el current thunk address into el entry's thunk address.
   Poner el image base plus el current thunk address into el entry's address.
@@ -639,7 +639,7 @@ Para address un import:
   Poner el current header address into el import's header address.
   Poner el current name address into el import's import header's name memory address.
   Poner el import's name's length plus 1 into un number.
-  Round el number up to el nearest multiple of 2.
+  Redondear el number up to el nearest multiple of 2.
   Agregar el number to el current name address.
   Agregar un import header's magnitude to el current header address.
   Poner el current thunk address into el import's import header's first thunk memory address.
@@ -673,7 +673,7 @@ Para address un routine usando un address:
   Poner el routine into el current routine.
   Poner el image base plus el address into el routine's address.
   Address el routine's fragments usando el address.
-  Round el address up to el nearest multiple of 4.
+  Redondear el address up to el nearest multiple of 4.
   
 Para address some routines usando un address:
     Si el compiler's abort flag es set, salir.
@@ -689,7 +689,7 @@ Para address un variable usando un address:
   Poner el image base plus el address into el variable's address.
   Agregar el variable's type's length to el address.
   Si el variable's type can be reduced to "string", Agregar el variable's data's length plus 1 to el address.
-  Round el address up to el nearest multiple of 4.
+  Redondear el address up to el nearest multiple of 4.
   
 Para address some variables usando un address:
     Si el compiler's abort flag es set, salir.
@@ -1055,8 +1055,8 @@ Para compile el body of un routine:
   Si el routine es nil, salir.
   Si el compiler's abort flag es set, salir.
   Si el routine's compiled flag es set, salir.
-  Set el routine's compiled flag.
-  Slap un rider on el routine's routine body.
+  Definir el routine's compiled flag.
+  Colocar un rider on el routine's routine body.
   Mover el rider (compiler rules).
   Si el rider's token es el semi-colon byte, compile el body of el routine usando el rider (alternate wording); salir. \ *** alternate wording
   Si el rider's token es any employ, compile el body of el routine usando el rider (employ); salir.
@@ -1170,12 +1170,12 @@ Para compile un directory (address):
   Poner el address into el import borough's base.
   Address el imports usando el address.
   Poner el address minus el import borough's base into el import borough's length.
-  Round el address up to el nearest multiple of 4096.
+  Redondear el address up to el nearest multiple of 4096.
   Poner el address into el data borough's base.
   Address el globals usando el address.
   Address el literals usando el address.
   Poner el address minus el data borough's base into el data borough's length.
-  Round el address up to el nearest multiple of 4096.
+  Redondear el address up to el nearest multiple of 4096.
   Poner el address into el code borough's base.
   Address el routines usando el address.
   Poner el address minus el code borough's base into el code borough's length.
@@ -1369,7 +1369,7 @@ Para compile un expression usando un rider (times):
 Para compile el header of un routine:
   Si el routine es nil, salir.
   Si el compiler's abort flag es set, salir.
-  Slap un rider on el routine's routine header.
+  Colocar un rider on el routine's routine header.
   Mover el rider (compiler rules).
   Si el rider's token es any decide, compile el header of el routine usando el rider (decider); salir.
   Si el rider es el start of any reverse-possessive function, compile el header of el routine usando el rider (reverse-possessive function); salir.
@@ -1381,7 +1381,7 @@ Para compile el header of un routine:
 Para compile el header of un routine usando un rider (callback):
   Si el compiler's abort flag es set, salir.
   Mover el rider (compiler rules).
-  Set el routine's callback flag.
+  Definir el routine's callback flag.
   Compile el routine's monikettes y el routine's parameters usando el rider.
   Convertir el routine's monikettes to el routine's moniker.
   Si el routine's moniker es in el routine index, abort con "Ya sé cómo '" then el routine's moniker then "'." y el routine's locus; salir.
@@ -1392,7 +1392,7 @@ Para compile el header of un routine usando un rider (decider):
   Mover el rider (compiler rules).
   Si el rider's token es not any conditional, abort con "Se dice 'Decidir SI'. Siempre 'Decidir SI'. ¿Se entiende?" y el rider; salir.
   Mover el rider (compiler rules).  
-  Set el routine's decider flag.
+  Definir el routine's decider flag.
   Compile el routine's monikettes y el routine's parameters usando el rider.
   Si any of el routine's monikettes are negative words, abort con "No es buena idea usar negativos en los nombres de los decisores." y el rider; salir.
   Convertir el routine's monikettes to el routine's moniker.
@@ -1401,10 +1401,10 @@ Para compile el header of un routine usando un rider (decider):
   
 Para compile el header of un routine usando un rider (function):
   Si el compiler's abort flag es set, salir.
-  Set el routine's function flag.
+  Definir el routine's function flag.
   Agregar un monikette to el routine's monikettes usando "Poner".
   Mover el rider (compiler rules).
-  Si el rider's token es any indefinite article, set un flag.
+  Si el rider's token es any indefinite article, definir un flag.
   Si el flag es set, compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
   Si el flag es not set, compile el routine's monikettes y el routine's parameters usando el rider (definite article).
   Si el rider's token es not any possessive, abort con "An 's es missing or misplaced here." y el rider; salir. \ not translated - no possessives in Spanish
@@ -1771,7 +1771,7 @@ Para compile el next statement usando un rider (say):
   Si el current routine's decider flag es not set, compile el next statement usando el rider (call - internal); salir.
   Mover el rider (compiler rules).
   Si el rider's token es not any decider literal, abort con "Necesito un rotundo 'si' o 'no' aquí." y el rider; salir.
-  Borrar un flag. If el rider's token es any positive decider literal, set el flag.
+  Borrar un flag. If el rider's token es any positive decider literal, definir el flag.
   Mover el rider (compiler rules).
   Si el rider's token es not el period byte, abort con "Pensaba en un punto, pero pusiste '" then el rider's token then "'." y el rider; salir.
   Agregar un fragment usando el load eax tag y el flag.
@@ -1813,7 +1813,7 @@ Para compile un routine reference usando un rider (function):
   Si el compiler's abort flag es set, salir.
   Agregar un monikette to el routine reference usando "Poner".
   Mover el rider (compiler rules).
-  Si el rider's token es any indefinite article, set un flag.
+  Si el rider's token es any indefinite article, definir un flag.
   Si el flag es set, compile el routine reference usando el rider (indefinite article).
   Si el flag es not set, compile el routine reference usando el rider (definite article).
   Si el rider's token es not any possessive, abort con "I was expecting un 's, but found '" then el rider's token then "'." y el rider; salir. \ not translated - no possessives in Spanish
@@ -2006,7 +2006,7 @@ Para compile un term usando un rider y un  field name (reverse-possessive):  \ t
   Poner el rider's token into un article token.
   Mover el rider (compiler rules).
   Scan un name usando el rider. 
-  Si el rider está on any reverse-possessive, set un reverse-possessive flag.
+  Si el rider está on any reverse-possessive, definir un reverse-possessive flag.
   Si el reverse-possessive flag es set, compile el term usando el rider y el name (reverse-possessive).
   Si el reverse-possessive flag es not set, compile el term usando el rider y el name y el article (reverse-possessive prepare to unwind).
   Compile el term usando el field name y el rider (reverse-possessive).
@@ -2092,7 +2092,7 @@ Para compile un term usando un rider y un  name (possessive - field):
     Encontrar un deep field term usando "" y el field's type y el name.
     Si el deep field term es empty, repetir.
   Poner el field into un first field term's field.
-  Si el term's type can be reduced to "pointer", set el first field term's dereference flag.
+  Si el term's type can be reduced to "pointer", definir el first field term's dereference flag.
   Compile el term usando el rider y el first field term.
   Compile el term usando el rider y el deep field term.
   
@@ -2390,7 +2390,7 @@ Para decidir si un rider es el start of any function:
   Diga no.
   
 Para decidir si un string ends con any consonant and another string:
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Restar el other string's length desde el substring's last.
   Si el substring es blank, diga no.
   Si el substring's last's target es not any consonant, diga no.
@@ -2398,7 +2398,7 @@ Para decidir si un string ends con any consonant and another string:
   Diga sí.
   
 Para decidir si un string ends con any vowel and another string:
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Restar el other string's length desde el substring's last.
   Si el substring es blank, diga no.
   Si el substring's last's target es not any vowel, diga no.
@@ -3064,7 +3064,7 @@ Para decidir si un type can be reduced to un string using el base name:
   Si el type es nil, diga no.
   Si el type's name es el string, diga sí.
   Si el type's cooking flag es set, diga no.
-  Set el type's cooking flag.
+  Definir el type's cooking flag.
   Encontrar un base type usando el type's base name y el type index.
   Si el base type es nil, borrar el type's cooking flag; diga no.
   Si el base type can be reduced to el string using el base name, borrar el type's cooking flag; diga sí.
@@ -3223,17 +3223,17 @@ Para encontrar un field term usando un phrase y un  type y un  name:
   Si el routine es not nil, Poner el routine into el field term's function; salir.
   Si el type es nil, salir.
   Encontrar el routine usando "Poner" y el type and "'s " then el name and "into".
-  Si el routine es not nil, set el field term's push flag; Poner el routine into el field term's function; salir.
+  Si el routine es not nil, definir el field term's push flag; Poner el routine into el field term's function; salir.
   \  code below for looking deep within pointers - un debatable feature
   \  if el type's target type es not nil, encontrar el routine usando "Poner" y el type's target type and "'s " then el name and "into".
-  \  if el routine es not nil, set el field term's dereference flag; Poner el routine into el field term's function; salir.
+  \  if el routine es not nil, definir el field term's dereference flag; Poner el routine into el field term's function; salir.
   
 Para encontrar un field term usando un type y un  name:
   Si el type es nil, salir.
   Encontrar un field usando el name y el type's fields.
   Si el field es not nil, Poner el field into el field term's field; salir.
   Si el type's target type es not nil, encontrar el field usando el name y el type's target type's fields.
-  Si el field es not nil, set el field term's dereference flag; Poner el field into el field term's field; salir.
+  Si el field es not nil, definir el field term's dereference flag; Poner el field into el field term's field; salir.
   
 Para encontrar un fragment usando another fragment y un  tag:
   Poner el other fragment into el fragment.
@@ -3272,7 +3272,7 @@ Para encontrar un routine usando un moniker y un  monikette y un  index:
   Void el routine.
   Privatizar el moniker.
   Poner el monikette's type into el monikette's current type.
-  Slap el monikette's current substring on el monikette's string.
+  Colocar el monikette's current substring on el monikette's string.
   Lazo.
     Adjuntar el monikette to el moniker (while bubbling).
     Encontrar un refer usando el moniker y el index.
@@ -3330,7 +3330,7 @@ Para encontrar un routine usando un string y un  type and another string y un  t
   
 Para encontrar un row# usando un source file y un  byte pointer:
   Si el byte pointer es nil, Poner 0 into el row#; salir.
-  Slap un substring on el source file's buffer.
+  Colocar un substring on el source file's buffer.
   Poner 1 into el row#.
   Lazo.
     Si el substring es blank, salir.
@@ -3357,12 +3357,12 @@ Para encontrar un type y un  nickname usando un name:
 Para encontrar un type y un  nickname usando un name (backward):
   Void el type.
   Borrar el nickname.
-  Slap un substring on el name.
+  Colocar un substring on el name.
   Lazo.
     Si el substring es blank, salir.
     Encontrar el type usando el substring y el type index.
     Si el type es not nil, interrumpir.
-    Skip to el previous word in el substring.
+    Omitir to el previous word in el substring.
   Repetir.
   Poner el name's last into another substring's last.
   Poner el substring's last plus 2 into el other substring's first.
@@ -3372,12 +3372,12 @@ Para encontrar un type y un  nickname usando un name (backward):
 Para encontrar un type y un  nickname usando un name (forward):  \ original - no change
   Void el type.
   Borrar el nickname.
-  Slap un substring on el name.
+  Colocar un substring on el name.
   Lazo.
     Si el substring es blank, salir.
     Encontrar el type usando el substring y el type index.
     Si el type es not nil, interrumpir.
-    Skip to el next word in el substring.
+    Omitir to el next word in el substring.
   Repetir.
   Poner el name's first into another substring's first.
   Poner el substring's first minus 2 into el other substring's last.
@@ -3650,7 +3650,7 @@ An intermediate es un local.
 The jump false tag es un tag igual to 12.
   
 Para link:
-  Round up borough sizes.
+  Redondear up borough sizes.
   Initialize un dos header.
   Initialize un pe header.
   Llenar el compiler's exe con el null byte usando el compiler's exe size.
@@ -4050,7 +4050,7 @@ Para offset el locals in un routine:
     Si el local's previous es not nil, Poner el local's previous' offset into el local's offset.
     Poner el local's type's length into un length.
     Si el local's kind es "scratch", Poner un pointer's magnitude into el length.
-    Round el length up to el nearest multiple of 4.
+    Redondear el length up to el nearest multiple of 4.
     Restar el length desde el local's offset.
     Agregar el length to el routine's local size.
   Repetir.
@@ -4070,7 +4070,7 @@ Para offset el parameters in un routine:
     Si el compiler's abort flag es set, salir.
     Obtener un parameter desde el routine's parameters.
     Si el parameter es nil, salir.
-    Si el routine's callback flag es set, set el parameter's by-value flag.
+    Si el routine's callback flag es set, definir el parameter's by-value flag.
     Si el parameter's previous es nil, Poner 8 into el parameter's offset. \ skip el return address and saved ebp
     Si el parameter's previous es not nil, Poner el parameter's previous' offset plus 4 into el parameter's offset. \ all parameters are 4 byte pointers or 4 byte values for callbacks
     Agregar 4 to el routine's parameter size.
@@ -4164,13 +4164,13 @@ A phrase es un string.
   \Say no.
   
 Para pluralize un string (spanish rules): \ nouns only
-  Slap un rider on el string.
+  Colocar un rider on el string.
   Lazo.
     Mover el rider (spell checking rules).
     Si el rider's token es blank, interrumpir.
     Si un plural string es not blank, Adjuntar " " to el plural string.
     Adjuntar el rider's token to el plural string.
-    Si el rider's token es "de", set un flag; repetir.
+    Si el rider's token es "de", definir un flag; repetir.
     Si el flag es not set, pluralize el plural string (spanish rules - each word).
   Repetir.
   Poner el plural string into el string.
@@ -4358,7 +4358,7 @@ Para resolve un global:
 Para resolve un global (compile body):
   Si el global es nil, salir.
   Si el compiler's abort flag es set, salir.
-  Slap un rider on el global's global body.
+  Colocar un rider on el global's global body.
   Mover el rider (compiler rules).
   Si el rider's token es not any literal, abort con "Necesito una definición literal aquí, pero encontré '" then el rider's token then "'." y el rider; salir.
   Compile un literal usando el rider.
@@ -4381,7 +4381,7 @@ Para resolve un type (base type):
   Si el type's base type es not nil, salir.
   Encontrar el type's base type usando el type's base name y el type index.
   Si el type's base type es nil, abort con "Tipo base inválido. '" then el type's base name then "'." y el type's locus; salir.
-  Set el type's cooking flag.
+  Definir el type's cooking flag.
   Si el type's base type's cooking flag es set, abort con "Definición recursiva con '" then el type's base name then "'." y el type's locus; salir.
   Resolve el type's base type (base type).
   Borrar el type's cooking flag.
@@ -4474,13 +4474,13 @@ Para resolve un type (optional info):
   Si el type's optional info resolved flag es set, salir.
   Si el type's base type es el type, salir. \ for built in types
   Check for invalid optional info on el type.
-  Set el type's cooking flag.
+  Definir el type's cooking flag.
   Resolve el type's base type (optional info).
   Si el type can be reduced to "pointer", resolve el type (optional info - pointer).
   Si el type can be reduced to "record", resolve el type (optional info - record).
   Si el type can be reduced to "number", resolve el type (optional info - scale).
   Borrar el type's cooking flag.
-  Set el type's optional info resolved flag.
+  Definir el type's optional info resolved flag.
   
 Para resolve some types (base types):
     Si el compiler's abort flag es set, salir.
@@ -4527,13 +4527,13 @@ The resolving globals timer es un timer.
   
 The resolving types timer es un timer.
   
-Para round up borough sizes:
+Para redondear up borough sizes:
   Poner el import borough's length into el import borough's size.
-  Round el import borough's size up to el nearest multiple of 4096.
+  Redondear el import borough's size up to el nearest multiple of 4096.
   Poner el data borough's length into el data borough's size.
-  Round el data borough's size up to el nearest multiple of 4096.
+  Redondear el data borough's size up to el nearest multiple of 4096.
   Poner el code borough's length into el code borough's size.
-  Round el code borough's size up to el nearest multiple of 4096.
+  Redondear el code borough's size up to el nearest multiple of 4096.
   
 The routine address tag es un tag igual to 22.
   
@@ -4617,7 +4617,7 @@ Para scan un field usando un rider (redefine part):
 Para scan un field usando un rider (reference part):
   Si el compiler's abort flag es set, salir.
   Mover el rider (compiler rules).
-  Set el field's reference flag.
+  Definir el field's reference flag.
   
 Para scan un field usando un rider (type part - byte array):
   Si el compiler's abort flag es set, salir.
@@ -4789,7 +4789,7 @@ Para scan un routine header usando un rider:
 Para scan un source file:
   Si el source file es nil, salir.
   Si el compiler's abort flag es set, salir.
-  Slap un rider on el source file's buffer.
+  Colocar un rider on el source file's buffer.
   Mover el rider (compiler rules).
   Lazo.
     Si el compiler's abort flag es set, salir.
@@ -4809,7 +4809,7 @@ Para scan some source files:
   
 Para scan un type usando un rider:
   Si el compiler's abort flag es set, salir.
-  Si el rider's token es any english indefinite article, set un english flag.
+  Si el rider's token es any english indefinite article, definir un english flag.
   Agregar el type to el types usando el rider's token's first.
   Mover el rider (compiler rules).
   Scan el type's name usando el rider.
@@ -4868,32 +4868,32 @@ Para scrub some refers:
     Adjuntar el refer to el refers.
   Repetir.
   
-Para set el compiled flag in un variable:
+Para definir el compiled flag in un variable:
   Si el variable es nil, salir.
   Si el variable's compiled flag es set, salir.
-  Set el variable's compiled flag.
+  Definir el variable's compiled flag.
   Si el variable's kind es not "global", salir.
   Si el variable's literal es nil, salir.
   Encontrar un routine usando "Poner" y el variable's literal's type and "into" y el variable's type.
-  Si el routine es nil, encontrar el routine usando "Convertir" y el variable's literal's type and "to" y el variable's type; set un flag.
+  Si el routine es nil, encontrar el routine usando "Convertir" y el variable's literal's type and "to" y el variable's type; definir un flag.
   Si el routine es nil, abort con "El tipo de esta definición global y el tipo de su descripción literal no son compatibles." y el variable's locus; salir.
   Compile el body of el routine.
   Si el flag es set, Poner "Convertir el " then el variable's literal's name then " to el " then el variable's name then ". " into el variable's initializer string.
   Si el flag es not set, Poner "Poner el " then el variable's literal's name then " into el " then el variable's name then ". " into el variable's initializer string.
   
-Para skip to el next word in un substring:
+Para omitir to el next word in un substring:
     Si el substring es blank, salir.
     Si el substring's first's target es noise, interrumpir.
     Agregar 1 to el substring's first.
   Repetir.
-  Skip any leading noise in el substring.
+  Omitir any leading noise in el substring.
   
-Para skip to el previous word in un substring:
+Para omitir to el previous word in un substring:
     Si el substring es blank, salir.
     Si el substring's last's target es noise, interrumpir.
     Restar 1 desde el substring's last.
   Repetir.
-  Skip any trailing noise in el substring.
+  Omitir any trailing noise in el substring.
   
 A source file es un thing con un path y un  buffer.
   
@@ -5094,7 +5094,7 @@ A hex string called data [literals only].
   
 The writing timer es un timer.
   
-Para skip any trailing noise in un substring:
+Para omitir any trailing noise in un substring:
     Si el substring es blank, salir.
     Si el substring's last's target es not noise, salir.
     Restar 1 desde el substring's last.
@@ -5105,13 +5105,13 @@ Para skip any trailing noise in un substring:
   \ internally we turn this into "to Poner a/the yyy's xxx into zzz"
 Para compile el header of un routine usando un rider (reverse-possessive function):
   Si el compiler's abort flag es set, salir.
-  Set el routine's function flag.
+  Definir el routine's function flag.
   Agregar un monikette to el routine's monikettes usando "Poner".
   Mover el rider (compiler rules). \ skip "put" or "poner"
   Mover el rider (compiler rules). \ skip "the" or Spanish definite article
   Scan un name usando el rider. \ field name
   Mover el rider (compiler rules). \ skip "uv" or "de"
-  Si el rider's token es any indefinite article, set un flag.
+  Si el rider's token es any indefinite article, definir un flag.
   Si el flag es set, compile el routine's monikettes y el routine's parameters usando el rider (indefinite article).
   Si el flag es not set, compile el routine's monikettes y el routine's parameters usando el rider (definite article).
   Agregar another monikette to el routine's monikettes usando "'s " then el name.

@@ -313,7 +313,7 @@ Para adjuntar un string to another string:
 
 Para adjuntar un string to another string (handling email transparency):
   Si el string es blank, salir.
-  Slap un rider on el string.
+  Colocar un rider on el string.
   Lazo.
     Mover el rider (text file rules).
     Si el rider's token es blank, salir.
@@ -374,7 +374,7 @@ Para asignar un puntero dado un conteo de bytes;
 Para assign un pointer usando un byte count:
   Si el byte count es 0, void el pointer; salir.
   Privatizar el byte count.
-  Round el byte count up to el nearest power of two.
+  Redondear el byte count up to el nearest power of two.
   Llamada "kernel32.dll" "HeapAlloc" con el heap pointer and 8 [heap_zero_memory] y el byte count retornando el pointer.
   Si el pointer es not nil, Agregar 1 to el heap count; salir.
 
@@ -395,7 +395,7 @@ Para autoscroll un text usando un spot y un flag:
   Si el text's horizontal scroll flag es not set, Poner 0 into el difference's x-number.
   Si el text's vertical scroll flag es not set, Poner 0 into el difference's y-number.
   Si el difference es 0, borrar el flag; salir.
-  Set el flag.
+  Definir el flag.
   Scroll el text usando el difference.
   Wait for 50 milliseconds.
 
@@ -443,7 +443,7 @@ Para comenzar printing:
   Llamada "gdi32.dll" "StartDocA" con el printer canvas y el docinfo's whereabouts.
 
 Para comenzar printing un pdf:
-  Set el pdf state's document flag.
+  Definir el pdf state's document flag.
   Poner 0 into el pdf state's object number.
   Crear el pdf state's font index usando 113.
   Comenzar printing el pdf (start el root).
@@ -518,7 +518,7 @@ Para comenzar un sheet usando un box y un title string (pdf style - start el cur
   Adjuntar "13 w 0 J 0 j 0 i" to el pdf state's current contents. \ penwidth, linecap, linejoin, flatness \ 15 w on penwidth comes out to wide
 
 Para comenzar un sheet usando un box y un title string (pdf style):
-  Set el pdf state's page flag.
+  Definir el pdf state's page flag.
   Poner el borrar color into el pdf state's current border.
   Poner el borrar color into el pdf state's current fill.
   Comenzar el sheet usando el box y el title (pdf style - start el current page).
@@ -842,7 +842,7 @@ Para capitalizar any selected rows in un text:
 
 \Para capitalizar una cadena;
 Para capitalizar un string:
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Lazo.
     Si el substring es blank, salir.
     Si el substring's first's target es not noise, interrumpir.
@@ -880,13 +880,13 @@ Para centrar un box at el bottom of another box:
 \Para centrar una caja en otra caja (horizontalmente);
 Para centrar un box in another box (horizontalmente):
   Poner el other box's center's x minus el box's center's x into un number.
-  Round el number to el nearest multiple of el tpp.
+  Redondear el number to el nearest multiple of el tpp.
   Mover el box usando el number and 0.
 
 \Para centrar una caja en otra caja (verticalmente);
 Para centrar un box in another box (verticalmente):
   Poner el other box's center's y-coord minus el box's center's y-coord into un number.
-  Round el number to el nearest multiple of el tpp.
+  Redondear el number to el nearest multiple of el tpp.
   Mover el box usando 0 y el number.
 
 Para centrar un dot on el current spot: \ need Spanish word for "dot"
@@ -903,67 +903,67 @@ Para centrar un ellipse in un box (verticalmente):
 \Para centrar una línea en una caja (horizontalmente);
 Para centrar un line in un box (horizontalmente):
   Poner el box's center's x minus el line's center's x into un number.
-  Round el number to el nearest multiple of el tpp.
+  Redondear el number to el nearest multiple of el tpp.
   Mover el line usando el number and 0.
 
 \Para centrar una línea en una caja (verticalmente);
 Para centrar un line in un box (verticalmente):
   Poner el box's center's y minus el line's center's y into un number.
-  Round el number to el nearest multiple of el tpp.
+  Redondear el number to el nearest multiple of el tpp.
   Mover el line usando 0 y el number.
 
 \Para centrar una imagen en una caja (horizontalmente);
 Para centrar un picture in un box (horizontalmente):
   Si el picture es nil, salir.
   Poner el box's center's x-coord minus el picture's box's center's x-coord into un number.
-  Round el number to el nearest multiple of el tpp.
+  Redondear el number to el nearest multiple of el tpp.
   Mover el picture usando el number and 0.
 
 \Para centrar una imagen en una caja (verticalmente);
 Para centrar un picture in un box (verticalmente):
   Si el picture es nil, salir.
   Poner el box's center's y-coord minus el picture's box's center's y-coord into un number.
-  Round el number to el nearest multiple of el tpp.
+  Redondear el number to el nearest multiple of el tpp.
   Mover el picture usando 0 y el number.
 
 \Para centrar un polígono en una caja (horizontalmente);
 Para centrar un polygon in un box (horizontalmente):
   Si el polygon es nil, salir.
   Poner el box's center's x minus el polygon's box's center's x into un number.
-  Round el number to el nearest multiple of el tpp.
+  Redondear el number to el nearest multiple of el tpp.
   Mover el polygon usando el number and 0.
 
 \Para centrar un polígono en una caja (verticalmente);
 Para centrar un polygon in un box (verticalmente):
   Si el polygon es nil, salir.
   Poner el box's center's y minus el polygon's box's center's y into un number.
-  Round el number to el nearest multiple of el tpp.
+  Redondear el number to el nearest multiple of el tpp.
   Mover el polygon usando 0 y el number.
 
 \Para centrar un punto en una caja (horizontalmente);
 Para centrar un spot in un box (horizontalmente):
   Poner el box's center's x minus el spot's x into un number.
-  Round el number to el nearest multiple of el tpp.
+  Redondear el number to el nearest multiple of el tpp.
   Mover el spot usando el number and 0.
 
 \Para centrar un punto en una caja (verticalmente);
 Para centrar un spot in un box (verticalmente):
   Poner el box's center's y minus el spot's y into un number.
-  Round el number to el nearest multiple of el tpp.
+  Redondear el number to el nearest multiple of el tpp.
   Mover el spot usando 0 y el number.
 
 \Para centrar un texto en una caja (horizontalmente);
 Para centrar un text in un box (horizontalmente):
   Si el text es nil, salir.
   Poner el box's center's x minus el text's box's center's x into un number.
-  Round el number to el nearest multiple of el tpp.
+  Redondear el number to el nearest multiple of el tpp.
   Mover el text usando el number and 0.
 
 \Para centrar un texto en una caja (verticalmente);
 Para centrar un text in un box (verticalmente):
   Si el text es nil, salir.
   Poner el box's center's y minus el text's box's center's y into un number.
-  Round el number to el nearest multiple of el tpp.
+  Redondear el number to el nearest multiple of el tpp.
   Mover el text usando 0 y el number.
 
 \Para cambiar el matiz actual en algunos pasos;
@@ -1391,11 +1391,11 @@ Para convertir un colorref to un color:
 
 Para convertir un colorref to un rgb:
   Privatizar el colorref.
-  Shift el colorref right 0 bits.
+  Desplazar el colorref right 0 bits.
   Poner el colorref into el rgb's red byte.
-  Shift el colorref right 8 bits.
+  Desplazar el colorref right 8 bits.
   Poner el colorref into el rgb's green byte.
-  Shift el colorref right 8 bits.
+  Desplazar el colorref right 8 bits.
   Poner el colorref into el rgb's blue byte.
 
 Para convertir un filetime to un string:
@@ -1464,7 +1464,7 @@ Para convertir un fraction to un string usando un number: \ converts to un decim
   Poner 10 into un value number.
   Elevar el value to el number.
   Privatizar el fraction.
-  Si el fraction es negative, set un flag; eliminar signo de el fraction.
+  Si el fraction es negative, definir un flag; eliminar signo de el fraction.
   Multiplicar el value by el fraction.
   Zero fill el value usando el number and Adjuntar it to el string.
   Poner el string's length minus el number plus 1 into un byte#.
@@ -1499,7 +1499,7 @@ Para convertir un hex string to un number:
 
 Para convertir un l-param to un key: \ assumes l-param desde wm_char message
   Poner el l-param into el key.
-  Shift el key right 16 bits.
+  Desplazar el key right 16 bits.
   Bitwise AND el key con 255.
   Llamada "user32.dll" "MapVirtualKeyA" con el key y 1  retornando el key.
   Si el numlock key was not toggled, salir.
@@ -1535,11 +1535,11 @@ Para convertir un nibble string to un hex string:
   Privatizar el nibble string.
   Borrar el hex string.
   Si el nibble string's length es odd, anteponer el zero byte to el nibble string.
-  Slap un substring on el nibble string.
+  Colocar un substring on el nibble string.
   Lazo.
   Si el substring es blank, salir.
   Convertir el substring's first's target to un nibble.
-  Shift el nibble left 4 bits.
+  Desplazar el nibble left 4 bits.
   Agregar 1 to el substring's first.
   Convertir el substring's first's target to another nibble.
   Bitwise OR el nibble con el other nibble.
@@ -1611,7 +1611,7 @@ Para convertir some precise degrees to some points:
 Para convertir un query string to un string:
   Borrar el string.
   Si el query string es blank, salir.
-  Slap un substring on el query string.
+  Colocar un substring on el query string.
   Lazo.
     Si el substring es blank, salir.
     Si el substring's first's target es el cross byte, Adjuntar " " to el string; Agregar 1 to el substring's first; repetir.
@@ -1619,7 +1619,7 @@ Para convertir un query string to un string:
     Si el substring's length es less than 3, salir.
     Agregar 1 to el substring's first.
     Convertir el substring's first's target to un nibble.
-    Shift el nibble left 4 bits.
+    Desplazar el nibble left 4 bits.
     Agregar 1 to el substring's first.
     Convertir el substring's first's target to another nibble.
     Bitwise OR el nibble con el other nibble.
@@ -1647,7 +1647,7 @@ Para convertir some rows to un string (no linefeed additions):
 Para convertir un string y un actual font info y un original font info into un buffer for pdf output:
   Borrar el buffer.
   Poner 0 into un current byte#.
-  Slap un substring on el first byte of el string.
+  Colocar un substring on el first byte of el string.
   Lazo.
     Si el substring's first es greater than el string's last, interrumpir.
     Si el substring's last es el string's last, interrumpir.
@@ -1667,9 +1667,9 @@ Para convertir un string y un actual font info y un original font info into un b
 
 \Para convertir una cadena en una bandera;
 Para convertir un string to un flag:
-  Si el string es "sí", set el flag; salir.
-  Si el string es "y", set el flag; salir.
-  Si el string es "yes", set el flag; salir.
+  Si el string es "sí", definir el flag; salir.
+  Si el string es "y", definir el flag; salir.
+  Si el string es "yes", definir el flag; salir.
   Borrar el flag.
 
 \Para convertir una cadena en una fracción;
@@ -1677,7 +1677,7 @@ Para convertir un string to un fraction:
   Borrar el fraction.
   Si el string es blank, salir.
   Si el string es any integer, convertir el string to el fraction's numerator; salir.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
   Si el substring es blank, salir.
   Split el substring into un integer substring y un fraction substring usando el dash byte.
@@ -1697,7 +1697,7 @@ Para convertir un string to un fraction:
 
 Para convertir un string to un nibble string:
   Borrar el nibble string.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Lazo.
     Si el substring es blank, salir.
     Convertir el substring's first's target to another nibble string.
@@ -1708,7 +1708,7 @@ Para convertir un string to un nibble string:
 \Para convertir una cadena en un número;
 Para convertir un string to un number:
   Poner 0 into el number.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Si el substring es blank, salir.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
   Lazo.
@@ -1728,7 +1728,7 @@ Para convertir un string to un number between another number y un third number:
 
 Para convertir un string to un pdf string:
   Poner "(" into el pdf string.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Restar 1 desde el substring's first.
   Lazo.
     Agregar 1 to el substring's first.
@@ -1743,13 +1743,13 @@ Para convertir un string to un pdf string:
 Para convertir un string to un pointer: \ assumes pointer es in nibble format
   Convertir el string as un nibble string to un hex string.
   Void el pointer.
-  Slap un substring on el hex string.
+  Colocar un substring on el hex string.
   Poner 24 into un shift count.
   Lazo.
     Si el substring es blank, salir.
     Si el shift count es less than 0, salir.
     Poner el substring's first's target into un number.
-    Shift el number left el shift count.
+    Desplazar el number left el shift count.
     Bitwise OR el pointer as un number con el number.
     Agregar 1 to el substring's first.
     Restar 8 desde el shift count.
@@ -1758,7 +1758,7 @@ Para convertir un string to un pointer: \ assumes pointer es in nibble format
 \Para convertir una cadena en una consulta;
 Para convertir un string to un query string:
   Borrar el query string.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Lazo.
     Si el substring es blank, interrumpir.
     Convertir el substring's first's target to un query byte.
@@ -1767,7 +1767,7 @@ Para convertir un string to un query string:
   Repetir.
 
 Para convertir un string to some rows:
-  Slap un rider on el string.
+  Colocar un rider on el string.
   Lazo.
     Mover el rider (text file rules).
     Si el rider's token es blank, interrumpir.
@@ -1783,7 +1783,7 @@ Para convertir un string to un uuid:
 
 Para convertir un string to un wide string:
   Borrar el wide string.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Lazo.
     Si el substring es blank, salir.
     Adjuntar el substring's first's target to el wide string.
@@ -1982,9 +1982,9 @@ Para crear un console:
   Restar el box's top desde el box's right.
   Crear el console's text.
   Poner el box into el console's text's box.
-  Set el console's text's wrap flag.
+  Definir el console's text's wrap flag.
   Borrar el console's text's horizontal scroll flag.
-  Set el console's text's vertical scroll flag.
+  Definir el console's text's vertical scroll flag.
   Poner el default font's height into el console's grid.
   Multiplicar el console's grid's x-number by 2.
 
@@ -2304,8 +2304,8 @@ Para crear un text:
   Poner "left" into el text's alignment.
   Poner 1/1 into el text's scale.
   Garantizar una row in el text.
-  Reset el origin of el text.
-  Reset el caret of el text.
+  Reiniciar el origin of el text.
+  Reiniciar el caret of el text.
   Deselect el text.
 
 \Para crear un vértice;
@@ -2901,7 +2901,7 @@ Para decidir si un byte es greater than or igual to another byte:
 Para decidir si un byte es in un string:
   Privatizar el byte.
   Lowercase el byte.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Lazo.
   Si el substring es blank, diga no.
   Poner el substring's first's target into another byte.
@@ -2941,8 +2941,8 @@ Para decidir si un byte es less than or igual to another byte:
   Intel $C7C000000000. \ mov eax,0 \ now it's false
 
 Para decidir si un byte es like another byte: \ used internally for word wrap
-  Si el byte es whitespace, set un flag.
-  Si el other byte es whitespace, set another flag.
+  Si el byte es whitespace, definir un flag.
+  Si el other byte es whitespace, definir another flag.
   Si el flag es el other flag, diga sí.
   Diga no.
 
@@ -3225,7 +3225,7 @@ Para decidir si un fraction es less than or igual to another fraction:
 Para decidir si un fraction es negative:
   Si el fraction's numerator es less than 0, reverse un flag.
   Si el fraction's denominator es less than 0, reverse el flag.
-\ Say el flag. \ doesn't work in SAL; no flag literals anymore
+\ Hablar el flag. \ doesn't work in SAL; no flag literals anymore
   Si el flag es set, diga sí.
   Diga no.
 
@@ -3603,14 +3603,14 @@ Para decidir si un polygon es closed:
 Para decidir si un reply es something like another reply:
   Privatizar el reply.
   Privatizar el other reply.
-  Simplify el reply.
-  Simplify el other reply.
+  Simplificar el reply.
+  Simplificar el other reply.
   Si el reply es el other reply, diga sí.
   Diga no.
 
 Para decidir si un row es blank:
   Si el row es nil, diga sí.
-  Slap un substring on el row's string.
+  Colocar un substring on el row's string.
   Lazo.
   Si el substring es blank, diga sí.
   Si el substring's first's target es not noise, diga no.
@@ -3845,7 +3845,7 @@ Para decidir si un string does end con another string;
 \Para decidir si una cadena termina con otra cadena;
 Para decidir si un string ends con another string:
   Si el other string's length es greater than el string's length, diga no.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Poner el substring's last minus el other string's length plus 1 into el substring's first.
   Si el substring es el other string, diga sí.
   Diga no.
@@ -3854,7 +3854,7 @@ Para decidir si un string does start con another string;
 \Para decidir si una cadena comienza con otra cadena;
 Para decidir si un string starts con another string:
   Si el other string's length es greater than el string's length, diga no.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Poner el substring's first plus el other string's length minus 1 into el substring's last.
   Si el substring es el other string, diga sí.
   Diga no.
@@ -3889,7 +3889,7 @@ Para decidir si un string es another string or un third string:
 
 Para decidir si un string es any fraction literal;
 Para decidir si un string es any ratio literal:
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Si el substring es blank, diga no.
   Si el substring's first's target es not any numeric starter, diga no.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
@@ -3913,7 +3913,7 @@ Para decidir si un string es any ratio literal:
 Para decidir si un string es any integer;
 \Para decidir si una cadena es cualquier literal entero;
 Para decidir si un string es any integer literal:
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Si el substring es blank, diga no.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
   Si el substring es blank, diga no.
@@ -3924,7 +3924,7 @@ Para decidir si un string es any integer literal:
   Repetir.
 
 Para decidir si un string es any mixed literal:
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Si el substring es blank, diga no.
   Si el substring's first's target es not any numeric starter, diga no.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
@@ -3948,7 +3948,7 @@ Para decidir si un string es any sign:
 
 Para decidir si un string es any word:
   Si el string's length es less than 2, diga no.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Restar 1 desde el substring's first.
   Lazo.
     Agregar 1 to el substring's first.
@@ -3982,7 +3982,7 @@ Para decidir si un string es un byte:
 Para decidir si un string es dos-compatible:
   Si el string es blank, diga no.
   Si el string's first's target es el period byte, diga no.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Lazo.
     Si el substring es blank, diga sí.
     Si el substring's first's target es el slash byte, diga no.
@@ -4011,7 +4011,7 @@ Para decidir si un string es greater than or igual to another string:
 
 \Para decidir si una cadena está en otra cadena;
 Para decidir si un string es in another string:
-  Slap un substring on el other string.
+  Colocar un substring on el other string.
   Poner el substring's first plus el string's length minus 1 into el substring's last.
   Lazo.
     Si el substring's last es greater than el other string's last, diga no.
@@ -4304,7 +4304,7 @@ Para destroy un index:
 
 \Para destruir una ruta en el sistema de archivos;
 Para destroy un path in el file system:
-  Set el path to read-write mode.
+  Definir el path to read-write mode.
   Si el path es directory-format, destroy el path in el file system (directory).
   Si el path es file-format, destroy el path in el file system (file).
 
@@ -5151,7 +5151,7 @@ Para dibujar un string at un spot con un color:
 \Para dibujar una cadena en un punto con un color y un tipo de letra;
 Para dibujar un string at un spot con un color y un font:
   Si el pdf state's page flag es set, dibujar el string at el spot con el color y el font (pdf style); salir.
-  Set el colorref of el current canvas usando el color.
+  Definir el colorref of el current canvas usando el color.
   Crear el hfont of el current canvas usando el font.
   Ajustar spacing usando el string.
   Poner el string's first into un substring's first.
@@ -5302,7 +5302,7 @@ Para duplicate un path to another path in el file system (file):
   Null terminate el other path.
   Llamada "kernel32.dll" "CopyFileA" con el path's first y el other path's first and 0 retornando un number.
   Borrar el error de e/s.
-  Si el number es not 0, set el path to read-write mode; salir.
+  Si el number es not 0, definir el path to read-write mode; salir.
   Poner "Error duplicando archivo '" then el path then "'." into el error de e/s.
 
 A dyad es un thing con
@@ -5453,7 +5453,7 @@ Para completar impresión un pdf (finish el parent):
     Si el pdf object's kind es not "page", repetir.
     Si un flag es set, Adjuntar " " to el parent without advancing.
     Adjuntar el pdf object's number then " 0 R" to el parent without advancing.
-    Set el flag.
+    Definir el flag.
     Agregar 1 to un count.
     Si el count es evenly divisible by 20, Adjuntar el crlf string then "  " to el parent without advancing.
   Repetir.
@@ -5511,7 +5511,7 @@ Para completar un sheet (pdf style - finish el current page - font resources):
     Si el string thing es nil, interrumpir.
     Si un flag es set, Adjuntar " " to el page without advancing.
     Adjuntar el string thing's string to el page without advancing.
-    Set el flag.
+    Definir el flag.
   Repetir.
   Adjuntar ">>" to el page.
 
@@ -5524,7 +5524,7 @@ Para completar un sheet (pdf style - finish el current page - image resources):
     Si el string thing es nil, interrumpir.
     Si un flag es set, Adjuntar " " to el page without advancing.
     Adjuntar el string thing's string to el page without advancing.
-    Set el flag.
+    Definir el flag.
   Repetir.
   Adjuntar ">>" to el page.
 
@@ -5590,10 +5590,10 @@ The escape key es un key igual to 27.
 \Para estimar un ascenso y una carrera dada una dirección;
 Para estimar un rise y un run usando un heading:
   Poner el heading into un low heading.
-  Round el low heading down to el nearest multiple of 20.
+  Redondear el low heading down to el nearest multiple of 20.
   Obtener un low rise y un low run usando el low heading.
   Poner el heading into un high heading.
-  Round el high heading up to el nearest multiple of 20.
+  Redondear el high heading up to el nearest multiple of 20.
   Obtener un high rise y un high run usando el high heading.
   Poner el low rise plus el high rise divided by 2 into el rise. 
   Poner el low run plus el high run divided by 2 into el run. 
@@ -5609,7 +5609,7 @@ The euro-sign byte es un byte igual to 128.
 \a key, un byte.
 
 An event es un thing con
-  A kind [refresh, set cursor, key down, left click, left double click, right click, right double click, deactivate, activate, done], \ English
+  A kind [refresh, definir cursor, key down, left click, left double click, right click, right double click, deactivate, activate, done], \ English
   una clase [refrescar, cursor, tecla abajo, clic izquierdo, clic izquierdo doble, clic derecho, clic derecho doble, desactivar, activar, hecho],\ kind in Spanish
   A shift flag, una bandera mayúsculas at el shift flag,
   A ctrl flag, una bandera ctrl at el ctrl flag,
@@ -5646,10 +5646,10 @@ Some extra points are some points.
 Para extraer un designator desde un path:
   Borrar el designator.
   Extraer un drive desde el path.
-  Slap un path substring on el path.
+  Colocar un path substring on el path.
   Agregar el drive's length to el path substring's first.
   Si el path substring es blank, Poner el drive into el designator; salir.
-  Slap un substring on el last byte of el path substring.
+  Colocar un substring on el last byte of el path substring.
   Si el substring's first's target es el backslash byte, Restar 1 desde el substring's first.
   Lazo.
     Si el substring's first es less than el path substring's first, interrumpir.
@@ -5664,7 +5664,7 @@ Para extraer un directory desde un path:
   Borrar el directory.
   Extraer un drive desde el path.
   Si el drive es blank, salir.
-  Slap un substring on el path.
+  Colocar un substring on el path.
   Agregar el drive's length to el substring's first.
   Si el substring es blank, salir.
   Si el substring's last's target es el backslash byte, Restar 1 desde el substring's last.
@@ -5691,11 +5691,11 @@ Para extraer un directory name w/o slash desde un path:
 Para extraer un drive desde un path:
   Borrar el drive.
   Si el path's length es less than 3, salir.
-  Slap un substring on el first byte of el path.
+  Colocar un substring on el first byte of el path.
   Agregar 2 to el substring's last.
   Si el substring ends con ":\", Poner el substring into el drive; salir.
   Si el substring does not start con "\\", salir.
-  Slap el substring on el first byte of el path.
+  Colocar el substring on el first byte of el path.
   Lazo.
     Si el substring's last es greater than el path's last, salir.
     Si el substring's last's target es el backslash byte, Agregar 1 to un count.
@@ -5708,7 +5708,7 @@ Para extraer un drive desde un path:
 Para extraer un extension desde un path:
   Borrar el extension.
   Si el path es blank, salir.
-  Slap un substring on el last byte of el path.
+  Colocar un substring on el last byte of el path.
   Lazo.
     Si el substring's first es less than el path's first, salir.
     Si el substring's first's target es el colon byte, salir.
@@ -5766,7 +5766,7 @@ Para extraer un string desde un text (selected bytes):
   Lazo.
     Obtener un row desde el text's rows.
     Si el row es nil, salir.
-    Slap un substring on any selected bytes in el row of el text.
+    Colocar un substring on any selected bytes in el row of el text.
     Si el substring es blank, repetir.
     Adjuntar el substring to el string.
     Si el substring's last's target es el return byte, Adjuntar el linefeed byte to el string.
@@ -5953,7 +5953,7 @@ Para encontrar next usando un row y un text y un flag:
   Borrar el flag.
   Si el text es nil, salir.
   Si el row es nil, salir.
-  Slap un substring on el row's string.
+  Colocar un substring on el row's string.
   Poner el substring's first plus el encontrar string's length minus 1 into el substring's last.
   Si el row's row# es el encontrar anchor's row#, mover el substring usando el encontrar anchor's column# minus 1.
   Lazo.
@@ -5961,7 +5961,7 @@ Para encontrar next usando un row y un text y un flag:
     Si el substring es el encontrar string (accent-free compare), interrumpir. \ for spanish incremental find
     Mover el substring usando 1.
   Repetir.
-  Set el flag.
+  Definir el flag.
   Poner el substring's first minus el row's string's first plus 1 into el text's anchor column#.
   Poner el row's row# into el text's anchor row#.
   Poner el substring's last minus el row's string's first plus 2 into el text's caret column#.
@@ -5992,7 +5992,7 @@ Para encontrar next usando un text y un flag (wrapped text):
     Si el substring es el encontrar string (accent-free compare), interrumpir. \ for spanish incremental find
     Mover el substring usando 1.
   Repetir.
-  Set el flag.
+  Definir el flag.
   Poner el substring's first minus el string's first plus 1 into un anchor absolute position.
   Poner el substring's last minus el string's first plus 2 into un caret absolute position.
   Convertir el anchor absolute position to el text's anchor usando el text.
@@ -6002,14 +6002,14 @@ Para encontrar el next misspelling usando un row y un text y un flag:
   Borrar el flag.
   Si el text es nil, salir.
   Si el row es nil, salir.
-  Slap un rider on el row's string.
+  Colocar un rider on el row's string.
   Si el row's row# es el encontrar anchor's row#, Agregar el encontrar anchor's column# minus 1 to el rider's source's first.
   Si el rider's source's first es not el row's string's first, skip word characters in el rider's source.
   Lazo.
     Mover el rider (spell checking rules).
     Si el rider's token es blank, salir.
     Si el rider's token es not misspelled, repetir.
-  Set el flag.
+  Definir el flag.
   Poner el rider's token's first minus el row's string's first plus 1 into el text's anchor column#.
   Poner el row's row# into el text's anchor row#.
   Poner el rider's token's last minus el row's string's first plus 2 into el text's caret column#.
@@ -6097,7 +6097,7 @@ Para encontrar un string thing usando un string and some string things:
 
 \Para encontrar una subcadena en una cadena dada otra cadena;
 Para encontrar un substring in un string usando another string:
-  Slap el substring on el string.
+  Colocar el substring on el string.
   Lazo.
     Si el substring es blank, salir.
     Si el substring starts con el other string, interrumpir.
@@ -6335,12 +6335,12 @@ Para obtener un bucket# usando un string y un index: \ based on el djb2 algorith
   Poner el string's length into el bucket#.
   Si el bucket# es 0, salir.
   Agregar 5381 to el bucket#.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Lazo.
     Poner el substring's first's target into un byte.
     Lowercase el byte.
     Poner el bucket# into un number.
-    Shift el bucket# left 5 bits.
+    Desplazar el bucket# left 5 bits.
     Agregar el number to el bucket#.
     Agregar el byte to el bucket#.
     Agregar 3 to el substring's first.
@@ -6418,7 +6418,7 @@ Para obtener un difference between un pair and another pair:
 \Para obtener una diferencia entre un par y otro par dado un par de grilla;
 Para obtener un difference between un pair and another pair usando un grid pair:
   Obtener el difference between el pair y el other pair.
-  Round el difference to el grid.
+  Redondear el difference to el grid.
 
 \Para obtener una distancia entre un punto y otro punto (aproximado);
 Para obtener un distance between un spot and another spot (approximate):
@@ -6727,7 +6727,7 @@ Para obtener un start width y un substring usando un row y un spot y un text (fo
   Si el text es nil, salir.
   Si el row es nil, salir.
   Obtener un box usando el row y el text.
-  Slap el substring on el row's working string.
+  Colocar el substring on el row's working string.
   Obtener un offset pair usando el substring y el box y el text's font y el text's alignment (fast).
   Poner el text's globalized origin's x-coord plus el offset pair's x-number into el start width.
   Poner el substring's first plus el text cutoff minus 1 into el substring's last.
@@ -6927,7 +6927,7 @@ Para handle any wm-char con un w-param y un l-param:
   Crear un event.
   Poner "key down" into el event's kind.
   Poner "tecla abajo" into el event's clase.
-  Si el shift key was down, set el event's shift flag.
+  Si el shift key was down, definir el event's shift flag.
   Poner el byte into el event's byte.
   Convertir el l-param to el event's key.
   Enque el event.
@@ -6942,9 +6942,9 @@ Para handle any wm-lbuttondblclk con un l-param:
   Crear un event.
   Poner "left double click" into el event's kind.
   Poner "clic izquierdo doble" into el event's clase.
-  Si el alt key was down, set el event's alt flag.
-  Si el ctrl key was down, set el event's ctrl flag.
-  Si el shift key was down, set el event's shift flag.
+  Si el alt key was down, definir el event's alt flag.
+  Si el ctrl key was down, definir el event's ctrl flag.
+  Si el shift key was down, definir el event's shift flag.
   Convertir el l-param to el event's spot.
   Enque el event.
 
@@ -6952,9 +6952,9 @@ Para handle any wm-lbuttondown con un l-param:
   Crear un event.
   Poner "left click" into el event's kind.
   Poner "clic izquierdo" into el event's clase.
-  Si el alt key was down, set el event's alt flag.
-  Si el ctrl key was down, set el event's ctrl flag.
-  Si el shift key was down, set el event's shift flag.
+  Si el alt key was down, definir el event's alt flag.
+  Si el ctrl key was down, definir el event's ctrl flag.
+  Si el shift key was down, definir el event's shift flag.
   Convertir el l-param to el event's spot.
   Enque el event.
 
@@ -6970,9 +6970,9 @@ Para handle any wm-rbuttondblclk con un l-param:
   Crear un event.
   Poner "right double click" into el event's kind.
   Poner "clic derecho doble" into el event's clase.
-  Si el alt key was down, set el event's alt flag.
-  Si el ctrl key was down, set el event's ctrl flag.
-  Si el shift key was down, set el event's shift flag.
+  Si el alt key was down, definir el event's alt flag.
+  Si el ctrl key was down, definir el event's ctrl flag.
+  Si el shift key was down, definir el event's shift flag.
   Convertir el l-param to el event's spot.
   Enque el event.
 
@@ -6980,9 +6980,9 @@ Para handle any wm-rbuttondown con un l-param:
   Crear un event.
   Poner "right click" into el event's kind.
   Poner "clic derecho" into el event's clase.
-  Si el alt key was down, set el event's alt flag.
-  Si el ctrl key was down, set el event's ctrl flag.
-  Si el shift key was down, set el event's shift flag.
+  Si el alt key was down, definir el event's alt flag.
+  Si el ctrl key was down, definir el event's ctrl flag.
+  Si el shift key was down, definir el event's shift flag.
   Convertir el l-param to el event's spot.
   Enque el event.
 
@@ -6997,9 +6997,9 @@ Para handle any wm-keydown con un w-param y un l-param:
   Crear un event.
   Poner "key down" into el event's kind.
   Poner "tecla abajo" into el event's clase.
-  Si el alt key was down, set el event's alt flag.
-  Si el ctrl key was down, set el event's ctrl flag.
-  Si el shift key was down, set el event's shift flag.
+  Si el alt key was down, definir el event's alt flag.
+  Si el ctrl key was down, definir el event's ctrl flag.
+  Si el shift key was down, definir el event's shift flag.
   Poner el key into el event's key.
   Enque el event.
 
@@ -7042,15 +7042,15 @@ Para handle un event usando un console (backspace key):
   Si el event es modified, salir.
   Handle el event usando el console's text (backspace key).
   Eliminar el last byte desde el console's reply.
-  Show el console.
+  Mostrar el console.
 
 Para handle un event usando un console (down-arrow key):
   Scroll el console's text down one line.
-  Show el console.
+  Mostrar el console.
 
 Para handle un event usando un console (end key):
   Scroll el console's text to el bottom.
-  Show el console.
+  Mostrar el console.
 
 Para handle un event usando un console (enter key):
   Handle el event usando el console's text (enter key).
@@ -7058,7 +7058,7 @@ Para handle un event usando un console (enter key):
 
 Para handle un event usando un console (home key):
   Scroll el console's text to el top.
-  Show el console.
+  Mostrar el console.
 
 Para handle un event usando un console (key down):
   Si el event's key es el backspace key, handle el event usando el console (backspace key); salir.
@@ -7072,30 +7072,30 @@ Para handle un event usando un console (key down):
   Si el event's byte es not printable, salir.
   Adjuntar el event's byte to el console's reply.
   Handle el event usando el console's text (printable key).
-  Show el console.
+  Mostrar el console.
 
 Para handle un event usando un console (page-down key):
   Scroll el console's text down one page.
-  Show el console.
+  Mostrar el console.
 
 Para handle un event usando un console (page-up key):
   Scroll el console's text up one page.
-  Show el console.
+  Mostrar el console.
 
 Para handle un event usando un console (refresh):
-  Show el console.
+  Mostrar el console.
 
 Para handle un event usando un console (right click):
-  Show el hand cursor.
+  Mostrar el hand cursor.
   Scroll el console usando el event.
   Actualizar el cursor.
 
 Para handle un event usando un console (set cursor):
-  Show el arrow cursor.
+  Mostrar el arrow cursor.
 
 Para handle un event usando un console (up-arrow key):
   Scroll el console's text up one line.
-  Show el console.
+  Mostrar el console.
 
 Para handle un event usando un terminal:
   Si el terminal es nil, salir.
@@ -7109,7 +7109,7 @@ Para handle un event usando un terminal (backspace key):
   Si el event es modified, salir.
   Eliminar el last byte desde el terminal's reply.
   Eliminar el last byte desde el terminal's quoras' last's string.
-  Show el terminal.
+  Mostrar el terminal.
 
 Para handle un event usando un terminal (enter key):
   Relinquish control.
@@ -7120,13 +7120,13 @@ Para handle un event usando un terminal (key down):
   Si el event's byte es not printable, salir.
   Adjuntar el event's byte to el terminal's reply.
   Adjuntar el event's byte to el terminal's quoras' last's string.
-  Show el terminal.
+  Mostrar el terminal.
 
 Para handle un event usando un terminal (refresh):
-  Show el terminal.
+  Mostrar el terminal.
 
 Para handle un event usando un terminal (set cursor):
-  Show el arrow cursor.
+  Mostrar el arrow cursor.
 
 \Para manejar un evento dado un texto (tecla retroceso);
 Para handle un event usando un text (backspace key):
@@ -7151,7 +7151,7 @@ Para handle un event usando un text (delete key):
 \Para manejar un evento dado un texto (tecla flecha-abajo);
 Para handle un event usando un text (down-arrow key):
   Si el text es nil, salir.
-  Si el caret of el text está on el last line, set un flag.
+  Si el caret of el text está on el last line, definir un flag.
   Si el flag es set, mover el caret to el last byte of el text.
   Si el flag es not set, mover el caret down in el text.
   Si el event's shift flag es not set, deselect el text.
@@ -7346,7 +7346,7 @@ Para handle redo usando un text:
   Eliminar el third text desde el text's redos.
   Copiar el guts of el third text into el text.
   Destroy el third text.
-  Set el text's modified flag.
+  Definir el text's modified flag.
 
 \Para manejar el reverso dado un texto;
 Para handle reverse usando un text:
@@ -7360,7 +7360,7 @@ Para handle reverse usando un text:
 \Para manejar selecciona todo dado un texto;
 Para handle select all usando un text:
   Si el text es nil, salir.
-  Select every byte in el text.
+  Seleccionar every byte in el text.
 
 Para handle sort any selected rows usando un text:
   Si el text es nil, salir.
@@ -7380,7 +7380,7 @@ Para handle undo usando un text:
   Eliminar el third text desde el text's undos.
   Copiar el guts of el third text into el text.
   Destroy el third text.
-  Set el text's modified flag.
+  Definir el text's modified flag.
 
 \Para manejar mayúsculas todo un texto;
 Para handle uppercase usando un text:
@@ -7517,9 +7517,9 @@ Para crear un figure using un string y un center spot:
   Adjuntar el figure to el figures.
   Privatizar el string.
   Lowercase el string.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Lazo.
-    Skip any leading noise in el substring.
+    Omitir any leading noise in el substring.
     Si el substring's length es less than 2, salir.
     Poner el substring's first's target into un byte.
     Poner el byte minus el little-a byte into un spot's y.
@@ -7641,7 +7641,7 @@ Para incluir un font in el current pdf:
   Agregar un descriptor pdf object usando "font descriptor".
   Poner "F" then el descriptor's number into un font name.
   Poner el font's name into un font base name.
-  Replace el space byte con el underscore byte in el font base name.
+  Reemplazar el space byte con el underscore byte in el font base name.
   Adjuntar el descriptor's number then " 0 obj" to el descriptor.
   Adjuntar "<<" to el descriptor.
   Adjuntar "/Type /FontDescriptor" to el descriptor.
@@ -8249,9 +8249,9 @@ Para insertar un string into another string before un byte#:
   Si el string's length es 0, salir.
   Privatizar el byte#.
   Limitar el byte# to 1 y el other string's length plus 1.
-  Slap un substring on el other string. \ left side
+  Colocar un substring on el other string. \ left side
   Poner el substring's first plus el byte# minus 2 into el substring's last.
-  Slap another substring on el other string. \ right side
+  Colocar another substring on el other string. \ right side
   Poner el other substring's first plus el byte# minus 1 into el other substring's first.
   Poner el other string's length plus el string's length into un combined length.
   Reassign un pointer usando el combined length.
@@ -8900,7 +8900,7 @@ Para cargar el lexicon:
 \Para cargar el léxico dado un búfer;
 Para cargar el lexicon usando un buffer:
   Si el lexicon es nil, crear el lexicon.
-  Slap un rider on el buffer.
+  Colocar un rider on el buffer.
   Lazo.
     Mover el rider (reglas de léxico de índice).
     Si el rider's token es blank, salir.
@@ -8951,7 +8951,7 @@ Para lowercase any selected bytes in un text:
   Obtener un row desde el text's rows.
   Si el row es nil, salir.
   Si el row of el text es not selected, repetir.
-  Slap un substring on any selected bytes in el row of el text.
+  Colocar un substring on any selected bytes in el row of el text.
   Lowercase el substring.
   Repetir.
 
@@ -8970,7 +8970,7 @@ Para lowercase el character under un finger and Poner it into un string:
 \Para poner en minúscula un string;
 \Para poner un string en minúscula;
 Para lowercase un string:
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Lazo.
     Si el substring es blank, salir.
     Lowercase el substring's first's target.
@@ -9558,7 +9558,7 @@ Para mover un polygon up some twips:
 
 \Para mover un escáner (reglas de léxico de índice);
 Para mover un rider (reglas de léxico de índice):
-  Skip any leading noise in el rider's source.
+  Omitir any leading noise in el rider's source.
   Ajustar el rider's token on el rider's source.
   Lazo.
     Si el rider's source es blank, salir.
@@ -9578,7 +9578,7 @@ Para mover un rider (quoted string rules):
 
 \Para mover un escáner (reglas de corrección ortográfica);
 Para mover un rider (spell checking rules):
-  Skip any non-alphanumeric bytes in el rider's source.
+  Omitir any non-alphanumeric bytes in el rider's source.
   Ajustar el rider's token on el rider's source.
   Lazo.
     Si el rider's source es blank, salir.
@@ -9612,10 +9612,10 @@ Para mover un rider (word wrapping rules):
 
 \Para mover un escáner dado una caja (reglas de envoltura de palabras);
 Para mover un rider usando un box (word wrapping rules):
-  Skip any leading linefeed byte in el rider's source.
+  Omitir any leading linefeed byte in el rider's source.
   Ajustar el rider's token on el rider's source.
   Si el rider's source es blank, salir.
-  Slap another rider on el rider.
+  Colocar another rider on el rider.
   Lazo.
     Si el rider's source es blank, salir.
     Mover el other rider (word wrapping rules).
@@ -9919,15 +9919,15 @@ Para non-destructively resize un picture usando un ratio pair;
 Para non-destructively resize un picture usando un fraction pair:
   Si el picture es nil, salir.
   Mover el picture's uncropped box usando el fraction pair y el picture's box's left-top.
-  Resize el picture's uncropped box usando el fraction pair.
-  Resize el picture's box usando el fraction pair.
+  Redimensionar el picture's uncropped box usando el fraction pair.
+  Redimensionar el picture's box usando el fraction pair.
   Si el picture's right es less than el picture's left, mirror el gpbitmap in el picture.
   Si el picture's bottom es less than el picture's top, flip el gpbitmap in el picture.
 
 Para non-destructively resize un picture usando un twip pair:
   Si el picture es nil, salir.
   Poner el picture's box into un box.
-  Resize el box usando el twip pair.
+  Redimensionar el box usando el twip pair.
   Hacer un fraction pair usando el box y el picture's box.
   Non-destructively resize el picture usando el fraction pair.
 
@@ -10080,7 +10080,7 @@ Para abrir un file usando un path:
   Borrar el error de e/s.
   Extraer un directory desde el path.
   Si el directory es not in el file system, Poner "Directory '" then el directory then "' doesn't exist." into el error de e/s; salir.
-  Set el path to read-write mode.
+  Definir el path to read-write mode.
   Privatizar el path.
   Null terminate el path.
   Llamada "kernel32.dll" "CreateFileA" con el path's first and -1073741824 [generic_read+generic_write] and 0 and 0 and 4 [open_always] 
@@ -10405,8 +10405,8 @@ Para elegir  un color like another color:
   Elegir un number between -100 y 100.
   Agregar el number to el color's hue.
   Limitar el color's hue to 0 and 3599.
-  Set el color's saturation to something between 100 y 1000.
-  Set el color's lightness to something between 0 and 800.
+  Definir el color's saturation to something between 100 y 1000.
+  Definir el color's lightness to something between 0 and 800.
   Poner el color into el context's color.
 
 \Para elegir un color oscuro;
@@ -10575,7 +10575,7 @@ Para elegir  some twips between some min twips and some other twips; \ are all t
 Para elegir  un number between some min twips and some other twips;
 Para elegir  un number between un min number y un max number;
 Para elegir  un number desde un min number to un max number;
-Para set un number to something between another number y un third number;
+Para definir un number to something between another number y un third number;
 \Para elegir un número entre otro número y un tercer número;
 Para elegir  un random number between un min number y un max number:
   Poner el seed's whereabouts into eax.
@@ -10700,7 +10700,7 @@ Para post un data string to un url and receive un response string: \ only works 
   Borrar el error de e/s.
   Crear un winhttp request for posting to el url.
   Si el error de e/s es not blank, salir.
-  Send el data to el winhttp request.
+  Enviar el data to el winhttp request.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
   Receive el response desde el winhttp request.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
@@ -10848,7 +10848,7 @@ Para poner un box on un spot;
 \Para centrar una caja en un punto;
 Para centrar un box on un spot:
   Obtener un difference between el spot y el box's center.
-  Round el difference to el nearest multiple of el tpp.
+  Redondear el difference to el nearest multiple of el tpp.
   Mover el box usando el difference.
 
 Para poner un box some twips by some other twips in el center of another box;
@@ -11248,7 +11248,7 @@ Para poner el middle of un line on un spot;
 \Para centrar una línea en un punto;
 Para centrar un line on un spot:
   Obtener un difference between el spot y el line's center.
-  Round el difference to el nearest multiple of el tpp.
+  Redondear el difference to el nearest multiple of el tpp.
   Mover el line usando el difference.
 
 \Para poner el punto del mouse en un punto;
@@ -11357,7 +11357,7 @@ Para poner un picture on un spot;
 Para centrar un picture on un spot:
   Si el picture es nil, salir.
   Obtener un difference between el spot y el picture's box's center.
-  Round el difference to el nearest multiple of el tpp.
+  Redondear el difference to el nearest multiple of el tpp.
   Mover el picture usando el difference.
 
 Para poner un polygon in el middle of un box;
@@ -11377,7 +11377,7 @@ Para poner un polygon on un spot;
 Para centrar un polygon on un spot:
   Si el polygon es nil, salir.
   Obtener un difference between el spot y el polygon's box's center.
-  Round el difference to el nearest multiple of el tpp.
+  Redondear el difference to el nearest multiple of el tpp.
   Mover el polygon usando el difference.
 
 \Para poner una caja de polígono en una caja;
@@ -11470,7 +11470,7 @@ Para poner un roundy box into another roundy box:
 
 Para poner un row's working string into un substring:
   Si el row es nil, borrar el substring; salir.
-  Slap el substring on el row's string.
+  Colocar el substring on el row's string.
   Restar 1 desde el substring's last.
 
 Para poner un selection into another selection:
@@ -11523,8 +11523,8 @@ Para poner un string into un letter:
 Para poner un string into un text:
   Si el text es nil, salir.
   Destroy el text's rows.
-  Reset el origin of el text.
-  Reset el caret of el text.
+  Reiniciar el origin of el text.
+  Reiniciar el caret of el text.
   Deselect el text.
   Privatizar el string.
   Adjuntar el return byte to el string.
@@ -11614,7 +11614,7 @@ Para poner un text on un spot;
 Para centrar un text on un spot:
   Si el text es nil, salir.
   Obtener un difference between el spot y el text's box's center.
-  Round el difference to el nearest multiple of el tpp.
+  Redondear el difference to el nearest multiple of el tpp.
   Mover el text usando el difference.
 
 Para poner un text's first line into un string:
@@ -11669,7 +11669,7 @@ Para poner un text's selected byte count into un count:
   Lazo.
     Obtener un row desde el text's rows.
     Si el row es nil, salir.
-    Slap un substring on any selected bytes in el row of el text.
+    Colocar un substring on any selected bytes in el row of el text.
     Agregar el substring's length to el count.
   Repetir.
 
@@ -11815,7 +11815,7 @@ A quora es un thing con
 \Para citar una cadena;
 Para citar un string: \ inserts leading, trailing and nested double-quotes
   Poner el double-quote byte into another string.
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Lazo.
     Si el substring es blank, interrumpir.
     Adjuntar el substring's first's target to el other string.
@@ -11866,7 +11866,7 @@ Para leer el bible usando un path:
   Leer el path into un buffer.
   Si el error de e/s es not blank, salir.
   Allocate memory for el Bible.
-  Slap un rider on el buffer.
+  Colocar un rider on el buffer.
   Lazo.
     Si el rider's source es blank, salir.
     Allocate memory for un verse. Adjuntar el verse to el Bible's verses.
@@ -11887,7 +11887,7 @@ Para leer un console into un string:
   Si el console es nil, borrar el string; salir.
   Descartar todos los events.
   Borrar el console's reply.
-  Show el console.
+  Mostrar el console.
   Handle events usando el console.
   Poner el console's reply into el string.
   Descartar todos los events.
@@ -11950,7 +11950,7 @@ Para leer un reply desde un terminal:
   Agregar un quora to el terminal.
   Poner "> " into el quora's string.
   Poner el terminal's input color into el quora's color.
-  Show el terminal.
+  Mostrar el terminal.
   Handle events usando el terminal.
 \  show el terminal.
   Poner el terminal's reply into el reply.
@@ -12040,7 +12040,7 @@ Para reassign un pointer usando un byte count:
   Si el pointer es nil, assign el pointer usando el byte count; salir.
   Si el byte count es 0, unassign el pointer; salir.
   Privatizar el byte count.
-  Round el byte count up to el nearest power of two.
+  Redondear el byte count up to el nearest power of two.
   Llamada "kernel32.dll" "HeapReAlloc" con el heap pointer and 8 [heap_zero_memory] y el pointer y el byte count retornando el pointer.
 
 Para receive un buffer desde un socket:
@@ -12124,9 +12124,9 @@ Para actualizar el cursor:
   Crear un event.
   Poner "set cursor" into el event's kind.
   Poner "cursor" into el event's clase.
-  Si el alt key es down, set el event's alt flag.
-  Si el ctrl key es down, set el event's ctrl flag.
-  Si el shift key es down, set el event's shift flag.
+  Si el alt key es down, definir el event's alt flag.
+  Si el ctrl key es down, definir el event's ctrl flag.
+  Si el shift key es down, definir el event's shift flag.
   Poner el mouse's spot into el event's spot.
   Enque el event.
 
@@ -12149,12 +12149,12 @@ Para recordar un text:
   Scale el other text to 1/1.
   Adjuntar el other text to el text's undos.
   Limitar el text's undos to el max text undos.
-  Set el text's modified flag.
+  Definir el text's modified flag.
 
 \Para recordar un texto con una operación;
 Para recordar un text con un operation:
   Si el text es nil, salir.
-  Si el text's last operation es el operation, set el text's modified flag; salir.
+  Si el text's last operation es el operation, definir el text's modified flag; salir.
   Recordar el text.
   Poner el operation into el text's last operation.
 
@@ -12169,10 +12169,10 @@ Para eliminar any selected bytes in un text:
   Poner el text's selection into un selection.
   Normalizar el selection.
   Obtener un row usando el selection's anchor row# y el text.
-  Slap un substring on el row's string.
+  Colocar un substring on el row's string.
   Poner el substring's first plus el selection's anchor column# minus 2 into el substring's last.
   Obtener another row usando el selection's caret row# y el text.
-  Slap another substring on el other row's string.
+  Colocar another substring on el other row's string.
   Poner el other substring's first plus el selection's caret column# minus 1 into el other substring's first.
   Poner el substring then el other substring into el row's string.
   Eliminar el rows of el text between el row's next y el other row.
@@ -12254,12 +12254,12 @@ Para eliminar every byte in un text:
 
 \Para eliminar el primer byte de una cadena;
 Para eliminar el first byte desde un string:
-  Slap un substring on el first byte of el string.
+  Colocar un substring on el first byte of el string.
   Eliminar bytes desde el string usando el substring.
 
 Para eliminar el último byte en un cadena; 
 Para eliminar el last byte desde un string:
-  Slap un substring on el last byte of el string.
+  Colocar un substring on el last byte of el string.
   Eliminar bytes desde el string usando el substring.
 
 \Para eliminar los dos últimos bytes de una cadena;
@@ -12270,16 +12270,16 @@ Para eliminar el last two bytes desde un string:
 Para eliminar leading bytes desde un string usando un count:
   Privatizar el count.
   Si el count es greater than el string's length, borrar el string; salir.
-  Slap un substring on el first byte of el string.
+  Colocar un substring on el first byte of el string.
   Poner el substring's first plus el count minus 1 into el substring's last.
   Eliminar bytes desde el string usando el substring.
 
 \Para eliminar el ruido iniciales de una cadena;
 \Para eliminar leading noise desde un string;
 Para eliminar any leading noise desde un string:
-  Si el string es blank, salir.
-  Si el string's first's target es not noise, salir.
-  Eliminar el first byte desde el string.
+    Si el string es blank, salir.
+    Si el string's first's target es not noise, salir.
+    Eliminar el first byte desde el string.
   Repetir.
 
 Para eliminar el rows of un text between un row and another row:
@@ -12290,11 +12290,11 @@ Para eliminar el rows of un text between un row and another row:
   Privatizar el row.
   Poner el other row's next into un stop row.
   Lazo.
-  Si el row es el stop row, interrumpir.
-  Poner el row's next into un next row.
-  Eliminar el row desde el text's rows.
-  Destroy el row.
-  Poner el next row into el row.
+    Si el row es el stop row, interrumpir.
+    Poner el row's next into un next row.
+    Eliminar el row desde el text's rows.
+    Destroy el row.
+    Poner el next row into el row.
   Repetir.
   Renumber el text's rows.
 
@@ -12312,19 +12312,19 @@ Para eliminar un thing desde some things:
 Para eliminar trailing bytes desde un string usando un count:
   Privatizar el count.
   Si el count es greater than el string's length, borrar el string; salir.
-  Slap un substring on el last byte of el string.
+  Colocar un substring on el last byte of el string.
   Poner el substring's last minus el count plus 1 into el substring's first.
   Eliminar bytes desde el string usando el substring.
 
 \Para eliminar el ruido al final de una cadena;
 \Para eliminar trailing noise desde un string;
 Para eliminar any trailing noise desde un string:
-  Si el string es blank, salir.
-  Si el string's last's target es not noise, salir.
-  Eliminar el last byte desde el string.
+    Si el string es blank, salir.
+    Si el string's last's target es not noise, salir.
+    Eliminar el last byte desde el string.
   Repetir.
 
-Para cambiar el nombre de una ruta a otra ruta en el sistema de archivos:
+\Para cambiar el nombre de una ruta a otra ruta en el sistema de archivos;
 Para rename un path to another path in el file system:
   Privatizar el path.
   Eliminar any trailing backslash desde el path.
@@ -12338,76 +12338,77 @@ Para rename un path to another path in el file system:
   Poner "Error renombrando archivo '" then el path then "'." into el error de e/s.
 
 Para renumber some rows:
-  Obtener un row desde el rows.
-  Si el row es nil, salir.
-  Agregar 1 to un row#.
-  Poner el row# into el row's row#.
+    Obtener un row desde el rows.
+    Si el row es nil, salir.
+    Agregar 1 to un row#.
+    Poner el row# into el row's row#.
   Repetir.
 
 \Para reemplazar un byte con otro byte en una cadena;
-Para replace un byte con another byte in un string:
-  Slap un substring on el string.
+Para reemplazar un byte con another byte in un string:
+  Colocar un substring on el string.
   Lazo.
-  Si el substring es blank, salir.
-  Si el substring's first's target es not el byte, Agregar 1 to el substring's first; repetir.
-  Poner el other byte into el substring's first's target.
-  Agregar 1 to el substring's first.
+    Si el substring es blank, salir.
+    Si el substring's first's target es not el byte, Agregar 1 to el substring's first; repetir.
+    Poner el other byte into el substring's first's target.
+    Agregar 1 to el substring's first.
   Repetir.
 
 The reply es un reply.
 
 A reply es un string.
 
+\Para volver a poner en cola un event
 Para reque un event:
   Copiar el event into another event.
   Enque el other event.
 
 \Para restablecer el alfabeto;
-Para reset el alphabet:
+Para reiniciar el alphabet:
   Poner el big-a byte into el next letter.
 
-Para reset el caret of un text:
+Para reiniciar el caret of un text:
   Si el text es nil, salir.
   Poner 1 y 1  into el text's caret.
 
-Para reset el context:
+Para reiniciar el context:
   Restore el context.
   Save el context.
 
 \Para restablecer un conteo;
-Para reset un count:
+Para reiniciar un count:
   Poner 0 into el count.
 
-Para reset el drawing origin:
-  Set el drawing origin to el zero spot.
+Para reiniciar el drawing origin:
+  Definir el drawing origin to el zero spot.
 
-Para reset un flag:
+Para reiniciar un flag:
   Borrar el flag.
 
-Para reset el origin of un text:
+Para reiniciar el origin of un text:
   Si el text es nil, salir.
   Poner el text's margin into el text's x-coord.
   Poner 0 into el text's y-coord.
 
 \Para borrar un puntero;
-\Para reset un pointer;
-\Para reset un pointer for el next time around;
+Para reiniciar un pointer;
+Para reiniciar un pointer for el next time around;
 Para void un pointer:
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el pointer
   Intel $C70000000000. \ mov [eax],0
 
 \Para restablecer los colores del arco iris;
-Para reset el rainbow colors:
+Para reiniciar el rainbow colors:
   Poner 0 into el current rainbow color number.
 
 \Para restablecer un temporizador;
-Para reset un timer:
+Para reiniciar un timer:
   Poner 0 into el timer's count.
   Poner 0 into el timer's start ticks.
   Poner 0 into el timer's total ticks.
 
-\Para resize un box usando un ratio pair;
-Para resize un box usando un fraction pair:
+Para redimensionar un box usando un ratio pair;
+Para redimensionar un box usando un fraction pair:
   Poner el box's x-extent into un width.
   Poner el box's y-extent into un height.
   Scale el width usando el fraction pair's fraction.
@@ -12415,19 +12416,19 @@ Para resize un box usando un fraction pair:
   Poner el box's left plus el width into el box's right.
   Poner el box's top plus el height into el box's bottom.
 
-Para resize un box usando un twip pair:
+Para redimensionar un box usando un twip pair:
   Agregar el twip pair's x-number to el box's right.
   Agregar el twip pair's y-number to el box's bottom.
 
-\Para resize un ellipse usando un ratio pair;
-Para resize un ellipse usando un fraction pair:
-  Resize el ellipse's box usando el fraction pair.
+Para redimensionar un ellipse usando un ratio pair;
+Para redimensionar un ellipse usando un fraction pair:
+  Redimensionar el ellipse's box usando el fraction pair.
 
-Para resize un ellipse usando un twip pair:
-  Resize el ellipse's box usando el twip pair.
+Para redimensionar un ellipse usando un twip pair:
+  Redimensionar el ellipse's box usando el twip pair.
 
-\Para resize un line usando un ratio pair;
-Para resize un line usando un fraction pair:
+Para redimensionar un line usando un ratio pair;
+Para redimensionar un line usando un fraction pair:
   Poner el line's box into un box.
   Restar el box's left-top desde el line's start.
   Scale el line's start usando el fraction pair.
@@ -12436,15 +12437,15 @@ Para resize un line usando un fraction pair:
   Scale el line's end usando el fraction pair.
   Agregar el box's left-top to el line's end.
 
-Para resize un line usando un twip pair:
+Para redimensionar un line usando un twip pair:
   Poner el line's box into un box.
   Poner el box into another box.
-  Resize el other box usando el twip pair.
+  Redimensionar el other box usando el twip pair.
   Hacer un fraction pair usando el other box y el box.
-  Resize el line usando el fraction pair.
+  Redimensionar el line usando el fraction pair.
 
 \Para redimensionar una imagen usando un ancho y una altura;
-Para resize un picture to un width by un height:
+Para redimensionar un picture to un width by un height:
   Si el picture es nil, salir.
   Poner el width divided by el tpp into un pixel width.
   Poner el height divided by el tpp into un pixel height.
@@ -12460,35 +12461,35 @@ Para resize un picture to un width by un height:
   Ajustar el picture (extract boxes desde gpbitmap).
   Borrar el picture's data.
 
-\Para resize un polygon usando un ratio pair;
-Para resize un polygon usando un fraction pair:
+\Para redimensionar un polygon usando un ratio pair;
+Para redimensionar un polygon usando un fraction pair:
   Si el polygon es nil, salir.
   Poner el polygon's box into un box.
   Lazo.
-  Obtener un vertex desde el polygon's vertices.
-  Si el vertex es nil, salir.
-  Restar el box's left-top desde el vertex's spot.
-  Scale el vertex's spot usando el fraction pair.
-  Agregar el box's left-top to el vertex's spot.
+    Obtener un vertex desde el polygon's vertices.
+    Si el vertex es nil, salir.
+    Restar el box's left-top desde el vertex's spot.
+    Scale el vertex's spot usando el fraction pair.
+    Agregar el box's left-top to el vertex's spot.
   Repetir.
 
-Para resize un polygon usando un twip pair:
+Para redimensionar un polygon usando un twip pair:
   Si el polygon es nil, salir.
   Poner el polygon's box into un box.
   Poner el box into another box.
-  Resize el other box usando el twip pair.
+  Redimensionar el other box usando el twip pair.
   Hacer un fraction pair usando el other box y el box.
-  Resize el polygon usando el fraction pair.
+  Redimensionar el polygon usando el fraction pair.
 
-\Para resize un text usando un ratio pair;
-Para resize un text usando un fraction pair:
+\Para redimensionar un text usando un ratio pair;
+Para redimensionar un text usando un fraction pair:
   Si el text es nil, salir.
-  Resize el text's box usando el fraction pair.
+  Redimensionar el text's box usando el fraction pair.
   Wrap el text.
 
-Para resize un text usando un twip pair:
+Para redimensionar un text usando un twip pair:
   Si el text es nil, salir.
-  Resize el text's box usando el twip pair.
+  Redimensionar el text's box usando el twip pair.
   Wrap el text.
 
 \Para reiniciar un temporizador;
@@ -12532,7 +12533,7 @@ Para reverse un color:
 \Put 1000 minus el color's saturation into el color's saturation.
   Agregar 1800 to el color's hue. Normalizar el color's hue.
 
-\Para invert un flag;
+Para invert un flag;
 Para reverse un flag:
   Si el flag es 1, Poner 0 into el flag; salir.
   Poner 1 into el flag.
@@ -12546,30 +12547,30 @@ Para reverse un string: \ could be more efficient
   Privatizar el string.
   Borrar el original string.
   Lazo.
-  Si el string es blank, interrumpir.
-  Obtener un character desde el string (backwards).
-  Adjuntar el character to el original string.
+    Si el string es blank, interrumpir.
+    Obtener un character desde el string (backwards).
+    Adjuntar el character to el original string.
   Repetir.
 
 Para reverse some things:
   Swap el things con some other things.
   Lazo.
-  Poner el other things' last into un thing.
-  Si el thing es nil, salir.
-  Mover el thing desde el other things to el things.
+    Poner el other things' last into un thing.
+    Si el thing es nil, salir.
+    Mover el thing desde el other things to el things.
   Repetir.
 
 A rgb es un record con
-A byte called blue byte,
-A byte called green byte,
-A byte called red byte.
+  A byte called blue byte,
+  A byte called green byte,
+  A byte called red byte.
 
 A rgb pointer es un pointer to un rgb.
 
-A rider es un record con \ fix "bump un rider" and "unbump un rider" if you cambiar me
-An original substring, una subcadena primera at el original substring,
-A source substring, una subcadena fuente at el source substring and
-A token substring, una subcadena componente at el token substring.
+A rider es un record con \ Note: You will need to refactor the "bump a rider" and "unbump a rider" routines if you change the order of the fields of this record
+  An original substring, una subcadena primera at el original substring,
+  A source substring, una subcadena fuente at el source substring and
+  A token substring, una subcadena componente at el token substring.
 
 The right-alligator byte es un byte igual to 62.
 
@@ -12595,7 +12596,7 @@ A rise es un number.
 A run es un number.
 
 \Para rotar una caja;
-Para rotate un box:
+Para rotar un box:
   Poner el box's center into un center spot.
   Poner el box into another box.
   Poner el center's y-coord minus el other box's top plus el center's x-coord into el box's right.
@@ -12604,14 +12605,14 @@ Para rotate un box:
   Poner el other box's right minus el center's x-coord plus el center's y-coord into el box's bottom.
 
 \Para rotar una elipse;
-Para rotate un ellipse:
-  Rotate el ellipse's box.
+Para rotar un ellipse:
+  Rotar el ellipse's box.
 
-Para rotate un gpimage:
+Para rotar un gpimage:
   Si el gpimage es nil, salir.
   Llamada "gdiplus.dll" "GdipImageRotateFlip" con el gpimage y 1  [rotate90flipnone].
 
-Para rotate un gpimage usando un angle: \ angle can be 0, 900, 1800, 2700
+Para rotar un gpimage usando un angle: \ angle can be 0, 900, 1800, 2700
   Si el gpimage es nil, salir.
   Poner 0 [rotatenoneflipnone] into un number.
   Si el angle es 900, Poner 1 [rotate90flipnone] into el number.
@@ -12620,19 +12621,19 @@ Para rotate un gpimage usando un angle: \ angle can be 0, 900, 1800, 2700
   Llamada "gdiplus.dll" "GdipImageRotateFlip" con el gpimage y el number.
 
 \Para rotar una línea;
-Para rotate un line:
+Para rotar un line:
   Poner el line's center into un center spot.
-  Rotate el line's start around el center.
-  Rotate el line's end around el center.
+  Rotar el line's start around el center.
+  Rotar el line's end around el center.
 
 \Para rotar una imagen;
-Para rotate un picture:
+Para rotar un picture:
   Si el picture es nil, salir.
   Agregar 900 to el picture's rotate angle.
   Si el picture's mirror flag es set, Agregar 1800 to el picture's rotate angle.
   Normalizar el picture's rotate angle.
-  Rotate el picture's box.
-  Rotate el picture's uncropped box.
+  Rotar el picture's box.
+  Rotar el picture's uncropped box.
   Poner el picture's box's center into un center spot.
   Poner el picture's uncropped box's center into another center spot.
   Poner el center's y-coord minus el other center's y-coord plus el center's x-coord into un twip pair's x-number.
@@ -12640,52 +12641,52 @@ Para rotate un picture:
   Poner el center's y-coord plus el other center's x-coord minus el center's x-coord into el twip pair's y-number.
   Restar el other center's y-coord desde el twip pair's y-number.
   Mover el picture's uncropped box usando el twip pair.
-  Rotate el picture's gpbitmap.
+  Rotar el picture's gpbitmap.
 
 \Para rotar un polígono;
-Para rotate un polygon:
+Para rotar un polygon:
   Si el polygon es nil, salir.
   Poner el polygon's center into un center spot.
   Lazo.
-  Obtener un vertex desde el polygon's vertices.
-  Si el vertex es nil, salir.
-  Rotate el vertex's spot around el center.
+    Obtener un vertex desde el polygon's vertices.
+    Si el vertex es nil, salir.
+    Rotar el vertex's spot around el center.
   Repetir.
 
 \Para rotar un punto alrededor de un punto central;
-Para rotate un spot around un center spot:
+Para rotar un spot around un center spot:
   Poner el spot into another spot.
   Poner el center's y-coord minus el other spot's y-coord plus el center's x-coord into el spot's x-coord.
   Poner el other spot's x-coord minus el center's x-coord plus el center's y-coord into el spot's y-coord.
 
 \Para rotar un texto;
-Para rotate un text:
+Para rotar un text:
   Si el text es nil, salir.
-  Rotate el text's box.
+  Rotar el text's box.
   Wrap el text.
 
 \Para redondear un número a otro número;
-Para round un number to another number: 
-  Round el number to el nearest multiple of el other number.
+Para redondear un number to another number: 
+  Redondear el number to el nearest multiple of el other number.
 
-Para round un number down to el nearest multiple of another number:
+Para redondear un number down to el nearest multiple of another number:
   Dividir el number by el other number.
   Multiplicar el number by el other number.
 
-Para round un number to el nearest multiple of another number:
+Para redondear un number to el nearest multiple of another number:
   Si el other number es 0, salir.
   Privatizar el other number.
   Dividir el number by el other number giving un quotient y un remainder.
   Dividir el other number by 2.
-  Si el remainder es greater than or igual to el other number, round el number up to el nearest multiple of el original other number; salir.
-  Round el number down to el nearest multiple of el original other number.
+  Si el remainder es greater than or igual to el other number, redondear el number up to el nearest multiple of el original other number; salir.
+  Redondear el number down to el nearest multiple of el original other number.
 
-Para round un number up to el nearest multiple of another number:
+Para redondear un number up to el nearest multiple of another number:
   Dividir el number by el other number giving un quotient y un remainder.
   Si el remainder es 0, salir.
   Agregar el other number minus el remainder to el number.
 
-Para round un number up to el nearest power of two:
+Para redondear un number up to el nearest power of two:
   Intel $8B8D08000000. \ mov ecx,[ebp+8] \ el number
   Intel $8B09. \ mov ecx,[ecx]
   Intel $49. \ dec ecx
@@ -12698,24 +12699,28 @@ Para round un number up to el nearest power of two:
   Intel $C70001000000. \ mov [eax],1
   Intel $D320. \ shl [eax],ecx
 
-Para round un pair to another pair:
-  Round el pair to el nearest multiple of el other pair.
+Para redondear un pair to another pair:
+  Redondear el pair to el nearest multiple of el other pair.
 
-Para round un pair to el nearest multiple of another pair:
-  Round el pair's x-number to el nearest multiple of el other pair's x-number.
-  Round el pair's y-number to el nearest multiple of el other pair's y-number.
+Para redondear un pair to el nearest multiple of another pair:
+  Redondear el pair's x-number to el nearest multiple of el other pair's x-number.
+  Redondear el pair's y-number to el nearest multiple of el other pair's y-number.
 
-Para round un pair to el nearest multiple of un number:
-  Round el pair's x-number to el nearest multiple of el number.
-  Round el pair's y-number to el nearest multiple of el number.
+Para redondear un pair to el nearest multiple of un number:
+  Redondear el pair's x-number to el nearest multiple of el number.
+  Redondear el pair's y-number to el nearest multiple of el number.
 
-Para round un pair to un number:
-  Round el pair to el nearest multiple of el number.
+Para redondear un pair to un number:
+  Redondear el pair to el nearest multiple of el number.
 
 A roundy box es un box con
-A left coord, un top coord, un right coord, un bottom coord,
-A left-top spot at el left, un right-bottom spot at el right, and 
-A radius.
+  A left coord, 
+  A top coord, 
+  A right coord, 
+  A bottom coord,
+  A left-top spot at el left, 
+  Un right-bottom spot at el right, and 
+  A radius.
 
 A row es un thing con un row# y un string.
 
@@ -12742,13 +12747,12 @@ The saved memory hbitmap es un hbitmap.
 The saved tpp es un number.
 
 \Para hablar un número;
-Para diga un number:
+Para hablar un number:
   Poner el number into un string.
   Diga el string.
 
-\Para diga un string;
 \Para hablar una cadena;
-Para speak un string:
+Para hablar un string:
   Si el silent flag es set, salir.
   Si la bandera silenciosa es set, salir.
   Si el talker es nil, salir.
@@ -12757,9 +12761,9 @@ Para speak un string:
   Null terminate el wide string.
   Llamada el talker's vtable's speak con el talker y el wide string's first y 17 [svsfdefault+svsflagsasyn+svsfisnotxml] and 0.
 
-\Para diga un string and wait;
+Para hablar un string y esperar;
 \Para hablar una cadena y esperar;
-Para speak un string and wait:
+Para hablar un string and wait:
   Si el silent flag es set, salir.
   Si la bandera silenciosa es set, salir.
   Si el talker es nil, salir.
@@ -12768,7 +12772,7 @@ Para speak un string and wait:
   Null terminate el wide string.
   Llamada el talker's vtable's speak con el talker y el wide string's first y 16 [svsfdefault+svsfisnotxml] and 0.
 
-\Para scale un box usando un ratio;
+Para scale un box usando un ratio;
 Para scale un box usando un fraction:
   Si el fraction es 1/1, salir.
   Scale el box's left usando el fraction.
@@ -12780,7 +12784,7 @@ Para scale un box to un percent:
   Poner el percent / 100 into un fraction.
   Scale el box usando el fraction.
 
-\Para scale un ellipse usando un ratio;
+Para scale un ellipse usando un ratio;
 Para scale un ellipse usando un fraction:
   Si el fraction es 1/1, salir.
   Scale el ellipse's box usando el fraction.
@@ -12789,18 +12793,18 @@ Para scale un ellipse to un percent:
   Poner el percent / 100 into un fraction.
   Scale el ellipse usando el fraction.
 
-\Para scale un font usando un ratio;
+Para scale un font usando un ratio;
 Para scale un font usando un fraction:
   Si el fraction es 1/1, salir.
   Scale el font's height usando el fraction.
 
-\Para scale un fraction usando another fraction;
+Para scale un fraction usando another fraction;
 Para multiplicar un fraction by another fraction:
   Multiplicar el fraction's numerator by el other fraction's numerator.
   Multiplicar el fraction's denominator by el other fraction's denominator.
   Reducir el fraction.
 
-\Para scale un line usando un ratio;
+Para scale un line usando un ratio;
 Para scale un line usando un fraction:
   Si el fraction es 1/1, salir.
   Scale el line's start usando el fraction.
@@ -12810,13 +12814,13 @@ Para scale un line to un percent:
   Poner el percent / 100 into un fraction.
   Scale el line usando el fraction.
 
-\Para scale un pair usando un ratio;
+Para scale un pair usando un ratio;
 Para scale un pair usando un fraction:
   Si el fraction es 1/1, salir.
   Scale el pair's x-number usando el fraction.
   Scale el pair's y-number usando el fraction.
 
-\Para scale un pair usando un ratio pair;
+Para scale un pair usando un ratio pair;
 Para scale un pair usando un fraction pair:
   Scale el pair's x-number usando el fraction pair's fraction.
   Scale el pair's y-number usando el fraction pair's other fraction.
@@ -12825,7 +12829,7 @@ Para scale un pair to un percent:
   Poner el percent / 100 into un fraction.
   Scale el pair usando el fraction.
 
-\Para scale un picture usando un ratio;
+Para scale un picture usando un ratio;
 Para scale un picture usando un fraction:
   Si el picture es nil, salir.
   Si el fraction es 1/1, salir.
@@ -12837,14 +12841,14 @@ Para scale un picture to un percent:
   Poner el percent / 100 into un fraction.
   Scale el picture usando el fraction.
 
-\Para scale un polygon usando un ratio;
+Para scale un polygon usando un ratio;
 Para scale un polygon usando un fraction:
   Si el polygon es nil, salir.
   Si el fraction es 1/1, salir.
   Lazo.
-  Obtener un vertex desde el polygon's vertices.
-  Si el vertex es nil, salir.
-  Scale el vertex usando el fraction.
+    Obtener un vertex desde el polygon's vertices.
+    Si el vertex es nil, salir.
+    Scale el vertex usando el fraction.
   Repetir.
 
 Para scale un polygon to un percent:
@@ -12852,7 +12856,7 @@ Para scale un polygon to un percent:
   Poner el percent / 100 into un fraction.
   Scale el polygon usando el fraction.
 
-\Para scale un roundy box usando un ratio;
+Para scale un roundy box usando un ratio;
 Para scale un roundy box usando un fraction:
   Si el fraction es 1/1, salir.
   Scale el roundy box as un box usando el fraction.
@@ -12869,7 +12873,7 @@ Para scale un text to un fraction: \ absolute
   Multiplicar el other fraction by el fraction.
   Scale el text usando el other fraction.
 
-\Para scale un text usando un ratio;
+Para scale un text usando un ratio;
 Para scale un text usando un fraction:
   Si el text es nil, salir.
   Si el fraction es 1/1, salir.
@@ -12883,7 +12887,7 @@ Para scale un text to un percent:
   Poner el percent / 100 into un fraction.
   Scale el text usando el fraction.
 
-\Para scale un vertex usando un ratio;
+Para scale un vertex usando un ratio;
 Para scale un vertex usando un fraction:
   Si el vertex es nil, salir.
   Si el fraction es 1/1, salir.
@@ -12898,13 +12902,13 @@ Para scroll un console usando un event:
   Si el console es nil, salir.
   Encontrar un sector usando el console's grid y el event's spot.
   Lazo.
-  Si el mouse's right button es up, salir.
-  Encontrar another sector usando el console's grid y el mouse's spot.
-  Obtener un difference between el other sector y el sector.
-  Si el difference es 0, repetir.
-  Scroll el console's text usando el difference.
-  Show el console.
-  Agregar el difference to el sector.
+    Si el mouse's right button es up, salir.
+    Encontrar another sector usando el console's grid y el mouse's spot.
+    Obtener un difference between el other sector y el sector.
+    Si el difference es 0, repetir.
+    Scroll el console's text usando el difference.
+    Mostrar el console.
+    Agregar el difference to el sector.
   Repetir.
 
 Para scroll un text to el bottom:
@@ -12933,7 +12937,7 @@ Para scroll un text to el caret and center it:
   Si el box es inside el text's box, salir.
   Ajustar el box usando 0 and - el tpp and 0 y el tpp. \ caret boxes don't fill entire row
   Poner el text's box's y-extent divided by 2 into un height.
-  Round el height down to el nearest multiple of el text's row height.
+  Redondear el height down to el nearest multiple of el text's row height.
   Poner el text's box's top plus el height into un top coord.
   Poner el top plus el text's row height into un bottom coord.
   Si el box's top es less than el top, Poner el top minus el box's top into un difference's y-number.
@@ -12997,12 +13001,12 @@ A sector es un pair con un x-coord y un y-coord [indicating el left-top of el se
 The seed es un number.
 
 \Para seleccionar cada byte en un texto;
-Para select every byte in un text:
+Para seleccionar every byte in un text:
   Si el text es nil, salir.
   Poner 1 y 1  into el text's anchor.
   Poner el text's rows' last's string's length y el text's row count into el text's caret.
 
-Para select un row# usando un text:
+Para seleccionar un row# usando un text:
   Si el text es nil, salir.
   Obtener un row usando el row# y el text.
   Si el row es nil, salir.
@@ -13014,29 +13018,33 @@ Para select un row# usando un text:
 A selection box es un box.
 
 A selection es un record con 
-An anchor column#, un anchor row#, un anchor at el anchor column#,
-A caret column#, un caret row#, un caret at el caret column#.
+  An anchor column#, 
+  An anchor row#, 
+  An anchor at el anchor column#,
+  A caret column#, 
+  An caret row#, 
+  An caret at el caret column#.
 
 The semi-colon byte es un byte igual to 59.
 
-Para send un buffer to un socket:
+Para enviar un buffer to un socket:
   Borrar el error de e/s.
   Poner el buffer's first into un pointer.
   Poner el buffer's length into un length.
   Lazo.
-  Si el length es 0, interrumpir.
-  Llamada "ws2_32.dll" "send" con el socket y el pointer y el length and 0 retornando un number.
-  Si el number es -1 [socket_error], Poner "Error enviando datos." into el error de e/s; salir.
-  Restar el number desde el length.
-  Agregar el number to el pointer.
+    Si el length es 0, interrumpir.
+    Llamada "ws2_32.dll" "send" con el socket y el pointer y el length and 0 retornando un number.
+    Si el number es -1 [socket_error], Poner "Error enviando datos." into el error de e/s; salir.
+    Restar el number desde el length.
+    Agregar el number to el pointer.
   Repetir.
 
-Para send un data string to un winhttp request:
+Para enviar un data string to un winhttp request:
   Si el winhttp request es nil, salir.
   Llamada "winhttp.dll" "WinHttpSendRequest"
   con el winhttp request's request
-  And 0 [winhttp_no_additional_headers]
-  And 0 
+  y 0 [winhttp_no_additional_headers]
+  y 0 
   y el data's first
   y el data's length
   y el data's length
@@ -13044,7 +13052,7 @@ Para send un data string to un winhttp request:
   retornando un result number.
   Si el result es 0, Poner "No pude enviar el pedido." into el error de e/s; salir.
 
-Para send un email:
+Para enviar un email:
   Borrar el error de e/s.
 \ crear socket
   Crear un socket usando el email's smtp server and 25.
@@ -13054,19 +13062,19 @@ Para send un email:
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts con "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send HELO
-  Send "HELO " then el module's name then el crlf string to el socket and receive el response string.
+  Enviar "HELO " then el module's name then el crlf string to el socket and receive el response string.
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts con "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send MAIL FROM: <xxx>
-  Send "MAIL FROM: <" then el email's sender then ">" then el crlf string to el socket and receive el response string.
+  Enviar "MAIL FROM: <" then el email's sender then ">" then el crlf string to el socket and receive el response string.
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts con "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send RCPT TO: <xxx>
-  Send "RCPT TO: <" then el email's recipient then ">" then el crlf string to el socket and receive el response string.
+  Enviar "RCPT TO: <" then el email's recipient then ">" then el crlf string to el socket and receive el response string.
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts con "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send DATA
-  Send "DATA" then el crlf string to el socket and receive el response string.
+  Enviar "DATA" then el crlf string to el socket and receive el response string.
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts con "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send From: xxx crlf To: xxx crlf Subject: xxx crlf Reply-To: xxx crlf message crlf . crlf
@@ -13078,69 +13086,69 @@ Para send un email:
   Adjuntar el crlf string to el temp string.
   Adjuntar el email's message to el temp string (handling email transparency).
   Adjuntar el crlf string then "." then el crlf string to el temp string.
-  Send el temp string to el socket and receive el response string.
+  Enviar el temp string to el socket and receive el response string.
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts con "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send QUIT
-  Send "QUIT" then el crlf string to el socket.
+  Enviar "QUIT" then el crlf string to el socket.
 \ destroy socket
   Destroy el socket.
 
-Para send un message desde un sender to un recipient:
-  Send el message to el recipient desde el sender.
+Para enviar un message desde un sender to un recipient:
+  Enviar el message to el recipient desde el sender.
 
-Para send un message desde un sender to un recipient via un smtp server:
-  Send el message to el recipient desde el sender via el smtp server.
+Para enviar un message desde un sender to un recipient via un smtp server:
+  Enviar el message to el recipient desde el sender via el smtp server.
 
-Para send un message desde un sender to un recipient con un subject:
-  Send el message to el recipient desde el sender con el subject.
+Para enviar un message desde un sender to un recipient con un subject:
+  Enviar el message to el recipient desde el sender con el subject.
 
-Para send un message desde un sender to un recipient con un subject via un smtp server:
-  Send el message to el recipient desde el sender con el subject via el smtp server.
+Para enviar un message desde un sender to un recipient con un subject via un smtp server:
+  Enviar el message to el recipient desde el sender con el subject via el smtp server.
 
-Para send un message to un recipient desde un sender:
+Para enviar un message to un recipient desde un sender:
   Poner el default smtp server into un email's smtp server.
   Poner el recipient into el email's recipient.
   Poner el sender into el email's sender.
   Poner el message into el email's message.
-  Send el email.
+  Enviar el email.
 
-Para send un message to un recipient desde un sender via un smtp server:
+Para enviar un message to un recipient desde un sender via un smtp server:
   Poner el smtp server into un email's smtp server.
   Poner el recipient into el email's recipient.
   Poner el sender into el email's sender.
   Poner el message into el email's message.
-  Send el email.
+  Enviar el email.
 
-Para send un message to un recipient desde un sender con un subject:
+Para enviar un message to un recipient desde un sender con un subject:
   Poner el default smtp server into un email's smtp server.
   Poner el recipient into el email's recipient.
   Poner el sender into el email's sender.
   Poner el subject into el email's subject.
   Poner el message into el email's message.
-  Send el email.
+  Enviar el email.
 
-Para send un message to un recipient desde un sender con un subject via un smtp server:
+Para enviar un message to un recipient desde un sender con un subject via un smtp server:
   Poner el smtp server into un email's smtp server.
   Poner el recipient into el email's recipient.
   Poner el sender into el email's sender.
   Poner el subject into el email's subject.
   Poner el message into el email's message.
-  Send el email.
+  Enviar el email.
 
-Para send un string to un socket and receive un response string:
+Para enviar un string to un socket and receive un response string:
   Borrar el response string.
-  Send el string to el socket.
+  Enviar el string to el socket.
   Si el error de e/s es not blank, salir.
   Receive el response string desde el socket.
 
 A sender es un string.
 
-Para set el colorref of un canvas usando un color:
+Para definir el colorref of un canvas usando un color:
   Convertir el color to un colorref.
   Llamada "gdi32.dll" "SetTextColor" con el canvas y el colorref.
 
-Para set el drawing origin to un spot:
+Para definir el drawing origin to un spot:
   Llamada "gdi32.dll" "GetDeviceCaps" con el current canvas y 112 [physicaloffsetx] retornando un pair's x-number.
   Llamada "gdi32.dll" "GetDeviceCaps" con el current canvas y 113 [physicaloffsety] retornando el pair's y-number.
   Negar el pair.
@@ -13151,10 +13159,10 @@ Para set el drawing origin to un spot:
   Llamada "gdi32.dll" "SetViewportOrgEx" con el current canvas y el spot's x-coord y el spot's y-coord and nil.
 
 \Para elevar una bandera;
-Para set un flag:
+Para definir un flag:
   Poner 1 into el flag. \ was "Put yes into el flag." Value of yes inherited desde el CAL-1000 according to Dan.
 
-Para set un path to read-write mode:
+Para definir un path to read-write mode:
   Privatizar el path.
   Null terminate el path.
   Llamada "kernel32.dll" "GetFileAttributesA" con el path's first retornando un number.
@@ -13170,14 +13178,14 @@ The sharp-s byte es un byte igual to 223.
 A sheet es un box.
 
 \Para desplazar un byte hacia la izquierda algunos bits;
-Para shift un byte left some bits:
+Para desplazar un byte left some bits:
   Intel $8B8D0C000000. \ mov ecx,[ebp+12] \ el bits
   Intel $8B09. \ mov ecx,[ecx]
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el byte
   Intel $D220. \ shl byte pointer [eax],ecx
 
 \Para desplazar un byte hacia la derecha algunos bits;
-Para shift un byte right some bits:
+Para desplazar un byte right some bits:
   Intel $8B8D0C000000. \ mov ecx,[ebp+12] \ el bits
   Intel $8B09. \ mov ecx,[ecx]
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el byte
@@ -13186,28 +13194,28 @@ Para shift un byte right some bits:
 The shift key es un key igual to 16.
 
 \Para desplazar un número hacia la izquierda algunos bits;
-Para shift un number left some bits:
+Para desplazar un number left some bits:
   Intel $8B8D0C000000. \ mov ecx,[ebp+12] \ el bits
   Intel $8B09. \ mov ecx,[ecx]
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el number
   Intel $D320. \ shl [eax],ecx
 
 \Para desplazar un número hacia la derecha algunos bits;
-Para shift un number right some bits:
+Para desplazar un number right some bits:
   Intel $8B8D0C000000. \ mov ecx,[ebp+12] \ el bits
   Intel $8B09. \ mov ecx,[ecx]
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el number
   Intel $D328. \ shr [eax],ecx
 
 \Para desplazar una wyrd hacia la izquierda algunos bits;
-Para shift un wyrd left some bits:
+Para desplazar un wyrd left some bits:
   Intel $8B8D0C000000. \ mov ecx,[ebp+12] \ el bits
   Intel $8B09. \ mov ecx,[ecx]
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el wyrd
   Intel $66D320. \ shl word ptr [eax],ecx
 
 \Para desplazar un wyrd hacia la derecha algunos bits;
-Para shift un wyrd right some bits:
+Para desplazar un wyrd right some bits:
   Intel $8B8D0C000000. \ mov ecx,[ebp+12] \ el bits
   Intel $8B09. \ mov ecx,[ecx]
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el wyrd
@@ -13218,7 +13226,7 @@ The shift-in byte es un byte igual to 15.
 The shift-out byte es un byte igual to 14.
 
 \Para mostrar una consola;
-Para show un console:
+Para mostrar un console:
   Si el console es nil, salir.
   Save el current canvas.
   Dibujar el console.
@@ -13226,14 +13234,14 @@ Para show un console:
   Restore el current canvas.
 
 \Para mostrar un cursor;
-Para show un cursor:
-  Llamada "user32.dll" "SetCursor" con el cursor.
-  Llamada "user32.dll" "ShowCursor" con 1 retornando un number.
-  Si el number es greater than 0, salir.
+Para mostrar un cursor:
+    Llamada "user32.dll" "SetCursor" con el cursor.
+    Llamada "user32.dll" "ShowCursor" con 1 retornando un number.
+    Si el number es greater than 0, salir.
   Repetir.
 
 \Para mostrar una terminal;
-Para show un terminal:
+Para mostrar un terminal:
   Si el terminal es nil, salir.
   Save el current canvas.
   Dibujar el terminal.
@@ -13241,7 +13249,7 @@ Para show un terminal:
   Restore el current canvas.
 
 \Para reducir una caja por algunos twips;
-\Para shrink un box by some twips;
+Para shrink un box by some twips;
 Para indent un box some twips;
 Para indent un box by some twips;
 Para indent un box some twips on every side;
@@ -13251,7 +13259,7 @@ Para indent un box usando some twips:
   Restar el twips desde el box's right.
   Restar el twips desde el box's bottom.
 
-\Para apagar;
+Para apagar;
 Para shut down:
   Destroy el bible.
   Destroy el stack.
@@ -13283,7 +13291,7 @@ A side es 1 unit.
 The silent flag es un flag.
 
 \Para simplificar una respuesta;
-Para simplify un reply:
+Para simplificar un reply:
   Si el reply es blank, interrumpir.
   Obtener un byte  desde el reply.
   Si el byte es any punctuation mark, repetir.
@@ -13299,32 +13307,32 @@ The six key es un key igual to 54.
 
 A size es some twips.
 
-Para skip any leading linefeed byte in un substring:
+Para omitir any leading linefeed byte in un substring:
   Si el substring es blank, salir.
   Si el substring's first's target es not el linefeed byte, salir.
   Agregar 1 to el substring's first.
 
-Para skip any leading noise in un substring:
-  Si el substring es blank, salir.
-  Si el substring's first's target es not noise, salir.
-  Agregar 1 to el substring's first.
+Para omitir any leading noise in un substring:
+    Si el substring es blank, salir.
+    Si el substring's first's target es not noise, salir.
+    Agregar 1 to el substring's first.
   Repetir.
 
-Para skip any non-alphanumeric bytes in un substring:
-  Si el substring es blank, salir.
-  Si el substring's first's target es alphanumeric, salir.
-  Agregar 1 to el substring's first.
+Para omitir any non-alphanumeric bytes in un substring:
+    Si el substring es blank, salir.
+    Si el substring's first's target es alphanumeric, salir.
+    Agregar 1 to el substring's first.
   Repetir.
 
 \Para omitir una línea en la terminal;
-Para skip un line on el terminal:
+Para omitir un line on el terminal:
   Write "" on el terminal.
 
-Para skip word characters in un substring:
-  Si el substring es blank, salir.
-  Si el substring está on any contraction, Agregar 1 to el substring's first; repetir.
-  Si el substring's first's target es not alphanumeric, salir.
-  Agregar 1 to el substring's first.
+Para omitir word characters in un substring:
+    Si el substring es blank, salir.
+    Si el substring está on any contraction, Agregar 1 to el substring's first; repetir.
+    Si el substring's first's target es not alphanumeric, salir.
+    Agregar 1 to el substring's first.
   Repetir.
 
 The sky blue color es un color.
@@ -13335,37 +13343,37 @@ The sky color es un color.
 
 The sky pen es un pen.
 
-Para slap un rider on another rider:
-  Slap el rider's source on el other rider's source.
+Para colocar un rider on another rider:
+  Colocar el rider's source on el other rider's source.
   Ajustar el rider's token on el rider's source.
 
 \Para colocar un escáner en un cadena;
-Para slap un rider on un string:
-  Slap el rider's original on el string.
-  Slap el rider's source on el string.
+Para colocar un rider on un string:
+  Colocar el rider's original on el string.
+  Colocar el rider's source on el string.
   Ajustar el rider's token on el rider's source.
 
-Para slap un substring on any selected bytes in un row of un text:
+Para colocar un substring on any selected bytes in un row of un text:
   Borrar el substring.
   Si el text es nil, salir.
   Si el row of el text es not selected, salir.
-  Slap el substring on el row's string.
+  Colocar el substring on el row's string.
   Poner el text's normalized selection into un selection.
   Si el row's row# es el selection's caret row#, Poner el substring's first plus el selection's caret column# minus 2 into el substring's last.
   Si el row's row# es el selection's anchor row#, Poner el substring's first plus el selection's anchor column# minus 1 into el substring's first.
 
-Para slap un substring on el first byte of un string:
-  Slap el substring on el string.
+Para colocar un substring on el first byte of un string:
+  Colocar el substring on el string.
   Si el string es blank, salir.
   Poner el string's first into el substring's last.
 
-Para slap un substring on el last byte of un string:
-  Slap el substring on el string.
+Para colocar un substring on el last byte of un string:
+  Colocar el substring on el string.
   Si el string es blank, salir.
   Poner el string's last into el substring's first.
 
 \Para colocar una subcadena en un cadena;
-Para slap un substring on un string:
+Para colocar un substring on un string:
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el substring
   Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el string
 \ Poner el string's first into el substring's first
@@ -13387,20 +13395,20 @@ The smallest number es -2147483648.
 Para smooth un polygon:
   Si el polygon es nil, salir.
   Si el polygon's vertices' count es less than 3, salir.
-  Si el polygon es closed, Adjuntar el polygon's first vertex's next's spot to el polygon; set un flag.
+  Si el polygon es closed, Adjuntar el polygon's first vertex's next's spot to el polygon; definir un flag.
   Poner el polygon's first vertex into un left vertex.
   Lazo.
-  Si el left vertex's next es nil, interrumpir.
-  Poner el left vertex's next into un right vertex.
-  Obtener un center spot usando el left vertex's spot y el right vertex's spot.
-  Insertar el center into el polygon after el left vertex.
-  Poner el left vertex's next into un new vertex.
-  Si el left vertex's previous es nil, Poner el right vertex into el left vertex; repetir.
-  Obtener another center spot usando el left vertex's previous' spot y el new vertex's spot.
-  Obtener un difference between el other center y el left vertex's spot.
-  Dividir el difference by 2.
-  Agregar el difference to el left vertex's spot.
-  Poner el right vertex into el left vertex.
+    Si el left vertex's next es nil, interrumpir.
+    Poner el left vertex's next into un right vertex.
+    Obtener un center spot usando el left vertex's spot y el right vertex's spot.
+    Insertar el center into el polygon after el left vertex.
+    Poner el left vertex's next into un new vertex.
+    Si el left vertex's previous es nil, Poner el right vertex into el left vertex; repetir.
+    Obtener another center spot usando el left vertex's previous' spot y el new vertex's spot.
+    Obtener un difference between el other center y el left vertex's spot.
+    Dividir el difference by 2.
+    Agregar el difference to el left vertex's spot.
+    Poner el right vertex into el left vertex.
   Repetir.
   Si el flag es not set, salir.
   Destroy el polygon's first vertex usando el polygon.
@@ -13466,7 +13474,7 @@ The space string es un string igual to " ".
 Para split un buffer into some dyads:
   Destroy el dyads.
   Si el buffer es blank, salir.
-  Slap un rider on el buffer.
+  Colocar un rider on el buffer.
   Lazo.
   Mover el rider usando el ampersand byte.
   Si el rider's token es blank, salir.
@@ -13479,7 +13487,7 @@ Para split un buffer into some dyads:
 
 Para split un byte into un nibble and another nibble:
   Poner el byte into el nibble.
-  Shift el nibble right 4 bits.
+  Desplazar el nibble right 4 bits.
   Poner el byte into el other nibble.
   Bitwise AND el other nibble con 15.
 
@@ -13492,7 +13500,7 @@ Para split un line into another line y un third line:
 
 Para split un number into un wyrd and another wyrd:
   Privatizar el number.
-  Shift el number right 16 bits.
+  Desplazar el number right 16 bits.
   Poner el number into el wyrd.
   Poner el original number into el other wyrd.
 
@@ -13502,7 +13510,7 @@ Para split el rows of un text into some rows and some selected rows and some oth
   Poner el text's rows' first into un row.
   Si el row es nil, salir.
   Eliminar el row desde el text's rows.
-  Si el row of el text es selected, set un flag; Adjuntar el row to el selected rows; repetir.
+  Si el row of el text es selected, definir un flag; Adjuntar el row to el selected rows; repetir.
   Si el flag es set, Adjuntar el row to el other rows; repetir.
   Adjuntar el row to el rows.
   Repetir.
@@ -13526,7 +13534,7 @@ Para split un string into un left substring y un right substring usando un separ
 Para split un string into some string things usando un separator byte:
   Destroy el string things.
   Si el string es blank, salir.
-  Slap un rider on el string.
+  Colocar un rider on el string.
   Lazo.
   Mover el rider usando el separator byte.
   Agregar el rider's token to el string things.
@@ -13564,7 +13572,7 @@ Para split some things into some left things and some right things at un thing:
 \Para dividir una wyrd en un byte y otro byte;
 Para split un wyrd into un byte and another byte:
   Privatizar el wyrd.
-  Shift el wyrd right 8 bits.
+  Desplazar el wyrd right 8 bits.
   Poner el wyrd into el byte.
   Poner el original wyrd into el other byte.
 
@@ -13910,7 +13918,7 @@ Para start un process usando un path: \ must be called con un global variable
 
 \Para iniciar un temporizador;
 Para start un timer:
-  Reset el timer.
+  Reiniciar el timer.
   Restart el timer.
 
 Para start some twips above el middle of el bottom of un box: \ incomplete set of these
@@ -14060,11 +14068,11 @@ Para trazar el asterisk glyph:
   Mover 1 square.
   Turn left.
   Trazar 2 squares.
-  Reset el context.
+  Reiniciar el context.
   Mover 1 square.
   Turn right 1/8.
   Trazar 2 squares slantways.
-  Reset el context.
+  Reiniciar el context.
   Mover 3 squares.
   Turn right 3/8.
   Trazar 2 squares slantways.
@@ -14143,7 +14151,7 @@ Para trazar el big-c glyph:
   Trazar 1 square slantways.
   Turn right.
   Trazar 1 square slantways.
-  Reset el context.
+  Reiniciar el context.
   Mover 2 squares.
   Turn around.
   Trazar 1 square.
@@ -14173,11 +14181,11 @@ Para trazar el big-e glyph:
   Trazar 4 squares.
   Turn right.
   Trazar 2 squares.
-  Reset el context.
+  Reiniciar el context.
   Mover 2 squares.
   Turn right.
   Trazar 1 square.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Trazar 2 squares.
   Restore el context.
@@ -14187,7 +14195,7 @@ Para trazar el big-f glyph:
   Trazar 4 squares.
   Turn right.
   Trazar 2 squares.
-  Reset el context.
+  Reiniciar el context.
   Mover 2 squares.
   Turn right.
   Trazar 1 square.
@@ -14201,7 +14209,7 @@ Para trazar el big-g glyph:
   Trazar 1 square slantways.
   Turn right.
   Trazar 1 square slantways.
-  Reset el context.
+  Reiniciar el context.
   Mover 2 squares.
   Turn around.
   Trazar 1 square.
@@ -14218,11 +14226,11 @@ Para trazar el big-g glyph:
 Para trazar el big-h glyph:
   Save el context.
   Trazar 4 squares.
-  Reset el context.
+  Reiniciar el context.
   Mover 2 squares.
   Turn right.
   Trazar 2 squares.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Mover 2 squares.
   Turn left.
@@ -14235,10 +14243,10 @@ Para trazar el big-i glyph:
   Mover 1 square.
   Turn left.
   Trazar 4 squares.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Trazar 2 squares.
-  Reset el context.
+  Reiniciar el context.
   Mover 4 squares.
   Turn right.
   Trazar 2 squares.
@@ -14346,7 +14354,7 @@ Para trazar el big-q glyph:
   Trazar 1 square slantways.
   Turn right 1/4.
   Trazar 1 square slantways.
-  Reset el context.
+  Reiniciar el context.
   Mover 1 square.
   Turn right.
   Mover 1 square.
@@ -14440,7 +14448,7 @@ Para trazar el big-x glyph:
   Trazar 2 squares slantways.
   Turn left 1/8.
   Trazar 1 square.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Mover 2 squares.
   Turn left.
@@ -14462,7 +14470,7 @@ Para trazar el big-y glyph:
   Trazar 1 square slantways.
   Turn left 1/8.
   Trazar 1 square.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Mover 1 square.
   Turn left.
@@ -14639,7 +14647,7 @@ Para trazar el dollar-sign glyph:
   Trazar 1 square slantways.
   Turn right.
   Trazar 1 square slantways.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Mover 1 square.
   Turn right.
@@ -14655,7 +14663,7 @@ Para trazar el double-quote glyph:
   Turn left.
   Mover 2-1/2 squares.
   Trazar 1-1/2 squares.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Mover 1-1/2 squares.
   Turn left.
@@ -14903,7 +14911,7 @@ Para trazar el little-f glyph:
   Trazar 4 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
-  Reset el context.
+  Reiniciar el context.
   Mover 3 squares.
   Turn right.
   Trazar 2 squares.
@@ -14925,7 +14933,7 @@ Para trazar el little-g glyph:
   Trazar 1 square slantways.
   Turn right.
   Trazar 1 square slantways.
-  Reset el context.
+  Reiniciar el context.
   Mover 3 squares.
   Turn right.
   Mover 2 squares.
@@ -14987,7 +14995,7 @@ Para trazar el little-k glyph:
   Mover 2 squares.
   Turn left 1/8.
   Trazar 2 squares slantways.
-  Reset el context.
+  Reiniciar el context.
   Mover 2 squares.
   Turn right 17/96.
   Trazar 9/4 square.
@@ -15114,13 +15122,13 @@ Para trazar el little-s glyph:
   Trazar 1 square slantways.
   Turn left.
   Trazar 1 square slantways.
-  Reset el context.
+  Reiniciar el context.
   Mover 2 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
   Turn right.
   Trazar 1 square slantways.
-  Reset el context.
+  Reiniciar el context.
   Mover 2 squares.
   Turn right 31/96.
   Trazar 9/4 squares.
@@ -15132,7 +15140,7 @@ Para trazar el little-t glyph:
   Mover 1 square.
   Turn right 1/8.
   Trazar 1 square slantways.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Mover 1 square.
   Turn left.
@@ -15194,7 +15202,7 @@ Para trazar el little-x glyph:
   Trazar 9/4 square.
   Turn left 17/96.
   Trazar 1 square.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Mover 2 squares.
   Turn left.
@@ -15266,16 +15274,16 @@ Para trazar el number-sign glyph:
   Mover 3 squares.
   Turn right.
   Trazar 2 squares.
-  Reset el context.
+  Reiniciar el context.
   Mover 1 square.
   Turn right.
   Trazar 2 squares.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Mover 1/2 square.
   Turn left.
   Trazar 4 squares.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Mover 1-1/2 squares.
   Turn left.
@@ -15288,10 +15296,10 @@ Para trazar el one glyph:
   Mover 1 square.
   Turn left.
   Trazar 4 squares.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Trazar 2 squares.
-  Reset el context.
+  Reiniciar el context.
   Mover 3 squares.
   Turn right 1/8.
   Trazar 1 square slantways.
@@ -15301,10 +15309,10 @@ Para trazar el percent-sign glyph:
   Save el context.
   Turn right 7/96.
   Trazar 9/2 squares.
-  Reset el context.
+  Reiniciar el context.
   Mover 2-1/2 squares.
   Trazar 1/2 square.
-  Reset el context.
+  Reiniciar el context.
   Turn right.
   Mover 2 squares.
   Turn left.
@@ -15972,7 +15980,7 @@ Para unmask outside un roundy box:
 
 \Para desmarcar una cadena;
 Para unquote un string:
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Si el substring es blank, interrumpir.
   Si el substring's first's target es not el double-quote byte, salir.
   Agregar 1 to el substring's first.
@@ -15989,9 +15997,9 @@ The up-arrow key es un key igual to 38.
 
 \Para actualizar la pantalla;
 \Para update el screen;
-\Para show it;
-\Para show it all;
-\Para show reveal el canvas;
+\Para mostrar it;
+\Para mostrar it all;
+\Para mostrar reveal el canvas;
 Para actualizar el screen:
   Actualizar el screen usando el screen's box.
 
@@ -16001,7 +16009,7 @@ Para uppercase any selected bytes in un text:
   Obtener un row desde el text's rows.
   Si el row es nil, salir.
   Si el row of el text es not selected, repetir.
-  Slap un substring on any selected bytes in el row of el text.
+  Colocar un substring on any selected bytes in el row of el text.
   Uppercase el substring.
   Repetir.
 
@@ -16024,7 +16032,7 @@ Para uppercase el character under un finger and Poner it into un string:
 
 \Para mayúsculas de una cadena;
 Para uppercase un string:
-  Slap un substring on el string.
+  Colocar un substring on el string.
   Lazo.
   Si el substring es blank, salir.
   Uppercase el substring's first's target.
@@ -16235,7 +16243,7 @@ Para wrap un text:
   Extraer un string desde el text.
   Adjuntar el return byte to el string.
   Destroy el text's rows.
-  Slap un rider on el string.
+  Colocar un rider on el string.
   Crear el hfont of el memory canvas usando el text's font.
   Lazo.
   Mover el rider usando el text's box (word wrapping rules).
@@ -16265,7 +16273,7 @@ Para write un buffer to un path:
   Borrar el error de e/s.
   Extraer un directory desde el path.
   Si el directory es not in el file system, Poner "Directorio '" then el directory then "' no existe." into el error de e/s; salir.
-  Set el path to read-write mode.
+  Definir el path to read-write mode.
   Privatizar el path.
   Null terminate el path.
   Llamada "kernel32.dll" "CreateFileA" con el path's first y 1073741824 [generic_write] 
@@ -16381,7 +16389,7 @@ Para write un string on un console:
   Insertar el return byte into el console's text.
   Wrap el console's text.
   Scroll el console's text to el caret.
-  Show el console.
+  Mostrar el console.
 
 \Para escribir una cadena en una consola sin avanzar;
 \Para write un string to un console without advancing;
@@ -16390,7 +16398,7 @@ Para write un string on un console without advancing:
   Insertar el string into el console's text.
   Wrap el console's text.
   Scroll el console's text to el caret.
-  Show el console.
+  Mostrar el console.
 
 \Para escribir una cadena en una caja;
 \Para write un string in un box;
@@ -16435,7 +16443,7 @@ Para write un string on un terminal:
   Agregar un quora to el terminal.
   Poner el string into el quora's string.
   Poner el terminal's output color into el quora's color.
-  Show el terminal.
+  Mostrar el terminal.
 
 \Para write un string un radius away desde un center spot;
 \Para write un string un radius around un center spot;
