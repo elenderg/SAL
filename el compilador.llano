@@ -859,7 +859,7 @@ Para blurt bytes usando un pointer y un  length y un  buffer y un  offset:
   Copiar bytes desde el pointer to el other pointer for el length.
   
 Para blurt un dos header into un buffer:
-  Blurt bytes usando el dos header's whereabouts y el dos header's magnitude y el buffer and 0.
+  Blurt bytes usando el dos header's dirección y el dos header's magnitude y el buffer and 0.
   
 Para blurt some entries into un buffer:
   Obtener un entry desde el entries.
@@ -868,7 +868,7 @@ Para blurt some entries into un buffer:
   Repetir.
   
 Para blurt un entry into un buffer:
-  Blurt bytes usando el entry's name address's whereabouts and 4 y el buffer y el entry's thunk address.
+  Blurt bytes usando el entry's name address's dirección and 4 y el buffer y el entry's thunk address.
   Poner el entry's name address plus 2 into un address.
   Blurt el entry's name into el buffer at el address.
   
@@ -884,7 +884,7 @@ Para blurt some fragments into un buffer:
   Repetir.
   
 Para blurt un import into un buffer:
-  Blurt bytes usando el import's import header's whereabouts y el import's import header's magnitude y el buffer y el import's header address.
+  Blurt bytes usando el import's import header's dirección y el import's import header's magnitude y el buffer y el import's header address.
   Blurt el import's name into el buffer at el import's name address.
   Blurt el import's entries into el buffer.
   
@@ -895,7 +895,7 @@ Para blurt some imports into un buffer:
   Repetir.
   
 Para blurt un pe header into un buffer:
-  Blurt bytes usando el pe header's whereabouts y el pe header's magnitude y el buffer and 256.
+  Blurt bytes usando el pe header's dirección y el pe header's magnitude y el buffer and 256.
   
 Para blurt un routine into un buffer:
   Si el routine's compiled flag es not set, salir.
@@ -926,7 +926,7 @@ Para blurt un variable into un buffer (as un string):
   Poner -1 into el prototype string's last.
   Si el length es not 0, Poner el other address into el prototype string's first.
   Si el length es not 0, Poner el prototype string's first plus el length minus 1 into el prototype string's last.
-  Blurt bytes usando el prototype string's whereabouts y el prototype string's magnitude y el buffer y el address.
+  Blurt bytes usando el prototype string's dirección y el prototype string's magnitude y el buffer y el address.
   Agregar el prototype string's magnitude to el address.
   Blurt el variable's data into el buffer at el address.
   
@@ -1037,7 +1037,7 @@ Para check for invalid optional info on un type (contenido):
   Si el type cannot be reduced to "pointer", abort con "Optional 'a' info solo está permitido en tipos de punteros." y el type's locus; salir.
   
 Para borrar un field term:
-  Llenar bytes con el null byte starting at el field term's whereabouts for el field term's magnitude.
+  Llenar bytes con el null byte starting at el field term's dirección for el field term's magnitude.
   
 Para borrar un term:
   Void el term's variable.
@@ -1948,7 +1948,7 @@ Para compile un term usando un rider (possessive - contenido):
   Si el term's type cannot be reduced to "pointer", abort con "Solo puedes obtener el contenido de los tipos punteros." y el rider; salir.
   Compile el term usando el rider (dereference).
   
-Para compile un term usando un rider (possessive - whereabouts):
+Para compile un term usando un rider (possessive - dirección):
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Uso inválido de una dirección, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un intermediate usando "pointer" y el rider's token's first. 
@@ -1963,7 +1963,7 @@ Para compile un term usando un rider (possessive): \ similar to "compile un term
   Si el compiler's abort flag es set, salir.
   Si el name es any magnitude, compile el term usando el rider (possessive - magnitude); salir.
   Si el name es any contenido, compile el term usando el rider (possessive - contenido); salir.
-  Si el name es any whereabouts, compile el term usando el rider (possessive - whereabouts); salir.
+  Si el name es any dirección, compile el term usando el rider (possessive - dirección); salir.
   Compile el term usando el rider y el name (possessive - field).
   
 Para compile un term usando un rider (possessives):
@@ -2040,7 +2040,7 @@ Para compile un term usando un field name y un  rider (reverse-possessive):  \ s
   Si el compiler's abort flag es set, salir.
   Si el field name es any magnitude, compile el term usando el rider (possessive - magnitude); salir.
   Si el field name es any contenido, compile el term usando el rider (possessive - contenido); salir.
-  Si el field name es any whereabouts, compile el term usando el rider (possessive - whereabouts); salir.
+  Si el field name es any dirección, compile el term usando el rider (possessive - dirección); salir.
   Compile el term usando el rider y el field name (possessive - field).
   
 Para compile un term usando un rider y un  field term:
@@ -2318,15 +2318,15 @@ Para decidir si un name es any contenido:
   Si el name es "contenido", diga sí.
   Diga no.
   
-Para decidir si un name es any whereabouts:
-  Si el name es "whereabouts", diga sí.
+Para decidir si un name es any dirección:
+  \Si el name es "dirección", diga sí.
   Si el name es "dirección", diga sí.
   Diga no.
   
 Para decidir si un name es any valid field name:
   Si el name es any magnitude, diga no.
   Si el name es any contenido, diga no.
-  Si el name es any whereabouts, diga no.
+  Si el name es any dirección, diga no.
   Diga sí.
   
 Para decidir si un rider es followed by any unit of measure:
@@ -3569,7 +3569,7 @@ Para initialize un pe header:
   Initialize el pe header (code section).
   
 Para initialize un pe header (code section):
-  Copiar bytes desde "code  "'s first to el pe header's code section's name's whereabouts for 6.
+  Copiar bytes desde "code  "'s first to el pe header's code section's name's dirección for 6.
   Poner el code borough's length into el pe header's code section's sizeinbytes.
   Poner el code borough's base into el pe header's code section's addressinmemory.
   Poner el code borough's length into el pe header's code section's sizeinfile.
@@ -3577,7 +3577,7 @@ Para initialize un pe header (code section):
   Poner -536870880 [$E0000020] into el pe header's code section's characteristics. \ executable, readable, writable, code object
   
 Para initialize un pe header (data section):
-  Copiar bytes desde "data  "'s first to el pe header's data section's name's whereabouts for 6.
+  Copiar bytes desde "data  "'s first to el pe header's data section's name's dirección for 6.
   Poner el data borough's length into el pe header's data section's sizeinbytes.
   Poner el data borough's base into el pe header's data section's addressinmemory.
   Poner el data borough's length into el pe header's data section's sizeinfile.
@@ -3590,7 +3590,7 @@ Para initialize un pe header (directories):
   Poner el import borough's length into el pe header's imagedirectoryentryimportsize.
   
 Para initialize un pe header (import section):
-  Copiar bytes desde "idata "'s first to el pe header's idata section's name's whereabouts for 6.
+  Copiar bytes desde "idata "'s first to el pe header's idata section's name's dirección for 6.
   Poner el import borough's length into el pe header's idata section's sizeinbytes.
   Poner el import borough's base into el pe header's idata section's addressinmemory.
   Poner el import borough's length into el pe header's idata section's sizeinfile.
