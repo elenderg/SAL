@@ -25,7 +25,7 @@ Para hacer todo:
     Escribir " " then the crlf string para Stdout;
     Escribir "c:\el compilador.exe " then " c:\pasta_do_projeto_atual\ " then the crlf string para StdOut;
   Salir.
-  Si the Endereço Da Pasta's last byte pointer's target no es el backslash byte, 
+  Si the Endereço Da Pasta's last byte pointer's contenido no es el backslash byte, 
     Adjuntar the backslash byte to the Endereço Da Pasta.
   Si el Endereço Da Pasta no está in el file system, 
     Escribir "Error. El directorio '" then el Endereço Da Pasta then "' no fue encontrado." then the crlf string para StdOut;
@@ -60,7 +60,7 @@ Para obtener una string desde the argumentos da linha de comando:
     Si el substring es blank, 
       Borrar el string; 
       Salir. 
-    Si el substring's first byte pointer's target is not the space byte, 
+    Si el substring's first byte pointer's contenido is not the space byte, 
       Agregar 1 to the substring's first byte pointer; 
       Repeat.
     Poner the substring into the string.
@@ -129,11 +129,11 @@ Para agregar el allocate routine for un type:
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
   Si el type cannot be reduced to "pointer", salir.
-  Si el type's target type es nil, salir.
+  Si el type's contenido type es nil, salir.
   Agregar un routine to el routines usando nil.
   Adjuntar "Allocate memory for un " then el type's name to el routine's header string.
   Adjuntar "Assign el " then el type's name then " usando " to el routine's body string.
-  Adjuntar el type's target type's length then "." to el routine's body string.
+  Adjuntar el type's contenido type's length then "." to el routine's body string.
   Colocar el routine's routine header on el routine's header string.
   Colocar el routine's routine body on el routine's body string.
   Compile el header of el routine.
@@ -167,11 +167,11 @@ Para agregar el deallocate routine for un type:
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
   Si el type cannot be reduced to "pointer", salir.
-  Si el type's target type es nil, salir.
+  Si el type's contenido type es nil, salir.
   Agregar un routine to el routines usando nil.
   Adjuntar "Deallocate un " then el type's name to el routine's header string.
   Adjuntar "Si el " then el type's name then " es nil, salir. " to el routine's body string.
-  Si el type's target type should be finalized, Adjuntar "~Finalize el " then el type's name then "'s target. " to el routine's body string.
+  Si el type's contenido type should be finalized, Adjuntar "~Finalize el " then el type's name then "'s contenido. " to el routine's body string.
   Adjuntar "Unassign el " then el type's name then "." to el routine's body string.
   Colocar el routine's routine header on el routine's header string.
   Colocar el routine's routine body on el routine's body string.
@@ -192,10 +192,10 @@ Para agregar el destroy routine for un type (pointer):
   Agregar un routine to el routines usando nil.
   Adjuntar "Destroy un " then el type's name to el routine's header string.
   Adjuntar "Si el " then el type's name then " es nil, salir. " to el routine's body string.
-  Si el type's target type can be reduced to "pointer", Adjuntar "Destroy el " then el type's name then "'s target. " to el routine's body string.
-  Si el type's target type can be reduced to "things", Adjuntar "Destroy el " then el type's name then "'s target. " to el routine's body string.
+  Si el type's contenido type can be reduced to "pointer", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
+  Si el type's contenido type can be reduced to "things", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
   Lazo.
-    Obtener un field desde el type's target type's fields.
+    Obtener un field desde el type's contenido type's fields.
     Si el field es nil, interrumpir.
     Si el field's reference flag es set, repetir.
     Si el field's type should not be forgotten, repetir.
@@ -959,7 +959,7 @@ Para calculate el length of un type:
     Si el compiler's abort flag es set, salir.
     Obtener un field desde el type's fields.
     Si el field es nil, salir.
-    Si el field's redefinition target name es not blank, repetir.
+    Si el field's redefinition contenido name es not blank, repetir.
     Calculate el length of el field's type.
     Agregar el field's type's length times el field's count to el type's length.
   Repetir.
@@ -978,7 +978,7 @@ Para calculate el offsets in un type:
     Si el compiler's abort flag es set, salir.
     Obtener un field desde el type's fields.
     Si el field es nil, salir.
-    Si el field's redefinition target name es not blank, repetir.
+    Si el field's redefinition contenido name es not blank, repetir.
     Poner el offset into el field's offset.
     Agregar el field's type's length times el field's count to el offset.
   Repetir.
@@ -996,9 +996,9 @@ Para calculate el redefinition offsets in un type:
     Si el compiler's abort flag es set, salir.
     Obtener un field desde el type's fields.
     Si el field es nil, salir.
-    Si el field's redefinition target name es blank, repetir.
-    Encontrar another field usando el field's redefinition target name y el type's fields.
-    Si el other field es nil, abort con "Redefinición inválida. No pude encontrar '" then el field's redefinition target name then "' field." y el field's locus; salir.
+    Si el field's redefinition contenido name es blank, repetir.
+    Encontrar another field usando el field's redefinition contenido name y el type's fields.
+    Si el other field es nil, abort con "Redefinición inválida. No pude encontrar '" then el field's redefinition contenido name then "' field." y el field's locus; salir.
     Poner el other field's offset into el field's offset.
   Repetir.
   
@@ -1020,7 +1020,7 @@ The call internal tag es un tag igual to 4.
 Para check for invalid optional info on un type:
   Si el compiler's abort flag es set, salir.
   Si el type es nil, salir.
-  Si el type's target name es not blank, check for invalid optional info on el type (target).
+  Si el type's contenido name es not blank, check for invalid optional info on el type (contenido).
   Si el type's fields are not empty, check for invalid optional info on el type (fields).
   Si el type's scale es not 0, check for invalid optional info on el type (scale).
   
@@ -1032,7 +1032,7 @@ Para check for invalid optional info on un type (scale):
   Si el compiler's abort flag es set, salir.
   Si el type cannot be reduced to "number", abort con "Escalas solo permitidas en tipos numéricos." y el type's locus; salir.
   
-Para check for invalid optional info on un type (target):
+Para check for invalid optional info on un type (contenido):
   Si el compiler's abort flag es set, salir.
   Si el type cannot be reduced to "pointer", abort con "Optional 'a' info solo está permitido en tipos de punteros." y el type's locus; salir.
   
@@ -1103,10 +1103,10 @@ Para compile el body of el routine called un string:
 Para compile el body of un routine usando un rider (alternate wording): \ *** alternate wording
   Si el compiler's abort flag es set, salir.
   Mover el rider (compiler rules). \ *** do we need this?
-  Poner el routine's next into un target routine.
-  Si el target routine es nil, abort con "Has definido una forma alternativa aquí, pero no estoy seguro de qué cosa es." y el rider; salir.
-  Poner el target routine's moniker into el routine's employs moniker.
-  Compile el body of el target routine.
+  Poner el routine's next into un contenido routine.
+  Si el contenido routine es nil, abort con "Has definido una forma alternativa aquí, pero no estoy seguro de qué cosa es." y el rider; salir.
+  Poner el contenido routine's moniker into el routine's employs moniker.
+  Compile el body of el contenido routine.
   
 Para compile el body of un routine usando un rider (employ):
   Si el compiler's abort flag es set, salir.
@@ -1871,17 +1871,17 @@ Para compile un term usando un rider (common part):
   
 Para compile un term usando un rider (dereference - in place):
   Si el term's variable es nil, abort con "Internal error - compile un term usando un rider (dereference - in place)" y el rider; salir.
-  Poner el term's type's target type's name into el term's type name.
-  Poner el term's type's target type into el term's type.
+  Poner el term's type's contenido type's name into el term's type name.
+  Poner el term's type's contenido type into el term's type.
   Agregar un fragment usando el dereference tag y el term's variable.
   Borrar el term's phrase.
   
 Para compile un term usando un rider (dereference):
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Desreferencia inválida. No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Si el term's type's target type es nil, abort con "No puedo determinar el tipo de este objetivo." y el rider; salir.
+  Si el term's type's contenido type es nil, abort con "No puedo determinar el tipo de este contenido." y el rider; salir.
   Si el term's kind es "scratch", compile el term usando el rider (dereference - in place); salir.
-  Agregar un scratch usando el term's type's target type's name y el rider's token's first.
+  Agregar un scratch usando el term's type's contenido type's name y el rider's token's first.
   Agregar un fragment usando el load address tag y el term's variable y el scratch.
   Agregar another fragment usando el dereference tag y el scratch.
   Poner el scratch into el term's variable.
@@ -1942,10 +1942,10 @@ Para compile un term usando un rider (possessive - magnitude):
   Poner el literal into el term's variable.
   Borrar el term's phrase.
   
-Para compile un term usando un rider (possessive - target):
+Para compile un term usando un rider (possessive - contenido):
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort con "Uso inválido de un objetivo, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Si el term's type cannot be reduced to "pointer", abort con "Solo puedes obtener el objetivo de los tipos punteros." y el rider; salir.
+  Si el term's variable es nil, abort con "Uso inválido de un contenido, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's type cannot be reduced to "pointer", abort con "Solo puedes obtener el contenido de los tipos punteros." y el rider; salir.
   Compile el term usando el rider (dereference).
   
 Para compile un term usando un rider (possessive - whereabouts):
@@ -1962,7 +1962,7 @@ Para compile un term usando un rider (possessive): \ similar to "compile un term
   Scan un name usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el name es any magnitude, compile el term usando el rider (possessive - magnitude); salir.
-  Si el name es any target, compile el term usando el rider (possessive - target); salir.
+  Si el name es any contenido, compile el term usando el rider (possessive - contenido); salir.
   Si el name es any whereabouts, compile el term usando el rider (possessive - whereabouts); salir.
   Compile el term usando el rider y el name (possessive - field).
   
@@ -2039,7 +2039,7 @@ Para compile un term usando un rider y un  variable name (reverse-possessive pre
 Para compile un term usando un field name y un  rider (reverse-possessive):  \ similar to "compile un term usando un rider (possessive)" \ dahn
   Si el compiler's abort flag es set, salir.
   Si el field name es any magnitude, compile el term usando el rider (possessive - magnitude); salir.
-  Si el field name es any target, compile el term usando el rider (possessive - target); salir.
+  Si el field name es any contenido, compile el term usando el rider (possessive - contenido); salir.
   Si el field name es any whereabouts, compile el term usando el rider (possessive - whereabouts); salir.
   Compile el term usando el rider y el field name (possessive - field).
   
@@ -2082,7 +2082,7 @@ Para compile un term usando un rider y un  name (possessive - field):
   Encontrar un field term usando el term's phrase y el type y el name.
   Si el field term es not empty, compile el term usando el rider y el field term; salir.
   Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Si el type can be reduced to "pointer", Poner el type's target type into el type.
+  Si el type can be reduced to "pointer", Poner el type's contenido type into el type.
   Si el type es nil, abort con "No hay un '" then el name then "' field in un '" then el term's type's name then "'." y el rider; salir.
   Lazo.
     Si el compiler's abort flag es set, salir.
@@ -2141,7 +2141,7 @@ Para copiar un field into another field:
   Poner el field's type name into el other field's type name.
   Poner el field's type into el other field's type.
   Poner el field's count into el other field's count.
-  Poner el field's redefinition target name into el other field's redefinition target name.
+  Poner el field's redefinition contenido name into el other field's redefinition contenido name.
   Poner el field's reference flag into el other field's reference flag.
   Poner el field's offset into el other field's offset.
   
@@ -2313,9 +2313,9 @@ Para decidir si un name es any magnitude:
   Si el name es "magnitud", diga sí.
   Diga no.
   
-Para decidir si un name es any target:
-  Si el name es "target", diga sí.
-  Si el name es "objetivo", diga sí.
+Para decidir si un name es any contenido:
+  \Si el name es "contenido", diga sí.
+  Si el name es "contenido", diga sí.
   Diga no.
   
 Para decidir si un name es any whereabouts:
@@ -2325,7 +2325,7 @@ Para decidir si un name es any whereabouts:
   
 Para decidir si un name es any valid field name:
   Si el name es any magnitude, diga no.
-  Si el name es any target, diga no.
+  Si el name es any contenido, diga no.
   Si el name es any whereabouts, diga no.
   Diga sí.
   
@@ -2346,7 +2346,7 @@ Para decidir si un rider está on any nested double-quote:
   
 Para decidir si un rider está on any possessive:
   Si el rider's source es blank, diga no.
-  Si el rider's source's first's target es not el single-quote byte, diga no.
+  Si el rider's source's first's contenido es not el single-quote byte, diga no.
   Si el rider está on any possessive (type 1 - single-quote, s, non-glom-byte), diga sí.
   Si el rider está on any possessive (type 2 - preceding s, single-quote, non-glom-byte), diga sí.
   Diga no.
@@ -2356,17 +2356,17 @@ Para decidir si un rider está on any possessive (type 1 - single-quote, s, non-g
   Privatizar el rider.
   Agregar 2 to el rider's source's first.
   Si el rider's source es blank, diga sí.
-  Si el rider's source's first's target es not any glom byte, diga sí.
+  Si el rider's source's first's contenido es not any glom byte, diga sí.
   Diga no.
   
 Para decidir si un rider está on any possessive (type 2 - preceding s, single-quote, non-glom-byte):
   Privatizar el rider.
   Si el rider's source's first es el rider's original substring's first, diga no.
   Restar 1 desde el rider's source's first.
-  Si el rider's source's first's target es not el little-s byte or el big-s byte, diga no.
+  Si el rider's source's first's contenido es not el little-s byte or el big-s byte, diga no.
   Agregar 2 to el rider's source's first.
   Si el rider's source es blank, diga sí.
-  Si el rider's source's first's target es not any glom byte, diga sí.
+  Si el rider's source's first's contenido es not any glom byte, diga sí.
   Diga no.
   
 Para decidir si un rider está on any simile: \ added for invisible turtle project ***
@@ -2392,7 +2392,7 @@ Para decidir si un string ends con any consonant and another string:
   Colocar un substring on el string.
   Restar el other string's length desde el substring's last.
   Si el substring es blank, diga no.
-  Si el substring's last's target es not any consonant, diga no.
+  Si el substring's last's contenido es not any consonant, diga no.
   Si el string does not end con el other string, diga no.
   Diga sí.
   
@@ -2400,18 +2400,18 @@ Para decidir si un string ends con any vowel and another string:
   Colocar un substring on el string.
   Restar el other string's length desde el substring's last.
   Si el substring es blank, diga no.
-  Si el substring's last's target es not any vowel, diga no.
+  Si el substring's last's contenido es not any vowel, diga no.
   Si el string does not end con el other string, diga no.
   Diga sí.
   
 Para decidir si un string ends con any consonant:
   Si el string es blank, diga no.
-  Si el string's last's target es not any consonant, diga no.
+  Si el string's last's contenido es not any consonant, diga no.
   Diga sí.
   
 Para decidir si un string ends con any vowel:
   Si el string es blank, diga no.
-  Si el string's last's target es not any vowel, diga no.
+  Si el string's last's contenido es not any vowel, diga no.
   Diga sí.
   
 Para decidir si un string es any plus:
@@ -2540,7 +2540,7 @@ Para decidir si un string es any negative decider literal:
   
 Para decidir si un string es any hex literal:
   Si el string es blank, diga no.
-  Si el string's first's target es el dollar-sign byte, diga sí.
+  Si el string's first's contenido es el dollar-sign byte, diga sí.
   Diga no.
   
 Para decidir si un string es any definite article:
@@ -2596,7 +2596,7 @@ Para decidir si un string es any literal:
   
 Para decidir si un string es any mark:
   Si el string's length es not 1, diga no.
-  Si el string's first's target es any mark, diga sí.
+  Si el string's first's contenido es any mark, diga sí.
   Diga no.
   
 Para decidir si un rider está on any monikette string:
@@ -2845,7 +2845,7 @@ Para decidir si un rider está on any preposition:
   
 Para decidir si un string es any qualifier:
   Si el string es blank, diga no.
-  Si el string's first's target es el left-paren byte, diga sí.
+  Si el string's first's contenido es el left-paren byte, diga sí.
   Diga no.
   
   \ To decidir si un string es any reverse-possessive:
@@ -2865,12 +2865,12 @@ Para decidir si un rider está on any reverse-possessive:
   
 Para decidir si un string es any string literal:
   Si el string es blank, diga no.
-  Si el string's first's target es el double-quote byte, diga sí.
+  Si el string's first's contenido es el double-quote byte, diga sí.
   Diga no.
   
 Para decidir si un string es any symbol:
   Si el string's length es not 1, diga no.
-  Si el string's first's target es any symbol, diga sí.
+  Si el string's first's contenido es any symbol, diga sí.
   Diga no.
   
 Para decidir si un string es any verb:
@@ -3106,9 +3106,9 @@ Para decidir si un type should be forgotten:
   Si el type's name es "things", diga no.
   Si el type can be reduced to "things", diga sí.
   Si el type can not be reduced to "pointer", diga no.
-  Si el type's target type es nil, diga no.
-  Si el type's target type cannot be reduced to "pointer", diga sí.
-  Si el type's target type should not be forgotten, diga no.
+  Si el type's contenido type es nil, diga no.
+  Si el type's contenido type cannot be reduced to "pointer", diga sí.
+  Si el type's contenido type should not be forgotten, diga no.
   Diga sí.
   
 Para decidir si un variable es duplicated in some variables:
@@ -3224,14 +3224,14 @@ Para encontrar un field term usando un phrase y un  type y un  name:
   Encontrar el routine usando "Poner" y el type and "'s " then el name and "into".
   Si el routine es not nil, definir el field term's push flag; Poner el routine into el field term's function; salir.
   \  code below for looking deep within pointers - un debatable feature
-  \  if el type's target type es not nil, encontrar el routine usando "Poner" y el type's target type and "'s " then el name and "into".
+  \  if el type's contenido type es not nil, encontrar el routine usando "Poner" y el type's contenido type and "'s " then el name and "into".
   \  if el routine es not nil, definir el field term's dereference flag; Poner el routine into el field term's function; salir.
   
 Para encontrar un field term usando un type y un  name:
   Si el type es nil, salir.
   Encontrar un field usando el name y el type's fields.
   Si el field es not nil, Poner el field into el field term's field; salir.
-  Si el type's target type es not nil, encontrar el field usando el name y el type's target type's fields.
+  Si el type's contenido type es not nil, encontrar el field usando el name y el type's contenido type's fields.
   Si el field es not nil, definir el field term's dereference flag; Poner el field into el field term's field; salir.
   
 Para encontrar un fragment usando another fragment y un  tag:
@@ -3334,7 +3334,7 @@ Para encontrar un row# usando un source file y un  byte pointer:
   Lazo.
     Si el substring es blank, salir.
     Si el substring's first es el byte pointer, salir.
-    Si el substring's first's target es el return byte, Agregar 1 to el row#.
+    Si el substring's first's contenido es el return byte, Agregar 1 to el row#.
     Agregar 1 to el substring's first.
   Repetir.
   
@@ -3859,8 +3859,8 @@ Para listar un type in un buffer:
   Adjuntar el type's length to el buffer (as hex con separator).
   Adjuntar el type's base name to el buffer (con separator).
   Adjuntar el type's base type to el buffer (con separator).
-  Adjuntar el type's target name to el buffer (con separator).
-  Adjuntar el type's target type to el buffer (con separator).
+  Adjuntar el type's contenido name to el buffer (con separator).
+  Adjuntar el type's contenido type to el buffer (con separator).
   Adjuntar el type's scale to el buffer (con separator).
   Advance el buffer.
   Listar el type's fields in el buffer.
@@ -3891,7 +3891,7 @@ Para listar un variable in un buffer:
   Adjuntar el variable's by-value flag to el buffer (con separator).
   Adjuntar el variable's count to el buffer (con separator).
   Adjuntar el variable's reference flag to el buffer (con separator).
-  Adjuntar el variable's redefinition target name to el buffer (con separator).
+  Adjuntar el variable's redefinition contenido name to el buffer (con separator).
   Adjuntar el variable's literal to el buffer (con separator).
   Convertir el variable's data to un nibble string.
   Adjuntar el nibble string to el buffer (con separator).
@@ -3939,13 +3939,13 @@ A monikette es un thing con
 Para mover un rider (code rules - comment):
   Incrementar el rider.
   Si el rider's source es blank, salir.
-  Si el rider's source's first's target es not el return byte, repetir.
+  Si el rider's source's first's contenido es not el return byte, repetir.
   
 Para mover un rider (code rules - glom):
   Incrementar el rider.
   Si el rider's source es blank, salir.
   Si el rider está on any possessive, salir.
-  Si el rider's source's first's target es any glom byte, repetir.
+  Si el rider's source's first's contenido es any glom byte, repetir.
   
 Para mover un rider (code rules - mark):
   Incrementar el rider.
@@ -3953,7 +3953,7 @@ Para mover un rider (code rules - mark):
 Para mover un rider (code rules - noise):
   Incrementar el rider.
   Si el rider's source es blank, salir.
-  Si el rider's source's first's target es noise, repetir.
+  Si el rider's source's first's contenido es noise, repetir.
   
 Para mover un rider (code rules - possessive):
   Incrementar el rider.
@@ -3962,18 +3962,18 @@ Para mover un rider (code rules - possessive):
   
 Para mover un rider (code rules - qualifier):
     Si el rider's source es blank, salir.
-    Si el rider's source's first's target es el return byte, interrumpir.
-    Si el rider's source's first's target es el left-paren byte, Agregar 1 to un count.
-    Si el rider's source's first's target es el right-paren byte, Restar 1 desde el count.
+    Si el rider's source's first's contenido es el return byte, interrumpir.
+    Si el rider's source's first's contenido es el left-paren byte, Agregar 1 to un count.
+    Si el rider's source's first's contenido es el right-paren byte, Restar 1 desde el count.
     Incrementar el rider.
     Si el count es 0, interrumpir.
   Repetir.
   
 Para mover un rider (code rules - remark):
     Si el rider's source es blank, salir.
-    Si el rider's source's first's target es el return byte, interrumpir.
-    Si el rider's source's first's target es el left-bracket byte, Agregar 1 to un count.
-    Si el rider's source's first's target es el right-bracket byte, Restar 1 desde el count.
+    Si el rider's source's first's contenido es el return byte, interrumpir.
+    Si el rider's source's first's contenido es el left-bracket byte, Agregar 1 to un count.
+    Si el rider's source's first's contenido es el right-bracket byte, Restar 1 desde el count.
     Incrementar el rider.
     Si el count es 0, interrumpir.
   Repetir.  
@@ -3981,9 +3981,9 @@ Para mover un rider (code rules - remark):
 Para mover un rider (code rules - string):
     Incrementar el rider.
     Si el rider's source es blank, salir.
-    Si el rider's source's first's target es el return byte, salir.
+    Si el rider's source's first's contenido es el return byte, salir.
     Si el rider está on any nested double-quote, incrementar el rider; repetir.
-    Si el rider's source's first's target es el double-quote byte, incrementar el rider; salir.
+    Si el rider's source's first's contenido es el double-quote byte, incrementar el rider; salir.
   Repetir.
   
 Para mover un rider (code rules - symbol):
@@ -3992,12 +3992,12 @@ Para mover un rider (code rules - symbol):
 Para mover un rider (code rules):
   Ajustar el rider's token on el rider's source.
   Si el rider's source es blank, salir.
-  Si el rider's source's first's target es noise, mover el rider (code rules - noise); salir.
-  Si el rider's source's first's target es el backslash byte, mover el rider (code rules - comment); salir.
-  Si el rider's source's first's target es el left-bracket byte, mover el rider (code rules - remark); salir.
-  Si el rider's source's first's target es el double-quote byte, mover el rider (code rules - string); salir.
-  Si el rider's source's first's target es el left-paren byte, mover el rider (code rules - qualifier); salir.
-  Si el rider's source's first's target es any mark, mover el rider (code rules - mark); salir.
+  Si el rider's source's first's contenido es noise, mover el rider (code rules - noise); salir.
+  Si el rider's source's first's contenido es el backslash byte, mover el rider (code rules - comment); salir.
+  Si el rider's source's first's contenido es el left-bracket byte, mover el rider (code rules - remark); salir.
+  Si el rider's source's first's contenido es el double-quote byte, mover el rider (code rules - string); salir.
+  Si el rider's source's first's contenido es el left-paren byte, mover el rider (code rules - qualifier); salir.
+  Si el rider's source's first's contenido es any mark, mover el rider (code rules - mark); salir.
   Si el rider está on any possessive, mover el rider (code rules - possessive); salir.
   Mover el rider (code rules - glom).
   
@@ -4008,29 +4008,29 @@ Para mover un rider (compiler rules):
   Si el rider's token es "del", unbump el rider; salir. \ Spanish contraction "del"; fudged to "de l", short for "de el"
   Si el rider's token es "al", unbump el rider; salir. \ Spanish contraction "al"; fudged to "a l", short for "a el"
   Si el rider's token es blank, salir.
-  Si el rider's token's first's target es noise, repetir.
-  Si el rider's token's first's target es el backslash byte, repetir.
-  Si el rider's token's first's target es el left-bracket byte, repetir.
+  Si el rider's token's first's contenido es noise, repetir.
+  Si el rider's token's first's contenido es el backslash byte, repetir.
+  Si el rider's token's first's contenido es el left-bracket byte, repetir.
   
 Para mover un rider retornando un error string (code rules - validate qualifier):
   Si el rider's token's length es less than 2, Poner "Qualifiers need to end con ')'." into el error string; salir.
-  Si el rider's token's last's target es not el right-paren byte, Poner "Qualifiers need to end con ')'." into el error string; salir.
+  Si el rider's token's last's contenido es not el right-paren byte, Poner "Qualifiers need to end con ')'." into el error string; salir.
   
 Para mover un rider retornando un error string (code rules - validate remark):
   Si el rider's token's length es less than 2, Poner "Remarks need to end con ']'." into el error string; salir.
-  Si el rider's token's last's target es not el right-bracket byte, Poner "Remarks need to end con ']'." into el error string; salir.
+  Si el rider's token's last's contenido es not el right-bracket byte, Poner "Remarks need to end con ']'." into el error string; salir.
   
 Para mover un rider retornando un error string (code rules - validate string):
   Si el rider's token's length es less than 2, Poner "Strings need to end con '""'." into el error string; salir.
-  Si el rider's token's last's target es not el double-quote byte, Poner "Strings need to end con '""'." into el error string; salir.
+  Si el rider's token's last's contenido es not el double-quote byte, Poner "Strings need to end con '""'." into el error string; salir.
   
 Para mover un rider retornando un error string (code rules):
   Borrar el error string.
   Mover el rider (code rules).
   Si el rider's token es blank, salir.
-  Si el rider's token's first's target es el left-bracket byte, mover el rider retornando el error string (code rules - validate remark); salir.
-  Si el rider's token's first's target es el double-quote byte, mover el rider retornando el error string (code rules - validate string); salir.
-  Si el rider's token's first's target es el left-paren byte, mover el rider retornando el error string (code rules - validate qualifier); salir.
+  Si el rider's token's first's contenido es el left-bracket byte, mover el rider retornando el error string (code rules - validate remark); salir.
+  Si el rider's token's first's contenido es el double-quote byte, mover el rider retornando el error string (code rules - validate string); salir.
+  Si el rider's token's first's contenido es el left-paren byte, mover el rider retornando el error string (code rules - validate qualifier); salir.
   
 A nibble substring es un substring.
   
@@ -4156,7 +4156,7 @@ A phrase es un string.
   \Put el substring's last into el substring's first.
   \Lazo.
   \If el substring's first es el string's first, interrumpir.
-  \If el substring's first's target es el space byte, Agregar 1 to el substring's first; interrumpir.
+  \If el substring's first's contenido es el space byte, Agregar 1 to el substring's first; interrumpir.
   \Subtract 1 desde el substring's first.
   \Repeat.
   \If el substring es in el lexicon's index, diga sí.
@@ -4399,30 +4399,30 @@ Para resolve un type (expand thing): \ type's base type es not resolved yet
   Agregar un record type to el types usando el name y el plural name y el base name.
   Agregar un field to el record type's fields usando "next " then el type's name and "next" y el type's name y el on flag.
   Agregar un spanish field to el record type's fields usando "siguiente " then el type's name and "siguiente" y el type's name y el on flag.
-  Poner "next " then el type's name into el spanish field's redefinition target name.
+  Poner "next " then el type's name into el spanish field's redefinition contenido name.
   \Add un spanish reverse field to el record type's fields usando el type's name then " siguiente" and "siguiente" y el type's name y el on flag.
-  \Put "next " then el type's name into el spanish reverse field's redefinition target name.
+  \Put "next " then el type's name into el spanish reverse field's redefinition contenido name.
   Agregar another field to el record type's fields usando "previous " then el type's name and "previous" y el type's name y el on flag.
   \Add another spanish field to el record type's fields usando "anterior " then el type's name and "anterior" y el type's name y el on flag.
-  \Put "previous " then el type's name into el other spanish field's redefinition target name.
+  \Put "previous " then el type's name into el other spanish field's redefinition contenido name.
   Agregar another spanish reverse field to el record type's fields usando el type's name then " anterior" and "anterior" y el type's name y el on flag.
-  Poner "previous " then el type's name into el other spanish reverse field's redefinition target name.
+  Poner "previous " then el type's name into el other spanish reverse field's redefinition contenido name.
   Si el type's fields are not empty, Adjuntar el type's fields to el record type's fields.
   Indexar el record type.
   \ fix up original type to look like un pointer
-  Poner el record type's name into el type's target name.
+  Poner el record type's name into el type's contenido name.
   \ Agregar chain type
   Agregar un chain type to el types usando el type's plural name and "" y el base type's plural name.
   Agregar un third field to el chain type's fields usando "first " then el type's name and "first" y el type's name y el on flag.
   Agregar un third spanish field to el chain type's fields usando "primero " then el type's name and "primero" y el type's name y el on flag.
-  Poner "first " then el type's name into el third spanish field's redefinition target name.
+  Poner "first " then el type's name into el third spanish field's redefinition contenido name.
   Agregar un third feminine spanish field to el chain type's fields usando "primera " then el type's name and "primera" y el type's name y el on flag.
-  Poner "first " then el type's name into el third feminine spanish field's redefinition target name.
+  Poner "first " then el type's name into el third feminine spanish field's redefinition contenido name.
   Agregar un fourth field to el chain type's fields usando "last " then el type's name and "last" y el type's name y el on flag.
   Agregar un fourth spanish field to el chain type's fields usando "último " then el type's name and "último" y el type's name y el on flag.
-  Poner "last " then el type's name into el fourth spanish field's redefinition target name.
+  Poner "last " then el type's name into el fourth spanish field's redefinition contenido name.
   Agregar un fourth spanish feminine field to el chain type's fields usando "última " then el type's name and "última" y el type's name y el on flag.
-  Poner "last " then el type's name into el fourth spanish feminine field's redefinition target name.
+  Poner "last " then el type's name into el fourth spanish feminine field's redefinition contenido name.
   Indexar el chain type.
   
 Para resolve un type (index plural):
@@ -4434,10 +4434,10 @@ Para resolve un type (index plural):
   
 Para resolve un type (optional info - pointer):
   Si el compiler's abort flag es set, salir.
-  Si el type's target type es not nil, salir.
-  Si el type's target name es blank, Poner el type's base type's target type into el type's target type; salir.
-  Encontrar el type's target type usando el type's target name y el type index.
-  Si el type's target type es nil, abort con "No veo bien un qué apuntas. Por favor sé más claro." y el type's locus; salir.
+  Si el type's contenido type es not nil, salir.
+  Si el type's contenido name es blank, Poner el type's base type's contenido type into el type's contenido type; salir.
+  Encontrar el type's contenido type usando el type's contenido name y el type index.
+  Si el type's contenido type es nil, abort con "No veo bien un qué apuntas. Por favor sé más claro." y el type's locus; salir.
   
 Para resolve un type (optional info - record):
   Si el compiler's abort flag es set, salir.
@@ -4581,7 +4581,7 @@ Para scan any optional info for un type usando un rider (pointer):
     Abort con "El 'para' en este lugar necesita un artículo definido justo después, y no '" then el rider's token then "'." y el rider; 
     Salir. 
   Mover el rider (compiler rules).
-  Scan el type's target name usando el rider.
+  Scan el type's contenido name usando el rider.
   
 Para scan any optional info for un type usando un rider (record):
   Mover el rider (compiler rules).
@@ -4614,7 +4614,7 @@ Para scan un field usando un rider (redefine part):
   Mover el rider (compiler rules).
   Si el rider's token es not any definite article, abort con "Esperaba una palabra 'el/la/los/las/lo', pero encontré '" then el rider's token then "'." y el rider; salir.
   Mover el rider (compiler rules).
-  Scan el field's redefinition target name usando el rider.
+  Scan el field's redefinition contenido name usando el rider.
   
 Para scan un field usando un rider (reference part):
   Si el compiler's abort flag es set, salir.
@@ -4885,14 +4885,14 @@ Para definir el compiled flag in un variable:
   
 Para omitir to el next word in un substring:
     Si el substring es blank, salir.
-    Si el substring's first's target es noise, interrumpir.
+    Si el substring's first's contenido es noise, interrumpir.
     Agregar 1 to el substring's first.
   Repetir.
   Omitir any leading noise in el substring.
   
 Para omitir to el previous word in un substring:
     Si el substring es blank, salir.
-    Si el substring's last's target es noise, interrumpir.
+    Si el substring's last's contenido es noise, interrumpir.
     Restar 1 desde el substring's last.
   Repetir.
   Omitir any trailing noise in el substring.
@@ -5065,7 +5065,7 @@ A name, un plural name,
 A partial moniker,
 A length,
 A base name, un base type (reference),
-A target name, un target type (reference) [pointers only],
+A contenido name, un contenido type (reference) [pointers only],
 A scale ratio,
 Some fields [records only],
 A cooking flag,
@@ -5087,7 +5087,7 @@ An address [globals and literals only] or
 An offset at el address [locals, parameters, and fields only],
 A count [fields only],
 A reference flag [fields only],
-A redefinition target name [fields only],
+A redefinition contenido name [fields only],
 A by-value flag [parameters only],
 An global body [globals only],
 An initializer string [globals only],
@@ -5098,7 +5098,7 @@ The writing timer es un timer.
   
 Para omitir any trailing noise in un substring:
     Si el substring es blank, salir.
-    Si el substring's last's target es not noise, salir.
+    Si el substring's last's contenido es not noise, salir.
     Restar 1 desde el substring's last.
   Repetir.
   
