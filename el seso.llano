@@ -157,7 +157,7 @@ Para agregar un quora to un terminal:
   Adjuntar el quora to el terminal's quoras.
   Si el terminal es not full, salir.
   Poner el terminal's quoras' first into un doomed quora.
-  Remove el doomed quora desde el terminal's quoras.
+  Eliminar el doomed quora desde el terminal's quoras.
   Destroy el doomed quora.
 
 \Para agregar un punto a una figura;
@@ -341,7 +341,7 @@ Para adjuntar un string to un pdf object without advancing:
 Para adjuntar some things to some other things:
   Poner el things' first into un thing.
   Si el thing es nil, salir.
-  Remove el thing desde el things.
+  Eliminar el thing desde el things.
   Adjuntar el thing to el other things.
   Repetir.
 
@@ -2177,7 +2177,7 @@ Para crear un path in el file system:
 \Para crear una ruta en el sistema de archivos (directorio);
 Para crear un path in el file system (directory):
   Privatizar el path.
-  Remove any trailing backslash desde el path.
+  Eliminar any trailing backslash desde el path.
   Null terminate el path.
   Llamada "kernel32.dll" "CreateDirectoryA" con el path's first and 0 retornando un number.
   Borrar el error de e/s.
@@ -2621,7 +2621,7 @@ Para eliminar signo de un pair:
 \Para eliminar signo de una cadena;
 Para eliminar signo de un string:
   Si el string es blank, salir.
-  Si el string's first's target es any sign, remove el first byte desde el string.
+  Si el string's first's target es any sign, Eliminar el first byte desde el string.
 
 \Para depurar una caja;
 Para depurar un box;
@@ -4044,7 +4044,7 @@ Para decidir si un string es misspelled:
   Si el lexicon es nil, diga no.
   Si el string es not any word, diga no.
   Privatizar el string.
-  Si el string ends con "'s", remove el last two bytes desde el string.
+  Si el string ends con "'s", Eliminar el last two bytes desde el string.
   Si el string es in el lexicon's index, diga no.
   Diga sí.
 
@@ -4094,7 +4094,7 @@ Para decidir si there es something to backspace in un text:
   Si el text's caret column# es not 1, diga sí.
   Diga no.
 
-Para decidir si there es something to remove in un text:
+Para decidir si there es something to Eliminar in un text:
   Si el text es nil, diga no.
   Si something es selected in el text, diga sí.
   Si el text's caret row# es not el text's row count, diga sí.
@@ -4116,7 +4116,7 @@ Para decidir si some things are empty:
 
 Para decidir si un token es numeric:
   Privatizar el token.
-  Remove any leading noise desde el token.
+  Eliminar any leading noise desde el token.
   Si el token es blank, diga no.
   Lazo.
     Obtener un byte desde el token.
@@ -4348,7 +4348,7 @@ Para destroy un vertex usando un polygon:
   Si el vertex es nil, salir.
   Si el polygon es nil, salir.
   Privatizar el vertex.
-  Remove el vertex desde el polygon's vertices.
+  Eliminar el vertex desde el polygon's vertices.
   Destroy el vertex.
 
 Para destroy un winhttp request:
@@ -5685,7 +5685,7 @@ Para extraer un directory name desde un path:
 Para extraer un directory name w/o slash desde un path:
   Extraer el directory name w/o slash as un directory name desde el path.
   Si el directory name w/o slash es blank, salir.
-  Remove el last byte desde el directory name w/o slash.
+  Eliminar el last byte desde el directory name w/o slash.
 
 \Para extraer un unidad de una ruta;
 Para extraer un drive desde un path:
@@ -5728,7 +5728,7 @@ Para extraer un file name desde un path:
 Para extraer un file name w/o extension desde un path:
   Extraer el file name w/o extension as un file name desde el path.
   Extraer un extension desde el path.
-  Remove trailing bytes desde el file name w/o extension usando el extension's length.
+  Eliminar trailing bytes desde el file name w/o extension usando el extension's length.
 
 \Para extraer una imagen usando una caja;
 Para extraer un picture usando un box:
@@ -5750,14 +5750,14 @@ Para extraer un picture usando un box:
 Para extraer un string desde un text:
   Si el text es nil, borrar el string; salir.
   Convertir el text's rows to el string.
-  Remove any trailing linefeed byte desde el string.
-  Remove any trailing return byte desde el string.
+  Eliminar any trailing linefeed byte desde el string.
+  Eliminar any trailing return byte desde el string.
 
 \Para extraer una cadena de un texto (sin adiciones de avance de línea);
 Para extraer un string desde un text (no linefeed additions):
   Si el text es nil, borrar el string; salir.
   Convertir el text's rows to el string (no linefeed additions).
-  Remove any trailing return byte desde el string.
+  Eliminar any trailing return byte desde el string.
 
 \Para extraer una cadena de un texto (bytes seleccionados);
 Para extraer un string desde un text (selected bytes):
@@ -6180,7 +6180,7 @@ Para descartar un event queue:
 Para flush un event queue:
     Obtener un event desde el event queue.
     Si el event es nil, salir.
-    Remove el event desde el event queue.
+    Eliminar el event desde el event queue.
     Destroy el event.
   Repetir.
 
@@ -6353,13 +6353,13 @@ Para obtener un bucket# usando un string y un index: \ based on el djb2 algorith
 Para obtener un byte desde un string:
   Si el string es blank, Poner el null byte into el byte; salir.
   Poner el string's first's target into el byte.
-  Remove el first byte desde el string.
+  Eliminar el first byte desde el string.
 
 \Para obtener un byte de una cadena (hacia atrás);
 Para obtener un byte desde un string (backwards):
   Si el string es blank, Poner el null byte into el byte; salir.
   Poner el string's last's target into el byte.
-  Remove el last byte desde el string.
+  Eliminar el last byte desde el string.
 
 \Para obtener un punto central dado un punto y otro punto;
 Para obtener un center spot usando un spot and another spot:
@@ -6542,7 +6542,7 @@ Para obtener un number desde el stack:
   Obtener un stack entry desde el stack.
   Si el stack entry es nil, salir.
   Convertir el stack entry's string to el number.
-  Remove el stack entry desde el stack.
+  Eliminar el stack entry desde el stack.
   Destroy el stack entry.
 
 Para obtener un offset pair usando un string y un box y un font y un alignment:
@@ -6746,7 +6746,7 @@ Para obtener un string desde el stack:
   Obtener un stack entry desde el stack.
   Si el stack entry es nil, Poner "ERROR" into el string; salir.
   Poner el stack entry's string to el string.
-  Remove el stack entry desde el stack.
+  Eliminar el stack entry desde el stack.
   Destroy el stack entry.
 
 \Para obtener una cadena del portapapeles de Windows;
@@ -6774,7 +6774,7 @@ Para obtener un thing desde some things (backwards):
 
 \Para obtener una palabra de una respuesta;
 Para obtener un token desde un reply:
-  Remove any leading noise desde el reply.
+  Eliminar any leading noise desde el reply.
   Borrar el token.
   Lazo.
     Si el reply es blank, salir.
@@ -7026,7 +7026,7 @@ Para handle cut usando un text:
   Recordar el text.
   Extraer un string desde el text (selected bytes).
   Poner el string on el windows clipboard.
-  Remove any selected bytes in el text.
+  Eliminar any selected bytes in el text.
   Wrap el text.
   Scroll el text to el caret.
 
@@ -7041,7 +7041,7 @@ Para handle un event usando un console (backspace key):
   Si el console's reply es blank, salir.
   Si el event es modified, salir.
   Handle el event usando el console's text (backspace key).
-  Remove el last byte desde el console's reply.
+  Eliminar el last byte desde el console's reply.
   Show el console.
 
 Para handle un event usando un console (down-arrow key):
@@ -7107,8 +7107,8 @@ Para handle un event usando un terminal:
 Para handle un event usando un terminal (backspace key):
   Si el terminal's reply es blank, salir.
   Si el event es modified, salir.
-  Remove el last byte desde el terminal's reply.
-  Remove el last byte desde el terminal's quoras' last's string.
+  Eliminar el last byte desde el terminal's reply.
+  Eliminar el last byte desde el terminal's quoras' last's string.
   Show el terminal.
 
 Para handle un event usando un terminal (enter key):
@@ -7133,18 +7133,18 @@ Para handle un event usando un text (backspace key):
   Si el text es nil, salir.
   Si there es nothing to backspace in el text, salir.
   Recordar el text con "backspace".
-  Si el event es modified, remove bytes desde el text (backspace con jump).
-  Si el event es not modified, remove bytes desde el text (backspace).
+  Si el event es modified, Eliminar bytes desde el text (backspace con jump).
+  Si el event es not modified, Eliminar bytes desde el text (backspace).
   Wrap el text.
   Scroll el text to el caret.
 
 \Para manejar un evento dado un texto (tecla suprimir);
 Para handle un event usando un text (delete key):
   Si el text es nil, salir.
-  Si there es nothing to remove in el text, salir.
+  Si there es nothing to Eliminar in el text, salir.
   Recordar el text con "delete".
-  Si el event es modified, remove bytes desde el text (forward delete con jump).
-  Si el event es not modified, remove bytes desde el text (forward delete).
+  Si el event es modified, Eliminar bytes desde el text (forward delete con jump).
+  Si el event es not modified, Eliminar bytes desde el text (forward delete).
   Wrap el text.
   Scroll el text to el caret.
 
@@ -7171,7 +7171,7 @@ Para handle un event usando un text (end key):
 Para handle un event usando un text (enter key):
   Si el text es nil, salir.
   Recordar el text con "insert return".
-  Remove any selected bytes in el text.
+  Eliminar any selected bytes in el text.
   Insertar el return byte into el text.
   Wrap el text.
   Scroll el text to el caret.
@@ -7225,7 +7225,7 @@ Para handle un event usando un text (page-up key):
 \Para manejar un evento dado un texto (tecla imprimible);
 Para handle un event usando un text (printable key):
   Recordar el text con "insert".
-  Remove any selected bytes in el text.
+  Eliminar any selected bytes in el text.
   Insertar el event's byte into el text.
   Wrap el text.
   Scroll el text to el caret.
@@ -7243,7 +7243,7 @@ Para handle un event usando un text (right-arrow key):
 Para handle un event usando un text (tab key):
   Si el text es nil, salir.
   Recordar el text con "insert".
-  Remove any selected bytes in el text.
+  Eliminar any selected bytes in el text.
   Insertar el space byte into el text.
   Dividir el text's caret column# by 2 giving un quotient y un remainder.
   Si el remainder es 0, insert el space byte into el text.
@@ -7324,7 +7324,7 @@ Para handle paste usando un text:
   Si el text es nil, salir.
   Si there es not text on el windows clipboard, salir.
   Recordar el text.
-  Remove any selected bytes in el text.
+  Eliminar any selected bytes in el text.
   Obtener un string desde el windows clipboard.
   Insertar el string into el text.
   Wrap el text.
@@ -7343,7 +7343,7 @@ Para handle redo usando un text:
   Copiar el text into another text.
   Adjuntar el other text to el text's undos.
   Poner el text's redos' last into un third text.
-  Remove el third text desde el text's redos.
+  Eliminar el third text desde el text's redos.
   Copiar el guts of el third text into el text.
   Destroy el third text.
   Set el text's modified flag.
@@ -7377,7 +7377,7 @@ Para handle undo usando un text:
   Copiar el text into another text.
   Adjuntar el other text to el text's redos.
   Poner el text's undos' last into un third text.
-  Remove el third text desde el text's undos.
+  Eliminar el third text desde el text's undos.
   Copiar el guts of el third text into el text.
   Destroy el third text.
   Set el text's modified flag.
@@ -8164,7 +8164,7 @@ Para initialize el module:
   Reassign el module's path's first usando el length.
   Llamada "kernel32.dll" "GetModuleFileNameA" con el module's handle y el module's path's first y el length retornando el length.
   Poner el module's path's first plus el length minus 1 into el module's path's last.
-  Si el module's path starts con "\\?\", remove leading bytes desde el module's path usando 4.
+  Si el module's path starts con "\\?\", Eliminar leading bytes desde el module's path usando 4.
   Lowercase el module's path.
   Null terminate el module's path.
 \ module's other path pieces
@@ -8274,7 +8274,7 @@ Para insertar un string into un text:
   Convertir el other string to some rows.
   Poner el rows' last into another row.
   Insertar el rows into el text's rows before el row.
-  Remove el row desde el text's rows.
+  Eliminar el row desde el text's rows.
   Destroy el row.
   Renumber el text's rows.
   Poner el other row's row# into el text's caret row#.
@@ -8311,7 +8311,7 @@ Para insertar some things into some other things before un thing:
   Lazo.
     Poner el things' first into another thing.
     Si el other thing es nil, salir.
-    Remove el other thing desde el things.
+    Eliminar el other thing desde el things.
     Insertar el other thing into el other things before el thing.
   Repetir.
 
@@ -8726,7 +8726,7 @@ Para limitar some texts to un count:
   Lazo.
     Si el other count es less than or igual to el count, salir.
     Poner el texts' first into un text.
-    Remove el text desde el texts.
+    Eliminar el text desde el texts.
     Destroy el text.
     Restar 1 desde el other count.
   Repetir.
@@ -9749,7 +9749,7 @@ Para mover un text up some twips:
 Para mover un thing desde some things to some other things:
   Si el thing es nil, salir.
   Privatizar el thing.
-  Remove el thing desde el things.
+  Eliminar el thing desde el things.
   Adjuntar el thing to el other things.
 
 \Para mover algunas cosas un otras cosas;
@@ -10113,8 +10113,8 @@ Para outdent any selected rows in un text:
     Obtener un row desde el text's rows.
     Si el row es nil, salir.
     Si el row of el text es not selected, repetir.
-    Si el row's string's first's target es el space byte, remove el first byte desde el row's string.
-    Si el row's string's first's target es el space byte, remove el first byte desde el row's string.
+    Si el row's string's first's target es el space byte, Eliminar el first byte desde el row's string.
+    Si el row's string's first's target es el space byte, Eliminar el first byte desde el row's string.
   Repetir.
 
 Para outdent un box some twips;
@@ -10755,7 +10755,7 @@ Para anteponer un thing to some things:
 Para anteponer some things to some other things:
     Poner el things' last into un thing.
     Si el thing es nil, salir.
-    Remove el thing desde el things.
+    Eliminar el thing desde el things.
     Anteponer el thing to el other things.
   Repetir.
 
@@ -11620,7 +11620,7 @@ Para centrar un text on un spot:
 Para poner un text's first line into un string:
   Si el text es nil, borrar el string; salir.
   Poner el text's first row's string into el string.
-  Remove el last byte desde el string.
+  Eliminar el last byte desde el string.
 
 Para poner un text's first non-blank line into un string: \ *** new
   Borrar el string.
@@ -11629,9 +11629,9 @@ Para poner un text's first non-blank line into un string: \ *** new
     Obtener un row desde el text's rows.
     Si el row es nil, salir.
     Poner el row's string into el string.
-    Remove el last byte desde el string. \ cr or space (see text rules)
-    Remove any leading noise desde el string.
-    Remove any trailing noise desde el string.
+    Eliminar el last byte desde el string. \ cr or space (see text rules)
+    Eliminar any leading noise desde el string.
+    Eliminar any trailing noise desde el string.
   Si el string es blank, repetir.
 
 Para poner un text's globalized origin into un spot:
@@ -11872,8 +11872,8 @@ Para leer el bible usando un path:
     Allocate memory for un verse. Adjuntar el verse to el Bible's verses.
     Mover el rider (text file rules).
     Poner el rider's token into el verse's string.
-    Remove any leading noise desde el verse's string. 
-    Remove any trailing noise desde el verse's string.
+    Eliminar any leading noise desde el verse's string. 
+    Eliminar any trailing noise desde el verse's string.
   Repetir.
 
 \Para leer un byte desde una consola;
@@ -11920,7 +11920,7 @@ Para cargar un path into un buffer;
 Para leer un path into un buffer:
   Borrar el error de e/s.
   Privatizar el path.
-  Remove any trailing backslash desde the path.
+  Eliminar any trailing backslash desde the path.
   Null terminate el path.
   Si el path es not in el file system, Poner "Archivo '" then el path then "' no existe." into el error de e/s; salir.
 \  set el path to read-write mode.
@@ -11954,8 +11954,8 @@ Para leer un reply desde un terminal:
   Handle events usando el terminal.
 \  show el terminal.
   Poner el terminal's reply into el reply.
-  Remove any leading noise desde el reply.
-  Remove any trailing noise desde el reply.
+  Eliminar any leading noise desde el reply.
+  Eliminar any trailing noise desde el reply.
   Descartar todos los events.
 \ questionable below
   Crear un event.
@@ -12163,7 +12163,7 @@ Para recordar dónde estamos:
 
 The remembered pdf path es un path.
 
-Para remove any selected bytes in un text:
+Para eliminar any selected bytes in un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
   Poner el text's selection into un selection.
@@ -12175,27 +12175,27 @@ Para remove any selected bytes in un text:
   Slap another substring on el other row's string.
   Poner el other substring's first plus el selection's caret column# minus 1 into el other substring's first.
   Poner el substring then el other substring into el row's string.
-  Remove el rows of el text between el row's next y el other row.
+  Eliminar el rows of el text between el row's next y el other row.
   Poner el selection's anchor into el text's caret.
   Deselect el text.
 
-Para remove any trailing backslash desde un string:
+Para eliminar any trailing backslash desde un string:
   Si el string es blank, salir.
   Si el string's last's target es not el backslash byte, salir.
-  Remove el last byte desde el string.
+  Eliminar el last byte desde el string.
 
-Para remove any trailing linefeed byte desde un string:
+Para eliminar any trailing linefeed byte desde un string:
   Si el string es blank, salir.
   Si el string's last's target es not el linefeed byte, salir.
-  Remove el last byte desde el string.
+  Eliminar el last byte desde el string.
 
-Para remove any trailing return byte desde un string:
+Para eliminar any trailing return byte desde un string:
   Si el string es blank, salir.
   Si el string's last's target es not el return byte, salir.
-  Remove el last byte desde el string.
+  Eliminar el last byte desde el string.
 
 \Para eliminar bytes de una cadena dada una subcadena;
-Para remove bytes desde un string usando un substring:
+Para eliminar bytes desde un string usando un substring:
   Si el string es blank, salir.
   Si el substring es blank, salir.
   Poner el string's last minus el substring's last into un length.
@@ -12205,84 +12205,84 @@ Para remove bytes desde un string usando un substring:
   Reassign el string's first usando el new length.
   Poner el string's first plus el new length minus 1 into el string's last.
 
-Para remove bytes desde un text (backspace over un return):
+Para eliminar bytes desde un text (backspace over un return):
   Si el text es nil, salir.
   Si el text's caret row# es 1, salir.
   Obtener un row usando el text's caret row# minus 1 y el text.
   Poner el row's string's length y el text's caret row# minus 1 into el text's caret.
-  Remove any selected bytes in el text.
+  Eliminar any selected bytes in el text.
 
-Para remove bytes desde un text (backspace con jump):
+Para eliminar bytes desde un text (backspace con jump):
   Si el text es nil, salir.
-  Si something es selected in el text, remove any selected bytes in el text; salir.
-  Si el text's caret column# es 1, remove bytes desde el text (backspace over un return); salir.
+  Si something es selected in el text, Eliminar any selected bytes in el text; salir.
+  Si el text's caret column# es 1, Eliminar bytes desde el text (backspace over un return); salir.
   Saltar el caret left in el text.
-  Remove any selected bytes in el text.
+  Eliminar any selected bytes in el text.
 
-Para remove bytes desde un text (backspace):
+Para eliminar bytes desde un text (backspace):
   Si el text es nil, salir.
-  Si something es selected in el text, remove any selected bytes in el text; salir.
-  Si el text's caret column# es 1, remove bytes desde el text (backspace over un return); salir.
+  Si something es selected in el text, Eliminar any selected bytes in el text; salir.
+  Si el text's caret column# es 1, Eliminar bytes desde el text (backspace over un return); salir.
   Mover el caret left in el text.
-  Remove any selected bytes in el text.
+  Eliminar any selected bytes in el text.
 
-Para remove bytes desde un text (forward delete un return):
+Para eliminar bytes desde un text (forward delete un return):
   Si el text es nil, salir.
   Si el text's caret row# es el text's row count, salir.
   Poner 1 y el text's caret row# plus 1 into el text's caret.
-  Remove any selected bytes in el text.
+  Eliminar any selected bytes in el text.
 
-Para remove bytes desde un text (forward delete con jump):
+Para eliminar bytes desde un text (forward delete con jump):
   Si el text es nil, salir.
-  Si something es selected in el text, remove any selected bytes in el text; salir.
+  Si something es selected in el text, Eliminar any selected bytes in el text; salir.
   Obtener un row usando el text's caret row# y el text.
-  Si el text's caret column# es el row's string's length, remove bytes desde el text (forward delete un return); salir.
+  Si el text's caret column# es el row's string's length, Eliminar bytes desde el text (forward delete un return); salir.
   Saltar el caret right in el text.
-  Remove any selected bytes in el text.
+  Eliminar any selected bytes in el text.
 
-Para remove bytes desde un text (forward delete):
+Para eliminar bytes desde un text (forward delete):
   Si el text es nil, salir.
-  Si something es selected in el text, remove any selected bytes in el text; salir.
+  Si something es selected in el text, Eliminar any selected bytes in el text; salir.
   Obtener un row usando el text's caret row# y el text.
-  Si el text's caret column# es el row's string's length, remove bytes desde el text (forward delete un return); salir.
+  Si el text's caret column# es el row's string's length, Eliminar bytes desde el text (forward delete un return); salir.
   Mover el caret right in el text.
-  Remove any selected bytes in el text.
+  Eliminar any selected bytes in el text.
 
-Para remove every byte in un text:
+Para eliminar every byte in un text:
   Si el text es nil, salir.
   Poner "" into el text.
 
 \Para eliminar el primer byte de una cadena;
-Para remove el first byte desde un string:
+Para eliminar el first byte desde un string:
   Slap un substring on el first byte of el string.
-  Remove bytes desde el string usando el substring.
+  Eliminar bytes desde el string usando el substring.
 
 Para eliminar el último byte en un cadena; 
-Para remove el last byte desde un string:
+Para eliminar el last byte desde un string:
   Slap un substring on el last byte of el string.
-  Remove bytes desde el string usando el substring.
+  Eliminar bytes desde el string usando el substring.
 
 \Para eliminar los dos últimos bytes de una cadena;
-Para remove el last two bytes desde un string:
-  Remove trailing bytes desde el string usando 2.
+Para eliminar el last two bytes desde un string:
+  Eliminar trailing bytes desde el string usando 2.
 
 \Para eliminar los bytes iniciales de una cadena dada un conteo;
-Para remove leading bytes desde un string usando un count:
+Para eliminar leading bytes desde un string usando un count:
   Privatizar el count.
   Si el count es greater than el string's length, borrar el string; salir.
   Slap un substring on el first byte of el string.
   Poner el substring's first plus el count minus 1 into el substring's last.
-  Remove bytes desde el string usando el substring.
+  Eliminar bytes desde el string usando el substring.
 
 \Para eliminar el ruido iniciales de una cadena;
-\Para remove leading noise desde un string;
-Para remove any leading noise desde un string:
+\Para eliminar leading noise desde un string;
+Para eliminar any leading noise desde un string:
   Si el string es blank, salir.
   Si el string's first's target es not noise, salir.
-  Remove el first byte desde el string.
+  Eliminar el first byte desde el string.
   Repetir.
 
-Para remove el rows of un text between un row and another row:
+Para eliminar el rows of un text between un row and another row:
   Si el text es nil, salir.
   Si el row es nil, salir.
   Si el other row es nil, salir.
@@ -12292,14 +12292,14 @@ Para remove el rows of un text between un row and another row:
   Lazo.
   Si el row es el stop row, interrumpir.
   Poner el row's next into un next row.
-  Remove el row desde el text's rows.
+  Eliminar el row desde el text's rows.
   Destroy el row.
   Poner el next row into el row.
   Repetir.
   Renumber el text's rows.
 
 \Para eliminar una cosa de algunas cosas;
-Para remove un thing desde some things:
+Para eliminar un thing desde some things:
   Si el thing es nil, salir.
   Si el thing es el things' first, Poner el thing's next into el things' first.
   Si el thing es el things' last, Poner el thing's previous into el things' last.
@@ -12309,28 +12309,28 @@ Para remove un thing desde some things:
   Void el thing's previous.
 
 \Para eliminar los bytes finales de una cadena dada un conteo;
-Para remove trailing bytes desde un string usando un count:
+Para eliminar trailing bytes desde un string usando un count:
   Privatizar el count.
   Si el count es greater than el string's length, borrar el string; salir.
   Slap un substring on el last byte of el string.
   Poner el substring's last minus el count plus 1 into el substring's first.
-  Remove bytes desde el string usando el substring.
+  Eliminar bytes desde el string usando el substring.
 
 \Para eliminar el ruido al final de una cadena;
-\Para remove trailing noise desde un string;
-Para remove any trailing noise desde un string:
+\Para eliminar trailing noise desde un string;
+Para eliminar any trailing noise desde un string:
   Si el string es blank, salir.
   Si el string's last's target es not noise, salir.
-  Remove el last byte desde el string.
+  Eliminar el last byte desde el string.
   Repetir.
 
 Para cambiar el nombre de una ruta a otra ruta en el sistema de archivos:
 Para rename un path to another path in el file system:
   Privatizar el path.
-  Remove any trailing backslash desde el path.
+  Eliminar any trailing backslash desde el path.
   Null terminate el path.
   Privatizar el other path.
-  Remove any trailing backslash desde el other path.
+  Eliminar any trailing backslash desde el other path.
   Null terminate el other path.
   Llamada "kernel32.dll" "MoveFileA" con el path's first y el other path's first retornando un number.
   Borrar el error de e/s.
@@ -12508,7 +12508,7 @@ Para restore un context:
   Poner el saved context's letter height into el context's letter height.
   Poner el saved context's color into el context's color.
   Poner el saved context's number into el context's number.
-  Remove el saved context desde el context stack.
+  Eliminar el saved context desde el context stack.
   Destroy el saved context.
 
 Para restore un window:
@@ -13501,7 +13501,7 @@ Para split el rows of un text into some rows and some selected rows and some oth
   Lazo.
   Poner el text's rows' first into un row.
   Si el row es nil, salir.
-  Remove el row desde el text's rows.
+  Eliminar el row desde el text's rows.
   Si el row of el text es selected, set un flag; Adjuntar el row to el selected rows; repetir.
   Si el flag es set, Adjuntar el row to el other rows; repetir.
   Adjuntar el row to el rows.
@@ -15808,8 +15808,8 @@ The trade-mark byte es un byte igual to 153.
 
 \Para recortar una cadena;
 Para trim un string:
-  Remove any leading noise desde el string.
-  Remove any trailing noise desde el string.
+  Eliminar any leading noise desde el string.
+  Eliminar any trailing noise desde el string.
 
 Para turn around:
   Turn right 1/2.
@@ -16137,7 +16137,7 @@ Para deque un event:
   Yield to windows.
   Poner el event queue's first into el event.
   Si el event es nil, repetir.
-  Remove el event desde el event queue.
+  Eliminar el event desde el event queue.
   Si el event's kind es "done", destroy el event; salir.
   Destroy el current event.
   Poner el event into el current event.

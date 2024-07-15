@@ -65,8 +65,8 @@ Para obtener una string desde the argumentos da linha de comando:
       Agregar 1 to the substring's first byte pointer; 
       Repeat.
     Poner the substring into the string.
-    Remove any leading noise desde the string.
-    Remove any trailing noise desde the string.
+    Eliminar any leading noise desde the string.
+    Eliminar any trailing noise desde the string.
     \Eliminar el ruido iniciales de la string.
     \Eliminar el ruido al final de la string.
   \Reitere. 
@@ -219,7 +219,7 @@ Para agregar el destroy routine for un type (things):
   Adjuntar "Si el " then el type's name then "'s first es nil, salir. " to el routine's body string.
   Poner el type's fields' first's type's name into un name.
   Adjuntar "Poner el " then el type's name then "'s first into un " then el name then ". " to el routine's body string.
-  Adjuntar "Remove el " then el name then " desde el " then el type's name then ". " to el routine's body string.
+  Adjuntar "Eliminar el " then el name then " desde el " then el type's name then ". " to el routine's body string.
   Adjuntar "Destroy el " then el name then ". " to el routine's body string.
   Adjuntar "Repetir. " to el routine's body string.
   Slap el routine's routine header on el routine's header string.
@@ -1654,7 +1654,7 @@ Para compile el next statement usando un rider (if):
   Si el compiler's abort flag es set, salir.
   Mover el rider (compiler rules).
   Compile some monikettes usando el rider.
-  Remove any negatives desde el monikettes retornando un flag.
+  Eliminar any negatives desde el monikettes retornando un flag.
   Encontrar un routine usando el monikettes.
   Si el routine es not nil, Agregar push fragments usando el monikettes.
   Si el routine es nil, convertir el monikettes to un moniker.
@@ -4176,9 +4176,9 @@ Para pluralize un string (spanish rules): \ nouns only
   Poner el plural string into el string.
   
 Para pluralize un string (spanish rules - each word): \ nouns only
-  Si el string ends con "ión", remove el last two bytes desde el string; Adjuntar "ones" to el string; salir.
-  \If el string ends con "ión", remove el last two bytes desde el string; Adjuntar "ons" to el string; salir.
-  Si el string ends con "z", remove el last byte desde el string; Adjuntar "ces" to el string; salir.
+  Si el string ends con "ión", Eliminar el last two bytes desde el string; Adjuntar "ones" to el string; salir.
+  \If el string ends con "ión", Eliminar el last two bytes desde el string; Adjuntar "ons" to el string; salir.
+  Si el string ends con "z", Eliminar el last byte desde el string; Adjuntar "ces" to el string; salir.
   Si el string ends con any vowel, Adjuntar "s" to el string; salir.
   Si el string ends con any consonant, Adjuntar "es" to el string; salir.
   Adjuntar "s" to el string. \ for words that end in special characters, both languages, like bucket#
@@ -4215,17 +4215,17 @@ Para pluralize un string (english rules):
   Si el string es "virus", Poner "viruses" into el string; salir.
   Si el string ends con "sh", Adjuntar "es" to el string; salir.
   Si el string ends con "ch", Adjuntar "es" to el string; salir.
-  Si el string ends con "man", remove el last two bytes desde el string; Adjuntar "en" to el string; salir.
+  Si el string ends con "man", Eliminar el last two bytes desde el string; Adjuntar "en" to el string; salir.
   Si el string ends con "child", Adjuntar "ren" to el string; salir.
-  Si el string ends con "ex", remove el last two bytes desde el string; Adjuntar "ices" to el string; salir. \ or Agregar ES
-  Si el string ends con "fe", remove el last two bytes desde el string; Adjuntar "ves" to el string; salir.
-  Si el string ends con "is", remove el last two bytes desde el string; Adjuntar "es" to el string; salir.
-  Si el string ends con "ix", remove el last two bytes desde el string; Adjuntar "ices" to el string; salir. \ or Agregar ES
+  Si el string ends con "ex", Eliminar el last two bytes desde el string; Adjuntar "ices" to el string; salir. \ or Agregar ES
+  Si el string ends con "fe", Eliminar el last two bytes desde el string; Adjuntar "ves" to el string; salir.
+  Si el string ends con "is", Eliminar el last two bytes desde el string; Adjuntar "es" to el string; salir.
+  Si el string ends con "ix", Eliminar el last two bytes desde el string; Adjuntar "ices" to el string; salir. \ or Agregar ES
   Si el string ends con "ma", Adjuntar "ta" to el string; salir. \ or Agregar S
-  Si el string ends con any consonant and "y", remove el last byte desde el string; Adjuntar "ies" to el string; salir.
+  Si el string ends con any consonant and "y", Eliminar el last byte desde el string; Adjuntar "ies" to el string; salir.
   Si el string ends con any vowel and "o", Adjuntar "s" to el string; salir.
   Si el string ends con any vowel and "y", Adjuntar "s" to el string; salir.
-  Si el string ends con "f", remove el last byte desde el string; Adjuntar "ves" to el string; salir.
+  Si el string ends con "f", Eliminar el last byte desde el string; Adjuntar "ves" to el string; salir.
   Si el string ends con "s", Adjuntar "es" to el string; salir.
   Si el string ends con "x", Adjuntar "es" to el string; salir.
   Si el string ends con "z", Adjuntar "es" to el string; salir.
@@ -4241,7 +4241,7 @@ The push value tag es un tag igual to 19.
   
 Para poner el compiler's exe path into un path:
   Extraer un designator desde el compiler's directory.
-  Remove any trailing backslash desde el designator.
+  Eliminar any trailing backslash desde el designator.
   Poner el compiler's directory then el designator then ".exe" into el path.
   
 Para poner el compiler's exe size into un size:
@@ -4252,7 +4252,7 @@ Para poner el compiler's exe size into un size:
   
 Para poner el compiler's listing path into un path:
   Extraer un designator desde el compiler's directory.
-  Remove any trailing backslash desde el designator.
+  Eliminar any trailing backslash desde el designator.
   Poner el compiler's directory then el designator then ".lst" into el path.
   
 Para poner un term into another term:
@@ -4320,13 +4320,13 @@ Para reindex el utility index usando some refers:
     Destroy el monikettes.
   Repetir.
   
-Para remove any negatives desde some monikettes retornando un flag:
+Para eliminar any negatives desde some monikettes retornando un flag:
   Borrar el flag.
   Swap el monikettes con some other monikettes.
   Lazo.
     Poner el other monikettes' first into un monikette.
     Si el monikette es nil, salir.
-    Remove el monikette desde el other monikettes.
+    Eliminar el monikette desde el other monikettes.
     Si el monikette's string es "not", reverse el flag; destroy el monikette; repetir.
     Si el monikette's string es "ni", reverse el flag; destroy el monikette; repetir.
     Si el monikette's string es "no", reverse el flag; destroy el monikette; repetir.
@@ -4336,7 +4336,7 @@ Para remove any negatives desde some monikettes retornando un flag:
     Si el monikette's string es "cannot", reverse el flag; Poner "can" into el monikette's string; repetir.
     Si el monikette's string es "nothing", reverse el flag; Poner "something" into el monikette's string; repetir.
     Si el monikette's string es "won't", reverse el flag; Poner "will" into el monikette's string; repetir.
-    Si el monikette's string ends con "n't", reverse el flag; remove trailing bytes desde el monikette's string usando 3; repetir.
+    Si el monikette's string ends con "n't", reverse el flag; Eliminar trailing bytes desde el monikette's string usando 3; repetir.
   Repetir.
   
 The repeat tag es un tag igual to 21.
@@ -4863,7 +4863,7 @@ Para scrub some refers:
   Lazo.
     Poner el other refers' first into un refer.
     Si el refer es nil, salir.
-    Remove el refer desde el other refers.
+    Eliminar el refer desde el other refers.
     Si el refer's pointer es nil, destroy el refer; repetir.
     Adjuntar el refer to el refers.
   Repetir.
