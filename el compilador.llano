@@ -1950,7 +1950,7 @@ Para compile un term usando un rider (possessive - contenido):
   
 Para compile un term usando un rider (possessive - whereabouts):
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort con "Uso inválido de un paradero, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "Uso inválido de una dirección, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un intermediate usando "pointer" y el rider's token's first. 
   Agregar un fragment usando el load address tag y el term's variable y el intermediate.
   Poner el intermediate into el term's variable.
@@ -2320,7 +2320,7 @@ Para decidir si un name es any contenido:
   
 Para decidir si un name es any whereabouts:
   Si el name es "whereabouts", diga sí.
-  Si el name es "paradero", diga sí.
+  Si el name es "dirección", diga sí.
   Diga no.
   
 Para decidir si un name es any valid field name:
