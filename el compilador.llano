@@ -4,13 +4,12 @@
   \ firstparam=esp+4/ebp+8, secondparam=esp+8/ebp+12, etc...
 
 Para ejecutar:
-  Start up.
+  Poner en marcha.
   Initialize el compiler.
   Hacer todo.
   \Handle events.
   Finalize el compiler.
-  Escribir el crlf string para StdOut.
-  Escribir "Operación completada." then el crlf string para StdOut.
+  Escribir el crlf string then "Operación completada." then el crlf string para StdOut.
   Shut down.
 
 Para hacer todo:
@@ -1151,21 +1150,21 @@ Para compile un directory:
 Para compile un directory (add and compile el built-in startup routine):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Agregando...".
-  Start el adding built-in startup routine timer.
+  Iniciar el adding built-in startup routine timer.
   Agregar and compile el initialize before run and run and finalize after run routine.
   Stop el adding built-in startup routine timer.
   
 Para compile un directory (add el built-in memory routines):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Agregando...".
-  Start el adding built-in memory routines timer.
+  Iniciar el adding built-in memory routines timer.
   Agregar el allocate and deallocate and finalize and destroy routines.
   Stop el adding built-in memory routines timer.
   
 Para compile un directory (address):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Calcular lugares...".
-  Start el addressing timer.
+  Iniciar el addressing timer.
   Poner 4096 into un address.
   Poner el address into el import borough's base.
   Address el imports usando el address.
@@ -1184,7 +1183,7 @@ Para compile un directory (address):
 Para compile un directory (calculate lengths and offsets of types):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Calculando longitudes y compensaciones de tipos...".
-  Start el calculating timer.
+  Iniciar el calculating timer.
   Calculate el lengths of el types.
   Calculate el offsets in el types.
   Calculate el redefinition offsets in el types.
@@ -1193,21 +1192,21 @@ Para compile un directory (calculate lengths and offsets of types):
 Para compile un directory (compile el bodies of el routines):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Compilando el cuerpo de rutinas....".
-  Start el compiling routine bodies timer.
+  Iniciar el compiling routine bodies timer.
   Compile el bodies of el routines.
   Stop el compiling routine bodies timer.
   
 Para compile un directory (compile el headers of el routines):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Compilando los encabezados de las rutinas....".
-  Start el compiling routine headers timer.
+  Iniciar el compiling routine headers timer.
   Compile el headers of el routines.
   Stop el compiling routine headers  timer.
   
 Para compile un directory (index el routines for utility use):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Indexando las rutinas para uso general....".
-  Start el indexing utilities timer.
+  Iniciar el indexing utilities timer.
   Indexar el routines for utility use.
   Scrub el utility index.
   Reindex el utility index.
@@ -1216,14 +1215,14 @@ Para compile un directory (index el routines for utility use):
 Para compile un directory (link):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Vinculando...".
-  Start el linking timer.
+  Iniciar el linking timer.
   Link.
   Stop el linking timer.
   
 Para compile un directory (offset parameters and variables):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Cálculo de compensación de parámetros y variables...".
-  Start el offsetting timer.
+  Iniciar el offsetting timer.
   Offset el parameters in el routines.
   Offset el locals in el routines.
   Stop el offsetting timer.
@@ -1231,21 +1230,21 @@ Para compile un directory (offset parameters and variables):
 Para compile un directory (load el source files):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Cargando archivos fuente...".
-  Start el loading timer.
+  Iniciar el loading timer.
   Cargar el source files.
   Stop el loading timer.
   
 Para compile un directory (resolve el globals):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Resolviendo globales...".
-  Start el resolving globals timer.
+  Iniciar el resolving globals timer.
   Resolve el globals.
   Stop el resolving globals timer.
   
 Para compile un directory (resolve el types):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Resolviendo tipos...".
-  Start el resolving types timer.
+  Iniciar el resolving types timer.
   Resolve el types (expand things).
   Resolve el types (index plurals).
   Resolve el types (base types).
@@ -1255,14 +1254,14 @@ Para compile un directory (resolve el types):
 Para compile un directory (scan el source files):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Escaneando los archivos fuente...".
-  Start el scanning timer.
+  Iniciar el scanning timer.
   Scan el source files.
   Stop el scanning timer.
   
 Para compile un directory (start):
   Escribir para StdOut "Iniciando...". \ tenemos que cambiar todas las referencias "Escribir para StdOut".
   Finalize el compiler.
-  Start el compiler's timer.
+  Iniciar el compiler's timer.
   Initialize el compiler usando el directory.
   Agregar el built-in types.
   
@@ -1273,14 +1272,14 @@ Para compile un directory (stop):
 Para compile un directory (transmogrify):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Transmogrificando...".
-  Start el transmogrifying timer.
+  Iniciar el transmogrifying timer.
   Transmogrify el routines.
   Stop el transmogrifying timer.
   
 Para compile un directory (write el exe):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Escribiendo el exe...".
-  Start el writing timer.
+  Iniciar el writing timer.
   Write el compiler's exe to el compiler's exe path.
   Si el error de e/s es not blank, abort con el error de e/s.
   Stop el writing timer.
@@ -4322,7 +4321,7 @@ Para reindex el utility index usando some refers:
   
 Para eliminar any negatives desde some monikettes retornando un flag:
   Borrar el flag.
-  Swap el monikettes con some other monikettes.
+  Intercambiar el monikettes con some other monikettes.
   Lazo.
     Poner el other monikettes' first into un monikette.
     Si el monikette es nil, salir.
@@ -4859,7 +4858,7 @@ Para scrub un index:
   Repetir.
   
 Para scrub some refers:
-  Swap el refers con some other refers.
+  Intercambiar el refers con some other refers.
   Lazo.
     Poner el other refers' first into un refer.
     Si el refer es nil, salir.

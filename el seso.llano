@@ -253,7 +253,7 @@ An angle es some precise degrees [0 to 3599].
 \Para adjuntar un búfer a un archivo;
 Para adjuntar un buffer to un file:
   Borrar el error de e/s.
-  Llamada "kernel32.dll" "SetFilePointer" con el file and 0 and 0 and 2 [file_end] retornando un result number.
+  Llamada "kernel32.dll" "SetFilePointer" con el file and 0 y 0 and 2 [file_end] retornando un result number.
   Si el result number es -1, Poner "Error posicionando puntero de archivo." into el error de e/s; salir.
   Llamada "kernel32.dll" "WriteFile" con el file y el buffer's first y el buffer's length y un number's whereabouts and 0 retornando el result number.
   Si el result number es 0, Poner "Error escribiendo archivo." into el error de e/s; salir.
@@ -487,7 +487,7 @@ Para comenzar un sheet usando un box:
   Llamada "gdi32.dll" "GetDeviceCaps" con el printer canvas and 88 [logpixelsx] retornando el pair's x-number.
   Llamada "gdi32.dll" "GetDeviceCaps" con el printer canvas and 90 [logpixelsy] retornando el pair's y-number.
   Llamada "gdi32.dll" "SetViewportExtEx" con el printer canvas y el pair's x-number y el pair's y-number and nil. 
-  Llamada "gdi32.dll" "SetWindowOrgEx" con el printer canvas and 0 and 0 and nil.
+  Llamada "gdi32.dll" "SetWindowOrgEx" con el printer canvas and 0 y 0 and nil.
   Llamada "gdi32.dll" "SetWindowExtEx" con el printer canvas y el tpi y el tpi and nil.
   Llamada "gdi32.dll" "StartPage" con el printer canvas.
   Poner el printer canvas into el current canvas.
@@ -1012,7 +1012,7 @@ The circumflex byte es un byte igual to 136.
 
 \Para borrar una caja;
 Para borrar un box:
-  Poner 0 and 0 and 0 and 0 into el box. \ writer depends on this
+  Poner 0 y 0 and 0 y 0 into el box. \ writer depends on this
 
 \Para borrar un byte;
 Para borrar un byte:
@@ -1020,7 +1020,7 @@ Para borrar un byte:
 
 \Para borrar un color;
 Para borrar un color:
-  Poner 0 and 0 and 0 into el color.
+  Poner 0 y 0 and 0 into el color.
 
 The borrar color es un color.
 
@@ -1058,7 +1058,7 @@ Para borrar un number:
 
 \Para borrar un par;
 Para borrar un pair:
-  Poner 0 and 0 into el pair.
+  Poner 0 y 0 into el pair.
 
 The borrar pen es un pen.
 
@@ -1348,7 +1348,7 @@ Para convertir un byte to un nibble:
   Restar 48 desde el nibble.
 
 Para convertir un byte to un nibble string:
-  Split el byte into un nibble and another nibble.
+  Dividir el byte into un nibble and another nibble.
   Convertir el nibble to el nibble string.
   Convertir el other nibble to another nibble string.
   Adjuntar el other nibble string to el nibble string.
@@ -1420,8 +1420,8 @@ Para convertir un flag to un hex string:
 Para convertir un font to un hfont:
   Privatizar el font.
   Null terminate el font's name.
-  Llamada "gdi32.dll" "CreateFontA" con - el font's height times 3 divided by 4 and 0 and 0 and 0 and 0 and 0 and 0 and 0 
-  y 1  [default_charset] and 0 and 0 and 5 [cleartype_quality] and 4 [truetype_fonttype] y el font's name's first retornando el hfont.
+  Llamada "gdi32.dll" "CreateFontA" con - el font's height times 3 divided by 4 and 0 y 0 and 0 y 0 and 0 y 0 and 0 
+  y 1  [default_charset] and 0 y 0 and 5 [cleartype_quality] and 4 [truetype_fonttype] y el font's name's first retornando el hfont.
 
 Para convertir un font info to pdf em units:
   Si el font info es nil, salir.
@@ -1435,7 +1435,7 @@ Para convertir un font info to pdf em units:
   Convertir el font info's font box's top to pdf em units usando el font info's emsquare y el font info's font.
   Convertir el font info's font box's right to pdf em units usando el font info's emsquare y el font info's font.
   Convertir el font info's font box's bottom to pdf em units usando el font info's emsquare y el font info's font.
-  Swap el font info's font box's top con el font info's font box's bottom.
+  Intercambiar el font info's font box's top con el font info's font box's bottom.
   Convertir el font info's font widths to pdf em units.
 
 Para convertir some font widths to pdf em units:
@@ -1516,7 +1516,7 @@ Para convertir un l-param to un key: \ assumes l-param desde wm_char message
   Si el key es el borrar key, Poner el numpad-five key into el key; salir.
 
 Para convertir un l-param to un spot:
-  Split el l-param into un wyrd and another wyrd.
+  Dividir el l-param into un wyrd and another wyrd.
   Poner el wyrd into el spot's y-coord.
   Poner el other wyrd into el spot's x-coord.
   Multiplicar el spot by el tpp.
@@ -1581,7 +1581,7 @@ Para convertir un number to un hex string:
 
 \Para convertir un pointer to un nibble string;
 Para convertir un number to un nibble string:
-  Split el number into un wyrd and another wyrd.
+  Dividir el number into un wyrd and another wyrd.
   Convertir el wyrd to el nibble string.
   Convertir el other wyrd to another nibble string.
   Adjuntar el other nibble string to el nibble string.
@@ -1680,9 +1680,9 @@ Para convertir un string to un fraction:
   Colocar un substring on el string.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
   Si el substring es blank, salir.
-  Split el substring into un integer substring y un fraction substring usando el dash byte.
+  Dividir el substring into un integer substring y un fraction substring usando el dash byte.
   Si el integer substring es blank, Poner el substring into el fraction substring.
-  Split el fraction substring into un numerator substring y un denominator substring usando el slash byte.
+  Dividir el fraction substring into un numerator substring y un denominator substring usando el slash byte.
   Convertir el integer substring to un whole number.
   Convertir el numerator substring to un numerator number.
   Convertir el denominator substring to un denominator number.
@@ -1803,7 +1803,7 @@ Para convertir un url to un url record:
   Poner 1 into el urlcomponents' dwhostnamelength.
   Poner 1 into el urlcomponents' dwurlpathlength.
   Poner 1 into el urlcomponents' dwextrainfolength.
-  Llamada "wininet.dll" "InternetCrackUrlA" con el url's first and 0 and 0 y el urlcomponents' whereabouts retornando un number.
+  Llamada "wininet.dll" "InternetCrackUrlA" con el url's first and 0 y 0 y el urlcomponents' whereabouts retornando un number.
   Convertir el urlcomponents' lpszscheme y el urlcomponents' dwschemelength to el url record's scheme.
   Convertir el urlcomponents' lpszhostname y el urlcomponents' dwhostnamelength to el url record's host name.
   Convertir el urlcomponents' lpszurlpath y el urlcomponents' dwurlpathlength to el url record's path.
@@ -1811,7 +1811,7 @@ Para convertir un url to un url record:
   Poner el urlcomponents' nport into el url record's port number.
 
 Para convertir un wyrd to un nibble string:
-  Split el wyrd into un byte and another byte.
+  Dividir el wyrd into un byte and another byte.
   Convertir el byte to el nibble string.
   Convertir el other byte to another nibble string.
   Adjuntar el other nibble string to el nibble string.
@@ -1870,7 +1870,7 @@ Para copiar un event into another event:
 
 Para copiar un gpbitmap into another gpbitmap:
   Si el gpbitmap es nil, void el other gpbitmap; salir.
-  Llamada "gdiplus.dll" "GdipCloneBitmapAreaI" con 0 and 0 y el gpbitmap's width y el gpbitmap's height and 0 [pixelformatdontcare] and
+  Llamada "gdiplus.dll" "GdipCloneBitmapAreaI" con 0 y 0 y el gpbitmap's width y el gpbitmap's height and 0 [pixelformatdontcare] and
 The gpbitmap y el other gpbitmap's whereabouts.
 
 Para copiar el guts of un text into another text:
@@ -2003,7 +2003,7 @@ Para crear un crypt session con un passphrase string: \ sets i/o error if failur
     Destroy el crypt session; 
     Salir.
 \ crear hash
-  Llamada "advapi32.dll" "CryptCreateHash" con el crypt session's hcryptprov and 32771 [calg_md5] and 0 and 0 
+  Llamada "advapi32.dll" "CryptCreateHash" con el crypt session's hcryptprov and 32771 [calg_md5] and 0 y 0 
   y el crypt session's hcrypthash's whereabouts retornando el result number.
   Si el result es 0, Poner "No se pudo crear el hash." into el error de e/s; destroy el crypt session; salir.
 \ hash passphrase
@@ -2092,7 +2092,7 @@ Para crear un gpbitmap usando un buffer:
 Para crear un gpimageattributes (grayscale):
   Llamada "gdiplus.dll" "GdipCreateImageAttributes" con el gpimageattributes' whereabouts.
   Llamada "gdiplus.dll" "GdipSetImageAttributesColorMatrix" con el gpimageattributes and 0 [coloradjusttypedefault] y 1  
-  y el grayscale color matrix's first and 0 and 0 [colormatrixflagsdefault].
+  y el grayscale color matrix's first and 0 y 0 [colormatrixflagsdefault].
 
 Para crear el hbrush of un canvas usando un color:
   Convertir el color to un colorref.
@@ -2188,7 +2188,7 @@ Para crear un path in el file system (directory):
 Para crear un path in el file system (file):
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "CreateFileA" con el path's first y 1073741824 [generic_write] and 0 and 0 y 1  [create_new] y 128 [file_attribute_normal] and 0 retornando un handle.
+  Llamada "kernel32.dll" "CreateFileA" con el path's first y 1073741824 [generic_write] and 0 y 0 y 1  [create_new] y 128 [file_attribute_normal] and 0 retornando un handle.
   Llamada "kernel32.dll" "CloseHandle" con el handle.
   Borrar el error de e/s.
   Si el handle es not -1 [invalid_handle_value], salir.
@@ -3773,7 +3773,7 @@ Para decidir si un spot está on un line:
     Si el distance es less than or igual to el number, diga sí.
     Obtener el distance between el line's start y el line's end (chessboard).
     Si el distance es less than or igual to el tpp, diga no.
-    Split el line into el line and another line.
+    Dividir el line into el line and another line.
     Obtener el distance between el spot y el line's center (chessboard).
     Obtener another distance between el spot y el other line's center (chessboard).
     Si el distance es greater than el other distance, Poner el other line into el line.
@@ -3893,7 +3893,7 @@ Para decidir si un string es any ratio literal:
   Si el substring es blank, diga no.
   Si el substring's first's target es not any numeric starter, diga no.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
-  Split el substring into un numerator substring y un denominator substring usando el slash byte.
+  Dividir el substring into un numerator substring y un denominator substring usando el slash byte.
   Si el numerator substring es not any integer literal, diga no.
   Si el denominator substring es not any integer literal, diga no.
   Diga sí.
@@ -3928,7 +3928,7 @@ Para decidir si un string es any mixed literal:
   Si el substring es blank, diga no.
   Si el substring's first's target es not any numeric starter, diga no.
   Si el substring's first's target es any sign, Agregar 1 to el substring's first.
-  Split el substring into un integer substring y un fraction substring usando el dash byte.
+  Dividir el substring into un integer substring y un fraction substring usando el dash byte.
   Si el integer substring es not any integer literal, diga no.
   Si el fraction substring es not any fraction literal, diga no.
   Diga sí.
@@ -4576,7 +4576,7 @@ Para dibujar un circle some twips wide:
   Agregar 1 to el segment length.
   Lazo.
     Trazar el segment length.
-    Turn right 1/48 of el way.
+    Girar derecha 1/48 of el way.
     Agregar 1 to un count. If el count es 48, interrumpir.
   Repetir.
 
@@ -4586,7 +4586,7 @@ Para dibujar un circle some twips wide (counterclockwise):
   Agregar 1 to el segment length.
   Lazo.
     Trazar el segment length.
-    Turn left 1/48 of el way.
+    Girar izquierda 1/48 of el way.
     Agregar 1 to un count. If el count es 48, interrumpir.
   Repetir.
 
@@ -4653,10 +4653,10 @@ Para trazar un fancy arrow some twips long con un color:
   Turn around.
   Mover el twips divided by 8.
   Save el context.
-  Turn left 1/8 of el way.
+  Girar izquierda 1/8 of el way.
   Dibujar un spiral starting con el twips divided by 4.
   Restore el context.
-  Turn right 1/8 of el way.
+  Girar derecha 1/8 of el way.
   Dibujar another spiral backwards starting con el twips divided by 4.
   Restore el context.
 
@@ -4731,7 +4731,7 @@ Para dibujar un half circle usando un size:
   Agregar 1 to el segment length.
   Lazo.
     Trazar el segment length.
-    Turn right 1/48 of el way.
+    Girar derecha 1/48 of el way.
     Agregar 1 to un count.
     Si el count es 24, salir.
   Repetir.
@@ -4742,7 +4742,7 @@ Para dibujar un half circle usando un size (counterclockwise):
   Agregar 1 to el segment length.
   Lazo.
     Trazar el segment length.
-    Turn left 1/48 of el way.
+    Girar izquierda 1/48 of el way.
     Agregar 1 to un count.
     Si el count es 24, salir.
   Repetir.
@@ -4750,7 +4750,7 @@ Para dibujar un half circle usando un size (counterclockwise):
 Para dibujar un hexagon usando un side length:
   \Lazo.
     Trazar el side length.
-    Turn right 1/6 of el way.
+    Girar derecha 1/6 of el way.
     Agregar 1 to un count. 
     If el count es 6, interrumpir.
   Repetir.
@@ -4887,7 +4887,7 @@ Para dibujar un picture (pdf style):
   Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" con el gpbitmap y un gpgraphic's whereabouts.
   Si el picture's grayscale flag es set, crear un gpimageattributes (grayscale).
   Llamada "gdiplus.dll" "GdipDrawImageRectRectI" con el gpgraphic y el picture's gpbitmap
-  And 0 and 0 y el width y el height
+  And 0 y 0 y el width y el height
   y el x-number y el y-number y el width y el height
   And 2 [unitpixel] y el gpimageattributes and nil and 0.
   Si el gpimageattributes es not nil, destroy el gpimageattributes.
@@ -4900,7 +4900,7 @@ Para dibujar un picture on un gpgraphic at un x-coord y un y-coord:
   Si el picture's grayscale flag es set, crear un gpimageattributes (grayscale).
   Llamada "gdiplus.dll" "GdipDrawImageRectRectI" con el gpgraphic y el picture's gpbitmap
   y el x-coord y el y-coord y el picture's uncropped box's width y el picture's uncropped box's height
-  And 0 and 0 y el picture's gpbitmap's width y el picture's gpbitmap's height
+  And 0 y 0 y el picture's gpbitmap's width y el picture's gpbitmap's height
   And 2 [unitpixel] y el gpimageattributes and nil and 0.
   Si el gpimageattributes es not nil, destroy el gpimageattributes.
 
@@ -4970,7 +4970,7 @@ Para dibujar un quarter circle usando un size:
   Agregar 1 to el segment length.
   Lazo.
     Trazar el segment length.
-    Turn right 1/48 of el way.
+    Girar derecha 1/48 of el way.
     Agregar 1 to un count.
     Si el count es 12, salir.
   Repetir.
@@ -4984,7 +4984,7 @@ Para dibujar un quarter circle usando un size (counterclockwise):
   Agregar 1 to el segment length.
   Lazo.
     Trazar el segment length.
-    Turn left 1/48 of el way.
+    Girar izquierda 1/48 of el way.
     Agregar 1 to un count.
     Si el count es 12, salir.
   Repetir.
@@ -4992,13 +4992,13 @@ Para dibujar un quarter circle usando un size (counterclockwise):
 \Para dibujar un rectangle some twips by some other twips;
 Para dibujar un rectangle some twips wide by some other twips high:
   Trazar el other twips.
-  Turn right.
+  Girar derecha.
   Trazar el twips.
-  Turn right.
+  Girar derecha.
   Trazar el other twips.
-  Turn right.
+  Girar derecha.
   Trazar el twips.
-  Turn right.
+  Girar derecha.
 
 \Para dibujar una caja redonda;
 Para dibujar un roundy box:
@@ -5101,14 +5101,14 @@ Para dibujar un spot con un color:
 Para dibujar un star usando un point count y un size:
   Poner 1 y el point count into un fraction.
   Lazo.
-    Turn right 1/48 of el way.
+    Girar derecha 1/48 of el way.
     Trazar el size.
     Turn around.
-    Turn left 1/24 of el way.
+    Girar izquierda 1/24 of el way.
     Trazar el size.
     Turn around.
-    Turn right 1/48 of el way.
-    Turn right el fraction of el way.
+    Girar derecha 1/48 of el way.
+    Girar derecha el fraction of el way.
     Agregar 1 to un count. If el count es el point count, interrumpir.
   Repetir.
 
@@ -5738,7 +5738,7 @@ Para extraer un picture usando un box:
   Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" con el gpbitmap y un gpgraphic's whereabouts.
   Llamada "gdiplus.dll" "GdipGetDC" con el gpgraphic y un bitmap canvas' whereabouts.
   Normalizar el bitmap canvas.
-  Llamada "gdi32.dll" "BitBlt" con el bitmap canvas and 0 and 0 y el box's width y el box's height
+  Llamada "gdi32.dll" "BitBlt" con el bitmap canvas and 0 y 0 y el box's width y el box's height
   y el current canvas y el box's left y el box's top y 13369376 [srccopy].
   Llamada "gdiplus.dll" "GdipReleaseDC" con el gpgraphic y el bitmap canvas.
   Llamada "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
@@ -5919,7 +5919,7 @@ Para finalize un talker:
 Para finalize el window:
   Llamada "user32.dll" "DestroyWindow" con el main window.
   Lazo.
-    Llamada "user32.dll" "GetMessageA" con un msg's whereabouts and 0 and 0 and 0 retornando un number.
+    Llamada "user32.dll" "GetMessageA" con un msg's whereabouts and 0 y 0 and 0 retornando un number.
     Si el number es less than 1, interrumpir.
     Llamada "user32.dll" "TranslateMessage" con el msg's whereabouts.
     Llamada "user32.dll" "DispatchMessageA" con el msg's whereabouts.
@@ -5934,7 +5934,7 @@ The encontrar anchor es un anchor.
 
 \Para encontrar una elección dado un punto;
 Para encontrar un choice usando un spot:
-  Start con nothing in el choice.
+  Comenzar con nothing in el choice.
   Lazo.
     Obtener el [first/next] choice desde el choices.
     Si el choice es missing, salir.
@@ -6128,7 +6128,7 @@ A flag es un record con 4 bytes.
 
 \Para voltear una fracción;
 Para voltear un fraction:
-  Swap el fraction's numerator con el fraction's denominator.
+  Intercambiar el fraction's numerator con el fraction's denominator.
 
 Para voltear el gpbitmap in un picture:
   Si el picture es nil, salir.
@@ -6170,7 +6170,7 @@ Para flush all events:
 
 Para descartar any messages;
 Para flush any messages:
-    Llamada "user32.dll" "PeekMessageA" con un msg's whereabouts and 0 and 0 and 0 y 1  [pm_remove] retornando un number.
+    Llamada "user32.dll" "PeekMessageA" con un msg's whereabouts and 0 y 0 and 0 y 1  [pm_remove] retornando un number.
     Si el number es 0, salir.
     Si el msg's message es 15 [wm_paint], call "user32.dll" "ValidateRect" con el main window and 0.
   Repetir.
@@ -6459,7 +6459,7 @@ Para obtener un drive name for un path:
   Null terminate el path.
   Poner 512 into un length.
   Reassign un buffer's first usando el length.
-  Llamada "kernel32.dll" "GetVolumeInformationA" con el path's first y el buffer's first y el length and 0 and 0 and 0 and 0 and 0 retornando un number.
+  Llamada "kernel32.dll" "GetVolumeInformationA" con el path's first y el buffer's first y el length and 0 y 0 and 0 y 0 and 0 retornando un number.
   Si el number es 0, borrar el drive name; salir.
   Convertir el buffer's first as un pchar to el drive name.
 
@@ -6485,7 +6485,7 @@ Para obtener un gcd usando un number and another number:
   Poner el other number into el gcd.
   Eliminar signo de el dividend number.
   Eliminar signo de el gcd.
-  Si el dividend es less than el gcd, swap el dividend con el gcd.
+  Si el dividend es less than el gcd, intercambiar el dividend con el gcd.
   Si el gcd es 0, Poner 1 into el gcd; salir.
   Lazo.
     Dividir el dividend by el gcd giving un quotient y un remainder.
@@ -6559,7 +6559,7 @@ Para obtener un offset pair usando un string y un box y un font y un alignment (
 
 Para obtener un outlinetextmetric usando un font:
   Crear el hfont of el memory canvas usando el font.
-  Llamada "gdi32.dll" "GetOutlineTextMetricsA" con el memory canvas and 0 and 0 retornando un result number.
+  Llamada "gdi32.dll" "GetOutlineTextMetricsA" con el memory canvas and 0 y 0 retornando un result number.
   Assign un poutlinetextmetric usando el result.
   Llamada "gdi32.dll" "GetOutlineTextMetricsA" con el memory canvas y el result y el poutlinetextmetric.
   Poner el poutlinetextmetric's target into el outlinetextmetric.
@@ -6619,12 +6619,12 @@ Para obtener un rise y un run usando un heading: \ see Madhava's Numbers
   Repetir. \ not really un repeat, just un label for el above breaks.
 \ ajustar for other eighths of el circle
   Si el original heading es between 0 and 480, negar el rise; salir. \ 1st eighth (12:00 to 1:30)
-  Si el original heading es between 480 and 960, swap el run con el rise; negar el rise; salir. \ 2nd eighth (1:30 to 3:00)
-  Si el original heading es between 960 y 1440, swap el run con el rise; salir. \ 3rd eighth (3:00 to 4:30)
+  Si el original heading es between 480 and 960, intercambiar el run con el rise; negar el rise; salir. \ 2nd eighth (1:30 to 3:00)
+  Si el original heading es between 960 y 1440, intercambiar el run con el rise; salir. \ 3rd eighth (3:00 to 4:30)
   Si el original heading es between 1440 y 1920, salir. \ 4th eighth (4:30 to 6:00)
   Si el original heading es between 1920 and 2400, negar el run; salir. \ 5th eighth (6:00 to 7:30)
-  Si el original heading es between 2400 and 2880, swap el run con el rise; negar el run; salir. \ 6th eighth (7:30 to 9:00)
-  Si el original heading es between 2880 and 3360, swap el run con el rise; negar el run; negar el rise; salir. \ 7th eighth (9:00 to 10:30)
+  Si el original heading es between 2400 and 2880, intercambiar el run con el rise; negar el run; salir. \ 6th eighth (7:30 to 9:00)
+  Si el original heading es between 2880 and 3360, intercambiar el run con el rise; negar el run; negar el rise; salir. \ 7th eighth (9:00 to 10:30)
   Si el original heading es between 3360 and 3840, negar el run; negar el rise; salir. \ 8th eighth (10:30 to 12:00)
 
 Para obtener un row usando un row# y un text:
@@ -6897,7 +6897,7 @@ Para handle align usando un text y un alignment:
   Align el text usando el alignment.
 
 Para handle any wm-activate con un w-param:
-  Split el w-param into un wyrd and another wyrd.
+  Dividir el w-param into un wyrd and another wyrd.
   Poner el other wyrd into un number.
   Si el number es 0, handle any wm-activate con el w-param (deactivate); salir.
   Handle any wm-activate con el w-param (activate).
@@ -6910,14 +6910,14 @@ Para handle any wm-activate con un w-param (activate):
   Poner "activate" into el event's kind.
   Poner "activar" into el event's clase.
   Enque el event.
-  Llamada "user32.dll" "PostMessageA" con el main window and 0 [wm_null] and 0 and 0.
+  Llamada "user32.dll" "PostMessageA" con el main window and 0 [wm_null] and 0 y 0.
 
 Para handle any wm-activate con un w-param (deactivate):
   Crear un event.
   Poner "deactivate" into el event's kind.
   Poner "desactivar" into el event's clase.
   Enque el event.
-  Llamada "user32.dll" "PostMessageA" con el main window and 0 [wn_null] and 0 and 0.
+  Llamada "user32.dll" "PostMessageA" con el main window and 0 [wn_null] and 0 y 0.
 
 Para handle any wm-char con un w-param y un l-param:
 \If el alt key was down, salir. \ removed for Spanish keyboard AltGr and ctrl+alt characters
@@ -7366,7 +7366,7 @@ Para handle sort any selected rows usando un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
   Recordar el text con "sort selected rows".
-  Sort any selected rows in el text.
+  Ordenar any selected rows in el text.
   Square up any selection in el text.
   Wrap el text.
 
@@ -7454,7 +7454,7 @@ Para hacer un box some twips by some other twips:
 
 Para imaginar un box some twips high by some other twips wide;
 Para hacer un box some twips high by some other twips wide:
-  Poner 0 and 0 y el other twips y el twips into el box.
+  Poner 0 y 0 y el other twips y el twips into el box.
 
 Para imaginar un box some twips smaller than another box;
 Para hacer un box some twips smaller than another box:
@@ -7467,7 +7467,7 @@ Para imaginar un box some twips smaller than another box on every side:
 
 Para imaginar un box some twips wide by some other twips high;
 Para hacer un box some twips wide by some other twips high:
-  Poner 0 and 0 y el twips y el other twips into el box.
+  Poner 0 y 0 y el twips y el other twips into el box.
 
 Para imaginar un box con un left coord y un top coord y un right coord y un bottom coord;
 Para hacer un box con un left coord y un top coord y un right coord y un bottom coord:
@@ -7742,16 +7742,16 @@ Para initialize el colors:
   Poner 1 into el pen size.
   Llamada "gdi32.dll" "GetStockObject" con 8 [null_pen] retornando el null hpen.
   Llamada "gdi32.dll" "GetStockObject" con 5 [null_brush] retornando el null hbrush.
-  Poner -1 and 0 and 0 into el borrar color.
-  Poner 0 and 0 y 1000 into el white color.
-  Poner 0 and 0 and 875 into el lightest gray color.
-  Poner 0 and 0 and 750 into el lighter gray color.
-  Poner 0 and 0 and 625 into el light gray color.
-  Poner 0 and 0 and 500 into el gray color.
-  Poner 0 and 0 and 375 into el dark gray color.
-  Poner 0 and 0 and 250 into el darker gray color.
-  Poner 0 and 0 y 125 into el darkest gray color.
-  Poner 0 and 0 and 0 into el black color.
+  Poner -1 and 0 y 0 into el borrar color.
+  Poner 0 y 0 y 1000 into el white color.
+  Poner 0 y 0 and 875 into el lightest gray color.
+  Poner 0 y 0 and 750 into el lighter gray color.
+  Poner 0 y 0 and 625 into el light gray color.
+  Poner 0 y 0 and 500 into el gray color.
+  Poner 0 y 0 and 375 into el dark gray color.
+  Poner 0 y 0 and 250 into el darker gray color.
+  Poner 0 y 0 y 125 into el darkest gray color.
+  Poner 0 y 0 and 0 into el black color.
   Poner 0 y 1000 and 875 into el lightest red color.
   Poner 0 y 1000 and 750 into el lighter red color.
   Poner 0 y 1000 and 625 into el light red color.
@@ -7836,7 +7836,7 @@ Para initialize el colors:
   Poner 3300 y 1000 and 375 into el dark violet color.
   Poner 3300 y 1000 and 250 into el darker violet color.
   Poner 3300 y 1000 y 125 into el darkest violet color.
-  Poner 0 and 0 and 800 into el hilite color.
+  Poner 0 y 0 and 800 into el hilite color.
 \ special colors
   Poner el lightest orange color into el tan color.
   Poner el dark orange color into el brown color.
@@ -8105,7 +8105,7 @@ Para initialize el cursors (arrow cursor):
   Adjuntar $10FFFFFF30FFFFFF787FFFFFF87FFFFF to el and-mask.
   Adjuntar $FC3FFFFFFC3FFFFFFE7FFFFFFFFFFFFF to el and-mask.
   Adjuntar $FF to el and-mask usando 48.
-  Llamada "user32.dll" "CreateCursor" con el module's handle and 0 and 0 and 32 and 32 y el and-mask's first y el xor-mask's first retornando el arrow cursor.
+  Llamada "user32.dll" "CreateCursor" con el module's handle and 0 y 0 and 32 and 32 y el and-mask's first y el xor-mask's first retornando el arrow cursor.
 
 Para initialize el cursors (hand cursor):
   Adjuntar $000000000180000019B0000019B00000 to un xor-mask.
@@ -8180,7 +8180,7 @@ Para initialize el mouse:
   Poner 2 into el mouse's right button.
   Llamada "user32.dll" "GetSystemMetrics" con 23 [sm_swapbutton] retornando un number.
   Si el number es 0, salir.
-  Swap el mouse's left button con el mouse's right button.
+  Intercambiar el mouse's left button con el mouse's right button.
 
 Para initialize el printer canvas:
   Poner un printdlgex's magnitude into el printdlgex's lstructsize.
@@ -8199,7 +8199,7 @@ Para initialize el screen:
   Poner el tpi divided by el ppi into el tpp.
   Poner el screen's pixel width times el tpp into un width.
   Poner el screen's pixel height times el tpp into un height.
-  Poner 0 and 0 y el width y el height into el screen's box.
+  Poner 0 y 0 y el width y el height into el screen's box.
   Restar el tpp desde el screen's right-bottom.
 \ new below
   Poner el screen's box into la pantalla's caja.
@@ -8223,7 +8223,7 @@ Para initialize el window:
   Poner el module's name's first into el window class' lpszclassname.
   Llamada "user32.dll" "RegisterClassExA" con el window class's whereabouts.
   Llamada "user32.dll" "CreateWindowExA" con 0 y el module's name's first y el module's name's first y 13565952 [WS_OVERLAPPEDWINDOW] \-2147483648 [ws_popup] 
-  And 0 and 0 y el screen's pixel width y el screen's pixel height and 0 and 0 y el module's handle and 0.
+  And 0 y 0 y el screen's pixel width y el screen's pixel height and 0 y 0 y el module's handle and 0.
   \Llamada "user32.dll" "ShowWindow" con el main window y 1  [sw_shownormal].
 
 Para initialize winsock:
@@ -9937,16 +9937,16 @@ Para normalizar un angle:
 
 \Para normalizar una caja;
 Para normalizar un box:
-  Si el box's right es less than el box's left, swap el box's left con el box's right.
-  Si el box's bottom es less than el box's top, swap el box's top con el box's bottom.
+  Si el box's right es less than el box's left, intercambiar el box's left con el box's right.
+  Si el box's bottom es less than el box's top, intercambiar el box's top con el box's bottom.
 
 Para normalizar un canvas:
   Llamada "gdi32.dll" "SetGraphicsMode" con el canvas and 2 [gm_advanced].
   Llamada "gdi32.dll" "SetBkMode" con el canvas y 1  [transparent].
   Llamada "gdi32.dll" "SetMapMode" con el canvas and 8 [mm_anisotropic].
-  Llamada "gdi32.dll" "SetViewportOrgEx" con el canvas and 0 and 0 and nil.
+  Llamada "gdi32.dll" "SetViewportOrgEx" con el canvas and 0 y 0 and nil.
   Llamada "gdi32.dll" "SetViewportExtEx" con el canvas y el ppi y el ppi and nil.
-  Llamada "gdi32.dll" "SetWindowOrgEx" con el canvas and 0 and 0 and nil.
+  Llamada "gdi32.dll" "SetWindowOrgEx" con el canvas and 0 y 0 and nil.
   Llamada "gdi32.dll" "SetWindowExtEx" con el canvas y el tpi y el tpi and nil.
 
 \Para normalizar una elipse;
@@ -9969,7 +9969,7 @@ Para normalizar un heading:
 
 \Para normalizar una línea (horizontal);
 Para normalizar un horizontal line:
-  Si el line's end es less than el line's start, swap el line's end con el line's start.
+  Si el line's end es less than el line's start, intercambiar el line's end con el line's start.
 
 \Para normalizar un matiz;
 Para normalizar un hue:
@@ -9985,8 +9985,8 @@ Para normalizar un picture:
 
 Para normalizar un selection:
   Si el selection's anchor row# es less than el selection's caret row#, salir.
-  Si el selection's anchor row# es greater than el selection's caret row#, swap el selection's anchor con el selection's caret; salir.
-  Si el selection's anchor column# es greater than el selection's caret column#, swap el selection's anchor column# con el selection's caret column#.
+  Si el selection's anchor row# es greater than el selection's caret row#, intercambiar el selection's anchor con el selection's caret; salir.
+  Si el selection's anchor column# es greater than el selection's caret column#, intercambiar el selection's anchor column# con el selection's caret column#.
 
 \Para normalizar un texto;
 Para normalizar un text:
@@ -9995,7 +9995,7 @@ Para normalizar un text:
 
 \Para normalizar una línea (vertical);
 Para normalizar un vertical line:
-  Si el line's end es less than el line's start, swap el line's end con el line's start.
+  Si el line's end es less than el line's start, intercambiar el line's end con el line's start.
 
 The not byte es un byte igual to 172.
 
@@ -10083,12 +10083,12 @@ Para abrir un file usando un path:
   Definir el path to read-write mode.
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "CreateFileA" con el path's first and -1073741824 [generic_read+generic_write] and 0 and 0 and 4 [open_always] 
+  Llamada "kernel32.dll" "CreateFileA" con el path's first and -1073741824 [generic_read+generic_write] and 0 y 0 and 4 [open_always] 
   And -2147483520 [file_flag_write_through or file_attribute_normal] and 0 retornando el file.
   Si el file es -1 [invalid_handle_value], Poner "Error abriendo archivo '" then el path then "'." into el error de e/s; salir.
 
 Para abrir un file usando un path and some milliseconds:
-  Start un timer.
+ Iniciar un timer.
   Lazo.
     Abrir el file usando el path.
     Si el error de e/s es blank, salir.
@@ -10806,9 +10806,9 @@ The purple pen es un pen.
 
 Para poner el actual data of un font into un buffer: \ only works con true/open type fonts
   Crear el hfont of el memory canvas usando el font.
-  Llamada "gdi32.dll" "GetFontData" con el memory canvas and 0 and 0 and nil and 0 retornando un count.
+  Llamada "gdi32.dll" "GetFontData" con el memory canvas and 0 y 0 and nil and 0 retornando un count.
   Reassign el buffer's first usando el count.
-  Llamada "gdi32.dll" "GetFontData" con el memory canvas and 0 and 0 y el buffer's first y el count.
+  Llamada "gdi32.dll" "GetFontData" con el memory canvas and 0 y 0 y el buffer's first y el count.
   Poner el buffer's first plus el count minus 1 into el buffer's last.
   Destroy el hfont of el memory canvas.
 
@@ -11925,7 +11925,7 @@ Para leer un path into un buffer:
   Si el path es not in el file system, Poner "Archivo '" then el path then "' no existe." into el error de e/s; salir.
 \  set el path to read-write mode.
   Llamada "kernel32.dll" "CreateFileA" con el path's first and -2147483648 [generic_read] and 3 [file_share_read+file_share_write] and 0 
-  And 3 [open_existing] and 0 and 0 retornando un handle.
+  And 3 [open_existing] and 0 y 0 retornando un handle.
   Si el handle es -1 [invalid_handle_value], Poner "Error abriendo archivo '" then el path then "'." into el error de e/s; salir.
   Llamada "kernel32.dll" "GetFileSize" con el handle and nil retornando un size.
   Reassign el buffer's first usando el size.
@@ -12011,7 +12011,7 @@ Para leer un url into un buffer:
 \ internet open url
   Privatizar el url.
   Null terminate el url.
-  Llamada "wininet.dll" "InternetOpenUrlA" con el internet handle y el url's first and nil and 0 and 0 and 0 retornando un url handle.
+  Llamada "wininet.dll" "InternetOpenUrlA" con el internet handle y el url's first and nil and 0 y 0 and 0 retornando un url handle.
   Si el url handle es 0, Poner "No pude conectarme un url '" then el url then "'." into el error de e/s; call "wininet.dll" "InternetCloseHandle" con el internet handle; salir.
 \ read el file
   Poner 64 kilobytes into un buffer size.
@@ -12452,8 +12452,8 @@ Para redimensionar un picture to un width by un height:
   Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" con el pixel width y el pixel height and 0 y 137224 [pixelformat24bpprgb] and 0 y un gpbitmap's whereabouts.
   Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" con el gpbitmap y un gpgraphic's whereabouts.
   Llamada "gdiplus.dll" "GdipDrawImageRectRectI" con el gpgraphic y el picture's gpbitmap
-  And 0 and 0 y el pixel width y el pixel height
-  And 0 and 0 y el picture's gpbitmap's width minus 1 y el picture's gpbitmap's height minus 1
+  And 0 y 0 y el pixel width y el pixel height
+  And 0 y 0 y el picture's gpbitmap's width minus 1 y el picture's gpbitmap's height minus 1
   And 2 [unitpixel] and nil and nil and 0.
   Llamada "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
   Destroy el picture's gpbitmap.
@@ -12519,7 +12519,7 @@ The return byte es un byte igual to 13.
 
 Para reverse any selected rows of un text:
   Si el text es nil, salir.
-  Split el rows of el text into some rows and some selected rows and some other rows.
+  Dividir el rows of el text into some rows and some selected rows and some other rows.
   Reverse el selected rows.
   Adjuntar el rows to el text's rows.
   Adjuntar el selected rows to el text's rows.
@@ -12553,7 +12553,7 @@ Para reverse un string: \ could be more efficient
   Repetir.
 
 Para reverse some things:
-  Swap el things con some other things.
+  Intercambiar el things con some other things.
   Lazo.
     Poner el other things' last into un thing.
     Si el thing es nil, salir.
@@ -13392,7 +13392,7 @@ The small-bullet byte es un byte igual to 183.
 The smallest number es -2147483648.
 
 \Para suavizar un polígono;
-Para smooth un polygon:
+Para suavizar un polygon:
   Si el polygon es nil, salir.
   Si el polygon's vertices' count es less than 3, salir.
   Si el polygon es closed, Adjuntar el polygon's first vertex's next's spot to el polygon; definir un flag.
@@ -13415,20 +13415,20 @@ Para smooth un polygon:
   Destroy el polygon's last vertex usando el polygon.
 
 \Para suavizar un polígono dado un conteo;
-Para smooth un polygon some times: \ this use to "times" es un fluke, I think -- see "some times es un number"
+Para suavizar un polygon some times: \ this use to "times" es un fluke, I think -- see "some times es un number"
   Privatizar el times.
   Lazo.
-  Si el times es 0, salir.
-  Smooth el polygon.
-  Restar 1 desde el times.
+    Si el times es 0, salir.
+    Suavizar el polygon.
+    Restar 1 desde el times.
   Repetir.
 
 An smtp server es un string.
 
 A sockaddr es un record con
-A wyrd called sin_family,
-A big-endian unsigned wyrd called sin_port,
-A in_addr called sin_addr,
+  A wyrd called sin_family,
+  A big-endian unsigned wyrd called sin_port,
+  A in_addr called sin_addr,
   8 bytes called sin_zero.
 
 A sockaddrptr es un pointer to un sockaddr.
@@ -13439,31 +13439,31 @@ The soft-dash byte es un byte igual to 173.
 
 A solid color es un color.
 
-Para sort any selected rows in un text:
+Para ordenar any selected rows in un text:
   Si el text es nil, salir.
-  Split el rows of el text into some rows and some selected rows and some other rows.
-  Sort el selected rows.
+  Dividir el rows of el text into some rows and some selected rows and some other rows.
+  Ordenar el selected rows.
   Adjuntar el rows to el text's rows.
   Adjuntar el selected rows to el text's rows.
   Adjuntar el other rows to el text's rows.
   Renumber el text's rows.
 
-Para sort some rows:
+Para ordenar some rows:
   Si el rows' first es el rows' last, salir.
-  Split el rows into some left rows and some right rows.
-  Sort el left rows.
-  Sort el right rows.
+  Dividir el rows into some left rows and some right rows.
+  Ordenar el left rows.
+  Ordenar el right rows.
   Lazo.
-  Poner el left rows' first into un left row.
-  Poner el right rows' first into un right row.
-  Si el left row es nil, Adjuntar el right rows to el rows; salir.
-  Si el right row es nil, Adjuntar el left rows to el rows; salir.
-  Si el left row's string es greater than el right row's string, mover el right row desde el right rows to el rows; repetir.
-  Mover el left row desde el left rows to el rows.
+    Poner el left rows' first into un left row.
+    Poner el right rows' first into un right row.
+    Si el left row es nil, Adjuntar el right rows to el rows; salir.
+    Si el right row es nil, Adjuntar el left rows to el rows; salir.
+    Si el left row's string es greater than el right row's string, mover el right row desde el right rows to el rows; repetir.
+    Mover el left row desde el left rows to el rows.
   Repetir.
 
 Para space between glyphs:
-  Turn right. Mover 3 squares. Turn left.
+  Girar derecha. Mover 3 squares. Girar izquierda.
 
 The space byte es un byte igual to 32.
 
@@ -13471,93 +13471,93 @@ The space key es un key igual to 32.
 
 The space string es un string igual to " ".
 
-Para split un buffer into some dyads:
+Para dividir un buffer into some dyads:
   Destroy el dyads.
   Si el buffer es blank, salir.
   Colocar un rider on el buffer.
   Lazo.
-  Mover el rider usando el ampersand byte.
-  Si el rider's token es blank, salir.
-  Crear un dyad. 
-  Adjuntar el dyad to el dyads.
-  Split el rider's token into un name substring y un query substring usando el equal-sign byte.
-  Poner el name substring into el dyad's name.
-  Convertir el query substring as un query string into el dyad's value.
+    Mover el rider usando el ampersand byte.
+    Si el rider's token es blank, salir.
+    Crear un dyad. 
+    Adjuntar el dyad to el dyads.
+    Dividir el rider's token into un name substring y un query substring usando el equal-sign byte.
+    Poner el name substring into el dyad's name.
+    Convertir el query substring as un query string into el dyad's value.
   Repetir.
 
-Para split un byte into un nibble and another nibble:
+Para dividir un byte into un nibble and another nibble:
   Poner el byte into el nibble.
   Desplazar el nibble right 4 bits.
   Poner el byte into el other nibble.
   Bitwise AND el other nibble con 15.
 
 \Para dividir una línea en otra línea y una tercera línea;
-Para split un line into another line y un third line:
+Para dividir un line into another line y un third line:
   Privatizar el line.
   Poner el line's center into un center spot.
   Poner el line's start y el center into el other line.
   Poner el center y el line's end into el third line. 
 
-Para split un number into un wyrd and another wyrd:
+Para dividir un number into un wyrd and another wyrd:
   Privatizar el number.
   Desplazar el number right 16 bits.
   Poner el number into el wyrd.
   Poner el original number into el other wyrd.
 
-Para split el rows of un text into some rows and some selected rows and some other rows:
+Para dividir el rows of un text into some rows and some selected rows and some other rows:
   Si el text es nil, borrar el rows; borrar el selected rows; borrar el other rows; salir.
   Lazo.
-  Poner el text's rows' first into un row.
-  Si el row es nil, salir.
-  Eliminar el row desde el text's rows.
-  Si el row of el text es selected, definir un flag; Adjuntar el row to el selected rows; repetir.
-  Si el flag es set, Adjuntar el row to el other rows; repetir.
-  Adjuntar el row to el rows.
+    Poner el text's rows' first into un row.
+    Si el row es nil, salir.
+    Eliminar el row desde el text's rows.
+    Si el row of el text es selected, definir un flag; Adjuntar el row to el selected rows; repetir.
+    Si el flag es set, Adjuntar el row to el other rows; repetir.
+    Adjuntar el row to el rows.
   Repetir.
 
-Para split un string into un left substring y un right substring usando un separator byte:
+Para dividir un string into un left substring y un right substring usando un separator byte:
   Borrar el left.
   Borrar el right.
   Si el string es blank, salir.
   Poner el string's first into un substring's first.
   Poner el substring's first minus 1 into el substring's last.
   Lazo.
-  Si el substring's last es greater than el string's last, salir.
-  Agregar 1 to el substring's last.
-  Si el substring's last's target es el separator byte, interrumpir.
+    Si el substring's last es greater than el string's last, salir.
+    Agregar 1 to el substring's last.
+    Si el substring's last's target es el separator byte, interrumpir.
   Repetir.
   Poner el substring's first into el left's first.
   Poner el substring's last minus 1 into el left's last.
   Poner el substring's last plus 1 into el right's first.
   Poner el string's last into el right's last.
 
-Para split un string into some string things usando un separator byte:
+Para dividir un string into some string things usando un separator byte:
   Destroy el string things.
   Si el string es blank, salir.
   Colocar un rider on el string.
   Lazo.
-  Mover el rider usando el separator byte.
-  Agregar el rider's token to el string things.
-  Si el rider's source es blank, interrumpir.
+    Mover el rider usando el separator byte.
+    Agregar el rider's token to el string things.
+    Si el rider's source es blank, interrumpir.
   Repetir.
   Si el string's last's target es not el separator byte, salir.
   Agregar "" to el string things.
 
-Para split some things into some left things and some right things:
+Para dividir some things into some left things and some right things:
   Si el things are empty, borrar el left things; borrar el right things; salir.
   Poner el things' count divided by 2 into un count.
   Lazo.
-  Obtener un thing desde el things.
-  Si el count es 0, interrumpir.
-  Restar 1 desde el count.
+    Obtener un thing desde el things.
+    Si el count es 0, interrumpir.
+    Restar 1 desde el count.
   Repetir.
-  Split el things into el left things y el right things at el thing. 
+  Dividir el things into el left things y el right things at el thing. 
 
-Para split some things into some left things and some right things at un thing:
+Para dividir some things into some left things and some right things at un thing:
   Borrar el left things.
   Borrar el right things.
-  Si el thing es nil, swap el things con el left things; salir.
-  Si el thing's previous es nil, swap el things con el left things; salir.
+  Si el thing es nil, intercambiar el things con el left things; salir.
+  Si el thing's previous es nil, intercambiar el things con el left things; salir.
 \ set up el left chain
   Poner el things' first into el left things' first.
   Poner el thing's previous into el left things' last.
@@ -13570,14 +13570,21 @@ Para split some things into some left things and some right things at un thing:
   Borrar el things.
 
 \Para dividir una wyrd en un byte y otro byte;
-Para split un wyrd into un byte and another byte:
+Para dividir un wyrd into un byte and another byte:
   Privatizar el wyrd.
   Desplazar el wyrd right 8 bits.
   Poner el wyrd into el byte.
   Poner el original wyrd into el other byte.
 
-A spot es un pair con un x-coord y un y-coord y un left at el x-coord y un top at el y-coord
-  y una coordenada-x at el x-coord y una coordenada-y at el y-coord y una izquierda at el x-coord y una superior at el y-coord.
+A spot es un pair con 
+  An x-coord y 
+  An y-coord y 
+  An left at el x-coord y 
+  An top at el y-coord y
+  Una coordenada-x at el x-coord y 
+  Una coordenada-y at el y-coord y 
+  Una izquierda at el x-coord y 
+  Una superior at el y-coord.
 
 A spot pointer es un pointer to un spot.
 
@@ -13587,13 +13594,15 @@ A square root es un number.
 
 The square size es some twips.
 
-Para square up any selection in un text:
+Para cuadrar any selection in un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
   Normalizar el text's selection.
   Obtener un row usando el text's caret row# y el text.
   Poner 1 into el text's anchor column#.
-  Si el text's caret column# es not 1, Agregar 1 to el text's caret row#; Poner 1 into el text's caret column#.
+  Si el text's caret column# es not 1,
+    Agregar 1 to el text's caret row#;
+    Poner 1 into el text's caret column#.
   Si el text's caret row# es less than or igual to el text's row count, salir.
   Poner el text's row count into el text's caret's row#.
   Poner el row's string's length into el text's caret's column#.
@@ -13605,6 +13614,7 @@ A stack entry es un thing con un string.
 The stack es some stack entries.
 
 \Para comenzar en cualquier lugar de una caja;
+Para comenzar en cualquier lugar de una box;
 Para start anywhere in un box:
   Elegir el context's spot in el box.
 
@@ -13613,261 +13623,261 @@ Para start anywhere on un horizontal line:
   Elegir un spot on el horizontal line.
   Poner el spot into el context's spot.
 
-Para start at el bottom left corner of un box facing east:
+Para comenzar en el bottom left corner of un box facing east:
   Poner el box's left-bottom into el context's spot.
   Mirar hacia el este.
 
-Para start at el bottom left corner of un box facing north:
+Para comenzar en el bottom left corner of un box facing north:
   Poner el box's left-bottom into el context's spot.
   Mirar hacia el norte.
 
-Para start at el bottom left corner of un box facing south:
+Para comenzar en el bottom left corner of un box facing south:
   Poner el box's left-bottom into el context's spot.
   Mirar hacia el sur.
 
-Para start at el bottom left corner of un box facing west:
+Para comenzar en el bottom left corner of un box facing west:
   Poner el box's left-bottom into el context's spot.
   Mirar hacia el oeste.
 
-Para start at el bottom of un horizontal line:
+Para comenzar en el bottom of un horizontal line:
   Poner el vertical line's end into el context's spot.
 
-Para start at el bottom right corner of un box facing east:
+Para comenzar en el bottom right corner of un box facing east:
   Poner el box's right-bottom into el context's spot.
   Mirar hacia el este.
 
-Para start at el bottom right corner of un box facing north:
+Para comenzar en el bottom right corner of un box facing north:
   Poner el box's right-bottom into el context's spot.
   Mirar hacia el norte.
 
-Para start at el bottom right corner of un box facing south:
+Para comenzar en el bottom right corner of un box facing south:
   Poner el box's right-bottom into el context's spot.
   Mirar hacia el sur.
 
-Para start at el bottom right corner of un box facing west:
+Para comenzar en el bottom right corner of un box facing west:
   Poner el box's right-bottom into el context's spot.
   Mirar hacia el oeste.
 
-Para start at el left of un horizontal line:
+Para comenzar en el left of un horizontal line:
   Poner el horizontal line's start into el context's spot.
 
-Para start at el middle of el bottom of un box;
+Para comenzar en el middle of el bottom of un box;
 Para start in el middle of el bottom of un box;
-Para start at el center of el bottom of un box;
+Para comenzar en el center of el bottom of un box;
 Para start in el center of el bottom of un box:
   Poner el box's center's x into el context's spot's x.
   Poner el box's bottom into el context's spot's y.
 
-Para start at el middle of el bottom of un box facing east;
+Para comenzar en el middle of el bottom of un box facing east;
 Para start in el middle of el bottom of un box facing east;
-Para start at el center of el bottom of un box facing east;
+Para comenzar en el center of el bottom of un box facing east;
 Para start in el center of el bottom of un box facing east:
   Poner el box's center's x into el context's spot's x.
   Poner el box's bottom into el context's spot's y.
   Mirar hacia el este.
 
-Para start at el middle of el bottom of un box facing north;
+Para comenzar en el middle of el bottom of un box facing north;
 Para start in el middle of el bottom of un box facing north;
-Para start at el center of el bottom of un box facing north;
+Para comenzar en el center of el bottom of un box facing north;
 Para start in el center of el bottom of un box facing north:
   Poner el box's center's x into el context's spot's x.
   Poner el box's bottom into el context's spot's y.
   Mirar hacia el norte.
 
-Para start at el middle of el bottom of un box facing south;
+Para comenzar en el middle of el bottom of un box facing south;
 Para start in el middle of el bottom of un box facing south;
-Para start at el center of el bottom of un box facing south;
+Para comenzar en el center of el bottom of un box facing south;
 Para start in el center of el bottom of un box facing south:
   Poner el box's center's x into el context's spot's x.
   Poner el box's bottom into el context's spot's y.
   Mirar hacia el sur.
 
-Para start at el middle of el bottom of un box facing west;
+Para comenzar en el middle of el bottom of un box facing west;
 Para start in el middle of el bottom of un box facing west;
-Para start at el center of el bottom of un box facing west;
+Para comenzar en el center of el bottom of un box facing west;
 Para start in el center of el bottom of un box facing west:
   Poner el box's center's x into el context's spot's x.
   Poner el box's bottom into el context's spot's y.
   Mirar hacia el oeste.
 
-Para start at el middle of el left of un box facing east;
+Para comenzar en el middle of el left of un box facing east;
 Para start in el middle of el left of un box facing east;
-Para start at el center of el left of un box facing east;
+Para comenzar en el center of el left of un box facing east;
 Para start in el center of el left of un box facing east:
   Poner el box's left into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
   Mirar hacia el este.
 
-Para start at el middle of el left of un box facing north;
+Para comenzar en el middle of el left of un box facing north;
 Para start in el middle of el left of un box facing north;
-Para start at el center of el left of un box facing north;
+Para comenzar en el center of el left of un box facing north;
 Para start in el center of el left of un box facing north:
   Poner el box's left into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
   Mirar hacia el norte.
 
-Para start at el middle of el left of un box facing south;
+Para comenzar en el middle of el left of un box facing south;
 Para start in el middle of el left of un box facing south;
-Para start at el center of el left of un box facing south;
+Para comenzar en el center of el left of un box facing south;
 Para start in el center of el left of un box facing south:
   Poner el box's left into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
   Mirar hacia el sur.
 
-Para start at el middle of el left of un box facing west;
+Para comenzar en el middle of el left of un box facing west;
 Para start in el middle of el left of un box facing west;
-Para start at el center of el left of un box facing west;
+Para comenzar en el center of el left of un box facing west;
 Para start in el center of el left of un box facing west:
   Poner el box's left into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
   Mirar hacia el oeste.
 
-Para start at el middle of el right of un box facing east;
+Para comenzar en el middle of el right of un box facing east;
 Para start in el middle of el right of un box facing east;
-Para start at el center of el right of un box facing east;
+Para comenzar en el center of el right of un box facing east;
 Para start in el center of el right of un box facing east:
   Poner el box's right into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
   Mirar hacia el este.
 
-Para start at el middle of el right of un box facing north;
+Para comenzar en el middle of el right of un box facing north;
 Para start in el middle of el right of un box facing north;
-Para start at el center of el right of un box facing north;
+Para comenzar en el center of el right of un box facing north;
 Para start in el center of el right of un box facing north:
   Poner el box's right into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
   Mirar hacia el norte.
 
-Para start at el middle of el right of un box facing south;
+Para comenzar en el middle of el right of un box facing south;
 Para start in el middle of el right of un box facing south;
-Para start at el center of el right of un box facing south;
+Para comenzar en el center of el right of un box facing south;
 Para start in el center of el right of un box facing south:
   Poner el box's right into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
   Mirar hacia el sur.
 
-Para start at el middle of el right of un box facing west;
+Para comenzar en el middle of el right of un box facing west;
 Para start in el middle of el right of un box facing west;
-Para start at el center of el right of un box facing west;
+Para comenzar en el center of el right of un box facing west;
 Para start in el center of el right of un box facing west:
   Poner el box's right into el context's spot's x.
   Poner el box's center's y into el context's spot's y.
   Mirar hacia el oeste.
 
-Para start at el middle of el top of un box;
+Para comenzar en el middle of el top of un box;
 Para start in el middle of el top of un box;
-Para start at el center of el top of un box;
+Para comenzar en el center of el top of un box;
 Para start in el center of el top of un box:
   Poner el box's center's x into el context's spot's x.
   Poner el box's top into el context's spot's y.
 
-Para start at el middle of el top of un box facing east;
+Para comenzar en el middle of el top of un box facing east;
 Para start in el middle of el top of un box facing east;
-Para start at el center of el top of un box facing east;
+Para comenzar en el center of el top of un box facing east;
 Para start in el center of el top of un box facing east:
   Poner el box's center's x into el context's spot's x.
   Poner el box's top into el context's spot's y.
   Mirar hacia el este.
 
-Para start at el middle of el top of un box facing north;
+Para comenzar en el middle of el top of un box facing north;
 Para start in el middle of el top of un box facing north;
-Para start at el center of el top of un box facing north;
+Para comenzar en el center of el top of un box facing north;
 Para start in el center of el top of un box facing north:
   Poner el box's center's x into el context's spot's x.
   Poner el box's top into el context's spot's y.
   Mirar hacia el norte.
 
-Para start at el middle of el top of un box facing south;
+Para comenzar en el middle of el top of un box facing south;
 Para start in el middle of el top of un box facing south;
-Para start at el center of el top of un box facing south;
+Para comenzar en el center of el top of un box facing south;
 Para start in el center of el top of un box facing south:
   Poner el box's center's x into el context's spot's x.
   Poner el box's top into el context's spot's y.
   Mirar hacia el sur.
 
-Para start at el middle of el top of un box facing west;
+Para comenzar en el middle of el top of un box facing west;
 Para start in el middle of el top of un box facing west;
-Para start at el center of el top of un box facing west;
+Para comenzar en el center of el top of un box facing west;
 Para start in el center of el top of un box facing west:
   Poner el box's center's x into el context's spot's x.
   Poner el box's top into el context's spot's y.
   Mirar hacia el oeste.
 
-Para start at el right of un horizontal line:
+Para comenzar en el right of un horizontal line:
   Poner el horizontal line's end into el context's spot.
 
 \Para comenzar en un punto;
-Para start at un spot:
+Para comenzar en un spot:
   Poner el spot into el context's spot.
 
-Para start at un spot facing east:
+Para comenzar en un spot facing east:
   Poner el spot into el context's spot.
   Mirar hacia el este.
 
-Para start at un spot facing north:
+Para comenzar en un spot facing north:
   Poner el spot into el context's spot.
   Mirar hacia el norte.
 
-Para start at un spot facing south:
+Para comenzar en un spot facing south:
   Poner el spot into el context's spot.
   Mirar hacia el sur.
 
-Para start at un spot facing west:
+Para comenzar en un spot facing west:
   Poner el spot into el context's spot.
   Mirar hacia el oeste.
 
-Para start at el top left corner of un box facing east:
+Para comenzar en el top left corner of un box facing east:
   Poner el box's left-top into el context's spot.
   Mirar hacia el este.
 
-Para start at el top left corner of un box facing north:
+Para comenzar en el top left corner of un box facing north:
   Poner el box's left-top into el context's spot.
   Mirar hacia el norte.
 
-Para start at el top left corner of un box facing south:
+Para comenzar en el top left corner of un box facing south:
   Poner el box's left-top into el context's spot.
   Mirar hacia el sur.
 
-Para start at el top left corner of un box facing west:
+Para comenzar en el top left corner of un box facing west:
   Poner el box's left-top into el context's spot.
   Mirar hacia el oeste.
 
-Para start at el top of un vertical line:
+Para comenzar en el top of un vertical line:
   Poner el vertical line's start into el context's spot.
 
-Para start at el top right corner of un box facing east:
+Para comenzar en el top right corner of un box facing east:
   Poner el box's right-top into el context's spot.
   Mirar hacia el este.
 
-Para start at el top right corner of un box facing north:
+Para comenzar en el top right corner of un box facing north:
   Poner el box's right-top into el context's spot.
   Mirar hacia el norte.
 
-Para start at el top right corner of un box facing south:
+Para comenzar en el top right corner of un box facing south:
   Poner el box's right-top into el context's spot.
   Mirar hacia el sur.
 
-Para start at el top right corner of un box facing west:
+Para comenzar en el top right corner of un box facing west:
   Poner el box's right-top into el context's spot.
   Mirar hacia el oeste.
 
 Para start in el middle of un box facing east;
-Para start at el middle of un box facing east;
+Para comenzar en el middle of un box facing east;
 Para mover to el middle of un box facing east;
 Para mover to el middle of un box and face east;
 Para start in el center of un box facing east;
-Para start at el center of un box facing east;
+Para comenzar en el center of un box facing east;
 Para mover to el center of un box facing east;
 Para mover to el center of un box and face east:
   Poner el box's center into el context's spot.
   Mirar hacia el este.
 
 Para start in el middle of un box facing north;
-Para start at el middle of un box facing north;
+Para comenzar en el middle of un box facing north;
 Para mover to el middle of un box facing north;
 Para mover to el middle of un box and face north;
 Para start in el center of un box facing north;
-Para start at el center of un box facing north;
+Para comenzar en el center of un box facing north;
 Para mover to el center of un box facing north;
 Para mover to el center of un box and face north:
   Poner el box's center into el context's spot.
@@ -13877,25 +13887,25 @@ Para start in el middle of un box facing north minus some points;
 Para start in el center of un box facing north minus some points:
   Poner el box's center into el context's spot.
   Mirar hacia el norte.
-  Turn left el points.
+  Girar izquierda el points.
 
 Para start in el middle of un box facing south;
-Para start at el middle of un box facing south;
+Para comenzar en el middle of un box facing south;
 Para mover to el middle of un box facing south;
 Para mover to el middle of un box and face south;
 Para start in el center of un box facing south;
-Para start at el center of un box facing south;
+Para comenzar en el center of un box facing south;
 Para mover to el center of un box facing south;
 Para mover to el center of un box and face south:
   Poner el box's center into el context's spot.
   Mirar hacia el sur.
 
 Para start in el middle of un box facing west;
-Para start at el middle of un box facing west;
+Para comenzar en el middle of un box facing west;
 Para mover to el middle of un box facing west;
 Para mover to el middle of un box and face west;
 Para start in el center of un box facing west;
-Para start at el center of un box facing west;
+Para comenzar en el center of un box facing west;
 Para mover to el center of un box facing west;
 Para mover to el center of un box and face west:
   Poner el box's center into el context's spot.
@@ -13907,16 +13917,17 @@ Para start un process usando un path: \ must be called con un global variable
   Poner un startupinfo's magnitude into el startupinfo's cb.
   Extraer un directory desde el path. null terminate el directory.
   Privatizar el path. null terminate el path.
-  Llamada "kernel32.dll" "CreateProcessA" con el path's first and 0 and 0 and 0 and 0 and 67108904 [create_default_error_mode + normal_priority_class + detached_process] and 0 
+  Llamada "kernel32.dll" "CreateProcessA" con el path's first y 0 y 0 y 0 y 0 y 67108904 [create_default_error_mode + normal_priority_class + detached_process] and 0 
   y el directory's first y el startupinfo's whereabouts y un processinfo's whereabouts retornando un number.
   Si el number es 0, Poner "No puedo ejecutar el programa." into el error de e/s; salir.
   Poner el processinfo's hprocess into el process.
   Llamada "kernel32.dll" "CloseHandle" con el processinfo's hthread.
   Apuntar un pointer to routine wait for un process pointer.
-  Llamada "kernel32.dll" "CreateThread" con 0 and 0 y el pointer y el process's whereabouts and 0 and another number's whereabouts retornando un handle.
+  Llamada "kernel32.dll" "CreateThread" con 0 y 0 y el pointer y el process's whereabouts and 0 and another number's whereabouts retornando un handle.
   Llamada "kernel32.dll" "CloseHandle" con el handle. \ does not end el thread, just dumps el handle
 
 \Para iniciar un temporizador;
+Para iniciar un timer;
 Para start un timer:
   Reiniciar el timer.
   Restart el timer.
@@ -13991,10 +14002,11 @@ Para start up el cgi:
   Initialize el cgi.
 
 \Para comenzar con un color;
+Para comenzar con un color;
 Para start con un color:
   Poner el color into el context's color.
 
-Para start con nothing in un pointer:
+Para comenzar con nothing in un pointer:
   Void el pointer.
 
 The start-of-heading byte es un byte igual to 1.
@@ -14002,24 +14014,24 @@ The start-of-heading byte es un byte igual to 1.
 The start-of-text byte es un byte igual to 2.
 
 A startupinfo es un record con
-A number called cb,
-A pointer called lpreserved,
-A pointer called lpdesktop,
-A pointer called lptitle,
-A number called dwx,
-A number called dwy,
-A number called dwxsize,
-A number called dwysize,
-A number called dwxcountchars,
-A number called cwycountchars,
-A number called dwfillattribute,
-A number called dwflags,
-A wyrd called wshowwindow,
-A wyrd called cbreserved2,
-A pointer called lpreserved2,
-A handle called hstdinput,
-A handle called hstdoutput,
-A handle called hstderror.
+  A number called cb,
+  A pointer called lpreserved,
+  A pointer called lpdesktop,
+  A pointer called lptitle,
+  A number called dwx,
+  A number called dwy,
+  A number called dwxsize,
+  A number called dwysize,
+  A number called dwxcountchars,
+  A number called cwycountchars,
+  A number called dwfillattribute,
+  A number called dwflags,
+  A wyrd called wshowwindow,
+  A wyrd called cbreserved2,
+  A pointer called lpreserved2,
+  A handle called hstdinput,
+  A handle called hstdoutput,
+  A handle called hstderror.
 
 The StdIn handle es un handle.
 
@@ -14027,7 +14039,7 @@ The StdOut handle es un handle.
 
 Para stop un process:
   Si el process es 0, salir.
-  Llamada "kernel32.dll" "TerminateProcess" con el process and 0.
+  Llamada "kernel32.dll" "TerminateProcess" con el process y 0.
   Poner 0 into el process.
 
 \Para detener un temporizador;
@@ -14040,9 +14052,9 @@ Para stop un timer:
   Agregar el ticks to el timer's total ticks.
 
 A string es un record con un first byte pointer y un last byte pointer
-  y un primero puntero octeto at el first byte pointer and
-  y un primera puntero octeto at el first byte pointer and \ new line, same as above except primero -> primera
-  un último puntero octeto at el last byte pointer and
+  y un primero puntero octeto at el first byte pointer y
+  y un primera puntero octeto at el first byte pointer y \ new line, same as above except primero -> primera
+  un último puntero octeto at el last byte pointer y
   un última puntero octeto at el last byte pointer. \ new line, similar to above except último -> última
 
 A string thing es un thing con un string y una cadena at el string.
@@ -14052,94 +14064,94 @@ A string# es un number.
 Para trazar el accent glyph:
   Save el context.
   Mover 4 squares.
-  Turn right.
-  Turn right 7/96 of el way.
+  Girar derecha.
+  Girar derecha 7/96 of el way.
   Trazar 9/4 square.
   Restore el context.
 
 Para trazar el asterisk glyph:
   Save el context.
   Mover 2 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
-  Turn left.
+  Girar izquierda.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares.
   Reiniciar el context.
   Mover 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 2 squares slantways.
   Reiniciar el context.
   Mover 3 squares.
-  Turn right 3/8.
+  Girar derecha 3/8.
   Trazar 2 squares slantways.
   Restore el context.
 
 Para trazar el at-sign glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
   Turn around.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 2 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
-  Turn right 3/8.
+  Girar derecha 3/8.
   Trazar 1/2 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1/2 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1/2 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1/2 square slantways.
   Restore el context.
 
 Para trazar el backslash glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
-  Turn left 7/96 of el way.
+  Girar izquierda.
+  Girar izquierda 7/96 of el way.
   Trazar 9/2 square.
   Restore el context.
 
 Para trazar el big-a glyph:
   Save el context.
   Trazar 3 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 3 squares.
   Turn around.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square.
   Restore el context.
 
 Para trazar el big-b glyph:
   Save el context.
   Trazar 4 squares.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Restore el context.
 
@@ -14147,57 +14159,57 @@ Para trazar el big-c glyph:
   Save el context.
   Mover 2 squares.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Reiniciar el context.
   Mover 2 squares.
   Turn around.
   Trazar 1 square.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el big-d glyph:
   Save el context.
   Trazar 4 squares.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 2 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
   Restore el context.
 
 Para trazar el big-e glyph:
   Save el context.
   Trazar 4 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Reiniciar el context.
   Mover 2 squares.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el big-f glyph:
   Save el context.
   Trazar 4 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Reiniciar el context.
   Mover 2 squares.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
   Restore el context.
 
@@ -14205,21 +14217,21 @@ Para trazar el big-g glyph:
   Save el context.
   Mover 2 squares.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Reiniciar el context.
   Mover 2 squares.
   Turn around.
   Trazar 1 square.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square.
   Restore el context.
 
@@ -14228,27 +14240,27 @@ Para trazar el big-h glyph:
   Trazar 4 squares.
   Reiniciar el context.
   Mover 2 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 4 squares.
   Restore el context.
 
 Para trazar el big-i glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 4 squares.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Reiniciar el context.
   Mover 4 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Restore el context.
 
@@ -14257,11 +14269,11 @@ Para trazar el big-j glyph:
   Mover 2 squares.
   Turn around.
   Trazar 1 square.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 3 squares.
   Restore el context.
 
@@ -14270,17 +14282,17 @@ Para trazar el big-k glyph:
   Trazar 4 squares.
   Turn around.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square.
   Save el context.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square.
   Restore el context.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
   Restore el context.
 
@@ -14289,27 +14301,27 @@ Para trazar el big-l glyph:
   Mover 4 squares.
   Turn around.
   Trazar 4 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el big-m glyph:
   Save el context.
   Trazar 4 squares.
-  Turn right 41/96.
+  Girar derecha 41/96.
   Trazar 9/4 square.
-  Turn right 62/96.
+  Girar derecha 62/96.
   Trazar 9/4 square.
-  Turn right 41/96.
+  Girar derecha 41/96.
   Trazar 4 squares.
   Restore el context.
 
 Para trazar el big-n glyph:
   Save el context.
   Trazar 4 squares.
-  Turn right 41/96.
+  Girar derecha 41/96.
   Trazar 9/2 square.
-  Turn left 41/96.
+  Girar izquierda 41/96.
   Trazar 4 squares.
   Restore el context.
 
@@ -14317,26 +14329,26 @@ Para trazar el big-o glyph:
   Save el context.
   Mover 1 square.
   Trazar 2 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right 1/4.
+  Girar derecha 1/4.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 2 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right 1/4.
+  Girar derecha 1/4.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el big-p glyph:
   Save el context.
   Trazar 4 squares.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Restore el context.
 
@@ -14344,35 +14356,35 @@ Para trazar el big-q glyph:
   Save el context.
   Mover 1 square.
   Trazar 2 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right 1/4.
+  Girar derecha 1/4.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 2 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right 1/4.
+  Girar derecha 1/4.
   Trazar 1 square slantways.
   Reiniciar el context.
   Mover 1 square.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn right 1/8 of el way.
+  Girar derecha 1/8 of el way.
   Trazar 1-1/2 square.
   Restore el context.
 
 Para trazar el big-r glyph:
   Save el context.
   Trazar 4 squares.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn left 1/8.
-  Turn left 7/96.
+  Girar izquierda 1/8.
+  Girar izquierda 7/96.
   Trazar 7/2 square.
   Restore el context.
 
@@ -14380,25 +14392,25 @@ Para trazar el big-s glyph:
   Save el context.
   Mover 1 square.
   Turn around.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el big-t glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 4 squares.
-  Turn left.
+  Girar izquierda.
   Mover 1 square.
   Turn around.
   Trazar 2 squares.
@@ -14409,9 +14421,9 @@ Para trazar el big-u glyph:
   Mover 4 squares.
   Turn around.
   Trazar 4 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 4 squares.
   Restore el context.
 
@@ -14420,11 +14432,11 @@ Para trazar el big-v glyph:
   Mover 4 squares.
   Turn around.
   Trazar 3 squares.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 3 squares.
   Restore el context.
 
@@ -14433,29 +14445,29 @@ Para trazar el big-w glyph:
   Mover 4 squares.
   Turn around.
   Trazar 4 squares.
-  Turn left 41/96.
+  Girar izquierda 41/96.
   Trazar 9/4 square.
-  Turn left 61/96.
+  Girar izquierda 61/96.
   Trazar 9/4 square.
-  Turn left 41/96.
+  Girar izquierda 41/96.
   Trazar 4 squares.
   Restore el context.
 
 Para trazar el big-x glyph:
   Save el context.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 2 squares slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 2 squares slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
   Restore el context.
 
@@ -14464,31 +14476,31 @@ Para trazar el big-y glyph:
   Mover 4 squares.
   Turn around.
   Trazar 1 square.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el big-z glyph:
   Save el context.
   Mover 4 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 2 squares slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares.
   Restore el context.
 
@@ -14498,11 +14510,11 @@ Para trazar un box con un color:
   Poner el box's left-bottom into el context's spot.
   Mirar hacia el norte.
   Trazar el box's height.
-  Turn right.
+  Girar derecha.
   Trazar el box's width.
-  Turn right.
+  Girar derecha.
   Trazar el box's height.
-  Turn right.
+  Girar derecha.
   Trazar el box's width.
 
 \Para acariciar un byte;
@@ -14606,17 +14618,17 @@ Para trazar un byte:
 Para trazar el caret glyph:
   Save el context.
   Mover 3 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el colon glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 1/2 square.
   Mover 1/2 square.
   Mover 1 square.
@@ -14627,9 +14639,9 @@ Para trazar el comma glyph:
   Save el context.
   Turn around.
   Mover 1 square.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1/2 square.
   Restore el context.
 
@@ -14637,20 +14649,20 @@ Para trazar el dollar-sign glyph:
   Save el context.
   Mover 1 square.
   Turn around.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn right.
+  Girar derecha.
   Mover 1/2 square.
   Turn around.
   Trazar 5 squares.
@@ -14658,54 +14670,54 @@ Para trazar el dollar-sign glyph:
 
 Para trazar el double-quote glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1/2 square.
-  Turn left.
+  Girar izquierda.
   Mover 2-1/2 squares.
   Trazar 1-1/2 squares.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Mover 1-1/2 squares.
-  Turn left.
+  Girar izquierda.
   Mover 2-1/2 squares.
   Trazar 1-1/2 squares.
   Restore el context.
 
 Para trazar el eight glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el equal-sign glyph:
   Save el context.
   Mover 1-1/2 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
-  Turn left.
+  Girar izquierda.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el exclamation-mark glyph:
   Save el context.
   Mover 4 squares.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn right.
+  Girar derecha.
   Trazar 3 squares.
   Mover 1 square.
   Trazar 1/2 square.
@@ -14715,81 +14727,81 @@ Para trazar el five glyph:
   Save el context.
   Turn around.
   Mover 1 square.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 2 squares slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el four glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 4 squares.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 2 squares slantways.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square.
   Restore el context.
 
 Para trazar el left-alligator glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Mover 1 square.
-  Turn left 17/96 of el way.
+  Girar izquierda 17/96 of el way.
   Trazar 9/4 square.
-  Turn right 34/96 of el way.
+  Girar derecha 34/96 of el way.
   Trazar 9/4 square.
   Restore el context.
 
 Para trazar el left-brace glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
   Turn around.
   Trazar 1 square.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
   Restore el context.
 
 Para trazar el left-bracket glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
   Turn around.
   Trazar 1 square.
-  Turn right.
+  Girar derecha.
   Trazar 4 squares.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
   Restore el context.
 
 Para trazar el left-paren glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1-1/2 squares.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 2 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
   Restore el context.
 
@@ -14805,21 +14817,21 @@ Para dibujar un line as wide as un box:
 
 Para trazar el little-a glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 3 squares.
   Turn around.
   Mover 1 square.
-  Turn right 3/8.
+  Girar derecha 3/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
   Restore el context.
 
@@ -14828,118 +14840,118 @@ Para trazar el little-b glyph:
   Trazar 4 squares.
   Turn around.
   Mover 2 squares.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el little-c glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Mover 1 square.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el little-d glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 4 squares.
   Turn around.
   Mover 2 squares.
-  Turn right 3/8.
+  Girar derecha 3/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el little-e glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
   Turn around.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1/2 square.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el little-f glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Save el context.
   Turn around.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
   Restore el context.
   Trazar 4 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
   Reiniciar el context.
   Mover 3 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el little-g glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Mover 1 square.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Reiniciar el context.
   Mover 3 squares.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn right.
+  Girar derecha.
   Trazar 3 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1-1/2 square slantways.
   Restore el context.
 
@@ -14948,27 +14960,27 @@ Para trazar el little-h glyph:
   Trazar 4 squares.
   Turn around.
   Mover 2 squares.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el little-i glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Turn around.
   Mover 1 square.
-  Turn right.
+  Girar derecha.
   Trazar 3 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square.
   Turn around.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Mover 1/2 square.
   Trazar 1/2 square.
   Restore el context.
@@ -14978,11 +14990,11 @@ Para trazar el little-j glyph:
   Mover 1 square.
   Turn around.
   Trazar 1 square.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 3 squares.
   Mover 1/2 square.
   Trazar 1/2 square.
@@ -14993,23 +15005,23 @@ Para trazar el little-k glyph:
   Trazar 4 squares.
   Turn around.
   Mover 2 squares.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 2 squares slantways.
   Reiniciar el context.
   Mover 2 squares.
-  Turn right 17/96.
+  Girar derecha 17/96.
   Trazar 9/4 square.
   Restore el context.
 
 Para trazar el little-l glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Turn around.
   Mover 1 square.
-  Turn right.
+  Girar derecha.
   Trazar 4 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square.
   Restore el context.
 
@@ -15018,15 +15030,15 @@ Para trazar el little-m glyph:
   Trazar 3 squares.
   Turn around.
   Mover 1 square.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn right 3/8.
+  Girar derecha 3/8.
   Trazar 2 squares.
   Turn around.
   Mover 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right 3/8.
+  Girar derecha 3/8.
   Trazar 3 squares.
   Restore el context.
 
@@ -15035,31 +15047,31 @@ Para trazar el little-n glyph:
   Trazar 3 squares.
   Turn around.
   Mover 1 square.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el little-o glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Mover 1 square.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
   Restore el context.
 
@@ -15070,35 +15082,35 @@ Para trazar el little-p glyph:
   Trazar 4 squares.
   Turn around.
   Mover 3 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el little-q glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Mover 1 square.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Mover 1 square.
   Turn around.
   Trazar 4 squares.
@@ -15109,45 +15121,45 @@ Para trazar el little-r glyph:
   Trazar 3 squares.
   Turn around.
   Mover 1 square.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el little-s glyph:
   Save el context.
   Mover 1 square.
-  Turn right 3/8.
+  Girar derecha 3/8.
   Trazar 1 square slantways.
-  Turn left.
-  Trazar 1 square slantways.
-  Reiniciar el context.
-  Mover 2 squares.
-  Turn right 1/8.
-  Trazar 1 square slantways.
-  Turn right.
+  Girar izquierda.
   Trazar 1 square slantways.
   Reiniciar el context.
   Mover 2 squares.
-  Turn right 31/96.
+  Girar derecha 1/8.
+  Trazar 1 square slantways.
+  Girar derecha.
+  Trazar 1 square slantways.
+  Reiniciar el context.
+  Mover 2 squares.
+  Girar derecha 31/96.
   Trazar 9/4 squares.
   Restore el context.
 
 Para trazar el little-t glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 4 squares.
   Turn around.
   Mover 1 square.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
   Turn around.
   Trazar 2 squares.
@@ -15158,11 +15170,11 @@ Para trazar el little-u glyph:
   Mover 3 squares.
   Turn around.
   Trazar 2 squares.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Mover 2 squares.
   Turn around.
   Trazar 3 squares.
@@ -15173,11 +15185,11 @@ Para trazar el little-v glyph:
   Mover 3 squares.
   Turn around.
   Trazar 2 squares.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 2 squares.
   Restore el context.
 
@@ -15187,29 +15199,29 @@ Para trazar el little-w glyph:
   Turn around.
   Trazar 3 squares.
   Turn around.
-  Turn right 7/96.
+  Girar derecha 7/96.
   Trazar 9/4 squares.
-  Turn right 34/96.
+  Girar derecha 34/96.
   Trazar 9/4 squares.
-  Turn left 41/96.
+  Girar izquierda 41/96.
   Trazar 3 squares.
   Restore el context.
 
 Para trazar el little-x glyph:
   Save el context.
   Trazar 1 square.
-  Turn right 17/96.
+  Girar derecha 17/96.
   Trazar 9/4 square.
-  Turn left 17/96.
+  Girar izquierda 17/96.
   Trazar 1 square.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square.
-  Turn left 17/96.
+  Girar izquierda 17/96.
   Trazar 9/4 square.
-  Turn right 17/96.
+  Girar derecha 17/96.
   Trazar 1 square.
   Restore el context.
 
@@ -15218,139 +15230,139 @@ Para trazar el little-y glyph:
   Mover 3 squares.
   Turn around.
   Trazar 2 squares.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Mover 2 squares.
   Turn around.
   Trazar 3 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1-1/2 squares slantways.
   Restore el context.
 
 Para trazar el little-z glyph:
   Save el context.
   Mover 3 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
-  Turn right 17/96.
+  Girar derecha 17/96.
   Trazar 9/4 square.
-  Turn left 17/96.
+  Girar izquierda 17/96.
   Trazar 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el minus-sign glyph:
   Save el context.
   Mover 2 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el nine glyph:
   Save el context.
   Mover 1 square.
-  Turn right 3/8.
+  Girar derecha 3/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 2 squares.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el number-sign glyph:
   Save el context.
   Mover 3 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Reiniciar el context.
   Mover 1 square.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Mover 1/2 square.
-  Turn left.
+  Girar izquierda.
   Trazar 4 squares.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Mover 1-1/2 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 4 squares.
   Restore el context.
 
 Para trazar el one glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 4 squares.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
   Reiniciar el context.
   Mover 3 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el percent-sign glyph:
   Save el context.
-  Turn right 7/96.
+  Girar derecha 7/96.
   Trazar 9/2 squares.
   Reiniciar el context.
   Mover 2-1/2 squares.
   Trazar 1/2 square.
   Reiniciar el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Mover 1 square.
   Trazar 1/2 square.
   Restore el context.
 
 Para trazar el period glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 1/2 square.
   Restore el context.
 
 Para trazar el plus-sign glyph:
   Save el context.
   Mover 2 squares.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
-  Turn left.
+  Girar izquierda.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el question-mark glyph:
   Save el context.
   Mover 3 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square.
   Mover 1 square.
   Trazar 1/2 square.
@@ -15359,48 +15371,48 @@ Para trazar el question-mark glyph:
 Para trazar el right-alligator glyph:
   Save el context.
   Mover 1 square.
-  Turn right 17/96 of el way.
+  Girar derecha 17/96 of el way.
   Trazar 9/4 square.
-  Turn left 34/96 of el way.
+  Girar izquierda 34/96 of el way.
   Trazar 9/4 square.
   Restore el context.
 
 Para trazar el right-brace glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square.
   Restore el context.
 
 Para trazar el right-bracket glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 4 squares.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square.
   Restore el context.
 
 Para trazar el right-paren glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1/2 square.
-  Turn left.
-  Turn right 1/8.
+  Girar izquierda.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 2 squares.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
   Restore el context.
 
@@ -15408,9 +15420,9 @@ Para trazar el semi-colon glyph:
   Save el context.
   Turn around.
   Mover 1 square.
-  Turn left 3/8.
+  Girar izquierda 3/8.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1/2 square.
   Mover 1/2 square.
   Mover 1 square.
@@ -15421,48 +15433,48 @@ Para trazar el seven glyph:
   Save el context.
   Mover 3 squares.
   Trazar 1 square.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares.
-  Turn right.
+  Girar derecha.
   Trazar 1 square.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el single-quote glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Mover 2-1/2 squares.
   Trazar 1-1/2 squares.
   Restore el context.
 
 Para trazar el six glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 2 squares.
-  Turn left.
+  Girar izquierda.
   Mover 3 squares.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 2 squares.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el slash glyph:
   Save el context.
-  Turn right 7/96 of el way.
+  Girar derecha 7/96 of el way.
   Trazar 9/2 square.
   Restore el context.
 
@@ -15476,28 +15488,28 @@ Para trazar some squares slantways:
 Para trazar el three glyph:
   Save el context.
   Mover 3 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn left.
+  Girar izquierda.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
   Restore el context.
 
 Para trazar el tilde glyph:
   Save el context.
   Mover 2 squares.
-  Turn right 7/96 of el way.
+  Girar derecha 7/96 of el way.
   Trazar 9/8 square.
-  Turn right.
+  Girar derecha.
   Trazar 9/6 square.
-  Turn left.
+  Girar izquierda.
   Trazar 9/8 square.
   Restore el context.
 
@@ -15507,15 +15519,15 @@ Para trazar some twips:
 Para trazar el two glyph:
   Save el context.
   Mover 3 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 1 square slantways.
-  Turn right.
+  Girar derecha.
   Trazar 2 squares slantways.
-  Turn left 1/8.
+  Girar izquierda 1/8.
   Trazar 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares.
   Restore el context.
 
@@ -15523,15 +15535,15 @@ Para trazar el underscore glyph:
   Save el context.
   Turn around.
   Mover 1 square.
-  Turn left.
+  Girar izquierda.
   Trazar 2 squares.
   Restore el context.
 
 Para trazar el vertical-bar glyph:
   Save el context.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
   Turn around.
   Trazar 5 squares.
@@ -15541,19 +15553,19 @@ Para trazar el zero glyph:
   Save el context.
   Mover 1 square.
   Trazar 2 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right 1/4.
+  Girar derecha 1/4.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 2 squares.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Trazar 1 square slantways.
-  Turn right 1/4.
+  Girar derecha 1/4.
   Trazar 1 square slantways.
-  Turn right 1/8.
+  Girar derecha 1/8.
   Mover 1 square.
-  Turn right.
+  Girar derecha.
   Mover 1 square.
   Trazar 1 pixel.
   Restore el context.
@@ -15631,28 +15643,28 @@ The superscript-three byte es un byte igual to 179.
 The superscript-two byte es un byte igual to 178.
 
 \Para intercambiar un color con otro color;
-Para swap un color con another color:
-  Swap el color's hue con el other color's hue.
-  Swap el color's saturation con el other color's saturation.
-  Swap el color's lightness con el other color's lightness.
+Para intercambiar un color con another color:
+  Intercambiar el color's hue con el other color's hue.
+  Intercambiar el color's saturation con el other color's saturation.
+  Intercambiar el color's lightness con el other color's lightness.
 
 \Para intercambiar un par con otro par;
-Para swap un pair con another pair:
-  Swap el pair's x-number con el other pair's x-number.
-  Swap el pair's y-number con el other pair's y-number.
+Para intercambiar un pair con another pair:
+  Intercambiar el pair's x-number con el other pair's x-number.
+  Intercambiar el pair's y-number con el other pair's y-number.
 
 \Para intercambiar un puntero con otro puntero;
-Para swap un pointer con another pointer;
+Para intercambiar un pointer con another pointer;
 \Para intercambiar un número con otro número;
-Para swap un number con another number:
+Para intercambiar un number con another number:
   Poner el number into un third number.
   Poner el other number into el number.
   Poner el third number into el other number.
 
 \Para intercambiar algunas cosas con algunas otras cosas;
-Para swap some things con some other things:
-  Swap el things' first con el other things' first.
-  Swap el things' last con el other things' last.
+Para intercambiar some things con some other things:
+  Intercambiar el things' first con el other things' first.
+  Intercambiar el things' last con el other things' last.
 
 The synchronous-idle byte es un byte igual to 22.
 
@@ -15784,9 +15796,13 @@ A textmetric es un record con
 
 A thing es un pointer to un thing record.
 
-A thing record es un record con un next thing y un previous thing.
+A thing record es un record con 
+  A next thing y 
+  A previous thing.
 
-Some things es un record con un first thing y un last thing.
+Some things es un record con 
+  A first thing y 
+  A last thing.
 
 A thousand es 10 hundreds.
 
@@ -15802,7 +15818,7 @@ The tilde byte es un byte igual to 126.
 
 A timer es un record con un count, some start ticks and some total ticks.
 
-Some times es un number. \ this es un fluke, I think -- see "smooth un polygon some times"
+Some times es un number. \ this is a fluke, (I think) -- check out "smooth un polygon some times"
 
 A token es un string.
 
@@ -15815,80 +15831,80 @@ The tpp es some twips.
 The trade-mark byte es un byte igual to 153.
 
 \Para recortar una cadena;
-Para trim un string:
+ Para recortar un string:
   Eliminar any leading noise desde el string.
   Eliminar any trailing noise desde el string.
 
 Para turn around:
-  Turn right 1/2.
+  Girar derecha 1/2.
 
 Para turn un fraction igual to un number over another number:
   Poner el number into el fraction's top.
   Poner el other number into el fraction's bottom.
   Turn el fraction.
 
-\Para turn un fraction of el way;
-\Para turn un fraction of el way around;
+Para turn un fraction of el way;
+Para turn un fraction of el way around;
 Para turn un fraction:
   Si el fraction es 1/1, salir.
   Poner 3840 times el fraction plus el context's heading into el context's heading.
   Normalizar el context's heading.
 
 \Para girar izquierda;
-Para turn left:
+Para girar izquierda:
   Turn -1/4.
 
-Para turn left un fraction igual to un number over another number:
+Para girar izquierda un fraction igual to un number over another number:
   Poner el number into el fraction's top.
   Poner el other number into el fraction's bottom.
-  Turn left el fraction.
+  Girar izquierda el fraction.
 
-\Para turn left un fraction of el way;
-\Para turn left un fraction of el way around;
-Para turn left un fraction:
+Para girar izquierda un fraction of el way;
+Para girar izquierda un fraction of el way around;
+Para girar izquierda un fraction:
   Privatizar el fraction.
   Negar el fraction.
   Turn el fraction.
 
-Para turn left some points:
+Para girar izquierda some points:
   Poner el points and 3840 into un fraction.
-  Turn left el fraction.
+  Girar izquierda el fraction.
 
 \Para girar derecha;
-Para turn right:
+Para girar derecha:
   Turn 1/4.
 
-Para turn right some degrees:
+Para girar derecha some degrees:
   Poner el degrees times 10 and 3600 into un fraction.
-  Turn right el fraction.
+  Girar derecha el fraction.
 
 \Para girar algunos grados;
 Para turn some degrees:
   Poner el degrees times 10 and 3600 into un fraction.
-\If el degrees are negative, turn left el fraction; salir.
-  Turn right el fraction.
+\If el degrees are negative, girar izquierda el fraction; salir.
+  Girar derecha el fraction.
 
-Para turn right un fraction igual to un number over another number:
+Para girar derecha un fraction igual to un number over another number:
   Poner el number into el fraction's top.
   Poner el other number into el fraction's bottom.
-  Turn right el fraction.
+  Girar derecha el fraction.
 
-\Para turn right un fraction of el way;
-\Para turn right un fraction of el way around;
-Para turn right un fraction:
+Para girar derecha un fraction of el way;
+Para girar derecha un fraction of el way around;
+Para girar derecha un fraction:
   Turn el fraction.
 
-\Para turn right un fraction of el way some percent of el time;
-\Para turn right un fraction about some percent of el time;
-\Para turn right un fraction of el way about some percent of el time;
-Para turn right un fraction some percent of el time:
+Para girar derecha un fraction of el way some percent of el time;
+Para girar derecha un fraction about some percent of el time;
+Para girar derecha un fraction of el way about some percent of el time;
+Para girar derecha un fraction some percent of el time:
   Elegir un number between 1 y 100.
   Si el number es greater than el percent, salir.
-  Turn right el fraction.
+  Girar derecha el fraction.
 
-Para turn right some points:
+Para girar derecha some points:
   Poner el points and 3840 into un fraction.
-  Turn right el fraction.
+  Girar derecha el fraction.
 
 A twip es un number.
 
@@ -15995,25 +16011,26 @@ Para unquote un string:
 
 The up-arrow key es un key igual to 38.
 
-\Para actualizar la pantalla;
-\Para update el screen;
-\Para mostrar it;
-\Para mostrar it all;
-\Para mostrar reveal el canvas;
+Para actualizar la pantalla;
+Para update el screen;
+Para mostrar it;
+Para mostrar it all;
+Para mostrar reveal el canvas;
 Para actualizar el screen:
   Actualizar el screen usando el screen's box.
 
 Para uppercase any selected bytes in un text:
   Si el text es nil, salir.
-  Lazo.
-  Obtener un row desde el text's rows.
-  Si el row es nil, salir.
-  Si el row of el text es not selected, repetir.
-  Colocar un substring on any selected bytes in el row of el text.
-  Uppercase el substring.
+    Lazo.
+    Obtener un row desde el text's rows.
+    Si el row es nil, salir.
+    Si el row of el text es not selected, repetir.
+    Colocar un substring on any selected bytes in el row of el text.
+    Uppercase el substring.
   Repetir.
 
 \Para mayúsculas de un byte;
+Para poner en mayúscula un byte;
 Para uppercase un byte:
   Translate el byte using el uppercase ascii table.
 
@@ -16262,7 +16279,7 @@ Para wrap un text:
 \Para escribir un búfer en un archivo;
 Para write un buffer to un file:
   Borrar el error de e/s.
-  Llamada "kernel32.dll" "SetFilePointer" con el file and 0 and 0 and 0 [file_begin] retornando un result number.
+  Llamada "kernel32.dll" "SetFilePointer" con el file and 0 y 0 and 0 [file_begin] retornando un result number.
   Si el result number es -1, Poner "Error posicionando puntero de archivo." into el error de e/s; salir.
   Llamada "kernel32.dll" "WriteFile" con el file y el buffer's first y el buffer's length y un number's whereabouts and 0 retornando el result number.
   Si el result number es 0, Poner "Error escribiendo archivo." into el error de e/s; salir.
@@ -16277,7 +16294,7 @@ Para write un buffer to un path:
   Privatizar el path.
   Null terminate el path.
   Llamada "kernel32.dll" "CreateFileA" con el path's first y 1073741824 [generic_write] 
-  And 0 and 0 and 2 [create_always] and -2147483520 [file_flag_write_through or file_attribute_normal] and 0 retornando un handle.
+  And 0 y 0 and 2 [create_always] and -2147483520 [file_flag_write_through or file_attribute_normal] and 0 retornando un handle.
   Si el handle es -1 [invalid_handle_value], Poner "Error opening file '" then el path then "'." into el error de e/s; salir.
   Llamada "kernel32.dll" "WriteFile" con el handle y el buffer's first y el buffer's length y un number's whereabouts and 0 retornando el number.
   Llamada "kernel32.dll" "CloseHandle" con el handle.
@@ -16368,7 +16385,7 @@ Para trazar un string usando un center spot y un radius:
   Lazo.
   Si el string es blank, salir.
   Obtener un byte desde el string.
-  Start at el center spot.
+  Comenzar en el center spot.
   Mover el radius.
   Trazar el byte.
   Turn el fraction.
@@ -16378,7 +16395,7 @@ Para trazar un string usando un center spot y un radius:
 \Para write un string at un spot con un color;
 \Para acariciar una cadena en un punto con un color;
 Para trazar un string at un spot con un color:
-  Start at el spot.
+  Comenzar en el spot.
   Poner el color into el context's color.
   Trazar el string.
 
@@ -16426,7 +16443,7 @@ Para trazar un string in el middle of un box:
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
   Poner el string's length times el square size times 3 minus el square size into un width.
   Dividir el width by 2.
-  Start in el middle of el box.
+  Comenzar en el middle of el box.
   Mover down el context's letter height divided by 2. \ was 2 ***
   Mover left el width.
   Mirar hacia el norte.
@@ -16496,7 +16513,7 @@ Para trazar un string con un color at el bottom of un box:
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
   Poner el string's length times el square size times 3 minus el square size into un width.
   Dividir el width by 2.
-  Start in el middle of el bottom of el box.
+  Comenzar en el middle of el bottom of el box.
   Mover up el context's letter height times 2. \ was without el times 2 ***
   Mover left el width.
   Mirar hacia el norte.
@@ -16508,7 +16525,7 @@ Para trazar un string con un color at el top of un box:
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
   Poner el string's length times el square size times 3 minus el square size into un width.
   Dividir el width by 2.
-  Start in el middle of el top of el box.
+  Comenzar en el middle of el top of el box.
   Mover down el context's letter height times 4. \ was times 2 ***
   Mover left el width.
   Mirar hacia el norte.
@@ -16520,7 +16537,7 @@ Para trazar un string con un color in el middle of un box:
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
   Poner el string's length times el square size times 3 minus el square size into un width.
   Dividir el width by 2.
-  Start in el middle of el box.
+  Comenzar en el middle of el box.
   Mover down el context's letter height divided by 2. \ was 2 ***
   Mover left el width.
   Mirar hacia el norte.
@@ -16545,7 +16562,7 @@ Para trazar un string con un color some twips down desde el top center of un box
 \ glyphs are two squares wide plus one square of intercharacter spacing. no spacing at el end.
   Poner el string's length times el square size times 3 minus el square size into un width.
   Dividir el width by 2.
-  Start in el middle of el top of el box.
+  Comenzar en el middle of el top of el box.
   Mover down el twips.
   Mover left el width.
   Mirar hacia el norte.
@@ -16607,7 +16624,7 @@ The yen-sign byte es un byte igual to 165.
 
 Para yield to windows:
   Si el event queue es not empty, salir.
-  Llamada "user32.dll" "GetMessageA" con un msg's whereabouts and 0 and 0 and 0 retornando un number.
+  Llamada "user32.dll" "GetMessageA" con un msg's whereabouts and 0 y 0 and 0 retornando un number.
   Si el number es 0, salir.
   Llamada "user32.dll" "TranslateMessage" con el msg's whereabouts.
   Llamada "user32.dll" "DispatchMessageA" con el msg's whereabouts.
