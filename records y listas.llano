@@ -1,4 +1,4 @@
-A WsaData es un registro con
+An WsaData es un registro con
   An wyrd llamado wVersion,
   An wyrd llamado wHighVersion,
   257 bytes llamado szDescription,
@@ -81,8 +81,8 @@ An UrlComponents es un registro con
   An pchar llamado lpszExtraInfo,
   Un número llamado dwExtraInfoLength.
 
-A refer es un lista con 
-  A string y 
+An refer es un lista con 
+  An string y 
   Un puntero (reference). \, 
   \Una cadena at el string y 
   \Un puntero (referencia) at el puntero.
