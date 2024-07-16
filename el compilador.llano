@@ -25,7 +25,7 @@ Para hacer todo:
     Escribir " " then the crlf string para Stdout;
     Escribir "c:\el compilador.exe " then " c:\pasta_do_projeto_atual\ " then the crlf string para StdOut;
   Salir.
-  Si the Endereço Da Pasta's last byte pointer's contenido no es el backslash byte, 
+  Si the Endereço Da Pasta's last byte puntero's contenido no es el backslash byte, 
     Adjuntar the backslash byte to the Endereço Da Pasta.
   Si el Endereço Da Pasta no está in el file system, 
     Escribir "Error. El directorio '" then el Endereço Da Pasta then "' no fue encontrado." then the crlf string para StdOut;
@@ -60,8 +60,8 @@ Para obtener una string desde the argumentos da linha de comando:
     Si el substring es blank, 
       Borrar el string; 
       Salir. 
-    Si el substring's first byte pointer's contenido is not the space byte, 
-      Agregar 1 to the substring's first byte pointer; 
+    Si el substring's first byte puntero's contenido is not the space byte, 
+      Agregar 1 to the substring's first byte puntero; 
       Repeat.
     Poner the substring into the string.
     Eliminar any leading noise desde the string.
@@ -100,11 +100,11 @@ Para abort con un string:
   Definir el compiler's abort flag.
   Poner el string into el compiler's abort message.
   
-Para abort con un string y un  byte pointer:
+Para abort con un string y un  byte puntero:
   Si el compiler's abort flag es set, salir.
   Definir el compiler's abort flag.
   Poner el string into el compiler's abort message.
-  Encontrar el compiler's abort path y el compiler's abort row# usando el byte pointer.
+  Encontrar el compiler's abort path y el compiler's abort row# usando el byte puntero.
   Si el compiler's abort path es blank, salir.
   Extraer un file name desde el compiler's abort path.
   Anteponer "Error en " then el file name then ". " to el compiler's abort message.
@@ -128,7 +128,7 @@ Para agregar el allocate and deallocate and finalize and destroy routines:
 Para agregar el allocate routine for un type:
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "pointer", salir. \ TRADUZIR
+  Si el type cannot be reduced to "puntero", salir. \ TRADUZIR
   \Si el type cannot be reduced to "puntero", salir.
   Si el type's contenido type es nil, salir.
   Agregar un routine to el routines usando nil.
@@ -167,7 +167,7 @@ Para agregar el built-in types:
 Para agregar el deallocate routine for un type:
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "pointer", salir. \ TRADUZIR
+  Si el type cannot be reduced to "puntero", salir. \ TRADUZIR
   \Si el type cannot be reduced to "puntero", salir.
   Si el type's contenido type es nil, salir.
   Agregar un routine to el routines usando nil.
@@ -185,10 +185,10 @@ Para agregar el destroy routine for un type:
   Si el type should not be forgotten, salir.
   Si el type can be reduced to "things", Agregar el destroy routine for el type (things); salir. \ TRADUZIR
   \Si el type can be reduced to "listas", Agregar el destroy routine for el type (things); salir.
-  Si el type can be reduced to "pointer", Agregar el destroy routine for el type (pointer); salir.
-  \Si el type can be reduced to "puntero", Agregar el destroy routine for el type (pointer); salir.
+  Si el type can be reduced to "puntero", Agregar el destroy routine for el type (puntero); salir.
+  \Si el type can be reduced to "puntero", Agregar el destroy routine for el type (puntero); salir.
   
-Para agregar el destroy routine for un type (pointer):
+Para agregar el destroy routine for un type (puntero):
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
   Poner "Destroy [" then el type's name then "]" into un moniker.
@@ -196,7 +196,7 @@ Para agregar el destroy routine for un type (pointer):
   Agregar un routine to el routines usando nil.
   Adjuntar "Destroy un " then el type's name to el routine's header string.
   Adjuntar "Si el " then el type's name then " es nil, salir. " to el routine's body string.
-  Si el type's contenido type can be reduced to "pointer", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string. \ TRADUZIR
+  Si el type's contenido type can be reduced to "puntero", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string. \ TRADUZIR
   \Si el type's contenido type can be reduced to "puntero", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
   Si el type's contenido type can be reduced to "things", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
   \Si el type's contenido type can be reduced to "listas", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
@@ -469,7 +469,7 @@ Para agregar several fragments usando un string y un  variable and another strin
 Para agregar several fragments usando un string y un  variable and 
                                             another string and another variable and 
                                             un third string and  un third variable and 
-                                            un byte pointer: \ and another byte pointer lol
+                                            un byte puntero: \ and another byte puntero lol
   Agregar un fragment usando el push address tag y el third variable.
   Agregar another fragment usando el push address tag y el other variable.
   Agregar un third fragment usando el push address tag y el variable.
@@ -482,7 +482,7 @@ Para agregar several fragments usando un string y un  variable and
   Encontrar un routine usando el monikettes.
   Si el routine es nil, convertir el monikettes to un moniker.
   Destroy el monikettes.
-  Si el routine es nil, abort con "No sé cómo '" then el moniker then "'." y el byte pointer; salir.
+  Si el routine es nil, abort con "No sé cómo '" then el moniker then "'." y el byte puntero; salir.
   Agregar un fourth fragment usando el call internal tag y el routine.
   
 Para agregar un source file to some source files usando un path:
@@ -771,18 +771,18 @@ Para adjuntar un string and another string y un  third string to un fourth strin
   Agregar el string's length to el length.
   Agregar el other string's length to el length.
   Agregar el third string's length to el length.
-  Reassign un pointer usando el length.
-  Poner el pointer into un byte pointer.
-  Copiar bytes desde el fourth string's first to el byte pointer for el fourth string's length.
-  Agregar el fourth string's length to el byte pointer.
-  Copiar bytes desde el string's first to el byte pointer for el string's length.
-  Agregar el string's length to el byte pointer.
-  Copiar bytes desde el other string's first to el byte pointer for el other string's length.
-  Agregar el other string's length to el byte pointer.
-  Copiar bytes desde el third string's first to el byte pointer for el third string's length.
+  Reassign un puntero usando el length.
+  Poner el puntero into un byte puntero.
+  Copiar bytes desde el fourth string's first to el byte puntero for el fourth string's length.
+  Agregar el fourth string's length to el byte puntero.
+  Copiar bytes desde el string's first to el byte puntero for el string's length.
+  Agregar el string's length to el byte puntero.
+  Copiar bytes desde el other string's first to el byte puntero for el other string's length.
+  Agregar el other string's length to el byte puntero.
+  Copiar bytes desde el third string's first to el byte puntero for el third string's length.
   Unassign el fourth string's first.
-  Poner el pointer into el fourth string's first.
-  Poner el pointer plus el length minus 1 into el fourth string's last.
+  Poner el puntero into el fourth string's first.
+  Poner el puntero plus el length minus 1 into el fourth string's last.
   
 Para adjuntar un string to un buffer (con separator):
   Adjuntar el string to el buffer.
@@ -860,9 +860,9 @@ Para attach un hex string y un  número to another hex string:
   
 Para attach un hex string to another hex string: employ Adjuntar un string to another string.
   
-Para blurt bytes usando un pointer y un  length y un  buffer y un  offset:
-  Poner el buffer's first plus el offset into another pointer.
-  Copiar bytes desde el pointer to el other pointer for el length.
+Para blurt bytes usando un puntero y un  length y un  buffer y un  offset:
+  Poner el buffer's first plus el offset into another puntero.
+  Copiar bytes desde el puntero to el other puntero for el length.
   
 Para blurt un dos header into un buffer:
   Blurt bytes usando el dos header's dirección y el dos header's magnitude y el buffer and 0.
@@ -1040,7 +1040,7 @@ Para check for invalid optional info on un type (scale):
   
 Para check for invalid optional info on un type (contenido):
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "pointer", abort con "Optional 'a' info solo está permitido en tipos de punteros." y el type's locus; salir. \ TRADUZIR
+  Si el type cannot be reduced to "puntero", abort con "Optional 'a' info solo está permitido en tipos de punteros." y el type's locus; salir. \ TRADUZIR
   
 Para borrar un field term:
   Llenar bytes con el null byte starting at el field term's dirección for el field term's magnitude.
@@ -1448,7 +1448,7 @@ Para compile un literal usando un rider:
   \If el rider's token es any flag literal, compile el literal usando el rider (flag); salir.
   Si el rider's token es any hex literal, compile el literal usando el rider (hex); salir.
   Si el rider's token es any numeric literal, compile el literal usando el rider (numeric); salir.
-  Si el rider's token es any pointer literal, compile el literal usando el rider (pointer); salir.
+  Si el rider's token es any puntero literal, compile el literal usando el rider (puntero); salir.
   Si el rider's token es any string literal, compile el literal usando el rider (string); salir.
   Abort con "Internal error - compile un term usando un rider (literal)" y el rider.
   
@@ -1511,11 +1511,11 @@ Para compile un literal usando un rider (numeric):
   Si el rider's token es any ratio literal, compile el literal usando el rider (numeric - ratio); salir.
   Si el rider's token es any mixed literal, compile el literal usando el rider (numeric - ratio); salir.
   
-Para compile un literal usando un rider (pointer):
+Para compile un literal usando un rider (puntero):
   Si el compiler's abort flag es set, salir.
   Convertir 0 to el literal's data. \ was nil
   Mover el rider (compiler rules).
-  Poner "pointer" into el literal's type name. \ TRADUZIR
+  Poner "puntero" into el literal's type name. \ TRADUZIR
   Resolve el literal.
   
 Para compile un literal usando un rider (string):
@@ -1616,7 +1616,7 @@ Para compile el next statement usando un rider (call - indirect):
   Compile un expression usando el rider.
   Si el compiler's abort flag es set, salir.
   Si el expression's variable es nil, abort con "No entiendo la variable '" then el expression's phrase then "'." y el rider; salir.
-  Si el expression's type cannot be reduced to "pointer", \ TRADUZIR
+  Si el expression's type cannot be reduced to "puntero", \ TRADUZIR
     Abort con "Yo necesito un tipo puntero en esta LLAMADA." y el rider; salir. 
   Si el rider's token es any con, compile el next statement usando el rider (call - con clause).
   Si el rider's token es "returning", compile el next statement usando el rider retornando un term (call - retornando part).
@@ -1953,14 +1953,14 @@ Para compile un term usando un rider (possessive - magnitude):
 Para compile un term usando un rider (possessive - contenido):
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Uso inválido de un contenido, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Si el term's type cannot be reduced to "pointer",  \ TRADUZIR
+  Si el term's type cannot be reduced to "puntero",  \ TRADUZIR
     Abort con "Solo puedes obtener el contenido de los tipos punteros." y el rider; salir.
   Compile el term usando el rider (dereference).
   
 Para compile un term usando un rider (possessive - dirección):
   Si el compiler's abort flag es set, salir.
   Si el term's variable es nil, abort con "Uso inválido de una dirección, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Agregar un intermediate usando "pointer" y el rider's token's first. \ TRADUZIR
+  Agregar un intermediate usando "puntero" y el rider's token's first. \ TRADUZIR
   Agregar un fragment usando el load address tag y el term's variable y el intermediate.
   Poner el intermediate into el term's variable.
   Borrar el term's phrase.
@@ -2091,7 +2091,7 @@ Para compile un term usando un rider y un  name (possessive - field):
   Encontrar un field term usando el term's phrase y el type y el name.
   Si el field term es not empty, compile el term usando el rider y el field term; salir.
   Si el term's variable es nil, abort con "No entiendo la variable '" then el term's phrase then "'." y el rider; salir.
-  Si el type can be reduced to "pointer", Poner el type's contenido type into el type. \ TRADUZIR
+  Si el type can be reduced to "puntero", Poner el type's contenido type into el type. \ TRADUZIR
   Si el type es nil, abort con "No hay un '" then el name then "' field in un '" then el term's type's name then "'." y el rider; salir.
   Lazo.
     Si el compiler's abort flag es set, salir.
@@ -2100,7 +2100,7 @@ Para compile un term usando un rider y un  name (possessive - field):
     Encontrar un deep field term usando "" y el field's type y el name.
     Si el deep field term es empty, repetir.
   Poner el field into un first field term's field.
-  Si el term's type can be reduced to "pointer", definir el first field term's dereference flag.
+  Si el term's type can be reduced to "puntero", definir el first field term's dereference flag.
   Compile el term usando el rider y el first field term.
   Compile el term usando el rider y el deep field term.
   
@@ -2308,7 +2308,7 @@ Para decidir si un item looks reamish:
 Para decidir si un moniker es in un index:
   Encontrar un refer usando el moniker y el index.
   Si el refer es nil, diga no.
-  Si el refer's pointer es nil, diga no.
+  Si el refer's puntero es nil, diga no.
   Diga sí.
   
 Para decidir si un monikette es bubbled out:
@@ -2596,7 +2596,7 @@ Para decidir si un string es any english indefinite article:
   Diga no.
   
 Para decidir si un string es any literal:
-  Si el string es any pointer literal, diga sí.
+  Si el string es any puntero literal, diga sí.
   Si el string es any numeric literal, diga sí.
   Si el string es any string literal, diga sí.
   \If el string es any flag literal, diga sí. ***
@@ -2697,7 +2697,7 @@ Para decidir si un string es any pause:
   Si el string es "or", diga sí.
   Diga no.
   
-Para decidir si un string es any pointer literal:
+Para decidir si un string es any puntero literal:
   Si el string es "nil", diga sí.
   Diga no.
   
@@ -2905,7 +2905,7 @@ Para decidir si un string es any verb:
   Si el string es "pueden", diga sí. \ they "can" cannot \ can't: not used in CAL (3pp) added just in case 
   Si el string es "pudiera", diga sí. \ it "could" could not \ couldn't: not used in CAL (3ps) added just in case
   Si el string es "pudieran", diga sí. \ they "could" could not \ couldn't:  not used in CAL (3pp) added just in case
-  Si el string es "pudiéramos", diga sí. \ we "could" could not \ couldn't: only once in Noodle (1pp) " To decidir si we could encontrar un pointer:"
+  Si el string es "pudiéramos", diga sí. \ we "could" could not \ couldn't: only once in Noodle (1pp) " To decidir si we could encontrar un puntero:"
   \If el string es "si", diga sí. \ "does": only case used in CAL for affirmative questions, used also for negative ones "does not" -> "si no" con neg. after
   Si el string es "tiene", diga sí. \ it "has" used in type definitions; (3ps) present
   Si el string es "tienen", diga sí. \ they "have" used in type definitions; (3pp) present
@@ -3119,10 +3119,10 @@ Para decidir si un type should be forgotten:
   \Si el type's name es "listas", diga no.
   Si el type can be reduced to "things", diga sí.
   \Si el type can be reduced to "listas", diga sí.
-  Si el type can not be reduced to "pointer", diga no.
+  Si el type can not be reduced to "puntero", diga no.
   \Si el type can not be reduced to "puntero", diga no.
   Si el type's contenido type es nil, diga no.
-  Si el type's contenido type cannot be reduced to "pointer", diga sí.
+  Si el type's contenido type cannot be reduced to "puntero", diga sí.
   \Si el type's contenido type cannot be reduced to "puntero", diga sí.
   Si el type's contenido type should not be forgotten, diga no.
   Diga sí.
@@ -3274,13 +3274,13 @@ Para encontrar un import usando un string:
     Si el import's name es el string, salir.
   Repetir.
   
-Para encontrar un path y un  row# usando un byte pointer:
+Para encontrar un path y un  row# usando un byte puntero:
   Borrar el path.
   Poner 0 into el row#.
-  Encontrar un source file usando el byte pointer.
+  Encontrar un source file usando el byte puntero.
   Si el source file es nil, salir.
   Poner el source file's path into el path.
-  Encontrar el row# usando el source file y el byte pointer.
+  Encontrar el row# usando el source file y el byte puntero.
   
 Para encontrar un routine usando un moniker y un  monikette y un  index:
   Si el monikette es nil, salir.
@@ -3291,7 +3291,7 @@ Para encontrar un routine usando un moniker y un  monikette y un  index:
   Lazo.
     Adjuntar el monikette to el moniker (while bubbling).
     Encontrar un refer usando el moniker y el index.
-    Si el refer es not nil, Poner el refer's pointer into el routine.
+    Si el refer es not nil, Poner el refer's puntero into el routine.
     Si el refer es not nil, encontrar el routine usando el moniker y el monikette's next y el index.
     Si el routine es not nil, interrumpir.
     Bubble el monikette.
@@ -3343,24 +3343,24 @@ Para encontrar un routine usando un string y un  type and another string y un  t
   Encontrar el routine usando el monikettes.
   Destroy el monikettes.
   
-Para encontrar un row# usando un source file y un  byte pointer:
-  Si el byte pointer es nil, Poner 0 into el row#; salir.
+Para encontrar un row# usando un source file y un  byte puntero:
+  Si el byte puntero es nil, Poner 0 into el row#; salir.
   Colocar un substring on el source file's buffer.
   Poner 1 into el row#.
   Lazo.
     Si el substring es blank, salir.
-    Si el substring's first es el byte pointer, salir.
+    Si el substring's first es el byte puntero, salir.
     Si el substring's first's contenido es el return byte, Agregar 1 to el row#.
     Agregar 1 to el substring's first.
   Repetir.
   
-Para encontrar un source file usando un byte pointer:
-  Si el byte pointer es nil, void el source file; salir.
+Para encontrar un source file usando un byte puntero:
+  Si el byte puntero es nil, void el source file; salir.
   Lazo.
     Obtener el source file desde el source files.
     Si el source file es nil, salir.
-    Si el byte pointer es less than el source file's buffer's first, repetir.
-    Si el byte pointer es greater than el source file's buffer's last, repetir.
+    Si el byte puntero es less than el source file's buffer's first, repetir.
+    Si el byte puntero es greater than el source file's buffer's last, repetir.
   
 Para encontrar un type y un  nickname usando un name:
   Void el type.
@@ -3511,12 +3511,12 @@ Para indexar un routine for utility use:
   Destroy el monikettes.
   Si el moniker es in el routine index, salir.
   Encontrar un refer usando el moniker y el utility index.
-  Si el refer es not nil, Poner nil into el refer's pointer; salir.
+  Si el refer es not nil, Poner nil into el refer's puntero; salir.
   Indexar el routine usando el moniker y el utility index.
   
 Para indexar un routine usando un moniker y un  index (special):
   Encontrar un refer usando el moniker y el index.
-  Si el refer es not nil, Poner el routine into el refer's pointer; salir.
+  Si el refer es not nil, Poner el routine into el refer's puntero; salir.
   Indexar el routine usando el moniker y el index.
   
 Para indexar un routine usando some monikettes y un  index:
@@ -3781,7 +3781,7 @@ Para listar un refer in un buffer:
     Si el refer es nil, salir.
     Adjuntar "/refer" to el buffer (con separator).
     Adjuntar el refer's string to el buffer.
-    Si el refer's pointer es nil, Adjuntar "..." to el buffer.
+    Si el refer's puntero es nil, Adjuntar "..." to el buffer.
     Adjuntar "/" to el buffer.
     Advance el buffer.
     
@@ -3938,7 +3938,7 @@ The load eax tag es un tag igual to 14.
   
 A local es un variable.
   
-A locus es un byte pointer.
+A locus es un byte puntero.
   
 The loop tag es un tag igual to 15.
   
@@ -4064,7 +4064,7 @@ Para offset el locals in un routine:
     Si el local es nil, salir.
     Si el local's previous es not nil, Poner el local's previous' offset into el local's offset.
     Poner el local's type's length into un length.
-    Si el local's kind es "scratch", Poner un pointer's magnitude into el length.
+    Si el local's kind es "scratch", Poner un puntero's magnitude into el length.
     Redondear el length up to el nearest multiple of 4.
     Restar el length desde el local's offset.
     Agregar el length to el routine's local size.
@@ -4248,7 +4248,7 @@ Para pluralize un string (english rules):
   
 The prolog tag es un tag igual to 17.
   
-A prototype string es un record con un first byte pointer y un  last byte pointer.
+A prototype string es un record con un first byte puntero y un  last byte puntero.
   
 The push address tag es un tag igual to 18.
   
@@ -4313,7 +4313,7 @@ Para reducir un type to another type for utility use:
     \Si el other type's name es "cadena", salir.
     Si el other type's name es "número", salir.
     \Si el other type's name es "número", salir.
-    Si el other type's name es "pointer", salir.
+    Si el other type's name es "puntero", salir.
     \Si el other type's name es "puntero", salir.
     Si el other type's name es "thing", void el other type; salir.
     \Si el other type's name es "lista", void el other type; salir.
@@ -4332,7 +4332,7 @@ Para reindex el utility index:
 Para reindex el utility index usando some refers:
     Obtener un refer desde el refers.
     Si el refer es nil, salir.
-    Poner el refer's pointer into un routine.
+    Poner el refer's puntero into un routine.
     Si el routine es nil, abort con "Internal error - index el untility routines usando some refers"; salir.
     Copiar el routine's monikettes into some monikettes.
     Reducir el monikettes for utility use.
@@ -4366,7 +4366,8 @@ Para resolve un field:
   Si el field es nil, salir.
   Resolve el field as un variable.
   Si el field's nickname es not any valid field name, borrar el field's nickname.
-  Si el field's name es not any valid field name, abort con "'" then el field's name then "' no es un nombre de campo válido." y el field's locus; salir.
+  Si el field's name es not any valid field name, 
+    Abort con "'" then el field's name then "' no es un nombre de campo válido." y el field's locus; salir.
   
 Para resolve un global:
   Si el global es nil, salir.
@@ -4430,7 +4431,7 @@ Para resolve un type (expand thing): \ type's base type es not resolved yet
   Poner "previous " then el type's name into el other spanish reverse field's redefinition contenido name.
   Si el type's fields are not empty, Adjuntar el type's fields to el record type's fields.
   Indexar el record type.
-  \ fix up original type to look like un pointer
+  \ fix up original type to look like un puntero
   Poner el record type's name into el type's contenido name.
   \ Agregar chain type
   Agregar un chain type to el types usando el type's plural name and "" y el base type's plural name.
@@ -4453,7 +4454,7 @@ Para resolve un type (index plural):
   Si el type can be reduced to "thing" using el base name, salir.
   Indexar el type usando el type's plural name.
   
-Para resolve un type (optional info - pointer):
+Para resolve un type (optional info - puntero):
   Si el compiler's abort flag es set, salir.
   Si el type's contenido type es not nil, salir.
   Si el type's contenido name es blank, Poner el type's base type's contenido type into el type's contenido type; salir.
@@ -4473,7 +4474,7 @@ Para resolve un type (optional info - record):
     Si el field's type's cooking flag es set, abort con "Definición recursiva con '" then el field's type's name then "'." y el field's locus; salir.
     Resolve el field's type (optional info).
     Si el field's reference flag es not set, repetir.
-    Si el field's type cannot be reduced to "pointer", \ TRADUZIR
+    Si el field's type cannot be reduced to "puntero", \ TRADUZIR
       Abort con "¿Qué quieres decir con '(referencia)' justo aquí en este '" then el field's name then "'?" y el field's locus; salir.
   Repetir.
   Eliminate duplicate nicknames desde el type's fields.
@@ -4497,10 +4498,10 @@ Para resolve un type (optional info):
   Check for invalid optional info on el type.
   Definir el type's cooking flag.
   Resolve el type's base type (optional info).
-  Si el type can be reduced to "pointer", resolve el type (optional info - pointer).
+  Si el type can be reduced to "puntero", resolve el type (optional info - puntero).
   Si el type can be reduced to "record", resolve el type (optional info - record).
   Si el type can be reduced to "número", resolve el type (optional info - scale).
-  \Si el type can be reduced to "puntero", resolve el type (optional info - pointer).
+  \Si el type can be reduced to "puntero", resolve el type (optional info - puntero).
   \Si el type can be reduced to "número", resolve el type (optional info - scale).
   \Si el type can be reduced to "registro", resolve el type (optional info - record).
   Borrar el type's cooking flag.
@@ -4596,11 +4597,11 @@ The save eax tag es un tag igual to 20.
   
 Para scan any optional info for un type usando un rider:
   Si el compiler's abort flag es set, salir.
-  Si el rider's token es "to", scan any optional info for el type usando el rider (pointer); salir.
-  Si el rider's token es "para", scan any optional info for el type usando el rider (pointer); salir.
+  Si el rider's token es "to", scan any optional info for el type usando el rider (puntero); salir.
+  Si el rider's token es "para", scan any optional info for el type usando el rider (puntero); salir.
   Si el rider's token es any con, scan any optional info for el type usando el rider (record); salir.
   
-Para scan any optional info for un type usando un rider (pointer):
+Para scan any optional info for un type usando un rider (puntero):
   Mover el rider (compiler rules).
   Si el rider's token es not any indefinite article, 
     Abort con "El 'para' en este lugar necesita un artículo definido justo después, y no '" then el rider's token then "'." y el rider; 
@@ -4891,7 +4892,7 @@ Para scrub some refers:
     Poner el other refers' first into un refer.
     Si el refer es nil, salir.
     Eliminar el refer desde el other refers.
-    Si el refer's pointer es nil, destroy el refer; repetir.
+    Si el refer's puntero es nil, destroy el refer; repetir.
     Adjuntar el refer to el refers.
   Repetir.
   

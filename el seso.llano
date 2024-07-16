@@ -32,7 +32,7 @@ Para escribir un string para StdOut:
     Salir.
   Llamada "kernel32.dll" "WriteFile" con
     el StdOut handle [hFile] and
-    el string's first byte pointer [lpBuffer]
+    el string's first byte puntero [lpBuffer]
     y the string's length [nNumberOfBytesToWrite]
     y un número's dirección [lpNumberOfBytesWritten]
     y nil [lpOverlapped]
@@ -50,7 +50,7 @@ The a-key es un key igual to 65.
 
 An abc es un record con un número llamado abca, un número llamado abcb, un número llamado abcc.
 
-An abc pointer es un pointer to un abc.
+An abc puntero es un puntero to un abc.
 
 An abca es un número.
 
@@ -135,7 +135,7 @@ Para agregar un número to un pair:
 
 \Para agregar un número en un puntero;
 \Para agregar un número en otro número;
-Para agregar un número to un pointer;
+Para agregar un número to un puntero;
 Para agregar un número to another número:
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el número
   Intel $8B00. \ mov eax,[eax]
@@ -182,10 +182,10 @@ An addrinfo es un record con
   A addrinfoptr llamado ai_next.
 
 Some addrinfo routines es un record con
-  A getaddrinfo pointer,
-  A freeaddrinfo pointer.
+  A getaddrinfo puntero,
+  A freeaddrinfo puntero.
 
-An addrinfoptr es un pointer to un addrinfo.
+An addrinfoptr es un puntero to un addrinfo.
 
 \Para ajustar una caja dado un número y otro número y un tercer número y un cuarto número;
 Para ajustar un box usando un número y another número y un third número y un fourth número:
@@ -292,8 +292,8 @@ Para adjuntar un número to un string:
   Adjuntar el other string to el string.
 
 \Para adjuntar un puntero a una cadena;
-Para adjuntar un pointer to un string:
-  Convertir el pointer to another string.
+Para adjuntar un puntero to un string:
+  Convertir el puntero to another string.
   Adjuntar el other string to el string.
 
 \Para adjuntar un punto a un polígono;
@@ -309,8 +309,8 @@ Para adjuntar un string to another string:
   Poner el other string's length into un saved length.
   Agregar el saved length to el combined length.
   Reassign el other string's first usando el combined length.
-  Poner el other string's first plus el saved length into un pointer.
-  Copiar bytes desde el string's first to el pointer for el string's length.
+  Poner el other string's first plus el saved length into un puntero.
+  Copiar bytes desde el string's first to el puntero for el string's length.
   Poner el other string's first plus el combined length minus 1 into el other string's last.
 
 Para adjuntar un string to another string (handling email transparency):
@@ -373,12 +373,12 @@ Para adjuntar zeros to un string until its length es un número:
 The arrow cursor es un cursor.
 
 \Para asignar un puntero dado un conteo de bytes;
-Para assign un pointer usando un byte count:
-  Si el byte count es 0, void el pointer; salir.
+Para assign un puntero usando un byte count:
+  Si el byte count es 0, void el puntero; salir.
   Privatizar el byte count.
   Redondear el byte count up to el nearest power of two.
-  Llamada "kernel32.dll" "HeapAlloc" con el heap pointer y 8 [heap_zero_memory] y el byte count retornando el pointer.
-  Si el pointer es not nil, Agregar 1 to el heap count; salir.
+  Llamada "kernel32.dll" "HeapAlloc" con el heap puntero y 8 [heap_zero_memory] y el byte count retornando el puntero.
+  Si el puntero es not nil, Agregar 1 to el heap count; salir.
 
 The asterisk byte es un byte igual to 42.
 
@@ -671,7 +671,7 @@ A bitmapdata es un record con
   A height,
   A número llamado stride,
   A número llamado pixelformat,
-  A pointer llamado scan0,
+  A puntero llamado scan0,
   A número llamado reserved.
 
 Para lógico y un byte con otro byte;
@@ -773,7 +773,7 @@ A brownish color es un color.
 
 A bucket count es un count.
 
-A bucket es un pointer to un bucket record.
+A bucket es un puntero to un bucket record.
 
 A bucket record es un record con some refers.
 
@@ -821,7 +821,7 @@ Para buzz:
 
 A byte count es un count.
 
-A byte pointer es un pointer to un byte.
+A byte puntero es un puntero to un byte.
 
 A byte# es un número.
 
@@ -1268,10 +1268,10 @@ Para compatibly handle any message con un window un message número un w-param y 
   Si el message es 260, handle any wm-syskeydown con el w-param y el l-param; Poner 0 into eax; salir.
   Llamada "user32.dll" "DefWindowProcA" con el window y el message y el w-param y el l-param.
 
-Para compatibly wait for un process pointer:
-  Llamada "kernel32.dll" "WaitForSingleObject" con el process pointer's contenido y -1 [infinite].
-  Llamada "kernel32.dll" "CloseHandle" con el process pointer's contenido.
-  Poner 0 into el process pointer's contenido.
+Para compatibly wait for un process puntero:
+  Llamada "kernel32.dll" "WaitForSingleObject" con el process puntero's contenido y -1 [infinite].
+  Llamada "kernel32.dll" "CloseHandle" con el process puntero's contenido.
+  Poner 0 into el process puntero's contenido.
   Llamada "user32.dll" "GetForegroundWindow" retornando un window.
   Si el window es el main window, Poner 0 into eax; salir.
   Llamada "user32.dll" "ShowWindow" con el main window y 6 [sw_minimize].
@@ -1442,11 +1442,11 @@ Para convertir un font info to pdf em units:
 
 Para convertir some font widths to pdf em units:
   Obtener un outlinetextmetric usando el font widths' font.
-  Poner el font widths' data into un número pointer.
+  Poner el font widths' data into un número puntero.
   Lazo.
     Si un counter es past el font widths' count, interrumpir.
-    Convertir el número pointer's contenido to pdf em units usando el outlinetextmetric's otmemsquare y el font widths' font.
-    Agregar un número's magnitude to el número pointer.
+    Convertir el número puntero's contenido to pdf em units usando el outlinetextmetric's otmemsquare y el font widths' font.
+    Agregar un número's magnitude to el número puntero.
   Repetir.
 
 Para convertir un fraction to un hex string:
@@ -1483,10 +1483,10 @@ Para convertir un gpbitmap to un buffer (pdf style):
   Lazo.
   Si el column# es greater than el bitmapdata's width, Poner 1 into el column#; Agregar 1 to el row#.
   Si el row# es greater than el bitmapdata's height, interrumpir.
-  Obtener un rgb pointer desde el bitmapdata at el row# y el column#.
-  Adjuntar el rgb pointer's red byte to el buffer.
-  Adjuntar el rgb pointer's green byte to el buffer.
-  Adjuntar el rgb pointer's blue byte to el buffer.
+  Obtener un rgb puntero desde el bitmapdata at el row# y el column#.
+  Adjuntar el rgb puntero's red byte to el buffer.
+  Adjuntar el rgb puntero's green byte to el buffer.
+  Adjuntar el rgb puntero's blue byte to el buffer.
   Agregar 1 to el column#.
   Repetir.
   Unlock el gpbitmap usando el bitmapdata.
@@ -1567,21 +1567,21 @@ Para convertir un pchar to un string:
   Agregar 1 to el pchar.
   Repetir.
 
-Para convertir un pointer y un length to un string:
+Para convertir un puntero y un length to un string:
   Borrar el string.
-  Si el pointer es nil, salir.
+  Si el puntero es nil, salir.
   Si el length es 0, salir.
   Reassign el string's first usando el length.
-  Copiar bytes desde el pointer to el string's first for el length.
+  Copiar bytes desde el puntero to el string's first for el length.
   Poner el string's first plus el length minus 1 into el string's last.
 
-\Para convertir un pointer to un hex string;
+\Para convertir un puntero to un hex string;
 Para convertir un número to un hex string:
   Reassign el hex string's first usando el número's magnitude.
   Copiar bytes desde el número's dirección to el hex string's first for el número's magnitude.
   Poner el hex string's first plus el número's magnitude minus 1 into el hex string's last.
 
-\Para convertir un pointer to un nibble string;
+\Para convertir un puntero to un nibble string;
 Para convertir un número to un nibble string:
   Dividir el número into un wyrd y another wyrd.
   Convertir el wyrd to el nibble string.
@@ -1589,8 +1589,8 @@ Para convertir un número to un nibble string:
   Adjuntar el other nibble string to el nibble string.
 
 \Para convertir un puntero a una cadena;
-Para convertir un pointer to un string:
-  Convertir el pointer to el string as un nibble string.
+Para convertir un puntero to un string:
+  Convertir el puntero to el string as un nibble string.
 
 \Para convertir algunos pasos en algunos grados precisos;
 Para convertir some points to some precise degrees:
@@ -1742,9 +1742,9 @@ Para convertir un string to un pdf string:
   Repetir.
   Adjuntar ")" to el pdf string.
 
-Para convertir un string to un pointer: \ assumes pointer es in nibble format
+Para convertir un string to un puntero: \ assumes puntero es in nibble format
   Convertir el string as un nibble string to un hex string.
-  Void el pointer.
+  Void el puntero.
   Colocar un substring on el hex string.
   Poner 24 into un shift count.
   Lazo.
@@ -1752,7 +1752,7 @@ Para convertir un string to un pointer: \ assumes pointer es in nibble format
     Si el shift count es less than 0, salir.
     Poner el substring's first's contenido into un número.
     Desplazar el número left el shift count.
-    Bitwise OR el pointer as un número con el número.
+    Bitwise OR el puntero as un número con el número.
     Agregar 1 to el substring's first.
     Restar 8 desde el shift count.
   Repetir.
@@ -1820,10 +1820,10 @@ Para convertir un wyrd to un nibble string:
 
 A coord es some twips.
 
-Para copiar bytes desde un pointer to another pointer for un byte count: \ copiar handling overlap con 1 byte moves
-  Intel $8BB508000000. \ mov esi,[ebp+8] \ el pointer
+Para copiar bytes desde un puntero to another puntero for un byte count: \ copiar handling overlap con 1 byte moves
+  Intel $8BB508000000. \ mov esi,[ebp+8] \ el puntero
   Intel $8B36. \ mov esi,[esi]
-  Intel $8BBD0C000000. \ mov edi,[ebp+12] \ el other pointer
+  Intel $8BBD0C000000. \ mov edi,[ebp+12] \ el other puntero
   Intel $8B3F. \ mov edi,[edi]
   Intel $8B8D10000000. \ mov ecx,[ebp+16] \ el número
   Intel $8B09. \ mov ecx,[ecx]
@@ -2051,20 +2051,20 @@ Para crear some font widths usando un font:
   Poner 256 into el font widths' count.
   Assign el font widths' data usando el font widths' count times un número's magnitude.
   Crear el hfont of el memory canvas usando el font.
-  Assign un original abc pointer usando 256 times un abc's magnitude.
-  Llamada "gdi32.dll" "GetCharABCWidthsA" con el memory canvas y 0 y 255 y el original abc pointer.
+  Assign un original abc puntero usando 256 times un abc's magnitude.
+  Llamada "gdi32.dll" "GetCharABCWidthsA" con el memory canvas y 0 y 255 y el original abc puntero.
   Destroy el hfont of el memory canvas.
-  Poner el original abc pointer into un abc pointer.
-  Poner el font widths' data into un número pointer.
+  Poner el original abc puntero into un abc puntero.
+  Poner el font widths' data into un número puntero.
   Lazo.
     Si un counter es past 256, interrumpir.
-    Poner el abc pointer's abca into el número pointer's contenido.
-    Agregar el abc pointer's abcb to el número pointer's contenido.
-    Agregar el abc pointer's abcc to el número pointer's contenido.
-    Agregar el abc's magnitude to el abc pointer.
-    Agregar el número's magnitude to el número pointer.
+    Poner el abc puntero's abca into el número puntero's contenido.
+    Agregar el abc puntero's abcb to el número puntero's contenido.
+    Agregar el abc puntero's abcc to el número puntero's contenido.
+    Agregar el abc's magnitude to el abc puntero.
+    Agregar el número's magnitude to el número puntero.
   Repetir.
-  Unassign el original abc pointer.
+  Unassign el original abc puntero.
 
 Para crear some font widths usando un font y un string:
   Allocate memory for el font widths.
@@ -2083,8 +2083,8 @@ Para crear some font widths usando un font y un string:
 Para crear un gpbitmap usando un buffer:
   Borrar el error de e/s.
   Llamada "kernel32.dll" "GlobalAlloc" con 2 [gmem_moveable] y el buffer's length retornando un handle.
-  Llamada "kernel32.dll" "GlobalLock" con el handle retornando un pointer.
-  Copiar bytes desde el buffer's first to el pointer for el buffer's length.
+  Llamada "kernel32.dll" "GlobalLock" con el handle retornando un puntero.
+  Copiar bytes desde el buffer's first to el puntero for el buffer's length.
   Llamada "kernel32.dll" "GlobalUnlock" con el handle.
   Llamada "ole32.dll" "CreateStreamOnHGlobal" con el handle y 1  [true] y un istream's dirección.
   Llamada "gdiplus.dll" "GdipCreateBitmapFromStream" con el istream y el gpbitmap's dirección retornando un número.
@@ -2132,8 +2132,8 @@ Para crear un hrgn usando un ellipse:
 Para crear un hrgn usando un polygon:
   Si el polygon es nil, Poner 0 into el hrgn; salir.
   Crear un vertex array usando el polygon's vertices.
-  Llamada "gdi32.dll" "LPtoDP" con el current canvas y el vertex array's spot pointer y el vertex array's count.
-  Llamada "gdi32.dll" "CreatePolygonRgn" con el vertex array's spot pointer y el vertex array's count y 2 [winding] retornando el hrgn.
+  Llamada "gdi32.dll" "LPtoDP" con el current canvas y el vertex array's spot puntero y el vertex array's count.
+  Llamada "gdi32.dll" "CreatePolygonRgn" con el vertex array's spot puntero y el vertex array's count y 2 [winding] retornando el hrgn.
   Destroy el vertex array.
 
 Para crear un hrgn usando un roundy box:
@@ -2319,16 +2319,16 @@ Para crear un vertex array usando un count:
   Allocate memory for el vertex array.
   Poner el count into el vertex array's count.
   Multiplicar el count by un spot's magnitude.
-  Assign el vertex array's spot pointer usando el count.
+  Assign el vertex array's spot puntero usando el count.
 
 Para crear un vertex array usando some vertices:
   Crear el vertex array usando el vertices' count.
-  Poner el vertex array's spot pointer into un spot pointer.
+  Poner el vertex array's spot puntero into un spot puntero.
   Lazo.
     Obtener un vertex desde el vertices.
     Si el vertex es nil, salir.
-    Poner el vertex's spot into el spot pointer's contenido.
-    Agregar el vertex's spot's magnitude to el spot pointer.
+    Poner el vertex's spot into el spot puntero's contenido.
+    Agregar el vertex's spot's magnitude to el spot puntero.
   Repetir.
 
 \Para crear un vértice dado un punto;
@@ -2359,9 +2359,9 @@ The crlf string es un string igual to $0D0A.
 The cross byte es un byte igual to 43.
 
 A crypt session es un thing con
-  An hcryptprov pointer,
-  An hcrypthash pointer,
-  An hcryptkey pointer.
+  An hcryptprov puntero,
+  An hcrypthash puntero,
+  An hcryptkey puntero.
 
 The ctrl key es un key igual to 17.
 
@@ -2718,9 +2718,9 @@ Para debug un pair:
   Debug el string.
 
 \Para depurar un puntero;
-Para depurar un pointer;
-Para debug un pointer:
-  Convertir el pointer to un nibble string.
+Para depurar un puntero;
+Para debug un puntero:
+  Convertir el puntero to un nibble string.
   Debug "$" then el nibble string.
 
 Para depurar un rgb;
@@ -3161,9 +3161,9 @@ Para decidir si un flag es un número;
 \Para decidir si una bandera es otra bandera;
 Para decidir si un flag es another flag;
 \Para decidir si un puntero es un número;
-Para decidir si un pointer es un número;
+Para decidir si un puntero es un número;
 \Para decidir si un puntero es otro puntero;
-Para decidir si un pointer es another pointer;
+Para decidir si un puntero es another puntero;
 \Para decidir si un número es otro número;
 Para decidir si un número es another número:
   Intel $C7C001000000. \ mov eax,1 \ assume true
@@ -3528,17 +3528,17 @@ Para decidir si un path es read-only:
   Si el número es not 0, diga sí.
   Diga no.
 
-Para decidir si un pointer can be found;
-Para decidir si un pointer es coming;
-Para decidir si un pointer es found;
-Para decidir si un pointer was found;
-Para decidir si un pointer es there;
-Para decidir si un pointer does exist:
-  Si el pointer es nil, diga no.
+Para decidir si un puntero can be found;
+Para decidir si un puntero es coming;
+Para decidir si un puntero es found;
+Para decidir si un puntero was found;
+Para decidir si un puntero es there;
+Para decidir si un puntero does exist:
+  Si el puntero es nil, diga no.
   Diga sí.
 
 \Para decidir si un puntero es mayor que otro puntero;
-Para decidir si un pointer es greater than another pointer;
+Para decidir si un puntero es greater than another puntero;
 \Para decidir si un número es mayor que otro número;
 Para decidir si un número es greater than another número:
   Intel $C7C001000000. \ mov eax,1 \ assume true
@@ -3550,7 +3550,7 @@ Para decidir si un número es greater than another número:
   Intel $C7C000000000. \ mov eax,0 \ now it's false
 
 \Para decidir si un puntero es mayor o igual a otro puntero;
-Para decidir si un pointer es greater than or igual to another pointer;
+Para decidir si un puntero es greater than or igual to another puntero;
 Para decidir si un número es another número or more;
 \Para decidir si un número es mayor o igual a otro número;
 Para decidir si un número es greater than or igual to another número:
@@ -3563,7 +3563,7 @@ Para decidir si un número es greater than or igual to another número:
   Intel $C7C000000000. \ mov eax,0 \ now it's false
 
 \Para decidir si un puntero es menor que otro puntero;
-Para decidir si un pointer es less than another pointer;
+Para decidir si un puntero es less than another puntero;
 \Para decidir si un número es menor que otro número;
 Para decidir si un número es less than another número:
   Intel $C7C001000000. \ mov eax,1 \ assume true
@@ -3575,7 +3575,7 @@ Para decidir si un número es less than another número:
   Intel $C7C000000000. \ mov eax,0 \ now it's false
 
 \Para decidir si un puntero es menor o igual a otro puntero;
-Para decidir si un pointer es less than or igual to another pointer;
+Para decidir si un puntero es less than or igual to another puntero;
 Para decidir si un número es another número or less;
 Para decidir si un número es another número or fewer;
 \Para decidir si un número es menor o igual a otro número;
@@ -3590,9 +3590,9 @@ Para decidir si un número es less than or igual to another número:
 
 \Para decidir si un puntero es nula;
 \Para decidir si un puntero es nulo;
-Para decidir si un pointer es missing;
-Para decidir si un pointer es null y void:
-  Si el pointer es nil, diga sí.
+Para decidir si un puntero es missing;
+Para decidir si un puntero es null y void:
+  Si el puntero es nil, diga sí.
   Diga no.
 
 \Para decidir si un polígono está cerrado;
@@ -3694,7 +3694,7 @@ Para decidir si un spot es in un picture:
 Para decidir si un spot es in un polygon:
   Si el polygon es nil, diga no.
   Crear un vertex array usando el polygon's vertices.
-  Llamada "gdi32.dll" "CreatePolygonRgn" con el vertex array's spot pointer y el vertex array's count y 2 [winding] retornando un hrgn.
+  Llamada "gdi32.dll" "CreatePolygonRgn" con el vertex array's spot puntero y el vertex array's count y 2 [winding] retornando un hrgn.
   Llamada "gdi32.dll" "PtInRegion" con el hrgn y el spot's x-coord y el spot's y-coord retornando un número.
   Llamada "gdi32.dll" "DeleteObject" con el hrgn.
   Destroy el vertex array.
@@ -3968,7 +3968,7 @@ Para decidir si un string es blank:
   Intel $833B00. \ cmp [ebx],0
   Intel $0F8410000000. \ je end
 \ if last es less than first, exit
-  Intel $8B5304. \ mov edx,[ebx+4] \ last pointer
+  Intel $8B5304. \ mov edx,[ebx+4] \ last puntero
   Intel $3B13. \ cmp edx,[ebx]
   Intel $0F8C05000000. \ jl end
 \ SAY NO:
@@ -4060,10 +4060,10 @@ Para decidir si un string es wider than un box: \ assumes font es selected on me
   Diga no.
 
 Para decidir si un substring está on any contraction:
-  Poner el substring's first plus 1 into un byte pointer.
-  Si el byte pointer es greater than el substring's last, diga no.
+  Poner el substring's first plus 1 into un byte puntero.
+  Si el byte puntero es greater than el substring's last, diga no.
   Si el substring's first's contenido es not el single-quote byte, diga no.
-  Si el byte pointer's contenido es not any letter, diga no.
+  Si el byte puntero's contenido es not any letter, diga no.
   Diga sí.
 
 Para decidir si un terminal es full:
@@ -4140,16 +4140,16 @@ Para decidir si el user clicks on some choices:
     Si el choice can't be found, diga no.
   Diga sí.
 
-Para decidir si we can encontrar un pointer: \ should be "can" not "ca", compiler bug
-  Si el pointer es nil, diga no.
+Para decidir si we can encontrar un puntero: \ should be "can" not "ca", compiler bug
+  Si el puntero es nil, diga no.
   Diga sí.
 
-Para decidir si we could encontrar un pointer:
-  Si el pointer es nil, diga no.
+Para decidir si we could encontrar un puntero:
+  Si el puntero es nil, diga no.
   Diga sí.
 
-Para decidir si we did encontrar un pointer:
-  Si el pointer es nil, diga no.
+Para decidir si we did encontrar un puntero:
+  Si el puntero es nil, diga no.
   Diga sí.
 
 Para decidir si we're above un box:
@@ -4447,7 +4447,7 @@ Para dividir un pair by un número y another número:
   Dividir el pair's y-número by el other número.
 
 \Para dividir un puntero por un número;
-Para dividir un pointer by un número;
+Para dividir un puntero by un número;
 \Para dividir un número por otro número;
 Para dividir un número by another número:
   Si el other número es 0, Poner el largest número into el número; salir.
@@ -4460,7 +4460,7 @@ Para dividir un número by another número:
   Intel $8903. \ mov [ebx],eax
 
 \Para dividir un puntero por un número dando un cociente y un resto;
-Para dividir un pointer by un número giving un quotient y un remainder;
+Para dividir un puntero by un número giving un quotient y un remainder;
 \Para dividir un número por otro número dando un cociente y un resto;
 Para dividir un número by another número giving un quotient y un remainder:
   Si el other número es 0, Poner el largest número into el quotient; Poner 0 into el remainder; salir.
@@ -4478,9 +4478,9 @@ The division-symbol byte es un byte igual to 247.
 
 A docinfo es un record con
   A número llamado cbsize,
-  A pointer llamado lpszdocname,
-  A pointer llamado lpszoutput,
-  A pointer llamado lpszdatadtype,
+  A puntero llamado lpszdocname,
+  A puntero llamado lpszoutput,
+  A puntero llamado lpszdatadtype,
   A número llamado fwtype.
 
 The dollar-sign byte es un byte igual to 36.
@@ -4961,7 +4961,7 @@ Para dibujar un polygon con un color (fill only):
   Crear el hbrush of el current canvas usando el color.
   Llamada "gdi32.dll" "SetPolyFillMode" con el current canvas y 2 [winding].
   Crear un vertex array usando el polygon's vertices.
-  Llamada "gdi32.dll" "Polygon" con el current canvas y el vertex array's spot pointer y el vertex array's count.
+  Llamada "gdi32.dll" "Polygon" con el current canvas y el vertex array's spot puntero y el vertex array's count.
   Destroy el vertex array.
   Destroy el hbrush of el current canvas.
   Destroy el hpen of el current canvas.
@@ -5355,7 +5355,7 @@ Para completar impresión:
 
 Para completar impresión (pdf style):
   Si el pdf state's document flag es not set, salir.
-  Completar impresión el pdf state's pdf pointer's contenido.
+  Completar impresión el pdf state's pdf puntero's contenido.
 
 Para completar impresión un pdf:
   Completar impresión el pdf (finish el parent).
@@ -5840,8 +5840,8 @@ A filetime es un record con
 Para llenar un box con un color:
   Dibujar el box con el borrar color y el color.
 
-Para llenar bytes con un byte starting at un pointer for un byte count:
-  Intel $8BBD0C000000. \ mov edi,[ebp+12] \ el pointer
+Para llenar bytes con un byte starting at un puntero for un byte count:
+  Intel $8BBD0C000000. \ mov edi,[ebp+12] \ el puntero
   Intel $8B3F. \ mov edi,[edi]
   Intel $8B8D10000000. \ mov ecx,[ebp+16] \ el count
   Intel $8B09. \ mov ecx,[ecx]
@@ -6036,10 +6036,10 @@ Para encontrar un pdf object usando un kind:
     Si el pdf object's kind es el kind, interrumpir.
   Repetir.
 
-Para encontrar un pointer usando un string y un index:
+Para encontrar un puntero usando un string y un index:
   Encontrar un refer usando el string y el index.
-  Si el refer es not nil, Poner el refer's pointer into el pointer; salir.
-  Void el pointer.
+  Si el refer es not nil, Poner el refer's puntero into el puntero; salir.
+  Void el puntero.
 
 \Para encontrar una referencia dado una cadena y un índice;
 Para encontrar un refer usando un string y un index:
@@ -6120,7 +6120,7 @@ Para encontrar un value string usando el environment variables y un name:
   Llamada "kernel32.dll" "GetEnvironmentVariableA" con el name's first y el value's first y el length retornando el length.
   Poner el value's first plus el length minus 1 into el value's last.
 
-A finger es un byte pointer.
+A finger es un byte puntero.
 
 The five byte es un byte igual to 53.
 
@@ -6212,7 +6212,7 @@ A font resource es un handle.
 Some font widths es un thing con \ used for pdf conversion
   A font,
   A count,
-  A número pointer llamado data.
+  A número puntero llamado data.
 
 A foot es 12 inches.
 
@@ -6248,17 +6248,17 @@ A gcd es un número.
 A gcpresults es un record con
   A número llamado lstructsize,
   A pchar llamado lpoutstring,
-  A número pointer llamado lporder,
-  A número pointer llamado lpdx,
-  A número pointer llamado lpcaretpos,
-  A pointer llamado lpclass,
-  A pointer llamado lpglyphs,
+  A número puntero llamado lporder,
+  A número puntero llamado lpdx,
+  A número puntero llamado lpcaretpos,
+  A puntero llamado lpclass,
+  A puntero llamado lpglyphs,
   A número llamado nglyphs,
   A número llamado maxfit.
 
 A gdiplusstartupinput es un record con
   A número llamado gdiplusversion,
-  A pointer llamado debugeventcallback,
+  A puntero llamado debugeventcallback,
   A número llamado suppressbackgroundthread,
   A número llamado suppressexternalcodecs.
 
@@ -6283,12 +6283,12 @@ Para obtener some addrinfo routines:
   Borrar el error de e/s.
   Llamada "kernel32.dll" "LoadLibraryA" con "ws2_32.dll"'s first retornando un handle.
   Si el handle es 0, Poner "No se pudo leer ws2_32.dll." into el error de e/s; salir.
-  Llamada "kernel32.dll" "GetProcAddress" con el handle y "getaddrinfo"'s first retornando un pointer.
-  Si el pointer es nil, Poner "Lamento que estas rutinas solo funcionan en Windows XP o superior." into el error de e/s; salir.
-  Poner el pointer into el addrinfo routines' getaddrinfo pointer.
-  Llamada "kernel32.dll" "GetProcAddress" con el handle y "freeaddrinfo"'s first retornando el pointer.
-  Si el pointer es nil, Poner "Lamento que estas rutinas solo funcionan en Windows XP o superior." into el error de e/s; salir.
-  Poner el pointer into el addrinfo routines' freeaddrinfo pointer.
+  Llamada "kernel32.dll" "GetProcAddress" con el handle y "getaddrinfo"'s first retornando un puntero.
+  Si el puntero es nil, Poner "Lamento que estas rutinas solo funcionan en Windows XP o superior." into el error de e/s; salir.
+  Poner el puntero into el addrinfo routines' getaddrinfo puntero.
+  Llamada "kernel32.dll" "GetProcAddress" con el handle y "freeaddrinfo"'s first retornando el puntero.
+  Si el puntero es nil, Poner "Lamento que estas rutinas solo funcionan en Windows XP o superior." into el error de e/s; salir.
+  Poner el puntero into el addrinfo routines' freeaddrinfo puntero.
 
 Para obtener un box for el caret in un text:
   Si el text es nil, zero el box; salir.
@@ -6574,10 +6574,10 @@ Para obtener un position usando un spot y un text:
   Poner el row's row# into el position's row#.
   Obtener el position's column# usando el row y el spot y el text.
 
-Para obtener un rgb pointer desde un bitmapdata at un row# y un column#: \ 1 based
-  Poner el bitmapdata's scan0 into el rgb pointer.
-  Agregar el row# minus 1 times el bitmapdata's stride to el rgb pointer.
-  Agregar el column# minus 1 times un rgb's magnitude to el rgb pointer.
+Para obtener un rgb puntero desde un bitmapdata at un row# y un column#: \ 1 based
+  Poner el bitmapdata's scan0 into el rgb puntero.
+  Agregar el row# minus 1 times el bitmapdata's stride to el rgb puntero.
+  Agregar el column# minus 1 times un rgb's magnitude to el rgb puntero.
 
 \Para obtener un ascenso y una carrera dada una dirección;
 Para obtener un rise y un run usando un heading: \ see Madhava's Numbers
@@ -6795,9 +6795,9 @@ Para obtener un width usando un byte y some font widths:
 
 Para obtener un width usando un número y some font widths: \ indexes are 0 based
   Si el font widths are nil, borrar el width; salir.
-  Poner el font widths' data into un número pointer.
-  Agregar el número times el número's magnitude to el número pointer.
-  Poner el número pointer's contenido into el width.
+  Poner el font widths' data into un número puntero.
+  Agregar el número times el número's magnitude to el número puntero.
+  Poner el número puntero's contenido into el width.
 
 Para obtener un width usando un string y un canvas: \ assumes font es already selected in canvas
   Llamada "gdi32.dll" "GetTextExtentPoint32A" con el canvas y el string's first y el string's length y un pair's dirección.
@@ -6844,11 +6844,11 @@ The gold pen es un pen.
 
 A gpbitmap es un gpimage.
 
-A gpgraphic es un pointer.
+A gpgraphic es un puntero.
 
-A gpimage es un pointer.
+A gpimage es un puntero.
 
-A gpimageattributes es un pointer.
+A gpimageattributes es un puntero.
 
 A gprect es un record con
   A número llamado x,
@@ -7406,7 +7406,7 @@ A heading es some points.
 
 The heap count es un número.
 
-The heap pointer es un pointer.
+The heap puntero es un puntero.
 
 A height es some twips.
 
@@ -7707,14 +7707,14 @@ An index es un thing con \ catálogo -> catálogoes
   A first bucket y 
   A last bucket.
 
-Para indexar un pointer usando un string y un index:
+Para indexar un puntero usando un string y un index:
 \  if el index es nil, salir. \ to make compiler faster
   Si el string's length es 0, salir.
   Obtener un bucket usando el string y el index.
   Crear un refer.
   Adjuntar el refer to el bucket's refers.
   Poner el string into el refer's string.
-  Poner el pointer into el refer's pointer.
+  Poner el puntero into el refer's puntero.
 
 Para indexar un string in un index:
 \  if el index es nil, salir. \ to make compiler faster
@@ -7725,10 +7725,10 @@ Para initalize el terminal:
 
 Para initialize before run:
   Llamada "user32.dll" "DisableProcessWindowsGhosting".
-  Llamada "kernel32.dll" "GetProcessHeap" retornando el heap pointer.
+  Llamada "kernel32.dll" "GetProcessHeap" retornando el heap puntero.
   Llamada "kernel32.dll" "LoadLibraryA" con "kernel32.dll"'s first retornando un handle.
-  Si el handle es not 0, call "kernel32.dll" "GetProcAddress" con el handle y "HeapSetInformation"'s first retornando un pointer.
-  Si el pointer es not nil, call el pointer con el heap pointer y 0 y 2's dirección y 4.
+  Si el handle es not 0, call "kernel32.dll" "GetProcAddress" con el handle y "HeapSetInformation"'s first retornando un puntero.
+  Si el puntero es not nil, call el puntero con el heap puntero y 0 y 2's dirección y 4.
 
 Para initialize el canvases:
   Initialize el screen canvas.
@@ -8256,15 +8256,15 @@ Para insertar un string into another string before un byte#:
   Colocar another substring on el other string. \ right side
   Poner el other substring's first plus el byte# minus 1 into el other substring's first.
   Poner el other string's length plus el string's length into un combined length.
-  Reassign un pointer usando el combined length.
-  Poner el pointer into un third substring's first.
+  Reassign un puntero usando el combined length.
+  Poner el puntero into un third substring's first.
   Copiar bytes desde el substring's first to el third substring's first for el substring's length.
   Agregar el substring's length to el third substring's first.
   Copiar bytes desde el string's first to el third substring's first for el string's length.
   Agregar el string's length to el third substring's first.
   Copiar bytes desde el other substring's first to el third substring's first for el other substring's length.
   Unassign el other string's first. \ don't use Poner un string into un string to prevent extra allocating y copying
-  Poner el pointer into el other string's first.
+  Poner el puntero into el other string's first.
   Poner el other string's first plus el combined length minus 1 into el other string's last.
 
 Para insertar un string into un text:
@@ -8377,29 +8377,29 @@ An ip address es un record con
   A número, \un número at el número,
   A string. \, un cadena at el string.
 
-An istream es un pointer to un istream object.
+An istream es un puntero to un istream object.
 
 An istream object es un record con un istream vtable llamado vtable.
 
-An istream vtable es un pointer to un istream vtable record.
+An istream vtable es un puntero to un istream vtable record.
 
 An istream vtable record es un record con
   \ iunknown
-  A pointer llamado queryinterface,
-  A pointer llamado addref,
-  A pointer llamado release, \ function(this:istream):número; stdcall;
+  A puntero llamado queryinterface,
+  A puntero llamado addref,
+  A puntero llamado release, \ function(this:istream):número; stdcall;
   \ istream
-  A pointer llamado read,
-  A pointer llamado write,
-  A pointer llamado seek,
-  A pointer llamado setsize,
-  A pointer llamado copyto,
-  A pointer llamado commit,
-  A pointer llamado revert,
-  A pointer llamado lockregion,
-  A pointer llamado unlockregion,
-  A pointer llamado stat,
-  A pointer llamado clone.
+  A puntero llamado read,
+  A puntero llamado write,
+  A puntero llamado seek,
+  A puntero llamado setsize,
+  A puntero llamado copyto,
+  A puntero llamado commit,
+  A puntero llamado revert,
+  A puntero llamado lockregion,
+  A puntero llamado unlockregion,
+  A puntero llamado stat,
+  A puntero llamado clone.
 
 An item es un record con
   A kind [directory, file], \ English
@@ -8423,9 +8423,9 @@ Para saltar el caret left in un text:
   Mover el caret left to any non-noise byte in el text.
   Si el text's caret column# es 1, salir.
   Obtener un row usando el text's caret row# y el text.
-  Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
-  Si el byte pointer's contenido es alphanumeric, mover el caret left to any non-alphanumeric byte in el text.
-  Si el byte pointer's contenido es not alphanumeric, mover el caret left to any non-symbolic byte in el text.
+  Poner el row's string's first plus el text's caret column# minus 2 into un byte puntero.
+  Si el byte puntero's contenido es alphanumeric, mover el caret left to any non-alphanumeric byte in el text.
+  Si el byte puntero's contenido es not alphanumeric, mover el caret left to any non-symbolic byte in el text.
   Mover el caret left to any non-noise byte in el text.
 
 Para saltar el caret right in un text:
@@ -8433,9 +8433,9 @@ Para saltar el caret right in un text:
   Mover el caret right to any non-noise byte in el text.
   Obtener un row usando el text's caret row# y el text.
   Si el text's caret column# es el row's string's length, salir.
-  Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
-  Si el byte pointer's contenido es alphanumeric, mover el caret right to any non-alphanumeric byte in el text.
-  Si el byte pointer's contenido es not alphanumeric, mover el caret right to any non-symbolic byte in el text.
+  Poner el row's string's first plus el text's caret column# minus 1 into un byte puntero.
+  Si el byte puntero's contenido es alphanumeric, mover el caret right to any non-alphanumeric byte in el text.
+  Si el byte puntero's contenido es not alphanumeric, mover el caret right to any non-symbolic byte in el text.
   Mover el caret right to any non-noise byte in el text.
 
 The k-key es un key igual to 75.
@@ -9190,8 +9190,8 @@ Para mover el anchor left to any non-alphanumeric byte in un text:
   Obtener un row usando el text's anchor row# y el text.
   Lazo.
     Si el text's anchor column# es 1, salir.
-    Poner el row's string's first plus el text's anchor column# minus 2 into un byte pointer.
-    Si el byte pointer's contenido es not alphanumeric, salir.
+    Poner el row's string's first plus el text's anchor column# minus 2 into un byte puntero.
+    Si el byte puntero's contenido es not alphanumeric, salir.
     Restar 1 desde el text's anchor column#.
   Repetir.
 
@@ -9305,8 +9305,8 @@ Para mover el caret left to any non-alphanumeric byte in un text:
   Obtener un row usando el text's caret row# y el text.
   Lazo.
     Si el text's caret column# es 1, salir.
-    Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
-    Si el byte pointer's contenido es not alphanumeric, salir.
+    Poner el row's string's first plus el text's caret column# minus 2 into un byte puntero.
+    Si el byte puntero's contenido es not alphanumeric, salir.
     Restar 1 desde el text's caret column#.
   Repetir.
 
@@ -9315,8 +9315,8 @@ Para mover el caret left to any non-noise byte in un text:
   Obtener un row usando el text's caret row# y el text.
   Lazo.
     Si el text's caret column# es 1, salir.
-    Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
-    Si el byte pointer's contenido es not noise, salir.
+    Poner el row's string's first plus el text's caret column# minus 2 into un byte puntero.
+    Si el byte puntero's contenido es not noise, salir.
     Restar 1 desde el text's caret column#.
   Repetir.
 
@@ -9325,8 +9325,8 @@ Para mover el caret left to any non-symbolic byte in un text:
   Obtener un row usando el text's caret row# y el text.
   Lazo.
     Si el text's caret column# es 1, salir.
-    Poner el row's string's first plus el text's caret column# minus 2 into un byte pointer.
-    Si el byte pointer's contenido es not symbolic, salir.
+    Poner el row's string's first plus el text's caret column# minus 2 into un byte puntero.
+    Si el byte puntero's contenido es not symbolic, salir.
     Restar 1 desde el text's caret column#.
   Repetir.
 
@@ -9340,8 +9340,8 @@ Para mover el caret right to any non-alphanumeric byte in un text:
   Obtener un row usando el text's caret row# y el text.
   Lazo.
     Si el text's caret column# es el row's string's length, salir.
-    Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
-    Si el byte pointer's contenido es not alphanumeric, salir.
+    Poner el row's string's first plus el text's caret column# minus 1 into un byte puntero.
+    Si el byte puntero's contenido es not alphanumeric, salir.
     Agregar 1 to el text's caret column#.
   Repetir.
 
@@ -9350,8 +9350,8 @@ Para mover el caret right to any non-noise byte in un text:
   Obtener un row usando el text's caret row# y el text.
   Lazo.
     Si el text's caret column# es el row's string's length, salir.
-    Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
-    Si el byte pointer's contenido es not noise, salir.
+    Poner el row's string's first plus el text's caret column# minus 1 into un byte puntero.
+    Si el byte puntero's contenido es not noise, salir.
     Agregar 1 to el text's caret column#.
   Repetir.
 
@@ -9360,8 +9360,8 @@ Para mover el caret right to any non-symbolic byte in un text:
   Obtener un row usando el text's caret row# y el text.
   Lazo.
     Si el text's caret column# es el row's string's length, salir.
-    Poner el row's string's first plus el text's caret column# minus 1 into un byte pointer.
-    Si el byte pointer's contenido es not symbolic, salir.
+    Poner el row's string's first plus el text's caret column# minus 1 into un byte puntero.
+    Si el byte puntero's contenido es not symbolic, salir.
     Agregar 1 to el text's caret column#.
   Repetir.
 
@@ -9881,7 +9881,7 @@ Para multiplicar un pair by un número y another número:
   Multiplicar el pair's y-número by el other número.
 
 \Para multiplicar un puntero por un número;
-Para multiplicar un pointer by un número;
+Para multiplicar un puntero by un número;
 \Para multiplicar un número por otro número;
 Para multiplicar un número by another número:
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el número
@@ -10019,8 +10019,8 @@ Para null terminate un string:
   Poner el string's length into un saved length.
   Reassign el string's first usando el saved length plus 1.
   Poner el string's first plus el saved length minus 1 into el string's last.
-  Poner el string's last plus 1 into un byte pointer.
-  Poner el null byte into el byte pointer's contenido.
+  Poner el string's last plus 1 into un byte puntero.
+  Poner el null byte into el byte puntero's contenido.
 
 Para null terminate un wide string:
   Poner el wide string's length into un saved length.
@@ -10035,7 +10035,7 @@ A número es un record con
   A low wyrd at el first byte,
   A high wyrd at el third byte.
 
-A número pointer es un pointer to un número.
+A número puntero es un puntero to un número.
 
 The número-sign byte es un byte igual to 35.
 
@@ -10169,10 +10169,10 @@ A outlinetextmetric es un record con
   A número llamado otmsstrikeoutposition,
   A número llamado otmsunderscoresize,
   A número llamado otmsunderscoreposition,
-  A pointer llamado otmpfamilyname,
-  A pointer llamado otmpfacename,
-  A pointer llamado otmpstylename,
-  A pointer llamado otmpfullname.
+  A puntero llamado otmpfamilyname,
+  A puntero llamado otmpfacename,
+  A puntero llamado otmpstylename,
+  A puntero llamado otmpfullname.
 
 An x-offset es un offset.
 A y-offset es un offset.
@@ -10270,7 +10270,7 @@ Para output trazar y fill usando un border color y un fill color:
 
 The p-key es un key igual to 80.
 
-A pabc es un pointer to un abc.
+A pabc es un puntero to un abc.
 
 The page-down key es un key igual to 34.
 
@@ -10313,9 +10313,9 @@ A path es un string. \ complete name = c:\folder1\folder2\file.ext
 
 The pause key es un key igual to 19.
 
-A pchar es un byte pointer.
+A pchar es un byte puntero.
 
-A pdevmode es un pointer to un devmode.
+A pdevmode es un puntero to un devmode.
 
 A pdf es un buffer.
 
@@ -10335,10 +10335,10 @@ A pdf outline entry es un thing con
   A page height,
   A destination número.
 
-A pdf pointer es un pointer to un pdf.
+A pdf puntero es un puntero to un pdf.
 
 A pdf state es un record con
-  A pdf pointer,
+  A pdf puntero,
   A document flag,
   A page flag,
   An object número,
@@ -10684,7 +10684,7 @@ The plus-sign byte es un byte igual to 43.
 
 A point es un número [0 to 3839; for dividing un circle into compass points; 0 es noon; 960 points per quarter].
 
-A pointer es un record con 4 bytes.
+A puntero es un record con 4 bytes.
 
 A polygon es un thing con some vertices.
 
@@ -10718,7 +10718,7 @@ Para post un data string to un url y receive un response string: \ only works co
 
 The pound-sign byte es un byte igual to 163.
 
-A poutlinetextmetric es un pointer to un outlinetextmetric.
+A poutlinetextmetric es un puntero to un outlinetextmetric.
 
 The ppi es some twips.
 
@@ -10735,13 +10735,13 @@ Para anteponer un byte to un string:
 \Para anteponer una cadena a otra cadena;
 Para anteponer un string to another string:
   Poner el other string's length plus el string's length into un combined length.
-  Reassign un pointer usando el combined length.
-  Poner el pointer into un substring's first.
+  Reassign un puntero usando el combined length.
+  Poner el puntero into un substring's first.
   Copiar bytes desde el string's first to el substring's first for el string's length.
   Agregar el string's length to el substring's first.
   Copiar bytes desde el other string's first to el substring's first for el other string's length.
   Unassign el other string's first. \ to avoid extra allocates y copies
-  Poner el pointer into el other string's first.
+  Poner el puntero into el other string's first.
   Poner el other string's first plus el combined length minus 1 into el other string's last.
 
 \Para anteceder una cosa a algunas cosas;
@@ -10780,15 +10780,15 @@ A printdlgex es un record con
   A número llamado exclusionflags,
   A número llamado npageranges,
   A número llamado nmaxpageranges,
-  A pointer llamado lppageranges,
+  A puntero llamado lppageranges,
   A número llamado nminpage,
   A número llamado nmaxpage,
   A número llamado ncopies,
   A handle llamado hinstance,
-  A pointer llamado lpprinttemplatename,
-  A pointer llamado lpcallback,
+  A puntero llamado lpprinttemplatename,
+  A puntero llamado lpcallback,
   A número llamado npropertypages,
-  A pointer llamado lphpropertypages,
+  A puntero llamado lphpropertypages,
   A número llamado nstartpage,
   A número llamado dwresultaction.
 
@@ -10798,7 +10798,7 @@ The printer device mode handle es un handle.
 
 A process es un handle.
 
-A process pointer es un pointer to un process.
+A process puntero es un puntero to un process.
 
 A processinfo es un record con
   A handle llamado hprocess,
@@ -11022,7 +11022,7 @@ Para poner eax into un byte:
   Intel $8803. \ mov [ebx],al
 
 Para poner eax into un flag;
-Para poner eax into un pointer;
+Para poner eax into un puntero;
 Para poner eax into un número:
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el número
   Intel $8903. \ mov [ebx],eax
@@ -11053,10 +11053,10 @@ Para poner un finger on el first character of un string:
 \Para poner un número en otro número;
 Para poner un flag into another flag;
 Para poner un flag into un número;
-Para poner un pointer into un número;
-Para poner un pointer into another pointer;
+Para poner un puntero into un número;
+Para poner un puntero into another puntero;
 Para poner un número into un flag;
-Para poner un número into un pointer;
+Para poner un número into un puntero;
 Para poner un número into another número:
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el número
   Intel $8B00. \ mov eax,[eax]
@@ -11064,7 +11064,7 @@ Para poner un número into another número:
   Intel $8903. \ mov [ebx],eax
 
 Para poner un flag into eax;
-Para poner un pointer into eax;
+Para poner un puntero into eax;
 Para poner un número into eax:
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el número
   Intel $8B03. \ mov eax,[ebx]
@@ -11083,13 +11083,13 @@ Para poner un font into another font:
 Para poner some font widths into un buffer: \ used for pdf conversion
   Borrar el buffer.
   Si el font widths are nil, salir.
-  Poner el font widths' data into un número pointer.
+  Poner el font widths' data into un número puntero.
   Lazo.
     Si un counter es past el font widths' count, interrumpir.
-    Adjuntar el número pointer's contenido then " " to el buffer.
+    Adjuntar el número puntero's contenido then " " to el buffer.
     Agregar 1 to un count.
     Si el count es evenly divisible by 16, Adjuntar el crlf string to el buffer.
-    Agregar un número's magnitude to el número pointer.
+    Agregar un número's magnitude to el número puntero.
   Repetir.
 
 Para poner un font's adjusted height into un height:
@@ -11518,10 +11518,10 @@ Para centrar un spot in un box:
 \Para poner una cadena en otra cadena;
 Para poner un string into another string:
   Poner el string's length into un saved length.
-  Assign un pointer usando el saved length.
-  Copiar bytes desde el string's first to el pointer for el saved length.
+  Assign un puntero usando el saved length.
+  Copiar bytes desde el string's first to el puntero for el saved length.
   Unassign el other string's first.
-  Poner el pointer into el other string's first.
+  Poner el puntero into el other string's first.
   Poner el other string's first plus el saved length minus 1 into el other string's last.
 
 Para poner un string into un letter:
@@ -11545,8 +11545,8 @@ Para poner un string on el windows clipboard:
   Llamada "user32.dll" "EmptyClipboard".
   Poner el string's length plus 1 into un número.
   Llamada "kernel32.dll" "GlobalAlloc" con 66 [ghnd] y el número retornando un handle.
-  Llamada "kernel32.dll" "GlobalLock" con el handle retornando un pointer.
-  Copiar bytes desde el string's first to el pointer for el string's length.
+  Llamada "kernel32.dll" "GlobalLock" con el handle retornando un puntero.
+  Copiar bytes desde el string's first to el puntero for el string's length.
   Llamada "kernel32.dll" "GlobalUnlock" con el handle.
   Llamada "user32.dll" "SetClipboardData" con 1 [cf_text] y el handle.
   Llamada "user32.dll" "CloseClipboard".
@@ -11560,11 +11560,11 @@ Para poner un string's length into un length:
   Intel $833B00. \ cmp [ebx],0
   Intel $0F8414000000. \ je store it
 \ if last es less than first, store 0
-  Intel $8B5304. \ mov edx,[ebx+4] \ last pointer
+  Intel $8B5304. \ mov edx,[ebx+4] \ last puntero
   Intel $3B13. \ cmp edx,[ebx]
   Intel $0F8C09000000. \ jl store it
 \ calc length
-  Intel $8B8B04000000. \ mov ecx,[ebx+4] \ last pointer
+  Intel $8B8B04000000. \ mov ecx,[ebx+4] \ last puntero
   Intel $2B0B. \ sub ecx,[ebx] \ Restar first
   Intel $41. \ inc ecx \ Agregar 1
 \ STORE IT:
@@ -11985,11 +11985,11 @@ Para leer un response string desde un winhttp request:
     Si el result es 0, Poner "No se pudo consultar los datos disponibles." into el error de e/s; borrar el response; interrumpir.
     Poner el response's length into un saved length.
     Reassign el response's first usando el saved length plus el buffer size.
-    Poner el response's first plus el saved length into un pointer.
-    Llamada "winhttp.dll" "WinHttpReadData" con el winhttp request's request y el pointer
+    Poner el response's first plus el saved length into un puntero.
+    Llamada "winhttp.dll" "WinHttpReadData" con el winhttp request's request y el puntero
     y el buffer size y un count's dirección retornando el result número.
     Si el result número es 0, Poner "Error leyendo datos." into el error de e/s; borrar el response; interrumpir.
-    Poner el pointer plus el count minus 1 into el response's last.
+    Poner el puntero plus el count minus 1 into el response's last.
     Si el count es 0, interrumpir.
   Repetir.
 
@@ -12027,10 +12027,10 @@ Para leer un url into un buffer:
   Lazo.
   Poner el buffer's length into un saved length.
   Reassign el buffer's first usando el saved length plus el buffer size.
-  Poner el buffer's first plus el saved length into un pointer.
-  Llamada "wininet.dll" "InternetReadFile" con el url handle y el pointer y el buffer size y un count's dirección retornando un result número.
+  Poner el buffer's first plus el saved length into un puntero.
+  Llamada "wininet.dll" "InternetReadFile" con el url handle y el puntero y el buffer size y un count's dirección retornando un result número.
   Si el result número es 0, Poner "Error leyendo url '" then el url then "'." into el error de e/s; interrumpir.
-  Poner el pointer plus el count minus 1 into el buffer's last.
+  Poner el puntero plus el count minus 1 into el buffer's last.
   Si el count es 0, interrumpir.
   Repetir.
 \ clean up
@@ -12045,12 +12045,12 @@ A really really dark color es un color.
 
 A really really light color es un color.
 
-Para reassign un pointer usando un byte count:
-  Si el pointer es nil, assign el pointer usando el byte count; salir.
-  Si el byte count es 0, unassign el pointer; salir.
+Para reassign un puntero usando un byte count:
+  Si el puntero es nil, assign el puntero usando el byte count; salir.
+  Si el byte count es 0, unassign el puntero; salir.
   Privatizar el byte count.
   Redondear el byte count up to el nearest power of two.
-  Llamada "kernel32.dll" "HeapReAlloc" con el heap pointer y 8 [heap_zero_memory] y el pointer y el byte count retornando el pointer.
+  Llamada "kernel32.dll" "HeapReAlloc" con el heap puntero y 8 [heap_zero_memory] y el puntero y el byte count retornando el puntero.
 
 Para receive un buffer desde un socket:
   Borrar el error de e/s.
@@ -12060,11 +12060,11 @@ Para receive un buffer desde un socket:
     Poner 0 into un size.
     Poner el buffer's length into un saved length.
     Reassign el buffer's first usando el saved length plus el buffer size.
-    Poner el buffer's first plus el saved length into un pointer.
-    Llamada "ws2_32.dll" "recv" con el socket y el pointer y el buffer size y 0 retornando un count.
-    Si el count es not -1 [socket_error], Poner el pointer plus el count minus 1 into el buffer's last; salir.
+    Poner el buffer's first plus el saved length into un puntero.
+    Llamada "ws2_32.dll" "recv" con el socket y el puntero y el buffer size y 0 retornando un count.
+    Si el count es not -1 [socket_error], Poner el puntero plus el count minus 1 into el buffer's last; salir.
     Si el system's last winsock error es not 10040 [wsamsgsize], Poner "Error recibiendo datos." into el error de e/s; borrar el buffer; salir.
-    Poner el pointer plus el count minus 1 into el buffer's last.
+    Poner el puntero plus el count minus 1 into el buffer's last.
   Repetir.
 
 Para receive el response desde un winhttp request:
@@ -12124,9 +12124,9 @@ Para reducir un fraction:
 
 A refer es un thing con 
   A string y 
-  A pointer (reference). \, 
+  A puntero (reference). \, 
   \Una cadena at el string y 
-  \Un puntero (referencia) at el pointer.
+  \Un puntero (referencia) at el puntero.
 
 \Para actualizar el cursor;
 Para actualizar el cursor:
@@ -12208,8 +12208,8 @@ Para eliminar bytes desde un string usando un substring:
   Si el string es blank, salir.
   Si el substring es blank, salir.
   Poner el string's last minus el substring's last into un length.
-  Poner el substring's last plus 1 into un pointer.
-  Copiar bytes desde el pointer to el substring's first for el length.
+  Poner el substring's last plus 1 into un puntero.
+  Copiar bytes desde el puntero to el substring's first for el length.
   Poner el string's length minus el substring's length into un new length.
   Reassign el string's first usando el new length.
   Poner el string's first plus el new length minus 1 into el string's last.
@@ -12400,10 +12400,10 @@ Para reiniciar el origin of un text:
   Poner 0 into el text's y-coord.
 
 \Para borrar un puntero;
-Para reiniciar un pointer;
-Para reiniciar un pointer for el next time around;
-Para void un pointer:
-  Intel $8B8508000000. \ mov eax,[ebp+8] \ el pointer
+Para reiniciar un puntero;
+Para reiniciar un puntero for el next time around;
+Para void un puntero:
+  Intel $8B8508000000. \ mov eax,[ebp+8] \ el puntero
   Intel $C70000000000. \ mov [eax],0
 
 \Para restablecer los colores del arco iris;
@@ -12574,7 +12574,7 @@ A rgb es un record con
   A byte llamado green byte,
   A byte llamado red byte.
 
-A rgb pointer es un pointer to un rgb.
+A rgb puntero es un puntero to un rgb.
 
 A rider es un record con \ Note: You will need to refactor the "bump a rider" y "unbump a rider" routines if you change the order of the fields of this record
   An original substring, \una subcadena primera at el original substring,
@@ -13038,14 +13038,14 @@ The semi-colon byte es un byte igual to 59.
 
 Para enviar un buffer to un socket:
   Borrar el error de e/s.
-  Poner el buffer's first into un pointer.
+  Poner el buffer's first into un puntero.
   Poner el buffer's length into un length.
   Lazo.
     Si el length es 0, interrumpir.
-    Llamada "ws2_32.dll" "send" con el socket y el pointer y el length y 0 retornando un número.
+    Llamada "ws2_32.dll" "send" con el socket y el puntero y el length y 0 retornando un número.
     Si el número es -1 [socket_error], Poner "Error enviando datos." into el error de e/s; salir.
     Restar el número desde el length.
-    Agregar el número to el pointer.
+    Agregar el número to el puntero.
   Repetir.
 
 Para enviar un data string to un winhttp request:
@@ -13191,14 +13191,14 @@ Para desplazar un byte left some bits:
   Intel $8B8D0C000000. \ mov ecx,[ebp+12] \ el bits
   Intel $8B09. \ mov ecx,[ecx]
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el byte
-  Intel $D220. \ shl byte pointer [eax],ecx
+  Intel $D220. \ shl byte puntero [eax],ecx
 
 \Para desplazar un byte hacia la derecha algunos bits;
 Para desplazar un byte right some bits:
   Intel $8B8D0C000000. \ mov ecx,[ebp+12] \ el bits
   Intel $8B09. \ mov ecx,[ecx]
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el byte
-  Intel $D228. \ shr byte pointer [eax],ecx
+  Intel $D228. \ shr byte puntero [eax],ecx
 
 The shift key es un key igual to 16.
 
@@ -13440,9 +13440,9 @@ A sockaddr es un record con
   A in_addr llamado sin_addr,
   8 bytes llamado sin_zero.
 
-A sockaddrptr es un pointer to un sockaddr.
+A sockaddrptr es un puntero to un sockaddr.
 
-A socket es un pointer.
+A socket es un puntero.
 
 The soft-dash byte es un byte igual to 173.
 
@@ -13595,7 +13595,7 @@ A spot es un pair con
   \Una izquierda at el x-coord y 
   \Una superior at el y-coord.
 
-A spot pointer es un pointer to un spot.
+A spot puntero es un puntero to un spot.
 
 A square es 1440 units. \ arbitrary número high enough for precision divides
 
@@ -13931,8 +13931,8 @@ Para start un process usando un path: \ must be llamado con un global variable
   Si el número es 0, Poner "No puedo ejecutar el programa." into el error de e/s; salir.
   Poner el processinfo's hprocess into el process.
   Llamada "kernel32.dll" "CloseHandle" con el processinfo's hthread.
-  Apuntar un pointer to routine wait for un process pointer.
-  Llamada "kernel32.dll" "CreateThread" con 0 y 0 y el pointer y el process's dirección y 0 y another número's dirección retornando un handle.
+  Apuntar un puntero to routine wait for un process puntero.
+  Llamada "kernel32.dll" "CreateThread" con 0 y 0 y el puntero y el process's dirección y 0 y another número's dirección retornando un handle.
   Llamada "kernel32.dll" "CloseHandle" con el handle. \ does not end el thread, just dumps el handle
 
 \Para iniciar un temporizador;
@@ -14015,8 +14015,8 @@ Para comenzar con un color;
 Para start con un color:
   Poner el color into el context's color.
 
-Para comenzar con nothing in un pointer:
-  Void el pointer.
+Para comenzar con nothing in un puntero:
+  Void el puntero.
 
 The start-of-heading byte es un byte igual to 1.
 
@@ -14024,9 +14024,9 @@ The start-of-text byte es un byte igual to 2.
 
 A startupinfo es un record con
   A número llamado cb,
-  A pointer llamado lpreserved,
-  A pointer llamado lpdesktop,
-  A pointer llamado lptitle,
+  A puntero llamado lpreserved,
+  A puntero llamado lpdesktop,
+  A puntero llamado lptitle,
   A número llamado dwx,
   A número llamado dwy,
   A número llamado dwxsize,
@@ -14037,7 +14037,7 @@ A startupinfo es un record con
   A número llamado dwflags,
   A wyrd llamado wshowwindow,
   A wyrd llamado cbreserved2,
-  A pointer llamado lpreserved2,
+  A puntero llamado lpreserved2,
   A handle llamado hstdinput,
   A handle llamado hstdoutput,
   A handle llamado hstderror.
@@ -14061,12 +14061,12 @@ Para stop un timer:
   Agregar el ticks to el timer's total ticks.
 
 A string es un record con 
-  A first byte pointer y 
-  A last byte pointer.
-  \y un primero puntero octeto at el first byte pointer y
-  \y un primera puntero octeto at el first byte pointer y \ new line, same as above except primero -> primera
-  \un último puntero octeto at el last byte pointer y
-  \un última puntero octeto at el last byte pointer. \ new line, similar to above except último -> última
+  A first byte puntero y 
+  A last byte puntero.
+  \y un primero puntero octeto at el first byte puntero y
+  \y un primera puntero octeto at el first byte puntero y \ new line, same as above except primero -> primera
+  \un último puntero octeto at el last byte puntero y
+  \un última puntero octeto at el last byte puntero. \ new line, similar to above except último -> última
 
 A string thing es un thing con 
   An string. \ y una cadena at el string.
@@ -15638,9 +15638,9 @@ Para restar un pair desde another pair:
   Restar el pair's y-número desde el other pair's y-número.
 
 \Para restar un puntero de otro puntero;
-Para restar un pointer desde another pointer;
+Para restar un puntero desde another puntero;
 \Para restar un número de un puntero;
-Para restar un número desde un pointer;
+Para restar un número desde un puntero;
 \Para restar un número de otro número;
 Para restar un número desde another número:
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el número
@@ -15666,7 +15666,7 @@ Para intercambiar un pair con another pair:
   Intercambiar el pair's y-número con el other pair's y-número.
 
 \Para intercambiar un puntero con otro puntero;
-Para intercambiar un pointer con another pointer;
+Para intercambiar un puntero con another puntero;
 \Para intercambiar un número con otro número;
 Para intercambiar un número con another número:
   Poner el número into un third número.
@@ -15700,55 +15700,55 @@ Para take off all el masking tape: unmask everything.
 
 Para take off any masking tape: unmask everything.
 
-A talker es un pointer to un talker object.
+A talker es un puntero to un talker object.
 
 The talker es un talker.
 
 A talker object es un record con un talker vtable llamado vtable.
 
-A talker vtable es un pointer to un talker vtable record.
+A talker vtable es un puntero to un talker vtable record.
 
 A talker vtable record es un record con
   \ iunknown
-  A pointer llamado queryinterface,
-  A pointer llamado addref,
-  A pointer llamado release, \ in this:pspvoice out número
+  A puntero llamado queryinterface,
+  A puntero llamado addref,
+  A puntero llamado release, \ in this:pspvoice out número
   \ italker
-  A pointer llamado setnotifysink,
-  A pointer llamado setnotifywindowmessage,
-  A pointer llamado setnotifycallbackfunction,
-  A pointer llamado setnotifycallbackinterface,
-  A pointer llamado setnotifywin32event,
-  A pointer llamado waitfornotifyevent,
-  A pointer llamado getnotifyeventhandle,
-  A pointer llamado setinterest,
-  A pointer llamado getevents,
-  A pointer llamado getinfo,
-  A pointer llamado setoutput,
-  A pointer llamado getoutputobjecttoken,
-  A pointer llamado getoutputstream,
-  A pointer llamado pause,
-  A pointer llamado resume,
-  A pointer llamado setvoice,
-  A pointer llamado getvoice,
-  A pointer llamado speak, \ in this:pspvoice; pwcs:pwchar; dwflags:número; pulstreamnumber:pnumber out número
-  A pointer llamado speakstream,
-  A pointer llamado getstatus,
-  A pointer llamado skip,
-  A pointer llamado setpriority,
-  A pointer llamado getpriority,
-  A pointer llamado setalertboundary,
-  A pointer llamado getalertboundary,
-  A pointer llamado setrate,
-  A pointer llamado getrate,
-  A pointer llamado setvolume,
-  A pointer llamado getvolume,
-  A pointer llamado waituntildone,
-  A pointer llamado setsyncspeaktimeout,
-  A pointer llamado getsyncspeaktimeout,
-  A pointer llamado speakcompleteevent,
-  A pointer llamado isuisupported,
-  A pointer llamado displayui.
+  A puntero llamado setnotifysink,
+  A puntero llamado setnotifywindowmessage,
+  A puntero llamado setnotifycallbackfunction,
+  A puntero llamado setnotifycallbackinterface,
+  A puntero llamado setnotifywin32event,
+  A puntero llamado waitfornotifyevent,
+  A puntero llamado getnotifyeventhandle,
+  A puntero llamado setinterest,
+  A puntero llamado getevents,
+  A puntero llamado getinfo,
+  A puntero llamado setoutput,
+  A puntero llamado getoutputobjecttoken,
+  A puntero llamado getoutputstream,
+  A puntero llamado pause,
+  A puntero llamado resume,
+  A puntero llamado setvoice,
+  A puntero llamado getvoice,
+  A puntero llamado speak, \ in this:pspvoice; pwcs:pwchar; dwflags:número; pulstreamnumber:pnumber out número
+  A puntero llamado speakstream,
+  A puntero llamado getstatus,
+  A puntero llamado skip,
+  A puntero llamado setpriority,
+  A puntero llamado getpriority,
+  A puntero llamado setalertboundary,
+  A puntero llamado getalertboundary,
+  A puntero llamado setrate,
+  A puntero llamado getrate,
+  A puntero llamado setvolume,
+  A puntero llamado getvolume,
+  A puntero llamado waituntildone,
+  A puntero llamado setsyncspeaktimeout,
+  A puntero llamado getsyncspeaktimeout,
+  A puntero llamado speakcompleteevent,
+  A puntero llamado isuisupported,
+  A puntero llamado displayui.
 
 The tan color es un color.
 
@@ -15806,7 +15806,7 @@ A textmetric es un record con
   A byte llamado tmpitchandfamily,
   A byte llamado tmcharset.
 
-A thing es un pointer to un thing record.
+A thing es un puntero to un thing record.
 
 A thing record es un record con 
   A next thing y 
@@ -15926,11 +15926,11 @@ The two key es un key igual to 50.
 
 The u-key es un key igual to 85.
 
-Para unassign un pointer:
-  Si el pointer es nil, salir.
-  Llamada "kernel32.dll" "HeapFree" con el heap pointer y 0 [no options] y el pointer retornando un número.
+Para unassign un puntero:
+  Si el puntero es nil, salir.
+  Llamada "kernel32.dll" "HeapFree" con el heap puntero y 0 [no options] y el puntero retornando un número.
   Si el número es 0, salir.
-  Void el pointer.
+  Void el puntero.
   Restar 1 desde el heap count.
 
 The underscore byte es un byte igual to 95.
@@ -16047,7 +16047,7 @@ Para uppercase un byte:
   Translate el byte using el uppercase ascii table.
 
 Para translate un byte using un translation hex string:
-  Intel $8B8D08000000. \ mov ecx,[ebp+8] \ el byte pointer
+  Intel $8B8D08000000. \ mov ecx,[ebp+8] \ el byte puntero
   Intel $8B01. \ mov eax,[ecx] \ el byte
   Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el translation table
   Intel $8B1B. \ mov ebx,[ebx] el translation table's first
@@ -16142,11 +16142,11 @@ A uuid es un record con
 
 The v-key es un key igual to 86.
 
-A vertex array es un pointer to un vertex array record.
+A vertex array es un puntero to un vertex array record.
 
 A vertex array record es un record con
   A count y 
-  A spot pointer.
+  A spot puntero.
 
 A vertex es un thing con
   An x-coord, 
@@ -16245,15 +16245,15 @@ A win32finddata es un record con
 A window class es un record con
   A número llamado cbsize,
   A número llamado style,
-  A pointer llamado lpfnwndproc,
+  A puntero llamado lpfnwndproc,
   A número llamado cbclsextra,
   A número llamado cbwndextra,
   A handle llamado hinstance,
   A hicon llamado hicon,
   A cursor llamado hcursor,
   An hbrush llamado hbrbackground,
-  A pointer llamado lpszmenuname,
-  A pointer llamado lpszclassname,
+  A puntero llamado lpszmenuname,
+  A puntero llamado lpszclassname,
   A hicon llamado hiconsm.
 
 The window class es un window class.
@@ -16623,7 +16623,7 @@ A wsadata es un record con
   127 bytes llamado szsystemstatus,
   A wyrd [unsigned] llamado imaxsockets,
   A wyrd [unsigned] llamado imaxudpdg,
-  A pointer llamado lpvendorinfo.
+  A puntero llamado lpvendorinfo.
 
 A wyrd es un record con
   An low byte y 
