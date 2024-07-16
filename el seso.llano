@@ -8,12 +8,103 @@
 \   there es always at least one row.
 \   there es always un return byte at el end of el last row.
 
+\A console es un lista con 
+\a box,
+\a border color,
+\a fill color,
+\a text,
+\a grid,
+\a reply string.
+
+The copyright byte es un byte igual to 169.
+
+A count es un número.
+
+A counter es un número.
+
+A copy es un número.
+A coord es some twips.
+
+A console es un lista con 
+  A box, \Una caja at el box,
+  A border color, \Un color de borde at el border color,
+  A fill color, \un color de relleno at el fill color,
+  A text, \un texto at el text,
+  A grid, \una grilla at el grid,
+  A reply string .\, una cadena de respuesta at el reply string.
+
+The context es un context.
+
+A context es un lista con 
+  A spot, 
+  A box, 
+  A heading, 
+  A letter height, 
+  A color, 
+  A número, \ pen width? ***
+  A letter size at el letter height, y
+  A pen at el color.
+
+The context stack es some contexts.
+
+A character es un byte.
+
+A choice es un lista con un name y un box.
+
+The choices are some choices.
+
+The circumflex byte es un byte igual to 136.
+
+The cluck sound es un wave igual to $524946463A02000057415645666D74201200000001000100401F0000401F000001000800000066616374040000000702000064617461070200007F7F807F7F807F7F808080807F807F7F80817F81817E7E827E7D847C79877D5F6D99B2A25D608269A5979869667F7D8D738C7D8C5E7E878F767A75868D84797278829A7D7E857A73929271657492907D7E7D787E8B887C758388827E817F7C7B89897C7A7E84838183827E7A8488877D7E8181808484817C7F84838181807E7F8283807E8081808182807F7F81818081807F7F8081818080807F7F808180807F80808080807F8080807F8080808080807F7F7F7F7F8080807F7F7F7C7B8182817C7B7D7E8082807D7D7C7F8281807F7C7D808082807E7E7E7D7E807D7B7C7B7D7D7B7A7979797875727269797A490F4571FFF4FF0C001297FBF492525BB0F5B26A001C69BEE5BA76476F9EBD953C3757BAC9BB705C7F9AA883645D7897AA9B806977959588696976999B83766F828C907F7375828E91877B757D868B837A757C858D8880787B8187847B7A7D8788807B79808486817D7C7F8384817D7C7F8484817B7B7D83847F7C7B7E8182827D7C7C8082817D7C7D7F81807F7D7D7F82817F7B7B7E8081807E7D7D7F80807E7D7D7E80807E7D7D7E7F807F7D7D7E7F807F7E7D7E7E80807F7E7D7E80807F7E7E7E7F7F7E7E7E7F7F7F7F7E7E7F7F807F7F7E7E7E7F8080807E7E7E80807F7E7E7F8081807F7F7E7F7F80807F7E7F8081807F7E7E7E80808080807F807F7F7F7F7F7F7F80808080807F7F7F808080807F80808180807F80808100.
+
+The colon byte es un byte igual to 58.
+
+\un color es un registro con un hue, un saturation, un lightness, y un brightness at el lightness.
+
+A color es un registro con 
+  An hue, 
+  A saturation, 
+  A lightness, 
+  A brightness at el lightness. \,
+  \Un matiz at el hue, 
+  \Una saturación at el saturation, 
+  \Una luminosidad at el lightness y 
+  \Un brillo at el lightness.
+
+A colorref es un número [like $00BBGGRR].
+
+A column# es un número.
+
+The comma byte es un byte igual to 44.
+
+A byte count es un count.
+
+A byte puntero es un puntero to un byte.
+
+A byte# es un número.
+
+The c-key es un key igual to 67.
+
+The cancel byte es un byte igual to 24.
+
+A canvas es un hdc.
+
+The caps key es un key igual to 20.
+
+The caret byte es un byte igual to 94.
+
+A caret es un position.
+
+The cedilla byte es un byte igual to 184.
+
+The cent-sign byte es un byte igual to 162.
 
 The on flag es un flag igual to 1.
 
 The off flag es un flag igual to 0.
 
 The a-key es un key igual to 65.
+
 
 An ABC es un registro con \ La estructura ABC contiene el ancho de un carácter en una fuente TrueType.
   Un número llamado abcA, 
@@ -463,8 +554,6 @@ Para ajustar spacing usando un string:
 Para align un text usando un alignment:
   Poner el alignment into el text's alignment.
 
-
-
 \Para adjuntar un búfer a un archivo;
 Para adjuntar un buffer to un file:
   Borrar el error de e/s.
@@ -591,8 +680,6 @@ Para assign un puntero usando un byte count:
   Redondear el byte count up to el nearest power of two.
   Llamar "kernel32.dll" "HeapAlloc" con el heap puntero y 8 [heap_zero_memory] y el byte count retornando el puntero.
   Si el puntero es not nil, Agregar 1 to el heap count; salir.
-
-
 
 Para autoscroll un text usando un spot y un flag:
   Si el text es nil, borrar el flag; salir.
@@ -733,7 +820,6 @@ Para comenzar un sheet usando un box y un title string (pdf style):
 Para comenzar un sheet usando un title string:
   Comenzar un portrait sheet usando el title.
 
-
 Para lógico y un byte con otro byte;
 Para bitwise AND un byte con another byte:
   Intel $8B850C000000. \ mov eax,[ebp+12] \ el other byte
@@ -797,8 +883,6 @@ Para bitwise XOR un número con another número:
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el número
   Intel $3103. \ XOR [ebx],eax
 
-
-
 Para incrementar un byte que lo limita a otro byte y un tercer byte;
 Para incrementar un byte limiting it to another byte y un third byte:
   Agregar 1 to el byte.
@@ -835,18 +919,6 @@ Para incrementar un rider by un número:
 Para buzz: 
   Llamar "kernel32.dll" "Beep" con 220 y 200.
 
-A byte count es un count.
-
-A byte puntero es un puntero to un byte.
-
-A byte# es un número.
-
-The c-key es un key igual to 67.
-
-The cancel byte es un byte igual to 24.
-
-A canvas es un hdc.
-
 \Para capitalizar las filas seleccionadas en un texto;
 Para capitalizar any selected rows in un text:
   Si el text es nil, salir.
@@ -877,16 +949,6 @@ Para capitalizar un text:
     Capitalizar el row's string.
   Repetir.
   Wrap el text.
-
-The caps key es un key igual to 20.
-
-The caret byte es un byte igual to 94.
-
-A caret es un position.
-
-The cedilla byte es un byte igual to 184.
-
-The cent-sign byte es un byte igual to 162.
 
 \Para centrar una caja en la parte inferior de otra caja;
 Para centrar un box at el bottom of another box:
@@ -1020,13 +1082,6 @@ Para cambiar un text usando un font name:
   Poner el font name into el text's font's name.
   Wrap el text.
 
-A character es un byte.
-
-A choice es un lista con un name y un box.
-
-The choices are some choices.
-
-The circumflex byte es un byte igual to 136.
 
 \Para borrar una caja;
 Para borrar un box:
@@ -1156,28 +1211,6 @@ A clsid es un uuid.
 Para cloquear:
   Reproducir el cluck sound.
 
-The cluck sound es un wave igual to $524946463A02000057415645666D74201200000001000100401F0000401F000001000800000066616374040000000702000064617461070200007F7F807F7F807F7F808080807F807F7F80817F81817E7E827E7D847C79877D5F6D99B2A25D608269A5979869667F7D8D738C7D8C5E7E878F767A75868D84797278829A7D7E857A73929271657492907D7E7D787E8B887C758388827E817F7C7B89897C7A7E84838183827E7A8488877D7E8181808484817C7F84838181807E7F8283807E8081808182807F7F81818081807F7F8081818080807F7F808180807F80808080807F8080807F8080808080807F7F7F7F7F8080807F7F7F7C7B8182817C7B7D7E8082807D7D7C7F8281807F7C7D808082807E7E7E7D7E807D7B7C7B7D7D7B7A7979797875727269797A490F4571FFF4FF0C001297FBF492525BB0F5B26A001C69BEE5BA76476F9EBD953C3757BAC9BB705C7F9AA883645D7897AA9B806977959588696976999B83766F828C907F7375828E91877B757D868B837A757C858D8880787B8187847B7A7D8788807B79808486817D7C7F8384817D7C7F8484817B7B7D83847F7C7B7E8182827D7C7C8082817D7C7D7F81807F7D7D7F82817F7B7B7E8081807E7D7D7F80807E7D7D7E80807E7D7D7E7F807F7D7D7E7F807F7E7D7E7E80807F7E7D7E80807F7E7E7E7F7F7E7E7E7F7F7F7F7E7E7F7F807F7F7E7E7E7F8080807E7E7E80807F7E7E7F8081807F7F7E7F7F80807F7E7F8081807F7E7E7E80808080807F807F7F7F7F7F7F7F80808080807F7F7F808080807F80808180807F80808100.
-
-The colon byte es un byte igual to 58.
-
-\un color es un registro con un hue, un saturation, un lightness, y un brightness at el lightness.
-
-A color es un registro con 
-  An hue, 
-  A saturation, 
-  A lightness, 
-  A brightness at el lightness. \,
-  \Un matiz at el hue, 
-  \Una saturación at el saturation, 
-  \Una luminosidad at el lightness y 
-  \Un brillo at el lightness.
-
-A colorref es un número [like $00BBGGRR].
-
-A column# es un número.
-
-The comma byte es un byte igual to 44.
-
 Para compare un string to another string usando un length y another length y un translation table (equal only):
   Intel $8BB508000000. \ mov esi,[ebp+8] \ el string
   Intel $8B36. \ mov esi,[esi] \ el string's first
@@ -1293,36 +1326,6 @@ Para compatibly wait for un process puntero:
   Llamar "user32.dll" "ShowWindow" con el main window y 6 [sw_minimize].
   Llamar "user32.dll" "ShowWindow" con el main window y 9 [sw_restore].
   Poner 0 into eax. \ set return value of thread
-
-\A console es un lista con 
-\a box,
-\a border color,
-\a fill color,
-\a text,
-\a grid,
-\a reply string.
-
-A console es un lista con 
-  A box, \Una caja at el box,
-  A border color, \Un color de borde at el border color,
-  A fill color, \un color de relleno at el fill color,
-  A text, \un texto at el text,
-  A grid, \una grilla at el grid,
-  A reply string .\, una cadena de respuesta at el reply string.
-
-The context es un context.
-
-A context es un lista con 
-  A spot, 
-  A box, 
-  A heading, 
-  A letter height, 
-  A color, 
-  A número, \ pen width? ***
-  A letter size at el letter height, y
-  A pen at el color.
-
-The context stack es some contexts.
 
 Para convertir un absolute position to un position usando un text:
   Si el text es nil, borrar el position; salir.
@@ -1497,13 +1500,13 @@ Para convertir un gpbitmap to un buffer (pdf style):
   Poner 1 into un row#.
   Poner 1 into un column#.
   Lazo.
-  Si el column# es greater than el bitmapdata's width, Poner 1 into el column#; Agregar 1 to el row#.
-  Si el row# es greater than el bitmapdata's height, interrumpir.
-  Obtener un rgb puntero desde el bitmapdata at el row# y el column#.
-  Adjuntar el rgb puntero's red byte to el buffer.
-  Adjuntar el rgb puntero's green byte to el buffer.
-  Adjuntar el rgb puntero's blue byte to el buffer.
-  Agregar 1 to el column#.
+    Si el column# es greater than el bitmapdata's width, Poner 1 into el column#; Agregar 1 to el row#.
+    Si el row# es greater than el bitmapdata's height, interrumpir.
+    Obtener un rgb puntero desde el bitmapdata at el row# y el column#.
+    Adjuntar el rgb puntero's red byte to el buffer.
+    Adjuntar el rgb puntero's green byte to el buffer.
+    Adjuntar el rgb puntero's blue byte to el buffer.
+    Agregar 1 to el column#.
   Repetir.
   Unlock el gpbitmap usando el bitmapdata.
 
@@ -1555,14 +1558,14 @@ Para convertir un nibble string to un hex string:
   Si el nibble string's length es odd, anteponer el zero byte to el nibble string.
   Colocar un substring on el nibble string.
   Lazo.
-  Si el substring es blank, salir.
-  Convertir el substring's first's contenido to un nibble.
-  Desplazar el nibble left 4 bits.
-  Agregar 1 to el substring's first.
-  Convertir el substring's first's contenido to another nibble.
-  Bitwise OR el nibble con el other nibble.
-  Adjuntar el nibble to el hex string.
-  Agregar 1 to el substring's first.
+    Si el substring es blank, salir.
+    Convertir el substring's first's contenido to un nibble.
+    Desplazar el nibble left 4 bits.
+    Agregar 1 to el substring's first.
+    Convertir el substring's first's contenido to another nibble.
+    Bitwise OR el nibble con el other nibble.
+    Adjuntar el nibble to el hex string.
+    Agregar 1 to el substring's first.
   Repetir.
 
 \Para convertir un número en un byte;
@@ -1578,9 +1581,9 @@ Para convertir un pchar to un string:
   Si el pchar es nil, salir.
   Privatizar el pchar.
   Lazo.
-  Si el pchar's contenido es el null byte, salir.
-  Adjuntar el pchar's contenido to el string.
-  Agregar 1 to el pchar.
+    Si el pchar's contenido es el null byte, salir.
+    Adjuntar el pchar's contenido to el string.
+    Agregar 1 to el pchar.
   Repetir.
 
 Para convertir un puntero y un length to un string:
@@ -1616,9 +1619,11 @@ Para convertir un position to un absolute position usando un text:
   Si el text es nil, borrar el absolute position; salir.
   Poner 0 into el absolute position.
   Lazo.
-  Obtener un row desde el text's rows.
-  Si el row es nil, salir.
-  Si el row's row# es less than el position's row#, Agregar el row's string's length to el absolute position; repetir.
+    Obtener un row desde el text's rows.
+    Si el row es nil, salir.
+    Si el row's row# es less than el position's row#, 
+      Agregar el row's string's length to el absolute position; 
+      Repetir.
   Agregar el position's column# to el absolute position.
 
 \Para convertir algunos grados precisos a algunos pasos;
@@ -1632,8 +1637,14 @@ Para convertir un query string to un string:
   Colocar un substring on el query string.
   Lazo.
     Si el substring es blank, salir.
-    Si el substring's first's contenido es el cross byte, Adjuntar " " to el string; Agregar 1 to el substring's first; repetir.
-    Si el substring's first's contenido es not el percent-sign byte, Adjuntar el substring's first's contenido to el string; Agregar 1 to el substring's first; repetir.
+    Si el substring's first's contenido es el cross byte, 
+      Adjuntar " " to el string; 
+      Agregar 1 to el substring's first; 
+      Repetir.
+    Si el substring's first's contenido es not el percent-sign byte, 
+      Adjuntar el substring's first's contenido to el string; 
+      Agregar 1 to el substring's first; 
+      Repetir.
     Si el substring's length es less than 3, salir.
     Agregar 1 to el substring's first.
     Convertir el substring's first's contenido to un nibble.
@@ -1651,7 +1662,9 @@ Para convertir some rows to un string:
     Obtener un row desde el rows.
     Si el row es nil, salir.
     Adjuntar el row's string to el string.
-    Si el string's last's contenido es el return byte, Adjuntar el linefeed byte to el string; repetir.
+    Si el string's last's contenido es el return byte, 
+      Adjuntar el linefeed byte to el string; 
+      Repetir.
   Repetir.
 
 Para convertir some rows to un string (no linefeed additions):
@@ -1672,7 +1685,10 @@ Para convertir un string y un actual font info y un original font info into un b
     Obtener un current width usando el current byte# y el actual font info's font widths.
     Obtener un original width usando el substring's last's contenido y el original font info's font widths.
     Poner el original width minus el current width into un offset.
-    Si el offset es 0, Agregar 1 to el substring's last; Agregar 1 to el current byte#; repetir.
+    Si el offset es 0, 
+      Agregar 1 to el substring's last; 
+      Agregar 1 to el current byte#; 
+      Repetir.
     Convertir el substring to un pdf string.
     Adjuntar el pdf string luego " " luego el offset luego " " to el buffer.
     Poner el substring's last plus 1 into el substring's last.
@@ -1834,8 +1850,6 @@ Para convertir un wyrd to un nibble string:
   Convertir el other byte to another nibble string.
   Adjuntar el other nibble string to el nibble string.
 
-A coord es some twips.
-
 Para copiar bytes desde un puntero to another puntero for un byte count: \ copiar handling overlap con 1 byte moves
   Intel $8BB508000000. \ mov esi,[ebp+8] \ el puntero
   Intel $8B36. \ mov esi,[esi]
@@ -1910,8 +1924,6 @@ Para copiar el guts of un text into another text:
   Poner el text's last operation into el other text's last operation.
 \ don't copiar undos y redos
 
-A copy es un número.
-
 \Para copiar una imagen en otra imagen;
 Para copiar un picture into another picture:
   Si el picture es nil, void el other picture; salir.
@@ -1967,12 +1979,6 @@ Para copiar some vertices into some other vertices:
     Copiar el vertex into another vertex.
     Adjuntar el other vertex to el other vertices.
   Repetir.
-
-The copyright byte es un byte igual to 169.
-
-A count es un número.
-
-A counter es un número.
 
 Para crear el connect handle of un winhttp request usingA url registro:
   Si el winhttp request es nil, salir.
