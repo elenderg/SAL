@@ -172,18 +172,18 @@ Para agregar un string to some string things:
   Adjuntar el string thing to el string things.
 
 An addrinfo es un record con
-A number llamado ai_flags,
-A number llamado ai_family,
-A number llamado ai_sockettype,
-A number llamado ai_protocol,
-A number llamado ai_addrlen,
-A pchar llamado ai_canonname,
-A sockaddrptr llamado ai_addr,
-A addrinfoptr llamado ai_next.
+  A number llamado ai_flags,
+  A number llamado ai_family,
+  A number llamado ai_sockettype,
+  A number llamado ai_protocol,
+  A number llamado ai_addrlen,
+  A pchar llamado ai_canonname,
+  A sockaddrptr llamado ai_addr,
+  A addrinfoptr llamado ai_next.
 
 Some addrinfo routines es un record con
-A getaddrinfo pointer,
-A freeaddrinfo pointer.
+  A getaddrinfo pointer,
+  A freeaddrinfo pointer.
 
 An addrinfoptr es un pointer to un addrinfo.
 
@@ -5324,11 +5324,11 @@ The ellipsis byte es un byte igual to 133.
 The em-dash byte es un byte igual to 151.
 
 An email es un record con
-A smtp server,
-A sender,
-A recipient,
-A subject,
-A message.
+  A smtp server,
+  A sender,
+  A recipient,
+  A subject,
+  A message.
 
 The en-dash byte es un byte igual to 150.
 
@@ -5833,8 +5833,8 @@ A file name w/o extension es un string. \ after el last slash to last dot or end
 The file-separator byte es un byte igual to 28.
 
 A filetime es un record con
-A number llamado dwlowdatetime,
-A number llamado dwhighdatetime.
+  A number llamado dwlowdatetime,
+  A number llamado dwhighdatetime.
 
 \Para llenar una caja con un color;
 Para llenar un box con un color:
