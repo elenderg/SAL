@@ -16,6 +16,317 @@
 \a grid,
 \a reply string.
 
+The remembered pdf path es un path.
+
+The registered byte es un byte igual to 174.
+
+The registered-trade-mark byte es un byte igual to 174.
+
+A remainder es un número.
+
+A recipient es un string.
+
+The registro-separator byte es un byte igual to 30.
+
+A rectangle es un figure.
+A skinny rectangle es un rectangle.
+A diamond es un figure.
+A desert landscape es un lista.
+An octagon es un figure.
+An arc es un figure.
+A circle es un figure.
+A fractal forest es un lista.
+A joke es un lista.
+A triangle es un figure.
+A heptagon es un figure. \ 7 sides
+A nonagon es un figure. \ 9 sides
+A decagon es un figure. \ 10 sides
+A hexagon es un figure.
+A koch curve es un figure.
+A twelve-sided figure es un figure.
+A half circle es un figure.
+A half circle flower es un figure.
+A quarter circle es un figure.
+A spiral es un figure.
+A leaf es un figure.
+A half leaf es un figure.
+A five pointed star es un figure.
+A six pointed star es un figure.
+A left crescent es un figure.
+A right crescent es un figure.
+A pentagon es un figure.
+A solid es un figure.
+A star es un lista.
+A cube es un figure.
+A yew tree es un figure.
+A tree es un figure.
+
+The red color es un color.
+
+The red pen es un pen.
+
+
+A really dark color es un color.
+
+A really light color es un color.
+
+A really really dark color es un color.
+
+A really really light color es un color.
+
+A random número es un número.
+
+A ratio es un fraction.
+
+A ratio pair es un fraction pair.
+A quora es un lista con 
+  A string y 
+  A color. \ quora es short for "question or answer"
+
+An x-coord es un coord.
+A y-coord es un coord.
+
+The q-key es un key igual to 81.
+
+A query byte es un query string.
+
+A query string es un string.
+
+The question-mark byte es un byte igual to 63.
+A quotient es un número.
+
+The r-key es un key igual to 82.
+
+A radius es some twips.
+
+A rainbow color es un color.
+
+The pound-sign byte es un byte igual to 163.
+
+A poutlinetextmetric es un puntero to un outlinetextmetric.
+
+The ppi es some twips.
+
+A precise degree es un número [0 to 3599].
+
+The print-screen key es un key igual to 44.
+
+A PrintDlgEx es un registro con \ usado para especificar las propiedades de un trabajo de impresión determinado
+  Un número llamado lStructSize,
+  A window llamado hwndOwner,
+  A handle llamado hDevMode,
+  A handle llamado hDevNames,
+  A canvas llamado hDC,
+  Un número llamado Flags,
+  Un número llamado Flags2,
+  Un número llamado ExclusionFlags,
+  Un número llamado nPageRanges,
+  Un número llamado nMaxPageRanges,
+  Un puntero llamado lpPageRanges,
+  Un número llamado nMinPage,
+  Un número llamado nMaxPage,
+  Un número llamado nCopies,
+  A handle llamado hInstance,
+  Un puntero llamado lpPrintTemplateName,
+  Un puntero llamado lpCallback,
+  Un número llamado nPropertyPages,
+  Un puntero llamado lphPropertyPages,
+  Un número llamado nStartPage,
+  Un número llamado dwResultAction.
+
+The printer canvas es un canvas.
+
+The printer device mode handle es un handle.
+
+A process es un handle.
+
+A process puntero es un puntero to un process.
+
+A ProcessInfo es un registro con
+  A handle llamado hProcess,
+  A handle llamado hThread,
+  Un número llamado dwProcessId,
+  Un número llamado dwThreadId.
+
+A punch line es un string.
+
+The purple color es un color.
+
+The purple pen es un pen.
+
+The plus-or-minus byte es un byte igual to 177.
+
+The plus-sign byte es un byte igual to 43.
+
+A point es un número [0 to 3839; for dividing un circle into compass points; 0 es noon; 960 points per quarter].
+
+A puntero es un registro con 4 bytes.
+
+A polygon es un lista con some vertices.
+
+A portrait sheet es un sheet.
+
+A position es un pair con un column# y un row#.
+
+A picture es un lista con
+  \ all boxes are in twits
+  A box [location of cropped picture on el page], \una caja at el box,
+  A uncropped box [location of entire picture on el page],
+  A grayscale flag,
+  A mirror flag,
+  A rotate angle, \ rotation es clockwise
+  A hex string llamado data [original bytes in original format],
+  A gpbitmap.
+
+The pink color es un color.
+
+The pink pen es un pen.
+
+A pixel es 15 twips.
+
+The pizza pie es un fraction igual to 355/113.
+
+The p-key es un key igual to 80.
+
+A pabc es un puntero to un abc.
+
+The page-down key es un key igual to 34.
+
+The page-up key es un key igual to 33.
+
+A PaintStruct es un registro con
+  An hdc llamado hdc,
+  Un número llamado fErase,
+  A box llamado rcPaint,
+  Un número llamado fRestore,
+  Un número llamado fIncUpdate,
+  32 bytes.
+
+An x-número es un número.
+A y-número es un número.
+
+A pair es un registro con 
+  A x-número y 
+  A y-número. \ y 
+  \Un número-x at el x-número y 
+  \Un número-y at el y-número.
+
+A panose es un registro con
+  A byte llamado bfamilytype,
+  A byte llamado bserifstyle,
+  A byte llamado bweight,
+  A byte llamado bproportion,
+  A byte llamado bcontrast,
+  A byte llamado bstrokevariation,
+  A byte llamado barmstyle,
+  A byte llamado bletterform,
+  A byte llamado bmidline,
+  A byte llamado bxheight.
+
+The paragraph byte es un byte igual to 182.
+
+A pastel color es un color.
+
+A path es un string. \ complete name = c:\folder1\folder2\file.ext
+
+The pause key es un key igual to 19.
+
+A pchar es un byte puntero.
+
+A pdevmode es un puntero to un devmode.
+
+A pdf es un buffer.
+
+A pdf object es un lista con
+  A kind [contents, font definition, font descriptor, font streamoutline, image object, outline entry, page, parent, root],
+  A número,
+  An offset,
+  A data buffer,
+  A font name [font definition],
+  A font info [font definition],
+  Some string listas llamado font strings [page],
+  Some string listas llamado image strings [page].
+
+A pdf outline entry es un lista con
+  A pdf object (reference),
+  A title string,
+  A page height,
+  A destination número.
+
+A pdf puntero es un puntero to un pdf.
+
+A pdf state es un registro con
+  A pdf puntero,
+  A document flag,
+  A page flag,
+  An object número,
+  Some pdf objects llamado objects,
+  An xref offset,
+  An outline pdf object (reference),
+  Some pdf outline entries llamado outline entries,
+  A root pdf object (reference),
+  A parent pdf object (reference),
+  A current contents pdf object (reference),
+  A current page pdf object (reference),
+  A current height,
+  A current border color,
+  A current fill color,
+  A font index.
+
+The pdf state es un pdf state.
+
+A pdf string es un string. \ string surrounded by ( ) y es un registro con \( for left paren, \) for right paren, \\ for backslash
+
+A pen es un color.
+
+The pen size es un número.
+
+The per-mille-sign byte es un byte igual to 137.
+
+A percent es un número. \ un scale con 100 in el denominator
+
+The percent-sign byte es un byte igual to 37.
+
+The period byte es un byte igual to 46.
+
+A OutlineTextMetric es un registro con
+  Un número llamado otmSize,
+  A textmetric llamado otmTextMetrics,
+  3 bytes, \ needed to align structure
+  A byte llamado otmFiller,
+  A panose llamado otmPanoseNumber,
+  1 bytes, \ needed to align structure
+  Un número llamado otmFsSelection,
+  Un número llamado otmFsType,
+  Un número llamado otmsCharSlopeRise,
+  Un número llamado otmsCharSlopeRun,
+  Un número llamado otmItalicAngle,
+  Un número llamado otmEmSquare,
+  Un número llamado otmAscent,
+  Un número llamado otmDescent,
+  Un número llamado otmLineGap,
+  Un número llamado otmsCapEmHeight,
+  Un número llamado otmsXHeight,
+  A box llamado otmRcFontBox,
+  Un número llamado otmMacAscent,
+  Un número llamado otmMacDescent,
+  Un número llamado otmMacLineGap,
+  Un número llamado otmusMinimumPPEM,
+  A spot llamado otmptSubscriptSize,
+  A spot llamado otmptSubscriptOffset,
+  A spot llamado otmptSuperscriptSize,
+  A spot llamado otmptSuperscriptOffset,
+  Un número llamado otmsStrikeoutSize,
+  Un número llamado otmsStrikeoutPosition,
+  Un número llamado otmsUnderscoreSize,
+  Un número llamado otmsUnderscorePosition,
+  Un puntero llamado otmpFamilyName,
+  Un puntero llamado otmpFaceName,
+  Un puntero llamado otmpStyleName,
+  Un puntero llamado otmpFullName.
+
+An x-offset es un offset.
+A y-offset es un offset.
 
 An operation es un string.
 
@@ -10162,7 +10473,6 @@ Para abrir un file usando un path y some milliseconds:
     Si el timer's ticks are greater than el milliseconds, salir.
   Repetir.
 
-
 Para outdent any selected rows in un text:
   Si el text es nil, salir.
   Lazo.
@@ -10185,45 +10495,6 @@ An outdent es un número.
 \Para delinear una caja con un color;
 Para delinear un box con un color:
   Dibujar el box con el color y el borrar color.
-
-A OutlineTextMetric es un registro con
-  Un número llamado otmSize,
-  A textmetric llamado otmTextMetrics,
-  3 bytes, \ needed to align structure
-  A byte llamado otmFiller,
-  A panose llamado otmPanoseNumber,
-  1 bytes, \ needed to align structure
-  Un número llamado otmFsSelection,
-  Un número llamado otmFsType,
-  Un número llamado otmsCharSlopeRise,
-  Un número llamado otmsCharSlopeRun,
-  Un número llamado otmItalicAngle,
-  Un número llamado otmEmSquare,
-  Un número llamado otmAscent,
-  Un número llamado otmDescent,
-  Un número llamado otmLineGap,
-  Un número llamado otmsCapEmHeight,
-  Un número llamado otmsXHeight,
-  A box llamado otmRcFontBox,
-  Un número llamado otmMacAscent,
-  Un número llamado otmMacDescent,
-  Un número llamado otmMacLineGap,
-  Un número llamado otmusMinimumPPEM,
-  A spot llamado otmptSubscriptSize,
-  A spot llamado otmptSubscriptOffset,
-  A spot llamado otmptSuperscriptSize,
-  A spot llamado otmptSuperscriptOffset,
-  Un número llamado otmsStrikeoutSize,
-  Un número llamado otmsStrikeoutPosition,
-  Un número llamado otmsUnderscoreSize,
-  Un número llamado otmsUnderscorePosition,
-  Un puntero llamado otmpFamilyName,
-  Un puntero llamado otmpFaceName,
-  Un puntero llamado otmpStyleName,
-  Un puntero llamado otmpFullName.
-
-An x-offset es un offset.
-A y-offset es un offset.
 
 Para output el arc of un ellipse usando un string:
   Poner 2761/10000 into un fraction. \ 2/3*(sqrt(2)-1)
@@ -10327,109 +10598,6 @@ Para output trazar y fill usando un border color y un fill color:
   Si el fill es clear, Poner "S" into el string. \ stroke
   Si el border es clear, Poner "f" into el string. \ fill
   Output el string.
-
-The p-key es un key igual to 80.
-
-A pabc es un puntero to un abc.
-
-The page-down key es un key igual to 34.
-
-The page-up key es un key igual to 33.
-
-A PaintStruct es un registro con
-  An hdc llamado hdc,
-  Un número llamado fErase,
-  A box llamado rcPaint,
-  Un número llamado fRestore,
-  Un número llamado fIncUpdate,
-  32 bytes.
-
-An x-número es un número.
-A y-número es un número.
-
-A pair es un registro con 
-  A x-número y 
-  A y-número. \ y 
-  \Un número-x at el x-número y 
-  \Un número-y at el y-número.
-
-A panose es un registro con
-  A byte llamado bfamilytype,
-  A byte llamado bserifstyle,
-  A byte llamado bweight,
-  A byte llamado bproportion,
-  A byte llamado bcontrast,
-  A byte llamado bstrokevariation,
-  A byte llamado barmstyle,
-  A byte llamado bletterform,
-  A byte llamado bmidline,
-  A byte llamado bxheight.
-
-The paragraph byte es un byte igual to 182.
-
-A pastel color es un color.
-
-A path es un string. \ complete name = c:\folder1\folder2\file.ext
-
-The pause key es un key igual to 19.
-
-A pchar es un byte puntero.
-
-A pdevmode es un puntero to un devmode.
-
-A pdf es un buffer.
-
-A pdf object es un lista con
-  A kind [contents, font definition, font descriptor, font streamoutline, image object, outline entry, page, parent, root],
-  A número,
-  An offset,
-  A data buffer,
-  A font name [font definition],
-  A font info [font definition],
-  Some string listas llamado font strings [page],
-  Some string listas llamado image strings [page].
-
-A pdf outline entry es un lista con
-  A pdf object (reference),
-  A title string,
-  A page height,
-  A destination número.
-
-A pdf puntero es un puntero to un pdf.
-
-A pdf state es un registro con
-  A pdf puntero,
-  A document flag,
-  A page flag,
-  An object número,
-  Some pdf objects llamado objects,
-  An xref offset,
-  An outline pdf object (reference),
-  Some pdf outline entries llamado outline entries,
-  A root pdf object (reference),
-  A parent pdf object (reference),
-  A current contents pdf object (reference),
-  A current page pdf object (reference),
-  A current height,
-  A current border color,
-  A current fill color,
-  A font index.
-
-The pdf state es un pdf state.
-
-A pdf string es un string. \ string surrounded by ( ) y es un registro con \( for left paren, \) for right paren, \\ for backslash
-
-A pen es un color.
-
-The pen size es un número.
-
-The per-mille-sign byte es un byte igual to 137.
-
-A percent es un número. \ un scale con 100 in el denominator
-
-The percent-sign byte es un byte igual to 37.
-
-The period byte es un byte igual to 46.
 
 Para elegir  un brightness between un percent y another percent;
 Para vary un lightness between un percent y another percent;
@@ -10700,24 +10868,6 @@ Para elegir  un really really light color:
   Poner 875 into el really really light color's lightness.
   Poner el really really light color into el context's color.
 
-A picture es un lista con
-  \ all boxes are in twits
-  A box [location of cropped picture on el page], \una caja at el box,
-  A uncropped box [location of entire picture on el page],
-  A grayscale flag,
-  A mirror flag,
-  A rotate angle, \ rotation es clockwise
-  A hex string llamado data [original bytes in original format],
-  A gpbitmap.
-
-The pink color es un color.
-
-The pink pen es un pen.
-
-A pixel es 15 twips.
-
-The pizza pie es un fraction igual to 355/113.
-
 \Para reproducir una ola;
 Para reproducir un wave:
   Llamar "winmm.dll" "PlaySound" con el wave's first y 0 y 5 [snd_memory+snd_async].
@@ -10737,20 +10887,6 @@ Para reproducir un wave file y wait:
   Privatizar el wave file.
   Null terminate el wave file.
   Llamar "winmm.dll" "PlaySound" con el wave file's first y 0 y 131072 [snd_filename+snd_sync].
-
-The plus-or-minus byte es un byte igual to 177.
-
-The plus-sign byte es un byte igual to 43.
-
-A point es un número [0 to 3839; for dividing un circle into compass points; 0 es noon; 960 points per quarter].
-
-A puntero es un registro con 4 bytes.
-
-A polygon es un lista con some vertices.
-
-A portrait sheet es un sheet.
-
-A position es un pair con un column# y un row#.
 
 \Para ajustar una subcadena en una cadena;
 Para ajustar un substring on un string:
@@ -10775,14 +10911,6 @@ Para post un data string to un url y receive un response string: \ only works co
   Leer el response desde el winhttp request.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
   Destroy el winhttp request.
-
-The pound-sign byte es un byte igual to 163.
-
-A poutlinetextmetric es un puntero to un outlinetextmetric.
-
-The ppi es some twips.
-
-A precise degree es un número [0 to 3599].
 
 \Para anteponer un byte a una cadena;
 Para anteponer un byte to un string:
@@ -10826,51 +10954,6 @@ Para anteponer some listas to some other listas:
     Eliminar el lista desde el listas.
     Anteponer el lista to el other listas.
   Repetir.
-
-The print-screen key es un key igual to 44.
-
-A PrintDlgEx es un registro con \ usado para especificar las propiedades de un trabajo de impresión determinado
-  Un número llamado lStructSize,
-  A window llamado hwndOwner,
-  A handle llamado hDevMode,
-  A handle llamado hDevNames,
-  A canvas llamado hDC,
-  Un número llamado Flags,
-  Un número llamado Flags2,
-  Un número llamado ExclusionFlags,
-  Un número llamado nPageRanges,
-  Un número llamado nMaxPageRanges,
-  Un puntero llamado lpPageRanges,
-  Un número llamado nMinPage,
-  Un número llamado nMaxPage,
-  Un número llamado nCopies,
-  A handle llamado hInstance,
-  Un puntero llamado lpPrintTemplateName,
-  Un puntero llamado lpCallback,
-  Un número llamado nPropertyPages,
-  Un puntero llamado lphPropertyPages,
-  Un número llamado nStartPage,
-  Un número llamado dwResultAction.
-
-The printer canvas es un canvas.
-
-The printer device mode handle es un handle.
-
-A process es un handle.
-
-A process puntero es un puntero to un process.
-
-A ProcessInfo es un registro con
-  A handle llamado hProcess,
-  A handle llamado hThread,
-  Un número llamado dwProcessId,
-  Un número llamado dwThreadId.
-
-A punch line es un string.
-
-The purple color es un color.
-
-The purple pen es un pen.
 
 Para poner el actual data of un font into un buffer: \ only works con true/open type fonts
   Crear el hfont of el memory canvas usando el font.
@@ -11847,23 +11930,12 @@ Para poner un wyrd into un número:
   Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el número
   Intel $8903. \ mov [ebx],eax
 
-An x-coord es un coord.
-A y-coord es un coord.
-
 \Para poner una coord-x y una coord-y y otra coord-x y otra coord-y en una línea;
 Para poner un x-coord y un y-coord y another x-coord y another y-coord into un line:
   Poner el x-coord into el line's start's x-coord.
   Poner el y-coord into el line's start's y-coord.
   Poner el other x-coord into el line's end's x-coord.
   Poner el other y-coord into el line's end's y-coord.
-
-The q-key es un key igual to 81.
-
-A query byte es un query string.
-
-A query string es un string.
-
-The question-mark byte es un byte igual to 63.
 
 Para abandonar;
 Para quit;
@@ -11875,10 +11947,6 @@ Para relinquish control:
   Poner "done" into el event's kind.
   \Poner "hecho" into el event's clase.
   Enque el event.
-
-A quora es un lista con 
-  A string y 
-  A color. \ quora es short for "question or answer"
 
 \Para citar una cadena;
 Para citar un string: \ inserts leading, trailing y nested double-quotes
@@ -11893,14 +11961,6 @@ Para citar un string: \ inserts leading, trailing y nested double-quotes
   Adjuntar el double-quote byte to el other string.
   Poner el other string into el string.
 
-A quotient es un número.
-
-The r-key es un key igual to 82.
-
-A radius es some twips.
-
-A rainbow color es un color.
-
 \Para elevar un número a otro número;
 Para elevar un número to another número:
   Si el other número es 0, Poner 1 into el número; salir.
@@ -11911,12 +11971,6 @@ Para elevar un número to another número:
     Multiplicar el result by el número.
   Repetir.
   Poner el result into el número.
-
-A random número es un número.
-
-A ratio es un fraction.
-
-A ratio pair es un fraction pair.
 
 Para leer el bible:
   Si el bible es not nil, salir.
@@ -12097,14 +12151,6 @@ Para leer un url into un buffer:
   Llamar "wininet.dll" "InternetCloseHandle" con el url handle.
   Llamar "wininet.dll" "InternetCloseHandle" con el internet handle.
 
-A really dark color es un color.
-
-A really light color es un color.
-
-A really really dark color es un color.
-
-A really really light color es un color.
-
 Para reassign un puntero usando un byte count:
   Si el puntero es nil, assign el puntero usando el byte count; salir.
   Si el byte count es 0, unassign el puntero; salir.
@@ -12135,47 +12181,6 @@ Para receive el response desde un winhttp request:
   retornando un result número.
   Si el result es 0, Poner "No pude enviar el pedido." into el error de e/s; salir.
 
-A recipient es un string.
-
-The registro-separator byte es un byte igual to 30.
-
-A rectangle es un figure.
-A skinny rectangle es un rectangle.
-A diamond es un figure.
-A desert landscape es un lista.
-An octagon es un figure.
-An arc es un figure.
-A circle es un figure.
-A fractal forest es un lista.
-A joke es un lista.
-A triangle es un figure.
-A heptagon es un figure. \ 7 sides
-A nonagon es un figure. \ 9 sides
-A decagon es un figure. \ 10 sides
-A hexagon es un figure.
-A koch curve es un figure.
-A twelve-sided figure es un figure.
-A half circle es un figure.
-A half circle flower es un figure.
-A quarter circle es un figure.
-A spiral es un figure.
-A leaf es un figure.
-A half leaf es un figure.
-A five pointed star es un figure.
-A six pointed star es un figure.
-A left crescent es un figure.
-A right crescent es un figure.
-A pentagon es un figure.
-A solid es un figure.
-A star es un lista.
-A cube es un figure.
-A yew tree es un figure.
-A tree es un figure.
-
-The red color es un color.
-
-The red pen es un pen.
-
 \Para reducir una fracción;
 Para reducir un fraction:
   Obtener un gcd usando el fraction's numerator y el fraction's denominator.
@@ -12204,12 +12209,6 @@ Para actualizar el screen usando un box:
   Llamar "gdi32.dll" "BitBlt" con el screen canvas y el box's left y el box's top y el box's width y el box's height 
   y el current canvas y el box's left y el box's top y 13369376 [srccopy].
 
-The registered byte es un byte igual to 174.
-
-The registered-trade-mark byte es un byte igual to 174.
-
-A remainder es un número.
-
 \Para recordar un texto;
 Para recordar un text:
   Si el text es nil, salir.
@@ -12229,8 +12228,6 @@ Para recordar un text con un operation:
 
 Para recordar dónde estamos:
   Save el context.
-
-The remembered pdf path es un path.
 
 Para eliminar any selected bytes in un text:
   Si el text es nil, salir.
