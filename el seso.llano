@@ -11,7 +11,7 @@
 El error de e/s es una string.
 
 Para escribir un byte para StdOut:
-  Llamada "kernel32.dll" "WriteFile" con
+  Llamar "kernel32.dll" "WriteFile" con
     El StdOut handle [hFile]
     y el byte's dirección [lpBuffer]
     y 1  [nNumberOfBytesToWrite]
@@ -23,14 +23,14 @@ Para escribir para StdOut un string:
   Escribir el crlf string para Stdout.
 
 Para escribir un string para StdOut:
-  Llamada "kernel32.dll" "GetStdHandle" con
+  Llamar "kernel32.dll" "GetStdHandle" con
   -11 [nStdHandle = STD_OUTPUT_HANDLE]
   retornando el StdOut handle.
   Si el StdOut handle es -1, \ INVALID HANDLE
     Poner "Error. Handle STDOUT inválida." into el error de e/s;
     \Cloquear; 
     Salir.
-  Llamada "kernel32.dll" "WriteFile" con
+  Llamar "kernel32.dll" "WriteFile" con
     el StdOut handle [hFile] and
     el string's first byte puntero [lpBuffer]
     y the string's length [nNumberOfBytesToWrite]
@@ -226,14 +226,14 @@ Para ajustar un picture (extract boxes desde gpbitmap):
 
 Para ajustar spacing usando un string:
   Si el current canvas es not el printer canvas, salir.
-  Llamada "gdi32.dll" "SetTextCharacterExtra" con el printer canvas y 0.
-  Llamada "gdi32.dll" "GetCurrentObject" con el printer canvas y 6 [obj_font] retornando un handle.
-  Llamada "gdi32.dll" "SelectObject" con el memory canvas y el handle.
+  Llamar "gdi32.dll" "SetTextCharacterExtra" con el printer canvas y 0.
+  Llamar "gdi32.dll" "GetCurrentObject" con el printer canvas y 6 [obj_font] retornando un handle.
+  Llamar "gdi32.dll" "SelectObject" con el memory canvas y el handle.
   Obtener un width usando el string y el memory canvas.
-  Llamada "gdi32.dll" "SelectObject" con el memory canvas y el null hfont.
+  Llamar "gdi32.dll" "SelectObject" con el memory canvas y el null hfont.
   Obtener another width usando el string y el printer canvas.
   Poner el width minus el other width divided by el string's length into un número.
-  Llamada "gdi32.dll" "SetTextCharacterExtra" con el printer canvas y el número.
+  Llamar "gdi32.dll" "SetTextCharacterExtra" con el printer canvas y el número.
 
 Para align un text usando un alignment:
   Poner el alignment into el text's alignment.
@@ -255,9 +255,9 @@ An angle es some precise degrees [0 to 3599].
 \Para adjuntar un búfer a un archivo;
 Para adjuntar un buffer to un file:
   Borrar el error de e/s.
-  Llamada "kernel32.dll" "SetFilePointer" con el file y 0 y 0 y 2 [file_end] retornando un result número.
+  Llamar "kernel32.dll" "SetFilePointer" con el file y 0 y 0 y 2 [file_end] retornando un result número.
   Si el result número es -1, Poner "Error posicionando puntero de archivo." into el error de e/s; salir.
-  Llamada "kernel32.dll" "WriteFile" con el file y el buffer's first y el buffer's length y un número's dirección y 0 retornando el result número.
+  Llamar "kernel32.dll" "WriteFile" con el file y el buffer's first y el buffer's length y un número's dirección y 0 retornando el result número.
   Si el result número es 0, Poner "Error escribiendo archivo." into el error de e/s; salir.
 
 \Para adjuntar un byte a una cadena;
@@ -377,7 +377,7 @@ Para assign un puntero usando un byte count:
   Si el byte count es 0, void el puntero; salir.
   Privatizar el byte count.
   Redondear el byte count up to el nearest power of two.
-  Llamada "kernel32.dll" "HeapAlloc" con el heap puntero y 8 [heap_zero_memory] y el byte count retornando el puntero.
+  Llamar "kernel32.dll" "HeapAlloc" con el heap puntero y 8 [heap_zero_memory] y el byte count retornando el puntero.
   Si el puntero es not nil, Agregar 1 to el heap count; salir.
 
 The asterisk byte es un byte igual to 42.
@@ -412,7 +412,7 @@ The bar byte es un byte igual to 124.
 A baseline es un número.
 
 Para pitar: 
-  Llamada "user32.dll" "MessageBeep" con 0.
+  Llamar "user32.dll" "MessageBeep" con 0.
 
 \Para comenzar una hoja de paisaje;
 \Para comenzar una hoja apaisada;
@@ -442,7 +442,7 @@ Para comenzar printing:
   Initialize el printer canvas.
   Poner un docinfo's magnitude into el docinfo's cbsize.
   Poner el module's name's first into el docinfo's lpszdocname.
-  Llamada "gdi32.dll" "StartDocA" con el printer canvas y el docinfo's dirección.
+  Llamar "gdi32.dll" "StartDocA" con el printer canvas y el docinfo's dirección.
 
 Para comenzar printing un pdf:
   Definir el pdf state's document flag.
@@ -472,28 +472,28 @@ Para comenzar un sheet:
 \Para comenzar una hoja dada una caja;
 Para comenzar un sheet usando un box:
   Si el pdf state's document flag es set, comenzar el sheet usando el box (pdf style); salir.
-  Llamada "kernel32.dll" "GlobalLock" con el printer device mode handle retornando un pdevmode.
+  Llamar "kernel32.dll" "GlobalLock" con el printer device mode handle retornando un pdevmode.
   Si el pdevmode es nil, salir.
   Bitwise OR el pdevmode's dmfields con 1 [dm_orientation].
   Poner 1 [dmorient_portrait] into el pdevmode's dmorientation.
   Si el box's width es greater than el box's height, Poner 2 [dmorient_landscape] into el pdevmode's dmorientation.
-  Llamada "gdi32.dll" "ResetDCA" con el printer canvas y el pdevmode.
-  Llamada "kernel32.dll" "GlobalUnlock" con el printer device mode handle.
-  Llamada "gdi32.dll" "SetGraphicsMode" con el printer canvas y 2 [gm_advanced].
-  Llamada "gdi32.dll" "SetBkMode" con el printer canvas y 1  [transparent].
-  Llamada "gdi32.dll" "SetMapMode" con el printer canvas y 8 [mm_anisotropic].
-  Llamada "gdi32.dll" "GetDeviceCaps" con el printer canvas y 112 [physicaloffsetx] retornando un pair's x-número.
-  Llamada "gdi32.dll" "GetDeviceCaps" con el printer canvas y 113 [physicaloffsety] retornando el pair's y-número.
+  Llamar "gdi32.dll" "ResetDCA" con el printer canvas y el pdevmode.
+  Llamar "kernel32.dll" "GlobalUnlock" con el printer device mode handle.
+  Llamar "gdi32.dll" "SetGraphicsMode" con el printer canvas y 2 [gm_advanced].
+  Llamar "gdi32.dll" "SetBkMode" con el printer canvas y 1  [transparent].
+  Llamar "gdi32.dll" "SetMapMode" con el printer canvas y 8 [mm_anisotropic].
+  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 112 [physicaloffsetx] retornando un pair's x-número.
+  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 113 [physicaloffsety] retornando el pair's y-número.
   Negar el pair.
-  Llamada "gdi32.dll" "SetViewportOrgEx" con el printer canvas y el pair's x-número y el pair's y-número y nil.
-  Llamada "gdi32.dll" "GetDeviceCaps" con el printer canvas y 88 [logpixelsx] retornando el pair's x-número.
-  Llamada "gdi32.dll" "GetDeviceCaps" con el printer canvas y 90 [logpixelsy] retornando el pair's y-número.
-  Llamada "gdi32.dll" "SetViewportExtEx" con el printer canvas y el pair's x-número y el pair's y-número y nil. 
-  Llamada "gdi32.dll" "SetWindowOrgEx" con el printer canvas y 0 y 0 y nil.
-  Llamada "gdi32.dll" "SetWindowExtEx" con el printer canvas y el tpi y el tpi y nil.
-  Llamada "gdi32.dll" "StartPage" con el printer canvas.
+  Llamar "gdi32.dll" "SetViewportOrgEx" con el printer canvas y el pair's x-número y el pair's y-número y nil.
+  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 88 [logpixelsx] retornando el pair's x-número.
+  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 90 [logpixelsy] retornando el pair's y-número.
+  Llamar "gdi32.dll" "SetViewportExtEx" con el printer canvas y el pair's x-número y el pair's y-número y nil. 
+  Llamar "gdi32.dll" "SetWindowOrgEx" con el printer canvas y 0 y 0 y nil.
+  Llamar "gdi32.dll" "SetWindowExtEx" con el printer canvas y el tpi y el tpi y nil.
+  Llamar "gdi32.dll" "StartPage" con el printer canvas.
   Poner el printer canvas into el current canvas.
-  Llamada "gdi32.dll" "GetDeviceCaps" con el printer canvas y 88 [logpixelsx] retornando un número.
+  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 88 [logpixelsx] retornando un número.
   Poner el tpp into el saved tpp.
   Poner el tpi divided by el número into el tpp.
 
@@ -817,7 +817,7 @@ Para incrementar un rider by un número:
 
 \Para zumbar;
 Para buzz: 
-  Llamada "kernel32.dll" "Beep" con 220 y 200.
+  Llamar "kernel32.dll" "Beep" con 220 y 200.
 
 A byte count es un count.
 
@@ -1132,7 +1132,7 @@ Para borrar un wyrd:
 
 \Para cerrar un archivo;
 Para cerrar un file:
-  Llamada "kernel32.dll" "CloseHandle" con el file.
+  Llamar "kernel32.dll" "CloseHandle" con el file.
 
 A clsid es un uuid.
 
@@ -1266,16 +1266,16 @@ Para compatibly handle any message con un window un message número un w-param y 
   Si el message es 518, handle any wm-rbuttondblclk con el l-param; Poner 0 into eax; salir.
   Si el message es 032, handle any wm-setcursor; Poner 1 into eax; salir.
   Si el message es 260, handle any wm-syskeydown con el w-param y el l-param; Poner 0 into eax; salir.
-  Llamada "user32.dll" "DefWindowProcA" con el window y el message y el w-param y el l-param.
+  Llamar "user32.dll" "DefWindowProcA" con el window y el message y el w-param y el l-param.
 
 Para compatibly wait for un process puntero:
-  Llamada "kernel32.dll" "WaitForSingleObject" con el process puntero's contenido y -1 [infinite].
-  Llamada "kernel32.dll" "CloseHandle" con el process puntero's contenido.
+  Llamar "kernel32.dll" "WaitForSingleObject" con el process puntero's contenido y -1 [infinite].
+  Llamar "kernel32.dll" "CloseHandle" con el process puntero's contenido.
   Poner 0 into el process puntero's contenido.
-  Llamada "user32.dll" "GetForegroundWindow" retornando un window.
+  Llamar "user32.dll" "GetForegroundWindow" retornando un window.
   Si el window es el main window, Poner 0 into eax; salir.
-  Llamada "user32.dll" "ShowWindow" con el main window y 6 [sw_minimize].
-  Llamada "user32.dll" "ShowWindow" con el main window y 9 [sw_restore].
+  Llamar "user32.dll" "ShowWindow" con el main window y 6 [sw_minimize].
+  Llamar "user32.dll" "ShowWindow" con el main window y 9 [sw_restore].
   Poner 0 into eax. \ set return value of thread
 
 \A console es un lista con 
@@ -1373,14 +1373,14 @@ Para convertir un color to un colorref:
   Limitar el color's lightness to 1 y 239.
   Scale el color's hue usando 240/3600.
   Limitar el color's hue to 1 y 239.
-  Llamada "shlwapi.dll" "ColorHLSToRGB" con el color's hue y el color's lightness y el color's saturation retornando el colorref.
+  Llamar "shlwapi.dll" "ColorHLSToRGB" con el color's hue y el color's lightness y el color's saturation retornando el colorref.
 
 Para convertir un color to un rgb:
   Convertir el color to un colorref.
   Convertir el colorref to el rgb. 
 
 Para convertir un colorref to un color:
-  Llamada "shlwapi.dll" "ColorRGBToHLS" con el colorref y un wyrd's dirección y another wyrd's dirección y un third wyrd's dirección.
+  Llamar "shlwapi.dll" "ColorRGBToHLS" con el colorref y un wyrd's dirección y another wyrd's dirección y un third wyrd's dirección.
   Poner el wyrd into el color's hue.
   Poner el other wyrd into el color's  lightness.
   Poner el third wyrd into el color's saturation.
@@ -1402,7 +1402,7 @@ Para convertir un colorref to un rgb:
 
 Para convertir un filetime to un string:
   Borrar el string.
-  Llamada "kernel32.dll" "FileTimeToSystemTime" con el filetime's dirección y un systemtime's dirección retornando un número.
+  Llamar "kernel32.dll" "FileTimeToSystemTime" con el filetime's dirección y un systemtime's dirección retornando un número.
   Si el número es 0, salir.
   Poner el systemtime's wyear into un date/time's year.
   Poner el systemtime's wmonth into el date/time's month.
@@ -1422,7 +1422,7 @@ Para convertir un flag to un hex string:
 Para convertir un font to un hfont:
   Privatizar el font.
   Null terminate el font's name.
-  Llamada "gdi32.dll" "CreateFontA" con - el font's height times 3 divided by 4 y 0 y 0 y 0 y 0 y 0 y 0 y 0 
+  Llamar "gdi32.dll" "CreateFontA" con - el font's height times 3 divided by 4 y 0 y 0 y 0 y 0 y 0 y 0 y 0 
   y 1  [default_charset] y 0 y 0 y 5 [cleartype_quality] y 4 [truetype_fonttype] y el font's name's first retornando el hfont.
 
 Para convertir un font info to pdf em units:
@@ -1503,7 +1503,7 @@ Para convertir un l-param to un key: \ assumes l-param desde wm_char message
   Poner el l-param into el key.
   Desplazar el key right 16 bits.
   Bitwise AND el key con 255.
-  Llamada "user32.dll" "MapVirtualKeyA" con el key y 1  retornando el key.
+  Llamar "user32.dll" "MapVirtualKeyA" con el key y 1  retornando el key.
   Si el numlock key was not toggled, salir.
   Si el key es el insert key, Poner el numpad-zero key into el key; salir.
   Si el key es el delete key, Poner el numpad-period key into el key; salir.
@@ -1781,7 +1781,7 @@ Para convertir un string to some rows:
 
 Para convertir un string to un uuid:
   Convertir el string to un wide string y null terminate.
-  Llamada "ole32.dll" "CLSIDFromString" con el wide string's first y el uuid's dirección.
+  Llamar "ole32.dll" "CLSIDFromString" con el wide string's first y el uuid's dirección.
 
 Para convertir un string to un wide string:
   Borrar el wide string.
@@ -1805,7 +1805,7 @@ Para convertir un url to un url registro:
   Poner 1 into el urlcomponents' dwhostnamelength.
   Poner 1 into el urlcomponents' dwurlpathlength.
   Poner 1 into el urlcomponents' dwextrainfolength.
-  Llamada "wininet.dll" "InternetCrackUrlA" con el url's first y 0 y 0 y el urlcomponents' dirección retornando un número.
+  Llamar "wininet.dll" "InternetCrackUrlA" con el url's first y 0 y 0 y el urlcomponents' dirección retornando un número.
   Convertir el urlcomponents' lpszscheme y el urlcomponents' dwschemelength to el url registro's scheme.
   Convertir el urlcomponents' lpszhostname y el urlcomponents' dwhostnamelength to el url registro's host name.
   Convertir el urlcomponents' lpszurlpath y el urlcomponents' dwurlpathlength to el url registro's path.
@@ -1872,7 +1872,7 @@ Para copiar un event into another event:
 
 Para copiar un gpbitmap into another gpbitmap:
   Si el gpbitmap es nil, void el other gpbitmap; salir.
-  Llamada "gdiplus.dll" "GdipCloneBitmapAreaI" con 0 y 0 y el gpbitmap's width y el gpbitmap's height y 0 [pixelformatdontcare] and
+  Llamar "gdiplus.dll" "GdipCloneBitmapAreaI" con 0 y 0 y el gpbitmap's width y el gpbitmap's height y 0 [pixelformatdontcare] and
 The gpbitmap y el other gpbitmap's dirección.
 
 Para copiar el guts of un text into another text:
@@ -1961,7 +1961,7 @@ A counter es un número.
 Para crear el connect handle of un winhttp request usingA url registro:
   Si el winhttp request es nil, salir.
   Convertir el url registro's host name into un wide string llamado wide host name y null terminate.
-  Llamada "winhttp.dll" "WinHttpConnect"
+  Llamar "winhttp.dll" "WinHttpConnect"
     con el winhttp request's session
     y el wide host name's first
     y el url registro's port
@@ -1994,7 +1994,7 @@ Para crear un crypt session con un passphrase string: \ sets i/o error if failur
   Borrar el error de e/s.
   Allocate memory for el crypt session.
 \ acquire context
-  Llamada "advapi32.dll" "CryptAcquireContextA" con 
+  Llamar "advapi32.dll" "CryptAcquireContextA" con 
     el crypt session's hcryptprov's dirección 
     y 0 
     y "Microsoft Enhanced Cryptographic Provider v1.0"'s first 
@@ -2005,14 +2005,14 @@ Para crear un crypt session con un passphrase string: \ sets i/o error if failur
     Destroy el crypt session; 
     Salir.
 \ crear hash
-  Llamada "advapi32.dll" "CryptCreateHash" con el crypt session's hcryptprov y 32771 [calg_md5] y 0 y 0 
+  Llamar "advapi32.dll" "CryptCreateHash" con el crypt session's hcryptprov y 32771 [calg_md5] y 0 y 0 
   y el crypt session's hcrypthash's dirección retornando el result número.
   Si el result es 0, Poner "No se pudo crear el hash." into el error de e/s; destroy el crypt session; salir.
 \ hash passphrase
-  Llamada "advapi32.dll" "CryptHashData" con el crypt session's hcrypthash y el passphrase's first y el passphrase's length y 0 retornando el result número.
+  Llamar "advapi32.dll" "CryptHashData" con el crypt session's hcrypthash y el passphrase's first y el passphrase's length y 0 retornando el result número.
   Si el result es 0, Poner "No pude hacer hash de la contraseña." into el error de e/s; destroy el crypt session; salir.
 \ derive session key
-  Llamada "advapi32.dll" "CryptDeriveKey" con el crypt session's hcryptprov y 26625 [calg_rc4 stream cipher] y el crypt session's hcrypthash 
+  Llamar "advapi32.dll" "CryptDeriveKey" con el crypt session's hcryptprov y 26625 [calg_rc4 stream cipher] y el crypt session's hcrypthash 
   And 8388608 [128 bit] y el crypt session's hcryptkey's dirección retornando el result número.
   Si el result es 0, Poner "No pude derivar la clave de sesión." into el error de e/s; destroy el crypt session; salir.
 
@@ -2052,7 +2052,7 @@ Para crear some font widths usando un font:
   Assign el font widths' data usando el font widths' count times un número's magnitude.
   Crear el hfont of el memory canvas usando el font.
   Assign un original abc puntero usando 256 times un abc's magnitude.
-  Llamada "gdi32.dll" "GetCharABCWidthsA" con el memory canvas y 0 y 255 y el original abc puntero.
+  Llamar "gdi32.dll" "GetCharABCWidthsA" con el memory canvas y 0 y 255 y el original abc puntero.
   Destroy el hfont of el memory canvas.
   Poner el original abc puntero into un abc puntero.
   Poner el font widths' data into un número puntero.
@@ -2075,36 +2075,36 @@ Para crear some font widths usando un font y un string:
   Poner el string's length into el gcpresults' nglyphs.
   Assign el gcpresults' lpdx usando el string's length times un número's magnitude.
   Crear el hfont of el memory canvas usando el font.
-  Llamada "gdi32.dll" "GetCharacterPlacementA" con el memory canvas y el string's first
+  Llamar "gdi32.dll" "GetCharacterPlacementA" con el memory canvas y el string's first
   y el string's length y 0 y el gcpresults' dirección y 0.
   Destroy el hfont of el memory canvas.
   Poner el gcpresults' lpdx into el font widths' data.
 
 Para crear un gpbitmap usando un buffer:
   Borrar el error de e/s.
-  Llamada "kernel32.dll" "GlobalAlloc" con 2 [gmem_moveable] y el buffer's length retornando un handle.
-  Llamada "kernel32.dll" "GlobalLock" con el handle retornando un puntero.
+  Llamar "kernel32.dll" "GlobalAlloc" con 2 [gmem_moveable] y el buffer's length retornando un handle.
+  Llamar "kernel32.dll" "GlobalLock" con el handle retornando un puntero.
   Copiar bytes desde el buffer's first to el puntero for el buffer's length.
-  Llamada "kernel32.dll" "GlobalUnlock" con el handle.
-  Llamada "ole32.dll" "CreateStreamOnHGlobal" con el handle y 1  [true] y un istream's dirección.
-  Llamada "gdiplus.dll" "GdipCreateBitmapFromStream" con el istream y el gpbitmap's dirección retornando un número.
+  Llamar "kernel32.dll" "GlobalUnlock" con el handle.
+  Llamar "ole32.dll" "CreateStreamOnHGlobal" con el handle y 1  [true] y un istream's dirección.
+  Llamar "gdiplus.dll" "GdipCreateBitmapFromStream" con el istream y el gpbitmap's dirección retornando un número.
   Si el número es not 0, Poner "No sé como procesar este tipo de imagen." into el error de e/s; void el gpbitmap.
-  Llamada el istream's vtable's release con el istream.
+  Llamar el istream's vtable's release con el istream.
 
 Para crear un gpimageattributes (grayscale):
-  Llamada "gdiplus.dll" "GdipCreateImageAttributes" con el gpimageattributes' dirección.
-  Llamada "gdiplus.dll" "GdipSetImageAttributesColorMatrix" con el gpimageattributes y 0 [coloradjusttypedefault] y 1  
+  Llamar "gdiplus.dll" "GdipCreateImageAttributes" con el gpimageattributes' dirección.
+  Llamar "gdiplus.dll" "GdipSetImageAttributesColorMatrix" con el gpimageattributes y 0 [coloradjusttypedefault] y 1  
   y el grayscale color matrix's first y 0 y 0 [colormatrixflagsdefault].
 
 Para crear el hbrush of un canvas usando un color:
   Convertir el color to un colorref.
   Si el color es clear, Poner el null hbrush into un hbrush. 
   Si el color es not clear, call "gdi32.dll" "CreateSolidBrush" con el colorref retornando el hbrush.
-  Llamada "gdi32.dll" "SelectObject" con el canvas y el hbrush.
+  Llamar "gdi32.dll" "SelectObject" con el canvas y el hbrush.
 
 Para crear el hfont of un canvas usando un font:
   Convertir el font to un hfont.
-  Llamada "gdi32.dll" "SelectObject" con el canvas y el hfont.
+  Llamar "gdi32.dll" "SelectObject" con el canvas y el hfont.
 
 Para crear el hpen of un canvas usando un color:
   Convertir el color to un colorref.
@@ -2112,38 +2112,38 @@ Para crear el hpen of un canvas usando un color:
   Poner el tpp times el pen size into un número.
   Si el canvas es el printer canvas, Poner 1/96 inch times el pen size into el número.
   Si el color es not clear, call "gdi32.dll" "CreatePen" con 0 [ps_solid] y el número y el colorref retornando el hpen. 
-  Llamada "gdi32.dll" "SelectObject" con el canvas y el hpen.
+  Llamar "gdi32.dll" "SelectObject" con el canvas y el hpen.
 
 Para crear un hrgn usando un box:
   Privatizar el box.
   Agregar el tpp to el box's right-bottom.
-  Llamada "gdi32.dll" "BeginPath" con el current canvas.
-  Llamada "gdi32.dll" "Rectangle" con el current canvas y el box's left y el box's top y el box's right y el box's bottom.
-  Llamada "gdi32.dll" "EndPath" con el current canvas.
-  Llamada "gdi32.dll" "PathToRegion" con el current canvas retornando el hrgn.
+  Llamar "gdi32.dll" "BeginPath" con el current canvas.
+  Llamar "gdi32.dll" "Rectangle" con el current canvas y el box's left y el box's top y el box's right y el box's bottom.
+  Llamar "gdi32.dll" "EndPath" con el current canvas.
+  Llamar "gdi32.dll" "PathToRegion" con el current canvas retornando el hrgn.
 
 Para crear un hrgn usando un ellipse:
   Poner el ellipse's box into un box.
-  Llamada "gdi32.dll" "BeginPath" con el current canvas.
-  Llamada "gdi32.dll" "Ellipse" con el current canvas y el box's left y el box's top y el box's right y el box's bottom.
-  Llamada "gdi32.dll" "EndPath" con el current canvas.
-  Llamada "gdi32.dll" "PathToRegion" con el current canvas retornando el hrgn.
+  Llamar "gdi32.dll" "BeginPath" con el current canvas.
+  Llamar "gdi32.dll" "Ellipse" con el current canvas y el box's left y el box's top y el box's right y el box's bottom.
+  Llamar "gdi32.dll" "EndPath" con el current canvas.
+  Llamar "gdi32.dll" "PathToRegion" con el current canvas retornando el hrgn.
 
 Para crear un hrgn usando un polygon:
   Si el polygon es nil, Poner 0 into el hrgn; salir.
   Crear un vertex array usando el polygon's vertices.
-  Llamada "gdi32.dll" "LPtoDP" con el current canvas y el vertex array's spot puntero y el vertex array's count.
-  Llamada "gdi32.dll" "CreatePolygonRgn" con el vertex array's spot puntero y el vertex array's count y 2 [winding] retornando el hrgn.
+  Llamar "gdi32.dll" "LPtoDP" con el current canvas y el vertex array's spot puntero y el vertex array's count.
+  Llamar "gdi32.dll" "CreatePolygonRgn" con el vertex array's spot puntero y el vertex array's count y 2 [winding] retornando el hrgn.
   Destroy el vertex array.
 
 Para crear un hrgn usando un roundy box:
   Si el roundy box's radius es 0, crear el hrgn usando el roundy box as un box; salir.
   Poner el roundy box into un box.
   Poner el roundy box's radius times 2 into un diameter número.
-  Llamada "gdi32.dll" "BeginPath" con el current canvas.
-  Llamada "gdi32.dll" "RoundRect" con el current canvas y el box's left y el box's top y el box's right y el box's bottom y el diameter y el diameter.
-  Llamada "gdi32.dll" "EndPath" con el current canvas.
-  Llamada "gdi32.dll" "PathToRegion" con el current canvas retornando el hrgn.
+  Llamar "gdi32.dll" "BeginPath" con el current canvas.
+  Llamar "gdi32.dll" "RoundRect" con el current canvas y el box's left y el box's top y el box's right y el box's bottom y el diameter y el diameter.
+  Llamar "gdi32.dll" "EndPath" con el current canvas.
+  Llamar "gdi32.dll" "PathToRegion" con el current canvas retornando el hrgn.
 
 \Para crear un índice dado un conteo de cubos;
 Para crear un index usando un bucket count:
@@ -2162,7 +2162,7 @@ Para crear el lexicon:
 Para crear el open handle of un winhttp request:
   Si el winhttp request es nil, salir.
   Convertir el module's name to un wide string llamado wide module name y null terminate.
-  Llamada "winhttp.dll" "WinHttpOpen"
+  Llamar "winhttp.dll" "WinHttpOpen"
   con el wide module name's first
   And 0 [winhttp_access_type_default_proxy] 
   And 0 [winhttp_no_proxy_name] 
@@ -2181,7 +2181,7 @@ Para crear un path in el file system (directory):
   Privatizar el path.
   Eliminar any trailing backslash desde el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "CreateDirectoryA" con el path's first y 0 retornando un número.
+  Llamar "kernel32.dll" "CreateDirectoryA" con el path's first y 0 retornando un número.
   Borrar el error de e/s.
   Si el número es not 0, salir.
   Poner "Error creando directorio '" then el path then "'." into el error de e/s.
@@ -2190,8 +2190,8 @@ Para crear un path in el file system (directory):
 Para crear un path in el file system (file):
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "CreateFileA" con el path's first y 1073741824 [generic_write] y 0 y 0 y 1  [create_new] y 128 [file_attribute_normal] y 0 retornando un handle.
-  Llamada "kernel32.dll" "CloseHandle" con el handle.
+  Llamar "kernel32.dll" "CreateFileA" con el path's first y 1073741824 [generic_write] y 0 y 0 y 1  [create_new] y 128 [file_attribute_normal] y 0 retornando un handle.
+  Llamar "kernel32.dll" "CloseHandle" con el handle.
   Borrar el error de e/s.
   Si el handle es not -1 [invalid_handle_value], salir.
   Poner "Error creando archivo '" then el path then "'." into el error de e/s.
@@ -2247,7 +2247,7 @@ Para crear el request handle of un winhttp request using un url registro:
   Convertir el url registro's path into un wide string llamado wide path y null terminate.
   Convertir "POST" to un wide string llamado wide post string y null terminate.
   Si el url registro's scheme es "https", Poner 8388608 [winhttp_flag_secure] into un secure número.
-  Llamada "winhttp.dll" "WinHttpOpenRequest"
+  Llamar "winhttp.dll" "WinHttpOpenRequest"
   con el winhttp request's connection
   y el wide post string's first
   y el wide path's first
@@ -2274,16 +2274,16 @@ Para crear un socket usando un host string y un port número: \ this guy creates 
   Poner 2 [af_inet] into el sockaddr's sin_family.
   Poner el port into el sockaddr's sin_port.
 \ crear socket
-  Llamada "ws2_32.dll" "socket" con 2 [af_inet] y 1  [sock_stream] y 0 [ipproto_ip] retornando el socket.
+  Llamar "ws2_32.dll" "socket" con 2 [af_inet] y 1  [sock_stream] y 0 [ipproto_ip] retornando el socket.
   Si el socket es -1, Poner "No pude crear socket." into el error de e/s; salir.
 \ connect socket
-  Llamada "ws2_32.dll" "connect" con el socket y el sockaddr's dirección y el sockaddr's magnitude retornando un result número.
+  Llamar "ws2_32.dll" "connect" con el socket y el sockaddr's dirección y el sockaddr's magnitude retornando un result número.
   Si el result es not 0, Poner "No pude conectar al socket." into el error de e/s; salir.
 \ set send timeout 30 seconds
-  Llamada "ws2_32.dll" "setsockopt" con el socket y 65535 y 4101 [so_sndtimo] y 30 seconds' dirección y 4 retornando el result número.
+  Llamar "ws2_32.dll" "setsockopt" con el socket y 65535 y 4101 [so_sndtimo] y 30 seconds' dirección y 4 retornando el result número.
   Si el result es not 0, Poner "No pudo configurar el tiempo de espera de recepción." into el error de e/s; salir.
 \ set receive timeout 30 seconds
-  Llamada "ws2_32.dll" "setsockopt" con el socket y 65535 y 4102 [so_rcvtimeo] y 30 seconds' dirección y 4 retornando el result número.
+  Llamar "ws2_32.dll" "setsockopt" con el socket y 65535 y 4102 [so_rcvtimeo] y 30 seconds' dirección y 4 retornando el result número.
   Si el result es not 0, Poner "No pudo configurar el tiempo de espera de recepción." into el error de e/s; salir.
 
 \Para crear una cosa de cadena dada una cadena;
@@ -2742,7 +2742,7 @@ Para depurar un string;
 Para debug un string:
   Privatizar el string.
   Null terminate el string.
-  Llamada "user32.dll" "MessageBoxA" con 0 y el string's first y "debug"'s first y 0.
+  Llamar "user32.dll" "MessageBoxA" con 0 y el string's first y "debug"'s first y 0.
 
 \Para depurar una cadena (entre comillas);
 Para depurar un string (entre comillas);
@@ -3320,7 +3320,7 @@ Para decidir si un key es any wm-char key:
 
 \Para decidir si se presiona una tecla;
 Para decidir si un key es down:
-  Llamada "user32.dll" "GetAsyncKeyState" con el key retornando un wyrd.
+  Llamar "user32.dll" "GetAsyncKeyState" con el key retornando un wyrd.
   Poner el wyrd into un número.
   Si el número es less than 0, diga sí.
   Diga no.
@@ -3331,13 +3331,13 @@ Para decidir si un key es up:
 
 \Para decidir si se presionó una tecla;
 Para decidir si un key was down:
-  Llamada "user32.dll" "GetKeyState" con el key retornando un wyrd.
+  Llamar "user32.dll" "GetKeyState" con el key retornando un wyrd.
   Poner el wyrd into un número.
   Si el número es less than 0, diga sí.
   Diga no.
 
 Para decidir si un key was toggled:
-  Llamada "user32.dll" "GetKeyState" con el key retornando un wyrd.
+  Llamar "user32.dll" "GetKeyState" con el key retornando un wyrd.
   Poner el wyrd into un número.
   Bitwise AND el número con 1.
   Si el número es 1, diga sí.
@@ -3515,7 +3515,7 @@ Para decidir si un path es file-format:
 Para decidir si un path es in el file system:
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "GetFileAttributesA" con el path's first retornando un número.
+  Llamar "kernel32.dll" "GetFileAttributesA" con el path's first retornando un número.
   Si el número es less than 0, diga no.
   Diga sí.
 
@@ -3523,7 +3523,7 @@ Para decidir si un path es in el file system:
 Para decidir si un path es read-only:
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "GetFileAttributesA" con el path's first retornando un número.
+  Llamar "kernel32.dll" "GetFileAttributesA" con el path's first retornando un número.
   Bitwise AND el número con 1 [file_attribute_readonly].
   Si el número es not 0, diga sí.
   Diga no.
@@ -3679,7 +3679,7 @@ Para decidir si un spot es in un ellipse:
   Crear un hrgn usando el ellipse.
   Privatizar el spot.
   Dividir el spot by el tpp.
-  Llamada "gdi32.dll" "PtInRegion" con el hrgn y el spot's x-coord y el spot's y-coord retornando un número.
+  Llamar "gdi32.dll" "PtInRegion" con el hrgn y el spot's x-coord y el spot's y-coord retornando un número.
   Destroy el hrgn.
   Si el número es 0, diga no.
   Diga sí.
@@ -3694,9 +3694,9 @@ Para decidir si un spot es in un picture:
 Para decidir si un spot es in un polygon:
   Si el polygon es nil, diga no.
   Crear un vertex array usando el polygon's vertices.
-  Llamada "gdi32.dll" "CreatePolygonRgn" con el vertex array's spot puntero y el vertex array's count y 2 [winding] retornando un hrgn.
-  Llamada "gdi32.dll" "PtInRegion" con el hrgn y el spot's x-coord y el spot's y-coord retornando un número.
-  Llamada "gdi32.dll" "DeleteObject" con el hrgn.
+  Llamar "gdi32.dll" "CreatePolygonRgn" con el vertex array's spot puntero y el vertex array's count y 2 [winding] retornando un hrgn.
+  Llamar "gdi32.dll" "PtInRegion" con el hrgn y el spot's x-coord y el spot's y-coord retornando un número.
+  Llamar "gdi32.dll" "DeleteObject" con el hrgn.
   Destroy el vertex array.
   Si el número es 0, diga no.
   Diga sí.
@@ -3713,10 +3713,10 @@ Para decidir si un spot es in un roundy box:
   Privatizar el roundy box.
   Agregar el tpp to el roundy box's right-bottom.
   Poner el roundy box's radius times 2 into un diameter número.
-  Llamada "gdi32.dll" "CreateRoundRectRgn" con el roundy box's left y el roundy box's top y el roundy box's right y el roundy box's bottom 
+  Llamar "gdi32.dll" "CreateRoundRectRgn" con el roundy box's left y el roundy box's top y el roundy box's right y el roundy box's bottom 
   y el diameter y el diameter retornando un hrgn.
-  Llamada "gdi32.dll" "PtInRegion" con el hrgn y el spot's x-coord y el spot's y-coord retornando un número.
-  Llamada "gdi32.dll" "DeleteObject" con el hrgn.
+  Llamar "gdi32.dll" "PtInRegion" con el hrgn y el spot's x-coord y el spot's y-coord retornando un número.
+  Llamar "gdi32.dll" "DeleteObject" con el hrgn.
   Si el número es 0, diga no.
   Diga sí.
 
@@ -4106,7 +4106,7 @@ Para decidir si there es something to Eliminar in un text:
 
 \Para decidir si hay texto en el portapapeles de Windows;
 Para decidir si there es text on el windows clipboard:
-  Llamada "user32.dll" "IsClipboardFormatAvailable" con 1 [cf_text] retornando un número.
+  Llamar "user32.dll" "IsClipboardFormatAvailable" con 1 [cf_text] retornando un número.
   Si el número es 0, diga no.
   Diga sí.
 
@@ -4232,7 +4232,7 @@ Para decrypt un buffer usando un passphrase string: \ sets i/o error if failure
   Si el crypt session es nil, salir.
   Convertir el buffer as un nibble string to un hex string.
   Poner el hex string's length into un length.
-  Llamada "advapi32.dll" "CryptDecrypt" con el crypt session's hcryptkey y 0 y 1  y 0 y el hex string's first
+  Llamar "advapi32.dll" "CryptDecrypt" con el crypt session's hcryptkey y 0 y 1  y 0 y el hex string's first
   y el length's dirección retornando un result número.
   Si el result número es 0, Poner "Error desencriptando datos." into el error de e/s; destroy el crypt session; salir.
   Destroy el crypt session.
@@ -4263,35 +4263,35 @@ A designator es un string. \ rightmost directory con slash = folder2\ OR after e
 
 Para destroy un crypt session:
   Si el crypt session es nil, salir.
-  Llamada "advapi32.dll" "CryptDestroyKey" con el crypt session's hcryptkey.
-  Llamada "advapi32.dll" "CryptDestroyHash" con el crypt session's hcrypthash.
-  Llamada "advapi32.dll" "CryptReleaseContext" con el crypt session's hcryptprov y 0.
+  Llamar "advapi32.dll" "CryptDestroyKey" con el crypt session's hcryptkey.
+  Llamar "advapi32.dll" "CryptDestroyHash" con el crypt session's hcrypthash.
+  Llamar "advapi32.dll" "CryptReleaseContext" con el crypt session's hcryptprov y 0.
   Deallocate el crypt session.
 
 Para destroy un gpimage:
   Si el gpimage es nil, salir.
-  Llamada "gdiplus.dll" "GdipDisposeImage" con el gpimage.
+  Llamar "gdiplus.dll" "GdipDisposeImage" con el gpimage.
   Void el gpimage.
 
 Para destroy un gpimageattributes:
   Si el gpimageattributes es nil, salir.
-  Llamada "gdiplus.dll" "GdipDisposeImageAttributes" con el gpimageattributes.
+  Llamar "gdiplus.dll" "GdipDisposeImageAttributes" con el gpimageattributes.
   Void el gpimageattributes.
 
 Para destroy el hbrush of un canvas:
-  Llamada "gdi32.dll" "SelectObject" con el canvas y el null hbrush retornando un hbrush.
-  Llamada "gdi32.dll" "DeleteObject" con el hbrush.
+  Llamar "gdi32.dll" "SelectObject" con el canvas y el null hbrush retornando un hbrush.
+  Llamar "gdi32.dll" "DeleteObject" con el hbrush.
 
 Para destroy el hfont of un canvas:
-  Llamada "gdi32.dll" "SelectObject" con el canvas y el null hfont retornando un hfont.
-  Llamada "gdi32.dll" "DeleteObject" con el hfont.
+  Llamar "gdi32.dll" "SelectObject" con el canvas y el null hfont retornando un hfont.
+  Llamar "gdi32.dll" "DeleteObject" con el hfont.
 
 Para destroy el hpen of un canvas:
-  Llamada "gdi32.dll" "SelectObject" con el canvas y el null hpen retornando un hpen.
-  Llamada "gdi32.dll" "DeleteObject" con el hpen.
+  Llamar "gdi32.dll" "SelectObject" con el canvas y el null hpen retornando un hpen.
+  Llamar "gdi32.dll" "DeleteObject" con el hpen.
 
 Para destroy un hrgn:
-  Llamada "gdi32.dll" "DeleteObject" con el hrgn.
+  Llamar "gdi32.dll" "DeleteObject" con el hrgn.
 
 \Para destruir un índice;
 Para destroy un index:
@@ -4322,7 +4322,7 @@ Para destroy un path in el file system (directory):
   Repetir.
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "RemoveDirectoryA" con el path's first retornando un número.
+  Llamar "kernel32.dll" "RemoveDirectoryA" con el path's first retornando un número.
   Borrar el error de e/s.
   Si el número es not 0, salir.
   Poner "Error eliminando directorio '" then el path then "'." into el error de e/s.
@@ -4331,7 +4331,7 @@ Para destroy un path in el file system (directory):
 Para destroy un path in el file system (file):
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "DeleteFileA" con el path's first retornando un número.
+  Llamar "kernel32.dll" "DeleteFileA" con el path's first retornando un número.
   Borrar el error de e/s.
   Si el número es not 0, salir.
   Poner "Error eliminando archivo '" then el path then "'." into el error de e/s.
@@ -4343,7 +4343,7 @@ Para destroy un picture:
   Deallocate el picture.
 
 Para destroy un socket:
-  Llamada "ws2_32.dll" "closesocket" con el socket.
+  Llamar "ws2_32.dll" "closesocket" con el socket.
 
 \Para destruir un vértice dado un polígono;
 Para destroy un vertex usando un polygon:
@@ -4355,9 +4355,9 @@ Para destroy un vertex usando un polygon:
 
 Para destroy un winhttp request:
   Si el winhttp request es nil, salir.
-  Llamada "winhttp.dll" "WinHttpCloseHandle" con el winhttp request's request.
-  Llamada "winhttp.dll" "WinHttpCloseHandle" con el winhttp request's connection.
-  Llamada "winhttp.dll" "WinHttpCloseHandle" con el winhttp request's session.
+  Llamar "winhttp.dll" "WinHttpCloseHandle" con el winhttp request's request.
+  Llamar "winhttp.dll" "WinHttpCloseHandle" con el winhttp request's connection.
+  Llamar "winhttp.dll" "WinHttpCloseHandle" con el winhttp request's session.
   Deallocate el winhttp request.
 
 The device-control-four byte es un byte igual to 20.
@@ -4529,13 +4529,13 @@ Para dibujar un box:
 Para dibujar un box (focus style):
   Privatizar el box.
   Agregar el tpp to el box's right-bottom.
-  Llamada "gdi32.dll" "LPtoDP" con el current canvas y el box's dirección y 2.
+  Llamar "gdi32.dll" "LPtoDP" con el current canvas y el box's dirección y 2.
   Convertir el white color to un colorref.
-  Llamada "gdi32.dll" "SetBkColor" con el current canvas y el colorref.
+  Llamar "gdi32.dll" "SetBkColor" con el current canvas y el colorref.
   Convertir el black color to another colorref.
-  Llamada "gdi32.dll" "SetTextColor" con el current canvas y el other colorref.
-  Llamada "gdi32.dll" "SetMapMode" con el current canvas y 1  [mm_text].
-  Llamada "user32.dll" "DrawFocusRect" con el current canvas y el box's dirección.
+  Llamar "gdi32.dll" "SetTextColor" con el current canvas y el other colorref.
+  Llamar "gdi32.dll" "SetMapMode" con el current canvas y 1  [mm_text].
+  Llamar "user32.dll" "DrawFocusRect" con el current canvas y el box's dirección.
   Normalizar el current canvas.
 
 \Para dibujar un box in un color;
@@ -4550,7 +4550,7 @@ Para dibujar un box con un border color y un fill color:
   Crear el hpen of el current canvas usando el border.
   Crear el hbrush of el current canvas usando el fill.
   Si el border es clear, Agregar el tpp to el box's left-top.
-  Llamada "gdi32.dll" "Rectangle" con el current canvas y el box's left y el box's top y el box's right y el box's bottom.
+  Llamar "gdi32.dll" "Rectangle" con el current canvas y el box's left y el box's top y el box's right y el box's bottom.
   Destroy el hbrush of el current canvas.
   Destroy el hpen of el current canvas.
 
@@ -4627,7 +4627,7 @@ Para dibujar un ellipse con un border color y un fill color:
   Crear el hpen of el current canvas usando el border.
   Crear el hbrush of el current canvas usando el fill.
   Si el border es clear, Agregar el tpp to el ellipse's left-top.
-  Llamada "gdi32.dll" "Ellipse" con el current canvas y el ellipse's left y el ellipse's top y el ellipse's right y el ellipse's bottom.
+  Llamar "gdi32.dll" "Ellipse" con el current canvas y el ellipse's left y el ellipse's top y el ellipse's right y el ellipse's bottom.
   Destroy el hbrush of el current canvas.
   Destroy el hpen of el current canvas.
 
@@ -4806,10 +4806,10 @@ Para dibujar un line using some twips for el length:
 Para dibujar un line con un color:
   Si el pdf state's page flag es set, dibujar el line con el color (pdf style); salir.
   Crear el hpen of el current canvas usando el color.
-  Llamada "gdi32.dll" "MoveToEx" con el current canvas y el line's start's x-coord y el line's start's y-coord y nil.
-  Llamada "gdi32.dll" "LineTo" con el current canvas y el line's end's x-coord y el line's end's y-coord.
+  Llamar "gdi32.dll" "MoveToEx" con el current canvas y el line's start's x-coord y el line's start's y-coord y nil.
+  Llamar "gdi32.dll" "LineTo" con el current canvas y el line's end's x-coord y el line's end's y-coord.
   Convertir el color to un colorref.
-  Llamada "gdi32.dll" "SetPixelV" con el current canvas y el line's end's x-coord y el line's end's y-coord y el colorref.
+  Llamar "gdi32.dll" "SetPixelV" con el current canvas y el line's end's x-coord y el line's end's y-coord y el colorref.
   Destroy el hpen of el current canvas.
 
 Para dibujar un line con un color (pdf style):
@@ -4873,10 +4873,10 @@ Para dibujar un picture:
   Si el picture es nil, salir.
   Save el current canvas.
   Mask outside el picture's box.
-  Llamada "gdiplus.dll" "GdipCreateFromHDC" con el current canvas y un gpgraphic's dirección.
-  Llamada "gdiplus.dll" "GdipSetPageUnit" con el gpgraphic y 2 [pixels].
+  Llamar "gdiplus.dll" "GdipCreateFromHDC" con el current canvas y un gpgraphic's dirección.
+  Llamar "gdiplus.dll" "GdipSetPageUnit" con el gpgraphic y 2 [pixels].
   Dibujar el picture on el gpgraphic at el picture's uncropped box's left y el picture's uncropped box's top.
-  Llamada "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
+  Llamar "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
   Restore el current canvas.
 
 Para dibujar un picture (pdf style):
@@ -4885,22 +4885,22 @@ Para dibujar un picture (pdf style):
   Poner el picture's box's top minus el picture's uncropped box's top divided by el tpp  into un y-número.
   Poner el picture's box's width divided by el tpp into un width.
   Poner el picture's box's height divided by el tpp into un height.
-  Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" con el width y el height y 0 y 137224 [pixelformat24bpprgb] y 0 y un gpbitmap's dirección.
-  Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" con el gpbitmap y un gpgraphic's dirección.
+  Llamar "gdiplus.dll" "GdipCreateBitmapFromScan0" con el width y el height y 0 y 137224 [pixelformat24bpprgb] y 0 y un gpbitmap's dirección.
+  Llamar "gdiplus.dll" "GdipGetImageGraphicsContext" con el gpbitmap y un gpgraphic's dirección.
   Si el picture's grayscale flag es set, crear un gpimageattributes (grayscale).
-  Llamada "gdiplus.dll" "GdipDrawImageRectRectI" con el gpgraphic y el picture's gpbitmap
+  Llamar "gdiplus.dll" "GdipDrawImageRectRectI" con el gpgraphic y el picture's gpbitmap
   And 0 y 0 y el width y el height
   y el x-número y el y-número y el width y el height
   And 2 [unitpixel] y el gpimageattributes y nil y 0.
   Si el gpimageattributes es not nil, destroy el gpimageattributes.
-  Llamada "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
+  Llamar "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
   Dibujar el gpbitmap at el picture's box's left-top (pdf style).
-  Llamada "gdiplus.dll" "GdipDisposeImage" con el gpbitmap.
+  Llamar "gdiplus.dll" "GdipDisposeImage" con el gpbitmap.
 
 Para dibujar un picture on un gpgraphic at un x-coord y un y-coord:
   Si el picture es nil, salir.
   Si el picture's grayscale flag es set, crear un gpimageattributes (grayscale).
-  Llamada "gdiplus.dll" "GdipDrawImageRectRectI" con el gpgraphic y el picture's gpbitmap
+  Llamar "gdiplus.dll" "GdipDrawImageRectRectI" con el gpgraphic y el picture's gpbitmap
   y el x-coord y el y-coord y el picture's uncropped box's width y el picture's uncropped box's height
   And 0 y 0 y el picture's gpbitmap's width y el picture's gpbitmap's height
   And 2 [unitpixel] y el gpimageattributes y nil y 0.
@@ -4942,16 +4942,16 @@ Para dibujar un polygon con un color (border only):
   Crear el hpen of el current canvas usando el color.
   Obtener un vertex desde el polygon's vertices.
   Si el vertex es nil, salir.
-  Llamada "gdi32.dll" "MoveToEx" con el current canvas y el vertex's x-coord y el vertex's y-coord y nil.
+  Llamar "gdi32.dll" "MoveToEx" con el current canvas y el vertex's x-coord y el vertex's y-coord y nil.
   Lazo.
     Obtener el vertex desde el polygon's vertices.
     Si el vertex es nil, interrumpir.
-    Llamada "gdi32.dll" "LineTo" con el current canvas y el vertex's x-coord y el vertex's y-coord.
+    Llamar "gdi32.dll" "LineTo" con el current canvas y el vertex's x-coord y el vertex's y-coord.
   Repetir.
   Destroy el hpen of el current canvas.
   Si el polygon's vertices' first's spot es el polygon's vertices' last's spot, salir.
   Convertir el color to un colorref.
-  Llamada "gdi32.dll" "SetPixelV" con el current canvas y el polygon's vertices' last's x-coord y el polygon's vertices' last's y-coord y el colorref.
+  Llamar "gdi32.dll" "SetPixelV" con el current canvas y el polygon's vertices' last's x-coord y el polygon's vertices' last's y-coord y el colorref.
 
 \Para dibujar un polígono con un color (solo relleno);
 Para dibujar un polygon con un color (fill only):
@@ -4959,9 +4959,9 @@ Para dibujar un polygon con un color (fill only):
   Si el color es clear, salir.
   Crear el hpen of el current canvas usando el borrar color.
   Crear el hbrush of el current canvas usando el color.
-  Llamada "gdi32.dll" "SetPolyFillMode" con el current canvas y 2 [winding].
+  Llamar "gdi32.dll" "SetPolyFillMode" con el current canvas y 2 [winding].
   Crear un vertex array usando el polygon's vertices.
-  Llamada "gdi32.dll" "Polygon" con el current canvas y el vertex array's spot puntero y el vertex array's count.
+  Llamar "gdi32.dll" "Polygon" con el current canvas y el vertex array's spot puntero y el vertex array's count.
   Destroy el vertex array.
   Destroy el hbrush of el current canvas.
   Destroy el hpen of el current canvas.
@@ -5014,7 +5014,7 @@ Para dibujar un roundy box con un border color y un fill color:
   Crear el hbrush of el current canvas usando el fill.
   Si el border es clear, Agregar el tpp to el roundy box's left-top.
   Poner el roundy box's radius times 2 into un diameter número.
-  Llamada "gdi32.dll" "RoundRect" con el current canvas y el roundy box's left y el roundy box's top y el roundy box's right y el roundy box's bottom
+  Llamar "gdi32.dll" "RoundRect" con el current canvas y el roundy box's left y el roundy box's top y el roundy box's right y el roundy box's bottom
   y el diameter y el diameter.
   Destroy el hbrush of el current canvas.
   Destroy el hpen of el current canvas.
@@ -5098,7 +5098,7 @@ Para dibujar un spot:
 \Para dibujar un punto con un color;
 Para dibujar un spot con un color:
   Convertir el color to un colorref.
-  Llamada "gdi32.dll" "SetPixelV" con el current canvas y el spot's x-coord y el spot's y-coord y el colorref.
+  Llamar "gdi32.dll" "SetPixelV" con el current canvas y el spot's x-coord y el spot's y-coord y el colorref.
 
 Para dibujar un star usando un point count y un size:
   Poner 1 y el point count into un fraction.
@@ -5162,7 +5162,7 @@ Para dibujar un string at un spot con un color y un font:
   Lazo.
     Si el substring es blank, interrumpir.
     Si el substring's last es greater than el string's last, Poner el string's last into el substring's last.
-    Llamada "gdi32.dll" "TextOutA" con el current canvas y el spot's x-coord y el spot's y-coord y el substring's first y el substring's length.
+    Llamar "gdi32.dll" "TextOutA" con el current canvas y el spot's x-coord y el spot's y-coord y el substring's first y el substring's length.
     Obtener un width usando el substring y el current canvas.
     Agregar el width to el spot's x-coord.
     Mover el substring usando el text cutoff.
@@ -5302,7 +5302,7 @@ Para duplicate un path to another path in el file system (file):
   Null terminate el path.
   Privatizar el other path.
   Null terminate el other path.
-  Llamada "kernel32.dll" "CopyFileA" con el path's first y el other path's first y 0 retornando un número.
+  Llamar "kernel32.dll" "CopyFileA" con el path's first y el other path's first y 0 retornando un número.
   Borrar el error de e/s.
   Si el número es not 0, definir el path to read-write mode; salir.
   Poner "Error duplicando archivo '" then el path then "'." into el error de e/s.
@@ -5338,7 +5338,7 @@ Para encrypt un buffer usando un passphrase string: \ sets i/o error if failure
   Si el crypt session es nil, salir.
   Poner el buffer into un temp buffer.
   Poner el temp buffer's length into un length.
-  Llamada "advapi32.dll" "CryptEncrypt" con el crypt session's hcryptkey y 0 y 1  y 0 y el temp buffer's first
+  Llamar "advapi32.dll" "CryptEncrypt" con el crypt session's hcryptkey y 0 y 1  y 0 y el temp buffer's first
   y el length's dirección y el length retornando un result número.
   Si el result número es 0, Poner "Error encriptando datos." into el error de e/s; destroy el crypt session; salir.
   Destroy el crypt session.
@@ -5350,7 +5350,7 @@ The end key es un key igual to 35.
 \Para completar impresión;
 Para completar impresión:
   Si el pdf state's document flag es set, completar impresión (pdf style); salir.
-  Llamada "gdi32.dll" "EndDoc" con el printer canvas.
+  Llamar "gdi32.dll" "EndDoc" con el printer canvas.
   Finalize el printer canvas.
 
 Para completar impresión (pdf style):
@@ -5488,7 +5488,7 @@ Para completar impresión un pdf (offset y Adjuntar objects):
 \Para completar una hoja;
 Para completar un sheet:
   Si el pdf state's document flag es set, end el sheet (pdf style); salir.
-  Llamada "gdi32.dll" "EndPage" con el printer canvas.
+  Llamar "gdi32.dll" "EndPage" con el printer canvas.
   Poner el memory canvas into el current canvas.
   Poner el saved tpp into el tpp.
 
@@ -5736,14 +5736,14 @@ Para extraer un file name w/o extension desde un path:
 Para extraer un picture usando un box:
   Poner el box's width divided by el tpp into un width.
   Poner el box's height divided by el tpp into un height.
-  Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" con el width y el height y 0 y 137224 [pixelformat24bpprgb] y 0 y un gpbitmap's dirección.
-  Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" con el gpbitmap y un gpgraphic's dirección.
-  Llamada "gdiplus.dll" "GdipGetDC" con el gpgraphic y un bitmap canvas' dirección.
+  Llamar "gdiplus.dll" "GdipCreateBitmapFromScan0" con el width y el height y 0 y 137224 [pixelformat24bpprgb] y 0 y un gpbitmap's dirección.
+  Llamar "gdiplus.dll" "GdipGetImageGraphicsContext" con el gpbitmap y un gpgraphic's dirección.
+  Llamar "gdiplus.dll" "GdipGetDC" con el gpgraphic y un bitmap canvas' dirección.
   Normalizar el bitmap canvas.
-  Llamada "gdi32.dll" "BitBlt" con el bitmap canvas y 0 y 0 y el box's width y el box's height
+  Llamar "gdi32.dll" "BitBlt" con el bitmap canvas y 0 y 0 y el box's width y el box's height
   y el current canvas y el box's left y el box's top y 13369376 [srccopy].
-  Llamada "gdiplus.dll" "GdipReleaseDC" con el gpgraphic y el bitmap canvas.
-  Llamada "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
+  Llamar "gdiplus.dll" "GdipReleaseDC" con el gpgraphic y el bitmap canvas.
+  Llamar "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
   Crear el picture usando el gpbitmap.
   Poner el box into el picture's box.
   Poner el box into el picture's uncropped box.
@@ -5872,12 +5872,12 @@ Para finalize el canvases:
   Finalize el screen canvas.
 
 Para finalize el cgi:
-  Llamada "kernel32.dll" "FreeConsole".
+  Llamar "kernel32.dll" "FreeConsole".
 
 Para finalize el colors:
 
 Para finalize com:
-  Llamada "ole32.dll" "CoUninitialize".
+  Llamar "ole32.dll" "CoUninitialize".
 
 Para finalize un context:
   Destroy el choices.
@@ -5886,27 +5886,27 @@ Para finalize un context:
   Destroy el context.
 
 Para finalize el cursors:
-  Llamada "user32.dll" "DestroyCursor" con el i-beam cursor.
-  Llamada "user32.dll" "DestroyCursor" con el hand cursor.
-  Llamada "user32.dll" "DestroyCursor" con el arrow cursor.
+  Llamar "user32.dll" "DestroyCursor" con el i-beam cursor.
+  Llamar "user32.dll" "DestroyCursor" con el hand cursor.
+  Llamar "user32.dll" "DestroyCursor" con el arrow cursor.
 
 Para finalize el fonts:
-  Llamada "gdi32.dll" "RemoveFontMemResourceEx" con el osmosian font resource.
+  Llamar "gdi32.dll" "RemoveFontMemResourceEx" con el osmosian font resource.
 
 Para finalize gdi+:
-  Llamada "gdiplus.dll" "GdiplusShutdown" con el gptoken.
+  Llamar "gdiplus.dll" "GdiplusShutdown" con el gptoken.
 
 Para finalize el memory canvas:
-  Llamada "gdi32.dll" "SelectObject" con el memory canvas y el saved memory hbitmap retornando un hbitmap.
-  Llamada "gdi32.dll" "DeleteObject" con el hbitmap.
-  Llamada "gdi32.dll" "DeleteDC" con el memory canvas.
+  Llamar "gdi32.dll" "SelectObject" con el memory canvas y el saved memory hbitmap retornando un hbitmap.
+  Llamar "gdi32.dll" "DeleteObject" con el hbitmap.
+  Llamar "gdi32.dll" "DeleteDC" con el memory canvas.
 
 Para finalize el module:
 
 Para finalize el mouse:
 
 Para finalize el printer canvas:
-  Llamada "kernel32.dll" "GlobalFree" con el printer device mode handle.
+  Llamar "kernel32.dll" "GlobalFree" con el printer device mode handle.
   Poner 0 into el printer canvas.
 
 Para finalize el screen:
@@ -5915,22 +5915,22 @@ Para finalize el screen canvas:
 
 Para finalize un talker:
   Si el talker es nil, salir.
-  Llamada el talker's vtable's release con el talker.
+  Llamar el talker's vtable's release con el talker.
   Poner nil into el talker.
 
 Para finalize el window:
-  Llamada "user32.dll" "DestroyWindow" con el main window.
+  Llamar "user32.dll" "DestroyWindow" con el main window.
   Lazo.
-    Llamada "user32.dll" "GetMessageA" con un msg's dirección y 0 y 0 y 0 retornando un número.
+    Llamar "user32.dll" "GetMessageA" con un msg's dirección y 0 y 0 y 0 retornando un número.
     Si el número es less than 1, interrumpir.
-    Llamada "user32.dll" "TranslateMessage" con el msg's dirección.
-    Llamada "user32.dll" "DispatchMessageA" con el msg's dirección.
+    Llamar "user32.dll" "TranslateMessage" con el msg's dirección.
+    Llamar "user32.dll" "DispatchMessageA" con el msg's dirección.
   Repetir.
   Descartar el event queue.
   Destroy el current event.
 
 Para finalize winsock:
-  Llamada "ws2_32.dll" "WSACleanup".
+  Llamar "ws2_32.dll" "WSACleanup".
 
 The encontrar anchor es un anchor.
 
@@ -6117,7 +6117,7 @@ Para encontrar un value string usando el environment variables y un name:
   Null terminate el name.
   Poner 32767 into un length. \ max size for environment variable
   Reassign el value's first usando el length.
-  Llamada "kernel32.dll" "GetEnvironmentVariableA" con el name's first y el value's first y el length retornando el length.
+  Llamar "kernel32.dll" "GetEnvironmentVariableA" con el name's first y el value's first y el length retornando el length.
   Poner el value's first plus el length minus 1 into el value's last.
 
 A finger es un byte puntero.
@@ -6140,7 +6140,7 @@ Para voltear el gpbitmap in un picture:
   Voltear el picture's gpbitmap.
 
 Para voltear un gpimage:
-  Llamada "gdiplus.dll" "GdipImageRotateFlip" con el gpimage y 6 [rotatenoneflipy aka rotate180flipx].
+  Llamar "gdiplus.dll" "GdipImageRotateFlip" con el gpimage y 6 [rotatenoneflipy aka rotate180flipx].
 
 \Para voltear una imagen;
 Para voltear un picture:
@@ -6172,7 +6172,7 @@ Para flush all events:
 
 Para descartar any messages;
 Para flush any messages:
-    Llamada "user32.dll" "PeekMessageA" con un msg's dirección y 0 y 0 y 0 y 1  [pm_remove] retornando un número.
+    Llamar "user32.dll" "PeekMessageA" con un msg's dirección y 0 y 0 y 0 y 1  [pm_remove] retornando un número.
     Si el número es 0, salir.
     Si el msg's message es 15 [wm_paint], call "user32.dll" "ValidateRect" con el main window y 0.
   Repetir.
@@ -6268,25 +6268,25 @@ Para obtener un abca y un abcc usando un string y un canvas:
   Poner 0 into el abca.
   Poner 0 into el abcc.
   Si el string's length es less than 1, salir.
-  Llamada "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's first's contenido y el string's first's contenido y un abc's dirección.
+  Llamar "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's first's contenido y el string's first's contenido y un abc's dirección.
   Poner el abc's abca into el abca.
-  Llamada "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's last's contenido y el string's last's contenido y another abc's dirección.
+  Llamar "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's last's contenido y el string's last's contenido y another abc's dirección.
   Poner el other abc's abcc into el abcc.
 
 Para obtener un abca usando un string y un canvas:
   Poner 0 into el abca.
   Si el string's length es less than 1, salir.
-  Llamada "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's first's contenido y el string's first's contenido y un abc's dirección.
+  Llamar "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's first's contenido y el string's first's contenido y un abc's dirección.
   Poner el abc's abca into el abca.
 
 Para obtener some addrinfo routines:
   Borrar el error de e/s.
-  Llamada "kernel32.dll" "LoadLibraryA" con "ws2_32.dll"'s first retornando un handle.
+  Llamar "kernel32.dll" "LoadLibraryA" con "ws2_32.dll"'s first retornando un handle.
   Si el handle es 0, Poner "No se pudo leer ws2_32.dll." into el error de e/s; salir.
-  Llamada "kernel32.dll" "GetProcAddress" con el handle y "getaddrinfo"'s first retornando un puntero.
+  Llamar "kernel32.dll" "GetProcAddress" con el handle y "getaddrinfo"'s first retornando un puntero.
   Si el puntero es nil, Poner "Lamento que estas rutinas solo funcionan en Windows XP o superior." into el error de e/s; salir.
   Poner el puntero into el addrinfo routines' getaddrinfo puntero.
-  Llamada "kernel32.dll" "GetProcAddress" con el handle y "freeaddrinfo"'s first retornando el puntero.
+  Llamar "kernel32.dll" "GetProcAddress" con el handle y "freeaddrinfo"'s first retornando el puntero.
   Si el puntero es nil, Poner "Lamento que estas rutinas solo funcionan en Windows XP o superior." into el error de e/s; salir.
   Poner el puntero into el addrinfo routines' freeaddrinfo puntero.
 
@@ -6370,7 +6370,7 @@ Para obtener un center spot usando un spot y another spot:
 
 \Para obtener un color en un punto;
 Para obtener un color usando un spot:
-  Llamada "gdi32.dll" "GetPixel" con el current canvas y el spot's x-coord y el spot's y-coord retornando un colorref.
+  Llamar "gdi32.dll" "GetPixel" con el current canvas y el spot's x-coord y el spot's y-coord retornando un colorref.
   Convertir el colorref to el color.
 
 Para obtener un column# usando un row y un spot y un text:
@@ -6447,7 +6447,7 @@ Para obtener un distance between un spot y another spot (chessboard):
 Para obtener un drive kind for un path:
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "GetDriveTypeA" con el path's first retornando un número.
+  Llamar "kernel32.dll" "GetDriveTypeA" con el path's first retornando un número.
   Si el número es 2 [drive_removable], Poner "disco removible" into el drive kind; salir. \ removable drive
   Si el número es 3 [drive_fixed], Poner "disco duro o flash" into el drive kind; salir.\ hard disk / flash drive
   Si el número es 4 [drive_remote], Poner "unidad de red" into el drive kind; salir. \ network drive
@@ -6461,7 +6461,7 @@ Para obtener un drive name for un path:
   Null terminate el path.
   Poner 512 into un length.
   Reassign un buffer's first usando el length.
-  Llamada "kernel32.dll" "GetVolumeInformationA" con el path's first y el buffer's first y el length y 0 y 0 y 0 y 0 y 0 retornando un número.
+  Llamar "kernel32.dll" "GetVolumeInformationA" con el path's first y el buffer's first y el length y 0 y 0 y 0 y 0 y 0 retornando un número.
   Si el número es 0, borrar el drive name; salir.
   Convertir el buffer's first as un pchar to el drive name.
 
@@ -6501,15 +6501,15 @@ Para obtener un ip address usando un host string:
   Obtener un sockaddr usando el host string.
   Si el error de e/s es not blank, salir.
   Poner el sockaddr's sin_addr's s_addr into el ip address' número.
-  Llamada "ws2_32.dll" "inet_ntoa" con el ip address' número retornando un pchar.
+  Llamar "ws2_32.dll" "inet_ntoa" con el ip address' número retornando un pchar.
   Convertir el pchar to el ip address' string.
 
 Para obtener un item (not first time):
   Borrar el error de e/s.
-  Llamada "kernel32.dll" "FindNextFileA" con el item's handle y el item's win32finddata's dirección retornando un número.
+  Llamar "kernel32.dll" "FindNextFileA" con el item's handle y el item's win32finddata's dirección retornando un número.
   Si el número es not 0, ajustar el item; salir.
   Borrar el item's kind.
-  Llamada "kernel32.dll" "FindClose" con el item's handle.
+  Llamar "kernel32.dll" "FindClose" con el item's handle.
 
 \Para obtener un elemento de una ruta;
 Para obtener un item desde un path:
@@ -6524,13 +6524,13 @@ Para obtener un item desde un path (first time):
   Adjuntar "*.*" to el path.
   Null terminate el path.
   Borrar el item's kind.
-  Llamada "kernel32.dll" "FindFirstFileA" con el path's first y el item's win32finddata's dirección retornando el item's handle.
+  Llamar "kernel32.dll" "FindFirstFileA" con el path's first y el item's win32finddata's dirección retornando el item's handle.
   Si el item's handle es -1 [invalid_handle_value], salir.
   Ajustar el item.
 
 Para obtener un lcm usando un número y another número:
   Obtener un gcd usando el número y el other número.
-  Llamada "kernel32.dll" "MulDiv" con el número y el other número y el gcd retornando el lcm.
+  Llamar "kernel32.dll" "MulDiv" con el número y el other número y el gcd retornando el lcm.
 
 \Para obtener una carta del alfabeto;
 Para obtener un letter desde el alphabet:
@@ -6556,14 +6556,14 @@ Para obtener un offset pair usando un string y un box y un font y un alignment (
   Si el alignment es "left", obtener el offset pair's x-número usando el string y el box (fast - left).
   Si el alignment es "right", obtener el offset pair's x-número usando el string y el box  (fast - right).
   Si el alignment es "center", obtener el offset pair's x-número usando el string y el box (fast - center).
-  Llamada "gdi32.dll" "GetTextMetricsA" con el memory canvas y un textmetric's dirección.
+  Llamar "gdi32.dll" "GetTextMetricsA" con el memory canvas y un textmetric's dirección.
   Agregar el box's height minus el textmetric's tmheight divided by 2 to el offset pair's y-número.
 
 Para obtener un outlinetextmetric usando un font:
   Crear el hfont of el memory canvas usando el font.
-  Llamada "gdi32.dll" "GetOutlineTextMetricsA" con el memory canvas y 0 y 0 retornando un result número.
+  Llamar "gdi32.dll" "GetOutlineTextMetricsA" con el memory canvas y 0 y 0 retornando un result número.
   Assign un poutlinetextmetric usando el result.
-  Llamada "gdi32.dll" "GetOutlineTextMetricsA" con el memory canvas y el result y el poutlinetextmetric.
+  Llamar "gdi32.dll" "GetOutlineTextMetricsA" con el memory canvas y el result y el poutlinetextmetric.
   Poner el poutlinetextmetric's contenido into el outlinetextmetric.
   Destroy el hfont of el current canvas.
   Unassign el poutlinetextmetric.
@@ -6689,7 +6689,7 @@ Para obtener un size usando un path in el file system (directory):
 Para obtener un size usando un path in el file system (file):
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "GetFileAttributesExA" con el path's first y 0 y un win32finddata's dirección.
+  Llamar "kernel32.dll" "GetFileAttributesExA" con el path's first y 0 y un win32finddata's dirección.
   Poner el win32finddata's nfilesizelow into el size.
 
 Para obtener un sockaddr usando un host string:
@@ -6704,11 +6704,11 @@ Para obtener un sockaddr usando un host string:
   Poner 2 [af_inet] into un addrinfo's ai_family.
   Poner 1 [sock_stream] into el addrinfo's ai_sockettype.
   Poner 6 [ipproto_tcp] into el addrinfo's ai_protocol.
-  Llamada el addrinfo routines' getaddrinfo con el host string's first y 0 y el addrinfo's dirección y un addrinfoptr's dirección retornando un result número.
+  Llamar el addrinfo routines' getaddrinfo con el host string's first y 0 y el addrinfo's dirección y un addrinfoptr's dirección retornando un result número.
   Si el result número es not 0, Poner "No pude resolver nombre de anfitrión (host) '" then el host then "'." into el error de e/s; salir.
   Si el addrinfoptr es nil, Poner "No pude resolver nombre de anfitrión (host) '" then el host then "'." into el error de e/s; salir.
   Poner el addrinfoptr's ai_addr's contenido into el sockaddr.
-  Llamada el addrinfo routines' freeaddrinfo con el addrinfoptr.
+  Llamar el addrinfo routines' freeaddrinfo con el addrinfoptr.
 
 Para obtener un spot usando un position y un text:
   Borrar el spot.
@@ -6754,13 +6754,13 @@ Para obtener un string desde el stack:
 \Para obtener una cadena del portapapeles de Windows;
 Para obtener un string desde el windows clipboard:
   Borrar el string.
-  Llamada "user32.dll" "OpenClipboard" con el main window.
-  Llamada "user32.dll" "GetClipboardData" con 1 [cf_text] retornando un handle.
+  Llamar "user32.dll" "OpenClipboard" con el main window.
+  Llamar "user32.dll" "GetClipboardData" con 1 [cf_text] retornando un handle.
   Si el handle es 0, call "user32.dll" "CloseClipboard"; salir.
-  Llamada "kernel32.dll" "GlobalLock" con el handle retornando un pchar.
+  Llamar "kernel32.dll" "GlobalLock" con el handle retornando un pchar.
   Convertir el pchar to el string.
-  Llamada "kernel32.dll" "GlobalUnlock" con el handle.
-  Llamada "user32.dll" "CloseClipboard".
+  Llamar "kernel32.dll" "GlobalUnlock" con el handle.
+  Llamar "user32.dll" "CloseClipboard".
 
 \Para obtener una cosa de algunas cosas;
 Para obtener un lista desde some listas:
@@ -6786,7 +6786,7 @@ Para obtener un token desde un reply:
   Repetir.
 
 Para obtener un width usando un byte y un canvas:
-  Llamada "gdi32.dll" "GetTextExtentPoint32A" con el canvas y el byte's dirección y 1  y un pair's dirección.
+  Llamar "gdi32.dll" "GetTextExtentPoint32A" con el canvas y el byte's dirección y 1  y un pair's dirección.
   Poner el pair's x-número into el width.
 
 Para obtener un width usando un byte y some font widths:
@@ -6800,7 +6800,7 @@ Para obtener un width usando un número y some font widths: \ indexes are 0 based
   Poner el número puntero's contenido into el width.
 
 Para obtener un width usando un string y un canvas: \ assumes font es already selected in canvas
-  Llamada "gdi32.dll" "GetTextExtentPoint32A" con el canvas y el string's first y el string's length y un pair's dirección.
+  Llamar "gdi32.dll" "GetTextExtentPoint32A" con el canvas y el string's first y el string's length y un pair's dirección.
   Poner el pair's x-número into el width.
 
 Para obtener un width usando un string y un canvas y un font:
@@ -6905,21 +6905,21 @@ Para handle any wm-activate con un w-param:
   Handle any wm-activate con el w-param (activate).
 
 Para handle any wm-activate con un w-param (activate):
-  Llamada "user32.dll" "SetFocus" con el main window.
-  Llamada "user32.dll" "ClipCursor" con 0.
+  Llamar "user32.dll" "SetFocus" con el main window.
+  Llamar "user32.dll" "ClipCursor" con 0.
 \  seterrormode(sem_failcriticalerrors) \ keeps certain disk errors desde appearing
   Crear un event.
   Poner "activate" into el event's kind.
   \Poner "activar" into el event's clase.
   Enque el event.
-  Llamada "user32.dll" "PostMessageA" con el main window y 0 [wm_null] y 0 y 0.
+  Llamar "user32.dll" "PostMessageA" con el main window y 0 [wm_null] y 0 y 0.
 
 Para handle any wm-activate con un w-param (deactivate):
   Crear un event.
   Poner "deactivate" into el event's kind.
   \Poner "desactivar" into el event's clase.
   Enque el event.
-  Llamada "user32.dll" "PostMessageA" con el main window y 0 [wn_null] y 0 y 0.
+  Llamar "user32.dll" "PostMessageA" con el main window y 0 [wn_null] y 0 y 0.
 
 Para handle any wm-char con un w-param y un l-param:
 \If el alt key was down, salir. \ removed for Spanish keyboard AltGr y ctrl+alt characters
@@ -6938,7 +6938,7 @@ Para handle any wm-create con un window:
   Poner el window into el main window.
 
 Para handle any wm-destroy:
-  Llamada "user32.dll" "PostQuitMessage" con 0.
+  Llamar "user32.dll" "PostQuitMessage" con 0.
 
 Para handle any wm-lbuttondblclk con un l-param:
   Crear un event.
@@ -6961,8 +6961,8 @@ Para handle any wm-lbuttondown con un l-param:
   Enque el event.
 
 Para handle any wm-paint con un window:
-  Llamada "user32.dll" "BeginPaint" con el window y un paintstruct's dirección.
-  Llamada "user32.dll" "EndPaint" con el window y el paintstruct's dirección.
+  Llamar "user32.dll" "BeginPaint" con el window y un paintstruct's dirección.
+  Llamar "user32.dll" "EndPaint" con el window y el paintstruct's dirección.
   Crear un event.
   Poner "refresh" into el event's kind.
   \Poner "refrescar" into el event's clase.
@@ -7417,7 +7417,7 @@ An hfont es un handle.
 An hicon es un handle.
 
 Para esconder el cursor:
-    Llamada "user32.dll" "ShowCursor" con 0 retornando un número.
+    Llamar "user32.dll" "ShowCursor" con 0 retornando un número.
     Si el número es less than 0, salir.
   Repetir.
 
@@ -7724,9 +7724,9 @@ Para initalize el terminal:
   Crear el terminal in el screen's box.
 
 Para initialize before run:
-  Llamada "user32.dll" "DisableProcessWindowsGhosting".
-  Llamada "kernel32.dll" "GetProcessHeap" retornando el heap puntero.
-  Llamada "kernel32.dll" "LoadLibraryA" con "kernel32.dll"'s first retornando un handle.
+  Llamar "user32.dll" "DisableProcessWindowsGhosting".
+  Llamar "kernel32.dll" "GetProcessHeap" retornando el heap puntero.
+  Llamar "kernel32.dll" "LoadLibraryA" con "kernel32.dll"'s first retornando un handle.
   Si el handle es not 0, call "kernel32.dll" "GetProcAddress" con el handle y "HeapSetInformation"'s first retornando un puntero.
   Si el puntero es not nil, call el puntero con el heap puntero y 0 y 2's dirección y 4.
 
@@ -7736,14 +7736,14 @@ Para initialize el canvases:
   Poner el memory canvas into el current canvas.
 
 Para initialize el cgi:
-  Llamada "kernel32.dll" "AllocConsole".
-  Llamada "kernel32.dll" "GetStdHandle" con -10 [std_input_handle] retornando el StdIn handle.
-  Llamada "kernel32.dll" "GetStdHandle" con -11 [std_output_handle] retornando el StdOut handle.
+  Llamar "kernel32.dll" "AllocConsole".
+  Llamar "kernel32.dll" "GetStdHandle" con -10 [std_input_handle] retornando el StdIn handle.
+  Llamar "kernel32.dll" "GetStdHandle" con -11 [std_output_handle] retornando el StdOut handle.
 
 Para initialize el colors:
   Poner 1 into el pen size.
-  Llamada "gdi32.dll" "GetStockObject" con 8 [null_pen] retornando el null hpen.
-  Llamada "gdi32.dll" "GetStockObject" con 5 [null_brush] retornando el null hbrush.
+  Llamar "gdi32.dll" "GetStockObject" con 8 [null_pen] retornando el null hpen.
+  Llamar "gdi32.dll" "GetStockObject" con 5 [null_brush] retornando el null hbrush.
   Poner -1 y 0 y 0 into el borrar color.
   Poner 0 y 0 y 1000 into el white color.
   Poner 0 y 0 y 875 into el lightest gray color.
@@ -8074,7 +8074,7 @@ Para initialize el colors:
   \ Poner el gold color into el color oro.
 
 Para initialize com:
-  Llamada "ole32.dll" "CoInitializeEx" con 0 y 2 [coinit_apartmentthreaded].
+  Llamar "ole32.dll" "CoInitializeEx" con 0 y 2 [coinit_apartmentthreaded].
 
 Para initialize un context:
   Allocate memory for el context.
@@ -8107,7 +8107,7 @@ Para initialize el cursors (arrow cursor):
   Adjuntar $10FFFFFF30FFFFFF787FFFFFF87FFFFF to el and-mask.
   Adjuntar $FC3FFFFFFC3FFFFFFE7FFFFFFFFFFFFF to el and-mask.
   Adjuntar $FF to el and-mask usando 48.
-  Llamada "user32.dll" "CreateCursor" con el module's handle y 0 y 0 y 32 y 32 y el and-mask's first y el xor-mask's first retornando el arrow cursor.
+  Llamar "user32.dll" "CreateCursor" con el module's handle y 0 y 0 y 32 y 32 y el and-mask's first y el xor-mask's first retornando el arrow cursor.
 
 Para initialize el cursors (hand cursor):
   Adjuntar $000000000180000019B0000019B00000 to un xor-mask.
@@ -8120,7 +8120,7 @@ Para initialize el cursors (hand cursor):
   Adjuntar $0001FFFF8001FFFFC001FFFFC003FFFF to el and-mask.
   Adjuntar $E003FFFFF007FFFFF807FFFFF807FFFF to el and-mask.
   Adjuntar $FF to el and-mask usando 64.
-  Llamada "user32.dll" "CreateCursor" con el module's handle y 2 y 1  y 32 y 32 y el and-mask's first y el xor-mask's first retornando el hand cursor.
+  Llamar "user32.dll" "CreateCursor" con el module's handle y 2 y 1  y 32 y 32 y el and-mask's first y el xor-mask's first retornando el hand cursor.
 
 Para initialize el cursors (i-beam cursor):
   Adjuntar $EE000000100000001000000010000000 To un xor-mask.
@@ -8129,11 +8129,11 @@ Para initialize el cursors (i-beam cursor):
   Adjuntar $100000001000000010000000EE000000 to el xor-mask.
   Adjuntar $00 to el xor-mask usando 64.
   Adjuntar $FF to un and-mask usando 128.
-  Llamada "user32.dll" "CreateCursor" con el module's handle y 3 y 7 y 32 y 32 y el and-mask's first y el xor-mask's first retornando el i-beam cursor.
+  Llamar "user32.dll" "CreateCursor" con el module's handle y 3 y 7 y 32 y 32 y el and-mask's first y el xor-mask's first retornando el i-beam cursor.
 
 Para initialize el fonts:
-  Llamada "gdi32.dll" "GetStockObject" con 11 [ansi_fixed_font] retornando el null hfont.
-  Llamada "gdi32.dll" "AddFontMemResourceEx" con el osmosian font source's first y el osmosian font source's length y 0 y un número's dirección
+  Llamar "gdi32.dll" "GetStockObject" con 11 [ansi_fixed_font] retornando el null hfont.
+  Llamar "gdi32.dll" "AddFontMemResourceEx" con el osmosian font source's first y el osmosian font source's length y 0 y un número's dirección
   retornando el osmosian font resource.
   Poner "osmosian" y 1/4 inch into el default font.
 \ stroked fonts below
@@ -8143,28 +8143,28 @@ Para initialize el fonts:
 
 Para initialize gdi+:
   Poner 1 into un gdiplusstartupinput's gdiplusversion.
-  Llamada "gdiplus.dll" "GdiplusStartup" con el gptoken's dirección y el gdiplusstartupinput's dirección y 0.
+  Llamar "gdiplus.dll" "GdiplusStartup" con el gptoken's dirección y el gdiplusstartupinput's dirección y 0.
 
 Para initialize el memory canvas:
-  Llamada "gdi32.dll" "CreateCompatibleDC" con el screen canvas retornando el memory canvas.
-  Llamada "gdi32.dll" "GetCurrentObject" con el memory canvas y 7 [obj_bitmap] retornando el saved memory hbitmap.
-  Llamada "gdi32.dll" "CreateCompatibleBitmap" con el screen canvas y el screen's pixel width y el screen's pixel height retornando un hbitmap.
-  Llamada "gdi32.dll" "SelectObject" con el memory canvas y el hbitmap.
+  Llamar "gdi32.dll" "CreateCompatibleDC" con el screen canvas retornando el memory canvas.
+  Llamar "gdi32.dll" "GetCurrentObject" con el memory canvas y 7 [obj_bitmap] retornando el saved memory hbitmap.
+  Llamar "gdi32.dll" "CreateCompatibleBitmap" con el screen canvas y el screen's pixel width y el screen's pixel height retornando un hbitmap.
+  Llamar "gdi32.dll" "SelectObject" con el memory canvas y el hbitmap.
   Normalizar el memory canvas.
 
 Para initialize el module:
 \ temp path
   Poner 512 into un length.
   Reassign el temp path's first usando el length.
-  Llamada "kernel32.dll" "GetTempPathA" con el length y el temp path's first retornando el length.
+  Llamar "kernel32.dll" "GetTempPathA" con el length y el temp path's first retornando el length.
   Poner el temp path's first plus el length minus 1 into el temp path's last.
   Null terminate el temp path.
 \ module handle
-  Llamada "kernel32.dll" "GetModuleHandleA" con 0 retornando el module's handle.
+  Llamar "kernel32.dll" "GetModuleHandleA" con 0 retornando el module's handle.
 \ module name
   Poner 512 into el length.
   Reassign el module's path's first usando el length.
-  Llamada "kernel32.dll" "GetModuleFileNameA" con el module's handle y el module's path's first y el length retornando el length.
+  Llamar "kernel32.dll" "GetModuleFileNameA" con el module's handle y el module's path's first y el length retornando el length.
   Poner el module's path's first plus el length minus 1 into el module's path's last.
   Si el module's path starts con "\\?\", Eliminar leading bytes desde el module's path usando 4.
   Lowercase el module's path.
@@ -8180,7 +8180,7 @@ Para initialize el module:
 Para initialize el mouse:
   Poner 1 into el mouse's left button.
   Poner 2 into el mouse's right button.
-  Llamada "user32.dll" "GetSystemMetrics" con 23 [sm_swapbutton] retornando un número.
+  Llamar "user32.dll" "GetSystemMetrics" con 23 [sm_swapbutton] retornando un número.
   Si el número es 0, salir.
   Intercambiar el mouse's left button con el mouse's right button.
 
@@ -8189,14 +8189,14 @@ Para initialize el printer canvas:
   Poner el main window into el printdlgex's hwndowner.
   Poner 1288 [pd_returndc + pd_returndefault + pd_nopageenums] into el printdlgex's flags.
   Poner -1 [start_page_general] into el printdlgex's nstartpage.
-  Llamada "comdlg32.dll" "PrintDlgExA" con el printdlgex's dirección.
-  Llamada "kernel32.dll" "GlobalFree" con el printdlgex's hdevnames.
+  Llamar "comdlg32.dll" "PrintDlgExA" con el printdlgex's dirección.
+  Llamar "kernel32.dll" "GlobalFree" con el printdlgex's hdevnames.
   Poner el printdlgex's hdevmode into el printer device mode handle.
   Poner el printdlgex's hdc into el printer canvas.
 
 Para initialize el screen:
-  Llamada "user32.dll" "GetSystemMetrics" con 0 [sm_cxscreen] retornando el screen's pixel width.
-  Llamada "user32.dll" "GetSystemMetrics" con 1 [sm_cyscreen] retornando el screen's pixel height.
+  Llamar "user32.dll" "GetSystemMetrics" con 0 [sm_cxscreen] retornando el screen's pixel width.
+  Llamar "user32.dll" "GetSystemMetrics" con 1 [sm_cyscreen] retornando el screen's pixel height.
   Poner 96 into el ppi.
   Poner el tpi divided by el ppi into el tpp.
   Poner el screen's pixel width times el tpp into un width.
@@ -8209,13 +8209,13 @@ Para initialize el screen:
   \Poner el screen's pixel width into la pantalla's pixel width.
 
 Para initialize el screen canvas:
-  Llamada "user32.dll" "GetDC" con el main window retornando el screen canvas.
+  Llamar "user32.dll" "GetDC" con el main window retornando el screen canvas.
   Normalizar el screen canvas.
 
 Para initialize un talker:
   Convertir "{96749377-3391-11D2-9EE3-00C04F797396}" [clsid_spvoice] to un clsid.
   Convertir "{6C44DF74-72B9-4992-A1EC-EF996E0422D4}" [iid_ispvoice] to un iid.
-  Llamada "ole32.dll" "CoCreateInstance" con el clsid's dirección y 0 y 7 [clsctx_all] y el iid's dirección y el talker's dirección.
+  Llamar "ole32.dll" "CoCreateInstance" con el clsid's dirección y 0 y 7 [clsctx_all] y el iid's dirección y el talker's dirección.
 
 Para initialize el window:
   Poner un window class's magnitude into el window class' cbsize.
@@ -8223,13 +8223,13 @@ Para initialize el window:
   Apuntar el window class' lpfnwndproc to routine handle any message con un window un message número un w-param y un l-param.
   Poner el module's handle into el window class' hinstance.
   Poner el module's name's first into el window class' lpszclassname.
-  Llamada "user32.dll" "RegisterClassExA" con el window class's dirección.
-  Llamada "user32.dll" "CreateWindowExA" con 0 y el module's name's first y el module's name's first y 13565952 [WS_OVERLAPPEDWINDOW] \-2147483648 [ws_popup] 
+  Llamar "user32.dll" "RegisterClassExA" con el window class's dirección.
+  Llamar "user32.dll" "CreateWindowExA" con 0 y el module's name's first y el module's name's first y 13565952 [WS_OVERLAPPEDWINDOW] \-2147483648 [ws_popup] 
   And 0 y 0 y el screen's pixel width y el screen's pixel height y 0 y 0 y el module's handle y 0.
-  \Llamada "user32.dll" "ShowWindow" con el main window y 1  [sw_shownormal].
+  \Llamar "user32.dll" "ShowWindow" con el main window y 1  [sw_shownormal].
 
 Para initialize winsock:
-  Llamada "ws2_32.dll" "WSAStartup" con 2 y un wsadata's dirección.
+  Llamar "ws2_32.dll" "WSAStartup" con 2 y un wsadata's dirección.
 
 An input es un event.
 
@@ -8937,7 +8937,7 @@ Para localizar un spot usando un pair:
 
 Para bloquear [una parte rectangular de] un gpbitmap usando un bitmapdata (24-bit rgb):
   Poner el gpbitmap's gprect into un gprect.
-  Llamada "gdiplus.dll" "GdipBitmapLockBits" con 
+  Llamar "gdiplus.dll" "GdipBitmapLockBits" con 
   el gpbitmap y 
   el gprect's dirección y 
   3 [imagelockmoderead or imagelockmodewrite]
@@ -9034,7 +9034,7 @@ Para mask inside un ellipse:
   Destroy el hrgn.
 
 Para mask inside un hrgn:
-  Llamada "gdi32.dll" "ExtSelectClipRgn" con el current canvas y el hrgn y 4 [rgn_diff].
+  Llamar "gdi32.dll" "ExtSelectClipRgn" con el current canvas y el hrgn y 4 [rgn_diff].
 
 \Para enmascarar dentro de un polígono;
 Para mask inside un polygon:
@@ -9103,7 +9103,7 @@ Para mask outside un ellipse:
   Destroy el hrgn.
 
 Para mask outside un hrgn:
-  Llamada "gdi32.dll" "ExtSelectClipRgn" con el current canvas y el hrgn y 1  [rgn_and].
+  Llamar "gdi32.dll" "ExtSelectClipRgn" con el current canvas y el hrgn y 1  [rgn_and].
 
 \Para enmascarar fuera de un polígono;
 Para mask outside un polygon:
@@ -9136,7 +9136,7 @@ A million es 1000 thousands.
 A millisecond es un número.
 
 Para minimize un window:
-  Llamada "user32.dll" "ShowWindow" con el window y 6 [sw_minimize].
+  Llamar "user32.dll" "ShowWindow" con el window y 6 [sw_minimize].
 
 The minus-sign byte es un byte igual to 45.
 
@@ -9148,7 +9148,7 @@ Para reflejar el gpbitmap in un picture:
   Reflejar el picture's gpbitmap.
 
 Para reflejar un gpimage:
-  Llamada "gdiplus.dll" "GdipImageRotateFlip" con el gpimage y 4 [rotatenoneflipx].
+  Llamar "gdiplus.dll" "GdipImageRotateFlip" con el gpimage y 4 [rotatenoneflipx].
 
 \Para reflejar una imagen;
 Para reflejar un picture:
@@ -9830,14 +9830,14 @@ Para mover un vertex up some twips:
   Mover el vertex usando 0 y - el twips.
 
 Para mover un window left:
-  Llamada "user32.dll" "GetWindowRect" con el main window y un box's dirección.
+  Llamar "user32.dll" "GetWindowRect" con el main window y un box's dirección.
   Restar el screen's pixel width desde el box's left.
-  Llamada "user32.dll" "MoveWindow" con el window y el box's left y el box's top y el screen's pixel width y el screen's pixel height y 1 .
+  Llamar "user32.dll" "MoveWindow" con el window y el box's left y el box's top y el screen's pixel width y el screen's pixel height y 1 .
 
 Para mover un window right:
-  Llamada "user32.dll" "GetWindowRect" con el main window y un box's dirección.
+  Llamar "user32.dll" "GetWindowRect" con el main window y un box's dirección.
   Agregar el screen's pixel width to el box's left.
-  Llamada "user32.dll" "MoveWindow" con el window y el box's left y el box's top y el screen's pixel width y el screen's pixel height y 1 .
+  Llamar "user32.dll" "MoveWindow" con el window y el box's left y el box's top y el screen's pixel width y el screen's pixel height y 1 .
 
 A ms es 1 millisecond.
 
@@ -9863,7 +9863,7 @@ Para multiplicar un número by un fraction;
 \Para scale un número usando un ratio;
 Para scale un número usando un fraction:
   Si el fraction's denominator es 0, salir.
-  Llamada "kernel32.dll" "MulDiv" con el número y el fraction's numerator y el fraction's denominator retornando el número.
+  Llamar "kernel32.dll" "MulDiv" con el número y el fraction's numerator y el fraction's denominator retornando el número.
 
 \Para multiplicar un par por otro par;
 Para multiplicar un pair by another pair:
@@ -9949,13 +9949,13 @@ Para normalizar un box:
   Si el box's bottom es less than el box's top, intercambiar el box's top con el box's bottom.
 
 Para normalizar un canvas:
-  Llamada "gdi32.dll" "SetGraphicsMode" con el canvas y 2 [gm_advanced].
-  Llamada "gdi32.dll" "SetBkMode" con el canvas y 1  [transparent].
-  Llamada "gdi32.dll" "SetMapMode" con el canvas y 8 [mm_anisotropic].
-  Llamada "gdi32.dll" "SetViewportOrgEx" con el canvas y 0 y 0 y nil.
-  Llamada "gdi32.dll" "SetViewportExtEx" con el canvas y el ppi y el ppi y nil.
-  Llamada "gdi32.dll" "SetWindowOrgEx" con el canvas y 0 y 0 y nil.
-  Llamada "gdi32.dll" "SetWindowExtEx" con el canvas y el tpi y el tpi y nil.
+  Llamar "gdi32.dll" "SetGraphicsMode" con el canvas y 2 [gm_advanced].
+  Llamar "gdi32.dll" "SetBkMode" con el canvas y 1  [transparent].
+  Llamar "gdi32.dll" "SetMapMode" con el canvas y 8 [mm_anisotropic].
+  Llamar "gdi32.dll" "SetViewportOrgEx" con el canvas y 0 y 0 y nil.
+  Llamar "gdi32.dll" "SetViewportExtEx" con el canvas y el ppi y el ppi y nil.
+  Llamar "gdi32.dll" "SetWindowOrgEx" con el canvas y 0 y 0 y nil.
+  Llamar "gdi32.dll" "SetWindowExtEx" con el canvas y el tpi y el tpi y nil.
 
 \Para normalizar una elipse;
 Para normalizar un ellipse:
@@ -10091,7 +10091,7 @@ Para abrir un file usando un path:
   Definir el path to read-write mode.
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "CreateFileA" con el path's first y -1073741824 [generic_read+generic_write] y 0 y 0 y 4 [open_always] 
+  Llamar "kernel32.dll" "CreateFileA" con el path's first y -1073741824 [generic_read+generic_write] y 0 y 0 y 4 [open_always] 
   And -2147483520 [file_flag_write_through or file_attribute_normal] y 0 retornando el file.
   Si el file es -1 [invalid_handle_value], Poner "Error abriendo archivo '" then el path then "'." into el error de e/s; salir.
 
@@ -10660,23 +10660,23 @@ The pizza pie es un fraction igual to 355/113.
 
 \Para reproducir una ola;
 Para reproducir un wave:
-  Llamada "winmm.dll" "PlaySound" con el wave's first y 0 y 5 [snd_memory+snd_async].
+  Llamar "winmm.dll" "PlaySound" con el wave's first y 0 y 5 [snd_memory+snd_async].
 
 \Para reproducir una ola y esperar;
 Para reproducir un wave y wait:
-  Llamada "winmm.dll" "PlaySound" con el wave's first y 0 y 4 [snd_memory+snd_sync].
+  Llamar "winmm.dll" "PlaySound" con el wave's first y 0 y 4 [snd_memory+snd_sync].
 
 \Para reproducir un archivo de onda;
 Para reproducir un wave file:
   Privatizar el wave file.
   Null terminate el wave file.
-  Llamada "winmm.dll" "PlaySound" con el wave file's first y 0 y 131073 [snd_filename+snd_async].
+  Llamar "winmm.dll" "PlaySound" con el wave file's first y 0 y 131073 [snd_filename+snd_async].
 
 \Para reproducir un archivo de onda y esperar;
 Para reproducir un wave file y wait:
   Privatizar el wave file.
   Null terminate el wave file.
-  Llamada "winmm.dll" "PlaySound" con el wave file's first y 0 y 131072 [snd_filename+snd_sync].
+  Llamar "winmm.dll" "PlaySound" con el wave file's first y 0 y 131072 [snd_filename+snd_sync].
 
 The plus-or-minus byte es un byte igual to 177.
 
@@ -10814,9 +10814,9 @@ The purple pen es un pen.
 
 Para poner el actual data of un font into un buffer: \ only works con true/open type fonts
   Crear el hfont of el memory canvas usando el font.
-  Llamada "gdi32.dll" "GetFontData" con el memory canvas y 0 y 0 y nil y 0 retornando un count.
+  Llamar "gdi32.dll" "GetFontData" con el memory canvas y 0 y 0 y nil y 0 retornando un count.
   Reassign el buffer's first usando el count.
-  Llamada "gdi32.dll" "GetFontData" con el memory canvas y 0 y 0 y el buffer's first y el count.
+  Llamar "gdi32.dll" "GetFontData" con el memory canvas y 0 y 0 y el buffer's first y el count.
   Poner el buffer's first plus el count minus 1 into el buffer's last.
   Destroy el hfont of el memory canvas.
 
@@ -11131,11 +11131,11 @@ Para poner un gpimage's gprect into un gprect:
 
 Para poner un gpimage's height into un height:
   Si el gpimage es nil, Poner 0 into el height; salir.
-  Llamada "gdiplus.dll" "GdipGetImageHeight" con el gpimage y el height's dirección.
+  Llamar "gdiplus.dll" "GdipGetImageHeight" con el gpimage y el height's dirección.
 
 Para poner un gpimage's width into un width:
   Si el gpimage es nil, Poner 0 into el width; salir.
-  Llamada "gdiplus.dll" "GdipGetImageWidth" con el gpimage y el width's dirección.
+  Llamar "gdiplus.dll" "GdipGetImageWidth" con el gpimage y el width's dirección.
 
 Para poner un gprect into another gprect:
   Poner el gprect's x into el other gprect's x.
@@ -11261,9 +11261,9 @@ Para centrar un line on un spot:
 
 \Para poner el punto del mouse en un punto;
 Para poner el mouse's spot into un spot:
-  Llamada "user32.dll" "GetCursorPos" con el spot's dirección.
-  Llamada "user32.dll" "ScreenToClient" con el main window y el spot's dirección. \ in case window está on another monitor.
-  Llamada "gdi32.dll" "DPtoLP" con el screen canvas y el spot's dirección y 1 .
+  Llamar "user32.dll" "GetCursorPos" con el spot's dirección.
+  Llamar "user32.dll" "ScreenToClient" con el main window y el spot's dirección. \ in case window está on another monitor.
+  Llamar "gdi32.dll" "DPtoLP" con el screen canvas y el spot's dirección y 1 .
 
 \Para poner un nombre y una altura en un tipo de letra;
 Para poner un name y un height into un font:
@@ -11541,15 +11541,15 @@ Para poner un string into un text:
 
 \Para poner una cadena en el portapapeles de Windows;
 Para poner un string on el windows clipboard:
-  Llamada "user32.dll" "OpenClipboard" con el main window.
-  Llamada "user32.dll" "EmptyClipboard".
+  Llamar "user32.dll" "OpenClipboard" con el main window.
+  Llamar "user32.dll" "EmptyClipboard".
   Poner el string's length plus 1 into un número.
-  Llamada "kernel32.dll" "GlobalAlloc" con 66 [ghnd] y el número retornando un handle.
-  Llamada "kernel32.dll" "GlobalLock" con el handle retornando un puntero.
+  Llamar "kernel32.dll" "GlobalAlloc" con 66 [ghnd] y el número retornando un handle.
+  Llamar "kernel32.dll" "GlobalLock" con el handle retornando un puntero.
   Copiar bytes desde el string's first to el puntero for el string's length.
-  Llamada "kernel32.dll" "GlobalUnlock" con el handle.
-  Llamada "user32.dll" "SetClipboardData" con 1 [cf_text] y el handle.
-  Llamada "user32.dll" "CloseClipboard".
+  Llamar "kernel32.dll" "GlobalUnlock" con el handle.
+  Llamar "user32.dll" "SetClipboardData" con 1 [cf_text] y el handle.
+  Llamar "user32.dll" "CloseClipboard".
 
 \Para poner una longitud de cadena en una longitud;
 Para poner un string's length into un length:
@@ -11581,7 +11581,7 @@ Para poner un substring into another substring:
 
 \Para poner la fecha/hora del sistema en una fecha/hora;
 Para poner el system's date/time into un date/time:
-  Llamada "kernel32.dll" "GetLocalTime" con un systemtime's dirección.
+  Llamar "kernel32.dll" "GetLocalTime" con un systemtime's dirección.
   Poner el systemtime's wyear into el date/time's year.
   Poner el systemtime's wmonth into el date/time's month.
   Poner el systemtime's wdayofweek into el date/time's week day.
@@ -11593,14 +11593,14 @@ Para poner el system's date/time into un date/time:
 
 \Para poner el último error del sistema en un número;
 Para poner el system's last error into un número:
-  Llamada "kernel32.dll" "GetLastError" retornando el número.
+  Llamar "kernel32.dll" "GetLastError" retornando el número.
 
 Para poner el system's last winsock error into un número:
-  Llamada "ws2_32.dll" "WSAGetLastError" retornando el número.
+  Llamar "ws2_32.dll" "WSAGetLastError" retornando el número.
 
 \Para poner las ticks del sistema en algunos ticks;
 Para poner el system's tick count into some ticks: \ wraps every 24.8 days or so
-  Llamada "kernel32.dll" "GetTickCount" retornando el ticks.
+  Llamar "kernel32.dll" "GetTickCount" retornando el ticks.
   Bitwise AND el ticks con el largest número.
 
 Para poner un terminal in el middle of un box;
@@ -11904,10 +11904,10 @@ Para leer un console into un string:
 \Para leer un archivo en un búfer;
 Para leer un file into un buffer:
   Borrar el error de e/s.
-  Llamada "kernel32.dll" "GetFileSize" con el file y nil retornando un size.
+  Llamar "kernel32.dll" "GetFileSize" con el file y nil retornando un size.
   Reassign el buffer's first usando el size.
   Poner el buffer's first plus el size minus 1 into el buffer's last.
-  Llamada "kernel32.dll" "ReadFile" con el file y el buffer's first y el size y un número's dirección y 0 retornando un result número.
+  Llamar "kernel32.dll" "ReadFile" con el file y el buffer's first y el size y un número's dirección y 0 retornando un result número.
   Si el result número es 0, Poner "Error leyendo archivo." into el error de e/s; salir.
 
 \Para leer una bandera desde una consola; 
@@ -11933,14 +11933,14 @@ Para leer un path into un buffer:
   Null terminate el path.
   Si el path es not in el file system, Poner "Archivo '" then el path then "' no existe." into el error de e/s; salir.
 \  set el path to read-write mode.
-  Llamada "kernel32.dll" "CreateFileA" con el path's first y -2147483648 [generic_read] y 3 [file_share_read+file_share_write] y 0 
+  Llamar "kernel32.dll" "CreateFileA" con el path's first y -2147483648 [generic_read] y 3 [file_share_read+file_share_write] y 0 
   And 3 [open_existing] y 0 y 0 retornando un handle.
   Si el handle es -1 [invalid_handle_value], Poner "Error abriendo archivo '" then el path then "'." into el error de e/s; salir.
-  Llamada "kernel32.dll" "GetFileSize" con el handle y nil retornando un size.
+  Llamar "kernel32.dll" "GetFileSize" con el handle y nil retornando un size.
   Reassign el buffer's first usando el size.
   Poner el buffer's first plus el size minus 1 into el buffer's last.
-  Llamada "kernel32.dll" "ReadFile" con el handle y el buffer's first y el size y un número's dirección y 0 retornando el número.
-  Llamada "kernel32.dll" "CloseHandle" con el handle.
+  Llamar "kernel32.dll" "ReadFile" con el handle y el buffer's first y el size y un número's dirección y 0 retornando el número.
+  Llamar "kernel32.dll" "CloseHandle" con el handle.
   Si el número es not 0, salir.
   Poner "Error leyendo archivo '" then el path then "'." into el error de e/s.
 
@@ -11980,13 +11980,13 @@ Para leer un response string desde un winhttp request:
   Poner 8 kilobytes into un buffer size.
   Lazo.
     Poner 0 into un size.
-    Llamada "winhttp.dll" "WinHttpQueryDataAvailable"
+    Llamar "winhttp.dll" "WinHttpQueryDataAvailable"
     con el winhttp request's request y el size's dirección retornando un result número.
     Si el result es 0, Poner "No se pudo consultar los datos disponibles." into el error de e/s; borrar el response; interrumpir.
     Poner el response's length into un saved length.
     Reassign el response's first usando el saved length plus el buffer size.
     Poner el response's first plus el saved length into un puntero.
-    Llamada "winhttp.dll" "WinHttpReadData" con el winhttp request's request y el puntero
+    Llamar "winhttp.dll" "WinHttpReadData" con el winhttp request's request y el puntero
     y el buffer size y un count's dirección retornando el result número.
     Si el result número es 0, Poner "Error leyendo datos." into el error de e/s; borrar el response; interrumpir.
     Poner el puntero plus el count minus 1 into el response's last.
@@ -12001,7 +12001,7 @@ Para leer StdIn into un buffer:
   Convertir el string into un length.
   Si el length es 0, salir.
   Reassign el buffer's first usando el length.
-  Llamada "kernel32.dll" "ReadFile" con el StdIn handle y el buffer's first y el length y un número's dirección y nil.
+  Llamar "kernel32.dll" "ReadFile" con el StdIn handle y el buffer's first y el length y un número's dirección y nil.
   Si el número es not el length, Poner "Error leyendo datos 'StdIn'." into el error de e/s; borrar el buffer; salir.
   Poner el buffer's first plus el length minus 1 into el buffer's last.
 
@@ -12015,12 +12015,12 @@ Para leer un url into un buffer:
   Borrar el buffer.
   Borrar el error de e/s.
 \ internet open
-  Llamada "wininet.dll" "InternetOpenA" con el module's name's first y 0 [internet_open_type_preconfig] y nil y nil retornando un internet handle.
+  Llamar "wininet.dll" "InternetOpenA" con el module's name's first y 0 [internet_open_type_preconfig] y nil y nil retornando un internet handle.
   Si el internet handle es 0, Poner "No pude conectarme un internet." into el error de e/s; salir.
 \ internet open url
   Privatizar el url.
   Null terminate el url.
-  Llamada "wininet.dll" "InternetOpenUrlA" con el internet handle y el url's first y nil y 0 y 0 y 0 retornando un url handle.
+  Llamar "wininet.dll" "InternetOpenUrlA" con el internet handle y el url's first y nil y 0 y 0 y 0 retornando un url handle.
   Si el url handle es 0, Poner "No pude conectarme un url '" then el url then "'." into el error de e/s; call "wininet.dll" "InternetCloseHandle" con el internet handle; salir.
 \ read el file
   Poner 64 kilobytes into un buffer size.
@@ -12028,14 +12028,14 @@ Para leer un url into un buffer:
   Poner el buffer's length into un saved length.
   Reassign el buffer's first usando el saved length plus el buffer size.
   Poner el buffer's first plus el saved length into un puntero.
-  Llamada "wininet.dll" "InternetReadFile" con el url handle y el puntero y el buffer size y un count's dirección retornando un result número.
+  Llamar "wininet.dll" "InternetReadFile" con el url handle y el puntero y el buffer size y un count's dirección retornando un result número.
   Si el result número es 0, Poner "Error leyendo url '" then el url then "'." into el error de e/s; interrumpir.
   Poner el puntero plus el count minus 1 into el buffer's last.
   Si el count es 0, interrumpir.
   Repetir.
 \ clean up
-  Llamada "wininet.dll" "InternetCloseHandle" con el url handle.
-  Llamada "wininet.dll" "InternetCloseHandle" con el internet handle.
+  Llamar "wininet.dll" "InternetCloseHandle" con el url handle.
+  Llamar "wininet.dll" "InternetCloseHandle" con el internet handle.
 
 A really dark color es un color.
 
@@ -12050,7 +12050,7 @@ Para reassign un puntero usando un byte count:
   Si el byte count es 0, unassign el puntero; salir.
   Privatizar el byte count.
   Redondear el byte count up to el nearest power of two.
-  Llamada "kernel32.dll" "HeapReAlloc" con el heap puntero y 8 [heap_zero_memory] y el puntero y el byte count retornando el puntero.
+  Llamar "kernel32.dll" "HeapReAlloc" con el heap puntero y 8 [heap_zero_memory] y el puntero y el byte count retornando el puntero.
 
 Para receive un buffer desde un socket:
   Borrar el error de e/s.
@@ -12061,7 +12061,7 @@ Para receive un buffer desde un socket:
     Poner el buffer's length into un saved length.
     Reassign el buffer's first usando el saved length plus el buffer size.
     Poner el buffer's first plus el saved length into un puntero.
-    Llamada "ws2_32.dll" "recv" con el socket y el puntero y el buffer size y 0 retornando un count.
+    Llamar "ws2_32.dll" "recv" con el socket y el puntero y el buffer size y 0 retornando un count.
     Si el count es not -1 [socket_error], Poner el puntero plus el count minus 1 into el buffer's last; salir.
     Si el system's last winsock error es not 10040 [wsamsgsize], Poner "Error recibiendo datos." into el error de e/s; borrar el buffer; salir.
     Poner el puntero plus el count minus 1 into el buffer's last.
@@ -12069,7 +12069,7 @@ Para receive un buffer desde un socket:
 
 Para receive el response desde un winhttp request:
   Si el winhttp request es nil, salir.
-  Llamada "winhttp.dll" "WinHttpReceiveResponse"
+  Llamar "winhttp.dll" "WinHttpReceiveResponse"
   con el winhttp request's request
   And 0
   retornando un result número.
@@ -12141,7 +12141,7 @@ Para actualizar el cursor:
 
 \Para actualizar la pantalla dada una caja;
 Para actualizar el screen usando un box:
-  Llamada "gdi32.dll" "BitBlt" con el screen canvas y el box's left y el box's top y el box's width y el box's height 
+  Llamar "gdi32.dll" "BitBlt" con el screen canvas y el box's left y el box's top y el box's width y el box's height 
   y el current canvas y el box's left y el box's top y 13369376 [srccopy].
 
 The registered byte es un byte igual to 174.
@@ -12341,7 +12341,7 @@ Para rename un path to another path in el file system:
   Privatizar el other path.
   Eliminar any trailing backslash desde el other path.
   Null terminate el other path.
-  Llamada "kernel32.dll" "MoveFileA" con el path's first y el other path's first retornando un número.
+  Llamar "kernel32.dll" "MoveFileA" con el path's first y el other path's first retornando un número.
   Borrar el error de e/s.
   Si el número es not 0, salir.
   Poner "Error renombrando archivo '" then el path then "'." into el error de e/s.
@@ -12458,13 +12458,13 @@ Para redimensionar un picture to un width by un height:
   Si el picture es nil, salir.
   Poner el width divided by el tpp into un pixel width.
   Poner el height divided by el tpp into un pixel height.
-  Llamada "gdiplus.dll" "GdipCreateBitmapFromScan0" con el pixel width y el pixel height y 0 y 137224 [pixelformat24bpprgb] y 0 y un gpbitmap's dirección.
-  Llamada "gdiplus.dll" "GdipGetImageGraphicsContext" con el gpbitmap y un gpgraphic's dirección.
-  Llamada "gdiplus.dll" "GdipDrawImageRectRectI" con el gpgraphic y el picture's gpbitmap
+  Llamar "gdiplus.dll" "GdipCreateBitmapFromScan0" con el pixel width y el pixel height y 0 y 137224 [pixelformat24bpprgb] y 0 y un gpbitmap's dirección.
+  Llamar "gdiplus.dll" "GdipGetImageGraphicsContext" con el gpbitmap y un gpgraphic's dirección.
+  Llamar "gdiplus.dll" "GdipDrawImageRectRectI" con el gpgraphic y el picture's gpbitmap
   And 0 y 0 y el pixel width y el pixel height
   And 0 y 0 y el picture's gpbitmap's width minus 1 y el picture's gpbitmap's height minus 1
   And 2 [unitpixel] y nil y nil y 0.
-  Llamada "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
+  Llamar "gdiplus.dll" "GdipDeleteGraphics" con el gpgraphic.
   Destroy el picture's gpbitmap.
   Poner el gpbitmap into el picture's gpbitmap.
   Ajustar el picture (extract boxes desde gpbitmap).
@@ -12508,7 +12508,7 @@ Para restart un timer:
   Poner el system's tick count into el timer's start ticks.
 
 Para restore un canvas:
-  Llamada "gdi32.dll" "RestoreDC" con el canvas y -1. \ need to use -1, windows documentation es wrong
+  Llamar "gdi32.dll" "RestoreDC" con el canvas y -1. \ need to use -1, windows documentation es wrong
 
 Para restore un context:
   Obtener un saved context desde el context stack.
@@ -12522,7 +12522,7 @@ Para restore un context:
   Destroy el saved context.
 
 Para restore un window:
-  Llamada "user32.dll" "ShowWindow" con el window y 9 [sw_restore].
+  Llamar "user32.dll" "ShowWindow" con el window y 9 [sw_restore].
 
 The return byte es un byte igual to 13.
 
@@ -12619,7 +12619,7 @@ Para rotar un ellipse:
 
 Para rotar un gpimage:
   Si el gpimage es nil, salir.
-  Llamada "gdiplus.dll" "GdipImageRotateFlip" con el gpimage y 1  [rotate90flipnone].
+  Llamar "gdiplus.dll" "GdipImageRotateFlip" con el gpimage y 1  [rotate90flipnone].
 
 Para rotar un gpimage usando un angle: \ angle can be 0, 900, 1800, 2700
   Si el gpimage es nil, salir.
@@ -12627,7 +12627,7 @@ Para rotar un gpimage usando un angle: \ angle can be 0, 900, 1800, 2700
   Si el angle es 900, Poner 1 [rotate90flipnone] into el número.
   Si el angle es 1800, Poner 2 [rotate180flipnone ] into el número.
   Si el angle es 2700, Poner 3 [rotate270flipnone ] into el número.
-  Llamada "gdiplus.dll" "GdipImageRotateFlip" con el gpimage y el número.
+  Llamar "gdiplus.dll" "GdipImageRotateFlip" con el gpimage y el número.
 
 \Para rotar una línea;
 Para rotar un line:
@@ -12742,7 +12742,7 @@ The s-key es un key igual to 83.
 A saturation es un número [0 to 1000].
 
 Para save un canvas:
-  Llamada "gdi32.dll" "SaveDC" con el canvas.
+  Llamar "gdi32.dll" "SaveDC" con el canvas.
 
 Para save un context:
   Allocate memory for un saved context.
@@ -12770,7 +12770,7 @@ Para hablar un string:
   Si el string es blank, salir.
   Convertir el string to un wide string.
   Null terminate el wide string.
-  Llamada el talker's vtable's speak con el talker y el wide string's first y 17 [svsfdefault+svsflagsasyn+svsfisnotxml] y 0.
+  Llamar el talker's vtable's speak con el talker y el wide string's first y 17 [svsfdefault+svsflagsasyn+svsfisnotxml] y 0.
 
 Para hablar un string y esperar;
 \Para hablar una cadena y esperar;
@@ -12781,7 +12781,7 @@ Para hablar un string y wait:
   Si el string es blank, salir.
   Convertir el string to un wide string.
   Null terminate el wide string.
-  Llamada el talker's vtable's speak con el talker y el wide string's first y 16 [svsfdefault+svsfisnotxml] y 0.
+  Llamar el talker's vtable's speak con el talker y el wide string's first y 16 [svsfdefault+svsfisnotxml] y 0.
 
 Para scale un box usando un ratio;
 Para scale un box usando un fraction:
@@ -13042,7 +13042,7 @@ Para enviar un buffer to un socket:
   Poner el buffer's length into un length.
   Lazo.
     Si el length es 0, interrumpir.
-    Llamada "ws2_32.dll" "send" con el socket y el puntero y el length y 0 retornando un número.
+    Llamar "ws2_32.dll" "send" con el socket y el puntero y el length y 0 retornando un número.
     Si el número es -1 [socket_error], Poner "Error enviando datos." into el error de e/s; salir.
     Restar el número desde el length.
     Agregar el número to el puntero.
@@ -13050,7 +13050,7 @@ Para enviar un buffer to un socket:
 
 Para enviar un data string to un winhttp request:
   Si el winhttp request es nil, salir.
-  Llamada "winhttp.dll" "WinHttpSendRequest"
+  Llamar "winhttp.dll" "WinHttpSendRequest"
   con el winhttp request's request
   y 0 [winhttp_no_additional_headers]
   y 0 
@@ -13155,17 +13155,17 @@ A sender es un string.
 
 Para definir el colorref of un canvas usando un color:
   Convertir el color to un colorref.
-  Llamada "gdi32.dll" "SetTextColor" con el canvas y el colorref.
+  Llamar "gdi32.dll" "SetTextColor" con el canvas y el colorref.
 
 Para definir el drawing origin to un spot:
-  Llamada "gdi32.dll" "GetDeviceCaps" con el current canvas y 112 [physicaloffsetx] retornando un pair's x-número.
-  Llamada "gdi32.dll" "GetDeviceCaps" con el current canvas y 113 [physicaloffsety] retornando el pair's y-número.
+  Llamar "gdi32.dll" "GetDeviceCaps" con el current canvas y 112 [physicaloffsetx] retornando un pair's x-número.
+  Llamar "gdi32.dll" "GetDeviceCaps" con el current canvas y 113 [physicaloffsety] retornando el pair's y-número.
   Negar el pair.
   Si el current canvas es not el printer canvas, borrar el pair.
-  Llamada "gdi32.dll" "SetViewportOrgEx" con el current canvas y el pair's x-número y el pair's y-número y nil.
+  Llamar "gdi32.dll" "SetViewportOrgEx" con el current canvas y el pair's x-número y el pair's y-número y nil.
   Privatizar el spot.
-  Llamada "gdi32.dll" "LPtoDP" con el current canvas y el spot's dirección y 1 .
-  Llamada "gdi32.dll" "SetViewportOrgEx" con el current canvas y el spot's x-coord y el spot's y-coord y nil.
+  Llamar "gdi32.dll" "LPtoDP" con el current canvas y el spot's dirección y 1 .
+  Llamar "gdi32.dll" "SetViewportOrgEx" con el current canvas y el spot's x-coord y el spot's y-coord y nil.
 
 \Para elevar una bandera;
 Para definir un flag:
@@ -13174,9 +13174,9 @@ Para definir un flag:
 Para definir un path to read-write mode:
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "GetFileAttributesA" con el path's first retornando un número.
+  Llamar "kernel32.dll" "GetFileAttributesA" con el path's first retornando un número.
   Bitwise AND el número con -2 [everything except file_attribute_readonly].
-  Llamada "kernel32.dll" "SetFileAttributesA" con el path's first y el número.
+  Llamar "kernel32.dll" "SetFileAttributesA" con el path's first y el número.
 
 The seven byte es un byte igual to 55.
 
@@ -13244,8 +13244,8 @@ Para mostrar un console:
 
 \Para mostrar un cursor;
 Para mostrar un cursor:
-    Llamada "user32.dll" "SetCursor" con el cursor.
-    Llamada "user32.dll" "ShowCursor" con 1 retornando un número.
+    Llamar "user32.dll" "SetCursor" con el cursor.
+    Llamar "user32.dll" "ShowCursor" con 1 retornando un número.
     Si el número es greater than 0, salir.
   Repetir.
 
@@ -13926,14 +13926,14 @@ Para start un process usando un path: \ must be llamado con un global variable
   Poner un startupinfo's magnitude into el startupinfo's cb.
   Extraer un directory desde el path. null terminate el directory.
   Privatizar el path. null terminate el path.
-  Llamada "kernel32.dll" "CreateProcessA" con el path's first y 0 y 0 y 0 y 0 y 67108904 [create_default_error_mode + normal_priority_class + detached_process] y 0 
+  Llamar "kernel32.dll" "CreateProcessA" con el path's first y 0 y 0 y 0 y 0 y 67108904 [create_default_error_mode + normal_priority_class + detached_process] y 0 
   y el directory's first y el startupinfo's dirección y un processinfo's dirección retornando un número.
   Si el número es 0, Poner "No puedo ejecutar el programa." into el error de e/s; salir.
   Poner el processinfo's hprocess into el process.
-  Llamada "kernel32.dll" "CloseHandle" con el processinfo's hthread.
+  Llamar "kernel32.dll" "CloseHandle" con el processinfo's hthread.
   Apuntar un puntero to routine wait for un process puntero.
-  Llamada "kernel32.dll" "CreateThread" con 0 y 0 y el puntero y el process's dirección y 0 y another número's dirección retornando un handle.
-  Llamada "kernel32.dll" "CloseHandle" con el handle. \ does not end el thread, just dumps el handle
+  Llamar "kernel32.dll" "CreateThread" con 0 y 0 y el puntero y el process's dirección y 0 y another número's dirección retornando un handle.
+  Llamar "kernel32.dll" "CloseHandle" con el handle. \ does not end el thread, just dumps el handle
 
 \Para iniciar un temporizador;
 Para iniciar un timer;
@@ -14048,7 +14048,7 @@ The StdOut handle es un handle.
 
 Para stop un process:
   Si el process es 0, salir.
-  Llamada "kernel32.dll" "TerminateProcess" con el process y 0.
+  Llamar "kernel32.dll" "TerminateProcess" con el process y 0.
   Poner 0 into el process.
 
 \Para detener un temporizador;
@@ -15928,7 +15928,7 @@ The u-key es un key igual to 85.
 
 Para unassign un puntero:
   Si el puntero es nil, salir.
-  Llamada "kernel32.dll" "HeapFree" con el heap puntero y 0 [no options] y el puntero retornando un número.
+  Llamar "kernel32.dll" "HeapFree" con el heap puntero y 0 [no options] y el puntero retornando un número.
   Si el número es 0, salir.
   Void el puntero.
   Restar 1 desde el heap count.
@@ -15940,11 +15940,11 @@ A unit es un número.
 The unit-separator byte es un byte igual to 31.
 
 Para unlock un gpbitmap usando un bitmapdata:
-  Llamada "gdiplus.dll" "GdipBitmapUnlockBits" con el gpbitmap y el bitmapdata's dirección.
+  Llamar "gdiplus.dll" "GdipBitmapUnlockBits" con el gpbitmap y el bitmapdata's dirección.
 
 \Para desenmascarar todo;
 Para unmask everything:
-  Llamada "gdi32.dll" "SelectClipRgn" con el current canvas y 0.
+  Llamar "gdi32.dll" "SelectClipRgn" con el current canvas y 0.
 
 \Para desenmascarar dentro de una caja;
 Para unmask inside un box:
@@ -15959,7 +15959,7 @@ Para unmask inside un ellipse:
   Destroy el hrgn.
 
 Para unmask inside un hrgn:
-  Llamada "gdi32.dll" "ExtSelectClipRgn" con el current canvas y el hrgn y 2 [rgn_or].
+  Llamar "gdi32.dll" "ExtSelectClipRgn" con el current canvas y el hrgn y 2 [rgn_or].
 
 \Para desenmascarar dentro de un polígono;
 Para unmask inside un polygon:
@@ -15987,11 +15987,11 @@ Para unmask outside un ellipse:
 
 Para unmask outside un hrgn:
   Crear un old hrgn usando el zero box.
-  Llamada "gdi32.dll" "GetClipRgn" con el current canvas y el old hrgn retornando un número.
+  Llamar "gdi32.dll" "GetClipRgn" con el current canvas y el old hrgn retornando un número.
   Si el número es not 1, borrar el old hrgn.
-  Llamada "gdi32.dll" "SelectClipRgn" con el current canvas y 0.
-  Llamada "gdi32.dll" "ExtSelectClipRgn" con el current canvas y el hrgn y 4 [rgn_diff].
-  Llamada "gdi32.dll" "ExtSelectClipRgn" con el current canvas y el old hrgn y 2 [rgn_or].
+  Llamar "gdi32.dll" "SelectClipRgn" con el current canvas y 0.
+  Llamar "gdi32.dll" "ExtSelectClipRgn" con el current canvas y el hrgn y 4 [rgn_diff].
+  Llamar "gdi32.dll" "ExtSelectClipRgn" con el current canvas y el old hrgn y 2 [rgn_or].
   Destroy el old hrgn.
 
 \Para desenmascarar fuera de un polígono;
@@ -16192,7 +16192,7 @@ Para wait for some grains of sand to fall in el hourglass;
 Para wait some milliseconds;
 Para wait for some milliseconds:
   Si el milliseconds are less than or igual to 0, salir.
-  Llamada "kernel32.dll" "Sleep" con el milliseconds.
+  Llamar "kernel32.dll" "Sleep" con el milliseconds.
 
 Para wait for un key to come back up:
   Si el key es not up, repetir.
@@ -16209,7 +16209,7 @@ Para wait on that there key con el ESC on it:
 \Para esperar hasta que se termine de hablar;
 Para wait until speaking es done:
   Si el talker es nil, salir.
-  Llamada el talker's vtable's waituntildone con el talker y -1.
+  Llamar el talker's vtable's waituntildone con el talker y -1.
 
 \Para esperar una tecla;
 \Para wait until we hit un key;
@@ -16296,9 +16296,9 @@ Para wrap un text:
 \Para escribir un búfer en un archivo;
 Para escribir un buffer to un file:
   Borrar el error de e/s.
-  Llamada "kernel32.dll" "SetFilePointer" con el file y 0 y 0 y 0 [file_begin] retornando un result número.
+  Llamar "kernel32.dll" "SetFilePointer" con el file y 0 y 0 y 0 [file_begin] retornando un result número.
   Si el result número es -1, Poner "Error posicionando puntero de archivo." into el error de e/s; salir.
-  Llamada "kernel32.dll" "WriteFile" con el file y el buffer's first y el buffer's length y un número's dirección y 0 retornando el result número.
+  Llamar "kernel32.dll" "WriteFile" con el file y el buffer's first y el buffer's length y un número's dirección y 0 retornando el result número.
   Si el result número es 0, Poner "Error escribiendo archivo." into el error de e/s; salir.
 
 \Para store un buffer in un path;
@@ -16310,11 +16310,11 @@ Para escribir un buffer to un path:
   Definir el path to read-write mode.
   Privatizar el path.
   Null terminate el path.
-  Llamada "kernel32.dll" "CreateFileA" con el path's first y 1073741824 [generic_write] 
+  Llamar "kernel32.dll" "CreateFileA" con el path's first y 1073741824 [generic_write] 
   And 0 y 0 y 2 [create_always] y -2147483520 [file_flag_write_through or file_attribute_normal] y 0 retornando un handle.
   Si el handle es -1 [invalid_handle_value], Poner "Error opening file '" then el path then "'." into el error de e/s; salir.
-  Llamada "kernel32.dll" "WriteFile" con el handle y el buffer's first y el buffer's length y un número's dirección y 0 retornando el número.
-  Llamada "kernel32.dll" "CloseHandle" con el handle.
+  Llamar "kernel32.dll" "WriteFile" con el handle y el buffer's first y el buffer's length y un número's dirección y 0 retornando el número.
+  Llamar "kernel32.dll" "CloseHandle" con el handle.
   Si el número es not 0, salir.
   Poner "Error escribiendo archivo '" then el path then "'." into el error de e/s.
 
@@ -16324,7 +16324,7 @@ Para escribir un byte:
   Escribir el string.
 
 Para escribir un byte to stdout:
-  Llamada "kernel32.dll" "WriteFile" con el StdOut handle y el byte's dirección y 1  y un número's dirección y nil.
+  Llamar "kernel32.dll" "WriteFile" con el StdOut handle y el byte's dirección y 1  y un número's dirección y nil.
 
 \Para escribir un byte sin avanzar;
 Para escribir un byte without advancing:
@@ -16500,7 +16500,7 @@ Para trazar un string un radius desde el middle of un box:
   Trazar el string usando el box's center y el radius.
 
 Para escribir un string to stdout:
-  Llamada "kernel32.dll" "WriteFile" con el StdOut handle y el string's first y el string's length y un número's dirección y nil.
+  Llamar "kernel32.dll" "WriteFile" con el StdOut handle y el string's first y el string's length y un número's dirección y nil.
 
 Para escribir un string while turning un fraction of el way;
 Para escribir un string while turning un fraction of el way around;
@@ -16643,10 +16643,10 @@ The yen-sign byte es un byte igual to 165.
 
 Para yield to windows:
   Si el event queue es not empty, salir.
-  Llamada "user32.dll" "GetMessageA" con un msg's dirección y 0 y 0 y 0 retornando un número.
+  Llamar "user32.dll" "GetMessageA" con un msg's dirección y 0 y 0 y 0 retornando un número.
   Si el número es 0, salir.
-  Llamada "user32.dll" "TranslateMessage" con el msg's dirección.
-  Llamada "user32.dll" "DispatchMessageA" con el msg's dirección.
+  Llamar "user32.dll" "TranslateMessage" con el msg's dirección.
+  Llamar "user32.dll" "DispatchMessageA" con el msg's dirección.
 
 The z-key es un key igual to 90.
 

@@ -14,7 +14,7 @@ Para ejecutar:
 
 Para hacer todo:
   Poner 1252 into a número called codepage. \ 
-  Llamada "kernel32.dll" "SetConsoleOutputCP" con the codepage retornando a número called status de erro.
+  Llamar "kernel32.dll" "SetConsoleOutputCP" con the codepage retornando a número called status de erro.
   Si el status de erro es 0 [NULL],
     Escribir "Error al configurar Console CodePage en STDOUT."  then the crlf string para STDOUT.
   Obtener una string called Endereço Da Pasta desde the argumentos da linha de comando.
@@ -52,7 +52,7 @@ Para Mostrar el error de compilación:
   Escribir el crlf string para StdOut.
 
 Para obtener una string desde the argumentos da linha de comando:
-  Llamada "kernel32.dll" "GetCommandLineA" 
+  Llamar "kernel32.dll" "GetCommandLineA" 
     retornando un pchar. [pchar]
   Convertir el pchar to una string called argumentos.
   Colocar un substring on las argumentos.
@@ -148,7 +148,7 @@ Para agregar and compile el initialize before run and run and finalize after run
   Adjuntar "Ejecutar. " to el routine's body string.
   Adjuntar el global finalizers to el routine's body string.
   Adjuntar "Finalize after run. " to el routine's body string.
-  Adjuntar "Llamada ""kernel32.dll"" ""ExitProcess"" con 0. " to el routine's body string.
+  Adjuntar "Llamar ""kernel32.dll"" ""ExitProcess"" con 0. " to el routine's body string.
   Colocar el routine's routine header on el routine's header string.
   Colocar el routine's routine body on el routine's body string.
   Compile el header of el routine.
@@ -1976,9 +1976,9 @@ Para compile un term usando un rider (possessive): \ similar to "compile un term
   Compile el term usando el rider y el name (possessive - field).
   
 Para compile un term usando un rider (possessives):
-  Si el compiler's abort flag es set, salir.
-  Si el rider's token es not any possessive, salir.
-  Compile el term usando el rider (possessive).
+    Si el compiler's abort flag es set, salir.
+    Si el rider's token es not any possessive, salir.
+    Compile el term usando el rider (possessive).
   Repetir.  
   
 Para compile un term usando un rider (runtime ratio):
@@ -2621,6 +2621,7 @@ Para decidir si un rider está on any monikette string:
 Para decidir si un string es any called:
   Si el string es "called", diga sí.
   Si el string es "llamado", diga sí.
+  Si el string es "llamada", diga sí.
   Diga no.
   
 Para decidir si un string es any reference:
@@ -3004,7 +3005,7 @@ Para decidir si un string es any decide:
   Diga no.
   
 Para decidir si un string es any call:
-  Si el string es "llamada", diga sí.
+  Si el string es "llamar", diga sí.
   Si el string es "call", diga sí.
   Diga no.
   
