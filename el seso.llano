@@ -8,39 +8,6 @@
 \   there es always at least one row.
 \   there es always un return byte at el end of el last row.
 
-El error de e/s es una string.
-
-Para escribir un byte para StdOut:
-  Llamar "kernel32.dll" "WriteFile" con
-    El StdOut handle [hFile]
-    y el byte's dirección [lpBuffer]
-    y 1  [nNumberOfBytesToWrite]
-    y un número's dirección [lpNumberOfBytesWritten]
-    y nil. [lpOverlapped]
-
-Para escribir para StdOut un string:
-  Escribir el string para StdOut.
-  Escribir el crlf string para Stdout.
-
-Para escribir un string para StdOut:
-  Llamar "kernel32.dll" "GetStdHandle" con
-  -11 [nStdHandle = STD_OUTPUT_HANDLE]
-  retornando el StdOut handle.
-  Si el StdOut handle es -1, \ INVALID HANDLE
-    Poner "Error. Handle STDOUT inválida." into el error de e/s;
-    \Cloquear; 
-    Salir.
-  Llamar "kernel32.dll" "WriteFile" con
-    el StdOut handle [hFile] and
-    el string's first byte puntero [lpBuffer]
-    y the string's length [nNumberOfBytesToWrite]
-    y un número's dirección [lpNumberOfBytesWritten]
-    y nil [lpOverlapped]
-  retornando a new número.
-  Si el new número no es 0,
-    Poner "Error. No se puede escribir en STDOUT" into el error de e/s;
-    \Cloquear;
-    Salir.
 
 The on flag es un flag igual to 1.
 
@@ -69,471 +36,8 @@ The acknowledge byte es un byte igual to 6.
 
 The acute-accent byte es un byte igual to 180.
 
-\Para agregar un byte a otro byte;
-Para agregar un byte to another byte:
-  Intel $8B8508000000. \ mov eax,[ebp+8] \ el byte
-  Intel $0FB600. \ movzx eax,[eax]
-  Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el other byte
-  Intel $0003. \ Agregar [ebx],al
-
-\Para agregar un byte a un número;
-Para agregar un byte to un número:
-  Intel $8B8508000000. \ mov eax,[ebp+8] \ el byte
-  Intel $0FB600. \ movzx eax,[eax]
-  Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el número
-  Intel $0103. \ Agregar [ebx],eax
-
-\Para agregar una fracción a otra fracción;
-Para agregar un fraction to another fraction:
-  Privatizar el fraction.
-  Normalizar el fraction y el other fraction.
-  Agregar el fraction's numerator to el other fraction's numerator.
-  Reducir el other fraction.
-
-
-\Para agregar algunos twips horizontales y algunos twips verticales al punto actual;
-Para agregar some horizontal twips y some vertical twips to el current spot:
-  Agregar el horizontal twips to el context's spot's x.
-  Agregar el vertical twips to el context's spot's y.
-
-\Para agregar una línea a una figura;
-Para agregar un line to un figure:
-  Si el figure es nil, crear el figure; Adjuntar el figure to el figures.
-  Agregar el line's start to el figure.
-  Agregar el line's end to el figure.
-
-\Para agregar un nombre a algunas elecciones;
-Para agregar un name to some choices:
-  Allocate memory for un choice.
-  Poner el name into el choice's name.
-  Poner el choice at el end of el choices.
-
-\Para agregar un número y otro número a un par;
-Para agregar un número y another número to un pair:
-  Agregar el número to el pair's x-número.
-  Agregar el other número to el pair's y-número.
-
-\Para agregar un número a otro número y un tercer número a un cuarto número;
-Para agregar un número to another número y un third número to un fourth número:
-  Agregar el número to el other número.
-  Agregar el third número to el fourth número.
-
-\Para agregar un número a un byte;
-Para agregar un número to un byte:
-  Intel $8B8508000000. \ mov eax,[ebp+8] \ el número
-  Intel $8B00. \ mov eax,[eax]
-  Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el byte
-  Intel $0FB60B. \ movzx ecx,[ebx]
-  Intel $03C8. \ Agregar ecx,eax
-  Intel $880B. \ mov [ebx],cl
-
-\Para agregar un número a una fracción;
-Para agregar un número to un fraction:
-  Agregar el número / 1 to el fraction.
-
-\Para agregar un número a un par;
-Para agregar un número to un pair:
-  Agregar el número to el pair's x-número.
-  Agregar el número to el pair's y-número.
-
-\Para agregar un número en un puntero;
-\Para agregar un número en otro número;
-Para agregar un número to un puntero;
-Para agregar un número to another número:
-  Intel $8B8508000000. \ mov eax,[ebp+8] \ el número
-  Intel $8B00. \ mov eax,[eax]
-  Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el other número
-  Intel $0103. \ Agregar [ebx],eax
-
-\Para agregar un par a otro par;
-Para agregar un pair to another pair:
-  Agregar el pair's x-número to el other pair's x-número.
-  Agregar el pair's y-número to el other pair's y-número.
-
-Para agregar un pdf object usando un kind:
-  Crear el pdf object usando el kind.
-  Adjuntar el pdf object to el pdf state's objects.
-  Agregar 1 to el pdf state's object número.
-  Poner el pdf state's object número into el pdf object's número.
-
-\Para agregar una quora a una terminal;
-Para agregar un quora to un terminal:
-  Crear el quora.
-  Adjuntar el quora to el terminal's quoras.
-  Si el terminal es not full, salir.
-  Poner el terminal's quoras' first into un doomed quora.
-  Eliminar el doomed quora desde el terminal's quoras.
-  Destroy el doomed quora.
-
-\Para agregar un punto a una figura;
-Para agregar un spot to un figure:
-  Adjuntar el spot to el figure.
-
-\Para agregar una cadena a algunas cosas de cadena;
-Para agregar un string to some string listas:
-  Crear un string lista usando el string.
-  Adjuntar el string lista to el string listas.
-
-An AddrInfo es un registro con \ contiene la información de la dirección del host
-  Un número llamado AI_Flags,
-  Un número llamado AI_Family,
-  Un número llamado AI_SocketType,
-  Un número llamado AI_Protocol,
-  Un número llamado AI_AddrLen,
-  A pChar llamado AI_CanonName,
-  A SockAddrptr llamado AI_Addr,
-  A AddrInfoPtr llamado AI_Next.
-
-Some AddrInfo routines es un registro con
-  A GetAddrInfo puntero,
-  A FreeAddrInfo puntero.
-
-An AddrInfoPtr es un puntero to un AddrInfo.
-
-\Para ajustar una caja dado un número y otro número y un tercer número y un cuarto número;
-Para ajustar un box usando un número y another número y un third número y un fourth número:
-  Agregar el número to el box's left.
-  Agregar el other número to el box's top.
-  Agregar el third número to el box's right.
-  Agregar el fourth número to el box's bottom.
-
-Para ajustar un item:
-  Poner el item's win32finddata's dwfileattributes into un número.
-  Bitwise AND el número con 16 [file_attribute_directory].
-  Si el número es 0, Poner "file" into el item's kind.\; Poner "archivo" into el item's clase.
-  Si el número es not 0, Poner "directory" into el item's kind.\; Poner "directorio" into el item's clase.
-  Convertir el item's win32finddata's ftcreationtime to el item's creation date/time string. \ added for email sorting
-  Poner el item's win32finddata's cfilename's dirección into un pchar.
-  Convertir el pchar to el item's designator.
-  Si el item's kind es "directory", Adjuntar "\" to el item's designator.
-  Poner el item's directory luego el item's designator into el item's path.
-  Extraer el item's extension desde el item's designator as un path.
-  Poner el item's win32finddata's nfilesizelow into el item's size.
-  Si el item's designator's first's contenido es not el period byte, salir.
-  Obtener el item (not first time).
-
-\Para ajustar una línea con un número y otro número y un tercer número y un cuarto número;
-Para ajustar un line con un número y another número y un third número y un fourth número:
-  Agregar el número to el line's start's x.
-  Agregar el other número to el line's start's y.
-  Agregar el third número to el line's end's x.
-  Agregar el fourth número to el line's end's y.
-
-Para ajustar un picture (extract boxes desde gpbitmap):
-  Si el picture es nil, salir.
-  Poner 0 into el picture's box's left.
-  Poner 0 into el picture's box's top.
-  Poner el picture's gpbitmap's width minus 1 times el tpp into el picture's box's right.
-  Poner el picture's gpbitmap's height minus 1 times el tpp into el picture's box's bottom.
-  Poner el picture's box into el picture's uncropped box.
-
-Para ajustar spacing usando un string:
-  Si el current canvas es not el printer canvas, salir.
-  Llamar "gdi32.dll" "SetTextCharacterExtra" con el printer canvas y 0.
-  Llamar "gdi32.dll" "GetCurrentObject" con el printer canvas y 6 [obj_font] retornando un handle.
-  Llamar "gdi32.dll" "SelectObject" con el memory canvas y el handle.
-  Obtener un width usando el string y el memory canvas.
-  Llamar "gdi32.dll" "SelectObject" con el memory canvas y el null hfont.
-  Obtener another width usando el string y el printer canvas.
-  Poner el width minus el other width divided by el string's length into un número.
-  Llamar "gdi32.dll" "SetTextCharacterExtra" con el printer canvas y el número.
-
-Para align un text usando un alignment:
-  Poner el alignment into el text's alignment.
-
-An alignment es un string [center, left, or right].
-
-The alt key es un key igual to 18.
-
-An amount es un número.
-
-The ampersand byte es un byte igual to 38.
-
-An anchor es un position.
-
-An and-mask es un mask.
-
-An angle es some precise degrees [0 to 3599].
-
-\Para adjuntar un búfer a un archivo;
-Para adjuntar un buffer to un file:
-  Borrar el error de e/s.
-  Llamar "kernel32.dll" "SetFilePointer" con el file y 0 y 0 y 2 [file_end] retornando un result número.
-  Si el result número es -1, Poner "Error posicionando puntero de archivo." into el error de e/s; salir.
-  Llamar "kernel32.dll" "WriteFile" con el file y el buffer's first y el buffer's length y un número's dirección y 0 retornando el result número.
-  Si el result número es 0, Poner "Error escribiendo archivo." into el error de e/s; salir.
-
-\Para adjuntar un byte a una cadena;
-Para adjuntar un byte to un string:
-  Poner el string's length into un saved length.
-  Reassign el string's first usando el string's length plus 1.
-  Poner el string's first plus el saved length into el string's last.
-  Poner el byte into el string's last's contenido.
-
-\Para adjuntar un byte a una cadena dada una conteo;
-Para adjuntar un byte to un string usando un count:
-  Privatizar el count.
-  Lazo.
-  Si el count es less than 1, salir.
-  Adjuntar el byte to el string.
-  Restar 1 desde el count.
-  Repetir.
-
-\Para adjuntar una bandera a una cadena;
-Para adjuntar un flag to un string:
-  Convertir el flag to another string.
-  Adjuntar el other string to el string.
-
-\Para adjuntar una fracción a una cadena;
-Para adjuntar un fraction to un string:
-  Convertir el fraction to another string.
-  Adjuntar el other string to el string.
-
-\Para adjuntar un número a una cadena;
-Para adjuntar un número to un string:
-  Convertir el número to another string.
-  Adjuntar el other string to el string.
-
-\Para adjuntar un puntero a una cadena;
-Para adjuntar un puntero to un string:
-  Convertir el puntero to another string.
-  Adjuntar el other string to el string.
-
-\Para adjuntar un punto a un polígono;
-Para adjuntar un spot to un polygon:
-  Si el polygon es nil, salir.
-  Crear un vertex usando el spot.
-  Adjuntar el vertex to el polygon's vertices.
-
-\Para adjuntar una cadena a otra cadena;
-Para adjuntar un string to another string:
-  Si el string es blank, salir.
-  Poner el string's length into un combined length.
-  Poner el other string's length into un saved length.
-  Agregar el saved length to el combined length.
-  Reassign el other string's first usando el combined length.
-  Poner el other string's first plus el saved length into un puntero.
-  Copiar bytes desde el string's first to el puntero for el string's length.
-  Poner el other string's first plus el combined length minus 1 into el other string's last.
-
-Para adjuntar un string to another string (handling email transparency):
-  Si el string es blank, salir.
-  Colocar un rider on el string.
-  Lazo.
-    Mover el rider (text file rules).
-    Si el rider's token es blank, salir.
-    Si el rider's token starts con ".", Adjuntar "." to el other string.
-    Adjuntar el rider's token to el other string.
-  Repetir.
-
-\Para adjuntar una cadena a otra cadena dada una conteo;
-Para adjuntar un string to another string usando un count:
-  Privatizar el count.
-  Lazo.
-    Si el count es less than 1, salir.
-    Adjuntar el string to el other string.
-    Restar 1 desde el count.
-  Repetir.
-
-Para adjuntar un string to un pdf object: \ this guys adds CRLF
-  Adjuntar el string to el pdf object's data.
-  Adjuntar el crlf string to el pdf object's data.
-
-Para adjuntar un string to un pdf object without advancing:
-  Adjuntar el string to el pdf object's data.
-
-\Para adjuntar algunas cosas a algunas otras cosas;
-Para adjuntar some listas to some other listas:
-  Poner el listas' first into un lista.
-  Si el lista es nil, salir.
-  Eliminar el lista desde el listas.
-  Adjuntar el lista to el other listas.
-  Repetir.
-
-\Para adjuntar un temporizador a una cadena;
-Para adjuntar un timer to un string:
-  Convertir el timer to another string.
-  Adjuntar el other string to el string.
-
-\Para adjuntar un vértice a un polígono;
-Para adjuntar un vertex to un polygon:
-  Si el polygon es nil, salir.
-  Adjuntar el vertex to el polygon's vertices.
-
-\Para adjuntar una coord-x y una coord-y a un polígono;
-\Para adjuntar una coordenada-x y una coordenada-y a un polígono;
-Para adjuntar un x-coord y un y-coord to un polygon:
-  Si el polygon es nil, salir.
-  Crear un vertex usando el x-coord y el y-coord.
-  Adjuntar el vertex to el polygon's vertices.
-
-\Para adjuntar ceros a una cadena hasta que su longitud sea un número;
-Para adjuntar zeros to un string until its length es un número:
-    Si el string's length es greater than or igual to el número, salir.
-    Adjuntar "0" to el string.
-  Repetir.
-
 The arrow cursor es un cursor.
 
-\Para asignar un puntero dado un conteo de bytes;
-Para assign un puntero usando un byte count:
-  Si el byte count es 0, void el puntero; salir.
-  Privatizar el byte count.
-  Redondear el byte count up to el nearest power of two.
-  Llamar "kernel32.dll" "HeapAlloc" con el heap puntero y 8 [heap_zero_memory] y el byte count retornando el puntero.
-  Si el puntero es not nil, Agregar 1 to el heap count; salir.
-
-The asterisk byte es un byte igual to 42.
-
-The at-sign byte es un byte igual to 64.
-
-Para autoscroll un text usando un spot y un flag:
-  Si el text es nil, borrar el flag; salir.
-  Poner el text's font's height into un número.
-  Borrar un difference.
-  Poner el text's box into un box.
-  Indent el box usando el tpp.
-  Si el spot's y-coord es less than el box's top, Poner el número into el difference's y-número.
-  Si el spot's y-coord es greater than el box's bottom, Poner el número into el difference's y-número; negar el difference's y-número.
-  Si el spot's x-coord es less than el box's left, Poner el número into el difference's x-número.
-  Si el spot's x-coord es greater than el box's right, Poner el número into el difference's x-número; negar el difference's x-número.
-  Si el text's horizontal scroll flag es not set, Poner 0 into el difference's x-número.
-  Si el text's vertical scroll flag es not set, Poner 0 into el difference's y-número.
-  Si el difference es 0, borrar el flag; salir.
-  Definir el flag.
-  Scroll el text usando el difference.
-  Wait for 50 milliseconds.
-
-The b-key es un key igual to 66.
-
-The backslash byte es un byte igual to 92.
-
-The backspace key es un key igual to 8.
-
-The bar byte es un byte igual to 124.
-
-A baseline es un número.
-
-Para pitar: 
-  Llamar "user32.dll" "MessageBeep" con 0.
-
-\Para comenzar una hoja de paisaje;
-\Para comenzar una hoja apaisada;
-Para comenzar un landscape sheet:
-  Hacer el landscape sheet 11 inches by 8-1/2 inches.
-  Comenzar un sheet con el landscape sheet.
-
-\Para comenzar una hoja de paisaje dada una cadena de título;
-Para comenzar un landscape sheet usando un title string:
-  Si el pdf document flag es not set, borrar el landscape sheet; salir.
-  Hacer el landscape sheet 11 inches by 8-1/2 inches.
-  Comenzar el sheet usando el box y el title (pdf style).
-
-\Para comenzar una hoja de retrato;
-Para comenzar un portrait sheet:
-  Hacer el portrait sheet 8-1/2 inches by 11 inches.
-  Comenzar un sheet con el portrait sheet.
-
-\Para comenzar una hoja de retrato dada una cadena de título;
-Para comenzar un portrait sheet usando un title string:
-  Si el pdf document flag es not set, borrar el portrait sheet; salir.
-  Hacer el portrait sheet 8-1/2 inches by 11 inches.
-  Comenzar el sheet usando el box y el title (pdf style).
-
-\Para comenzar impresión;
-Para comenzar printing:
-  Initialize el printer canvas.
-  Poner un docinfo's magnitude into el docinfo's cbsize.
-  Poner el module's name's first into el docinfo's lpszdocname.
-  Llamar "gdi32.dll" "StartDocA" con el printer canvas y el docinfo's dirección.
-
-Para comenzar printing un pdf:
-  Definir el pdf state's document flag.
-  Poner 0 into el pdf state's object número.
-  Crear el pdf state's font index usando 113.
-  Comenzar printing el pdf (start el root).
-  Comenzar printing el pdf (start el parent).
-
-Para comenzar printing un pdf (start el parent):
-  Agregar un parent pdf object usando "parent".
-  Poner el parent into el pdf state's parent.
-  Adjuntar el parent's número luego " 0 obj" to el parent.
-  Adjuntar "<<" to el parent.
-  Adjuntar "/Type /Pages" to el parent.
-
-Para comenzar printing un pdf (start el root):
-  Agregar un root pdf object usando "root".
-  Poner el root into el pdf state's root.
-  Adjuntar el root's número luego " 0 obj" to el root.
-  Adjuntar "<<" to el root.
-  Adjuntar "/Type /Catalog" to el root.
-
-\Para comenzar una hoja;
-Para comenzar un sheet:
-  Comenzar el sheet as un portrait sheet.
-
-\Para comenzar una hoja dada una caja;
-Para comenzar un sheet usando un box:
-  Si el pdf state's document flag es set, comenzar el sheet usando el box (pdf style); salir.
-  Llamar "kernel32.dll" "GlobalLock" con el printer device mode handle retornando un pdevmode.
-  Si el pdevmode es nil, salir.
-  Bitwise OR el pdevmode's dmfields con 1 [dm_orientation].
-  Poner 1 [dmorient_portrait] into el pdevmode's dmorientation.
-  Si el box's width es greater than el box's height, Poner 2 [dmorient_landscape] into el pdevmode's dmorientation.
-  Llamar "gdi32.dll" "ResetDCA" con el printer canvas y el pdevmode.
-  Llamar "kernel32.dll" "GlobalUnlock" con el printer device mode handle.
-  Llamar "gdi32.dll" "SetGraphicsMode" con el printer canvas y 2 [gm_advanced].
-  Llamar "gdi32.dll" "SetBkMode" con el printer canvas y 1  [transparent].
-  Llamar "gdi32.dll" "SetMapMode" con el printer canvas y 8 [mm_anisotropic].
-  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 112 [physicaloffsetx] retornando un pair's x-número.
-  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 113 [physicaloffsety] retornando el pair's y-número.
-  Negar el pair.
-  Llamar "gdi32.dll" "SetViewportOrgEx" con el printer canvas y el pair's x-número y el pair's y-número y nil.
-  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 88 [logpixelsx] retornando el pair's x-número.
-  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 90 [logpixelsy] retornando el pair's y-número.
-  Llamar "gdi32.dll" "SetViewportExtEx" con el printer canvas y el pair's x-número y el pair's y-número y nil. 
-  Llamar "gdi32.dll" "SetWindowOrgEx" con el printer canvas y 0 y 0 y nil.
-  Llamar "gdi32.dll" "SetWindowExtEx" con el printer canvas y el tpi y el tpi y nil.
-  Llamar "gdi32.dll" "StartPage" con el printer canvas.
-  Poner el printer canvas into el current canvas.
-  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 88 [logpixelsx] retornando un número.
-  Poner el tpp into el saved tpp.
-  Poner el tpi divided by el número into el tpp.
-
-Para comenzar un sheet usando un box (pdf style):
-  Comenzar el sheet usando el box y "" (pdf style).
-
-\Para comenzar una hoja con una caja y una cadena de título;
-Para comenzar un sheet usando un box y un title string:
-  Comenzar el sheet usando el box y el title (pdf style).
-
-Para comenzar un sheet usando un box y un title string (pdf style - start el current page):
-  Agregar el pdf state's current page usando "page".
-  Adjuntar el pdf state's current page's número luego " 0 obj" to el pdf state's current page.
-  Adjuntar "<<" to el pdf state's current page.
-  Adjuntar "/Type /Page" to el pdf state's current page.
-  Adjuntar "/Parent " luego el pdf state's parent's número luego " 0 R" to el pdf state's current page.
-  Poner el box's width minus el tpp times 72 / el tpi into un width.
-  Poner el box's height minus el tpp times 72 / el tpi into un height.
-  Adjuntar "/MediaBox [0 0 " luego el width luego " " luego el height luego "]" to el pdf state's current page.
-  Poner el box's height minus el tpp into el pdf state's current height.
-  Agregar el pdf state's current contents usando "contents".
-  Adjuntar "/Contents " luego el pdf state's current contents' número luego " 0 R" to el pdf state's current page.
-  Adjuntar "0.05 0 0 0.05 1 1 cm" to el pdf state's current contents. \ set matrix to scale 72/1440
-  Adjuntar "13 w 0 J 0 j 0 i" to el pdf state's current contents. \ penwidth, linecap, linejoin, flatness \ 15 w on penwidth comes out to wide
-
-Para comenzar un sheet usando un box y un title string (pdf style):
-  Definir el pdf state's page flag.
-  Poner el borrar color into el pdf state's current border.
-  Poner el borrar color into el pdf state's current fill.
-  Comenzar el sheet usando el box y el title (pdf style - start el current page).
-  Si el title es blank, salir.
-  Crear un pdf outline entry usando el title y el pdf state's current height y el pdf state's current page's número.
-  Adjuntar el pdf outline entry to el pdf state's outline entries.
-
-\Para comenzar una hoja con una cadena de título;
-Para comenzar un sheet usando un title string:
-  Comenzar un portrait sheet usando el title.
 
 The bell byte es un byte igual to 7.
 
@@ -663,6 +167,10 @@ The big-z byte es un byte igual to 90.
 
 The big-z-caron byte es un byte igual to 142.
 
+The asterisk byte es un byte igual to 42.
+
+The at-sign byte es un byte igual to 64.
+
 A billion es 1000 millions.
 
 A binary string es un string.
@@ -676,6 +184,555 @@ A BitmapData es un registro con
   Un número llamado PixelFormat,
   Un puntero llamado Scan0,
   Un número llamado Reserved.
+
+El error de e/s es una string.
+
+The black color es un color.
+
+The black pen es un pen.
+
+The blue color es un color.
+
+The blue pen es un pen.
+
+A box es un registro con
+  A left coord, 
+  A top coord, 
+  A right coord, 
+  A bottom coord, y
+  A left-top spot at el left coord, 
+  A right-bottom spot at el right coord,
+  A top-left spot at el left coord, 
+  A bottom-right spot at el right coord.\ , y
+  \Una izquierda at el left coord, 
+  \Una superior at el top coord, 
+  \Una derecha at el right coord, 
+  \Una inferior at el bottom coord, y
+  \Un punto superior-izquierda at el left coord, 
+  \Un punto inferior-derecha at el right coord.
+
+A brightness es un lightness.
+
+The broken-bar byte es un byte igual to 166.
+
+The brown color es un color.
+
+The brown pen es un pen.
+
+A brownish color es un color.
+
+A bucket count es un count.
+
+A bucket es un puntero to un bucket registro.
+
+A bucket registro es un registro con some refers.
+
+A bucket# es un número.
+
+A buffer es un string.
+
+The bullet byte es un byte igual to 149.
+
+An AddrInfo es un registro con \ contiene la información de la dirección del host
+  Un número llamado AI_Flags,
+  Un número llamado AI_Family,
+  Un número llamado AI_SocketType,
+  Un número llamado AI_Protocol,
+  Un número llamado AI_AddrLen,
+  A pChar llamado AI_CanonName,
+  A SockAddrptr llamado AI_Addr,
+  A AddrInfoPtr llamado AI_Next.
+
+Some AddrInfo routines es un registro con
+  A GetAddrInfo puntero,
+  A FreeAddrInfo puntero.
+
+An AddrInfoPtr es un puntero to un AddrInfo.
+
+An alignment es un string [center, left, or right].
+
+The alt key es un key igual to 18.
+
+An amount es un número.
+
+The ampersand byte es un byte igual to 38.
+
+An anchor es un position.
+
+An and-mask es un mask.
+
+An angle es some precise degrees [0 to 3599].
+
+The b-key es un key igual to 66.
+
+The backslash byte es un byte igual to 92.
+
+The backspace key es un key igual to 8.
+
+The bar byte es un byte igual to 124.
+
+A baseline es un número.
+
+Para escribir un byte para StdOut:
+  Llamar "kernel32.dll" "WriteFile" con
+    El StdOut handle [hFile]
+    y el byte's dirección [lpBuffer]
+    y 1  [nNumberOfBytesToWrite]
+    y un número's dirección [lpNumberOfBytesWritten]
+    y nil. [lpOverlapped]
+
+Para escribir para StdOut un string:
+  Escribir el string para StdOut.
+  Escribir el crlf string para Stdout.
+
+Para escribir un string para StdOut:
+  Llamar "kernel32.dll" "GetStdHandle" con
+  -11 [nStdHandle = STD_OUTPUT_HANDLE]
+  retornando el StdOut handle.
+  Si el StdOut handle es -1, \ INVALID HANDLE
+    Poner "Error. Handle STDOUT inválida." into el error de e/s;
+    \Cloquear; 
+    Salir.
+  Llamar "kernel32.dll" "WriteFile" con
+    el StdOut handle [hFile] and
+    el string's first byte puntero [lpBuffer]
+    y the string's length [nNumberOfBytesToWrite]
+    y un número's dirección [lpNumberOfBytesWritten]
+    y nil [lpOverlapped]
+  retornando a new número.
+  Si el new número no es 0,
+    Poner "Error. No se puede escribir en STDOUT" into el error de e/s;
+    \Cloquear;
+    Salir.
+
+
+\Para agregar un byte a otro byte;
+Para agregar un byte to another byte:
+  Intel $8B8508000000. \ mov eax,[ebp+8] \ el byte
+  Intel $0FB600. \ movzx eax,[eax]
+  Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el other byte
+  Intel $0003. \ Agregar [ebx],al
+
+\Para agregar un byte a un número;
+Para agregar un byte to un número:
+  Intel $8B8508000000. \ mov eax,[ebp+8] \ el byte
+  Intel $0FB600. \ movzx eax,[eax]
+  Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el número
+  Intel $0103. \ Agregar [ebx],eax
+
+\Para agregar una fracción a otra fracción;
+Para agregar un fraction to another fraction:
+  Privatizar el fraction.
+  Normalizar el fraction y el other fraction.
+  Agregar el fraction's numerator to el other fraction's numerator.
+  Reducir el other fraction.
+
+
+\Para agregar algunos twips horizontales y algunos twips verticales al punto actual;
+Para agregar some horizontal twips y some vertical twips to el current spot:
+  Agregar el horizontal twips to el context's spot's x.
+  Agregar el vertical twips to el context's spot's y.
+
+\Para agregar una línea a una figura;
+Para agregar un line to un figure:
+  Si el figure es nil, crear el figure; Adjuntar el figure to el figures.
+  Agregar el line's start to el figure.
+  Agregar el line's end to el figure.
+
+\Para agregar un nombre a algunas elecciones;
+Para agregar un name to some choices:
+  Allocate memory for un choice.
+  Poner el name into el choice's name.
+  Poner el choice at el end of el choices.
+
+\Para agregar un número y otro número a un par;
+Para agregar un número y another número to un pair:
+  Agregar el número to el pair's x-número.
+  Agregar el other número to el pair's y-número.
+
+\Para agregar un número a otro número y un tercer número a un cuarto número;
+Para agregar un número to another número y un third número to un fourth número:
+  Agregar el número to el other número.
+  Agregar el third número to el fourth número.
+
+\Para agregar un número a un byte;
+Para agregar un número to un byte:
+  Intel $8B8508000000. \ mov eax,[ebp+8] \ el número
+  Intel $8B00. \ mov eax,[eax]
+  Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el byte
+  Intel $0FB60B. \ movzx ecx,[ebx]
+  Intel $03C8. \ Agregar ecx,eax
+  Intel $880B. \ mov [ebx],cl
+
+\Para agregar un número a una fracción;
+Para agregar un número to un fraction:
+  Agregar el número / 1 to el fraction.
+
+\Para agregar un número a un par;
+Para agregar un número to un pair:
+  Agregar el número to el pair's x-número.
+  Agregar el número to el pair's y-número.
+
+\Para agregar un número en un puntero;
+\Para agregar un número en otro número;
+Para agregar un número to un puntero;
+Para agregar un número to another número:
+  Intel $8B8508000000. \ mov eax,[ebp+8] \ el número
+  Intel $8B00. \ mov eax,[eax]
+  Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el other número
+  Intel $0103. \ Agregar [ebx],eax
+
+\Para agregar un par a otro par;
+Para agregar un pair to another pair:
+  Agregar el pair's x-número to el other pair's x-número.
+  Agregar el pair's y-número to el other pair's y-número.
+
+Para agregar un pdf object usando un kind:
+  Crear el pdf object usando el kind.
+  Adjuntar el pdf object to el pdf state's objects.
+  Agregar 1 to el pdf state's object número.
+  Poner el pdf state's object número into el pdf object's número.
+
+\Para agregar una quora a una terminal;
+Para agregar un quora to un terminal:
+  Crear el quora.
+  Adjuntar el quora to el terminal's quoras.
+  Si el terminal es not full, salir.
+  Poner el terminal's quoras' first into un doomed quora.
+  Eliminar el doomed quora desde el terminal's quoras.
+  Destroy el doomed quora.
+
+\Para agregar un punto a una figura;
+Para agregar un spot to un figure:
+  Adjuntar el spot to el figure.
+
+\Para agregar una cadena a algunas cosas de cadena;
+Para agregar un string to some string listas:
+  Crear un string lista usando el string.
+  Adjuntar el string lista to el string listas.
+
+
+\Para ajustar una caja dado un número y otro número y un tercer número y un cuarto número;
+Para ajustar un box usando un número y another número y un third número y un fourth número:
+  Agregar el número to el box's left.
+  Agregar el other número to el box's top.
+  Agregar el third número to el box's right.
+  Agregar el fourth número to el box's bottom.
+
+Para ajustar un item:
+  Poner el item's win32finddata's dwfileattributes into un número.
+  Bitwise AND el número con 16 [file_attribute_directory].
+  Si el número es 0, Poner "file" into el item's kind.\; Poner "archivo" into el item's clase.
+  Si el número es not 0, Poner "directory" into el item's kind.\; Poner "directorio" into el item's clase.
+  Convertir el item's win32finddata's ftcreationtime to el item's creation date/time string. \ added for email sorting
+  Poner el item's win32finddata's cfilename's dirección into un pchar.
+  Convertir el pchar to el item's designator.
+  Si el item's kind es "directory", Adjuntar "\" to el item's designator.
+  Poner el item's directory luego el item's designator into el item's path.
+  Extraer el item's extension desde el item's designator as un path.
+  Poner el item's win32finddata's nfilesizelow into el item's size.
+  Si el item's designator's first's contenido es not el period byte, salir.
+  Obtener el item (not first time).
+
+\Para ajustar una línea con un número y otro número y un tercer número y un cuarto número;
+Para ajustar un line con un número y another número y un third número y un fourth número:
+  Agregar el número to el line's start's x.
+  Agregar el other número to el line's start's y.
+  Agregar el third número to el line's end's x.
+  Agregar el fourth número to el line's end's y.
+
+Para ajustar un picture (extract boxes desde gpbitmap):
+  Si el picture es nil, salir.
+  Poner 0 into el picture's box's left.
+  Poner 0 into el picture's box's top.
+  Poner el picture's gpbitmap's width minus 1 times el tpp into el picture's box's right.
+  Poner el picture's gpbitmap's height minus 1 times el tpp into el picture's box's bottom.
+  Poner el picture's box into el picture's uncropped box.
+
+Para ajustar spacing usando un string:
+  Si el current canvas es not el printer canvas, salir.
+  Llamar "gdi32.dll" "SetTextCharacterExtra" con el printer canvas y 0.
+  Llamar "gdi32.dll" "GetCurrentObject" con el printer canvas y 6 [obj_font] retornando un handle.
+  Llamar "gdi32.dll" "SelectObject" con el memory canvas y el handle.
+  Obtener un width usando el string y el memory canvas.
+  Llamar "gdi32.dll" "SelectObject" con el memory canvas y el null hfont.
+  Obtener another width usando el string y el printer canvas.
+  Poner el width minus el other width divided by el string's length into un número.
+  Llamar "gdi32.dll" "SetTextCharacterExtra" con el printer canvas y el número.
+
+Para align un text usando un alignment:
+  Poner el alignment into el text's alignment.
+
+
+
+\Para adjuntar un búfer a un archivo;
+Para adjuntar un buffer to un file:
+  Borrar el error de e/s.
+  Llamar "kernel32.dll" "SetFilePointer" con el file y 0 y 0 y 2 [file_end] retornando un result número.
+  Si el result número es -1, Poner "Error posicionando puntero de archivo." into el error de e/s; salir.
+  Llamar "kernel32.dll" "WriteFile" con el file y el buffer's first y el buffer's length y un número's dirección y 0 retornando el result número.
+  Si el result número es 0, Poner "Error escribiendo archivo." into el error de e/s; salir.
+
+\Para adjuntar un byte a una cadena;
+Para adjuntar un byte to un string:
+  Poner el string's length into un saved length.
+  Reassign el string's first usando el string's length plus 1.
+  Poner el string's first plus el saved length into el string's last.
+  Poner el byte into el string's last's contenido.
+
+\Para adjuntar un byte a una cadena dada una conteo;
+Para adjuntar un byte to un string usando un count:
+  Privatizar el count.
+  Lazo.
+    Si el count es less than 1, salir.
+    Adjuntar el byte to el string.
+    Restar 1 desde el count.
+  Repetir.
+
+\Para adjuntar una bandera a una cadena;
+Para adjuntar un flag to un string:
+  Convertir el flag to another string.
+  Adjuntar el other string to el string.
+
+\Para adjuntar una fracción a una cadena;
+Para adjuntar un fraction to un string:
+  Convertir el fraction to another string.
+  Adjuntar el other string to el string.
+
+\Para adjuntar un número a una cadena;
+Para adjuntar un número to un string:
+  Convertir el número to another string.
+  Adjuntar el other string to el string.
+
+\Para adjuntar un puntero a una cadena;
+Para adjuntar un puntero to un string:
+  Convertir el puntero to another string.
+  Adjuntar el other string to el string.
+
+\Para adjuntar un punto a un polígono;
+Para adjuntar un spot to un polygon:
+  Si el polygon es nil, salir.
+  Crear un vertex usando el spot.
+  Adjuntar el vertex to el polygon's vertices.
+
+\Para adjuntar una cadena a otra cadena;
+Para adjuntar un string to another string:
+  Si el string es blank, salir.
+  Poner el string's length into un combined length.
+  Poner el other string's length into un saved length.
+  Agregar el saved length to el combined length.
+  Reassign el other string's first usando el combined length.
+  Poner el other string's first plus el saved length into un puntero.
+  Copiar bytes desde el string's first to el puntero for el string's length.
+  Poner el other string's first plus el combined length minus 1 into el other string's last.
+
+Para adjuntar un string to another string (handling email transparency):
+  Si el string es blank, salir.
+  Colocar un rider on el string.
+  Lazo.
+    Mover el rider (text file rules).
+    Si el rider's token es blank, salir.
+    Si el rider's token starts con ".", Adjuntar "." to el other string.
+    Adjuntar el rider's token to el other string.
+  Repetir.
+
+\Para adjuntar una cadena a otra cadena dada una conteo;
+Para adjuntar un string to another string usando un count:
+  Privatizar el count.
+  Lazo.
+    Si el count es less than 1, salir.
+    Adjuntar el string to el other string.
+    Restar 1 desde el count.
+  Repetir.
+
+Para adjuntar un string to un pdf object: \ this guys adds CRLF
+  Adjuntar el string to el pdf object's data.
+  Adjuntar el crlf string to el pdf object's data.
+
+Para adjuntar un string to un pdf object without advancing:
+  Adjuntar el string to el pdf object's data.
+
+\Para adjuntar algunas cosas a algunas otras cosas;
+Para adjuntar some listas to some other listas:
+  Poner el listas' first into un lista.
+  Si el lista es nil, salir.
+  Eliminar el lista desde el listas.
+  Adjuntar el lista to el other listas.
+  Repetir.
+
+\Para adjuntar un temporizador a una cadena;
+Para adjuntar un timer to un string:
+  Convertir el timer to another string.
+  Adjuntar el other string to el string.
+
+
+\Para adjuntar un vértice a un polígono;
+Para adjuntar un vertex to un polygon:
+  Si el polygon es nil, salir.
+  Adjuntar el vertex to el polygon's vertices.
+
+\Para adjuntar una coord-x y una coord-y a un polígono;
+\Para adjuntar una coordenada-x y una coordenada-y a un polígono;
+Para adjuntar un x-coord y un y-coord to un polygon:
+  Si el polygon es nil, salir.
+  Crear un vertex usando el x-coord y el y-coord.
+  Adjuntar el vertex to el polygon's vertices.
+
+\Para adjuntar ceros a una cadena hasta que su longitud sea un número;
+Para adjuntar zeros to un string until its length es un número:
+    Si el string's length es greater than or igual to el número, salir.
+    Adjuntar "0" to el string.
+  Repetir.
+
+\Para asignar un puntero dado un conteo de bytes;
+Para assign un puntero usando un byte count:
+  Si el byte count es 0, void el puntero; salir.
+  Privatizar el byte count.
+  Redondear el byte count up to el nearest power of two.
+  Llamar "kernel32.dll" "HeapAlloc" con el heap puntero y 8 [heap_zero_memory] y el byte count retornando el puntero.
+  Si el puntero es not nil, Agregar 1 to el heap count; salir.
+
+
+
+Para autoscroll un text usando un spot y un flag:
+  Si el text es nil, borrar el flag; salir.
+  Poner el text's font's height into un número.
+  Borrar un difference.
+  Poner el text's box into un box.
+  Indent el box usando el tpp.
+  Si el spot's y-coord es less than el box's top, Poner el número into el difference's y-número.
+  Si el spot's y-coord es greater than el box's bottom, Poner el número into el difference's y-número; negar el difference's y-número.
+  Si el spot's x-coord es less than el box's left, Poner el número into el difference's x-número.
+  Si el spot's x-coord es greater than el box's right, Poner el número into el difference's x-número; negar el difference's x-número.
+  Si el text's horizontal scroll flag es not set, Poner 0 into el difference's x-número.
+  Si el text's vertical scroll flag es not set, Poner 0 into el difference's y-número.
+  Si el difference es 0, borrar el flag; salir.
+  Definir el flag.
+  Scroll el text usando el difference.
+  Wait for 50 milliseconds.
+
+
+Para pitar: 
+  Llamar "user32.dll" "MessageBeep" con 0.
+
+\Para comenzar una hoja de paisaje;
+\Para comenzar una hoja apaisada;
+Para comenzar un landscape sheet:
+  Hacer el landscape sheet 11 inches by 8-1/2 inches.
+  Comenzar un sheet con el landscape sheet.
+
+\Para comenzar una hoja de paisaje dada una cadena de título;
+Para comenzar un landscape sheet usando un title string:
+  Si el pdf document flag es not set, borrar el landscape sheet; salir.
+  Hacer el landscape sheet 11 inches by 8-1/2 inches.
+  Comenzar el sheet usando el box y el title (pdf style).
+
+\Para comenzar una hoja de retrato;
+Para comenzar un portrait sheet:
+  Hacer el portrait sheet 8-1/2 inches by 11 inches.
+  Comenzar un sheet con el portrait sheet.
+
+\Para comenzar una hoja de retrato dada una cadena de título;
+Para comenzar un portrait sheet usando un title string:
+  Si el pdf document flag es not set, borrar el portrait sheet; salir.
+  Hacer el portrait sheet 8-1/2 inches by 11 inches.
+  Comenzar el sheet usando el box y el title (pdf style).
+
+\Para comenzar impresión;
+Para comenzar printing:
+  Initialize el printer canvas.
+  Poner un docinfo's magnitude into el docinfo's cbsize.
+  Poner el module's name's first into el docinfo's lpszdocname.
+  Llamar "gdi32.dll" "StartDocA" con el printer canvas y el docinfo's dirección.
+
+Para comenzar printing un pdf:
+  Definir el pdf state's document flag.
+  Poner 0 into el pdf state's object número.
+  Crear el pdf state's font index usando 113.
+  Comenzar printing el pdf (start el root).
+  Comenzar printing el pdf (start el parent).
+
+Para comenzar printing un pdf (start el parent):
+  Agregar un parent pdf object usando "parent".
+  Poner el parent into el pdf state's parent.
+  Adjuntar el parent's número luego " 0 obj" to el parent.
+  Adjuntar "<<" to el parent.
+  Adjuntar "/Type /Pages" to el parent.
+
+Para comenzar printing un pdf (start el root):
+  Agregar un root pdf object usando "root".
+  Poner el root into el pdf state's root.
+  Adjuntar el root's número luego " 0 obj" to el root.
+  Adjuntar "<<" to el root.
+  Adjuntar "/Type /Catalog" to el root.
+
+\Para comenzar una hoja;
+Para comenzar un sheet:
+  Comenzar el sheet as un portrait sheet.
+
+\Para comenzar una hoja dada una caja;
+Para comenzar un sheet usando un box:
+  Si el pdf state's document flag es set, comenzar el sheet usando el box (pdf style); salir.
+  Llamar "kernel32.dll" "GlobalLock" con el printer device mode handle retornando un pdevmode.
+  Si el pdevmode es nil, salir.
+  Bitwise OR el pdevmode's dmfields con 1 [dm_orientation].
+  Poner 1 [dmorient_portrait] into el pdevmode's dmorientation.
+  Si el box's width es greater than el box's height, Poner 2 [dmorient_landscape] into el pdevmode's dmorientation.
+  Llamar "gdi32.dll" "ResetDCA" con el printer canvas y el pdevmode.
+  Llamar "kernel32.dll" "GlobalUnlock" con el printer device mode handle.
+  Llamar "gdi32.dll" "SetGraphicsMode" con el printer canvas y 2 [gm_advanced].
+  Llamar "gdi32.dll" "SetBkMode" con el printer canvas y 1  [transparent].
+  Llamar "gdi32.dll" "SetMapMode" con el printer canvas y 8 [mm_anisotropic].
+  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 112 [physicaloffsetx] retornando un pair's x-número.
+  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 113 [physicaloffsety] retornando el pair's y-número.
+  Negar el pair.
+  Llamar "gdi32.dll" "SetViewportOrgEx" con el printer canvas y el pair's x-número y el pair's y-número y nil.
+  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 88 [logpixelsx] retornando el pair's x-número.
+  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 90 [logpixelsy] retornando el pair's y-número.
+  Llamar "gdi32.dll" "SetViewportExtEx" con el printer canvas y el pair's x-número y el pair's y-número y nil. 
+  Llamar "gdi32.dll" "SetWindowOrgEx" con el printer canvas y 0 y 0 y nil.
+  Llamar "gdi32.dll" "SetWindowExtEx" con el printer canvas y el tpi y el tpi y nil.
+  Llamar "gdi32.dll" "StartPage" con el printer canvas.
+  Poner el printer canvas into el current canvas.
+  Llamar "gdi32.dll" "GetDeviceCaps" con el printer canvas y 88 [logpixelsx] retornando un número.
+  Poner el tpp into el saved tpp.
+  Poner el tpi divided by el número into el tpp.
+
+Para comenzar un sheet usando un box (pdf style):
+  Comenzar el sheet usando el box y "" (pdf style).
+
+\Para comenzar una hoja con una caja y una cadena de título;
+Para comenzar un sheet usando un box y un title string:
+  Comenzar el sheet usando el box y el title (pdf style).
+
+Para comenzar un sheet usando un box y un title string (pdf style - start el current page):
+  Agregar el pdf state's current page usando "page".
+  Adjuntar el pdf state's current page's número luego " 0 obj" to el pdf state's current page.
+  Adjuntar "<<" to el pdf state's current page.
+  Adjuntar "/Type /Page" to el pdf state's current page.
+  Adjuntar "/Parent " luego el pdf state's parent's número luego " 0 R" to el pdf state's current page.
+  Poner el box's width minus el tpp times 72 / el tpi into un width.
+  Poner el box's height minus el tpp times 72 / el tpi into un height.
+  Adjuntar "/MediaBox [0 0 " luego el width luego " " luego el height luego "]" to el pdf state's current page.
+  Poner el box's height minus el tpp into el pdf state's current height.
+  Agregar el pdf state's current contents usando "contents".
+  Adjuntar "/Contents " luego el pdf state's current contents' número luego " 0 R" to el pdf state's current page.
+  Adjuntar "0.05 0 0 0.05 1 1 cm" to el pdf state's current contents. \ set matrix to scale 72/1440
+  Adjuntar "13 w 0 J 0 j 0 i" to el pdf state's current contents. \ penwidth, linecap, linejoin, flatness \ 15 w on penwidth comes out to wide
+
+Para comenzar un sheet usando un box y un title string (pdf style):
+  Definir el pdf state's page flag.
+  Poner el borrar color into el pdf state's current border.
+  Poner el borrar color into el pdf state's current fill.
+  Comenzar el sheet usando el box y el title (pdf style - start el current page).
+  Si el title es blank, salir.
+  Crear un pdf outline entry usando el title y el pdf state's current height y el pdf state's current page's número.
+  Adjuntar el pdf outline entry to el pdf state's outline entries.
+
+\Para comenzar una hoja con una cadena de título;
+Para comenzar un sheet usando un title string:
+  Comenzar un portrait sheet usando el title.
+
 
 Para lógico y un byte con otro byte;
 Para bitwise AND un byte con another byte:
@@ -740,51 +797,7 @@ Para bitwise XOR un número con another número:
   Intel $8B9D08000000. \ mov ebx,[ebp+8] \ el número
   Intel $3103. \ XOR [ebx],eax
 
-The black color es un color.
 
-The black pen es un pen.
-
-The blue color es un color.
-
-The blue pen es un pen.
-
-A box es un registro con
-  A left coord, 
-  A top coord, 
-  A right coord, 
-  A bottom coord, y
-  A left-top spot at el left coord, 
-  A right-bottom spot at el right coord,
-  A top-left spot at el left coord, 
-  A bottom-right spot at el right coord.\ , y
-  \Una izquierda at el left coord, 
-  \Una superior at el top coord, 
-  \Una derecha at el right coord, 
-  \Una inferior at el bottom coord, y
-  \Un punto superior-izquierda at el left coord, 
-  \Un punto inferior-derecha at el right coord.
-
-A brightness es un lightness.
-
-The broken-bar byte es un byte igual to 166.
-
-The brown color es un color.
-
-The brown pen es un pen.
-
-A brownish color es un color.
-
-A bucket count es un count.
-
-A bucket es un puntero to un bucket registro.
-
-A bucket registro es un registro con some refers.
-
-A bucket# es un número.
-
-A buffer es un string.
-
-The bullet byte es un byte igual to 149.
 
 Para incrementar un byte que lo limita a otro byte y un tercer byte;
 Para incrementar un byte limiting it to another byte y un third byte:
