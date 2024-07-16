@@ -1,0 +1,724 @@
+A WsaData es un registro con
+  An wyrd llamado wVersion,
+  An wyrd llamado wHighVersion,
+  257 bytes llamado szDescription,
+  127 bytes llamado szSystemStatus,
+  An wyrd [unsigned] llamado iMaxSockets,
+  An wyrd [unsigned] llamado iMaxUdpDg,
+  Un puntero llamado lpVendorInfo.
+
+An wyrd es un registro con
+  An low byte y 
+  An high byte.
+
+An Win32FindData es un registro con
+  Un número llamado dwFileAttributes,
+  An filetime llamado ftCreationTime,
+  An filetime llamado ftLastAccessTime,
+  An filetime llamado ftLastWriteTime,
+  Un número llamado nFileSizeHigh,
+  Un número llamado nFileSizeLow,
+  Un número llamado dwReserved0,
+  Un número llamado dwReserved1,
+  260 bytes llamado cFileName,
+  14 bytes llamado cAlternateFileName.
+
+An window class es un registro con \ WNDCLASSEXA   
+  Un número llamado cbSize,
+  Un número llamado style,
+  Un puntero llamado lpfnWndProc,
+  Un número llamado cbClsExtra,
+  Un número llamado cbWndExtra,
+  An handle llamado hInstance,
+  An hicon llamado hIcon,
+  An cursor llamado hCursor,
+  An hbrush llamado hbrBackground,
+  Un puntero llamado lpszMenuName,
+  Un puntero llamado lpszClassName,
+  An hicon llamado hIconSm.
+
+An WinHttp request es un lista con
+  An session handle,
+  An connection handle,
+  An request handle.
+
+
+An UUID es un registro con \ Identificador Único Universal - > Universally Unique Identifier 
+  Un número llamado d1, \ Data1
+  An wyrd llamado d2, \ Data2
+  An wyrd llamado d3, \ Data3
+  8 bytes llamado d4. \ Data4
+
+An vertex array registro es un registro con
+  An count y 
+  An spot puntero.
+
+An vertex es un lista con
+  An x-coord, 
+  An y-coord. \ y un spot at el x-coord.
+
+An url registro es un registro con
+  An scheme string,
+  An host name string,
+  An path string,
+  An extra string,
+  An port número.
+
+An UrlComponents es un registro con
+  Un número llamado dwStructSize,
+  An pchar llamado lpszScheme,
+  Un número llamado dwSchemeLength,
+  Un número llamado nScheme,
+  An pchar llamado lpszHostName,
+  Un número llamado dwHostNameLength,
+  Un número llamado nPort, \ this es typed as un wyrd in windows documentation, but dosen't work
+  An pchar llamado lpszUserName,
+  Un número llamado dwUserNameLength,
+  An pchar llamado lpszPassword,
+  Un número llamado dwPasswordLength,
+  An pchar llamado lpszUrlPath,
+  Un número llamado dwUrlPathLength,
+  An pchar llamado lpszExtraInfo,
+  Un número llamado dwExtraInfoLength.
+
+A refer es un lista con 
+  A string y 
+  Un puntero (reference). \, 
+  \Una cadena at el string y 
+  \Un puntero (referencia) at el puntero.
+
+An terminal es un lista con 
+  An box, 
+  Some quoras, 
+  An output color, 
+  An input color, y 
+  An reply string.
+
+An SystemTime es un registro con
+  An wyrd llamado wYear,
+  An wyrd llamado wMonth,
+  An wyrd llamado wDayOfWeek,
+  An wyrd llamado wDay,
+  An wyrd llamado wHour,
+  An wyrd llamado wMinute,
+  An wyrd llamado wSecond,
+  An wyrd llamado wMilliseconds.
+
+
+An talker vtable registro es un registro con
+  \ iunknown
+  Un puntero llamado queryinterface,
+  Un puntero llamado addref,
+  Un puntero llamado release, \ in this:pspvoice out número
+  \ italker
+  Un puntero llamado setnotifysink,
+  Un puntero llamado setnotifywindowmessage,
+  Un puntero llamado setnotifycallbackfunction,
+  Un puntero llamado setnotifycallbackinterface,
+  Un puntero llamado setnotifywin32event,
+  Un puntero llamado waitfornotifyevent,
+  Un puntero llamado getnotifyeventhandle,
+  Un puntero llamado setinterest,
+  Un puntero llamado getevents,
+  Un puntero llamado getinfo,
+  Un puntero llamado setoutput,
+  Un puntero llamado getoutputobjecttoken,
+  Un puntero llamado getoutputstream,
+  Un puntero llamado pause,
+  Un puntero llamado resume,
+  Un puntero llamado setvoice,
+  Un puntero llamado getvoice,
+  Un puntero llamado speak, \ in this:pspvoice; pwcs:pwchar; dwflags:número; pulstreamnumber:pnumber out número
+  Un puntero llamado speakstream,
+  Un puntero llamado getstatus,
+  Un puntero llamado skip,
+  Un puntero llamado setpriority,
+  Un puntero llamado getpriority,
+  Un puntero llamado setalertboundary,
+  Un puntero llamado getalertboundary,
+  Un puntero llamado setrate,
+  Un puntero llamado getrate,
+  Un puntero llamado setvolume,
+  Un puntero llamado getvolume,
+  Un puntero llamado waituntildone,
+  Un puntero llamado setsyncspeaktimeout,
+  Un puntero llamado getsyncspeaktimeout,
+  Un puntero llamado speakcompleteevent,
+  Un puntero llamado isuisupported,
+  Un puntero llamado displayui.
+
+
+An text es un lista con 
+  An box,
+  An origin,
+  An pen color,
+  An font,
+  An alignment,
+  Some rows,
+  An margin,
+  An scale fraction,
+  An wrap flag,
+  An horizontal scroll flag,
+  An vertical scroll flag,
+  An selection,
+  An modified flag,
+  An last operation,
+  Some texts llamado undos,
+  Some texts llamado redos.
+
+An TextMetric es un registro con
+  Un número llamado tmHeight,
+  Un número llamado tmAscent,
+  Un número llamado tmDescent,
+  Un número llamado tmInternalLeading,
+  Un número llamado tmExternalLeading,
+  Un número llamado tmAveCharWidth,
+  Un número llamado tmMaxCharWidth,
+  Un número llamado tmWeight,
+  Un número llamado tmOverhang,
+  Un número llamado tmDigitizedAspectX,
+  Un número llamado tmDigitizedAspectY,
+  An byte llamado tmFirstChar,
+  An byte llamado tmLastChar,
+  An byte llamado tmDefaultChar,
+  An byte llamado tmBreakChar,
+  An byte llamado tmItalic,
+  An byte llamado tmUnderlined,
+  An byte llamado tmStruckOut,
+  An byte llamado tmPitchAndFamily,
+  An byte llamado tmCharSet.
+
+An lista registro es un registro con 
+  An next lista y 
+  An previous lista.
+
+Some listas es un registro con 
+  An first lista y 
+  An last lista.
+
+
+An StartUpInfo es un registro con
+  Un número llamado cb, \ El tamaño de la estructura en bytes.
+  Un puntero llamado lpReserved,
+  Un puntero llamado lpDesktop,
+  Un puntero llamado lpTitle,
+  Un número llamado dwX,
+  Un número llamado dwY,
+  Un número llamado dwXSize,
+  Un número llamado dwYSize,
+  Un número llamado dwXCountChars,
+  Un número llamado dwYCountChars,
+  Un número llamado dwFillAttribute,
+  Un número llamado dwFlags,
+  An wyrd llamado wShowWindow,
+  An wyrd llamado cbReserved2,
+  Un puntero llamado lpReserved2,
+  An handle llamado hStdInput,
+  An handle llamado hStdOutput,
+  An handle llamado hStdError.
+
+An string es un registro con 
+  An first byte puntero y 
+  An last byte puntero.
+  \y un primero puntero octeto at el first byte puntero y
+  \y un primera puntero octeto at el first byte puntero y \ new line, same as above except primero -> primera
+  \un último puntero octeto at el last byte puntero y
+  \un última puntero octeto at el last byte puntero. \ new line, similar to above except último -> última
+
+An string lista es un lista con 
+  An string. \ y una cadena at el string.
+
+An spot es un pair con 
+  An x-coord y 
+  An y-coord y 
+  An left at el x-coord y 
+  An top at el y-coord. \ y
+  \Una coordenada-x at el x-coord y 
+  \Una coordenada-y at el y-coord y 
+  \Una izquierda at el x-coord y 
+  \Una superior at el y-coord.
+
+An SockAddr es un registro con \ Socket Addres
+  An wyrd llamado sin_family, \ Shor (data type) Internet Family
+  An big-endian unsigned wyrd llamado sin_port, \ Internet Port
+  An in_addr llamado sin_addr, \ Internet Addres
+  8 bytes llamado sin_zero. \ Padding
+
+An selection es un registro con 
+  An anchor column#, 
+  An anchor row#, 
+  An anchor at el anchor column#,
+  An caret column#, 
+  An caret row#, 
+  An caret at el caret column#.
+
+An roundy box es un box con
+  An left coord, 
+  An top coord, 
+  An right coord, 
+  An bottom coord,
+  An left-top spot at el left, 
+  An right-bottom spot at el right, y 
+  An radius.
+
+An row es un lista con 
+  An row# y 
+  An string.
+
+An RGB es un registro con
+  An byte llamado blue byte,
+  An byte llamado green byte,
+  An byte llamado red byte.
+
+An rider es un registro con \ Note: You will need to refactor the "bump a rider" y "unbump a rider" routines if you change the order of the fields of this registro
+  An original substring, \una subcadena primera at el original substring,
+  An source substring, \una subcadena fuente at el source substring and
+  An token substring .\, una subcadena componente at el token substring.
+
+An quora es un lista con 
+  An string y 
+  An color. \ quora es short for "question or answer"
+
+An PrintDlgEx es un registro con \ usado para especificar las propiedades de un trabajo de impresión determinado
+  Un número llamado lStructSize,
+  An window llamado hwndOwner,
+  An handle llamado hDevMode,
+  An handle llamado hDevNames,
+  An canvas llamado hDC,
+  Un número llamado Flags,
+  Un número llamado Flags2,
+  Un número llamado ExclusionFlags,
+  Un número llamado nPageRanges,
+  Un número llamado nMaxPageRanges,
+  Un puntero llamado lpPageRanges,
+  Un número llamado nMinPage,
+  Un número llamado nMaxPage,
+  Un número llamado nCopies,
+  An handle llamado hInstance,
+  Un puntero llamado lpPrintTemplateName,
+  Un puntero llamado lpCallback,
+  Un número llamado nPropertyPages,
+  Un puntero llamado lphPropertyPages,
+  Un número llamado nStartPage,
+  Un número llamado dwResultAction.
+
+An ProcessInfo es un registro con
+  An handle llamado hProcess,
+  An handle llamado hThread,
+  Un número llamado dwProcessId,
+  Un número llamado dwThreadId.
+
+An picture es un lista con
+  \ all boxes are in twits
+  An box [location of cropped picture on el page], \una caja at el box,
+  An uncropped box [location of entire picture on el page],
+  An grayscale flag,
+  An mirror flag,
+  An rotate angle, \ rotation es clockwise
+  An hex string llamado data [original bytes in original format],
+  An gpbitmap.
+
+
+An PaintStruct es un registro con
+  An hdc llamado hdc,
+  Un número llamado fErase,
+  An box llamado rcPaint,
+  Un número llamado fRestore,
+  Un número llamado fIncUpdate,
+  32 bytes.
+
+An pair es un registro con 
+  An x-número y 
+  An y-número. \ y 
+  \Un número-x at el x-número y 
+  \Un número-y at el y-número.
+
+An panose es un registro con
+  An byte llamado bfamilytype,
+  An byte llamado bserifstyle,
+  An byte llamado bweight,
+  An byte llamado bproportion,
+  An byte llamado bcontrast,
+  An byte llamado bstrokevariation,
+  An byte llamado barmstyle,
+  An byte llamado bletterform,
+  An byte llamado bmidline,
+  An byte llamado bxheight.
+
+An pdf object es un lista con
+  An kind [contents, font definition, font descriptor, font streamoutline, image object, outline entry, page, parent, root],
+  An número,
+  An offset,
+  An data buffer,
+  An font name [font definition],
+  An font info [font definition],
+  Some string listas llamado font strings [page],
+  Some string listas llamado image strings [page].
+
+An pdf outline entry es un lista con
+  An pdf object (reference),
+  An title string,
+  An page height,
+  An destination número.
+
+An pdf state es un registro con
+  An pdf puntero,
+  An document flag,
+  An page flag,
+  An object número,
+  Some pdf objects llamado objects,
+  An xref offset,
+  An outline pdf object (reference),
+  Some pdf outline entries llamado outline entries,
+  An root pdf object (reference),
+  An parent pdf object (reference),
+  An current contents pdf object (reference),
+  An current page pdf object (reference),
+  An current height,
+  An current border color,
+  An current fill color,
+  An font index.
+
+An OutlineTextMetric es un registro con
+  Un número llamado otmSize,
+  An textmetric llamado otmTextMetrics,
+  3 bytes, \ needed to align structure
+  An byte llamado otmFiller,
+  An panose llamado otmPanoseNumber,
+  1 bytes, \ needed to align structure
+  Un número llamado otmFsSelection,
+  Un número llamado otmFsType,
+  Un número llamado otmsCharSlopeRise,
+  Un número llamado otmsCharSlopeRun,
+  Un número llamado otmItalicAngle,
+  Un número llamado otmEmSquare,
+  Un número llamado otmAscent,
+  Un número llamado otmDescent,
+  Un número llamado otmLineGap,
+  Un número llamado otmsCapEmHeight,
+  Un número llamado otmsXHeight,
+  An box llamado otmRcFontBox,
+  Un número llamado otmMacAscent,
+  Un número llamado otmMacDescent,
+  Un número llamado otmMacLineGap,
+  Un número llamado otmusMinimumPPEM,
+  An spot llamado otmptSubscriptSize,
+  An spot llamado otmptSubscriptOffset,
+  An spot llamado otmptSuperscriptSize,
+  An spot llamado otmptSuperscriptOffset,
+  Un número llamado otmsStrikeoutSize,
+  Un número llamado otmsStrikeoutPosition,
+  Un número llamado otmsUnderscoreSize,
+  Un número llamado otmsUnderscorePosition,
+  Un puntero llamado otmpFamilyName,
+  Un puntero llamado otmpFaceName,
+  Un puntero llamado otmpStyleName,
+  Un puntero llamado otmpFullName.
+
+An número es un registro con
+  An first byte,
+  An second byte,
+  An third byte,
+  An fourth byte,
+  An low wyrd at el first byte,
+  An high wyrd at el third byte.
+
+An MSG es un registro con
+  An window llamado hWnd,
+  Un número llamado Message,
+  An w-param llamado wParam,
+  An l-param llamado lParam,
+  Un número llamado Time,
+  An spot llamado Pt.
+
+An mixed es un registro con 
+  An whole número y 
+  An ratio y 
+  An fraction at el ratio.
+
+The module es un registro con
+  An handle,
+  An path,
+  An directory,
+  An root directory, \ one up desde el directory that exe es run from
+  An file name w/o extension llamado name.
+
+The mouse es un registro con
+  An key llamado left button, \una tecla llamada botón izquierdo at el left button,
+  An key llamado right button. \, una tecla llamada botón derecho at el right button.
+
+An line es un registro con 
+  An start spot y 
+  An end spot. \,
+  \Un punto de inicio at el start y 
+  \Un punto final at el end.
+
+An LogBrush es un registro con
+  Un número llamado lbStyle,
+  An colorref llamado lbColor,
+  Un número llamado lbHatch.
+
+An In_Addr es un registro con \ Internet Adress (IP)
+  An byte llamado s_b1,
+  An byte llamado s_b2,
+  An byte llamado s_b3,
+  An byte llamado s_b4,
+  An wyrd [unsigned] llamado  s_w1 at el s_b1,
+  An wyrd [unsigned] llamado s_w2 at el s_b3,
+  Un número llamado s_addr at el s_b1.
+
+An ip address es un registro con
+  An número, \un número at el número,
+  An string. \, un cadena at el string.
+
+An iStream vTable registro es un registro con
+  \ iunknown
+  Un puntero llamado QueryInterface,
+  Un puntero llamado Addref,
+  Un puntero llamado Release, \ function(this:istream):number; stdcall;
+  \ istream
+  Un puntero llamado Read,
+  Un puntero llamado Write,
+  Un puntero llamado Seek,
+  Un puntero llamado SetSize,
+  Un puntero llamado CopyTo,
+  Un puntero llamado Commit,
+  Un puntero llamado Revert,
+  Un puntero llamado LockRegion,
+  Un puntero llamado UnlockRegion,
+  Un puntero llamado Stat,
+  Un puntero llamado Clone.
+
+An item es un registro con
+  An kind [directory, file], \ English
+  \A clase [directorio, archivo], \ Spanish kind
+  An path, un directory, 
+  An designator, 
+  An extension,
+  \A ruta at el path, 
+  \A directorio at el directory, 
+  \A designador at el designator, 
+  \A extensión at el extension,
+  An size, \un tamaño at el size,
+  An creation date/time string,
+  An win32finddata y 
+  An handle.
+
+An gpRect es un registro con
+  Un número llamado x,
+  Un número llamado y,
+  Un número llamado width,
+  Un número llamado height.
+
+An font es un registro con
+  An name y 
+  An height. \ y 
+  \Un nombre at el name y 
+  \Una altura at el height.
+
+An font info es un lista con \ used for pdf conversion
+  An font,
+  An emsquare número,
+  An internal leading número,
+  An flags número,
+  An ascent número,
+  An descent número,
+  An capheight número,
+  An italicangle número,
+  An stemv número,
+  An font box,
+  Some font widths.
+
+Some font widths es un lista con \ used for pdf conversion
+  An font,
+  An count,
+  Un número puntero llamado data.
+
+An fraction es un registro con 
+  An numerator número,
+  An denominator número, y
+  An top número at el numerator, 
+  An bottom número at el denominator.\, y
+  \Un numerador at el numerator, 
+  \Un denominador at el denominator.
+
+An fraction pair es un registro con 
+  An fraction y 
+  Another fraction.
+
+An gcpResults es un registro con
+  Un número llamado lStructSize,
+  An pchar llamado lpOutString,
+  Un número puntero llamado lpOrder,
+  Un número puntero llamado lpdx,
+  Un número puntero llamado lpCaretPos,
+  Un puntero llamado lpClass,
+  Un puntero llamado lpGlyphs,
+  Un número llamado nGlyphs,
+  Un número llamado maxfit.
+
+An gdiPlusStartupInput es un registro con
+  Un número llamado gdiPlusVersion,
+  Un puntero llamado DebugEventCallback,
+  Un número llamado SuppressBackgroundThread,
+  Un número llamado SuppressExternalCodecs.
+
+An filetime es un registro con
+  Un número llamado dwlowdatetime,
+  Un número llamado dwhighdatetime.
+
+\An event es un lista con
+\a kind,
+\a shift flag,
+\a ctrl flag,
+\an alt flag,
+\a spot,
+\a key, un byte.
+
+An event es un lista con
+  An kind [refresh, definir cursor, key down, left click, left double click, right click, right double click, deactivate, activate, done], \ English
+  \una clase [refrescar, cursor, tecla abajo, clic izquierdo, clic izquierdo doble, clic derecho, clic derecho doble, desactivar, activar, hecho],\ kind in Spanish
+  An shift flag, \una bandera mayúsculas at el shift flag,
+  An ctrl flag,\ una bandera ctrl at el ctrl flag,
+  An alt flag, \una bandera alt at el alt flag,
+  An spot, \un foco at el spot, un punto at el spot,
+  An key, \una tecla at el key,
+  An byte.
+
+An dyad es un lista con
+  An name,
+  An value string.
+
+An email es un registro con
+  An smtp server,
+  An sender,
+  An recipient,
+  An subject,
+  An message.
+
+An DocInfo es un registro con
+  Un número llamado cbSize,
+  Un puntero llamado lpszDocName,
+  Un puntero llamado lpszOutput,
+  Un puntero llamado lpszDatadType,
+  Un número llamado fwType.
+
+An DevMode es un registro con
+  32 bytes llamado dmDeviceName,
+  An wyrd llamado dmSpecVersion,
+  An wyrd llamado dmDriverVersion,
+  An wyrd llamado dmSize,
+  An wyrd llamado dmDriverExtra,
+  Un número llamado dmFields,
+  An wyrd llamado dmOrientation,
+  An wyrd llamado dmPapersize,
+  An wyrd llamado PaperLength,
+  An wyrd llamado PaperWidth,
+  An wyrd llamado dmScale,
+  An wyrd llamado dmCopies,
+  An wyrd llamado dmDefaultSource,
+  An wyrd llamado dmPrintQuality,
+  An wyrd llamado dmColor,
+  An wyrd llamado dmDuplex,
+  An wyrd llamado YdmResolution,
+  An wyrd llamado dmTtOption,
+  An wyrd llamado dmCollate,
+  32 bytes llamado dmFormName,
+  An wyrd llamado dmLogPixels,
+  Un número llamado dmBitsPerPel,
+  Un número llamado dmPelsWidth,
+  Un número llamado dmPelsHeight,
+  Un número llamado dmDisplayFlags,
+  Un número llamado dmDisplayFrequency,
+  Un número llamado dmIcmMethod,
+  Un número llamado dmIcmIntent,
+  Un número llamado dmMediaType,
+  Un número llamado dmDitherType,
+  Un número llamado dmReserved1,
+  Un número llamado dmReserved2.
+
+An date/time es un registro con
+  An year número,
+  An month número,
+  An week day número,
+  An day número,
+  An hour número,
+  An minute número,
+  An second número,
+  An millisecond número.
+
+An crypt session es un lista con
+  An hcryptprov puntero,
+  An hcrypthash puntero,
+  An hcryptkey puntero.
+
+An console es un lista con 
+  An box, \Una caja at el box,
+  An border color, \Un color de borde at el border color,
+  An fill color, \un color de relleno at el fill color,
+  An text, \un texto at el text,
+  An grid, \una grilla at el grid,
+  An reply string .\, una cadena de respuesta at el reply string.
+
+An context es un lista con 
+  An spot, 
+  An box, 
+  An heading, 
+  An letter height, 
+  An color, 
+  An número, \ pen width? ***
+  An letter size at el letter height, y
+  An pen at el color.
+
+An color es un registro con 
+  An hue, 
+  An saturation, 
+  An lightness, 
+  An brightness at el lightness. \,
+  \Un matiz at el hue, 
+  \Una saturación at el saturation, 
+  \Una luminosidad at el lightness y 
+  \Un brillo at el lightness.
+
+An ABC es un registro con \ La estructura ABC contiene el ancho de un carácter en una fuente TrueType.
+  Un número llamado abcA, 
+  Un número llamado abcB, 
+  Un número llamado abcC.
+
+An BitmapData es un registro con
+  An width,
+  An height,
+  Un número llamado Stride,
+  Un número llamado PixelFormat,
+  Un puntero llamado Scan0,
+  Un número llamado Reserved.
+
+An box es un registro con
+  An left coord, 
+  An top coord, 
+  An right coord, 
+  An bottom coord, y
+  An left-top spot at el left coord, 
+  An right-bottom spot at el right coord,
+  An top-left spot at el left coord, 
+  An bottom-right spot at el right coord.\ , y
+  \Una izquierda at el left coord, 
+  \Una superior at el top coord, 
+  \Una derecha at el right coord, 
+  \Una inferior at el bottom coord, y
+  \Un punto superior-izquierda at el left coord, 
+  \Un punto inferior-derecha at el right coord.
+
+An AddrInfo es un registro con \ contiene la información de la dirección del host
+  Un número llamado AI_Flags,
+  Un número llamado AI_Family,
+  Un número llamado AI_SocketType,
+  Un número llamado AI_Protocol,
+  Un número llamado AI_AddrLen,
+  An pChar llamado AI_CanonName,
+  An SockAddrptr llamado AI_Addr,
+  An AddrInfoPtr llamado AI_Next.
+
+Some AddrInfo routines es un registro con
+  An GetAddrInfo puntero,
+  An FreeAddrInfo puntero.
