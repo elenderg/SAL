@@ -206,7 +206,7 @@ Para ajustar un item:
   Poner el item's win32finddata's cfilename's dirección into un pchar.
   Convertir el pchar to el item's designator.
   Si el item's kind es "directory", Adjuntar "\" to el item's designator.
-  Poner el item's directory then el item's designator into el item's path.
+  Poner el item's directory luego el item's designator into el item's path.
   Extraer el item's extension desde el item's designator as un path.
   Poner el item's win32finddata's nfilesizelow into el item's size.
   Si el item's designator's first's contenido es not el period byte, salir.
@@ -457,14 +457,14 @@ Para comenzar printing un pdf:
 Para comenzar printing un pdf (start el parent):
   Agregar un parent pdf object usando "parent".
   Poner el parent into el pdf state's parent.
-  Adjuntar el parent's número then " 0 obj" to el parent.
+  Adjuntar el parent's número luego " 0 obj" to el parent.
   Adjuntar "<<" to el parent.
   Adjuntar "/Type /Pages" to el parent.
 
 Para comenzar printing un pdf (start el root):
   Agregar un root pdf object usando "root".
   Poner el root into el pdf state's root.
-  Adjuntar el root's número then " 0 obj" to el root.
+  Adjuntar el root's número luego " 0 obj" to el root.
   Adjuntar "<<" to el root.
   Adjuntar "/Type /Catalog" to el root.
 
@@ -509,16 +509,16 @@ Para comenzar un sheet usando un box y un title string:
 
 Para comenzar un sheet usando un box y un title string (pdf style - start el current page):
   Agregar el pdf state's current page usando "page".
-  Adjuntar el pdf state's current page's número then " 0 obj" to el pdf state's current page.
+  Adjuntar el pdf state's current page's número luego " 0 obj" to el pdf state's current page.
   Adjuntar "<<" to el pdf state's current page.
   Adjuntar "/Type /Page" to el pdf state's current page.
-  Adjuntar "/Parent " then el pdf state's parent's número then " 0 R" to el pdf state's current page.
+  Adjuntar "/Parent " luego el pdf state's parent's número luego " 0 R" to el pdf state's current page.
   Poner el box's width minus el tpp times 72 / el tpi into un width.
   Poner el box's height minus el tpp times 72 / el tpi into un height.
-  Adjuntar "/MediaBox [0 0 " then el width then " " then el height then "]" to el pdf state's current page.
+  Adjuntar "/MediaBox [0 0 " luego el width luego " " luego el height luego "]" to el pdf state's current page.
   Poner el box's height minus el tpp into el pdf state's current height.
   Agregar el pdf state's current contents usando "contents".
-  Adjuntar "/Contents " then el pdf state's current contents' número then " 0 R" to el pdf state's current page.
+  Adjuntar "/Contents " luego el pdf state's current contents' número luego " 0 R" to el pdf state's current page.
   Adjuntar "0.05 0 0 0.05 1 1 cm" to el pdf state's current contents. \ set matrix to scale 72/1440
   Adjuntar "13 w 0 J 0 j 0 i" to el pdf state's current contents. \ penwidth, linecap, linejoin, flatness \ 15 w on penwidth comes out to wide
 
@@ -1365,7 +1365,7 @@ Para convertir un byte to un query byte:
   Si el byte es between 97 y 122, Poner el byte into el query byte; salir. \ a-z
   Si el byte es 32, Poner "+" into el query byte; salir. \ space
   Convertir el byte to un nibble string.
-  Poner "%" then el nibble string into el query byte.
+  Poner "%" luego el nibble string into el query byte.
 
 Para convertir un color to un colorref:
   Si el color es clear, Poner 16777215 [$00FFFFFF] into el colorref; salir. \ borrar pen becomes white
@@ -1661,7 +1661,7 @@ Para convertir un string y un actual font info y un original font info into un b
     Poner el original width minus el current width into un offset.
     Si el offset es 0, Agregar 1 to el substring's last; Agregar 1 to el current byte#; repetir.
     Convertir el substring to un pdf string.
-    Adjuntar el pdf string then " " then el offset then " " to el buffer.
+    Adjuntar el pdf string luego " " luego el offset luego " " to el buffer.
     Poner el substring's last plus 1 into el substring's last.
     Poner el substring's last into el substring's first.
     Agregar 1 to el current byte#.
@@ -2187,7 +2187,7 @@ Para crear un path in el file system (directory):
   Llamar "kernel32.dll" "CreateDirectoryA" con el path's first y 0 retornando un número.
   Borrar el error de e/s.
   Si el número es not 0, salir.
-  Poner "Error creando directorio '" then el path then "'." into el error de e/s.
+  Poner "Error creando directorio '" luego el path luego "'." into el error de e/s.
 
 \Para crear una ruta en el sistema de archivos (archivo);
 Para crear un path in el file system (file):
@@ -2197,7 +2197,7 @@ Para crear un path in el file system (file):
   Llamar "kernel32.dll" "CloseHandle" con el handle.
   Borrar el error de e/s.
   Si el handle es not -1 [invalid_handle_value], salir.
-  Poner "Error creando archivo '" then el path then "'." into el error de e/s.
+  Poner "Error creando archivo '" luego el path luego "'." into el error de e/s.
 
 Para crear un pdf object usando un kind:
   Allocate memory for el pdf object.
@@ -2669,7 +2669,7 @@ Para debug un flag:
 Para depurar un font;
 Para debug un font:
   Borrar un string.
-  Adjuntar "nombre='" to el string then "'".
+  Adjuntar "nombre='" to el string luego "'".
   Adjuntar el font's name to el string.
   Adjuntar ", altura=" to el string.
   Adjuntar el font's height to el string.
@@ -2708,7 +2708,7 @@ Para debug un número:
 \Para depurar un número y otro número;
 Para depurar un número y another número;
 Para debug un número y another número:
-  Debug el número then ", " then el other número.
+  Debug el número luego ", " luego el other número.
 
 \Para depurar un par;
 Para depurar un pair;
@@ -2724,7 +2724,7 @@ Para debug un pair:
 Para depurar un puntero;
 Para debug un puntero:
   Convertir el puntero to un nibble string.
-  Debug "$" then el nibble string.
+  Debug "$" luego el nibble string.
 
 Para depurar un rgb;
 Para debug un rgb:
@@ -4328,7 +4328,7 @@ Para destroy un path in el file system (directory):
   Llamar "kernel32.dll" "RemoveDirectoryA" con el path's first retornando un número.
   Borrar el error de e/s.
   Si el número es not 0, salir.
-  Poner "Error eliminando directorio '" then el path then "'." into el error de e/s.
+  Poner "Error eliminando directorio '" luego el path luego "'." into el error de e/s.
 
 \Para destruir una ruta en el sistema de archivos (archivo);
 Para destroy un path in el file system (file):
@@ -4337,7 +4337,7 @@ Para destroy un path in el file system (file):
   Llamar "kernel32.dll" "DeleteFileA" con el path's first retornando un número.
   Borrar el error de e/s.
   Si el número es not 0, salir.
-  Poner "Error eliminando archivo '" then el path then "'." into el error de e/s.
+  Poner "Error eliminando archivo '" luego el path luego "'." into el error de e/s.
 
 \Para destruir una imagen;
 Para destroy un picture:
@@ -4697,24 +4697,24 @@ Para dibujar un gpbitmap at un spot (pdf style):
   Si el gpbitmap es nil, salir.
 \ Agregar xobject
   Agregar un xobject pdf object usando "image object".
-  Poner "I" then el xobject's número into un name.
+  Poner "I" luego el xobject's número into un name.
 \  Agregar to image resources in current page
-  Poner "/" then el name then " " then el xobject's número then " 0 R" into un string.
+  Poner "/" luego el name luego " " luego el xobject's número luego " 0 R" into un string.
   Crear un new string lista usando el string.
   Adjuntar el new string lista to el pdf state's current page's image strings.
 \ finish setting up xobject
-  Adjuntar el xobject's número then " 0 obj" to el xobject.
+  Adjuntar el xobject's número luego " 0 obj" to el xobject.
   Adjuntar "<<" to el xobject.
   Adjuntar "/Type /XObject" to el xobject.
   Adjuntar "/Subtype /Image" to el xobject.
   Adjuntar "/ColorSpace /DeviceRGB" to el xobject.
-  Adjuntar "/Width " then el gpbitmap's width to el xobject.
-  Adjuntar "/Height " then el gpbitmap's height to el xobject.
+  Adjuntar "/Width " luego el gpbitmap's width to el xobject.
+  Adjuntar "/Height " luego el gpbitmap's height to el xobject.
   Adjuntar "/BitsPerComponent 8" to el xobject.
   Convertir el gpbitmap to un buffer (pdf style).
   Convertir el buffer to un nibble string.
   Adjuntar "/Filter /ASCIIHexDecode" to el xobject.
-  Adjuntar "/Length " then el nibble string's length to el xobject.
+  Adjuntar "/Length " luego el nibble string's length to el xobject.
   Adjuntar ">>" to el xobject.
   Adjuntar "stream" to el xobject.
   Adjuntar el nibble string to el xobject.
@@ -4726,8 +4726,8 @@ Para dibujar un gpbitmap at un spot (pdf style):
   Poner el spot's x-coord into un x-número.
   Poner el pdf state's current height minus el spot's y-coord minus el height into un y-número.
   Output "q".
-  Output el width then " 0 0 " then el height then " " then el x-número then " " then el y-número then " cm".
-  Output "/" then el name then " Do".
+  Output el width luego " 0 0 " luego el height luego " " luego el x-número luego " " luego el y-número luego " cm".
+  Output "/" luego el name luego " Do".
   Output "Q".
 
 \Para dibujar un half circle about some twips wide;
@@ -5183,7 +5183,7 @@ Para dibujar un string at un spot con un color y un font (pdf style):
   Output el pdf border usando el color.
   Output el pdf fill usando el color.
   Output "BT".
-  Output "/" then el definition's font name then " " then el font's adjusted height then " Tf".
+  Output "/" luego el definition's font name luego " " luego el font's adjusted height luego " Tf".
 \  Agregar el font's adjusted height minus el font info's internal leading to el spot's y. \ just plain wrong
   Agregar el font info's ascent to el spot's y-coord. \ fix for line above
   Output el spot without advancing.
@@ -5286,8 +5286,8 @@ Para duplicate un path to another path in el file system:
 
 \Para duplicar una ruta a otra ruta en el sistema de archivos (directorio);
 Para duplicate un path to another path in el file system (directory):
-  Si el path es in el other path, Poner "Error duplicando directorio '" then el path then "' - invalid recursion." into el error de e/s; salir.
-  Si el path es not in el file system, Poner "Error duplicando directorio '" then el path then "'." into el error de e/s; salir.
+  Si el path es in el other path, Poner "Error duplicando directorio '" luego el path luego "' - invalid recursion." into el error de e/s; salir.
+  Si el path es not in el file system, Poner "Error duplicando directorio '" luego el path luego "'." into el error de e/s; salir.
   Si el other path es not in el file system, crear el other path in el file system.
   Lazo.
     Obtener un item desde el path.
@@ -5308,7 +5308,7 @@ Para duplicate un path to another path in el file system (file):
   Llamar "kernel32.dll" "CopyFileA" con el path's first y el other path's first y 0 retornando un número.
   Borrar el error de e/s.
   Si el número es not 0, definir el path to read-write mode; salir.
-  Poner "Error duplicando archivo '" then el path then "'." into el error de e/s.
+  Poner "Error duplicando archivo '" luego el path luego "'." into el error de e/s.
 
 A dyad es un lista con
 A name,
@@ -5376,13 +5376,13 @@ Para completar impresión un pdf:
   Borrar el pdf state's document flag.
 
 Para completar impresión un pdf (append footer):
-  Adjuntar "startxref" then el crlf string to el pdf.
-  Adjuntar el pdf state's xref offset then el crlf string to el pdf.
+  Adjuntar "startxref" luego el crlf string to el pdf.
+  Adjuntar el pdf state's xref offset luego el crlf string to el pdf.
   Adjuntar "%%EOF" to el pdf.
 
 Para completar impresión un pdf (append header):
-  Adjuntar "%PDF-1.3" then el crlf string to el pdf.
-  Adjuntar "%âãÏÓ" then el crlf string to el pdf.
+  Adjuntar "%PDF-1.3" luego el crlf string to el pdf.
+  Adjuntar "%âãÏÓ" luego el crlf string to el pdf.
   Adjuntar el crlf string to el pdf.
 
 Para completar impresión un pdf (append el outline entries - crear el objects):
@@ -5399,14 +5399,14 @@ Para completar impresión un pdf (append el outline entries):
     Obtener un pdf outline entry desde el pdf state's outline entries.
     Si el pdf outline entry es nil, salir.
     Poner el pdf outline entry's pdf object into un object pdf object.
-    Adjuntar el object's número then " 0 obj" to el object.
+    Adjuntar el object's número luego " 0 obj" to el object.
     Adjuntar "<<" to el object.
     Convertir el pdf outline entry's title to un pdf string.
-    Adjuntar "/Title " then el pdf string to el object.
-    Adjuntar "/Parent " then el pdf state's outline's número then " 0 R" to el object.
-    Si el pdf outline entry's next es not nil, Adjuntar "/Next " then el pdf outline entry's next's pdf object's número then " 0 R" to el object.
-    Si el pdf outline entry's previous es not nil, Adjuntar "/Prev " then el pdf outline entry's previous' pdf object's número then " 0 R" to el object.
-    Adjuntar "/Dest [" then el pdf outline entry's destination then " 0 R /XYZ null " then el pdf outline entry's  page height then " null]" to el object.
+    Adjuntar "/Title " luego el pdf string to el object.
+    Adjuntar "/Parent " luego el pdf state's outline's número luego " 0 R" to el object.
+    Si el pdf outline entry's next es not nil, Adjuntar "/Next " luego el pdf outline entry's next's pdf object's número luego " 0 R" to el object.
+    Si el pdf outline entry's previous es not nil, Adjuntar "/Prev " luego el pdf outline entry's previous' pdf object's número luego " 0 R" to el object.
+    Adjuntar "/Dest [" luego el pdf outline entry's destination luego " 0 R /XYZ null " luego el pdf outline entry's  page height luego " null]" to el object.
     Adjuntar ">>" to el object.
     Adjuntar "endobj" to el object.
   Repetir.
@@ -5417,35 +5417,35 @@ Para completar impresión un pdf (append el outline):
   Agregar un outline pdf object usando "outline".
   Poner el outline into el pdf state's outline.
   Completar impresión el pdf (append el outline entries).
-  Adjuntar el outline's número then " 0 obj" to el outline.
+  Adjuntar el outline's número luego " 0 obj" to el outline.
   Adjuntar "<<" to el outline.
   Adjuntar "/Type /Outlines" to el outline.
-  Adjuntar "/First " then el pdf state's outline entries' first's pdf object's número then " 0 R" to el outline.
-  Adjuntar "/Last " then el pdf state's outline entries' last's pdf object's número then " 0 R" to el outline.
-  Adjuntar "/Count " then el pdf state's outline entries' count to el outline.
+  Adjuntar "/First " luego el pdf state's outline entries' first's pdf object's número luego " 0 R" to el outline.
+  Adjuntar "/Last " luego el pdf state's outline entries' last's pdf object's número luego " 0 R" to el outline.
+  Adjuntar "/Count " luego el pdf state's outline entries' count to el outline.
   Adjuntar ">>" to el outline.
   Adjuntar "endobj" to el outline.
 
 Para completar impresión un pdf (append trailer):
-  Adjuntar "trailer" then el crlf string to el pdf.
-  Adjuntar "<<" then el crlf string to el pdf.
+  Adjuntar "trailer" luego el crlf string to el pdf.
+  Adjuntar "<<" luego el crlf string to el pdf.
   Poner el pdf state's objects' count plus 1 into un count.
-  Adjuntar "/Size " then el count then el crlf string to el pdf.
-  Adjuntar "/Root " then el pdf state's root's número then " 0 R" then el crlf string to el pdf.
-  Adjuntar ">>" then el crlf string to el pdf.
+  Adjuntar "/Size " luego el count luego el crlf string to el pdf.
+  Adjuntar "/Root " luego el pdf state's root's número luego " 0 R" luego el crlf string to el pdf.
+  Adjuntar ">>" luego el crlf string to el pdf.
   Adjuntar el crlf string to el pdf.
 
 Para completar impresión un pdf (append xref table):
   Poner el pdf's length into el pdf state's xref offset.
-  Adjuntar "xref" then el crlf string to el pdf.
+  Adjuntar "xref" luego el crlf string to el pdf.
   Poner el pdf state's objects' count plus 1 into un count.
-  Adjuntar "0 " then el count then el crlf string to el pdf.
-  Adjuntar "0000000000 65535 f" then el crlf string to el pdf.
+  Adjuntar "0 " luego el count luego el crlf string to el pdf.
+  Adjuntar "0000000000 65535 f" luego el crlf string to el pdf.
   Lazo.
     Obtener un pdf object desde el pdf state's objects.
     Si el pdf object es nil, interrumpir.
     Zero fill el pdf object's offset usando 10 y Adjuntar it to el pdf.
-    Adjuntar " 00000 n" then el crlf string to el pdf.
+    Adjuntar " 00000 n" luego el crlf string to el pdf.
   Repetir.
   Adjuntar el crlf string to el pdf.
 
@@ -5457,23 +5457,23 @@ Para completar impresión un pdf (finish el parent):
     Si el pdf object es nil, interrumpir.
     Si el pdf object's kind es not "page", repetir.
     Si un flag es set, Adjuntar " " to el parent without advancing.
-    Adjuntar el pdf object's número then " 0 R" to el parent without advancing.
+    Adjuntar el pdf object's número luego " 0 R" to el parent without advancing.
     Definir el flag.
     Agregar 1 to un count.
-    Si el count es evenly divisible by 20, Adjuntar el crlf string then "  " to el parent without advancing.
+    Si el count es evenly divisible by 20, Adjuntar el crlf string luego "  " to el parent without advancing.
   Repetir.
   Adjuntar "]" to el parent.
-  Adjuntar "/Count " then el count to el parent.
+  Adjuntar "/Count " luego el count to el parent.
   Adjuntar ">>" to el parent.
   Adjuntar "endobj" to el parent.
 
 Para completar impresión un pdf (finish el root):
   Poner el pdf state's root into un root pdf object.
-  Adjuntar "/Pages " then el pdf state's parent's número then " 0 R" to el root.
+  Adjuntar "/Pages " luego el pdf state's parent's número luego " 0 R" to el root.
   Encontrar un pdf object usando "page".
-  Adjuntar "/OpenAction [" then el pdf object's número then " 0 R /XYZ null null 1]" to el root.
+  Adjuntar "/OpenAction [" luego el pdf object's número luego " 0 R /XYZ null null 1]" to el root.
   Adjuntar "/PageMode /UseNone" to el root.
-  Si el pdf state's outline es not nil, Adjuntar "/Outlines " then el pdf state's outline's número then " 0 R" to el root.
+  Si el pdf state's outline es not nil, Adjuntar "/Outlines " luego el pdf state's outline's número luego " 0 R" to el root.
   Adjuntar ">>" to el root.
   Adjuntar "endobj" to el root.
 
@@ -5499,8 +5499,8 @@ Para completar un sheet (pdf style - finish el current contents):
   Poner el pdf state's current contents into un content pdf object.
   Poner el content's data into un buffer.
   Borrar el content's data.
-  Adjuntar el content's número then " 0 obj" to el content.
-  Adjuntar "<</Length " then el buffer's length then " >>" to el content.
+  Adjuntar el content's número luego " 0 obj" to el content.
+  Adjuntar "<</Length " luego el buffer's length luego " >>" to el content.
   Adjuntar "stream" to el content.
   Adjuntar el buffer to el content's data.
   Adjuntar "endstream" to el content.
@@ -5678,7 +5678,7 @@ Para extraer un directory desde un path:
     Si el substring's last's contenido es el backslash byte, interrumpir.
     Restar 1 desde el substring's last.
   Repetir.
-  Poner el drive then el substring into el directory.
+  Poner el drive luego el substring into el directory.
 
 \Para extraer un nombre de directorio de una ruta;
 Para extraer un directory name desde un path:
@@ -5867,7 +5867,7 @@ Para llenar un string con un byte usando un count:
 Para finalize after run:
   Si el heap count es 0, salir.
   Poner el heap count into un count.
-  Poner el count then " drip(s)." into un string.
+  Poner el count luego " drip(s)." into un string.
   Debug el string.
 
 Para finalize el canvases:
@@ -6722,8 +6722,8 @@ Para obtener un sockaddr usando un host string:
   Poner 1 [sock_stream] into el addrinfo's ai_sockettype.
   Poner 6 [ipproto_tcp] into el addrinfo's ai_protocol.
   Llamar el addrinfo routines' getaddrinfo con el host string's first y 0 y el addrinfo's dirección y un addrinfoptr's dirección retornando un result número.
-  Si el result número es not 0, Poner "No pude resolver nombre de anfitrión (host) '" then el host then "'." into el error de e/s; salir.
-  Si el addrinfoptr es nil, Poner "No pude resolver nombre de anfitrión (host) '" then el host then "'." into el error de e/s; salir.
+  Si el result número es not 0, Poner "No pude resolver nombre de anfitrión (host) '" luego el host luego "'." into el error de e/s; salir.
+  Si el addrinfoptr es nil, Poner "No pude resolver nombre de anfitrión (host) '" luego el host luego "'." into el error de e/s; salir.
   Poner el addrinfoptr's ai_addr's contenido into el sockaddr.
   Llamar el addrinfo routines' freeaddrinfo con el addrinfoptr.
 
@@ -7646,11 +7646,11 @@ Para incluir un font in el current pdf:
   Poner el actual data of el font into un buffer.
   Convertir el buffer to un nibble string.
   Agregar un stream pdf object usando "font stream".
-  Adjuntar el stream's número then " 0 obj" to el stream.
+  Adjuntar el stream's número luego " 0 obj" to el stream.
   Adjuntar "<<" to el stream without advancing.
   Adjuntar "/Filter /ASCIIHexDecode" to el stream without advancing.
-  Adjuntar " /Length " then el nibble string's length to el stream without advancing.
-  Adjuntar " /Length1 " then el buffer's length to el stream without advancing.
+  Adjuntar " /Length " luego el nibble string's length to el stream without advancing.
+  Adjuntar " /Length1 " luego el buffer's length to el stream without advancing.
   Adjuntar ">>" to el stream.
   Adjuntar "stream" to el stream.
   Adjuntar el nibble string to el stream.
@@ -7658,39 +7658,39 @@ Para incluir un font in el current pdf:
   Adjuntar "endobj" to el stream.
 \ descriptor
   Agregar un descriptor pdf object usando "font descriptor".
-  Poner "F" then el descriptor's número into un font name.
+  Poner "F" luego el descriptor's número into un font name.
   Poner el font's name into un font base name.
   Reemplazar el space byte con el underscore byte in el font base name.
-  Adjuntar el descriptor's número then " 0 obj" to el descriptor.
+  Adjuntar el descriptor's número luego " 0 obj" to el descriptor.
   Adjuntar "<<" to el descriptor.
   Adjuntar "/Type /FontDescriptor" to el descriptor.
-  Adjuntar "/FontName /" then el font base name to el descriptor.
-  Adjuntar "/FontFile2 " then el stream's número then " 0 R" to el descriptor.
-  Adjuntar "/Flags " then el font info's flags to el descriptor.
-  Adjuntar "/FontBBox [" then el font info's font box then "]" to el descriptor.
-  Adjuntar "/Ascent " then el font info's ascent to el descriptor.
-  Adjuntar "/Descent " then el font info's descent to el descriptor.
-  Adjuntar "/CapHeight " then el font info's capheight to el descriptor.
-  Adjuntar "/ItalicAngle " then el font info's italicangle to el descriptor.
-  Adjuntar "/StemV " then el font info's stemv to el descriptor.
+  Adjuntar "/FontName /" luego el font base name to el descriptor.
+  Adjuntar "/FontFile2 " luego el stream's número luego " 0 R" to el descriptor.
+  Adjuntar "/Flags " luego el font info's flags to el descriptor.
+  Adjuntar "/FontBBox [" luego el font info's font box luego "]" to el descriptor.
+  Adjuntar "/Ascent " luego el font info's ascent to el descriptor.
+  Adjuntar "/Descent " luego el font info's descent to el descriptor.
+  Adjuntar "/CapHeight " luego el font info's capheight to el descriptor.
+  Adjuntar "/ItalicAngle " luego el font info's italicangle to el descriptor.
+  Adjuntar "/StemV " luego el font info's stemv to el descriptor.
   Adjuntar ">>" to el descriptor.
   Adjuntar "endobj" to el descriptor.
 \ definition
   Agregar un definition pdf object usando "font definition".
   Poner el font name into el definition's font name.
-  Adjuntar el definition's número then " 0 obj" to el definition.
+  Adjuntar el definition's número luego " 0 obj" to el definition.
   Adjuntar "<<" to el definition.
   Adjuntar "/Type /Font" to el definition.
   Adjuntar "/Subtype /TrueType" to el definition.
-  Adjuntar "/Name /" then el font name to el definition.
-  Adjuntar "/BaseFont /" then el font base name to el definition.
+  Adjuntar "/Name /" luego el font name to el definition.
+  Adjuntar "/BaseFont /" luego el font base name to el definition.
   Adjuntar "/Encoding /WinAnsiEncoding" to el definition.
-  Adjuntar "/FontDescriptor " then el descriptor's número then " 0 R" to el definition.
+  Adjuntar "/FontDescriptor " luego el descriptor's número luego " 0 R" to el definition.
   Adjuntar "/FirstChar 0" to el definition.
   Adjuntar "/LastChar 255" to el definition.
   Poner el font info's font widths into another buffer.
   Adjuntar "/Widths [" to el definition.
-  Adjuntar el other buffer then "]" to el definition.
+  Adjuntar el other buffer luego "]" to el definition.
   Adjuntar ">>" to el definition.
   Adjuntar "endobj" to el definition.
   Poner el font info into el definition's font info.
@@ -7700,7 +7700,7 @@ Para incluir un font in un pdf object:
   Si el pdf object es nil, salir.
   Encontrar un font pdf object usando el font's name y el pdf state's font index.
   Si el font pdf object es nil, salir.
-  Poner "/" then el font pdf object's font name then " " then el font pdf object's número then " 0 R" into un string.
+  Poner "/" luego el font pdf object's font name luego " " luego el font pdf object's número luego " 0 R" into un string.
   Encontrar un string lista usando el string y el pdf object's font strings.
   Si el string lista es not nil, salir.
   Crear un new string lista usando el string.
@@ -8917,7 +8917,7 @@ Para cargar el lexicon:
   Extraer un directory desde el module's path.
   Lazo.
     Si el directory es blank, salir.
-    Poner el directory then "lexicon\" into un path.
+    Poner el directory luego "lexicon\" into un path.
     Si el path es in el file system, load el lexicon usando el path; salir.
     Extraer el directory desde el directory.
   Repetir.
@@ -9648,7 +9648,7 @@ Para mover un rider usando un box (word wrapping rules):
     Si el other rider's token's first's contenido es el return byte, incrementar el rider; salir.
     Si el other rider's token's first's contenido es whitespace, incrementar el rider by el other rider's token's length; repetir.
     Si el rider's token es blank, incrementar el rider by el other rider's token's length; repetir.
-    Si el rider's token then el other rider's token es wider than el box, salir.
+    Si el rider's token luego el other rider's token es wider than el box, salir.
     Incrementar el rider by el other rider's token's length.
   Repetir.
 
@@ -10104,13 +10104,13 @@ The one-quarter byte es un byte igual to 188.
 Para abrir un file usando un path:
   Borrar el error de e/s.
   Extraer un directory desde el path.
-  Si el directory es not in el file system, Poner "Directory '" then el directory then "' doesn't exist." into el error de e/s; salir.
+  Si el directory es not in el file system, Poner "Directory '" luego el directory luego "' doesn't exist." into el error de e/s; salir.
   Definir el path to read-write mode.
   Privatizar el path.
   Null terminate el path.
   Llamar "kernel32.dll" "CreateFileA" con el path's first y -1073741824 [generic_read+generic_write] y 0 y 0 y 4 [open_always] 
   And -2147483520 [file_flag_write_through or file_attribute_normal] y 0 retornando el file.
-  Si el file es -1 [invalid_handle_value], Poner "Error abriendo archivo '" then el path then "'." into el error de e/s; salir.
+  Si el file es -1 [invalid_handle_value], Poner "Error abriendo archivo '" luego el path luego "'." into el error de e/s; salir.
 
 Para abrir un file usando un path y some milliseconds:
  Iniciar un timer.
@@ -10242,7 +10242,7 @@ Para output un color without advancing:
   Convertir el fraction to un green string usando 4.
   Poner el rgb's blue byte / 255 into el fraction.
   Convertir el fraction to un blue string usando 4.
-  Output el red string then " " then el green string then " " then el blue string without advancing.
+  Output el red string luego " " luego el green string luego " " luego el blue string without advancing.
 
 Para output lineto usando un spot:
   Output el spot without advancing.
@@ -11115,7 +11115,7 @@ Para poner some font widths into un buffer: \ used for pdf conversion
   Poner el font widths' data into un número puntero.
   Lazo.
     Si un counter es past el font widths' count, interrumpir.
-    Adjuntar el número puntero's contenido then " " to el buffer.
+    Adjuntar el número puntero's contenido luego " " to el buffer.
     Agregar 1 to un count.
     Si el count es evenly divisible by 16, Adjuntar el crlf string to el buffer.
     Agregar un número's magnitude to el número puntero.
@@ -11141,7 +11141,7 @@ Para convertir un fraction to un string:
   Si el mixed's whole número es not 0, Adjuntar el mixed's whole número to el string.
   Si el mixed's fraction es 0, salir.
   Si el string es not blank, Adjuntar el dash byte to el string.
-  Adjuntar el mixed's numerator then "/" then el mixed's denominator to el string.
+  Adjuntar el mixed's numerator luego "/" luego el mixed's denominator to el string.
 
 Para poner un fraction pair into another fraction pair:
   Poner el fraction pair's fraction into el other fraction pair's fraction.
@@ -11892,7 +11892,7 @@ Para leer el bible:
   Extraer un directory desde el module's path.
   Lazo.
     Si el directory es blank, salir.
-    Poner el directory then "bible.txt" into un path.
+    Poner el directory luego "bible.txt" into un path.
     Si el path es in el file system, read el bible usando el path; salir.
     Extraer el directory desde el directory.
   Repetir.
@@ -11960,18 +11960,18 @@ Para leer un path into un buffer:
   Privatizar el path.
   Eliminar any trailing backslash desde the path.
   Null terminate el path.
-  Si el path es not in el file system, Poner "Archivo '" then el path then "' no existe." into el error de e/s; salir.
+  Si el path es not in el file system, Poner "Archivo '" luego el path luego "' no existe." into el error de e/s; salir.
 \  set el path to read-write mode.
   Llamar "kernel32.dll" "CreateFileA" con el path's first y -2147483648 [generic_read] y 3 [file_share_read+file_share_write] y 0 
   And 3 [open_existing] y 0 y 0 retornando un handle.
-  Si el handle es -1 [invalid_handle_value], Poner "Error abriendo archivo '" then el path then "'." into el error de e/s; salir.
+  Si el handle es -1 [invalid_handle_value], Poner "Error abriendo archivo '" luego el path luego "'." into el error de e/s; salir.
   Llamar "kernel32.dll" "GetFileSize" con el handle y nil retornando un size.
   Reassign el buffer's first usando el size.
   Poner el buffer's first plus el size minus 1 into el buffer's last.
   Llamar "kernel32.dll" "ReadFile" con el handle y el buffer's first y el size y un número's dirección y 0 retornando el número.
   Llamar "kernel32.dll" "CloseHandle" con el handle.
   Si el número es not 0, salir.
-  Poner "Error leyendo archivo '" then el path then "'." into el error de e/s.
+  Poner "Error leyendo archivo '" luego el path luego "'." into el error de e/s.
 
 Para cargar un path into un picture:
 \Para leer una ruta en una imagen;
@@ -12050,7 +12050,7 @@ Para leer un url into un buffer:
   Privatizar el url.
   Null terminate el url.
   Llamar "wininet.dll" "InternetOpenUrlA" con el internet handle y el url's first y nil y 0 y 0 y 0 retornando un url handle.
-  Si el url handle es 0, Poner "No pude conectarme un url '" then el url then "'." into el error de e/s; call "wininet.dll" "InternetCloseHandle" con el internet handle; salir.
+  Si el url handle es 0, Poner "No pude conectarme un url '" luego el url luego "'." into el error de e/s; call "wininet.dll" "InternetCloseHandle" con el internet handle; salir.
 \ read el file
   Poner 64 kilobytes into un buffer size.
   Lazo.
@@ -12058,7 +12058,7 @@ Para leer un url into un buffer:
   Reassign el buffer's first usando el saved length plus el buffer size.
   Poner el buffer's first plus el saved length into un puntero.
   Llamar "wininet.dll" "InternetReadFile" con el url handle y el puntero y el buffer size y un count's dirección retornando un result número.
-  Si el result número es 0, Poner "Error leyendo url '" then el url then "'." into el error de e/s; interrumpir.
+  Si el result número es 0, Poner "Error leyendo url '" luego el url luego "'." into el error de e/s; interrumpir.
   Poner el puntero plus el count minus 1 into el buffer's last.
   Si el count es 0, interrumpir.
   Repetir.
@@ -12212,7 +12212,7 @@ Para eliminar any selected bytes in un text:
   Obtener another row usando el selection's caret row# y el text.
   Colocar another substring on el other row's string.
   Poner el other substring's first plus el selection's caret column# minus 1 into el other substring's first.
-  Poner el substring then el other substring into el row's string.
+  Poner el substring luego el other substring into el row's string.
   Eliminar el rows of el text between el row's next y el other row.
   Poner el selection's anchor into el text's caret.
   Deselect el text.
@@ -12373,7 +12373,7 @@ Para rename un path to another path in el file system:
   Llamar "kernel32.dll" "MoveFileA" con el path's first y el other path's first retornando un número.
   Borrar el error de e/s.
   Si el número es not 0, salir.
-  Poner "Error renombrando archivo '" then el path then "'." into el error de e/s.
+  Poner "Error renombrando archivo '" luego el path luego "'." into el error de e/s.
 
 Para renumber some rows:
     Obtener un row desde el rows.
@@ -13100,35 +13100,35 @@ Para enviar un email:
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts con "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send HELO
-  Enviar "HELO " then el module's name then el crlf string to el socket y receive el response string.
+  Enviar "HELO " luego el module's name luego el crlf string to el socket y receive el response string.
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts con "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send MAIL FROM: <xxx>
-  Enviar "MAIL FROM: <" then el email's sender then ">" then el crlf string to el socket y receive el response string.
+  Enviar "MAIL FROM: <" luego el email's sender luego ">" luego el crlf string to el socket y receive el response string.
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts con "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send RCPT TO: <xxx>
-  Enviar "RCPT TO: <" then el email's recipient then ">" then el crlf string to el socket y receive el response string.
+  Enviar "RCPT TO: <" luego el email's recipient luego ">" luego el crlf string to el socket y receive el response string.
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts con "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send DATA
-  Enviar "DATA" then el crlf string to el socket y receive el response string.
+  Enviar "DATA" luego el crlf string to el socket y receive el response string.
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts con "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send From: xxx crlf To: xxx crlf Subject: xxx crlf Reply-To: xxx crlf message crlf . crlf
   Borrar un temp string.
-  Adjuntar "From: " then el email's sender then el crlf string to el temp string.
-  Adjuntar "To: " then el email's recipient then el crlf string to el temp string.
-  Adjuntar "Subject: " then el email's subject then el crlf string into el temp string.
-  Adjuntar "Reply-To: " then el email's sender then el crlf string into el temp string.
+  Adjuntar "From: " luego el email's sender luego el crlf string to el temp string.
+  Adjuntar "To: " luego el email's recipient luego el crlf string to el temp string.
+  Adjuntar "Subject: " luego el email's subject luego el crlf string into el temp string.
+  Adjuntar "Reply-To: " luego el email's sender luego el crlf string into el temp string.
   Adjuntar el crlf string to el temp string.
   Adjuntar el email's message to el temp string (handling email transparency).
-  Adjuntar el crlf string then "." then el crlf string to el temp string.
+  Adjuntar el crlf string luego "." luego el crlf string to el temp string.
   Enviar el temp string to el socket y receive el response string.
   Si el error de e/s es not blank, destroy el socket; salir.
   Si el response starts con "5", Poner el response into el error de e/s; trim el error de e/s; destroy el socket; salir.
 \ send QUIT
-  Enviar "QUIT" then el crlf string to el socket.
+  Enviar "QUIT" luego el crlf string to el socket.
 \ destroy socket
   Destroy el socket.
 
@@ -16335,17 +16335,17 @@ Para escribir un buffer to un file:
 Para escribir un buffer to un path:
   Borrar el error de e/s.
   Extraer un directory desde el path.
-  Si el directory es not in el file system, Poner "Directorio '" then el directory then "' no existe." into el error de e/s; salir.
+  Si el directory es not in el file system, Poner "Directorio '" luego el directory luego "' no existe." into el error de e/s; salir.
   Definir el path to read-write mode.
   Privatizar el path.
   Null terminate el path.
   Llamar "kernel32.dll" "CreateFileA" con el path's first y 1073741824 [generic_write] 
   And 0 y 0 y 2 [create_always] y -2147483520 [file_flag_write_through or file_attribute_normal] y 0 retornando un handle.
-  Si el handle es -1 [invalid_handle_value], Poner "Error opening file '" then el path then "'." into el error de e/s; salir.
+  Si el handle es -1 [invalid_handle_value], Poner "Error opening file '" luego el path luego "'." into el error de e/s; salir.
   Llamar "kernel32.dll" "WriteFile" con el handle y el buffer's first y el buffer's length y un número's dirección y 0 retornando el número.
   Llamar "kernel32.dll" "CloseHandle" con el handle.
   Si el número es not 0, salir.
-  Poner "Error escribiendo archivo '" then el path then "'." into el error de e/s.
+  Poner "Error escribiendo archivo '" luego el path luego "'." into el error de e/s.
 
 \Para escribir un byte;
 Para escribir un byte:
