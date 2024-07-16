@@ -16,6 +16,573 @@
 \a grid,
 \a reply string.
 
+
+The zero box es un box.
+The z-key es un key igual to 90.
+The zero byte es un byte igual to 48.
+The zero key es un key igual to 48.
+
+The zero line es un line. \ tracer
+
+The zero spot es un spot.
+
+A translation table es un hex string.
+
+The ascii table es un translation table igual to $000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F202122232425262728292A2B2C2D2E2F303132333435363738393A3B3C3D3E3F404142434445464748494A4B4C4D4E4F505152535455565758595A5B5C5D5E5F606162636465666768696A6B6C6D6E6F707172737475767778797A7B7C7D7E7F808182838485868788898A8B8C8D8E8F909192939495969798999A9B9C9D9E9FA0A1A2A3A4A5A6A7A8A9AAABACADAEAFB0B1B2B3B4B5B6B7B8B9BABBBCBDBEBFC0C1C2C3C4C5C6C7C8C9CACBCCCDCECFD0D1D2D3D4D5D6D7D8D9DADBDCDDDEDFE0E1E2E3E4E5E6E7E8E9EAEBECEDEEEFF0F1F2F3F4F5F6F7F8F9FAFBFCFDFEFF.
+
+The lowercase accent-free ascii table es un translation table igual to $000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F202122232425262728292A2B2C2D2E2F303132333435363738393A3B3C3D3E3F406162636465666768696A6B6C6D6E6F707172737475767778797A5B5C5D5E5F606162636465666768696A6B6C6D6E6F707172737475767778797A7B7C7D7E7F808182838485868788899A8B9C8D9E8F909192939495969798999A9B9C9D9E79A0A1A2A3A4A5A6A7A8A9AAABACADAEAFB0B1B2B3B4B5B6B7B8B9BABBBCBDBEBF616161616161E6636565656569696969F06E6F6F6F6F6FD7F87575757579FEDF616161616161E6636565656569696969F06E6F6F6F6F6FF7F87575757579FE79.
+
+The lowercase ascii table es un translation table igual to $000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F202122232425262728292A2B2C2D2E2F303132333435363738393A3B3C3D3E3F406162636465666768696A6B6C6D6E6F707172737475767778797A5B5C5D5E5F606162636465666768696A6B6C6D6E6F707172737475767778797A7B7C7D7E7F808182838485868788899A8B9C8D9E8F909192939495969798999A9B9C9D9EFFA0A1A2A3A4A5A6A7A8A9AAABACADAEAFB0B1B2B3B4B5B6B7B8B9BABBBCBDBEBFE0E1E2E3E4E5E6E7E8E9EAEBECEDEEEFF0F1F2F3F4F5F6D7F8F9FAFBFCFDFEDFE0E1E2E3E4E5E6E7E8E9EAEBECEDEEEFF0F1F2F3F4F5F6F7F8F9FAFBFCFDFEFF.
+
+The uppercase ascii table es un translation table igual to $000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F202122232425262728292A2B2C2D2E2F303132333435363738393A3B3C3D3E3F404142434445464748494A4B4C4D4E4F505152535455565758595A5B5C5D5E5F604142434445464748494A4B4C4D4E4F505152535455565758595A7B7C7D7E7F808182838485868788898A8B8C8D8E8F909192939495969798998A9B8C9D8E9FA0A1A2A3A4A5A6A7A8A9AAABACADAEAFB0B1B2B3B4B5B6B7B8B9BABBBCBDBEBFC0C1C2C3C4C5C6C7C8C9CACBCCCDCECFD0D1D2D3D4D5D6D7D8D9DADBDCDDDEDFC0C1C2C3C4C5C6C7C8C9CACBCCCDCECFD0D1D2D3D4D5D6F7D8D9DADBDCDDDE9F.
+
+
+A WsaData es un registro con
+  A wyrd llamado wVersion,
+  A wyrd llamado wHighVersion,
+  257 bytes llamado szDescription,
+  127 bytes llamado szSystemStatus,
+  A wyrd [unsigned] llamado iMaxSockets,
+  A wyrd [unsigned] llamado iMaxUdpDg,
+  Un puntero llamado lpVendorInfo.
+
+A wyrd es un registro con
+  An low byte y 
+  An high byte.
+
+The x-key es un key igual to 88.
+
+An xor-mask es un mask.
+
+The y-key es un key igual to 89.
+
+The yellow color es un color.
+
+The yellow pen es un pen.
+
+The yen-sign byte es un byte igual to 165.
+
+A wave file es un path.
+
+A wave es un hex string.
+
+The white color es un color.
+
+The white pen es un pen.
+
+A wide string es un string.
+
+A width es some twips.
+
+A Win32FindData es un registro con
+  Un número llamado dwFileAttributes,
+  A filetime llamado ftCreationTime,
+  A filetime llamado ftLastAccessTime,
+  A filetime llamado ftLastWriteTime,
+  Un número llamado nFileSizeHigh,
+  Un número llamado nFileSizeLow,
+  Un número llamado dwReserved0,
+  Un número llamado dwReserved1,
+  260 bytes llamado cFileName,
+  14 bytes llamado cAlternateFileName.
+
+A window class es un registro con \ WNDCLASSEXA   
+  Un número llamado cbSize,
+  Un número llamado style,
+  Un puntero llamado lpfnWndProc,
+  Un número llamado cbClsExtra,
+  Un número llamado cbWndExtra,
+  A handle llamado hInstance,
+  A hicon llamado hIcon,
+  A cursor llamado hCursor,
+  An hbrush llamado hbrBackground,
+  Un puntero llamado lpszMenuName,
+  Un puntero llamado lpszClassName,
+  A hicon llamado hIconSm.
+
+The window class es un window class.
+
+A window es un handle.
+
+A WinHttp request es un lista con
+  A session handle,
+  A connection handle,
+  A request handle.
+
+A word es un substring.
+
+A UUID es un registro con \ Identificador Único Universal - > Universally Unique Identifier 
+  Un número llamado d1, \ Data1
+  A wyrd llamado d2, \ Data2
+  A wyrd llamado d3, \ Data3
+  8 bytes llamado d4. \ Data4
+
+The v-key es un key igual to 86.
+
+A vertex array es un puntero to un vertex array registro.
+
+A vertex array registro es un registro con
+  A count y 
+  A spot puntero.
+
+A vertex es un lista con
+  An x-coord, 
+  A y-coord. \ y un spot at el x-coord.
+
+The vertical-bar byte es un byte igual to 124.
+
+The vertical-tab byte es un byte igual to 11.
+
+A very dark color es un color.
+
+A very light color es un color.
+
+A very very dark color es un color.
+
+A very very light color es un color.
+
+The violet color es un color.
+
+The violet pen es un pen.
+
+The w-key es un key igual to 87.
+
+A w-param es un número.
+
+
+The upperscore byte es un byte igual to 175.
+
+A url es un string.
+
+A url registro es un registro con
+  A scheme string,
+  A host name string,
+  A path string,
+  An extra string,
+  A port número.
+
+A UrlComponents es un registro con
+  Un número llamado dwStructSize,
+  A pchar llamado lpszScheme,
+  Un número llamado dwSchemeLength,
+  Un número llamado nScheme,
+  A pchar llamado lpszHostName,
+  Un número llamado dwHostNameLength,
+  Un número llamado nPort, \ this es typed as un wyrd in windows documentation, but dosen't work
+  A pchar llamado lpszUserName,
+  Un número llamado dwUserNameLength,
+  A pchar llamado lpszPassword,
+  Un número llamado dwPasswordLength,
+  A pchar llamado lpszUrlPath,
+  Un número llamado dwUrlPathLength,
+  A pchar llamado lpszExtraInfo,
+  Un número llamado dwExtraInfoLength.
+
+The up-arrow key es un key igual to 38.
+
+A twip es un número.
+
+The two byte es un byte igual to 50.
+
+The two key es un key igual to 50.
+
+The u-key es un key igual to 85.
+
+The underscore byte es un byte igual to 95.
+
+A unit es un número.
+
+The unit-separator byte es un byte igual to 31.
+
+The synchronous-idle byte es un byte igual to 22.
+
+A SystemTime es un registro con
+  A wyrd llamado wYear,
+  A wyrd llamado wMonth,
+  A wyrd llamado wDayOfWeek,
+  A wyrd llamado wDay,
+  A wyrd llamado wHour,
+  A wyrd llamado wMinute,
+  A wyrd llamado wSecond,
+  A wyrd llamado wMilliseconds.
+
+The t-key es un key igual to 84.
+
+The tab byte es un byte igual to 9.
+
+The tab key es un key igual to 9.
+
+
+A talker es un puntero to un talker object.
+
+The talker es un talker.
+
+A talker object es un registro con un talker vtable llamado vtable.
+
+A talker vtable es un puntero to un talker vtable registro.
+
+A talker vtable registro es un registro con
+  \ iunknown
+  Un puntero llamado queryinterface,
+  Un puntero llamado addref,
+  Un puntero llamado release, \ in this:pspvoice out número
+  \ italker
+  Un puntero llamado setnotifysink,
+  Un puntero llamado setnotifywindowmessage,
+  Un puntero llamado setnotifycallbackfunction,
+  Un puntero llamado setnotifycallbackinterface,
+  Un puntero llamado setnotifywin32event,
+  Un puntero llamado waitfornotifyevent,
+  Un puntero llamado getnotifyeventhandle,
+  Un puntero llamado setinterest,
+  Un puntero llamado getevents,
+  Un puntero llamado getinfo,
+  Un puntero llamado setoutput,
+  Un puntero llamado getoutputobjecttoken,
+  Un puntero llamado getoutputstream,
+  Un puntero llamado pause,
+  Un puntero llamado resume,
+  Un puntero llamado setvoice,
+  Un puntero llamado getvoice,
+  Un puntero llamado speak, \ in this:pspvoice; pwcs:pwchar; dwflags:número; pulstreamnumber:pnumber out número
+  Un puntero llamado speakstream,
+  Un puntero llamado getstatus,
+  Un puntero llamado skip,
+  Un puntero llamado setpriority,
+  Un puntero llamado getpriority,
+  Un puntero llamado setalertboundary,
+  Un puntero llamado getalertboundary,
+  Un puntero llamado setrate,
+  Un puntero llamado getrate,
+  Un puntero llamado setvolume,
+  Un puntero llamado getvolume,
+  Un puntero llamado waituntildone,
+  Un puntero llamado setsyncspeaktimeout,
+  Un puntero llamado getsyncspeaktimeout,
+  Un puntero llamado speakcompleteevent,
+  Un puntero llamado isuisupported,
+  Un puntero llamado displayui.
+
+The tan color es un color.
+
+The tan pen es un pen.
+
+The teal color es un color.
+
+The teal pen es un pen.
+
+The temp path es un path.
+
+The terminal es un terminal.
+
+A terminal es un lista con A box, some quoras, un output color, un input color, y un reply string.
+
+The text cutoff es un número igual to 500.
+
+A text es un lista con 
+  A box,
+  An origin,
+  A pen color,
+  A font,
+  An alignment,
+  Some rows,
+  A margin,
+  A scale fraction,
+  A wrap flag,
+  A horizontal scroll flag,
+  A vertical scroll flag,
+  A selection,
+  A modified flag,
+  A last operation,
+  Some texts llamado undos,
+  Some texts llamado redos.
+
+A TextMetric es un registro con
+  Un número llamado tmHeight,
+  Un número llamado tmAscent,
+  Un número llamado tmDescent,
+  Un número llamado tmInternalLeading,
+  Un número llamado tmExternalLeading,
+  Un número llamado tmAveCharWidth,
+  Un número llamado tmMaxCharWidth,
+  Un número llamado tmWeight,
+  Un número llamado tmOverhang,
+  Un número llamado tmDigitizedAspectX,
+  Un número llamado tmDigitizedAspectY,
+  A byte llamado tmFirstChar,
+  A byte llamado tmLastChar,
+  A byte llamado tmDefaultChar,
+  A byte llamado tmBreakChar,
+  A byte llamado tmItalic,
+  A byte llamado tmUnderlined,
+  A byte llamado tmStruckOut,
+  A byte llamado tmPitchAndFamily,
+  A byte llamado tmCharSet.
+
+A lista es un puntero to un lista registro.
+
+A lista registro es un registro con 
+  A next lista y 
+  A previous lista.
+
+Some listas es un registro con 
+  A first lista y 
+  A last lista.
+
+A thousand es 10 hundreds.
+
+The three byte es un byte igual to 51.
+
+The three key es un key igual to 51.
+
+The three-quarter byte es un byte igual to 190.
+
+A tick es un número.
+
+The tilde byte es un byte igual to 126.
+
+A timer es un registro con un count, some start ticks y some total ticks.
+
+Some times es un número. \ this is a fluke, (I think) -- check out "smooth un polygon some times"
+
+A token es un string.
+
+A top es some twips.
+
+The tpi es some twips igual to 1440.
+
+The tpp es some twips.
+
+The trade-mark byte es un byte igual to 153.
+
+The superscript-one byte es un byte igual to 185.
+
+The superscript-three byte es un byte igual to 179.
+
+The superscript-two byte es un byte igual to 178.
+
+A subject es un string.
+
+The substitute byte es un byte igual to 26.
+
+A substring es un string.
+
+The start-of-heading byte es un byte igual to 1.
+
+The start-of-text byte es un byte igual to 2.
+
+A StartUpInfo es un registro con
+  Un número llamado cb, \ El tamaño de la estructura en bytes.
+  Un puntero llamado lpReserved,
+  Un puntero llamado lpDesktop,
+  Un puntero llamado lpTitle,
+  Un número llamado dwX,
+  Un número llamado dwY,
+  Un número llamado dwXSize,
+  Un número llamado dwYSize,
+  Un número llamado dwXCountChars,
+  Un número llamado dwYCountChars,
+  Un número llamado dwFillAttribute,
+  Un número llamado dwFlags,
+  A wyrd llamado wShowWindow,
+  A wyrd llamado cbReserved2,
+  Un puntero llamado lpReserved2,
+  A handle llamado hStdInput,
+  A handle llamado hStdOutput,
+  A handle llamado hStdError.
+
+The StdIn handle es un handle.
+
+The StdOut handle es un handle.
+
+A string es un registro con 
+  A first byte puntero y 
+  A last byte puntero.
+  \y un primero puntero octeto at el first byte puntero y
+  \y un primera puntero octeto at el first byte puntero y \ new line, same as above except primero -> primera
+  \un último puntero octeto at el last byte puntero y
+  \un última puntero octeto at el last byte puntero. \ new line, similar to above except último -> última
+
+A string lista es un lista con 
+  An string. \ y una cadena at el string.
+
+A string# es un número.
+
+
+A spot es un pair con 
+  An x-coord y 
+  An y-coord y 
+  An left at el x-coord y 
+  An top at el y-coord. \ y
+  \Una coordenada-x at el x-coord y 
+  \Una coordenada-y at el y-coord y 
+  \Una izquierda at el x-coord y 
+  \Una superior at el y-coord.
+
+
+The squirt o' two es un fraction igual to 99/70.
+
+A stack entry es un lista con un string.
+
+The stack es some stack entries.
+
+A spot puntero es un puntero to un spot.
+
+A square es 1440 units. \ arbitrary número high enough for precision divides
+
+A square root es un número.
+
+The square size es some twips.
+
+The space byte es un byte igual to 32.
+
+The space key es un key igual to 32.
+
+The space string es un string igual to " ".
+
+An smtp server es un string.
+
+A SockAddr es un registro con \ Socket Addres
+  A wyrd llamado sin_family, \ Shor (data type) Internet Family
+  A big-endian unsigned wyrd llamado sin_port, \ Internet Port
+  A in_addr llamado sin_addr, \ Internet Addres
+  8 bytes llamado sin_zero. \ Padding
+
+A SockAddrPtr es un puntero to un sockaddr.
+
+A socket es un puntero.
+
+The soft-dash byte es un byte igual to 173.
+
+A solid color es un color.
+
+The slash byte es un byte igual to 47.
+
+The small letter height es un letter height.
+
+The small-bullet byte es un byte igual to 183.
+
+The smallest número es -2147483648.
+
+The sky blue color es un color.
+
+The sky blue pen es un pen.
+
+The sky color es un color.
+
+The sky pen es un pen.
+
+A side es 1 unit.
+
+The silent flag es un flag.
+
+
+The single-quote byte es un byte igual to 39.
+
+The six byte es un byte igual to 54.
+
+The six key es un key igual to 54.
+
+A size es some twips.
+
+The shift-in byte es un byte igual to 15.
+
+The shift-out byte es un byte igual to 14.
+
+The seven byte es un byte igual to 55.
+
+The seven key es un key igual to 55.
+
+The sharp-s byte es un byte igual to 223.
+
+A sheet es un box.
+
+
+The scrolllock key es un key igual to 145.
+
+A second es 1000 milliseconds.
+
+The sector byte es un byte igual to 167.
+
+A sector es un pair con un x-coord y un y-coord [indicating el left-top of el sector].
+
+The seed es un número.
+
+A selection box es un box.
+
+A selection es un registro con 
+  An anchor column#, 
+  An anchor row#, 
+  An anchor at el anchor column#,
+  A caret column#, 
+  An caret row#, 
+  An caret at el caret column#.
+
+The semi-colon byte es un byte igual to 59.
+
+The saved memory hbitmap es un hbitmap.
+
+The saved tpp es un número.
+
+A roundy box es un box con
+  A left coord, 
+  A top coord, 
+  A right coord, 
+  A bottom coord,
+  A left-top spot at el left, 
+  A right-bottom spot at el right, y 
+  A radius.
+
+A row es un lista con 
+  A row# y 
+  A string.
+
+A row# es un número.
+
+The s-key es un key igual to 83.
+
+A saturation es un número [0 to 1000].
+
+
+A RGB es un registro con
+  A byte llamado blue byte,
+  A byte llamado green byte,
+  A byte llamado red byte.
+
+A rgb puntero es un puntero to un rgb.
+
+A rider es un registro con \ Note: You will need to refactor the "bump a rider" y "unbump a rider" routines if you change the order of the fields of this registro
+  An original substring, \una subcadena primera at el original substring,
+  A source substring, \una subcadena fuente at el source substring and
+  A token substring .\, una subcadena componente at el token substring.
+
+The right-alligator byte es un byte igual to 62.
+
+The right-alligator-quote byte es un byte igual to 155.
+
+The right-arrow key es un key igual to 39.
+
+The right-brace byte es un byte igual to 125.
+
+The right-bracket byte es un byte igual to 93.
+
+The right-double-alligator-quote byte es un byte igual to 187.
+
+The right-double-quote byte es un byte igual to 148.
+
+The right-paren byte es un byte igual to 41.
+
+The right-single-quote byte es un byte igual to 146.
+
+The right-window key es un key igual to 92.
+
+A rise es un número.
+A run es un número.
+
+The reply es un reply.
+
+A reply es un string.
+
 The remembered pdf path es un path.
 
 The registered byte es un byte igual to 174.
@@ -12420,10 +12987,6 @@ Para reemplazar un byte con another byte in un string:
     Agregar 1 to el substring's first.
   Repetir.
 
-The reply es un reply.
-
-A reply es un string.
-
 \Para volver a poner en cola un event
 Para reque un event:
   Copiar el event into another event.
@@ -12626,41 +13189,6 @@ Para reverse some listas:
     Mover el lista desde el other listas to el listas.
   Repetir.
 
-A RGB es un registro con
-  A byte llamado blue byte,
-  A byte llamado green byte,
-  A byte llamado red byte.
-
-A rgb puntero es un puntero to un rgb.
-
-A rider es un registro con \ Note: You will need to refactor the "bump a rider" y "unbump a rider" routines if you change the order of the fields of this registro
-  An original substring, \una subcadena primera at el original substring,
-  A source substring, \una subcadena fuente at el source substring and
-  A token substring .\, una subcadena componente at el token substring.
-
-The right-alligator byte es un byte igual to 62.
-
-The right-alligator-quote byte es un byte igual to 155.
-
-The right-arrow key es un key igual to 39.
-
-The right-brace byte es un byte igual to 125.
-
-The right-bracket byte es un byte igual to 93.
-
-The right-double-alligator-quote byte es un byte igual to 187.
-
-The right-double-quote byte es un byte igual to 148.
-
-The right-paren byte es un byte igual to 41.
-
-The right-single-quote byte es un byte igual to 146.
-
-The right-window key es un key igual to 92.
-
-A rise es un número.
-A run es un número.
-
 \Para rotar una caja;
 Para rotar un box:
   Poner el box's center into un center spot.
@@ -12779,25 +13307,6 @@ Para redondear un pair to el nearest multiple of un número:
 Para redondear un pair to un número:
   Redondear el pair to el nearest multiple of el número.
 
-A roundy box es un box con
-  A left coord, 
-  A top coord, 
-  A right coord, 
-  A bottom coord,
-  A left-top spot at el left, 
-  A right-bottom spot at el right, y 
-  A radius.
-
-A row es un lista con 
-  A row# y 
-  A string.
-
-A row# es un número.
-
-The s-key es un key igual to 83.
-
-A saturation es un número [0 to 1000].
-
 Para save un canvas:
   Llamar "gdi32.dll" "SaveDC" con el canvas.
 
@@ -12809,10 +13318,6 @@ Para save un context:
   Poner el context's color into el saved context's color.
   Poner el context's número into el saved context's número.
   Anteponer el saved context to el context stack.
-
-The saved memory hbitmap es un hbitmap.
-
-The saved tpp es un número.
 
 \Para hablar un número;
 Para hablar un número:
@@ -13056,16 +13561,6 @@ Para scroll un text up one page:
   Restar el text's row height desde el text's y-coord.
   Limitar el origin of el text.
 
-The scrolllock key es un key igual to 145.
-
-A second es 1000 milliseconds.
-
-The sector byte es un byte igual to 167.
-
-A sector es un pair con un x-coord y un y-coord [indicating el left-top of el sector].
-
-The seed es un número.
-
 \Para seleccionar cada byte en un texto;
 Para seleccionar every byte in un text:
   Si el text es nil, salir.
@@ -13080,18 +13575,6 @@ Para seleccionar un row# usando un text:
   Poner 1 into el text's anchor column#.
   Poner el row# into el text's caret row#.
   Poner el row's string's length into el text's caret column#.
-
-A selection box es un box.
-
-A selection es un registro con 
-  An anchor column#, 
-  An anchor row#, 
-  An anchor at el anchor column#,
-  A caret column#, 
-  An caret row#, 
-  An caret at el caret column#.
-
-The semi-colon byte es un byte igual to 59.
 
 Para enviar un buffer to un socket:
   Borrar el error de e/s.
@@ -13235,13 +13718,6 @@ Para definir un path to read-write mode:
   Bitwise AND el número con -2 [everything except file_attribute_readonly].
   Llamar "kernel32.dll" "SetFileAttributesA" con el path's first y el número.
 
-The seven byte es un byte igual to 55.
-
-The seven key es un key igual to 55.
-
-The sharp-s byte es un byte igual to 223.
-
-A sheet es un box.
 
 \Para desplazar un byte hacia la izquierda algunos bits;
 Para desplazar un byte left some bits:
@@ -13286,10 +13762,6 @@ Para desplazar un wyrd right some bits:
   Intel $8B09. \ mov ecx,[ecx]
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el wyrd
   Intel $66D328. \ shr word ptr [eax],ecx
-
-The shift-in byte es un byte igual to 15.
-
-The shift-out byte es un byte igual to 14.
 
 \Para mostrar una consola;
 Para mostrar un console:
@@ -13352,10 +13824,6 @@ Para shut down el cgi:
   Finalize el module.
   Finalize winsock.
 
-A side es 1 unit.
-
-The silent flag es un flag.
-
 \Para simplificar una respuesta;
 Para simplificar un reply:
   Si el reply es blank, interrumpir.
@@ -13364,14 +13832,6 @@ Para simplificar un reply:
   Adjuntar el byte to un string.
   Repetir.
   Poner el string into el reply.
-
-The single-quote byte es un byte igual to 39.
-
-The six byte es un byte igual to 54.
-
-The six key es un key igual to 54.
-
-A size es some twips.
 
 Para omitir any leading linefeed byte in un substring:
   Si el substring es blank, salir.
@@ -13400,14 +13860,6 @@ Para omitir word characters in un substring:
     Si el substring's first's contenido es not alphanumeric, salir.
     Agregar 1 to el substring's first.
   Repetir.
-
-The sky blue color es un color.
-
-The sky blue pen es un pen.
-
-The sky color es un color.
-
-The sky pen es un pen.
 
 Para colocar un rider on another rider:
   Colocar el rider's source on el other rider's source.
@@ -13449,14 +13901,6 @@ Para colocar un substring on un string:
   Intel $8B8B04000000. \ mov ecx,[ebx+4] \ el string's last
   Intel $898804000000. \ mov [eax+4],ecx \ el substring's last
 
-The slash byte es un byte igual to 47.
-
-The small letter height es un letter height.
-
-The small-bullet byte es un byte igual to 183.
-
-The smallest número es -2147483648.
-
 \Para suavizar un polígono;
 Para suavizar un polygon:
   Si el polygon es nil, salir.
@@ -13489,22 +13933,6 @@ Para suavizar un polygon some times: \ this use to "times" es un fluke, I think 
     Restar 1 desde el times.
   Repetir.
 
-An smtp server es un string.
-
-A SockAddr es un registro con \ Socket Addres
-  A wyrd llamado sin_family, \ Shor (data type) Internet Family
-  A big-endian unsigned wyrd llamado sin_port, \ Internet Port
-  A in_addr llamado sin_addr, \ Internet Addres
-  8 bytes llamado sin_zero. \ Padding
-
-A SockAddrPtr es un puntero to un sockaddr.
-
-A socket es un puntero.
-
-The soft-dash byte es un byte igual to 173.
-
-A solid color es un color.
-
 Para ordenar any selected rows in un text:
   Si el text es nil, salir.
   Dividir el rows of el text into some rows y some selected rows y some other rows.
@@ -13529,13 +13957,9 @@ Para ordenar some rows:
   Repetir.
 
 Para space between glyphs:
-  Girar derecha. Mover 3 squares. Girar izquierda.
-
-The space byte es un byte igual to 32.
-
-The space key es un key igual to 32.
-
-The space string es un string igual to " ".
+  Girar derecha. 
+  Mover 3 squares. 
+  Girar izquierda.
 
 Para dividir un buffer into some dyads:
   Destroy el dyads.
@@ -13642,24 +14066,6 @@ Para dividir un wyrd into un byte y another byte:
   Poner el wyrd into el byte.
   Poner el original wyrd into el other byte.
 
-A spot es un pair con 
-  An x-coord y 
-  An y-coord y 
-  An left at el x-coord y 
-  An top at el y-coord. \ y
-  \Una coordenada-x at el x-coord y 
-  \Una coordenada-y at el y-coord y 
-  \Una izquierda at el x-coord y 
-  \Una superior at el y-coord.
-
-A spot puntero es un puntero to un spot.
-
-A square es 1440 units. \ arbitrary número high enough for precision divides
-
-A square root es un número.
-
-The square size es some twips.
-
 Para cuadrar any selection in un text:
   Si el text es nil, salir.
   Si nothing es selected in el text, salir.
@@ -13672,12 +14078,6 @@ Para cuadrar any selection in un text:
   Si el text's caret row# es less than or igual to el text's row count, salir.
   Poner el text's row count into el text's caret's row#.
   Poner el row's string's length into el text's caret's column#.
-
-The squirt o' two es un fraction igual to 99/70.
-
-A stack entry es un lista con un string.
-
-The stack es some stack entries.
 
 \Para comenzar en cualquier lugar de una caja;
 Para comenzar en cualquier lugar de una box;
@@ -14075,33 +14475,6 @@ Para start con un color:
 Para comenzar con nothing in un puntero:
   Void el puntero.
 
-The start-of-heading byte es un byte igual to 1.
-
-The start-of-text byte es un byte igual to 2.
-
-A StartUpInfo es un registro con
-  Un número llamado cb, \ El tamaño de la estructura en bytes.
-  Un puntero llamado lpReserved,
-  Un puntero llamado lpDesktop,
-  Un puntero llamado lpTitle,
-  Un número llamado dwX,
-  Un número llamado dwY,
-  Un número llamado dwXSize,
-  Un número llamado dwYSize,
-  Un número llamado dwXCountChars,
-  Un número llamado dwYCountChars,
-  Un número llamado dwFillAttribute,
-  Un número llamado dwFlags,
-  A wyrd llamado wShowWindow,
-  A wyrd llamado cbReserved2,
-  Un puntero llamado lpReserved2,
-  A handle llamado hStdInput,
-  A handle llamado hStdOutput,
-  A handle llamado hStdError.
-
-The StdIn handle es un handle.
-
-The StdOut handle es un handle.
 
 Para stop un process:
   Si el process es 0, salir.
@@ -14116,19 +14489,6 @@ Para stop un timer:
   Poner el system's tick count into some ticks.
   Restar el timer's start ticks desde el ticks.
   Agregar el ticks to el timer's total ticks.
-
-A string es un registro con 
-  A first byte puntero y 
-  A last byte puntero.
-  \y un primero puntero octeto at el first byte puntero y
-  \y un primera puntero octeto at el first byte puntero y \ new line, same as above except primero -> primera
-  \un último puntero octeto at el last byte puntero y
-  \un última puntero octeto at el last byte puntero. \ new line, similar to above except último -> última
-
-A string lista es un lista con 
-  An string. \ y una cadena at el string.
-
-A string# es un número.
 
 Para trazar el accent glyph:
   Save el context.
@@ -15639,12 +15999,6 @@ Para trazar el zero glyph:
   Trazar 1 pixel.
   Restore el context.
 
-A subject es un string.
-
-The substitute byte es un byte igual to 26.
-
-A substring es un string.
-
 \Para restar un byte de otro byte;
 Para restar un byte desde another byte:
   Intel $8B8508000000. \ mov eax,[ebp+8] \ el byte
@@ -15705,12 +16059,6 @@ Para restar un número desde another número:
   Intel $8B9D0C000000. \ mov ebx,[ebp+12] \ el other número
   Intel $2903. \ sub [ebx],eax
 
-The superscript-one byte es un byte igual to 185.
-
-The superscript-three byte es un byte igual to 179.
-
-The superscript-two byte es un byte igual to 178.
-
 \Para intercambiar un color con otro color;
 Para intercambiar un color con another color:
   Intercambiar el color's hue con el other color's hue.
@@ -15735,169 +16083,11 @@ Para intercambiar some listas con some other listas:
   Intercambiar el listas' first con el other listas' first.
   Intercambiar el listas' last con el other listas' last.
 
-The synchronous-idle byte es un byte igual to 22.
+Para take off all el masking tape:
+  Unmask everything.
 
-A SystemTime es un registro con
-  A wyrd llamado wYear,
-  A wyrd llamado wMonth,
-  A wyrd llamado wDayOfWeek,
-  A wyrd llamado wDay,
-  A wyrd llamado wHour,
-  A wyrd llamado wMinute,
-  A wyrd llamado wSecond,
-  A wyrd llamado wMilliseconds.
-
-The t-key es un key igual to 84.
-
-The tab byte es un byte igual to 9.
-
-The tab key es un key igual to 9.
-
-Para take off all el masking tape: unmask everything.
-
-Para take off any masking tape: unmask everything.
-
-A talker es un puntero to un talker object.
-
-The talker es un talker.
-
-A talker object es un registro con un talker vtable llamado vtable.
-
-A talker vtable es un puntero to un talker vtable registro.
-
-A talker vtable registro es un registro con
-  \ iunknown
-  Un puntero llamado queryinterface,
-  Un puntero llamado addref,
-  Un puntero llamado release, \ in this:pspvoice out número
-  \ italker
-  Un puntero llamado setnotifysink,
-  Un puntero llamado setnotifywindowmessage,
-  Un puntero llamado setnotifycallbackfunction,
-  Un puntero llamado setnotifycallbackinterface,
-  Un puntero llamado setnotifywin32event,
-  Un puntero llamado waitfornotifyevent,
-  Un puntero llamado getnotifyeventhandle,
-  Un puntero llamado setinterest,
-  Un puntero llamado getevents,
-  Un puntero llamado getinfo,
-  Un puntero llamado setoutput,
-  Un puntero llamado getoutputobjecttoken,
-  Un puntero llamado getoutputstream,
-  Un puntero llamado pause,
-  Un puntero llamado resume,
-  Un puntero llamado setvoice,
-  Un puntero llamado getvoice,
-  Un puntero llamado speak, \ in this:pspvoice; pwcs:pwchar; dwflags:número; pulstreamnumber:pnumber out número
-  Un puntero llamado speakstream,
-  Un puntero llamado getstatus,
-  Un puntero llamado skip,
-  Un puntero llamado setpriority,
-  Un puntero llamado getpriority,
-  Un puntero llamado setalertboundary,
-  Un puntero llamado getalertboundary,
-  Un puntero llamado setrate,
-  Un puntero llamado getrate,
-  Un puntero llamado setvolume,
-  Un puntero llamado getvolume,
-  Un puntero llamado waituntildone,
-  Un puntero llamado setsyncspeaktimeout,
-  Un puntero llamado getsyncspeaktimeout,
-  Un puntero llamado speakcompleteevent,
-  Un puntero llamado isuisupported,
-  Un puntero llamado displayui.
-
-The tan color es un color.
-
-The tan pen es un pen.
-
-The teal color es un color.
-
-The teal pen es un pen.
-
-The temp path es un path.
-
-The terminal es un terminal.
-
-A terminal es un lista con A box, some quoras, un output color, un input color, y un reply string.
-
-The text cutoff es un número igual to 500.
-
-A text es un lista con 
-  A box,
-  An origin,
-  A pen color,
-  A font,
-  An alignment,
-  Some rows,
-  A margin,
-  A scale fraction,
-  A wrap flag,
-  A horizontal scroll flag,
-  A vertical scroll flag,
-  A selection,
-  A modified flag,
-  A last operation,
-  Some texts llamado undos,
-  Some texts llamado redos.
-
-A TextMetric es un registro con
-  Un número llamado tmHeight,
-  Un número llamado tmAscent,
-  Un número llamado tmDescent,
-  Un número llamado tmInternalLeading,
-  Un número llamado tmExternalLeading,
-  Un número llamado tmAveCharWidth,
-  Un número llamado tmMaxCharWidth,
-  Un número llamado tmWeight,
-  Un número llamado tmOverhang,
-  Un número llamado tmDigitizedAspectX,
-  Un número llamado tmDigitizedAspectY,
-  A byte llamado tmFirstChar,
-  A byte llamado tmLastChar,
-  A byte llamado tmDefaultChar,
-  A byte llamado tmBreakChar,
-  A byte llamado tmItalic,
-  A byte llamado tmUnderlined,
-  A byte llamado tmStruckOut,
-  A byte llamado tmPitchAndFamily,
-  A byte llamado tmCharSet.
-
-A lista es un puntero to un lista registro.
-
-A lista registro es un registro con 
-  A next lista y 
-  A previous lista.
-
-Some listas es un registro con 
-  A first lista y 
-  A last lista.
-
-A thousand es 10 hundreds.
-
-The three byte es un byte igual to 51.
-
-The three key es un key igual to 51.
-
-The three-quarter byte es un byte igual to 190.
-
-A tick es un número.
-
-The tilde byte es un byte igual to 126.
-
-A timer es un registro con un count, some start ticks y some total ticks.
-
-Some times es un número. \ this is a fluke, (I think) -- check out "smooth un polygon some times"
-
-A token es un string.
-
-A top es some twips.
-
-The tpi es some twips igual to 1440.
-
-The tpp es some twips.
-
-The trade-mark byte es un byte igual to 153.
+Para take off any masking tape:
+  Unmask everything.
 
 \Para recortar una cadena;
  Para recortar un string:
@@ -15975,26 +16165,12 @@ Para girar derecha some points:
   Poner el points y 3840 into un fraction.
   Girar derecha el fraction.
 
-A twip es un número.
-
-The two byte es un byte igual to 50.
-
-The two key es un key igual to 50.
-
-The u-key es un key igual to 85.
-
 Para unassign un puntero:
   Si el puntero es nil, salir.
   Llamar "kernel32.dll" "HeapFree" con el heap puntero y 0 [no options] y el puntero retornando un número.
   Si el número es 0, salir.
   Void el puntero.
   Restar 1 desde el heap count.
-
-The underscore byte es un byte igual to 95.
-
-A unit es un número.
-
-The unit-separator byte es un byte igual to 31.
 
 Para unlock un gpbitmap usando un bitmapdata:
   Llamar "gdiplus.dll" "GdipBitmapUnlockBits" con el gpbitmap y el bitmapdata's dirección.
@@ -16078,8 +16254,6 @@ Para unquote un string:
   Repetir.
   Poner el other string into el string.
 
-The up-arrow key es un key igual to 38.
-
 Para actualizar la pantalla;
 Para update el screen;
 Para mostrar it;
@@ -16136,34 +16310,6 @@ Para uppercase un text:
   Repetir.
   Wrap el text.
 
-The upperscore byte es un byte igual to 175.
-
-A url es un string.
-
-A url registro es un registro con
-  A scheme string,
-  A host name string,
-  A path string,
-  An extra string,
-  A port número.
-
-A UrlComponents es un registro con
-  Un número llamado dwStructSize,
-  A pchar llamado lpszScheme,
-  Un número llamado dwSchemeLength,
-  Un número llamado nScheme,
-  A pchar llamado lpszHostName,
-  Un número llamado dwHostNameLength,
-  Un número llamado nPort, \ this es typed as un wyrd in windows documentation, but dosen't work
-  A pchar llamado lpszUserName,
-  Un número llamado dwUserNameLength,
-  A pchar llamado lpszPassword,
-  Un número llamado dwPasswordLength,
-  A pchar llamado lpszUrlPath,
-  Un número llamado dwUrlPathLength,
-  A pchar llamado lpszExtraInfo,
-  Un número llamado dwExtraInfoLength.
-
 \Para usar un color;
 Para usar un color:
   Poner el color into el context's color.
@@ -16190,44 +16336,6 @@ Para usar el skinny pen:
 
 Para usar small pointy letters: \ as opposed to "roundy letters" not yet implemented
   Usar small letters.
-
-A UUID es un registro con \ Identificador Único Universal - > Universally Unique Identifier 
-  Un número llamado d1, \ Data1
-  A wyrd llamado d2, \ Data2
-  A wyrd llamado d3, \ Data3
-  8 bytes llamado d4. \ Data4
-
-The v-key es un key igual to 86.
-
-A vertex array es un puntero to un vertex array registro.
-
-A vertex array registro es un registro con
-  A count y 
-  A spot puntero.
-
-A vertex es un lista con
-  An x-coord, 
-  A y-coord. \ y un spot at el x-coord.
-
-The vertical-bar byte es un byte igual to 124.
-
-The vertical-tab byte es un byte igual to 11.
-
-A very dark color es un color.
-
-A very light color es un color.
-
-A very very dark color es un color.
-
-A very very light color es un color.
-
-The violet color es un color.
-
-The violet pen es un pen.
-
-The w-key es un key igual to 87.
-
-A w-param es un número.
 
 \Para desencolar un evento;
 \Para esperar un evento;
@@ -16274,55 +16382,6 @@ Para wait for un key:
   Wait for el key to go down.
   Wait for el key to come up.
   Descartar todos los events.
-
-A wave file es un path.
-
-A wave es un hex string.
-
-The white color es un color.
-
-The white pen es un pen.
-
-A wide string es un string.
-
-A width es some twips.
-
-A Win32FindData es un registro con
-  Un número llamado dwFileAttributes,
-  A filetime llamado ftCreationTime,
-  A filetime llamado ftLastAccessTime,
-  A filetime llamado ftLastWriteTime,
-  Un número llamado nFileSizeHigh,
-  Un número llamado nFileSizeLow,
-  Un número llamado dwReserved0,
-  Un número llamado dwReserved1,
-  260 bytes llamado cFileName,
-  14 bytes llamado cAlternateFileName.
-
-A window class es un registro con \ WNDCLASSEXA   
-  Un número llamado cbSize,
-  Un número llamado style,
-  Un puntero llamado lpfnWndProc,
-  Un número llamado cbClsExtra,
-  Un número llamado cbWndExtra,
-  A handle llamado hInstance,
-  A hicon llamado hIcon,
-  A cursor llamado hCursor,
-  An hbrush llamado hbrBackground,
-  Un puntero llamado lpszMenuName,
-  Un puntero llamado lpszClassName,
-  A hicon llamado hIconSm.
-
-The window class es un window class.
-
-A window es un handle.
-
-A WinHttp request es un lista con
-  A session handle,
-  A connection handle,
-  A request handle.
-
-A word es un substring.
 
 Para wrap un text:
   Si el text es nil, salir.
@@ -16673,31 +16732,6 @@ Para usar medium letters:
 Para usar small letters:
   Poner el small letter height into el context's letter height.
 
-A WsaData es un registro con
-  A wyrd llamado wVersion,
-  A wyrd llamado wHighVersion,
-  257 bytes llamado szDescription,
-  127 bytes llamado szSystemStatus,
-  A wyrd [unsigned] llamado iMaxSockets,
-  A wyrd [unsigned] llamado iMaxUdpDg,
-  Un puntero llamado lpVendorInfo.
-
-A wyrd es un registro con
-  An low byte y 
-  An high byte.
-
-The x-key es un key igual to 88.
-
-An xor-mask es un mask.
-
-The y-key es un key igual to 89.
-
-The yellow color es un color.
-
-The yellow pen es un pen.
-
-The yen-sign byte es un byte igual to 165.
-
 Para yield to windows:
   Si el event queue es not empty, salir.
   Llamar "user32.dll" "GetMessageA" con un msg's dirección y 0 y 0 y 0 retornando un número.
@@ -16705,17 +16739,12 @@ Para yield to windows:
   Llamar "user32.dll" "TranslateMessage" con el msg's dirección.
   Llamar "user32.dll" "DispatchMessageA" con el msg's dirección.
 
-The z-key es un key igual to 90.
-
 Para zero un box: \ was borrar un box, got confounded con "clear un box" (which should dibujar el box all black as does "clear el screen")
   Poner 0 into el box's left.
   Poner 0 into el box's top.
   Poner 0 into el box's right.
   Poner 0 into el box's bottom.
 
-The zero box es un box.
-
-The zero byte es un byte igual to 48.
 
 Para zero fill un número usando un count y Adjuntar it to un string:
   Convertir el número to another string.
@@ -16728,19 +16757,3 @@ Para zero fill un string usando un count:
   Si el string's length es greater than or igual to el count, salir.
   Anteponer el zero byte to el string.
   Repetir.
-
-The zero key es un key igual to 48.
-
-The zero line es un line. \ tracer
-
-The zero spot es un spot.
-
-A translation table es un hex string.
-
-The ascii table es un translation table igual to $000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F202122232425262728292A2B2C2D2E2F303132333435363738393A3B3C3D3E3F404142434445464748494A4B4C4D4E4F505152535455565758595A5B5C5D5E5F606162636465666768696A6B6C6D6E6F707172737475767778797A7B7C7D7E7F808182838485868788898A8B8C8D8E8F909192939495969798999A9B9C9D9E9FA0A1A2A3A4A5A6A7A8A9AAABACADAEAFB0B1B2B3B4B5B6B7B8B9BABBBCBDBEBFC0C1C2C3C4C5C6C7C8C9CACBCCCDCECFD0D1D2D3D4D5D6D7D8D9DADBDCDDDEDFE0E1E2E3E4E5E6E7E8E9EAEBECEDEEEFF0F1F2F3F4F5F6F7F8F9FAFBFCFDFEFF.
-
-The lowercase accent-free ascii table es un translation table igual to $000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F202122232425262728292A2B2C2D2E2F303132333435363738393A3B3C3D3E3F406162636465666768696A6B6C6D6E6F707172737475767778797A5B5C5D5E5F606162636465666768696A6B6C6D6E6F707172737475767778797A7B7C7D7E7F808182838485868788899A8B9C8D9E8F909192939495969798999A9B9C9D9E79A0A1A2A3A4A5A6A7A8A9AAABACADAEAFB0B1B2B3B4B5B6B7B8B9BABBBCBDBEBF616161616161E6636565656569696969F06E6F6F6F6F6FD7F87575757579FEDF616161616161E6636565656569696969F06E6F6F6F6F6FF7F87575757579FE79.
-
-The lowercase ascii table es un translation table igual to $000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F202122232425262728292A2B2C2D2E2F303132333435363738393A3B3C3D3E3F406162636465666768696A6B6C6D6E6F707172737475767778797A5B5C5D5E5F606162636465666768696A6B6C6D6E6F707172737475767778797A7B7C7D7E7F808182838485868788899A8B9C8D9E8F909192939495969798999A9B9C9D9EFFA0A1A2A3A4A5A6A7A8A9AAABACADAEAFB0B1B2B3B4B5B6B7B8B9BABBBCBDBEBFE0E1E2E3E4E5E6E7E8E9EAEBECEDEEEFF0F1F2F3F4F5F6D7F8F9FAFBFCFDFEDFE0E1E2E3E4E5E6E7E8E9EAEBECEDEEEFF0F1F2F3F4F5F6F7F8F9FAFBFCFDFEFF.
-
-The uppercase ascii table es un translation table igual to $000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F202122232425262728292A2B2C2D2E2F303132333435363738393A3B3C3D3E3F404142434445464748494A4B4C4D4E4F505152535455565758595A5B5C5D5E5F604142434445464748494A4B4C4D4E4F505152535455565758595A7B7C7D7E7F808182838485868788898A8B8C8D8E8F909192939495969798998A9B8C9D8E9FA0A1A2A3A4A5A6A7A8A9AAABACADAEAFB0B1B2B3B4B5B6B7B8B9BABBBCBDBEBFC0C1C2C3C4C5C6C7C8C9CACBCCCDCECFD0D1D2D3D4D5D6D7D8D9DADBDCDDDEDFC0C1C2C3C4C5C6C7C8C9CACBCCCDCECFD0D1D2D3D4D5D6F7D8D9DADBDCDDDE9F.
