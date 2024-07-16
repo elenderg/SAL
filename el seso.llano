@@ -10305,12 +10305,12 @@ The page-down key es un key igual to 34.
 
 The page-up key es un key igual to 33.
 
-A paintstruct es un registro con
+A PaintStruct es un registro con
   An hdc llamado hdc,
-  Un número llamado ferase,
-  A box llamado rcpaint,
-  Un número llamado frestore,
-  Un número llamado fincupdate,
+  Un número llamado fErase,
+  A box llamado rcPaint,
+  Un número llamado fRestore,
+  Un número llamado fIncUpdate,
   32 bytes.
 
 An x-número es un número.
@@ -10798,28 +10798,28 @@ Para anteponer some listas to some other listas:
 
 The print-screen key es un key igual to 44.
 
-A printdlgex es un registro con
-  Un número llamado lstructsize,
-  A window llamado hwndowner,
-  A handle llamado hdevmode,
-  A handle llamado hdevnames,
-  A canvas llamado hdc,
-  Un número llamado flags,
-  Un número llamado flags2,
-  Un número llamado exclusionflags,
-  Un número llamado npageranges,
-  Un número llamado nmaxpageranges,
-  Un puntero llamado lppageranges,
-  Un número llamado nminpage,
-  Un número llamado nmaxpage,
-  Un número llamado ncopies,
-  A handle llamado hinstance,
-  Un puntero llamado lpprinttemplatename,
-  Un puntero llamado lpcallback,
-  Un número llamado npropertypages,
-  Un puntero llamado lphpropertypages,
-  Un número llamado nstartpage,
-  Un número llamado dwresultaction.
+A PrintDlgEx es un registro con \ usado para especificar las propiedades de un trabajo de impresión determinado
+  Un número llamado lStructSize,
+  A window llamado hwndOwner,
+  A handle llamado hDevMode,
+  A handle llamado hDevNames,
+  A canvas llamado hDC,
+  Un número llamado Flags,
+  Un número llamado Flags2,
+  Un número llamado ExclusionFlags,
+  Un número llamado nPageRanges,
+  Un número llamado nMaxPageRanges,
+  Un puntero llamado lpPageRanges,
+  Un número llamado nMinPage,
+  Un número llamado nMaxPage,
+  Un número llamado nCopies,
+  A handle llamado hInstance,
+  Un puntero llamado lpPrintTemplateName,
+  Un puntero llamado lpCallback,
+  Un número llamado nPropertyPages,
+  Un puntero llamado lphPropertyPages,
+  Un número llamado nStartPage,
+  Un número llamado dwResultAction.
 
 The printer canvas es un canvas.
 
@@ -10829,11 +10829,11 @@ A process es un handle.
 
 A process puntero es un puntero to un process.
 
-A processinfo es un registro con
-  A handle llamado hprocess,
-  A handle llamado hthread,
-  Un número llamado dwprocessid,
-  Un número llamado dwthreadid.
+A ProcessInfo es un registro con
+  A handle llamado hProcess,
+  A handle llamado hThread,
+  Un número llamado dwProcessId,
+  Un número llamado dwThreadId.
 
 A punch line es un string.
 
@@ -12598,7 +12598,7 @@ Para reverse some listas:
     Mover el lista desde el other listas to el listas.
   Repetir.
 
-A rgb es un registro con
+A RGB es un registro con
   A byte llamado blue byte,
   A byte llamado green byte,
   A byte llamado red byte.
@@ -13463,13 +13463,13 @@ Para suavizar un polygon some times: \ this use to "times" es un fluke, I think 
 
 An smtp server es un string.
 
-A sockaddr es un registro con
-  A wyrd llamado sin_family,
-  A big-endian unsigned wyrd llamado sin_port,
-  A in_addr llamado sin_addr,
-  8 bytes llamado sin_zero.
+A SockAddr es un registro con \ Socket Addres
+  A wyrd llamado sin_family, \ Shor (data type) Internet Family
+  A big-endian unsigned wyrd llamado sin_port, \ Internet Port
+  A in_addr llamado sin_addr, \ Internet Addres
+  8 bytes llamado sin_zero. \ Padding
 
-A sockaddrptr es un puntero to un sockaddr.
+A SockAddrPtr es un puntero to un sockaddr.
 
 A socket es un puntero.
 
@@ -14051,25 +14051,25 @@ The start-of-heading byte es un byte igual to 1.
 
 The start-of-text byte es un byte igual to 2.
 
-A startupinfo es un registro con
-  Un número llamado cb,
-  Un puntero llamado lpreserved,
-  Un puntero llamado lpdesktop,
-  Un puntero llamado lptitle,
-  Un número llamado dwx,
-  Un número llamado dwy,
-  Un número llamado dwxsize,
-  Un número llamado dwysize,
-  Un número llamado dwxcountchars,
-  Un número llamado cwycountchars,
-  Un número llamado dwfillattribute,
-  Un número llamado dwflags,
-  A wyrd llamado wshowwindow,
-  A wyrd llamado cbreserved2,
-  Un puntero llamado lpreserved2,
-  A handle llamado hstdinput,
-  A handle llamado hstdoutput,
-  A handle llamado hstderror.
+A StartUpInfo es un registro con
+  Un número llamado cb, \ El tamaño de la estructura en bytes.
+  Un puntero llamado lpReserved,
+  Un puntero llamado lpDesktop,
+  Un puntero llamado lpTitle,
+  Un número llamado dwX,
+  Un número llamado dwY,
+  Un número llamado dwXSize,
+  Un número llamado dwYSize,
+  Un número llamado dwXCountChars,
+  Un número llamado dwYCountChars,
+  Un número llamado dwFillAttribute,
+  Un número llamado dwFlags,
+  A wyrd llamado wShowWindow,
+  A wyrd llamado cbReserved2,
+  Un puntero llamado lpReserved2,
+  A handle llamado hStdInput,
+  A handle llamado hStdOutput,
+  A handle llamado hStdError.
 
 The StdIn handle es un handle.
 
@@ -15709,15 +15709,15 @@ Para intercambiar some listas con some other listas:
 
 The synchronous-idle byte es un byte igual to 22.
 
-A systemtime es un registro con
-  A wyrd llamado wyear,
-  A wyrd llamado wmonth,
-  A wyrd llamado wdayofweek,
-  A wyrd llamado wday,
-  A wyrd llamado whour,
-  A wyrd llamado wminute,
-  A wyrd llamado wsecond,
-  A wyrd llamado wmilliseconds.
+A SystemTime es un registro con
+  A wyrd llamado wYear,
+  A wyrd llamado wMonth,
+  A wyrd llamado wDayOfWeek,
+  A wyrd llamado wDay,
+  A wyrd llamado wHour,
+  A wyrd llamado wMinute,
+  A wyrd llamado wSecond,
+  A wyrd llamado wMilliseconds.
 
 The t-key es un key igual to 84.
 
@@ -15813,27 +15813,27 @@ A text es un lista con
   Some texts llamado undos,
   Some texts llamado redos.
 
-A textmetric es un registro con
-  Un número llamado tmheight,
-  Un número llamado tmascent,
-  Un número llamado tmdescent,
-  Un número llamado tminternalleading,
-  Un número llamado tmexternalleading,
-  Un número llamado tmavecharwidth,
-  Un número llamado tmmaxcharwidth,
-  Un número llamado tmweight,
-  Un número llamado tmoverhang,
-  Un número llamado tmdigitizedaspectx,
-  Un número llamado tmdigitizedaspecty,
-  A byte llamado tmfirstchar,
-  A byte llamado tmlastchar,
-  A byte llamado tmdefaultchar,
-  A byte llamado tmbreakchar,
-  A byte llamado tmitalic,
-  A byte llamado tmunderlined,
-  A byte llamado tmstruckout,
-  A byte llamado tmpitchandfamily,
-  A byte llamado tmcharset.
+A TextMetric es un registro con
+  Un número llamado tmHeight,
+  Un número llamado tmAscent,
+  Un número llamado tmDescent,
+  Un número llamado tmInternalLeading,
+  Un número llamado tmExternalLeading,
+  Un número llamado tmAveCharWidth,
+  Un número llamado tmMaxCharWidth,
+  Un número llamado tmWeight,
+  Un número llamado tmOverhang,
+  Un número llamado tmDigitizedAspectX,
+  Un número llamado tmDigitizedAspectY,
+  A byte llamado tmFirstChar,
+  A byte llamado tmLastChar,
+  A byte llamado tmDefaultChar,
+  A byte llamado tmBreakChar,
+  A byte llamado tmItalic,
+  A byte llamado tmUnderlined,
+  A byte llamado tmStruckOut,
+  A byte llamado tmPitchAndFamily,
+  A byte llamado tmCharSet.
 
 A lista es un puntero to un lista registro.
 
@@ -16119,22 +16119,22 @@ A url registro es un registro con
   An extra string,
   A port número.
 
-A urlcomponents es un registro con
-  Un número llamado dwstructsize,
-  A pchar llamado lpszscheme,
-  Un número llamado dwschemelength,
-  Un número llamado nscheme,
-  A pchar llamado lpszhostname,
-  Un número llamado dwhostnamelength,
-  Un número llamado nport, \ this es typed as un wyrd in windows documentation, but dosen't work
-  A pchar llamado lpszusername,
-  Un número llamado dwusernamelength,
-  A pchar llamado lpszpassword,
-  Un número llamado dwpasswordlength,
-  A pchar llamado lpszurlpath,
-  Un número llamado dwurlpathlength,
-  A pchar llamado lpszextrainfo,
-  Un número llamado dwextrainfolength.
+A UrlComponents es un registro con
+  Un número llamado dwStructSize,
+  A pchar llamado lpszScheme,
+  Un número llamado dwSchemeLength,
+  Un número llamado nScheme,
+  A pchar llamado lpszHostName,
+  Un número llamado dwHostNameLength,
+  Un número llamado nPort, \ this es typed as un wyrd in windows documentation, but dosen't work
+  A pchar llamado lpszUserName,
+  Un número llamado dwUserNameLength,
+  A pchar llamado lpszPassword,
+  Un número llamado dwPasswordLength,
+  A pchar llamado lpszUrlPath,
+  Un número llamado dwUrlPathLength,
+  A pchar llamado lpszExtraInfo,
+  Un número llamado dwExtraInfoLength.
 
 \Para usar un color;
 Para usar un color:
@@ -16163,11 +16163,11 @@ Para usar el skinny pen:
 Para usar small pointy letters: \ as opposed to "roundy letters" not yet implemented
   Usar small letters.
 
-A uuid es un registro con
-  Un número llamado d1,
-  A wyrd llamado d2,
-  A wyrd llamado d3,
-  8 bytes llamado d4.
+A UUID es un registro con \ Identificador Único Universal - > Universally Unique Identifier 
+  Un número llamado d1, \ Data1
+  A wyrd llamado d2, \ Data2
+  A wyrd llamado d3, \ Data3
+  8 bytes llamado d4. \ Data4
 
 The v-key es un key igual to 86.
 
@@ -16259,37 +16259,37 @@ A wide string es un string.
 
 A width es some twips.
 
-A win32finddata es un registro con
-  Un número llamado dwfileattributes,
-  A filetime llamado ftcreationtime,
-  A filetime llamado ftlastaccesstime,
-  A filetime llamado ftlastwritetime,
-  Un número llamado nfilesizehigh,
-  Un número llamado nfilesizelow,
-  Un número llamado dwreserved0,
-  Un número llamado dwreserved1,
-  260 bytes llamado cfilename,
-  14 bytes llamado calternatefilename.
+A Win32FindData es un registro con
+  Un número llamado dwFileAttributes,
+  A filetime llamado ftCreationTime,
+  A filetime llamado ftLastAccessTime,
+  A filetime llamado ftLastWriteTime,
+  Un número llamado nFileSizeHigh,
+  Un número llamado nFileSizeLow,
+  Un número llamado dwReserved0,
+  Un número llamado dwReserved1,
+  260 bytes llamado cFileName,
+  14 bytes llamado cAlternateFileName.
 
-A window class es un registro con
-  Un número llamado cbsize,
+A window class es un registro con \ WNDCLASSEXA   
+  Un número llamado cbSize,
   Un número llamado style,
-  Un puntero llamado lpfnwndproc,
-  Un número llamado cbclsextra,
-  Un número llamado cbwndextra,
-  A handle llamado hinstance,
-  A hicon llamado hicon,
-  A cursor llamado hcursor,
-  An hbrush llamado hbrbackground,
-  Un puntero llamado lpszmenuname,
-  Un puntero llamado lpszclassname,
-  A hicon llamado hiconsm.
+  Un puntero llamado lpfnWndProc,
+  Un número llamado cbClsExtra,
+  Un número llamado cbWndExtra,
+  A handle llamado hInstance,
+  A hicon llamado hIcon,
+  A cursor llamado hCursor,
+  An hbrush llamado hbrBackground,
+  Un puntero llamado lpszMenuName,
+  Un puntero llamado lpszClassName,
+  A hicon llamado hIconSm.
 
 The window class es un window class.
 
 A window es un handle.
 
-A winhttp request es un lista con
+A WinHttp request es un lista con
   A session handle,
   A connection handle,
   A request handle.
@@ -16645,14 +16645,14 @@ Para usar medium letters:
 Para usar small letters:
   Poner el small letter height into el context's letter height.
 
-A wsadata es un registro con
-  A wyrd llamado wversion,
-  A wyrd llamado whighversion,
-  257 bytes llamado szdescription,
-  127 bytes llamado szsystemstatus,
-  A wyrd [unsigned] llamado imaxsockets,
-  A wyrd [unsigned] llamado imaxudpdg,
-  Un puntero llamado lpvendorinfo.
+A WsaData es un registro con
+  A wyrd llamado wVersion,
+  A wyrd llamado wHighVersion,
+  257 bytes llamado szDescription,
+  127 bytes llamado szSystemStatus,
+  A wyrd [unsigned] llamado iMaxSockets,
+  A wyrd [unsigned] llamado iMaxUdpDg,
+  Un puntero llamado lpVendorInfo.
 
 A wyrd es un registro con
   An low byte y 
