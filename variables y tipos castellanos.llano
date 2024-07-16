@@ -664,8 +664,8 @@ Una coordenada es un coord.
 Una coordenada-x es una coordenada.
 Una coordenada-y es una coordenada.
 Una copia es un número.
-Una cosa es un thing.
-Una cosa de cadena es un string thing.
+Una cosa es un lista.
+Una cosa de cadena es un string lista.
 Una derecha es una coordenada.
 Una descripción es una string.
 Una diferencia es un pair.

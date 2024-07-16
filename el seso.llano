@@ -167,9 +167,9 @@ Para agregar un spot to un figure:
   Adjuntar el spot to el figure.
 
 \Para agregar una cadena a algunas cosas de cadena;
-Para agregar un string to some string things:
-  Crear un string thing usando el string.
-  Adjuntar el string thing to el string things.
+Para agregar un string to some string listas:
+  Crear un string lista usando el string.
+  Adjuntar el string lista to el string listas.
 
 An addrinfo es un record con
   A número llamado ai_flags,
@@ -340,11 +340,11 @@ Para adjuntar un string to un pdf object without advancing:
   Adjuntar el string to el pdf object's data.
 
 \Para adjuntar algunas cosas a algunas otras cosas;
-Para adjuntar some things to some other things:
-  Poner el things' first into un thing.
-  Si el thing es nil, salir.
-  Eliminar el thing desde el things.
-  Adjuntar el thing to el other things.
+Para adjuntar some listas to some other listas:
+  Poner el listas' first into un lista.
+  Si el lista es nil, salir.
+  Eliminar el lista desde el listas.
+  Adjuntar el lista to el other listas.
   Repetir.
 
 \Para adjuntar un temporizador a una cadena;
@@ -534,9 +534,9 @@ Para comenzar un sheet usando un title string:
 
 The bell byte es un byte igual to 7.
 
-The Bible es un thing con some verses.
+The Bible es un lista con some verses.
 
-A verse es un thing con un string.
+A verse es un lista con un string.
 
 The big-a byte es un byte igual to 65.
 
@@ -1006,7 +1006,7 @@ Para cambiar un text usando un font name:
 
 A character es un byte.
 
-A choice es un thing con un name y un box.
+A choice es un lista con un name y un box.
 
 The choices are some choices.
 
@@ -1122,9 +1122,9 @@ Para borrar un terminal:
   Destroy el terminal's quoras.
 
 \Para borrar algunas cosas;
-Para borrar some things:
-  Void el things' first.
-  Void el things' last.
+Para borrar some listas:
+  Void el listas' first.
+  Void el listas' last.
 
 \Para borrar una wyrd;
 Para borrar un wyrd:
@@ -1278,7 +1278,7 @@ Para compatibly wait for un process puntero:
   Llamada "user32.dll" "ShowWindow" con el main window y 9 [sw_restore].
   Poner 0 into eax. \ set return value of thread
 
-\A console es un thing con 
+\A console es un lista con 
 \a box,
 \a border color,
 \a fill color,
@@ -1286,7 +1286,7 @@ Para compatibly wait for un process puntero:
 \a grid,
 \a reply string.
 
-A console es un thing con 
+A console es un lista con 
   A box, \Una caja at el box,
   A border color, \Un color de borde at el border color,
   A fill color, \un color de relleno at el fill color,
@@ -1296,7 +1296,7 @@ A console es un thing con
 
 The context es un context.
 
-A context es un thing con 
+A context es un lista con 
   A spot, 
   A box, 
   A heading, 
@@ -2287,9 +2287,9 @@ Para crear un socket usando un host string y un port número: \ this guy creates 
   Si el result es not 0, Poner "No pudo configurar el tiempo de espera de recepción." into el error de e/s; salir.
 
 \Para crear una cosa de cadena dada una cadena;
-Para crear un string thing usando un string:
-  Allocate memory for el string thing.
-  Poner el string into el string thing's string.
+Para crear un string lista usando un string:
+  Allocate memory for el string lista.
+  Poner el string into el string lista's string.
 
 \Para crear una terminal en una caja;
 Para crear un terminal in un box:
@@ -2358,7 +2358,7 @@ The crlf string es un string igual to $0D0A.
 
 The cross byte es un byte igual to 43.
 
-A crypt session es un thing con
+A crypt session es un lista con
   An hcryptprov puntero,
   An hcrypthash puntero,
   An hcryptkey puntero.
@@ -3839,7 +3839,7 @@ Para decidir si un spot es within some twips of un box:
   Si el spot es within el box, diga sí.
   Diga no.
 
-Para decidir si el stack es un record con just one thing on it:
+Para decidir si el stack es un record con just one lista on it:
   Si el stack's count es 1, diga sí.
   Diga no.
 
@@ -4112,8 +4112,8 @@ Para decidir si there es text on el windows clipboard:
 
 \Para decidir si algunas cosas están vacías;
 \Para decidir si algunas cosas están vacíos;
-Para decidir si some things are empty:
-  Si el things' first es nil, diga sí.
+Para decidir si some listas are empty:
+  Si el listas' first es nil, diga sí.
   Diga no.
 
 Para decidir si un token es numeric:
@@ -4697,8 +4697,8 @@ Para dibujar un gpbitmap at un spot (pdf style):
   Poner "I" then el xobject's número into un name.
 \  Agregar to image resources in current page
   Poner "/" then el name then " " then el xobject's número then " 0 R" into un string.
-  Crear un new string thing usando el string.
-  Adjuntar el new string thing to el pdf state's current page's image strings.
+  Crear un new string lista usando el string.
+  Adjuntar el new string lista to el pdf state's current page's image strings.
 \ finish setting up xobject
   Adjuntar el xobject's número then " 0 obj" to el xobject.
   Adjuntar "<<" to el xobject.
@@ -5307,7 +5307,7 @@ Para duplicate un path to another path in el file system (file):
   Si el número es not 0, definir el path to read-write mode; salir.
   Poner "Error duplicando archivo '" then el path then "'." into el error de e/s.
 
-A dyad es un thing con
+A dyad es un lista con
 A name,
 A value string.
 
@@ -5509,10 +5509,10 @@ Para completar un sheet (pdf style - finish el current page - font resources):
   Si el page's font strings are empty, salir.
   Adjuntar "/Font <<" to el page without advancing.
   Lazo.
-    Obtener un string thing desde el page's font strings.
-    Si el string thing es nil, interrumpir.
+    Obtener un string lista desde el page's font strings.
+    Si el string lista es nil, interrumpir.
     Si un flag es set, Adjuntar " " to el page without advancing.
-    Adjuntar el string thing's string to el page without advancing.
+    Adjuntar el string lista's string to el page without advancing.
     Definir el flag.
   Repetir.
   Adjuntar ">>" to el page.
@@ -5522,10 +5522,10 @@ Para completar un sheet (pdf style - finish el current page - image resources):
   Si el page's image strings are empty, salir.
   Adjuntar "/XObject <<" to el page without advancing.
   Lazo.
-    Obtener un string thing desde el page's image strings.
-    Si el string thing es nil, interrumpir.
+    Obtener un string lista desde el page's image strings.
+    Si el string lista es nil, interrumpir.
     Si un flag es set, Adjuntar " " to el page without advancing.
-    Adjuntar el string thing's string to el page without advancing.
+    Adjuntar el string lista's string to el page without advancing.
     Definir el flag.
   Repetir.
   Adjuntar ">>" to el page.
@@ -5602,7 +5602,7 @@ Para estimar un rise y un run usando un heading:
 
 The euro-sign byte es un byte igual to 128.
 
-\An event es un thing con
+\An event es un lista con
 \a kind,
 \a shift flag,
 \a ctrl flag,
@@ -5610,7 +5610,7 @@ The euro-sign byte es un byte igual to 128.
 \a spot,
 \a key, un byte.
 
-An event es un thing con
+An event es un lista con
   A kind [refresh, definir cursor, key down, left click, left double click, right click, right double click, deactivate, activate, done], \ English
   \una clase [refrescar, cursor, tecla abajo, clic izquierdo, clic izquierdo doble, clic derecho, clic derecho doble, desactivar, activar, hecho],\ kind in Spanish
   A shift flag, \una bandera mayúsculas at el shift flag,
@@ -6077,24 +6077,24 @@ Para encontrar un square root of un número: \ rounds down
   Poner el delta divided by 2 minus 1 into el square root.
 
 \Para encontrar una cadena dada algunas cosas de cadena y un número;
-Para encontrar un string usando some string things y un string#:
+Para encontrar un string usando some string listas y un string#:
   Borrar el string.
   Lazo.
-    Obtener un string thing desde el string things.
-    Si el string thing es nil, salir.
+    Obtener un string lista desde el string listas.
+    Si el string lista es nil, salir.
     Agregar 1 to un count.
     Si el count es not el string#, repetir.
-  Poner el string thing's string into el string.
+  Poner el string lista's string into el string.
 
 The encontrar string es un string.
 
 \Para encontrar una cosa de cadena dada una cadena y algunas cosas de cuerda;
-Para encontrar un string thing usando un string y some string things:
-  Void el string thing.
+Para encontrar un string lista usando un string y some string listas:
+  Void el string lista.
   Lazo.
-    Obtener el string thing usando el string things.
-    Si el string thing es nil, interrumpir.
-    Si el string thing's string es el string, interrumpir.
+    Obtener el string lista usando el string listas.
+    Si el string lista es nil, interrumpir.
+    Si el string lista's string es el string, interrumpir.
   Repetir.
 
 \Para encontrar una subcadena en una cadena dada otra cadena;
@@ -6194,7 +6194,7 @@ A font es un record con
 
 A font height es some twips. \ indicates line height - el letters will fit nicely in un box of this height
 
-A font info es un thing con \ used for pdf conversion
+A font info es un lista con \ used for pdf conversion
   A font,
   An emsquare número,
   An internal leading número,
@@ -6209,7 +6209,7 @@ A font info es un thing con \ used for pdf conversion
 
 A font resource es un handle.
 
-Some font widths es un thing con \ used for pdf conversion
+Some font widths es un lista con \ used for pdf conversion
   A font,
   A count,
   A número puntero llamado data.
@@ -6763,16 +6763,16 @@ Para obtener un string desde el windows clipboard:
   Llamada "user32.dll" "CloseClipboard".
 
 \Para obtener una cosa de algunas cosas;
-Para obtener un thing desde some things:
-  Si el things are empty, void el thing; salir.
-  Si el thing es nil, Poner el things' first into el thing; salir.
-  Poner el thing's next into el thing.
+Para obtener un lista desde some listas:
+  Si el listas are empty, void el lista; salir.
+  Si el lista es nil, Poner el listas' first into el lista; salir.
+  Poner el lista's next into el lista.
 
 \Para obtener una cosa de algunas cosas (hacia atrás);
-Para obtener un thing desde some things (backwards):
-  Si el things are empty, void el thing; salir.
-  Si el thing es nil, Poner el things' last into el thing; salir.
-  Poner el thing's previous into el thing.
+Para obtener un lista desde some listas (backwards):
+  Si el listas are empty, void el lista; salir.
+  Si el lista es nil, Poner el listas' last into el lista; salir.
+  Poner el lista's previous into el lista.
 
 \Para obtener una palabra de una respuesta;
 Para obtener un token desde un reply:
@@ -7684,10 +7684,10 @@ Para incluir un font in un pdf object:
   Encontrar un font pdf object usando el font's name y el pdf state's font index.
   Si el font pdf object es nil, salir.
   Poner "/" then el font pdf object's font name then " " then el font pdf object's número then " 0 R" into un string.
-  Encontrar un string thing usando el string y el pdf object's font strings.
-  Si el string thing es not nil, salir.
-  Crear un new string thing usando el string.
-  Adjuntar el new string thing to el pdf object's font strings.
+  Encontrar un string lista usando el string y el pdf object's font strings.
+  Si el string lista es not nil, salir.
+  Crear un new string lista usando el string.
+  Adjuntar el new string lista to el pdf object's font strings.
 
 Para indent any selected rows in un text:
   Si el text es nil, salir.
@@ -7702,7 +7702,7 @@ Para indent any selected rows in un text:
 
 An indent es un count.
 
-An index es un thing con \ catálogo -> catálogoes
+An index es un lista con \ catálogo -> catálogoes
   A bucket count,
   A first bucket y 
   A last bucket.
@@ -8284,37 +8284,37 @@ Para insertar un string into un text:
   Deselect el text.
 
 \Para insertar una cosa en algunas cosas después de otra cosa;
-Para insertar un thing into some things after another thing:
-  Si el thing es nil, salir.
-  Si el other thing es nil, anteponer el thing to el things; salir.
-  Insertar el thing into el things before el other thing's next.
+Para insertar un lista into some listas after another lista:
+  Si el lista es nil, salir.
+  Si el other lista es nil, anteponer el lista to el listas; salir.
+  Insertar el lista into el listas before el other lista's next.
 
 \Para insertar una cosa en algunas cosas antes que otra cosa;
-Para insertar un thing into some things before another thing:
-  Si el thing es nil, salir.
-  Si el things are empty, Adjuntar el thing to el things; salir.
-  Si el other thing es nil, Adjuntar el thing to el things; salir.
-  Si el other thing es el things' first, anteponer el thing to el things; salir.
-  Poner el thing into un new thing.
-  Poner el other thing into un previous thing.
-  Poner el new thing into el previous thing's previous' next.
-  Poner el previous thing into el new thing's next.
-  Poner el previous thing's previous into el new thing's previous.
-  Poner el new thing into el previous thing's previous.
+Para insertar un lista into some listas before another lista:
+  Si el lista es nil, salir.
+  Si el listas are empty, Adjuntar el lista to el listas; salir.
+  Si el other lista es nil, Adjuntar el lista to el listas; salir.
+  Si el other lista es el listas' first, anteponer el lista to el listas; salir.
+  Poner el lista into un new lista.
+  Poner el other lista into un previous lista.
+  Poner el new lista into el previous lista's previous' next.
+  Poner el previous lista into el new lista's next.
+  Poner el previous lista's previous into el new lista's previous.
+  Poner el new lista into el previous lista's previous.
 
 \Para insertar algunas cosas en algunas otras cosas después de una cosa;
-Para insertar some things into some other things after un thing:
-  Si el thing es nil, anteponer el things to el other things; salir.
-  Insertar el things into el other things before el thing's next.
+Para insertar some listas into some other listas after un lista:
+  Si el lista es nil, anteponer el listas to el other listas; salir.
+  Insertar el listas into el other listas before el lista's next.
 
 \Para insertar algunas cosas en algunas otras cosas antes de una cosa;
-Para insertar some things into some other things before un thing:
-  Privatizar el thing.
+Para insertar some listas into some other listas before un lista:
+  Privatizar el lista.
   Lazo.
-    Poner el things' first into another thing.
-    Si el other thing es nil, salir.
-    Eliminar el other thing desde el things.
-    Insertar el other thing into el other things before el thing.
+    Poner el listas' first into another lista.
+    Si el other lista es nil, salir.
+    Eliminar el other lista desde el listas.
+    Insertar el other lista into el other listas before el lista.
   Repetir.
 
 \Para insertar un vértice en un polígono después de otro vértice;
@@ -8490,7 +8490,7 @@ A letter height es some twips. \ indicates actual height of un typical uppercase
 
 A letter es un byte.
 
-The lexicon es un thing con un index.
+The lexicon es un lista con un index.
 
 The light blue color es un color.
 
@@ -9754,17 +9754,17 @@ Para mover un text up some twips:
   Mover el text usando 0 y - el twips.
 
 \Para mover una cosa de algunas cosas un otras cosas;
-Para mover un thing desde some things to some other things:
-  Si el thing es nil, salir.
-  Privatizar el thing.
-  Eliminar el thing desde el things.
-  Adjuntar el thing to el other things.
+Para mover un lista desde some listas to some other listas:
+  Si el lista es nil, salir.
+  Privatizar el lista.
+  Eliminar el lista desde el listas.
+  Adjuntar el lista to el other listas.
 
 \Para mover algunas cosas un otras cosas;
-Para mover some things to some other things:
-  Poner el things' first into el other things' first.
-  Poner el things' last into el other things' last.
-  Borrar el things.
+Para mover some listas to some other listas:
+  Poner el listas' first into el other listas' first.
+  Poner el listas' last into el other listas' last.
+  Borrar el listas.
 
 \Para mover algunos twips;
 Para mover some twips:
@@ -10319,17 +10319,17 @@ A pdevmode es un puntero to un devmode.
 
 A pdf es un buffer.
 
-A pdf object es un thing con
+A pdf object es un lista con
   A kind [contents, font definition, font descriptor, font streamoutline, image object, outline entry, page, parent, root],
   A número,
   An offset,
   A data buffer,
   A font name [font definition],
   A font info [font definition],
-  Some string things llamado font strings [page],
-  Some string things llamado image strings [page].
+  Some string listas llamado font strings [page],
+  Some string listas llamado image strings [page].
 
-A pdf outline entry es un thing con
+A pdf outline entry es un lista con
   A pdf object (reference),
   A title string,
   A page height,
@@ -10640,7 +10640,7 @@ Para elegir  un really really light color:
   Poner 875 into el really really light color's lightness.
   Poner el really really light color into el context's color.
 
-A picture es un thing con
+A picture es un lista con
   \ all boxes are in twits
   A box [location of cropped picture on el page], \una caja at el box,
   A uncropped box [location of entire picture on el page],
@@ -10686,7 +10686,7 @@ A point es un número [0 to 3839; for dividing un circle into compass points; 0 e
 
 A puntero es un record con 4 bytes.
 
-A polygon es un thing con some vertices.
+A polygon es un lista con some vertices.
 
 A portrait sheet es un sheet.
 
@@ -10745,26 +10745,26 @@ Para anteponer un string to another string:
   Poner el other string's first plus el combined length minus 1 into el other string's last.
 
 \Para anteceder una cosa a algunas cosas;
-Para anteponer un thing to some things:
-  Si el thing es nil, salir.
-  Poner el things' first into el thing's next.
-  Si el things es not empty, Poner el thing into el things' first's previous.
-  Si el things are empty, Poner el thing into el things' last.
-  Poner el thing into el things' first.
+Para anteponer un lista to some listas:
+  Si el lista es nil, salir.
+  Poner el listas' first into el lista's next.
+  Si el listas es not empty, Poner el lista into el listas' first's previous.
+  Si el listas are empty, Poner el lista into el listas' last.
+  Poner el lista into el listas' first.
 
-\ To anteponer some things to some other things: \ bug found by Mike Gonta - corrected version below
-    \Get un thing desde el things (backwards).
-    \If el thing es nil, salir.
-    \Remove el thing desde el things.
-    \Prepend el thing to el other things.
+\ To anteponer some listas to some other listas: \ bug found by Mike Gonta - corrected version below
+    \Get un lista desde el listas (backwards).
+    \If el lista es nil, salir.
+    \Remove el lista desde el listas.
+    \Prepend el lista to el other listas.
   \Repeat.
 
 \Para anteponer algunas cosas a algunas otras cosas;
-Para anteponer some things to some other things:
-    Poner el things' last into un thing.
-    Si el thing es nil, salir.
-    Eliminar el thing desde el things.
-    Anteponer el thing to el other things.
+Para anteponer some listas to some other listas:
+    Poner el listas' last into un lista.
+    Si el lista es nil, salir.
+    Eliminar el lista desde el listas.
+    Anteponer el lista to el other listas.
   Repetir.
 
 The print-screen key es un key igual to 44.
@@ -11701,25 +11701,25 @@ Para poner un text's status string into un string:
   Adjuntar el text's caret column# to el string.
 
 \Para adjuntar una cosa a algunas cosas;
-Para poner un thing at el end of some things;
-Para adjuntar un thing to some things:
-  Si el thing es nil, salir.
-  Poner el things' last into el thing's previous.
-  Si el things are not empty, Poner el thing into el things' last's next.
-  Si el things are empty, Poner el thing into el things' first.
-  Poner el thing into el things' last.
+Para poner un lista at el end of some listas;
+Para adjuntar un lista to some listas:
+  Si el lista es nil, salir.
+  Poner el listas' last into el lista's previous.
+  Si el listas are not empty, Poner el lista into el listas' last's next.
+  Si el listas are empty, Poner el lista into el listas' first.
+  Poner el lista into el listas' last.
 
 \Para poner algunas cosas en algunas otras cosas;
-Para poner some things into some other things:
-  Poner el things' first into el other things' first.
-  Poner el things' last into el other things' last.
+Para poner some listas into some other listas:
+  Poner el listas' first into el other listas' first.
+  Poner el listas' last into el other listas' last.
 
 \Para poner el conteo de algunas cosas en un conteo;
-Para poner some things' count into un count:
+Para poner some listas' count into un count:
   Poner 0 into el count.
   Lazo.
-    Obtener un thing desde el things.
-    Si el thing es nil, salir.
+    Obtener un lista desde el listas.
+    Si el lista es nil, salir.
     Agregar 1 to el count.
   Repetir.
 
@@ -11816,7 +11816,7 @@ Para relinquish control:
   \Poner "hecho" into el event's clase.
   Enque el event.
 
-A quora es un thing con 
+A quora es un lista con 
   A string y 
   A color. \ quora es short for "question or answer"
 
@@ -12082,12 +12082,12 @@ The record-separator byte es un byte igual to 30.
 A rectangle es un figure.
 A skinny rectangle es un rectangle.
 A diamond es un figure.
-A desert landscape es un thing.
+A desert landscape es un lista.
 An octagon es un figure.
 An arc es un figure.
 A circle es un figure.
-A fractal forest es un thing.
-A joke es un thing.
+A fractal forest es un lista.
+A joke es un lista.
 A triangle es un figure.
 A heptagon es un figure. \ 7 sides
 A nonagon es un figure. \ 9 sides
@@ -12107,7 +12107,7 @@ A left crescent es un figure.
 A right crescent es un figure.
 A pentagon es un figure.
 A solid es un figure.
-A star es un thing.
+A star es un lista.
 A cube es un figure.
 A yew tree es un figure.
 A tree es un figure.
@@ -12122,7 +12122,7 @@ Para reducir un fraction:
   Dividir el fraction's numerator by el gcd.
   Dividir el fraction's denominator by el gcd.
 
-A refer es un thing con 
+A refer es un lista con 
   A string y 
   A puntero (reference). \, 
   \Una cadena at el string y 
@@ -12308,14 +12308,14 @@ Para eliminar el rows of un text between un row y another row:
   Renumber el text's rows.
 
 \Para eliminar una cosa de algunas cosas;
-Para eliminar un thing desde some things:
-  Si el thing es nil, salir.
-  Si el thing es el things' first, Poner el thing's next into el things' first.
-  Si el thing es el things' last, Poner el thing's previous into el things' last.
-  Si el thing's next es not nil, Poner el thing's previous into el thing's next's previous.
-  Si el thing's previous es not nil, Poner el thing's next into el thing's previous' next.
-  Void el thing's next.
-  Void el thing's previous.
+Para eliminar un lista desde some listas:
+  Si el lista es nil, salir.
+  Si el lista es el listas' first, Poner el lista's next into el listas' first.
+  Si el lista es el listas' last, Poner el lista's previous into el listas' last.
+  Si el lista's next es not nil, Poner el lista's previous into el lista's next's previous.
+  Si el lista's previous es not nil, Poner el lista's next into el lista's previous' next.
+  Void el lista's next.
+  Void el lista's previous.
 
 \Para eliminar los bytes finales de una cadena dada un conteo;
 Para eliminar trailing bytes desde un string usando un count:
@@ -12561,12 +12561,12 @@ Para reverse un string: \ could be more efficient
     Adjuntar el character to el original string.
   Repetir.
 
-Para reverse some things:
-  Intercambiar el things con some other things.
+Para reverse some listas:
+  Intercambiar el listas con some other listas.
   Lazo.
-    Poner el other things' last into un thing.
-    Si el thing es nil, salir.
-    Mover el thing desde el other things to el things.
+    Poner el other listas' last into un lista.
+    Si el lista es nil, salir.
+    Mover el lista desde el other listas to el listas.
   Repetir.
 
 A rgb es un record con
@@ -12731,7 +12731,7 @@ A roundy box es un box con
   A right-bottom spot at el right, y 
   A radius.
 
-A row es un thing con 
+A row es un lista con 
   A row# y 
   A string.
 
@@ -13540,43 +13540,43 @@ Para dividir un string into un left substring y un right substring usando un sep
   Poner el substring's last plus 1 into el right's first.
   Poner el string's last into el right's last.
 
-Para dividir un string into some string things usando un separator byte:
-  Destroy el string things.
+Para dividir un string into some string listas usando un separator byte:
+  Destroy el string listas.
   Si el string es blank, salir.
   Colocar un rider on el string.
   Lazo.
     Mover el rider usando el separator byte.
-    Agregar el rider's token to el string things.
+    Agregar el rider's token to el string listas.
     Si el rider's source es blank, interrumpir.
   Repetir.
   Si el string's last's contenido es not el separator byte, salir.
-  Agregar "" to el string things.
+  Agregar "" to el string listas.
 
-Para dividir some things into some left things y some right things:
-  Si el things are empty, borrar el left things; borrar el right things; salir.
-  Poner el things' count divided by 2 into un count.
+Para dividir some listas into some left listas y some right listas:
+  Si el listas are empty, borrar el left listas; borrar el right listas; salir.
+  Poner el listas' count divided by 2 into un count.
   Lazo.
-    Obtener un thing desde el things.
+    Obtener un lista desde el listas.
     Si el count es 0, interrumpir.
     Restar 1 desde el count.
   Repetir.
-  Dividir el things into el left things y el right things at el thing. 
+  Dividir el listas into el left listas y el right listas at el lista. 
 
-Para dividir some things into some left things y some right things at un thing:
-  Borrar el left things.
-  Borrar el right things.
-  Si el thing es nil, intercambiar el things con el left things; salir.
-  Si el thing's previous es nil, intercambiar el things con el left things; salir.
+Para dividir some listas into some left listas y some right listas at un lista:
+  Borrar el left listas.
+  Borrar el right listas.
+  Si el lista es nil, intercambiar el listas con el left listas; salir.
+  Si el lista's previous es nil, intercambiar el listas con el left listas; salir.
 \ set up el left chain
-  Poner el things' first into el left things' first.
-  Poner el thing's previous into el left things' last.
-  Void el thing's previous' next.
+  Poner el listas' first into el left listas' first.
+  Poner el lista's previous into el left listas' last.
+  Void el lista's previous' next.
 \ set up el right chain
-  Poner el thing into el right things' first.
-  Void el thing's previous.
-  Poner el things' last into el right things' last.
+  Poner el lista into el right listas' first.
+  Void el lista's previous.
+  Poner el listas' last into el right listas' last.
 \ fix el original chain
-  Borrar el things.
+  Borrar el listas.
 
 \Para dividir una wyrd en un byte y otro byte;
 Para dividir un wyrd into un byte y another byte:
@@ -13618,7 +13618,7 @@ Para cuadrar any selection in un text:
 
 The squirt o' two es un fraction igual to 99/70.
 
-A stack entry es un thing con un string.
+A stack entry es un lista con un string.
 
 The stack es some stack entries.
 
@@ -14068,7 +14068,7 @@ A string es un record con
   \un último puntero octeto at el last byte puntero y
   \un última puntero octeto at el last byte puntero. \ new line, similar to above except último -> última
 
-A string thing es un thing con 
+A string lista es un lista con 
   An string. \ y una cadena at el string.
 
 A string# es un número.
@@ -15674,9 +15674,9 @@ Para intercambiar un número con another número:
   Poner el third número into el other número.
 
 \Para intercambiar algunas cosas con algunas otras cosas;
-Para intercambiar some things con some other things:
-  Intercambiar el things' first con el other things' first.
-  Intercambiar el things' last con el other things' last.
+Para intercambiar some listas con some other listas:
+  Intercambiar el listas' first con el other listas' first.
+  Intercambiar el listas' last con el other listas' last.
 
 The synchronous-idle byte es un byte igual to 22.
 
@@ -15762,11 +15762,11 @@ The temp path es un path.
 
 The terminal es un terminal.
 
-A terminal es un thing con A box, some quoras, un output color, un input color, y un reply string.
+A terminal es un lista con A box, some quoras, un output color, un input color, y un reply string.
 
 The text cutoff es un número igual to 500.
 
-A text es un thing con 
+A text es un lista con 
   A box,
   An origin,
   A pen color,
@@ -15806,15 +15806,15 @@ A textmetric es un record con
   A byte llamado tmpitchandfamily,
   A byte llamado tmcharset.
 
-A thing es un puntero to un thing record.
+A lista es un puntero to un lista record.
 
-A thing record es un record con 
-  A next thing y 
-  A previous thing.
+A lista record es un record con 
+  A next lista y 
+  A previous lista.
 
-Some things es un record con 
-  A first thing y 
-  A last thing.
+Some listas es un record con 
+  A first lista y 
+  A last lista.
 
 A thousand es 10 hundreds.
 
@@ -16148,7 +16148,7 @@ A vertex array record es un record con
   A count y 
   A spot puntero.
 
-A vertex es un thing con
+A vertex es un lista con
   An x-coord, 
   A y-coord. \ y un spot at el x-coord.
 
@@ -16260,7 +16260,7 @@ The window class es un window class.
 
 A window es un handle.
 
-A winhttp request es un thing con
+A winhttp request es un lista con
   A session handle,
   A connection handle,
   A request handle.

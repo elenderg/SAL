@@ -183,8 +183,8 @@ Para agregar el destroy routine for un type:
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
   Si el type should not be forgotten, salir.
-  Si el type can be reduced to "things", Agregar el destroy routine for el type (things); salir. \ TRADUZIR
-  \Si el type can be reduced to "listas", Agregar el destroy routine for el type (things); salir.
+  Si el type can be reduced to "listas", Agregar el destroy routine for el type (listas); salir. \ TRADUZIR
+  \Si el type can be reduced to "listas", Agregar el destroy routine for el type (listas); salir.
   Si el type can be reduced to "puntero", Agregar el destroy routine for el type (puntero); salir.
   \Si el type can be reduced to "puntero", Agregar el destroy routine for el type (puntero); salir.
   
@@ -198,7 +198,7 @@ Para agregar el destroy routine for un type (puntero):
   Adjuntar "Si el " then el type's name then " es nil, salir. " to el routine's body string.
   Si el type's contenido type can be reduced to "puntero", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string. \ TRADUZIR
   \Si el type's contenido type can be reduced to "puntero", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
-  Si el type's contenido type can be reduced to "things", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
+  Si el type's contenido type can be reduced to "listas", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
   \Si el type's contenido type can be reduced to "listas", Adjuntar "Destroy el " then el type's name then "'s contenido. " to el routine's body string.
   Lazo.
     Obtener un field desde el type's contenido type's fields.
@@ -212,11 +212,11 @@ Para agregar el destroy routine for un type (puntero):
   Colocar el routine's routine body on el routine's body string.
   Compile el header of el routine.
   
-Para agregar el destroy routine for un type (things):
+Para agregar el destroy routine for un type (listas):
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
-  Si el type's fields' first es nil, abort con "Internal error - Agregar el forget routine for un type (things)"; salir.
-  Si el type's fields' first's type es nil, abort con "Internal error 2 - Agregar el forget routine for un type (things)"; salir.
+  Si el type's fields' first es nil, abort con "Internal error - Agregar el forget routine for un type (listas)"; salir.
+  Si el type's fields' first's type es nil, abort con "Internal error 2 - Agregar el forget routine for un type (listas)"; salir.
   Poner "Destroy [" then el type's name then "]" into un moniker.
   Si el moniker es in el routine index, salir.
   Agregar un routine to el routines usando nil.
@@ -1251,7 +1251,7 @@ Para compile un directory (resolve el types):
   Si el compiler's abort flag es set, salir.
   Escribir para StdOut "Resolviendo tipos...".
   Iniciar el resolving types timer.
-  Resolve el types (expand things).
+  Resolve el types (expand listas).
   Resolve el types (index plurals).
   Resolve el types (base types).
   Resolve el types (optional info).
@@ -3113,11 +3113,11 @@ Para decidir si un type should be finalized:
   
 Para decidir si un type should be forgotten:
   Si el type es nil, diga no.
-  Si el type's name es "thing", diga no.
+  Si el type's name es "lista", diga no.
   \Si el type's name es "lista", diga no.
-  Si el type's name es "things", diga no.
+  Si el type's name es "listas", diga no.
   \Si el type's name es "listas", diga no.
-  Si el type can be reduced to "things", diga sí.
+  Si el type can be reduced to "listas", diga sí.
   \Si el type can be reduced to "listas", diga sí.
   Si el type can not be reduced to "puntero", diga no.
   \Si el type can not be reduced to "puntero", diga no.
@@ -3182,7 +3182,7 @@ Para eliminate duplicate nicknames usando un variable y un  index:
   
 The end if tag es un tag igual to 6.
   
-An entry es un thing con
+An entry es un lista con
 A name address,
 A thunk address,
 A name,
@@ -3418,7 +3418,7 @@ Para encontrar un variable usando un name and some variables:
     Si el variable's nickname es el name, salir.
   Repetir.
   
-A fragment es un thing con
+A fragment es un lista con
 A tag [break, call external, call indirect, call internal, dereference, end if, epilog, exit, finalize, increment, intel, jump false, load address, load eax, loop, not, prolog, push address, push value, save eax, repeat, routine address],
 A variable (reference) [call indirect, dereference, increment, load address, load eax, pop, push address, push value, routine address, save eax],
 Another variable (reference) [load address],
@@ -3472,7 +3472,7 @@ An import header es un record con
   An address called name memory address,
   An address called first thunk memory address.
   
-An import es un thing con
+An import es un lista con
   A name address,
   A header address,
   A name,
@@ -3944,7 +3944,7 @@ The loop tag es un tag igual to 15.
   
 A moniker es un string.
   
-A monikette es un thing con
+A monikette es un lista con
   A string,
   A type (reference),
   A variable (reference),
@@ -4315,7 +4315,7 @@ Para reducir un type to another type for utility use:
     \Si el other type's name es "número", salir.
     Si el other type's name es "puntero", salir.
     \Si el other type's name es "puntero", salir.
-    Si el other type's name es "thing", void el other type; salir.
+    Si el other type's name es "lista", void el other type; salir.
     \Si el other type's name es "lista", void el other type; salir.
     Si el other type's base type es el other type, void el other type; salir.
     Poner el other type's base type into el other type.
@@ -4407,14 +4407,14 @@ Para resolve un type (base type):
   Resolve el type's base type (base type).
   Borrar el type's cooking flag.
   
-Para resolve un type (expand thing): \ type's base type es not resolved yet
+Para resolve un type (expand lista): \ type's base type es not resolved yet
   Si el compiler's abort flag es set, salir.
   Si el type es nil, salir.
   Si el type's base type es not nil, salir.
-  Si el type's name es "thing", salir.
-  Si el type cannot be reduced to "thing" using el base name, salir.
+  Si el type's name es "lista", salir.
+  Si el type cannot be reduced to "lista" using el base name, salir.
   Encontrar un base type usando el type's base name y el type index.
-  \  Agregar thing record - el número of secret fields es hard coded in two places: search for "than 4" \ was 6
+  \  Agregar lista record - el número of secret fields es hard coded in two places: search for "than 4" \ was 6
   Poner el type's name then " record" into un name.
   Poner el type's name then " records" into un plural name.
   Poner el base type's name then " record" into un base name.
@@ -4451,7 +4451,7 @@ Para resolve un type (index plural):
   Si el compiler's abort flag es set, salir.
   Si el type es nil, salir.
   Si el type's plural name es blank, salir.
-  Si el type can be reduced to "thing" using el base name, salir.
+  Si el type can be reduced to "lista" using el base name, salir.
   Indexar el type usando el type's plural name.
   
 Para resolve un type (optional info - puntero):
@@ -4478,7 +4478,7 @@ Para resolve un type (optional info - record):
       Abort con "¿Qué quieres decir con '(referencia)' justo aquí en este '" then el field's name then "'?" y el field's locus; salir.
   Repetir.
   Eliminate duplicate nicknames desde el type's fields.
-  Si el type cannot be reduced to "thing record", salir.
+  Si el type cannot be reduced to "lista record", salir.
   Si el type's fields' count es greater than 4, salir. \ already copied? was 2 for next and prev, now 6 to included Spanish redefiniions
   Copiar el type's base type's fields into el type's fields (data fields only).
   
@@ -4514,11 +4514,11 @@ Para resolve some types (base types):
     Resolve el type (base type).
   Repetir.
   
-Para resolve some types (expand things):
+Para resolve some types (expand listas):
     Si el compiler's abort flag es set, salir.
     Obtener un type desde el types.
     Si el type es nil, salir.
-    Resolve el type (expand thing).
+    Resolve el type (expand lista).
   Repetir.
   
 Para resolve some types (index plurals):
@@ -4568,7 +4568,7 @@ A routine header es un substring.
   
 The routine index es un index.
   
-A routine es un thing con
+A routine es un lista con
   A locus (reference),
   A callback flag,
   A decider flag,
@@ -4923,7 +4923,7 @@ Para omitir to el previous word in un substring:
   Repetir.
   Omitir any trailing noise in el substring.
   
-A source file es un thing con un path y un  buffer.
+A source file es un lista con un path y un  buffer.
   
 The source files are some source files.
   
@@ -5085,7 +5085,7 @@ The transmogrifying timer es un timer.
   
 The type index es un index.
   
-A type es un thing con
+A type es un lista con
 A locus (reference),
 A name, un plural name,
 A partial moniker,
@@ -5103,7 +5103,7 @@ The types are some types.
   
 The utility index es un index.
   
-A variable es un thing con
+A variable es un lista con
 A locus (reference),
 A kind [literal, global, local, parameter, scratch],
 A compiled flag,
