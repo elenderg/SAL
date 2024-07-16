@@ -256,7 +256,7 @@ El byte substitute es un byte igual a 26.
 El escape es un byte igual a 27.
 El byte file-separator es un byte igual a 28.
 El byte group-separator es un byte igual a 29.
-El byte record-separator es un byte igual a 30.
+El byte registro-separator es un byte igual a 30.
 El byte unit-separator es un byte igual a 31.
 El byte delete es un byte igual a 127.
 
@@ -564,7 +564,7 @@ La consola es una consola.
 
 Las elecciones son algunas elecciones.
 
-La pantalla es un record con una caja, un pixel height y un pixel width.
+La pantalla es un registro con una caja, un pixel height y un pixel width.
 
 Un segundo es 1000 milisegundos.
 

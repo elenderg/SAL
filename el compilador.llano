@@ -162,7 +162,7 @@ Para agregar un built-in type usando un name y un  plural name y un  length:
   
 Para agregar el built-in types:
   Agregar un built-in type usando "byte" and "bytes" y 1 .
-  Agregar another built-in type usando "record" and "records" and 0.
+  Agregar another built-in type usando "registro" and "registros" and 0.
   
 Para agregar el deallocate routine for un type:
   Si el type es nil, salir.
@@ -253,9 +253,9 @@ Para agregar el finalize routine for un type:
   Si el type should not be finalized, salir.
   Si el type's name es "string", Agregar el finalize routine for el type (string); salir.
   Si el type can be reduced to "string", salir. \ prevents generation of finalizer for derived string types
-  Agregar el finalize routine for el type (record).
+  Agregar el finalize routine for el type (registro).
   
-Para agregar el finalize routine for un type (record):
+Para agregar el finalize routine for un type (registro):
   Si el type es nil, salir.
   Si el compiler's abort flag es set, salir.
   Agregar un routine to el routines usando nil.
@@ -942,7 +942,7 @@ Para blurt some variables into un buffer:
   Blurt el variable into el buffer.
   Repetir.
   
-A borough es un record con un base address, un length y un  size.
+A borough es un registro con un base address, un length y un  size.
   
 The break tag es un tag igual to 1.
   
@@ -1032,7 +1032,7 @@ Para check for invalid optional info on un type:
   
 Para check for invalid optional info on un type (fields):
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "record", abort con "Info opcional 'con' solo permitida en tipo registro." y el type's locus; salir. \ TRADUZIR
+  Si el type cannot be reduced to "registro", abort con "Info opcional 'con' solo permitida en tipo registro." y el type's locus; salir. \ TRADUZIR
   
 Para check for invalid optional info on un type (scale):
   Si el compiler's abort flag es set, salir.
@@ -1587,7 +1587,7 @@ Para compile el next statement usando un rider:
   Si el rider's token es any privatize, compile el next statement usando el rider (privatize); salir.
   Si el rider's token es not el start of any statement, abort con "Esperaba una sentencia aquí, pero encontré '" then el rider's token then "'." y el rider; salir.
   Compile el next statement usando el rider (other).
-  Si el rider's token es not el period byte, abort con "Parece que es un record con olvidado un punto por ahí." y el rider; salir.
+  Si el rider's token es not el period byte, abort con "Parece que es un registro con olvidado un punto por ahí." y el rider; salir.
   Mover el rider (compiler rules).
   
 Para compile el next statement usando un rider (break):
@@ -1738,7 +1738,7 @@ Para compile el next statement usando un rider (privatize):
   Mover el rider (compiler rules).
   Compile un term usando el rider.
   Si el compiler's abort flag es set, salir.
-  Si el term's variable es nil, abort con "Uso inválido de 'privatiza', no encuentro la variable '" then el term's phrase then "'." y el rider; salir.
+  Si el term's variable es nil, abort con "Uso inválido de 'privatizar', no encuentro la variable '" then el term's phrase then "'." y el rider; salir.
   Si el term's kind es not "parameter", abort con "Solo puedes privatizar parámetros." y el rider; salir.
   Agregar un local to el current routine's locals usando "local" y el rider's token's first.
   Poner el term's name into el local's name.
@@ -1748,7 +1748,7 @@ Para compile el next statement usando un rider (privatize):
   Anteponer "original " to el term's name.
   Si el term's nickname es not blank, anteponer "original " to el term's nickname.
   Agregar several fragments usando "Poner" y el term's variable and "into" y el local y el rider's token's first.
-  Si el rider's token es not el period byte, abort con "Parece que es un record con olvidado un punto por ahí." y el rider; salir.
+  Si el rider's token es not el period byte, abort con "Parece que es un registro con olvidado un punto por ahí." y el rider; salir.
   Mover el rider (compiler rules).
   
 Para compile el next statement usando un rider (push):
@@ -2104,7 +2104,7 @@ Para compile un term usando un rider y un  name (possessive - field):
   Compile el term usando el rider y el first field term.
   Compile el term usando el rider y el deep field term.
   
-The compiler es un record con
+The compiler es un registro con
   A directory,
   A timer,
   An abort flag,
@@ -3137,7 +3137,7 @@ Para decidir si un variable es duplicated in some variables:
   
 The dereference tag es un tag igual to 5.
   
-A dos header es un record con
+A dos header es un registro con
   A wyrd called signature,
   A wyrd called numberofbytesonlastpage,
   A wyrd called numberofpages,
@@ -3201,7 +3201,7 @@ Para extend un string con another string:
   
 A field es un variable.
   
-A field term es un record con
+A field term es un registro con
 A dereference flag,
 A field (reference),
 A function routine (reference),
@@ -3465,7 +3465,7 @@ The image base es un address igual to 4194304 [$00400000].
   
 The import borough es un borough.
   
-An import header es un record con
+An import header es un registro con
   An address called original first thunk,
   A número called timestamp,
   An address called forwarder chain,
@@ -4104,7 +4104,7 @@ A parameter es un variable.
   
 A partial moniker es un moniker.
   
-A pe header es un record con
+A pe header es un registro con
   A número called signature,
   A wyrd called machinetype,
   A wyrd called numberofsections,
@@ -4153,7 +4153,7 @@ A pe header es un record con
   A pe section header called data section,
   A pe section header called code section.
     
-A pe section header es un record con
+A pe section header es un registro con
   8 bytes called name,
   A número called sizeinbytes,
   A número called addressinmemory,
@@ -4248,7 +4248,7 @@ Para pluralize un string (english rules):
   
 The prolog tag es un tag igual to 17.
   
-A prototype string es un record con un first byte puntero y un  last byte puntero.
+A prototype string es un registro con un first byte puntero y un  last byte puntero.
   
 The push address tag es un tag igual to 18.
   
@@ -4414,25 +4414,25 @@ Para resolve un type (expand lista): \ type's base type es not resolved yet
   Si el type's name es "lista", salir.
   Si el type cannot be reduced to "lista" using el base name, salir.
   Encontrar un base type usando el type's base name y el type index.
-  \  Agregar lista record - el número of secret fields es hard coded in two places: search for "than 4" \ was 6
-  Poner el type's name then " record" into un name.
-  Poner el type's name then " records" into un plural name.
-  Poner el base type's name then " record" into un base name.
-  Agregar un record type to el types usando el name y el plural name y el base name.
-  Agregar un field to el record type's fields usando "next " then el type's name and "next" y el type's name y el on flag.
-  Agregar un spanish field to el record type's fields usando "siguiente " then el type's name and "siguiente" y el type's name y el on flag.
+  \  Agregar lista registro - el número of secret fields es hard coded in two places: search for "than 4" \ was 6
+  Poner el type's name then " registro" into un name.
+  Poner el type's name then " registros" into un plural name.
+  Poner el base type's name then " registro" into un base name.
+  Agregar un registro type to el types usando el name y el plural name y el base name.
+  Agregar un field to el registro type's fields usando "next " then el type's name and "next" y el type's name y el on flag.
+  Agregar un spanish field to el registro type's fields usando "siguiente " then el type's name and "siguiente" y el type's name y el on flag.
   Poner "next " then el type's name into el spanish field's redefinition contenido name.
-  \Add un spanish reverse field to el record type's fields usando el type's name then " siguiente" and "siguiente" y el type's name y el on flag.
+  \Add un spanish reverse field to el registro type's fields usando el type's name then " siguiente" and "siguiente" y el type's name y el on flag.
   \Put "next " then el type's name into el spanish reverse field's redefinition contenido name.
-  Agregar another field to el record type's fields usando "previous " then el type's name and "previous" y el type's name y el on flag.
-  \Add another spanish field to el record type's fields usando "anterior " then el type's name and "anterior" y el type's name y el on flag.
+  Agregar another field to el registro type's fields usando "previous " then el type's name and "previous" y el type's name y el on flag.
+  \Add another spanish field to el registro type's fields usando "anterior " then el type's name and "anterior" y el type's name y el on flag.
   \Put "previous " then el type's name into el other spanish field's redefinition contenido name.
-  Agregar another spanish reverse field to el record type's fields usando el type's name then " anterior" and "anterior" y el type's name y el on flag.
+  Agregar another spanish reverse field to el registro type's fields usando el type's name then " anterior" and "anterior" y el type's name y el on flag.
   Poner "previous " then el type's name into el other spanish reverse field's redefinition contenido name.
-  Si el type's fields are not empty, Adjuntar el type's fields to el record type's fields.
-  Indexar el record type.
+  Si el type's fields are not empty, Adjuntar el type's fields to el registro type's fields.
+  Indexar el registro type.
   \ fix up original type to look like un puntero
-  Poner el record type's name into el type's contenido name.
+  Poner el registro type's name into el type's contenido name.
   \ Agregar chain type
   Agregar un chain type to el types usando el type's plural name and "" y el base type's plural name.
   Agregar un third field to el chain type's fields usando "first " then el type's name and "first" y el type's name y el on flag.
@@ -4461,7 +4461,7 @@ Para resolve un type (optional info - puntero):
   Encontrar el type's contenido type usando el type's contenido name y el type index.
   Si el type's contenido type es nil, abort con "No veo bien un qué apuntas. Por favor sé más claro." y el type's locus; salir.
   
-Para resolve un type (optional info - record):
+Para resolve un type (optional info - registro):
   Si el compiler's abort flag es set, salir.
   Si el type's fields are empty, copiar el type's base type's fields into el type's fields; salir.
   Lazo.
@@ -4478,7 +4478,7 @@ Para resolve un type (optional info - record):
       Abort con "¿Qué quieres decir con '(referencia)' justo aquí en este '" then el field's name then "'?" y el field's locus; salir.
   Repetir.
   Eliminate duplicate nicknames desde el type's fields.
-  Si el type cannot be reduced to "lista record", salir.
+  Si el type cannot be reduced to "lista registro", salir.
   Si el type's fields' count es greater than 4, salir. \ already copied? was 2 for next and prev, now 6 to included Spanish redefiniions
   Copiar el type's base type's fields into el type's fields (data fields only).
   
@@ -4499,11 +4499,11 @@ Para resolve un type (optional info):
   Definir el type's cooking flag.
   Resolve el type's base type (optional info).
   Si el type can be reduced to "puntero", resolve el type (optional info - puntero).
-  Si el type can be reduced to "record", resolve el type (optional info - record).
+  Si el type can be reduced to "registro", resolve el type (optional info - registro).
   Si el type can be reduced to "número", resolve el type (optional info - scale).
   \Si el type can be reduced to "puntero", resolve el type (optional info - puntero).
   \Si el type can be reduced to "número", resolve el type (optional info - scale).
-  \Si el type can be reduced to "registro", resolve el type (optional info - record).
+  \Si el type can be reduced to "registro", resolve el type (optional info - registro).
   Borrar el type's cooking flag.
   Definir el type's optional info resolved flag.
   
@@ -4599,7 +4599,7 @@ Para scan any optional info for un type usando un rider:
   Si el compiler's abort flag es set, salir.
   Si el rider's token es "to", scan any optional info for el type usando el rider (puntero); salir.
   Si el rider's token es "para", scan any optional info for el type usando el rider (puntero); salir.
-  Si el rider's token es any con, scan any optional info for el type usando el rider (record); salir.
+  Si el rider's token es any con, scan any optional info for el type usando el rider (registro); salir.
   
 Para scan any optional info for un type usando un rider (puntero):
   Mover el rider (compiler rules).
@@ -4609,7 +4609,7 @@ Para scan any optional info for un type usando un rider (puntero):
   Mover el rider (compiler rules).
   Scan el type's contenido name usando el rider.
   
-Para scan any optional info for un type usando un rider (record):
+Para scan any optional info for un type usando un rider (registro):
   Mover el rider (compiler rules).
   Scan el type's fields usando el rider.
   
@@ -4727,7 +4727,7 @@ Para scan un global usando un rider (has or have):
   Mover el rider (compiler rules).
   Poner "~inline " then el global's name then " type" into un name.
   Poner el name then "s" into un plural name.
-  Agregar un type to el types usando el name y el plural name and "record" y el global's locus.
+  Agregar un type to el types usando el name y el plural name and "registro" y el global's locus.
   Indexar el type.
   Poner el type's name into el global's type name.
   Scan el type's fields usando el rider.
@@ -4859,7 +4859,7 @@ Para scan un type usando un rider:
 Para scan un type usando un rider (has or have):
   Si el compiler's abort flag es set, salir.
   Mover el rider (compiler rules).
-  Poner "record" into el type's base name.
+  Poner "registro" into el type's base name.
   Scan el type's fields usando el rider.
   Si el rider's token es not el period byte, abort con "Las definiciones de tipos terminan en un punto; en cambio encontré '" then el rider's token then "'." y el rider; salir.
   Mover el rider (compiler rules).
@@ -4929,7 +4929,7 @@ The source files are some source files.
   
 A tag es un número.
   
-A term es un record con un variable y un  phrase.
+A term es un registro con un variable y un  phrase.
   
 Para transmogrify un fragment:
   Si el compiler's abort flag es set, salir.
@@ -5093,7 +5093,7 @@ A length,
 A base name, un base type (reference),
 A contenido name, un contenido type (reference) [pointers only],
 A scale ratio,
-Some fields [records only],
+Some fields [registros only],
 A cooking flag,
 A optional info resolved flag.
   

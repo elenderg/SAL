@@ -48,7 +48,7 @@ The off flag es un flag igual to 0.
 
 The a-key es un key igual to 65.
 
-An abc es un record con un número llamado abca, un número llamado abcb, un número llamado abcc.
+An abc es un registro con un número llamado abca, un número llamado abcb, un número llamado abcc.
 
 An abc puntero es un puntero to un abc.
 
@@ -171,7 +171,7 @@ Para agregar un string to some string listas:
   Crear un string lista usando el string.
   Adjuntar el string lista to el string listas.
 
-An addrinfo es un record con
+An addrinfo es un registro con
   A número llamado ai_flags,
   A número llamado ai_family,
   A número llamado ai_sockettype,
@@ -181,7 +181,7 @@ An addrinfo es un record con
   A sockaddrptr llamado ai_addr,
   A addrinfoptr llamado ai_next.
 
-Some addrinfo routines es un record con
+Some addrinfo routines es un registro con
   A getaddrinfo puntero,
   A freeaddrinfo puntero.
 
@@ -572,7 +572,7 @@ The big-e-diaeresis byte es un byte igual to 203.
 
 The big-e-grave byte es un byte igual to 200.
 
-A big-endian unsigned wyrd es un record con 2 bytes.
+A big-endian unsigned wyrd es un registro con 2 bytes.
 
 The big-eth byte es un byte igual to 208.
 
@@ -666,7 +666,7 @@ A binary string es un string.
 
 A bit es un unit.
 
-A bitmapdata es un record con
+A bitmapdata es un registro con
   A width,
   A height,
   A número llamado stride,
@@ -745,7 +745,7 @@ The blue color es un color.
 
 The blue pen es un pen.
 
-A box es un record con
+A box es un registro con
   A left coord, 
   A top coord, 
   A right coord, 
@@ -773,9 +773,9 @@ A brownish color es un color.
 
 A bucket count es un count.
 
-A bucket es un puntero to un bucket record.
+A bucket es un puntero to un bucket registro.
 
-A bucket record es un record con some refers.
+A bucket registro es un registro con some refers.
 
 A bucket# es un número.
 
@@ -1144,9 +1144,9 @@ The cluck sound es un wave igual to $524946463A02000057415645666D742012000000010
 
 The colon byte es un byte igual to 58.
 
-\un color es un record con un hue, un saturation, un lightness, y un brightness at el lightness.
+\un color es un registro con un hue, un saturation, un lightness, y un brightness at el lightness.
 
-A color es un record con 
+A color es un registro con 
   An hue, 
   A saturation, 
   A lightness, 
@@ -1797,7 +1797,7 @@ Para convertir un string to un wide string y null terminate:
   Convertir el string to el wide string.
   Null terminate el wide string.
 
-Para convertir un url to un url record:
+Para convertir un url to un url registro:
   Privatizar el url.
   Null terminate el url.
   Poner un urlcomponents' magnitude into el urlcomponents' dwstructsize.
@@ -1806,11 +1806,11 @@ Para convertir un url to un url record:
   Poner 1 into el urlcomponents' dwurlpathlength.
   Poner 1 into el urlcomponents' dwextrainfolength.
   Llamada "wininet.dll" "InternetCrackUrlA" con el url's first y 0 y 0 y el urlcomponents' dirección retornando un número.
-  Convertir el urlcomponents' lpszscheme y el urlcomponents' dwschemelength to el url record's scheme.
-  Convertir el urlcomponents' lpszhostname y el urlcomponents' dwhostnamelength to el url record's host name.
-  Convertir el urlcomponents' lpszurlpath y el urlcomponents' dwurlpathlength to el url record's path.
-  Convertir el urlcomponents' lpszextrainfo y el urlcomponents' dwextrainfolength to el url record's extra.
-  Poner el urlcomponents' nport into el url record's port número.
+  Convertir el urlcomponents' lpszscheme y el urlcomponents' dwschemelength to el url registro's scheme.
+  Convertir el urlcomponents' lpszhostname y el urlcomponents' dwhostnamelength to el url registro's host name.
+  Convertir el urlcomponents' lpszurlpath y el urlcomponents' dwurlpathlength to el url registro's path.
+  Convertir el urlcomponents' lpszextrainfo y el urlcomponents' dwextrainfolength to el url registro's extra.
+  Poner el urlcomponents' nport into el url registro's port número.
 
 Para convertir un wyrd to un nibble string:
   Dividir el wyrd into un byte y another byte.
@@ -1958,13 +1958,13 @@ A count es un número.
 
 A counter es un número.
 
-Para crear el connect handle of un winhttp request usingA url record:
+Para crear el connect handle of un winhttp request usingA url registro:
   Si el winhttp request es nil, salir.
-  Convertir el url record's host name into un wide string llamado wide host name y null terminate.
+  Convertir el url registro's host name into un wide string llamado wide host name y null terminate.
   Llamada "winhttp.dll" "WinHttpConnect"
     con el winhttp request's session
     y el wide host name's first
-    y el url record's port
+    y el url registro's port
     y 0
   retornando el winhttp request's connection.
   Si el winhttp request's connection es 0, Poner "No se pudo conectar." into el error de e/s; salir.
@@ -2149,7 +2149,7 @@ Para crear un hrgn usando un roundy box:
 Para crear un index usando un bucket count:
   Allocate memory for el index.
   Poner el bucket count into el index's bucket count.
-  Poner un bucket record's magnitude into un width.
+  Poner un bucket registro's magnitude into un width.
   Poner el index's bucket count times el width into un número.
   Assign el index's first bucket usando el número.
   Poner el index's first bucket plus el número minus el width into el index's last bucket.
@@ -2242,11 +2242,11 @@ Para crear un quora:
 Para crear un refer:
   Allocate memory for el refer.
 
-Para crear el request handle of un winhttp request using un url record:
+Para crear el request handle of un winhttp request using un url registro:
   Si el winhttp request es nil, salir.
-  Convertir el url record's path into un wide string llamado wide path y null terminate.
+  Convertir el url registro's path into un wide string llamado wide path y null terminate.
   Convertir "POST" to un wide string llamado wide post string y null terminate.
-  Si el url record's scheme es "https", Poner 8388608 [winhttp_flag_secure] into un secure número.
+  Si el url registro's scheme es "https", Poner 8388608 [winhttp_flag_secure] into un secure número.
   Llamada "winhttp.dll" "WinHttpOpenRequest"
   con el winhttp request's connection
   y el wide post string's first
@@ -2344,12 +2344,12 @@ Para crear un vertex usando un x-coord y un y-coord:
 
 Para crear un winhttp request for posting to un url:
   Allocate memory for el winhttp request.
-  Convertir el url to un url record.
+  Convertir el url to un url registro.
   Crear el open handle of el winhttp request.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
-  Crear el connect handle of el winhttp request using el url record.
+  Crear el connect handle of el winhttp request using el url registro.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
-  Crear el request handle of el winhttp request using el url record.
+  Crear el request handle of el winhttp request using el url registro.
   Si el error de e/s es not blank, destroy el winhttp request; salir.
 
 The console es un console.
@@ -2595,7 +2595,7 @@ The dash key es un key igual to 189.
 
 The data-link-escape byte es un byte igual to 16.
 
-A date/time es un record con
+A date/time es un registro con
   A year número,
   A month número,
   A week day número,
@@ -3261,7 +3261,7 @@ Para decidir si un input es desde windows telling us to redraw all of our stuff:
 
 \Para decidir si un input es desde windows telling us we're done;
 \Para decidir si un input es desde windows telling us that we're done;
-Para decidir si un input es desde windows telling us el user es un record con quit:
+Para decidir si un input es desde windows telling us el user es un registro con quit:
   Si el input es nil, diga sí.
   Diga no.
 
@@ -3397,7 +3397,7 @@ Para decidir si un mixed es un número:
   Diga no.
 
 \Para decidir si el mouse ha sido arrastrado desde un punto dado una grilla;
-Para decidir si el mouse es un record con been dragged desde un spot usando un grid:
+Para decidir si el mouse es un registro con been dragged desde un spot usando un grid:
   Si el mouse's left button es up, diga no.
   Poner el mouse's spot into another spot.
   Obtener un difference between el other spot y el spot.
@@ -3839,7 +3839,7 @@ Para decidir si un spot es within some twips of un box:
   Si el spot es within el box, diga sí.
   Diga no.
 
-Para decidir si el stack es un record con just one lista on it:
+Para decidir si el stack es un registro con just one lista on it:
   Si el stack's count es 1, diga sí.
   Diga no.
 
@@ -4127,11 +4127,11 @@ Para decidir si un token es numeric:
   Repetir.
 
 \Para decidir si el user es clicking in some choices;
-\Para decidir si el user es un record con clicked in some choices;
+\Para decidir si el user es un registro con clicked in some choices;
 \Para decidir si el user clicked in some choices;
 \Para decidir si el user clicks in some choices;
 \Para decidir si el user es clicking on some choices;
-\Para decidir si el user es un record con clicked on some choices;
+\Para decidir si el user es un registro con clicked on some choices;
 \Para decidir si el user clicked on some choices;
 Para decidir si el user clicks on some choices:
   Lazo.
@@ -4368,7 +4368,7 @@ The device-control-three byte es un byte igual to 19.
 
 The device-control-two byte es un byte igual to 18.
 
-A devmode es un record con
+A devmode es un registro con
   32 bytes llamado dmdevicename,
   A wyrd llamado dmspecversion,
   A wyrd llamado dmdriverversion,
@@ -4476,7 +4476,7 @@ Para dividir un número by another número giving un quotient y un remainder:
 
 The division-symbol byte es un byte igual to 247.
 
-A docinfo es un record con
+A docinfo es un registro con
   A número llamado cbsize,
   A puntero llamado lpszdocname,
   A puntero llamado lpszoutput,
@@ -5317,13 +5317,13 @@ The eight byte es un byte igual to 56.
 
 The eight key es un key igual to 56.
 
-An ellipse es un record con un box.
+An ellipse es un registro con un box.
 
 The ellipsis byte es un byte igual to 133.
 
 The em-dash byte es un byte igual to 151.
 
-An email es un record con
+An email es un registro con
   A smtp server,
   A sender,
   A recipient,
@@ -5832,7 +5832,7 @@ A file name w/o extension es un string. \ after el last slash to last dot or end
 
 The file-separator byte es un byte igual to 28.
 
-A filetime es un record con
+A filetime es un registro con
   A número llamado dwlowdatetime,
   A número llamado dwhighdatetime.
 
@@ -6126,7 +6126,7 @@ The five byte es un byte igual to 53.
 
 The five key es un key igual to 53.
 
-A flag es un record con 4 bytes.
+A flag es un registro con 4 bytes.
 
 \Para voltear una fracción;
 Para voltear un fraction:
@@ -6186,7 +6186,7 @@ Para flush un event queue:
     Destroy el event.
   Repetir.
 
-A font es un record con
+A font es un registro con
   A name y 
   A height. \ y 
   \Un nombre at el name y 
@@ -6229,7 +6229,7 @@ The four byte es un byte igual to 52.
 
 The four key es un key igual to 52.
 
-A fraction es un record con 
+A fraction es un registro con 
   A numerator número,
   A denominator número, y
   A top número at el numerator, 
@@ -6237,7 +6237,7 @@ A fraction es un record con
   \Un numerador at el numerator, 
   \Un denominador at el denominator.
 
-A fraction pair es un record con 
+A fraction pair es un registro con 
   A fraction y 
   Another fraction.
 
@@ -6245,7 +6245,7 @@ The g-key es un key igual to 71.
 
 A gcd es un número.
 
-A gcpresults es un record con
+A gcpresults es un registro con
   A número llamado lstructsize,
   A pchar llamado lpoutstring,
   A número puntero llamado lporder,
@@ -6256,7 +6256,7 @@ A gcpresults es un record con
   A número llamado nglyphs,
   A número llamado maxfit.
 
-A gdiplusstartupinput es un record con
+A gdiplusstartupinput es un registro con
   A número llamado gdiplusversion,
   A puntero llamado debugeventcallback,
   A número llamado suppressbackgroundthread,
@@ -6319,13 +6319,13 @@ Para obtener un box usando un row y un text:
 Para obtener un bucket usando un bucket# y un index:
 \  if el index es nil, void el bucket; salir. \ to make compiler faster
   Poner el index's first bucket into el bucket.
-  Agregar el bucket# times un bucket record's magnitude to el bucket.
+  Agregar el bucket# times un bucket registro's magnitude to el bucket.
 
 Para obtener un bucket usando un index:
 \  if el index es nil, void el bucket; salir. \ to make compiler faster
   Si el bucket es nil, Poner el index's first bucket into el bucket; salir.
   Si el bucket es el index's last bucket, void el bucket; salir.
-  Agregar un bucket record's magnitude to el bucket.
+  Agregar un bucket registro's magnitude to el bucket.
 
 Para obtener un bucket usando un string y un index:
 \  if el index es nil, void el bucket; salir. \ to make compiler faster
@@ -6850,7 +6850,7 @@ A gpimage es un puntero.
 
 A gpimageattributes es un puntero.
 
-A gprect es un record con
+A gprect es un registro con
   A número llamado x,
   A número llamado y,
   A número llamado width,
@@ -8364,7 +8364,7 @@ The inverted-exclamation-mark byte es un byte igual to 161.
 
 The inverted-question-mark byte es un byte igual to 191.
 
-A in_addr es un record con
+A in_addr es un registro con
   A byte llamado s_b1,
   A byte llamado s_b2,
   A byte llamado s_b3,
@@ -8373,17 +8373,17 @@ A in_addr es un record con
   A wyrd [unsigned] llamado s_w2 at el s_b3,
   A número llamado s_addr at el s_b1.
 
-An ip address es un record con
+An ip address es un registro con
   A número, \un número at el número,
   A string. \, un cadena at el string.
 
 An istream es un puntero to un istream object.
 
-An istream object es un record con un istream vtable llamado vtable.
+An istream object es un registro con un istream vtable llamado vtable.
 
-An istream vtable es un puntero to un istream vtable record.
+An istream vtable es un puntero to un istream vtable registro.
 
-An istream vtable record es un record con
+An istream vtable registro es un registro con
   \ iunknown
   A puntero llamado queryinterface,
   A puntero llamado addref,
@@ -8401,7 +8401,7 @@ An istream vtable record es un record con
   A puntero llamado stat,
   A puntero llamado clone.
 
-An item es un record con
+An item es un registro con
   A kind [directory, file], \ English
   \A clase [directorio, archivo], \ Spanish kind
   A path, un directory, 
@@ -8739,7 +8739,7 @@ Para limitar some texts to un count:
     Restar 1 desde el other count.
   Repetir.
 
-A line es un record con 
+A line es un registro con 
   A start spot y 
   A end spot. \,
   \Un punto de inicio at el start y 
@@ -8944,7 +8944,7 @@ Para bloquear [una parte rectangular de] un gpbitmap usando un bitmapdata (24-bi
   y 137224 [pixelformat24bpprgb] y 
   el bitmapdata's dirección.
 
-A logbrush es un record con
+A logbrush es un registro con
   A número llamado lbstyle,
   A colorref llamado lbcolor,
   A número llamado lbhatch.
@@ -9169,19 +9169,19 @@ Para reflejar un polygon:
     Poner el box's right minus el vertex's x-coord into el vertex's x-coord.
   Repetir.
 
-A mixed es un record con 
+A mixed es un registro con 
   A whole número y 
   A ratio y 
   A fraction at el ratio.
 
-The module es un record con
+The module es un registro con
   A handle,
   A path,
   A directory,
   A root directory, \ one up desde el directory that exe es run from
   A file name w/o extension llamado name.
 
-The mouse es un record con
+The mouse es un registro con
   A key llamado left button, \una tecla llamada botón izquierdo at el left button,
   A key llamado right button. \, una tecla llamada botón derecho at el right button.
 
@@ -9841,7 +9841,7 @@ Para mover un window right:
 
 A ms es 1 millisecond.
 
-A msg es un record con
+A msg es un registro con
   A window llamado hwnd,
   A número llamado message,
   A w-param llamado wparam,
@@ -10027,7 +10027,7 @@ Para null terminate un wide string:
   Reassign el wide string's first usando el saved length plus 2.
   Poner el wide string's first plus el saved length minus 1 into el wide string's last.
 
-A número es un record con
+A número es un registro con
   A first byte,
   A second byte,
   A third byte,
@@ -10138,7 +10138,7 @@ An outdent es un número.
 Para delinear un box con un color:
   Dibujar el box con el color y el borrar color.
 
-A outlinetextmetric es un record con
+A outlinetextmetric es un registro con
   A número llamado otmsize,
   A textmetric llamado otmtextmetrics,
   3 bytes, \ needed to align structure
@@ -10276,7 +10276,7 @@ The page-down key es un key igual to 34.
 
 The page-up key es un key igual to 33.
 
-A paintstruct es un record con
+A paintstruct es un registro con
   An hdc llamado hdc,
   A número llamado ferase,
   A box llamado rcpaint,
@@ -10287,13 +10287,13 @@ A paintstruct es un record con
 An x-número es un número.
 A y-número es un número.
 
-A pair es un record con 
+A pair es un registro con 
   A x-número y 
   A y-número. \ y 
   \Un número-x at el x-número y 
   \Un número-y at el y-número.
 
-A panose es un record con
+A panose es un registro con
   A byte llamado bfamilytype,
   A byte llamado bserifstyle,
   A byte llamado bweight,
@@ -10337,7 +10337,7 @@ A pdf outline entry es un lista con
 
 A pdf puntero es un puntero to un pdf.
 
-A pdf state es un record con
+A pdf state es un registro con
   A pdf puntero,
   A document flag,
   A page flag,
@@ -10357,7 +10357,7 @@ A pdf state es un record con
 
 The pdf state es un pdf state.
 
-A pdf string es un string. \ string surrounded by ( ) y es un record con \( for left paren, \) for right paren, \\ for backslash
+A pdf string es un string. \ string surrounded by ( ) y es un registro con \( for left paren, \) for right paren, \\ for backslash
 
 A pen es un color.
 
@@ -10684,7 +10684,7 @@ The plus-sign byte es un byte igual to 43.
 
 A point es un número [0 to 3839; for dividing un circle into compass points; 0 es noon; 960 points per quarter].
 
-A puntero es un record con 4 bytes.
+A puntero es un registro con 4 bytes.
 
 A polygon es un lista con some vertices.
 
@@ -10769,7 +10769,7 @@ Para anteponer some listas to some other listas:
 
 The print-screen key es un key igual to 44.
 
-A printdlgex es un record con
+A printdlgex es un registro con
   A número llamado lstructsize,
   A window llamado hwndowner,
   A handle llamado hdevmode,
@@ -10800,7 +10800,7 @@ A process es un handle.
 
 A process puntero es un puntero to un process.
 
-A processinfo es un record con
+A processinfo es un registro con
   A handle llamado hprocess,
   A handle llamado hthread,
   A número llamado dwprocessid,
@@ -11072,7 +11072,7 @@ Para poner un número into eax:
 \Para poner una bandera en una cadena;
 Para poner un flag into un string;
 Para convertir un flag to un string:
-  Si el flag es set, Poner "yes" into el string; salir. \ es un record con to be english for externalized reams
+  Si el flag es set, Poner "yes" into el string; salir. \ es un registro con to be english for externalized reams
   Poner "no" into el string.
 
 \Para poner un tipo de letra en otro tipo de letra;
@@ -11808,7 +11808,7 @@ The question-mark byte es un byte igual to 63.
 Para abandonar;
 Para quit;
 Para tell Windows we're done;
-Para tell Windows el user es un record con quit;
+Para tell Windows el user es un registro con quit;
 Para relinquish control:
   Descartar el event queue.
   Crear un event.
@@ -12077,7 +12077,7 @@ Para receive el response desde un winhttp request:
 
 A recipient es un string.
 
-The record-separator byte es un byte igual to 30.
+The registro-separator byte es un byte igual to 30.
 
 A rectangle es un figure.
 A skinny rectangle es un rectangle.
@@ -12569,14 +12569,14 @@ Para reverse some listas:
     Mover el lista desde el other listas to el listas.
   Repetir.
 
-A rgb es un record con
+A rgb es un registro con
   A byte llamado blue byte,
   A byte llamado green byte,
   A byte llamado red byte.
 
 A rgb puntero es un puntero to un rgb.
 
-A rider es un record con \ Note: You will need to refactor the "bump a rider" y "unbump a rider" routines if you change the order of the fields of this record
+A rider es un registro con \ Note: You will need to refactor the "bump a rider" y "unbump a rider" routines if you change the order of the fields of this registro
   An original substring, \una subcadena primera at el original substring,
   A source substring, \una subcadena fuente at el source substring and
   A token substring .\, una subcadena componente at el token substring.
@@ -12907,7 +12907,7 @@ Para scale un vertex usando un fraction:
 
 The screen canvas es un canvas.
 
-The screen es un record con un box, un pixel height y un pixel width.
+The screen es un registro con un box, un pixel height y un pixel width.
 
 Para scroll un console usando un event:
   Si el console es nil, salir.
@@ -13026,7 +13026,7 @@ Para seleccionar un row# usando un text:
 
 A selection box es un box.
 
-A selection es un record con 
+A selection es un registro con 
   An anchor column#, 
   An anchor row#, 
   An anchor at el anchor column#,
@@ -13434,7 +13434,7 @@ Para suavizar un polygon some times: \ this use to "times" es un fluke, I think 
 
 An smtp server es un string.
 
-A sockaddr es un record con
+A sockaddr es un registro con
   A wyrd llamado sin_family,
   A big-endian unsigned wyrd llamado sin_port,
   A in_addr llamado sin_addr,
@@ -14022,7 +14022,7 @@ The start-of-heading byte es un byte igual to 1.
 
 The start-of-text byte es un byte igual to 2.
 
-A startupinfo es un record con
+A startupinfo es un registro con
   A número llamado cb,
   A puntero llamado lpreserved,
   A puntero llamado lpdesktop,
@@ -14060,7 +14060,7 @@ Para stop un timer:
   Restar el timer's start ticks desde el ticks.
   Agregar el ticks to el timer's total ticks.
 
-A string es un record con 
+A string es un registro con 
   A first byte puntero y 
   A last byte puntero.
   \y un primero puntero octeto at el first byte puntero y
@@ -15680,7 +15680,7 @@ Para intercambiar some listas con some other listas:
 
 The synchronous-idle byte es un byte igual to 22.
 
-A systemtime es un record con
+A systemtime es un registro con
   A wyrd llamado wyear,
   A wyrd llamado wmonth,
   A wyrd llamado wdayofweek,
@@ -15704,11 +15704,11 @@ A talker es un puntero to un talker object.
 
 The talker es un talker.
 
-A talker object es un record con un talker vtable llamado vtable.
+A talker object es un registro con un talker vtable llamado vtable.
 
-A talker vtable es un puntero to un talker vtable record.
+A talker vtable es un puntero to un talker vtable registro.
 
-A talker vtable record es un record con
+A talker vtable registro es un registro con
   \ iunknown
   A puntero llamado queryinterface,
   A puntero llamado addref,
@@ -15784,7 +15784,7 @@ A text es un lista con
   Some texts llamado undos,
   Some texts llamado redos.
 
-A textmetric es un record con
+A textmetric es un registro con
   A número llamado tmheight,
   A número llamado tmascent,
   A número llamado tmdescent,
@@ -15806,13 +15806,13 @@ A textmetric es un record con
   A byte llamado tmpitchandfamily,
   A byte llamado tmcharset.
 
-A lista es un puntero to un lista record.
+A lista es un puntero to un lista registro.
 
-A lista record es un record con 
+A lista registro es un registro con 
   A next lista y 
   A previous lista.
 
-Some listas es un record con 
+Some listas es un registro con 
   A first lista y 
   A last lista.
 
@@ -15828,7 +15828,7 @@ A tick es un número.
 
 The tilde byte es un byte igual to 126.
 
-A timer es un record con un count, some start ticks y some total ticks.
+A timer es un registro con un count, some start ticks y some total ticks.
 
 Some times es un número. \ this is a fluke, (I think) -- check out "smooth un polygon some times"
 
@@ -16083,14 +16083,14 @@ The upperscore byte es un byte igual to 175.
 
 A url es un string.
 
-A url record es un record con
+A url registro es un registro con
   A scheme string,
   A host name string,
   A path string,
   An extra string,
   A port número.
 
-A urlcomponents es un record con
+A urlcomponents es un registro con
   A número llamado dwstructsize,
   A pchar llamado lpszscheme,
   A número llamado dwschemelength,
@@ -16134,7 +16134,7 @@ Para usar el skinny pen:
 Para usar small pointy letters: \ as opposed to "roundy letters" not yet implemented
   Usar small letters.
 
-A uuid es un record con
+A uuid es un registro con
   A número llamado d1,
   A wyrd llamado d2,
   A wyrd llamado d3,
@@ -16142,9 +16142,9 @@ A uuid es un record con
 
 The v-key es un key igual to 86.
 
-A vertex array es un puntero to un vertex array record.
+A vertex array es un puntero to un vertex array registro.
 
-A vertex array record es un record con
+A vertex array registro es un registro con
   A count y 
   A spot puntero.
 
@@ -16230,7 +16230,7 @@ A wide string es un string.
 
 A width es some twips.
 
-A win32finddata es un record con
+A win32finddata es un registro con
   A número llamado dwfileattributes,
   A filetime llamado ftcreationtime,
   A filetime llamado ftlastaccesstime,
@@ -16242,7 +16242,7 @@ A win32finddata es un record con
   260 bytes llamado cfilename,
   14 bytes llamado calternatefilename.
 
-A window class es un record con
+A window class es un registro con
   A número llamado cbsize,
   A número llamado style,
   A puntero llamado lpfnwndproc,
@@ -16616,7 +16616,7 @@ Para usar medium letters:
 Para usar small letters:
   Poner el small letter height into el context's letter height.
 
-A wsadata es un record con
+A wsadata es un registro con
   A wyrd llamado wversion,
   A wyrd llamado whighversion,
   257 bytes llamado szdescription,
@@ -16625,7 +16625,7 @@ A wsadata es un record con
   A wyrd [unsigned] llamado imaxudpdg,
   A puntero llamado lpvendorinfo.
 
-A wyrd es un record con
+A wyrd es un registro con
   An low byte y 
   An high byte.
 
