@@ -48,13 +48,16 @@ The off flag es un flag igual to 0.
 
 The a-key es un key igual to 65.
 
-An abc es un registro con un número llamado abca, un número llamado abcb, un número llamado abcc.
+An ABC es un registro con \ La estructura ABC contiene el ancho de un carácter en una fuente TrueType.
+  Un número llamado abcA, 
+  Un número llamado abcB, 
+  Un número llamado abcC.
 
-An abc puntero es un puntero to un abc.
+An ABC puntero es un puntero to un ABC.
 
-An abca es un número.
+An abcA es un número.
 
-An abcc es un número.
+An abcC es un número.
 
 An absolute position es un número.
 
@@ -171,21 +174,21 @@ Para agregar un string to some string listas:
   Crear un string lista usando el string.
   Adjuntar el string lista to el string listas.
 
-An addrinfo es un registro con
-  A número llamado ai_flags,
-  A número llamado ai_family,
-  A número llamado ai_sockettype,
-  A número llamado ai_protocol,
-  A número llamado ai_addrlen,
-  A pchar llamado ai_canonname,
-  A sockaddrptr llamado ai_addr,
-  A addrinfoptr llamado ai_next.
+An AddrInfo es un registro con \ contiene la información de la dirección del host
+  Un número llamado AI_Flags,
+  Un número llamado AI_Family,
+  Un número llamado AI_SocketType,
+  Un número llamado AI_Protocol,
+  Un número llamado AI_AddrLen,
+  A pChar llamado AI_CanonName,
+  A SockAddrptr llamado AI_Addr,
+  A AddrInfoPtr llamado AI_Next.
 
-Some addrinfo routines es un registro con
-  A getaddrinfo puntero,
-  A freeaddrinfo puntero.
+Some AddrInfo routines es un registro con
+  A GetAddrInfo puntero,
+  A FreeAddrInfo puntero.
 
-An addrinfoptr es un puntero to un addrinfo.
+An AddrInfoPtr es un puntero to un AddrInfo.
 
 \Para ajustar una caja dado un número y otro número y un tercer número y un cuarto número;
 Para ajustar un box usando un número y another número y un third número y un fourth número:
@@ -666,13 +669,13 @@ A binary string es un string.
 
 A bit es un unit.
 
-A bitmapdata es un registro con
+A BitmapData es un registro con
   A width,
   A height,
-  A número llamado stride,
-  A número llamado pixelformat,
-  A puntero llamado scan0,
-  A número llamado reserved.
+  Un número llamado Stride,
+  Un número llamado PixelFormat,
+  Un puntero llamado Scan0,
+  Un número llamado Reserved.
 
 Para lógico y un byte con otro byte;
 Para bitwise AND un byte con another byte:
@@ -3261,7 +3264,7 @@ Para decidir si un input es desde windows telling us to redraw all of our stuff:
 
 \Para decidir si un input es desde windows telling us we're done;
 \Para decidir si un input es desde windows telling us that we're done;
-Para decidir si un input es desde windows telling us el user es un registro con quit:
+Para decidir si un input es desde windows telling us el user has quit:
   Si el input es nil, diga sí.
   Diga no.
 
@@ -3397,7 +3400,7 @@ Para decidir si un mixed es un número:
   Diga no.
 
 \Para decidir si el mouse ha sido arrastrado desde un punto dado una grilla;
-Para decidir si el mouse es un registro con been dragged desde un spot usando un grid:
+Para decidir si el mouse has been dragged desde un spot usando un grid:
   Si el mouse's left button es up, diga no.
   Poner el mouse's spot into another spot.
   Obtener un difference between el other spot y el spot.
@@ -3839,7 +3842,7 @@ Para decidir si un spot es within some twips of un box:
   Si el spot es within el box, diga sí.
   Diga no.
 
-Para decidir si el stack es un registro con just one lista on it:
+Para decidir si el stack has just one lista on it:
   Si el stack's count es 1, diga sí.
   Diga no.
 
@@ -4127,11 +4130,11 @@ Para decidir si un token es numeric:
   Repetir.
 
 \Para decidir si el user es clicking in some choices;
-\Para decidir si el user es un registro con clicked in some choices;
+\Para decidir si el user es has clicked in some choices;
 \Para decidir si el user clicked in some choices;
 \Para decidir si el user clicks in some choices;
 \Para decidir si el user es clicking on some choices;
-\Para decidir si el user es un registro con clicked on some choices;
+\Para decidir si el user has clicked on some choices;
 \Para decidir si el user clicked on some choices;
 Para decidir si el user clicks on some choices:
   Lazo.
@@ -4368,39 +4371,39 @@ The device-control-three byte es un byte igual to 19.
 
 The device-control-two byte es un byte igual to 18.
 
-A devmode es un registro con
-  32 bytes llamado dmdevicename,
-  A wyrd llamado dmspecversion,
-  A wyrd llamado dmdriverversion,
-  A wyrd llamado dmsize,
-  A wyrd llamado dmdriverextra,
-  A número llamado dmfields,
-  A wyrd llamado dmorientation,
-  A wyrd llamado dmpapersize,
-  A wyrd llamado paperlength,
-  A wyrd llamado paperwidth,
-  A wyrd llamado dmscale,
-  A wyrd llamado dmcopies,
-  A wyrd llamado dmdefaultsource,
-  A wyrd llamado dmprintquality,
-  A wyrd llamado dmcolor,
-  A wyrd llamado dmduplex,
-  A wyrd llamado ydmresolution,
-  A wyrd llamado dmttoption,
-  A wyrd llamado dmcollate,
-  32 bytes llamado dmformname,
-  A wyrd llamado dmlogpixels,
-  A número llamado dmbitsperpel,
-  A número llamado dmpelswidth,
-  A número llamado dmpelsheight,
-  A número llamado dmdisplayflags,
-  A número llamado dmdisplayfrequency,
-  A número llamado dmicmmethod,
-  A número llamado dmicmintent,
-  A número llamado dmmediatype,
-  A número llamado dmdithertype,
-  A número llamado dmreserved1,
-  A número llamado dmreserved2.
+A DevMode es un registro con
+  32 bytes llamado dmDeviceName,
+  A wyrd llamado dmSpecVersion,
+  A wyrd llamado dmDriverVersion,
+  A wyrd llamado dmSize,
+  A wyrd llamado dmDriverExtra,
+  Un número llamado dmFields,
+  A wyrd llamado dmOrientation,
+  A wyrd llamado dmPapersize,
+  A wyrd llamado PaperLength,
+  A wyrd llamado PaperWidth,
+  A wyrd llamado dmScale,
+  A wyrd llamado dmCopies,
+  A wyrd llamado dmDefaultSource,
+  A wyrd llamado dmPrintQuality,
+  A wyrd llamado dmColor,
+  A wyrd llamado dmDuplex,
+  A wyrd llamado YdmResolution,
+  A wyrd llamado dmTtOption,
+  A wyrd llamado dmCollate,
+  32 bytes llamado dmFormName,
+  A wyrd llamado dmLogPixels,
+  Un número llamado dmBitsPerPel,
+  Un número llamado dmPelsWidth,
+  Un número llamado dmPelsHeight,
+  Un número llamado dmDisplayFlags,
+  Un número llamado dmDisplayFrequency,
+  Un número llamado dmIcmMethod,
+  Un número llamado dmIcmIntent,
+  Un número llamado dmMediaType,
+  Un número llamado dmDitherType,
+  Un número llamado dmReserved1,
+  Un número llamado dmReserved2.
 
 The diaeresis byte es un byte igual to 168.
 
@@ -4476,12 +4479,12 @@ Para dividir un número by another número giving un quotient y un remainder:
 
 The division-symbol byte es un byte igual to 247.
 
-A docinfo es un registro con
-  A número llamado cbsize,
-  A puntero llamado lpszdocname,
-  A puntero llamado lpszoutput,
-  A puntero llamado lpszdatadtype,
-  A número llamado fwtype.
+A DocInfo es un registro con
+  Un número llamado cbSize,
+  Un puntero llamado lpszDocName,
+  Un puntero llamado lpszOutput,
+  Un puntero llamado lpszDatadType,
+  Un número llamado fwType.
 
 The dollar-sign byte es un byte igual to 36.
 
@@ -5833,8 +5836,8 @@ A file name w/o extension es un string. \ after el last slash to last dot or end
 The file-separator byte es un byte igual to 28.
 
 A filetime es un registro con
-  A número llamado dwlowdatetime,
-  A número llamado dwhighdatetime.
+  Un número llamado dwlowdatetime,
+  Un número llamado dwhighdatetime.
 
 \Para llenar una caja con un color;
 Para llenar un box con un color:
@@ -6212,7 +6215,7 @@ A font resource es un handle.
 Some font widths es un lista con \ used for pdf conversion
   A font,
   A count,
-  A número puntero llamado data.
+  Un número puntero llamado data.
 
 A foot es 12 inches.
 
@@ -6245,39 +6248,39 @@ The g-key es un key igual to 71.
 
 A gcd es un número.
 
-A gcpresults es un registro con
-  A número llamado lstructsize,
-  A pchar llamado lpoutstring,
-  A número puntero llamado lporder,
-  A número puntero llamado lpdx,
-  A número puntero llamado lpcaretpos,
-  A puntero llamado lpclass,
-  A puntero llamado lpglyphs,
-  A número llamado nglyphs,
-  A número llamado maxfit.
+A gcpResults es un registro con
+  Un número llamado lStructSize,
+  A pchar llamado lpOutString,
+  Un número puntero llamado lpOrder,
+  Un número puntero llamado lpdx,
+  Un número puntero llamado lpCaretPos,
+  Un puntero llamado lpClass,
+  Un puntero llamado lpGlyphs,
+  Un número llamado nGlyphs,
+  Un número llamado maxfit.
 
-A gdiplusstartupinput es un registro con
-  A número llamado gdiplusversion,
-  A puntero llamado debugeventcallback,
-  A número llamado suppressbackgroundthread,
-  A número llamado suppressexternalcodecs.
+A gdiPlusStartupInput es un registro con
+  Un número llamado gdiPlusVersion,
+  Un puntero llamado DebugEventCallback,
+  Un número llamado SuppressBackgroundThread,
+  Un número llamado SuppressExternalCodecs.
 
 A geometric figure es un figure.
 
-Para obtener un abca y un abcc usando un string y un canvas:
-  Poner 0 into el abca.
-  Poner 0 into el abcc.
+Para obtener un abcA y un abcC usando un string y un canvas:
+  Poner 0 into el abcA.
+  Poner 0 into el abcC.
   Si el string's length es less than 1, salir.
-  Llamar "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's first's contenido y el string's first's contenido y un abc's dirección.
-  Poner el abc's abca into el abca.
-  Llamar "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's last's contenido y el string's last's contenido y another abc's dirección.
-  Poner el other abc's abcc into el abcc.
+  Llamar "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's first's contenido y el string's first's contenido y un ABC's dirección.
+  Poner el ABC's abcA into el abcA.
+  Llamar "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's last's contenido y el string's last's contenido y another ABC's dirección.
+  Poner el other ABC's abcC into el abcC.
 
-Para obtener un abca usando un string y un canvas:
-  Poner 0 into el abca.
+Para obtener un abcA usando un string y un canvas:
+  Poner 0 into el abcA.
   Si el string's length es less than 1, salir.
-  Llamar "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's first's contenido y el string's first's contenido y un abc's dirección.
-  Poner el abc's abca into el abca.
+  Llamar "gdi32.dll" "GetCharABCWidthsA" con el canvas y el string's first's contenido y el string's first's contenido y un ABC's dirección.
+  Poner el ABC's abcA into el abcA.
 
 Para obtener some addrinfo routines:
   Borrar el error de e/s.
@@ -6285,10 +6288,10 @@ Para obtener some addrinfo routines:
   Si el handle es 0, Poner "No se pudo leer ws2_32.dll." into el error de e/s; salir.
   Llamar "kernel32.dll" "GetProcAddress" con el handle y "getaddrinfo"'s first retornando un puntero.
   Si el puntero es nil, Poner "Lamento que estas rutinas solo funcionan en Windows XP o superior." into el error de e/s; salir.
-  Poner el puntero into el addrinfo routines' getaddrinfo puntero.
+  Poner el puntero into el AddrInfo routines' GetAddrInfo puntero.
   Llamar "kernel32.dll" "GetProcAddress" con el handle y "freeaddrinfo"'s first retornando el puntero.
   Si el puntero es nil, Poner "Lamento que estas rutinas solo funcionan en Windows XP o superior." into el error de e/s; salir.
-  Poner el puntero into el addrinfo routines' freeaddrinfo puntero.
+  Poner el puntero into el AddrInfo routines' FreeAddrInfo puntero.
 
 Para obtener un box for el caret in un text:
   Si el text es nil, zero el box; salir.
@@ -6297,7 +6300,9 @@ Para obtener un box for el caret in un text:
   Agregar el text's row height to el box's bottom.
   Ajustar el box usando 0 y el tpp y 0 y - el tpp.
   Poner el text's globalized origin into un origin.
-  Si el box's left es less than el origin's x-coord, Poner el origin's x-coord into el box's left; Poner el origin's x-coord into el box's right.
+  Si el box's left es less than el origin's x-coord, 
+    Poner el origin's x-coord into el box's left; 
+    Poner el origin's x-coord into el box's right.
   Si el text's wrap flag es not set, salir.
   Limitar el box's left to el text's left y el text's right.
   Limitar el box's right to el text's left y el text's right.
@@ -6448,11 +6453,21 @@ Para obtener un drive kind for un path:
   Privatizar el path.
   Null terminate el path.
   Llamar "kernel32.dll" "GetDriveTypeA" con el path's first retornando un número.
-  Si el número es 2 [drive_removable], Poner "disco removible" into el drive kind; salir. \ removable drive
-  Si el número es 3 [drive_fixed], Poner "disco duro o flash" into el drive kind; salir.\ hard disk / flash drive
-  Si el número es 4 [drive_remote], Poner "unidad de red" into el drive kind; salir. \ network drive
-  Si el número es 5 [drive_cdrom], Poner "unidad de cd/dvd-rom" into el drive kind; salir. \ cd-rom / dvd drive
-  Si el número es 6 [drive_ramdisk], Poner "unidad virtual en memoria" into el drive kind; salir. \ virtual drive in memory
+  Si el número es 2 [drive_removable], 
+    Poner "disco removible" into el drive kind; 
+    Salir. \ removable drive
+  Si el número es 3 [drive_fixed], 
+    Poner "disco duro o flash" into el drive kind; 
+    Salir.\ hard disk / flash drive
+  Si el número es 4 [drive_remote], 
+    Poner "unidad de red" into el drive kind; 
+    Salir. \ network drive
+  Si el número es 5 [drive_cdrom], 
+    Poner "unidad de cd/dvd-rom" into el drive kind; 
+    Salir. \ cd-rom / dvd drive
+  Si el número es 6 [drive_ramdisk], 
+    Poner "unidad virtual en memoria" into el drive kind; 
+    Salir. \ virtual drive in memory
   Poner "" into el drive kind.
 
 \Para obtener un nombre de unidad para una ruta;
@@ -6462,7 +6477,9 @@ Para obtener un drive name for un path:
   Poner 512 into un length.
   Reassign un buffer's first usando el length.
   Llamar "kernel32.dll" "GetVolumeInformationA" con el path's first y el buffer's first y el length y 0 y 0 y 0 y 0 y 0 retornando un número.
-  Si el número es 0, borrar el drive name; salir.
+  Si el número es 0, 
+    Borrar el drive name; 
+    Salir.
   Convertir el buffer's first as un pchar to el drive name.
 
 Para obtener el first-eighth equivalent of un heading:
@@ -6842,19 +6859,19 @@ The gold color es un color.
 
 The gold pen es un pen.
 
-A gpbitmap es un gpimage.
+A gpBitmap es un gpImage.
 
-A gpgraphic es un puntero.
+A gpGraphic es un puntero.
 
-A gpimage es un puntero.
+A gpImage es un puntero.
 
-A gpimageattributes es un puntero.
+A gpImageAttributes es un puntero.
 
-A gprect es un registro con
-  A número llamado x,
-  A número llamado y,
-  A número llamado width,
-  A número llamado height.
+A gpRect es un registro con
+  Un número llamado x,
+  Un número llamado y,
+  Un número llamado width,
+  Un número llamado height.
 
 The gptoken es un gptoken.
 
@@ -8364,14 +8381,14 @@ The inverted-exclamation-mark byte es un byte igual to 161.
 
 The inverted-question-mark byte es un byte igual to 191.
 
-A in_addr es un registro con
+A In_Addr es un registro con \ Internet Adress (IP)
   A byte llamado s_b1,
   A byte llamado s_b2,
   A byte llamado s_b3,
   A byte llamado s_b4,
   A wyrd [unsigned] llamado  s_w1 at el s_b1,
   A wyrd [unsigned] llamado s_w2 at el s_b3,
-  A número llamado s_addr at el s_b1.
+  Un número llamado s_addr at el s_b1.
 
 An ip address es un registro con
   A número, \un número at el número,
@@ -8383,23 +8400,23 @@ An istream object es un registro con un istream vtable llamado vtable.
 
 An istream vtable es un puntero to un istream vtable registro.
 
-An istream vtable registro es un registro con
+An iStream vTable registro es un registro con
   \ iunknown
-  A puntero llamado queryinterface,
-  A puntero llamado addref,
-  A puntero llamado release, \ function(this:istream):número; stdcall;
+  Un puntero llamado QueryInterface,
+  Un puntero llamado Addref,
+  Un puntero llamado Release, \ function(this:istream):number; stdcall;
   \ istream
-  A puntero llamado read,
-  A puntero llamado write,
-  A puntero llamado seek,
-  A puntero llamado setsize,
-  A puntero llamado copyto,
-  A puntero llamado commit,
-  A puntero llamado revert,
-  A puntero llamado lockregion,
-  A puntero llamado unlockregion,
-  A puntero llamado stat,
-  A puntero llamado clone.
+  Un puntero llamado Read,
+  Un puntero llamado Write,
+  Un puntero llamado Seek,
+  Un puntero llamado SetSize,
+  Un puntero llamado CopyTo,
+  Un puntero llamado Commit,
+  Un puntero llamado Revert,
+  Un puntero llamado LockRegion,
+  Un puntero llamado UnlockRegion,
+  Un puntero llamado Stat,
+  Un puntero llamado Clone.
 
 An item es un registro con
   A kind [directory, file], \ English
@@ -8944,10 +8961,10 @@ Para bloquear [una parte rectangular de] un gpbitmap usando un bitmapdata (24-bi
   y 137224 [pixelformat24bpprgb] y 
   el bitmapdata's dirección.
 
-A logbrush es un registro con
-  A número llamado lbstyle,
-  A colorref llamado lbcolor,
-  A número llamado lbhatch.
+A LogBrush es un registro con
+  Un número llamado lbStyle,
+  A colorref llamado lbColor,
+  Un número llamado lbHatch.
 
 The lower-double-quote byte es un byte igual to 132.
 
@@ -8956,11 +8973,11 @@ The lower-single-quote byte es un byte igual to 130.
 Para lowercase any selected bytes in un text:
   Si el text es nil, salir.
   Lazo.
-  Obtener un row desde el text's rows.
-  Si el row es nil, salir.
-  Si el row of el text es not selected, repetir.
-  Colocar un substring on any selected bytes in el row of el text.
-  Lowercase el substring.
+    Obtener un row desde el text's rows.
+    Si el row es nil, salir.
+    Si el row of el text es not selected, repetir.
+    Colocar un substring on any selected bytes in el row of el text.
+    Lowercase el substring.
   Repetir.
 
 \Para minúsculas de un byte;
@@ -9841,13 +9858,13 @@ Para mover un window right:
 
 A ms es 1 millisecond.
 
-A msg es un registro con
-  A window llamado hwnd,
-  A número llamado message,
-  A w-param llamado wparam,
-  A l-param llamado lparam,
-  A número llamado time,
-  A spot llamado pt.
+A MSG es un registro con
+  A window llamado hWnd,
+  Un número llamado Message,
+  A w-param llamado wParam,
+  A l-param llamado lParam,
+  Un número llamado Time,
+  A spot llamado Pt.
 
 A multiple es un número.
 
@@ -10138,41 +10155,41 @@ An outdent es un número.
 Para delinear un box con un color:
   Dibujar el box con el color y el borrar color.
 
-A outlinetextmetric es un registro con
-  A número llamado otmsize,
-  A textmetric llamado otmtextmetrics,
+A OutlineTextMetric es un registro con
+  Un número llamado otmSize,
+  A textmetric llamado otmTextMetrics,
   3 bytes, \ needed to align structure
-  A byte llamado otmfiller,
-  A panose llamado otmpanosenumber,
+  A byte llamado otmFiller,
+  A panose llamado otmPanoseNumber,
   1 bytes, \ needed to align structure
-  A número llamado otmfsselection,
-  A número llamado otmfstype,
-  A número llamado otmscharsloperise,
-  A número llamado otmscharsloperun,
-  A número llamado otmitalicangle,
-  A número llamado otmemsquare,
-  A número llamado otmascent,
-  A número llamado otmdescent,
-  A número llamado otmlinegap,
-  A número llamado otmscapemheight,
-  A número llamado otmsxheight,
-  A box llamado otmrcfontbox,
-  A número llamado otmmacascent,
-  A número llamado otmmacdescent,
-  A número llamado otmmaclinegap,
-  A número llamado otmusminiumppem,
-  A spot llamado otmptsubscriptsize,
-  A spot llamado otmptsubscriptoffset,
-  A spot llamado otmptsuperscriptsize,
-  A spot llamado otmptsuperscriptoffset,
-  A número llamado otmsstrikeoutsize,
-  A número llamado otmsstrikeoutposition,
-  A número llamado otmsunderscoresize,
-  A número llamado otmsunderscoreposition,
-  A puntero llamado otmpfamilyname,
-  A puntero llamado otmpfacename,
-  A puntero llamado otmpstylename,
-  A puntero llamado otmpfullname.
+  Un número llamado otmFsSelection,
+  Un número llamado otmFsType,
+  Un número llamado otmsCharSlopeRise,
+  Un número llamado otmsCharSlopeRun,
+  Un número llamado otmItalicAngle,
+  Un número llamado otmEmSquare,
+  Un número llamado otmAscent,
+  Un número llamado otmDescent,
+  Un número llamado otmLineGap,
+  Un número llamado otmsCapEmHeight,
+  Un número llamado otmsXHeight,
+  A box llamado otmRcFontBox,
+  Un número llamado otmMacAscent,
+  Un número llamado otmMacDescent,
+  Un número llamado otmMacLineGap,
+  Un número llamado otmusMinimumPPEM,
+  A spot llamado otmptSubscriptSize,
+  A spot llamado otmptSubscriptOffset,
+  A spot llamado otmptSuperscriptSize,
+  A spot llamado otmptSuperscriptOffset,
+  Un número llamado otmsStrikeoutSize,
+  Un número llamado otmsStrikeoutPosition,
+  Un número llamado otmsUnderscoreSize,
+  Un número llamado otmsUnderscorePosition,
+  Un puntero llamado otmpFamilyName,
+  Un puntero llamado otmpFaceName,
+  Un puntero llamado otmpStyleName,
+  Un puntero llamado otmpFullName.
 
 An x-offset es un offset.
 A y-offset es un offset.
@@ -10185,20 +10202,32 @@ Para output el arc of un ellipse usando un string:
   Poner el ellipse's x-extent times el fraction into un x-offset.
   Poner el ellipse's y-extent times el fraction into un y-offset.
 \ control point 1
-  Si el string es "left-top", Poner el ellipse's left y el center's y-coord minus el y-offset into un first control spot. 
-  Si el string es "right-top", Poner el center's x-coord plus el x-offset y el ellipse's top into el first control spot.
-  Si el string es "right-bottom", Poner el ellipse's right y el center's y-coord plus el y-offset into el first control spot.
-  Si el string es "left-bottom", Poner el center's x-coord minus el x-offset y el ellipse's bottom into el first control spot.
+  Si el string es "left-top", 
+    Poner el ellipse's left y el center's y-coord minus el y-offset into un first control spot. 
+  Si el string es "right-top", 
+    Poner el center's x-coord plus el x-offset y el ellipse's top into el first control spot.
+  Si el string es "right-bottom", 
+    Poner el ellipse's right y el center's y-coord plus el y-offset into el first control spot.
+  Si el string es "left-bottom", 
+    Poner el center's x-coord minus el x-offset y el ellipse's bottom into el first control spot.
 \ control point 2
-  Si el string es "left-top", Poner el center's x-coord minus el x-offset y el ellipse's top into un second control spot.
-  Si el string es "right-top", Poner el ellipse's right y el center's y-coord minus el y-offset into el second control spot.
-  Si el string es "right-bottom", Poner el center's x-coord plus el x-offset y el ellipse's bottom into el second control spot.
-  Si el string es "left-bottom", Poner el ellipse's left y el center's y-coord plus el y-offset into el second control spot.
+  Si el string es "left-top", 
+    Poner el center's x-coord minus el x-offset y el ellipse's top into un second control spot.
+  Si el string es "right-top", 
+    Poner el ellipse's right y el center's y-coord minus el y-offset into el second control spot.
+  Si el string es "right-bottom", 
+    Poner el center's x-coord plus el x-offset y el ellipse's bottom into el second control spot.
+  Si el string es "left-bottom", 
+    Poner el ellipse's left y el center's y-coord plus el y-offset into el second control spot.
 \ ending point
-  Si el string es "left-top", Poner el ellipse's left plus el half width y el ellipse's top into un ending spot.
-  Si el string es "right-top", Poner el ellipse's right y el ellipse's top plus el half height into el ending spot.
-  Si el string es "right-bottom", Poner el ellipse's right minus el half width y el ellipse's bottom into el ending spot.
-  Si el string es "left-bottom", Poner el ellipse's left y el ellipse's bottom minus el half height into el ending spot.
+  Si el string es "left-top", 
+    Poner el ellipse's left plus el half width y el ellipse's top into un ending spot.
+  Si el string es "right-top", 
+    Poner el ellipse's right y el ellipse's top plus el half height into el ending spot.
+  Si el string es "right-bottom", 
+    Poner el ellipse's right minus el half width y el ellipse's bottom into el ending spot.
+  Si el string es "left-bottom", 
+    Poner el ellipse's left y el ellipse's bottom minus el half height into el ending spot.
 \ spit it out
   Output el first control spot without advancing.
   Output el second control spot without advancing.
@@ -10278,10 +10307,10 @@ The page-up key es un key igual to 33.
 
 A paintstruct es un registro con
   An hdc llamado hdc,
-  A número llamado ferase,
+  Un número llamado ferase,
   A box llamado rcpaint,
-  A número llamado frestore,
-  A número llamado fincupdate,
+  Un número llamado frestore,
+  Un número llamado fincupdate,
   32 bytes.
 
 An x-número es un número.
@@ -10770,27 +10799,27 @@ Para anteponer some listas to some other listas:
 The print-screen key es un key igual to 44.
 
 A printdlgex es un registro con
-  A número llamado lstructsize,
+  Un número llamado lstructsize,
   A window llamado hwndowner,
   A handle llamado hdevmode,
   A handle llamado hdevnames,
   A canvas llamado hdc,
-  A número llamado flags,
-  A número llamado flags2,
-  A número llamado exclusionflags,
-  A número llamado npageranges,
-  A número llamado nmaxpageranges,
-  A puntero llamado lppageranges,
-  A número llamado nminpage,
-  A número llamado nmaxpage,
-  A número llamado ncopies,
+  Un número llamado flags,
+  Un número llamado flags2,
+  Un número llamado exclusionflags,
+  Un número llamado npageranges,
+  Un número llamado nmaxpageranges,
+  Un puntero llamado lppageranges,
+  Un número llamado nminpage,
+  Un número llamado nmaxpage,
+  Un número llamado ncopies,
   A handle llamado hinstance,
-  A puntero llamado lpprinttemplatename,
-  A puntero llamado lpcallback,
-  A número llamado npropertypages,
-  A puntero llamado lphpropertypages,
-  A número llamado nstartpage,
-  A número llamado dwresultaction.
+  Un puntero llamado lpprinttemplatename,
+  Un puntero llamado lpcallback,
+  Un número llamado npropertypages,
+  Un puntero llamado lphpropertypages,
+  Un número llamado nstartpage,
+  Un número llamado dwresultaction.
 
 The printer canvas es un canvas.
 
@@ -10803,8 +10832,8 @@ A process puntero es un puntero to un process.
 A processinfo es un registro con
   A handle llamado hprocess,
   A handle llamado hthread,
-  A número llamado dwprocessid,
-  A número llamado dwthreadid.
+  Un número llamado dwprocessid,
+  Un número llamado dwthreadid.
 
 A punch line es un string.
 
@@ -12124,7 +12153,7 @@ Para reducir un fraction:
 
 A refer es un lista con 
   A string y 
-  A puntero (reference). \, 
+  Un puntero (reference). \, 
   \Una cadena at el string y 
   \Un puntero (referencia) at el puntero.
 
@@ -14023,21 +14052,21 @@ The start-of-heading byte es un byte igual to 1.
 The start-of-text byte es un byte igual to 2.
 
 A startupinfo es un registro con
-  A número llamado cb,
-  A puntero llamado lpreserved,
-  A puntero llamado lpdesktop,
-  A puntero llamado lptitle,
-  A número llamado dwx,
-  A número llamado dwy,
-  A número llamado dwxsize,
-  A número llamado dwysize,
-  A número llamado dwxcountchars,
-  A número llamado cwycountchars,
-  A número llamado dwfillattribute,
-  A número llamado dwflags,
+  Un número llamado cb,
+  Un puntero llamado lpreserved,
+  Un puntero llamado lpdesktop,
+  Un puntero llamado lptitle,
+  Un número llamado dwx,
+  Un número llamado dwy,
+  Un número llamado dwxsize,
+  Un número llamado dwysize,
+  Un número llamado dwxcountchars,
+  Un número llamado cwycountchars,
+  Un número llamado dwfillattribute,
+  Un número llamado dwflags,
   A wyrd llamado wshowwindow,
   A wyrd llamado cbreserved2,
-  A puntero llamado lpreserved2,
+  Un puntero llamado lpreserved2,
   A handle llamado hstdinput,
   A handle llamado hstdoutput,
   A handle llamado hstderror.
@@ -15710,45 +15739,45 @@ A talker vtable es un puntero to un talker vtable registro.
 
 A talker vtable registro es un registro con
   \ iunknown
-  A puntero llamado queryinterface,
-  A puntero llamado addref,
-  A puntero llamado release, \ in this:pspvoice out número
+  Un puntero llamado queryinterface,
+  Un puntero llamado addref,
+  Un puntero llamado release, \ in this:pspvoice out número
   \ italker
-  A puntero llamado setnotifysink,
-  A puntero llamado setnotifywindowmessage,
-  A puntero llamado setnotifycallbackfunction,
-  A puntero llamado setnotifycallbackinterface,
-  A puntero llamado setnotifywin32event,
-  A puntero llamado waitfornotifyevent,
-  A puntero llamado getnotifyeventhandle,
-  A puntero llamado setinterest,
-  A puntero llamado getevents,
-  A puntero llamado getinfo,
-  A puntero llamado setoutput,
-  A puntero llamado getoutputobjecttoken,
-  A puntero llamado getoutputstream,
-  A puntero llamado pause,
-  A puntero llamado resume,
-  A puntero llamado setvoice,
-  A puntero llamado getvoice,
-  A puntero llamado speak, \ in this:pspvoice; pwcs:pwchar; dwflags:número; pulstreamnumber:pnumber out número
-  A puntero llamado speakstream,
-  A puntero llamado getstatus,
-  A puntero llamado skip,
-  A puntero llamado setpriority,
-  A puntero llamado getpriority,
-  A puntero llamado setalertboundary,
-  A puntero llamado getalertboundary,
-  A puntero llamado setrate,
-  A puntero llamado getrate,
-  A puntero llamado setvolume,
-  A puntero llamado getvolume,
-  A puntero llamado waituntildone,
-  A puntero llamado setsyncspeaktimeout,
-  A puntero llamado getsyncspeaktimeout,
-  A puntero llamado speakcompleteevent,
-  A puntero llamado isuisupported,
-  A puntero llamado displayui.
+  Un puntero llamado setnotifysink,
+  Un puntero llamado setnotifywindowmessage,
+  Un puntero llamado setnotifycallbackfunction,
+  Un puntero llamado setnotifycallbackinterface,
+  Un puntero llamado setnotifywin32event,
+  Un puntero llamado waitfornotifyevent,
+  Un puntero llamado getnotifyeventhandle,
+  Un puntero llamado setinterest,
+  Un puntero llamado getevents,
+  Un puntero llamado getinfo,
+  Un puntero llamado setoutput,
+  Un puntero llamado getoutputobjecttoken,
+  Un puntero llamado getoutputstream,
+  Un puntero llamado pause,
+  Un puntero llamado resume,
+  Un puntero llamado setvoice,
+  Un puntero llamado getvoice,
+  Un puntero llamado speak, \ in this:pspvoice; pwcs:pwchar; dwflags:número; pulstreamnumber:pnumber out número
+  Un puntero llamado speakstream,
+  Un puntero llamado getstatus,
+  Un puntero llamado skip,
+  Un puntero llamado setpriority,
+  Un puntero llamado getpriority,
+  Un puntero llamado setalertboundary,
+  Un puntero llamado getalertboundary,
+  Un puntero llamado setrate,
+  Un puntero llamado getrate,
+  Un puntero llamado setvolume,
+  Un puntero llamado getvolume,
+  Un puntero llamado waituntildone,
+  Un puntero llamado setsyncspeaktimeout,
+  Un puntero llamado getsyncspeaktimeout,
+  Un puntero llamado speakcompleteevent,
+  Un puntero llamado isuisupported,
+  Un puntero llamado displayui.
 
 The tan color es un color.
 
@@ -15785,17 +15814,17 @@ A text es un lista con
   Some texts llamado redos.
 
 A textmetric es un registro con
-  A número llamado tmheight,
-  A número llamado tmascent,
-  A número llamado tmdescent,
-  A número llamado tminternalleading,
-  A número llamado tmexternalleading,
-  A número llamado tmavecharwidth,
-  A número llamado tmmaxcharwidth,
-  A número llamado tmweight,
-  A número llamado tmoverhang,
-  A número llamado tmdigitizedaspectx,
-  A número llamado tmdigitizedaspecty,
+  Un número llamado tmheight,
+  Un número llamado tmascent,
+  Un número llamado tmdescent,
+  Un número llamado tminternalleading,
+  Un número llamado tmexternalleading,
+  Un número llamado tmavecharwidth,
+  Un número llamado tmmaxcharwidth,
+  Un número llamado tmweight,
+  Un número llamado tmoverhang,
+  Un número llamado tmdigitizedaspectx,
+  Un número llamado tmdigitizedaspecty,
   A byte llamado tmfirstchar,
   A byte llamado tmlastchar,
   A byte llamado tmdefaultchar,
@@ -16091,21 +16120,21 @@ A url registro es un registro con
   A port número.
 
 A urlcomponents es un registro con
-  A número llamado dwstructsize,
+  Un número llamado dwstructsize,
   A pchar llamado lpszscheme,
-  A número llamado dwschemelength,
-  A número llamado nscheme,
+  Un número llamado dwschemelength,
+  Un número llamado nscheme,
   A pchar llamado lpszhostname,
-  A número llamado dwhostnamelength,
-  A número llamado nport, \ this es typed as un wyrd in windows documentation, but dosen't work
+  Un número llamado dwhostnamelength,
+  Un número llamado nport, \ this es typed as un wyrd in windows documentation, but dosen't work
   A pchar llamado lpszusername,
-  A número llamado dwusernamelength,
+  Un número llamado dwusernamelength,
   A pchar llamado lpszpassword,
-  A número llamado dwpasswordlength,
+  Un número llamado dwpasswordlength,
   A pchar llamado lpszurlpath,
-  A número llamado dwurlpathlength,
+  Un número llamado dwurlpathlength,
   A pchar llamado lpszextrainfo,
-  A número llamado dwextrainfolength.
+  Un número llamado dwextrainfolength.
 
 \Para usar un color;
 Para usar un color:
@@ -16135,7 +16164,7 @@ Para usar small pointy letters: \ as opposed to "roundy letters" not yet impleme
   Usar small letters.
 
 A uuid es un registro con
-  A número llamado d1,
+  Un número llamado d1,
   A wyrd llamado d2,
   A wyrd llamado d3,
   8 bytes llamado d4.
@@ -16231,29 +16260,29 @@ A wide string es un string.
 A width es some twips.
 
 A win32finddata es un registro con
-  A número llamado dwfileattributes,
+  Un número llamado dwfileattributes,
   A filetime llamado ftcreationtime,
   A filetime llamado ftlastaccesstime,
   A filetime llamado ftlastwritetime,
-  A número llamado nfilesizehigh,
-  A número llamado nfilesizelow,
-  A número llamado dwreserved0,
-  A número llamado dwreserved1,
+  Un número llamado nfilesizehigh,
+  Un número llamado nfilesizelow,
+  Un número llamado dwreserved0,
+  Un número llamado dwreserved1,
   260 bytes llamado cfilename,
   14 bytes llamado calternatefilename.
 
 A window class es un registro con
-  A número llamado cbsize,
-  A número llamado style,
-  A puntero llamado lpfnwndproc,
-  A número llamado cbclsextra,
-  A número llamado cbwndextra,
+  Un número llamado cbsize,
+  Un número llamado style,
+  Un puntero llamado lpfnwndproc,
+  Un número llamado cbclsextra,
+  Un número llamado cbwndextra,
   A handle llamado hinstance,
   A hicon llamado hicon,
   A cursor llamado hcursor,
   An hbrush llamado hbrbackground,
-  A puntero llamado lpszmenuname,
-  A puntero llamado lpszclassname,
+  Un puntero llamado lpszmenuname,
+  Un puntero llamado lpszclassname,
   A hicon llamado hiconsm.
 
 The window class es un window class.
@@ -16623,7 +16652,7 @@ A wsadata es un registro con
   127 bytes llamado szsystemstatus,
   A wyrd [unsigned] llamado imaxsockets,
   A wyrd [unsigned] llamado imaxudpdg,
-  A puntero llamado lpvendorinfo.
+  Un puntero llamado lpvendorinfo.
 
 A wyrd es un registro con
   An low byte y 

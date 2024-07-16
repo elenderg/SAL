@@ -18,7 +18,6 @@ Para hacer todo:
   Si el status de erro es 0 [NULL],
     Escribir "Error al configurar Console CodePage en STDOUT."  then the crlf string para STDOUT.
   Obtener una string called Endereço Da Pasta desde the argumentos da linha de comando.
-  \ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   Si el Endereço Da Pasta está blank, 
     Escribir "--------------------------------------------------------------------------------------------------------------- " then the crlf string para StdOut;
     Escribir "Aviso. Para utilizar este compilador utilice la siguiente sintaxis:" then the crlf string para StdOut;
@@ -397,7 +396,8 @@ Para agregar un monikette to some monikettes usando un string:
   Si el string es "anticlockwise", Poner "backward" into el monikette's string; salir.
   Si el string es "anti-clockwise", Poner "backward" into el monikette's string; salir.
   \ at/on
-  Si el string es "at", Poner "at/on" into el monikette's string; salir.
+  Si el string es "at", 
+    Poner "at/on" into el monikette's string; salir.
   Si el string es "on", Poner "at/on" into el monikette's string; salir.
   \ Spanish allocates and destroys
   Si el string es "asignar", Poner "allocate" into el monikette's string; salir.
@@ -4625,9 +4625,15 @@ Para scan un field usando un rider:
   Scan el field usando el rider (type part).
   Lazo.
     Si el compiler's abort flag es set, salir.
-    Si el rider's token es any called, scan el field usando el rider (called part); repetir.
-    Si el rider's token es "at", scan el field usando el rider (redefine part); repetir.
-    Si el rider's token es any reference, scan el field usando el rider (reference part); repetir.
+    Si el rider's token es any called, 
+      Scan el field usando el rider (called part); 
+      Repetir.
+    Si el rider's token es "at", 
+      Scan el field usando el rider (redefine part); 
+      Repetir.
+    Si el rider's token es any reference, 
+      Scan el field usando el rider (reference part); 
+      Repetir.
   
 Para scan un field usando un rider (called part):
   Si el compiler's abort flag es set, salir.
