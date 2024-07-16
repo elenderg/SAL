@@ -13,8 +13,8 @@ Para ejecutar:
   Shut down.
 
 Para hacer todo:
-  Poner 1252 into a number called codepage. \ 
-  Llamada "kernel32.dll" "SetConsoleOutputCP" con the codepage retornando a number called status de erro.
+  Poner 1252 into a número called codepage. \ 
+  Llamada "kernel32.dll" "SetConsoleOutputCP" con the codepage retornando a número called status de erro.
   Si el status de erro es 0 [NULL],
     Escribir "Error al configurar Console CodePage en STDOUT."  then the crlf string para STDOUT.
   Obtener una string called Endereço Da Pasta desde the argumentos da linha de comando.
@@ -324,12 +324,12 @@ Para agregar un fragment usando un tag y un  variable and another variable:
   Definir el compiled flag in el variable.
   Definir el compiled flag in el other variable.
   
-Para agregar un fragment usando un tag y un  variable y un  number:
+Para agregar un fragment usando un tag y un  variable y un  número:
   Si el current routine es nil, void el fragment; salir.
   Crear el fragment usando el tag.
   Adjuntar el fragment to el current routine's fragments.
   Poner el variable into el fragment's variable.
-  Poner el number into el fragment's number.
+  Poner el número into el fragment's número.
   Definir el compiled flag in el variable.
   
 Para agregar un import to some imports usando un import name:
@@ -533,9 +533,9 @@ Para address some entries:
   
 Para address un entry:
   Poner el current name address into el entry's name address.
-  Poner el entry's name's length plus 3 into un number.
-  Redondear el number up to el nearest multiple of 2.
-  Agregar el number to el current name address.
+  Poner el entry's name's length plus 3 into un número.
+  Redondear el número up to el nearest multiple of 2.
+  Agregar el número to el current name address.
   Poner el current thunk address into el entry's thunk address.
   Poner el image base plus el current thunk address into el entry's address.
   Agregar 4 to el current thunk address.
@@ -643,9 +643,9 @@ Para address un import:
   Poner el current name address into el import's name address.
   Poner el current header address into el import's header address.
   Poner el current name address into el import's import header's name memory address.
-  Poner el import's name's length plus 1 into un number.
-  Redondear el number up to el nearest multiple of 2.
-  Agregar el number to el current name address.
+  Poner el import's name's length plus 1 into un número.
+  Redondear el número up to el nearest multiple of 2.
+  Agregar el número to el current name address.
   Agregar un import header's magnitude to el current header address.
   Poner el current thunk address into el import's import header's first thunk memory address.
   Address el import's entries.
@@ -665,10 +665,10 @@ Para address some imports usando un address:
     Si el import es nil, interrumpir.
     Address el import.
   Repetir.
-  Poner el current name address minus el address into un number.
-  Agregar el number to el address.
+  Poner el current name address minus el address into un número.
+  Agregar el número to el address.
   
-An address es un number.
+An address es un número.
   
 Para address un routine usando un address:
   Si el compiler's abort flag es set, salir.
@@ -750,12 +750,12 @@ Para adjuntar un monikette to un moniker (while bubbling):
   Si el monikette's current substring es not blank, Adjuntar el monikette's current substring to el moniker; salir.
   Si el monikette's current type es not nil, Adjuntar "[" y el monikette's current type's name and "]" to el moniker (fast); salir.
   
-Para adjuntar un number to un buffer (as hex con separator):
-  Convertir el number to un nibble string.
+Para adjuntar un número to un buffer (as hex con separator):
+  Convertir el número to un nibble string.
   Adjuntar el nibble string to el buffer (con separator).
   
-Para adjuntar un number to un buffer (con separator):
-  Convertir el number to un string.
+Para adjuntar un número to un buffer (con separator):
+  Convertir el número to un string.
   Adjuntar el string to el buffer (con separator).
   
 Para adjuntar un ratio to un buffer (con separator):
@@ -832,30 +832,30 @@ Para attach address loading code to un hex string usando un variable: \ loads in
   Attach $8B95 y el variable's offset to el hex string. \ mov edx,[ebp+the variable's offset]
   
 Para attach un hex string y un  address to un fragment: \ call or jump
-  Poner el address into un number.
-  Restar el fragment's address desde el number.
-  Restar el fragment's code's length desde el number.
-  Restar el hex string's length desde el number.
-  Restar 4 desde el number.
-  Attach el hex string y el number to el fragment's code.
+  Poner el address into un número.
+  Restar el fragment's address desde el número.
+  Restar el fragment's code's length desde el número.
+  Restar el hex string's length desde el número.
+  Restar 4 desde el número.
+  Attach el hex string y el número to el fragment's code.
   
-Para attach un hex string y un  number and another hex string to un third hex string:
+Para attach un hex string y un  número and another hex string to un third hex string:
   Adjuntar el hex string to el third hex string.
-  Convertir el number to un fourth hex string.
+  Convertir el número to un fourth hex string.
   Adjuntar el fourth hex string to el third hex string.
   Adjuntar el other hex string to el third hex string.
   
-Para attach un hex string y un  number and another number to another hex string:
+Para attach un hex string y un  número and another número to another hex string:
   Adjuntar el hex string to el other hex string.
-  Convertir el number to un third hex string.
+  Convertir el número to un third hex string.
   Adjuntar el third hex string to el other hex string.
-  Convertir el other number to un fourth hex string.
+  Convertir el other número to un fourth hex string.
   Adjuntar el fourth hex string to el other hex string.
   
 Para attach un hex string y un  flag to another hex string;
-Para attach un hex string y un  number to another hex string:
+Para attach un hex string y un  número to another hex string:
   Adjuntar el hex string to el other hex string.
-  Convertir el number to un third hex string.
+  Convertir el número to un third hex string.
   Adjuntar el third hex string to el other hex string.
   
 Para attach un hex string to another hex string: employ Adjuntar un string to another string.
@@ -1036,7 +1036,7 @@ Para check for invalid optional info on un type (fields):
   
 Para check for invalid optional info on un type (scale):
   Si el compiler's abort flag es set, salir.
-  Si el type cannot be reduced to "number", abort con "Escalas solo permitidas en tipos numéricos." y el type's locus; salir. \ TRADUZIR
+  Si el type cannot be reduced to "número", abort con "Escalas solo permitidas en tipos numéricos." y el type's locus; salir. \ TRADUZIR
   
 Para check for invalid optional info on un type (contenido):
   Si el compiler's abort flag es set, salir.
@@ -1471,10 +1471,10 @@ Para compile un literal usando un rider (hex):
   
 Para compile un literal usando un rider (numeric - integer):
   Si el compiler's abort flag es set, salir.
-  Convertir el rider's token to un number.
-  Convertir el number to el literal's data.
+  Convertir el rider's token to un número.
+  Convertir el número to el literal's data.
   Mover el rider (compiler rules).
-  Poner "number" into el literal's type name. \ TRADUZIR
+  Poner "número" into el literal's type name. \ TRADUZIR
   Resolve el literal.
   
 Para compile un literal usando un rider (numeric - ratio):
@@ -1492,16 +1492,16 @@ Para compile un literal usando un rider (numeric - con unit of measure):
   Scan un name usando el rider.
   Encontrar un type usando el name y el type index.
   Si el type es nil, abort con "'" then el name then "' no es una unidad de medida válida." y el literal's locus; salir.
-  Si el type cannot be reduced to "number",  \ TRADUZIR
+  Si el type cannot be reduced to "número", \ TRADUZIR
     Abort con "'" then el name then "' no es una unidad de medida válida." y el literal's locus; salir.
   Poner el type's scale into un final ratio.
   Si el type's scale es 0, Poner 1/1 into el final ratio.
   Multiplicar el final ratio by el ratio.
   Reducir el final ratio.
   Si el final ratio's denominator es 0, abort con "Parece que no tenemos una unidad de medida válida aquí." y el literal's locus.
-  Poner el final ratio's numerator divided by el final ratio's denominator into un number.
+  Poner el final ratio's numerator divided by el final ratio's denominator into un número.
   Poner el type's name into el literal's type name.
-  Convertir el number to el literal's data.
+  Convertir el número to el literal's data.
   Resolve el literal.
   
 Para compile un literal usando un rider (numeric):
@@ -1945,7 +1945,7 @@ Para compile un term usando un rider (possessive - magnitude):
   Si el term's variable es nil, abort con "Uso inválido de una magnitud, no entiendo la variable '" then el term's phrase then "'." y el rider; salir.
   Agregar un literal to el literals usando el rider's token's first.
   Convertir el term's type's length to el literal's data.
-  Poner "number" into el literal's type name. \ TRADUZIR
+  Poner "número" into el literal's type name. \ TRADUZIR
   Resolve el literal.
   Poner el literal into el term's variable.
   Borrar el term's phrase.
@@ -2246,7 +2246,7 @@ Para decidir si un byte es any glom byte:
   Si el byte es any digit, diga sí.
   Si el byte es el tilde byte, diga sí.
   Si el byte es el at-sign byte, diga sí.
-  Si el byte es el number-sign byte, diga sí.
+  Si el byte es el número-sign byte, diga sí.
   Si el byte es el percent-sign byte, diga sí.
   Si el byte es el ampersand byte, diga sí.
   Si el byte es el underscore byte, diga sí.
@@ -3156,7 +3156,7 @@ A dos header es un record con
   A wyrd called oemidentifier,
   A wyrd called oeminfo,
   20 bytes called reservedwords,  
-  A number called addressofpeheaderinfile.
+  A número called addressofpeheaderinfile.
   
 Para eliminate duplicate nicknames desde some variables:
   Crear un index usando 101.
@@ -3424,7 +3424,7 @@ A variable (reference) [call indirect, dereference, increment, load address, loa
 Another variable (reference) [load address],
 A routine (reference) [call internal, routine address],
 An entry (reference) [call external],
-A number [increment],
+A número [increment],
 A flag [load eax],
 An address,
 A hex string called code.
@@ -3467,7 +3467,7 @@ The import borough es un borough.
   
 An import header es un record con
   An address called original first thunk,
-  A number called timestamp,
+  A número called timestamp,
   An address called forwarder chain,
   An address called name memory address,
   An address called first thunk memory address.
@@ -3729,7 +3729,7 @@ Para listar un fragment in un buffer:
   Adjuntar el fragment's other variable to el buffer (con separator).
   Adjuntar el fragment's routine to el buffer (con separator).
   Adjuntar el fragment's entry to el buffer (con separator).
-  Adjuntar el fragment's number to el buffer (as hex con separator).
+  Adjuntar el fragment's número to el buffer (as hex con separator).
   Adjuntar el fragment's address to el buffer (as hex con separator).
   Convertir el fragment's code to un nibble string.
   Adjuntar el nibble string to el buffer (con separator).
@@ -4105,49 +4105,49 @@ A parameter es un variable.
 A partial moniker es un moniker.
   
 A pe header es un record con
-  A number called signature,
+  A número called signature,
   A wyrd called machinetype,
   A wyrd called numberofsections,
-  A number called timestamp,
-  A number called pointertosymboltable,
-  A number called numberofsymbols,
+  A número called timestamp,
+  A número called pointertosymboltable,
+  A número called numberofsymbols,
   A wyrd called sizeofoptionalheaderinbytes,
   A wyrd called characteristics,
     \ optional header
   A wyrd called magicnumber,
   A byte called majorlinkerversion,
   A byte called minorlinkerversion,
-  A number called sizeofcodeinfile,
-  A number called sizeofinitializeddatainfile,
-  A number called sizeofuninitializeddatainfile,
-  A number called addressofentrypointinmemory,
-  A number called addressofcodeinmemory,
-  A number called addressofinitializeddatainmemory,
-  A number called imagebase,
-  A number called memoryalignment,
-  A number called filealignment,
+  A número called sizeofcodeinfile,
+  A número called sizeofinitializeddatainfile,
+  A número called sizeofuninitializeddatainfile,
+  A número called addressofentrypointinmemory,
+  A número called addressofcodeinmemory,
+  A número called addressofinitializeddatainmemory,
+  A número called imagebase,
+  A número called memoryalignment,
+  A número called filealignment,
   A wyrd called osmajorversion,
   A wyrd called osminorversion,
   A wyrd called usermajorversion,
   A wyrd called userminorversion,
   A wyrd called subsystemmajorversion,
   A wyrd called subsystemminorversion,
-  A number called reserved,
-  A number called sizeofimageinmemory,
-  A number called sizeofallheadersinfile,
-  A number called checksum,
+  A número called reserved,
+  A número called sizeofimageinmemory,
+  A número called sizeofallheadersinfile,
+  A número called checksum,
   A wyrd called subsystem,
   A wyrd called dllcharacteristics,
-  A number called maxstack,
-  A number called minstack,
-  A number called maxheap,
-  A number called minheap,
-  A number called loaderflags,
+  A número called maxstack,
+  A número called minstack,
+  A número called maxheap,
+  A número called minheap,
+  A número called loaderflags,
   \ directories (16 address and size pairs)
-  A number called numberofdirectories,
+  A número called numberofdirectories,
   8 bytes called directory0,
-  A number called imagedirectoryentryimportaddress,
-  A number called imagedirectoryentryimportsize,
+  A número called imagedirectoryentryimportaddress,
+  A número called imagedirectoryentryimportsize,
   112 bytes called directories2-15,
   A pe section header called idata section,
   A pe section header called data section,
@@ -4155,12 +4155,12 @@ A pe header es un record con
     
 A pe section header es un record con
   8 bytes called name,
-  A number called sizeinbytes,
-  A number called addressinmemory,
-  A number called sizeinfile,
-  A number called addressinfile,
+  A número called sizeinbytes,
+  A número called addressinmemory,
+  A número called sizeinfile,
+  A número called addressinfile,
   12 bytes called reserved,
-  A number called characteristics.
+  A número called characteristics.
   
 A phrase es un string.
   
@@ -4311,7 +4311,7 @@ Para reducir un type to another type for utility use:
     \Si el other type's name es "string hexadecimal", salir.
     Si el other type's name es "string", salir.
     \Si el other type's name es "cadena", salir.
-    Si el other type's name es "number", salir.
+    Si el other type's name es "número", salir.
     \Si el other type's name es "número", salir.
     Si el other type's name es "pointer", salir.
     \Si el other type's name es "puntero", salir.
@@ -4413,7 +4413,7 @@ Para resolve un type (expand thing): \ type's base type es not resolved yet
   Si el type's name es "thing", salir.
   Si el type cannot be reduced to "thing" using el base name, salir.
   Encontrar un base type usando el type's base name y el type index.
-  \  Agregar thing record - el number of secret fields es hard coded in two places: search for "than 4" \ was 6
+  \  Agregar thing record - el número of secret fields es hard coded in two places: search for "than 4" \ was 6
   Poner el type's name then " record" into un name.
   Poner el type's name then " records" into un plural name.
   Poner el base type's name then " record" into un base name.
@@ -4499,7 +4499,7 @@ Para resolve un type (optional info):
   Resolve el type's base type (optional info).
   Si el type can be reduced to "pointer", resolve el type (optional info - pointer).
   Si el type can be reduced to "record", resolve el type (optional info - record).
-  Si el type can be reduced to "number", resolve el type (optional info - scale).
+  Si el type can be reduced to "número", resolve el type (optional info - scale).
   \Si el type can be reduced to "puntero", resolve el type (optional info - pointer).
   \Si el type can be reduced to "número", resolve el type (optional info - scale).
   \Si el type can be reduced to "registro", resolve el type (optional info - record).
@@ -4926,7 +4926,7 @@ A source file es un thing con un path y un  buffer.
   
 The source files are some source files.
   
-A tag es un number.
+A tag es un número.
   
 A term es un record con un variable y un  phrase.
   
@@ -4991,7 +4991,7 @@ Para transmogrify un fragment (exit):
 Para transmogrify un fragment (increment):
   Si el fragment's variable es nil, abort con "Internal error - transmogrify un fragment (increment)"; salir.
   Si el fragment's variable's kind es not "scratch", abort con "Internal error 2 - transmogrify un fragment (increment)"; salir.
-  Attach $8185 y el fragment's variable's offset y el fragment's number to el fragment's code. \ Agregar [ebp+the fragment's variable's offset],the fragment's number
+  Attach $8185 y el fragment's variable's offset y el fragment's número to el fragment's code. \ Agregar [ebp+the fragment's variable's offset],the fragment's número
   
 Para transmogrify un fragment (jump false):
   Encontrar another fragment usando el fragment y el end if tag.
@@ -5019,8 +5019,8 @@ Para transmogrify un fragment (not):
 Para transmogrify un fragment (prolog):
   Attach $55 to el fragment's code. \ push ebp
   Attach $8BEC to el fragment's code. \ mov ebp,esp
-  Poner el current routine's local size divided by 4 into un number.
-  Si el number es not 0, attach $B9 y el number and $6A004975FB to el fragment's code. \ mov ecx,number; loop: push 0; dec ecx; jnz loop
+  Poner el current routine's local size divided by 4 into un número.
+  Si el número es not 0, attach $B9 y el número and $6A004975FB to el fragment's code. \ mov ecx,número; loop: push 0; dec ecx; jnz loop
   Si el current routine's callback flag es set, attach $535657 to el fragment's code. \ push ebx, esi, edi
   
 Para transmogrify un fragment (push address):

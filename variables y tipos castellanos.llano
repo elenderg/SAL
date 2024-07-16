@@ -404,7 +404,7 @@ El byte min-y-diéresis es un byte igual a 255.
 El byte min-z es un byte igual a 122.
 El byte min-z-carón es un byte igual a 158.
 
-El byte numeral es un byte igual a 35. \ number-sign
+El byte numeral es un byte igual a 35. \ número-sign
 El byte cero es un byte igual a 48. \ 0
 El byte uno es un byte igual a 49. \ 1
 El byte dos es un byte igual a 50. \ 2
@@ -594,48 +594,48 @@ Un ancho es algunos twips. \ width
 Un ángulo es algunos grados precisos [0 un 3599].
 Un archivo es un handle.
 Un archivo de onda es un path. \ wave file
-Un ascenso es un number.
+Un ascenso es un número.
 Un bolígrafo es un color.
 Un brillo es un lightness.
 Un búfer es una string.
-\Un cadena# es un number. \ can't use special characters in Spanish types; pluralize doesn't work
-Un cociente es un number. \ quotient
-Un conteo es un number. \ un count
-Un contador es un number.
-Un denominador es un number.
+\Un cadena# es un número. \ can't use special characters in Spanish types; pluralize doesn't work
+Un cociente es un número. \ quotient
+Un conteo es un número. \ un count
+Un contador es un número.
+Un denominador es un número.
 Un designador es una string.
 Un directorio es una ruta.
 Un elemento es un item.
 Un escáner es un rider.
 Un evento es una event.
 Un foco es un punto.
-Un grado es un number. [0 to 359]
-Un grado preciso es un number. [0 a 3599]
+Un grado es un número. [0 to 359]
+Un grado preciso es un número. [0 a 3599]
 Un índice es un index.
 Un matiz es un hue.
 Un milisegundo es un millisecond.
-Un múltiplo es un number.
+Un múltiplo es un número.
 Un nombre de archivo es una string.
 Un nombre de directorio es una string.
 Un nombre de unidad es una string.
 Un nombre es una string.
-Un numerador es un number.
-Un número es un number.
-Un número-x es un number.
-Un número-y es un number.
+Un numerador es un número.
+\Un número es un número.
+Un número-x es un número.
+Un número-y es un número.
 Un par es un pair.
 Un paso es un point.
-Un poco es un number.
+Un poco es un número.
 Un polígono es un polygon.
-Un por ciento es un number.
-Un porcentaje es un number.
+Un por ciento es un número.
+Un porcentaje es un número.
 Un puntero es un pointer.
 Un puntero octeto es un pointer to un byte.
 Un punto es un spot.
 Un radio es un radius.
-Un rango es un number.
-Un recuento de elementos es un number.
-Un resto es un number. \ remainder
+Un rango es un número.
+Un recuento de elementos es un número.
+Un resto es un número. \ remainder
 Un tamaño es un size.
 Un temporizador es un timer.
 Un texto es un text.
@@ -651,9 +651,9 @@ Una cadena binaria es un string.
 Una cadena es un string.
 Una caja es un box.
 Una caja redonda es un roundy box.
-Una cantidad es un number.
+Una cantidad es un número.
 Una carta es un byte.
-Una carrera es un number.
+Una carrera es un número.
 Una clase es una string.
 Una cola de eventos es algunos eventos.
 Una consola es un console.
@@ -663,7 +663,7 @@ Una coord-y es una coordenada.
 Una coordenada es un coord.
 Una coordenada-x es una coordenada.
 Una coordenada-y es una coordenada.
-Una copia es un number.
+Una copia es un número.
 Una cosa es un thing.
 Una cosa de cadena es un string thing.
 Una derecha es una coordenada.
@@ -694,7 +694,7 @@ Una luminosidad es un lightness.
 Una palabra es un string.
 Una ola es un wave.
 Una operación es un string. \ for remembering text for undo y redo so we don't waste saves on every character typed
-Una raíz cuadrada es un number.
+Una raíz cuadrada es un número.
 Una referencia es un refer.
 Una respuesta es una string.
 Una ruta es un path.
