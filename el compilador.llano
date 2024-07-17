@@ -12,23 +12,6 @@ Para ejecutar:
   Escribir el crlf string luego "Operación completada." luego el crlf string para StdOut.
   Shut down.
 
-Para globalize un box usando un pair:
-  Mover el box usando el pair.
-
-Para globalize un spot usando un pair:
-  Mover el spot usando el pair.
-
-Para volver al lugar donde estábamos:
-  Restore el context.
-
-
-Para garantizar [al menos] una row en un text:
-  Si el text es nil, salir.
-  Si el text's rows are not empty, salir.
-  Crear el row usando el return byte.
-  Adjuntar el row to el text's rows.
-  Renumber el text's rows.
-
 Para hacer todo:
   Poner 1252 into a número called codepage. \ 
   Llamar "kernel32.dll" "SetConsoleOutputCP" con the codepage retornando a número called status de erro.
@@ -5311,7 +5294,7 @@ Para omitir any trailing noise in un substring:
     Si el substring's last's contenido es not noise, salir.
     Restar 1 desde el substring's last.
   Repetir.
-  
+
   \ dahn - reverse functions
   \ to Poner el xxx uv a/the yyy into zzz
   \ internally we turn this into "to Poner a/the yyy's xxx into zzz"
@@ -5355,5 +5338,3 @@ Para decidir si un rider es el start of any reverse-possessive function:
   Scan un name usando el rider.
   Si el rider es not on any reverse-possessive, diga no.
   Diga sí.  
-  
-  

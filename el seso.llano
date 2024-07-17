@@ -13599,6 +13599,22 @@ Para turn un fraction:
   Poner 3840 times el fraction plus el context's heading into el context's heading.
   Normalizar el context's heading.
 
+Para volver al lugar donde estábamos:
+  Restore el context.
+
+Para garantizar [al menos] una row en un text:
+  Si el text es nil, salir.
+  Si el text's rows are not empty, salir.
+  Crear el row usando el return byte.
+  Adjuntar el row to el text's rows.
+  Renumber el text's rows.
+
+Para globalize un box usando un pair:
+  Mover el box usando el pair.
+
+Para globalize un spot usando un pair:
+  Mover el spot usando el pair.
+
 \Para girar izquierda;
 Para girar izquierda:
   Turn -1/4.
